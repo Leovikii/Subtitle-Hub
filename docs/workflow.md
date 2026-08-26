@@ -2,7 +2,9 @@
 
 ## 1. 开工准备
 
-AI agent 必须先读取全局规范、作品 `project.yaml`、项目补充规范、进度、问题清单和修改台账。确认本次任务范围、目标集数、目标片源、基线版本和输出格式后才能改动字幕。
+AI agent 必须先读取全局规范、作品 `project.yaml`、项目文档入口、项目补充规范、进度、问题清单和修改台账。若当前轮次正在等待人工反馈，再读取 `project/workspace/temp/review/` 中对应的审核报告。确认任务范围、目标集数、目标片源、基线版本和输出格式后才能改动字幕。
+
+只有 `docs/project-guide.md` 可以补充或覆盖全局规范；当前状态只以 `docs/progress.yaml` 为准。开发者审核报告不能直接覆盖控制面，确认后的反馈必须回写规范、进度或台账。
 
 如果任务只要求审查或诊断，只登记问题和证据，不得擅自实施修复。
 
@@ -71,14 +73,15 @@ AI agent 必须先读取全局规范、作品 `project.yaml`、项目补充规�
 
 - 更新 `docs/progress.yaml`；
 - 关闭或更新 `docs/issues.tsv` 中对应问题；
-- 生成或更新 `docs/reports/` 下的检查报告；
+- 需要人工审核时，按 [项目文档规范](project-documentation.md) 在 `project/workspace/temp/review/` 生成本轮临时审核报告；
 - 明确哪些检查由机器完成，哪些由人工完成。
-- 将需要长期保留的临时审查记录迁入 `docs/`，然后清理 `project/workspace/temp/` 中可重复生成的工具和产物。
+- 将人工确认结果回写 `project-guide.md`、`progress.yaml`、`change-log.tsv` 或 `issues.tsv`，然后清理已经关闭的审核报告及其他可重复生成产物。
 
 ## 9. 发布
 
 1. 从工作主稿生成 `project/workspace/build/` 中的候选产物；
 2. 通过发布门禁后复制到新的 `subtitles/vX.Y.Z/`；
 3. 写入 `release.yaml` 和 `checksums.sha256`；
-4. 更新项目发布记录、`subtitles/latest.yaml` 和仓库目录；
-5. 已发布版本保持不可变。
+4. 在 `release.yaml` 如实记录机器检查与人工检查覆盖范围；
+5. 更新 `subtitles/latest.yaml` 和仓库目录；
+6. 已发布版本保持不可变。

@@ -1,9 +1,14 @@
-schema_version: 1
+schema_version: 2
 work_id: <WORK_ID>
 updated_at: <YYYY-MM-DD>
 baseline_release: null
 target_release: null
 overall_status: not-started
+
+active_round:
+  id: null
+  scope: null
+  status: not-started
 
 stages:
   source_inventory: not-started

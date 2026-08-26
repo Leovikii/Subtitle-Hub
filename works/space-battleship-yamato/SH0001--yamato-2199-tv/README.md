@@ -9,11 +9,11 @@
 - IMDb ID：待补充
 - Bangumi ID：待补充
 
-外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md) 和本项目 [补充规范](docs/project-guide.md)。
+外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md) 和本项目 [AI agent 控制面](docs/README.md)。
 
 ## 目录
 
-- `docs`：项目补充规范、进度、修改台账、问题、报告和历史归档说明；
+- `docs`：AI agent 长期基准，包括项目补充规范、统一进度、修改台账和问题台账；
 - `project/sources`：保持原貌的日语、英语和旧简日双语参考字幕，以及片源文件名清单；
 - `project/workspace/episodes`：从迁入成品建立的下一轮人工校订主稿；
 - `project/workspace/temp`：本项目的一次性工具、中间文件、未审候选和日志，可按轮次清理；
@@ -21,7 +21,7 @@
 - `project/archive`：带清单和校验值的冻结历史工程压缩档案；
 - `subtitles`：正式发布且不可覆盖的最终字幕版本。
 
-当前推荐版本为 `subtitles/v1.0.0/`，发布元数据见 [release.yaml](subtitles/v1.0.0/release.yaml)，质量报告见 [v1.0.0-quality-report.md](docs/reports/v1.0.0-quality-report.md)。
+当前推荐版本为 `subtitles/v1.0.0/`，发布元数据见 [release.yaml](subtitles/v1.0.0/release.yaml)。其引用的 [v1.0.0 质量报告](docs/reports/v1.0.0-quality-report.md) 是历史兼容记录，不属于当前 AI agent 控制面。
 
 ## 片源说明
 

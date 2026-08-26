@@ -5,10 +5,13 @@
 1. `docs/README.md`；
 2. `docs/workflow.md`；
 3. 当前作品的 `project.yaml`；
-4. 当前作品的 `docs/project-guide.md`；
-5. 当前作品的 `docs/progress.yaml`、`docs/issues.tsv` 和 `docs/change-log.tsv`。
+4. 当前作品的 `docs/README.md` 和 `docs/project-guide.md`；
+5. 当前作品的 `docs/progress.yaml`、`docs/issues.tsv` 和 `docs/change-log.tsv`；
+6. 若本轮正在等待人工反馈，只读取 `project/workspace/temp/review/` 中与当前 `active_round` 对应的审核报告。
 
 规则优先级从高到低为：用户当次明确要求、项目补充规范、仓库全局规范、外部行业参考。低优先级规则不得覆盖高优先级规则；发生冲突时必须记录依据和处理结果。
+
+项目内只有 `docs/project-guide.md` 可以补充或覆盖全局规则。`progress.yaml` 和台账记录控制面事实；开发者审核报告只是临时反馈文件，不构成规范。当前状态只以 `docs/progress.yaml` 为准，确认后的人工反馈必须回写控制面。
 
 ## 不可违反的工作边界
 

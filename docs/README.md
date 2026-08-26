@@ -16,7 +16,7 @@
 4. [timing-and-layout.md](timing-and-layout.md)：时间轴、断句和中主副辅双语布局；
 5. [chinese-style.md](chinese-style.md)：简体中文文本与标点规范；
 6. [quality-control.md](quality-control.md)：自动检查、人工检查和问题分级；
-7. [project-documentation.md](project-documentation.md)：项目文档、进度和修改台账；
+7. [project-documentation.md](project-documentation.md)：项目补充规范、统一进度、修改/问题台账和审查报告；
 8. [references.md](references.md)：公开行业参考及本仓库取舍。
 
 ## 规则优先级
@@ -27,6 +27,8 @@
 4. Netflix、BBC、DCMP 等外部参考。
 
 外部规范用于形成可查询的质量基线，不代表本仓库是任何平台的交付项目。不同来源出现冲突时，不能机械选择更严格的数值，而应优先保证原意、目标片源同步、中文可读性和双语视觉稳定。
+
+项目内只有 `docs/project-guide.md` 可以补充或覆盖本目录规则。项目进度、修改台账、问题台账和历史报告不得被解释为另一套开发规范。
 
 ## 统一设计原则
 
