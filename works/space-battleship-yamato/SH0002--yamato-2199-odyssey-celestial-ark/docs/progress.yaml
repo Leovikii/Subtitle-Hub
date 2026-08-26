@@ -2,23 +2,22 @@ schema_version: 2
 work_id: SH0002
 updated_at: 2026-08-26
 baseline_release: 1.0.0
-target_release: null
-overall_status: baseline-released
+target_release: 1.0.1
+overall_status: candidate-review
 
 active_round:
-  id: next-optimization
+  id: v1.0.1-series-sync-review
   scope: MOVIE
-  status: not-started
+  status: candidate-review
 
 stages:
   source_inventory: verified
   baseline_setup: verified
-  translation_review: not-started
-  timing_review: not-started
+  translation_review: candidate-review
+  timing_review: candidate-review
   typography_review: not-started
   visual_review: not-started
   release_qc: not-started
 
 episodes:
-  MOVIE: { status: not-started }
-
+  MOVIE: { status: candidate-review }
