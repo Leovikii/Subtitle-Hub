@@ -16,7 +16,8 @@
 ## 不可违反的工作边界
 
 - `project/sources/` 是只读来源，不得原地修改。
-- 已发布的 `subtitles/v*/` 不得覆盖；修订必须在 `project/workspace/` 完成并发布为新版本。
+- 不得直接编辑 `subtitles/current/`。修订必须在 `project/workspace/` 完成；从第二个正式版本起，发布事务必须先删除更旧的 `subtitles/previous/`，再把完整的 `current/` 直接重命名为 `previous/`，最后把候选目录重命名为新的 `current/`。
+- 发布版本的唯一事实源是 `subtitles/current/VERSION`；该文件必须与成品 ASS 同目录并随目录轮换。项目目录、成品目录和压缩包文件名不得包含版本号。每个正式 ASS 必须含与 `VERSION` 一致的 `Subtitle-Hub-Version` 标记。
 - 仓库不假定存在跨作品通用的字幕处理 pipeline。项目专用、一次性或低复用价值的脚本只能放在 `project/workspace/temp/tools/`，不得散落到项目根目录、`docs/` 或 `sources/`。
 - 未审中间字幕、映射表、调试输出和运行日志必须放在 `project/workspace/temp/` 对应子目录；通过项目检查的待发布构建才可进入 `project/workspace/build/`。
 - `project/workspace/temp/` 可以按轮次整体清理，但清理前必须把需要长期保留的结论迁入项目 `docs/`，并确认没有把主稿、未登记修改或唯一证据留在临时区。

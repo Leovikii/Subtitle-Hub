@@ -94,6 +94,8 @@ source_inventory baseline_setup translation_review timing_review typography_revi
 
 每次开始、暂停、完成、退回或改变范围时，必须更新 `updated_at`、`active_round` 和受影响的逐集状态。审核报告中的勾选和统计不能代替进度更新。
 
+`baseline_release` 和 `target_release` 只在顶层各记录一次，值使用 SemVer 且不加 `v` 前缀；逐集项只记录状态，不得重复版本号。当前正式版本的权威值仍是 `subtitles/current/VERSION`，进度中的版本只说明本轮工作基于哪个内容快照。
+
 ## 6. change-log.tsv：已实施修改台账
 
 固定列为：

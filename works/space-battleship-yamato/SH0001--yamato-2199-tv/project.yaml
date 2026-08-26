@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 
 id: SH0001
 slug: yamato-2199-tv
@@ -17,15 +17,100 @@ external_ids:
   bangumi: null
 
 languages:
-  primary: zh-Hans
-  secondary:
-    - ja
+  release:
+    primary: zh-Hans
+    secondary: ja
+    filename_suffix: zh-Hans.ja
   references:
     - en
 
-current_release: v1.0.0
-workspace_baseline: v1.0.0
-primary_video_source: sav1our-bd-1080p-av1
+subtitle_sources:
+  - id: ja-official-webrip-cc
+    language: ja
+    kind: closed-captions
+    path: project/sources/subtitles/ja/official-webrip-cc
+    file_count: 26
+    role: primary-japanese
+  - id: en-sav1our-embedded
+    language: en
+    kind: embedded-ass
+    path: project/sources/subtitles/en/sav1our-embedded
+    file_count: 52
+    role: timing-and-sign-reference
+  - id: ja-kamigami-fallback
+    language: ja
+    kind: fansub-ass
+    path: project/sources/subtitles/ja/kamigami-fallback
+    file_count: 26
+    role: fallback-japanese
+  - id: zh-Hans-ja-kamigami-bilingual-fallback
+    language:
+      - zh-Hans
+      - ja
+    kind: bilingual-fansub-ass
+    path: project/sources/subtitles/zh-Hans/kamigami-bilingual-fallback
+    file_count: 26
+    role: chinese-draft-and-layout-reference
+
+video_sources:
+  sav1our-bd-1080p-av1:
+    release_group: Sav1our
+    medium: Blu-ray
+    resolution: 1080p
+    video_codec: AV1
+    audio: OPUS Dual Audio
+    timing_reference: true
+    files:
+      S01E01: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E01 - Messenger of Iscandar [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E02: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E02 - Toward a Sea of Stars [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E03: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E03 - Escape from the Jupiter Sphere [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E04: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E04 - Gravestone on a Frozen Field [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E05: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E05 - The Trap on All Sides [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E06: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E06 - The Sun Sets on Pluto [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E07: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E07 - Farewell to the Solar System [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E08: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E08 - Wish Upon a Star [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E09: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E09 - Clockwork Prisoner [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E10: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E10 - Graveyard of the Universe [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E11: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E11 - A World I Once Saw [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E12: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E12 - What Lies Beyond [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E13: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E13 - The Wolf from Another Dimension [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E14: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E14 - The Whisper of the Witch [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E15: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E15 - Point of No Return [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E16: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E16 - A Choice for the Future [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E17: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E17 - Out of the Forest of Memory [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E18: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E18 - Over the Black Light [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E19: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E19 - They're Coming! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E20: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E20 - Under a Rainbow Sun [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E21: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E21 - Prison Planet 17 [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E22: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E22 - The Planet That We Head For [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E23: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E23 - One Man's War [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E24: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E24 - The Distant Promised Land [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E25: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E25 - The Forever War [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S01E26: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S01E26 - Memories of the Blue Planet [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+
+workspace:
+  baseline: subtitles/current
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ja.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: historical-full
+    human: candidate-only
+    basis: imported-1.0.0-record
+  package:
+    repository_path: packages/SH0001--yamato-2199-tv.zip
+    generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
   entry: docs/README.md
@@ -46,4 +131,4 @@ archives:
   historical_documents:
     path: project/archive/SH0001-historical-documents-20260826.zip
     manifest: project/archive/SH0001-historical-documents-20260826.manifest.tsv
-    sha256: 71f38248e993ff3f591e875370e519bbfb57172a380b32ad1eba3b9918150ba8
+    sha256: d09a6571a343fe6cc830ae102254be7144b58da025ad651f2bd268724c8031ce

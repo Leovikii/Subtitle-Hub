@@ -9,4 +9,6 @@ Subtitle Hub 同时承担两项职责：
 
 AI agent 和校对者开始工作前必须阅读 [全局字幕规范](docs/README.md)。
 
+最终字幕固定保存在各项目的 `subtitles/current/`，版本号由目录内 `VERSION` 和 ASS 内标记共同声明；从第二个正式版本起，`subtitles/previous/` 强制保留被替换的完整上一版。仓库级 `packages/` 保存由 GitHub Actions 从当前成品自动生成的稳定命名 ZIP，供检索和下载；ZIP 不是另一套发布事实源。
+
 当前已收录作品见 [CATALOG.md](CATALOG.md)。

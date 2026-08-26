@@ -17,7 +17,8 @@
 5. [chinese-style.md](chinese-style.md)：简体中文文本与标点规范；
 6. [quality-control.md](quality-control.md)：自动检查、人工检查和问题分级；
 7. [project-documentation.md](project-documentation.md)：项目补充规范、统一进度、修改/问题台账和审查报告；
-8. [references.md](references.md)：公开行业参考及本仓库取舍。
+8. [release-and-packaging.md](release-and-packaging.md)：稳定成品路径、版本、文件名、回滚与自动打包；
+9. [references.md](references.md)：公开行业参考及本仓库取舍。
 
 ## 规则优先级
 

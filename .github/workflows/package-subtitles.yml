@@ -1,0 +1,48 @@
+name: Build subtitle packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "works/**/subtitles/current/**"
+      - "works/**/subtitles/previous/**"
+      - ".github/scripts/build_subtitle_packages.py"
+      - ".github/workflows/package-subtitles.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: subtitle-packages-main
+  cancel-in-progress: false
+
+jobs:
+  package:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build deterministic packages
+        run: python .github/scripts/build_subtitle_packages.py
+
+      - name: Commit updated packages
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain -- packages/)" ]; then
+            echo "Packages are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- packages/
+          git commit -m "Build current subtitle packages"
+          git push

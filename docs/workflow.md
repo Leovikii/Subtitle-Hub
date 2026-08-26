@@ -13,7 +13,7 @@ AI agent 必须先读取全局规范、作品 `project.yaml`、项目文档入�
 1. 原始字幕按语言和来源存入 `project/sources/subtitles/`；
 2. 片源只记录发布名称和精确文件名，不保存视频、种子、磁力或下载链接；
 3. 来源文件保持原貌，不在 `sources` 内清洗、重命名正文或修订时间轴；
-4. 在 `source-catalog.yaml` 记录语言、来源性质、文件数量和用途；
+4. 在作品唯一元数据文件 `project.yaml` 记录语言、来源性质、文件数量和用途；
 5. 在项目规范中分别指定“时间轴主参考”“原语文本主参考”和“中文底稿”。
 
 来源不能用一个笼统的“优先级”处理。时间轴、原语文本和中文译文是三个独立维度，必须分别选取证据。
@@ -79,9 +79,12 @@ AI agent 必须先读取全局规范、作品 `project.yaml`、项目文档入�
 
 ## 9. 发布
 
+按 [成品版本、命名与存档规范](release-and-packaging.md) 执行一个完整发布事务：
+
 1. 从工作主稿生成 `project/workspace/build/` 中的候选产物；
-2. 通过发布门禁后复制到新的 `subtitles/vX.Y.Z/`；
-3. 写入 `release.yaml` 和 `checksums.sha256`；
-4. 在 `release.yaml` 如实记录机器检查与人工检查覆盖范围；
-5. 更新 `subtitles/latest.yaml` 和仓库目录；
-6. 已发布版本保持不可变。
+2. 通过发布门禁，确认 `project.yaml` 已如实记录机器检查与人工检查覆盖范围；
+3. 如已有当前成品，先删除更旧的 `subtitles/previous/`，再把完整的 `subtitles/current/` 直接重命名为新的 `previous/`；不得为轮换重新打包或逐文件复制；
+4. 以目标视频文件名加 BCP 47 语种后缀生成完整成品集，并在每个 ASS 写入目标版本标记；
+5. 把包含新 `VERSION` 的完整候选目录直接重命名为 `subtitles/current/`；任何失败都必须把刚轮换的 `previous/` 恢复为 `current/`；
+6. 运行仓库打包脚本，核对稳定命名 ZIP、内置清单和逐文件校验值；
+7. 更新项目进度、修改台账和仓库目录。旧版本号目录、`latest.yaml`、逐版本 `release.yaml` 与仓库内散落的校验文件均不得重新建立。

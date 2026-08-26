@@ -23,7 +23,7 @@ project/
 └─ archive/                         # 经清单和校验值冻结的历史工程压缩档案
 ```
 
-作品正式产物仍位于作品根目录 `subtitles/vX.Y.Z/`，人工可读规范和审计记录仍位于作品根目录 `docs/`。`workspace/episodes/`、`docs/`、`sources/`、`archive/` 和 `subtitles/` 都不属于临时清理范围。
+作品正式产物固定在作品根目录 `subtitles/current/`，版本号位于成品目录内的 `VERSION`。从第二个正式版本起，必须另保留一个普通目录 `subtitles/previous/`，它由上一轮 `current/` 直接重命名而来，不压缩。人工可读规范和审计记录仍位于作品根目录 `docs/`。`workspace/episodes/`、`docs/`、`sources/`、`archive/` 和 `subtitles/` 都不属于临时清理范围。
 
 ## 3. 各区域的生命周期
 
@@ -44,7 +44,7 @@ project/
 
 ### build
 
-`build/` 只接收从当前主稿生成、已完成本轮规定检查的待发布文件。它不是正式版本，也不纳入 Git；发布时复制到新的 `subtitles/vX.Y.Z/`，生成并核对校验值后可以清空。
+`build/` 只接收从当前主稿生成、已完成本轮规定检查的待发布文件。它不是正式版本，也不纳入 Git；发布时按 [成品版本、命名与存档规范](release-and-packaging.md) 整体替换 `subtitles/current/`，验证自动生成包后可以清空。
 
 ### archive
 

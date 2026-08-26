@@ -1,9 +1,14 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+.gitattributes text eol=lf
 
 # Preserve imported source subtitles and approved release artifacts byte-for-byte.
 works/**/project/sources/subtitles/** -text
-works/**/subtitles/**/ass/*.ass -text
+works/**/subtitles/current/*.ass -text
+works/**/subtitles/current/VERSION text eol=lf
+works/**/subtitles/previous/*.ass -text
+works/**/subtitles/previous/VERSION text eol=lf
+packages/*.zip binary
 
 # Keep editable project files consistent across platforms.
 *.md text eol=lf
