@@ -17,6 +17,7 @@ STYLES_SECTION = "[V4+ Styles]\n"
 EPISODE_ID = re.compile(r"S\d{2}E\d{2}")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
 STYLE_DEFINITION = re.compile(r"^Style:\s*(.*)$")
+SOURCE_METADATA_PREFIX = "[源字幕信息]"
 FONT_MAP = {
     "Microsoft YaHei UI": "Noto Sans CJK SC",
     "DengXian": "Noto Sans CJK SC",
@@ -54,7 +55,28 @@ def style_map(text: str) -> dict[str, list[str]]:
     return styles
 
 
-def expected_events(source_events: str) -> tuple[str, int]:
+def remove_source_metadata(source_events: str) -> tuple[str, int]:
+    output: list[str] = []
+    removed = 0
+    in_events = False
+    for line in source_events.splitlines(keepends=True):
+        bare = line.removesuffix("\n")
+        if bare.startswith("[") and bare.endswith("]"):
+            in_events = bare == EVENTS_SECTION.removesuffix("\n")
+        if in_events and bare.startswith("Comment:"):
+            parts = bare.split(",", 9)
+            if len(parts) != 10:
+                raise CandidateError(f"malformed event line: {bare[:80]}")
+            if parts[4].strip() == "Source-Metadata" and parts[9].startswith(
+                SOURCE_METADATA_PREFIX
+            ):
+                removed += 1
+                continue
+        output.append(line)
+    return "".join(output), removed
+
+
+def expected_events(source_events: str) -> tuple[str, int, int]:
     changes = 0
 
     def replace(match: re.Match[str]) -> str:
@@ -67,20 +89,22 @@ def expected_events(source_events: str) -> tuple[str, int]:
         changes += 1
         return f"\\fn{FONT_MAP[old_font]}"
 
-    return INLINE_FONT.sub(replace, source_events), changes
+    without_metadata, metadata_removed = remove_source_metadata(source_events)
+    return INLINE_FONT.sub(replace, without_metadata), changes, metadata_removed
 
 
-def verify_file(master: Path, candidate: Path) -> tuple[int, int, int]:
+def verify_file(master: Path, candidate: Path) -> tuple[int, int, int, int]:
     source = master.read_text(encoding="utf-8-sig")
     output = candidate.read_text(encoding="utf-8")
     source_events = events_tail(source)
     output_events = events_tail(output)
-    expected, inline_changes = expected_events(source_events)
+    expected, inline_changes, metadata_removed = expected_events(source_events)
     if output_events != expected:
         expected_hash = hashlib.sha256(expected.encode()).hexdigest()
         output_hash = hashlib.sha256(output_events.encode()).hexdigest()
         raise CandidateError(
-            f"{candidate}: Events differ beyond approved inline font mapping "
+            f"{candidate}: Events differ beyond approved inline font mapping and "
+            "Source-Metadata removal "
             f"(expected {expected_hash}, got {output_hash})"
         )
 
@@ -102,7 +126,7 @@ def verify_file(master: Path, candidate: Path) -> tuple[int, int, int]:
         changed_styles += 1
 
     removed = set(source_styles) - set(output_styles)
-    return len(removed), changed_styles, inline_changes
+    return len(removed), changed_styles, inline_changes, metadata_removed
 
 
 def verify_project(project_root: Path) -> None:
@@ -111,7 +135,7 @@ def verify_project(project_root: Path) -> None:
     version, candidates = validate_release_dir(candidate_dir, project_root)
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     project_type = yaml_scalar(metadata, "type", 0)
-    totals = [0, 0, 0]
+    totals = [0, 0, 0, 0]
     for candidate in candidates:
         match = EPISODE_ID.search(candidate.name)
         episode_id = match.group(0) if match else "MOVIE" if project_type == "movie" else None
@@ -123,7 +147,8 @@ def verify_project(project_root: Path) -> None:
     print(
         f"verified {project_root.name} {version}: {len(candidates)} subtitles; "
         f"removed {totals[0]} styles; mapped {totals[1]} retained style fonts and "
-        f"{totals[2]} inline fonts; Events otherwise byte-identical"
+        f"{totals[2]} inline fonts; removed {totals[3]} Source-Metadata comments; "
+        "Events otherwise byte-identical"
     )
 
 

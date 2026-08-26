@@ -132,6 +132,13 @@ def validate_standard_ass(
         raise PackageError(f"{subtitle}: contains Aegisub Project Garbage")
     if re.search(r"(?m)^\[Fonts\]$", text):
         raise PackageError(f"{subtitle}: embedded ASS Fonts section is not allowed")
+    version_core = tuple(int(part) for part in version.split("-", 1)[0].split(".")[:3])
+    if version_core >= (2, 0, 1) and re.search(
+        r"(?m)^Comment: [^\n]*,Source-Metadata,[^\n]*\[源字幕信息\]", text
+    ):
+        raise PackageError(
+            f"{subtitle}: source attribution/provenance must not remain in Events"
+        )
 
     subject_id, _, title_zh_hans, _ = bangumi_identity(project_root)
     primary, secondary = project_languages(project_root)
@@ -167,14 +174,18 @@ def validate_standard_ass(
     if header[: len(required_prefix)] != required_prefix:
         raise PackageError(f"{subtitle}: noncanonical Subtitle Hub header prefix")
     cursor = len(required_prefix)
-    for optional_prefix in (
-        "; Subtitle-Hub-Timing-Note: ",
-        "; Subtitle-Hub-Source-Credit: ",
-    ):
+    for optional_prefix in ("; Subtitle-Hub-Timing-Note: ",):
         if cursor < len(header) and header[cursor].startswith(optional_prefix):
             if not header[cursor][len(optional_prefix) :].strip():
                 raise PackageError(f"{subtitle}: empty optional header comment")
             cursor += 1
+    if cursor < len(header) and header[cursor].startswith(
+        "; Subtitle-Hub-Source-Credit: "
+    ):
+        source_credit = header[cursor].split(":", 1)[1].strip()
+        if not source_credit:
+            raise PackageError(f"{subtitle}: empty Source-Credit")
+        cursor += 1
     expected_title = f"Title: bgm{subject_id} - {title_zh_hans} - {episode_id}"
     expected_labels = (
         "ScriptType",

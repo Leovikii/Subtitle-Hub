@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a structurally normalized ASS release candidate without changing events."""
+"""Build a structurally normalized ASS release candidate."""
 
 from __future__ import annotations
 
@@ -20,7 +20,8 @@ from build_subtitle_packages import (
 
 STYLE_SECTION = "[V4+ Styles]"
 EVENTS_SECTION = "[Events]"
-SECONDARY_SUFFIX = re.compile(r"\.(zh-Hans)\.(ja|en)\.ass\Z")
+LEGACY_SECONDARY_SUFFIX = re.compile(r"\.(zh-Hans)\.(ja|en)\.ass\Z")
+PRIMARY_SUFFIX = re.compile(r"\.(zh-Hans)\.ass\Z")
 EPISODE_ID = re.compile(r"S\d{2}E\d{2}")
 STYLE_RESET = re.compile(r"\\r([^\\}]*)")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
@@ -41,6 +42,30 @@ FONT_MAP = {
     "Yu Gothic UI": "Noto Sans CJK JP",
 }
 STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+SOURCE_METADATA_PREFIX = "[源字幕信息]"
+SUBTITLE_GROUP = re.compile(r"([\w\u3400-\u9fff·&＋+ -]+字幕组)")
+SOURCE_CREDIT_ROLES = (
+    "日听",
+    "翻译",
+    "日校",
+    "中校",
+    "校对",
+    "时间 ",
+    "时间轴",
+    "压制",
+    "片源 ",
+    "台本整理",
+    "精神领袖",
+    "精校",
+    "后期",
+)
+SOURCE_PROVENANCE_MARKERS = (
+    "中文底稿",
+    "日文原本",
+    "版本校验",
+    "时间轴与特效参考",
+)
+SOURCE_DISCLAIMER_MARKERS = ("仅供", "不得用于", "禁止用于", "违法", "欢迎访问")
 
 
 class NormalizeError(RuntimeError):
@@ -160,6 +185,44 @@ def normalize_inline_fonts(events_tail: str) -> tuple[str, int]:
     return INLINE_FONT.sub(replace, events_tail), changes
 
 
+def source_credit_from_metadata(text: str) -> str | None:
+    value = text.removeprefix(SOURCE_METADATA_PREFIX).strip()
+    if any(marker in value for marker in SOURCE_PROVENANCE_MARKERS):
+        return None
+    if any(marker in value for marker in SOURCE_DISCLAIMER_MARKERS):
+        group_match = SUBTITLE_GROUP.search(value.removeprefix("本字幕由"))
+        return group_match.group(1).strip() if group_match else None
+    group_match = SUBTITLE_GROUP.search(value)
+    if group_match or any(role in value for role in SOURCE_CREDIT_ROLES):
+        return value
+    return None
+
+
+def normalize_source_metadata(events_tail: str) -> tuple[str, list[str], int]:
+    output: list[str] = []
+    credits: list[str] = []
+    removed = 0
+    in_events = False
+    for line in events_tail.splitlines(keepends=True):
+        bare = line.removesuffix("\n")
+        if bare.startswith("[") and bare.endswith("]"):
+            in_events = bare == EVENTS_SECTION
+        if in_events and bare.startswith("Comment:"):
+            parts = bare.split(",", 9)
+            if len(parts) != 10:
+                raise NormalizeError(f"malformed event line: {bare[:80]}")
+            if parts[4].strip() == "Source-Metadata" and parts[9].startswith(
+                SOURCE_METADATA_PREFIX
+            ):
+                credit = source_credit_from_metadata(parts[9])
+                if credit and credit not in credits:
+                    credits.append(credit)
+                removed += 1
+                continue
+        output.append(line)
+    return "".join(output), credits, removed
+
+
 def normalized_header(
     *,
     fields: dict[str, str],
@@ -170,19 +233,27 @@ def normalized_header(
     subject_id: str,
     title_zh_hans: str,
     episode_id: str,
+    event_source_credits: list[str],
 ) -> str:
     timing_notes = [
         line.removeprefix("; ")
         for line in comments
         if line.startswith("; Target MKV mux lead")
     ]
-    source_credits = [
-        line.split(":", 1)[1].strip()
-        for line in comments
-        if line.startswith("; Original fansub credit (metadata only):")
-    ]
-    if len(timing_notes) > 1 or len(source_credits) > 1:
-        raise NormalizeError("multiple timing notes or source credits require manual review")
+    source_credits: list[str] = []
+    for line in comments:
+        if not line.startswith(
+            ("; Original fansub credit (metadata only):", "; Subtitle-Hub-Source-Credit:")
+        ):
+            continue
+        credit = line.split(":", 1)[1].strip()
+        if credit and credit not in source_credits:
+            source_credits.append(credit)
+    for credit in event_source_credits:
+        if credit not in source_credits:
+            source_credits.append(credit)
+    if len(timing_notes) > 1:
+        raise NormalizeError("multiple timing notes require manual review")
 
     lines = [
         "[Script Info]",
@@ -194,7 +265,7 @@ def normalized_header(
     if timing_notes:
         lines.append(f"; Subtitle-Hub-Timing-Note: {timing_notes[0]}")
     if source_credits:
-        lines.append(f"; Subtitle-Hub-Source-Credit: {source_credits[0]}")
+        lines.append(f"; Subtitle-Hub-Source-Credit: {'；'.join(source_credits)}")
     lines.extend(
         [
             f"Title: bgm{subject_id} - {title_zh_hans} - {episode_id}",
@@ -220,7 +291,7 @@ def normalize_file(
     subject_id: str,
     title_zh_hans: str,
     episode_id: str,
-) -> tuple[list[str], int, int]:
+) -> tuple[list[str], int, int, int]:
     source = source_path.read_text(encoding="utf-8-sig")
     if "\r" in source:
         raise NormalizeError(f"{source_path}: expected normalized LF line endings")
@@ -232,11 +303,14 @@ def normalize_file(
     fields, comments = script_info(source)
     style_section = source[style_start:events_start]
     events_tail = source[events_start:]
-    references = event_style_references(events_tail)
+    events_without_metadata, event_source_credits, metadata_removed = (
+        normalize_source_metadata(events_tail)
+    )
+    references = event_style_references(events_without_metadata)
     normalized_styles, removed, style_font_changes = normalize_styles(
         style_section, references
     )
-    normalized_events, inline_font_changes = normalize_inline_fonts(events_tail)
+    normalized_events, inline_font_changes = normalize_inline_fonts(events_without_metadata)
 
     header = normalized_header(
         fields=fields,
@@ -247,12 +321,13 @@ def normalize_file(
         subject_id=subject_id,
         title_zh_hans=title_zh_hans,
         episode_id=episode_id,
+        event_source_credits=event_source_credits,
     )
     output = header + normalized_styles + normalized_events
     if output[output.find(f"{EVENTS_SECTION}\n") :] != normalized_events:
         raise NormalizeError(f"{source_path}: unexpected Events mutation")
     output_path.write_text(output, encoding="utf-8", newline="\n")
-    return removed, style_font_changes, inline_font_changes
+    return removed, style_font_changes, inline_font_changes, metadata_removed
 
 
 def build_candidate(project_root: Path, version: str) -> None:
@@ -275,10 +350,17 @@ def build_candidate(project_root: Path, version: str) -> None:
     total_removed = 0
     total_style_font_changes = 0
     total_inline_font_changes = 0
+    total_source_metadata_removed = 0
     try:
         for release_template in release_templates:
-            match = SECONDARY_SUFFIX.search(release_template.name)
-            if not match or match.group(1) != primary or match.group(2) != secondary:
+            legacy_match = LEGACY_SECONDARY_SUFFIX.search(release_template.name)
+            primary_match = PRIMARY_SUFFIX.search(release_template.name)
+            if legacy_match:
+                if legacy_match.group(1) != primary or legacy_match.group(2) != secondary:
+                    raise NormalizeError(
+                        f"{release_template}: does not match current language metadata"
+                    )
+            elif not primary_match or primary_match.group(1) != primary:
                 raise NormalizeError(
                     f"{release_template}: does not match current language metadata"
                 )
@@ -294,8 +376,12 @@ def build_candidate(project_root: Path, version: str) -> None:
             source_path = workspace_episodes / episode_id / "master.ass"
             if not source_path.is_file():
                 raise NormalizeError(f"missing workspace master: {source_path}")
-            output_name = SECONDARY_SUFFIX.sub(f".{primary}.ass", release_template.name)
-            removed, style_font_changes, inline_font_changes = normalize_file(
+            output_name = (
+                LEGACY_SECONDARY_SUFFIX.sub(f".{primary}.ass", release_template.name)
+                if legacy_match
+                else release_template.name
+            )
+            removed, style_font_changes, inline_font_changes, metadata_removed = normalize_file(
                 source_path,
                 output_dir / output_name,
                 version=version,
@@ -308,6 +394,7 @@ def build_candidate(project_root: Path, version: str) -> None:
             total_removed += len(removed)
             total_style_font_changes += style_font_changes
             total_inline_font_changes += inline_font_changes
+            total_source_metadata_removed += metadata_removed
         (output_dir / "VERSION").write_text(f"{version}\n", encoding="utf-8", newline="\n")
         validate_release_dir(output_dir, project_root)
     except Exception:
@@ -316,6 +403,7 @@ def build_candidate(project_root: Path, version: str) -> None:
     print(
         f"built {output_dir} ({len(release_templates)} subtitles; "
         f"removed {total_removed} unused style definitions; "
+        f"removed {total_source_metadata_removed} source metadata comments; "
         f"changed {total_style_font_changes} style fonts and "
         f"{total_inline_font_changes} inline fonts)"
     )

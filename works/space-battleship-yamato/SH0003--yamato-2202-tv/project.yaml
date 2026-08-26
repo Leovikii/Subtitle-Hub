@@ -98,9 +98,9 @@ release:
   filename_pattern: "<video-stem>.zh-Hans.ass"
   embedded_version_field: Subtitle-Hub-Version
   review_coverage:
-    machine: v2.0.0-structural-and-font-mapping-verified
-    human: visual-render-not-performed-owner-waived
-    basis: 2026-08-26-explicit-release-instruction
+    machine: v2.0.1-source-metadata-differential-verified
+    human: not-applicable-nonrendering-cleanup
+    basis: 2026-08-26-explicit-metadata-cleanup-instruction
   package:
     naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
     generated_by: .github/scripts/build_subtitle_packages.py

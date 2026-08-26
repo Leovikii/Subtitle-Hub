@@ -1,8 +1,9 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Version: 2.0.1
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
+; Subtitle-Hub-Source-Credit: 诸神字幕组；日听 电车男 翻译 葉隐；日校 散仙 中校 mam；时间 那年夏天 压制 娜夏；片源 jsum
 Title: bgm54552 - 宇宙战舰大和号2199 - S01E12
 ScriptType: v4.00+
 WrapStyle: 0
@@ -24,12 +25,6 @@ Style: CN-Sign-TS Default,Noto Sans CJK SC,75,&H00FFFFFF,&H000000FF,&H00000000,&
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 诸神字幕组
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日听 电车男 翻译 葉隐
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 本字幕仅供学习交流，不得用于商业用途，若发生违法等行为，诸神恕不承担一切责任,欢迎访问kamigami.org
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日校 散仙 中校 mam
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 时间 那年夏天 压制 娜夏
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 片源 jsum
 Dialogue: 0,0:00:18.54,0:00:22.50,op-cn,,0,0,0,,再见了 地球
 Dialogue: 0,0:00:18.54,0:00:22.50,op-jp,,0,0,0,,さらば 地球よ
 Dialogue: 0,0:00:22.50,0:00:26.13,op-cn,,0,0,0,,出航的舰船

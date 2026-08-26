@@ -1,8 +1,9 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Version: 2.0.1
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
+; Subtitle-Hub-Source-Credit: 诸神字幕组；日听 螃蟹 翻译 花未眠；日校 散仙 中校 臭屁匠；时间 臭屁匠 压制 娜夏
 Title: bgm54552 - 宇宙战舰大和号2199 - S01E01
 ScriptType: v4.00+
 WrapStyle: 0
@@ -25,10 +26,6 @@ Style: 1,Noto Sans CJK SC,40,&H003B4966,&H000000FF,&HFF000000,&HFF000000,-1,0,0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 诸神字幕组
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日听 螃蟹 翻译 花未眠
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日校 散仙 中校 臭屁匠
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 时间 臭屁匠 压制 娜夏
 Dialogue: 0,0:00:17.35,0:00:19.48,notice,,0,0,0,,{\frz-12\frx-11\fry-8\move(788,532,-100,400,2180,0)\fnNoto Sans CJK SC}雪 风 号
 Dialogue: 10,0:00:18.43,0:00:22.10,CN-Main,,0,0,0,,现在位于距离冥王星轨道 20 万公里的空间点
 Dialogue: 11,0:00:18.43,0:00:22.10,JP-Main,,0,0,0,,現在 冥王星軌道に 20万キロの空間点

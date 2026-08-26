@@ -1,12 +1,12 @@
 schema_version: 2
 work_id: SH0002
 updated_at: 2026-08-26
-baseline_release: 1.0.1
-target_release: 2.0.0
+baseline_release: 2.0.0
+target_release: 2.0.1
 overall_status: released
 
 active_round:
-  id: v2.0.0-release-contract-font-normalization
+  id: v2.0.1-source-metadata-cleanup
   scope: MOVIE
   status: completed
 
@@ -15,8 +15,8 @@ stages:
   baseline_setup: verified
   translation_review: not-applicable
   timing_review: not-applicable
-  typography_review: machine-verified
-  visual_review: waived-by-owner
+  typography_review: not-applicable
+  visual_review: not-applicable
   release_qc: verified
 
 episodes:

@@ -73,7 +73,7 @@ subtitles/
 ; Subtitle-Hub-Primary-Language: <primary>
 ; Subtitle-Hub-Secondary-Language: <secondary>
 ; Subtitle-Hub-Timing-Note: <optional project-specific provenance>
-; Subtitle-Hub-Source-Credit: <optional required attribution>
+; Subtitle-Hub-Source-Credit: <complete original production credits; omit only when absent>
 Title: bgm<subject-id> - <name_cn> - <episode-id>
 ScriptType: v4.00+
 WrapStyle: <preserved value>
@@ -83,7 +83,9 @@ PlayResY: <preserved value>
 YCbCr Matrix: <preserved value>
 ```
 
-两个可选注释只在现有成品确有需要长期保留的定时依据或来源署名时出现；不得写入本地绝对路径、下载位置或可清理临时报告。单部电影的 `episode-id` 使用 `MOVIE`。
+`Subtitle-Hub-Timing-Note` 只在确有需要长期保留的定时依据时出现。原稿存在可明确识别的制作署名时，`Subtitle-Hub-Source-Credit` 必须出现；原稿确无署名时才省略。两者均不得写入本地绝对路径、下载位置或可清理临时报告。单部电影的 `episode-id` 使用 `MOVIE`。
+
+正式 ASS 必须完整保留原稿中可明确识别的字幕制作署名：不仅包括字幕组名称，也包括翻译、听译、校对、时间轴、特效、压制、片源等人员与分工；不得擅自缩减、概括或只留下组名。全部署名只能合并写入 `[Script Info]` 中唯一一条 `Subtitle-Hub-Source-Credit`，不得再以 `Comment:`、`Source-Metadata`、零时长事件或其他形式写入 `[Events]`。无法从原稿明确识别署名时省略该字段，不得从文件名或来源目录推定。字幕组网站、交流学习/非商业免责声明、免责文字，以及中文底稿、原语文件和时间轴参考等工程溯源说明不属于成品署名：前者删除，后者由 `project.yaml` 与项目文档记录，不进入正式 ASS。`[Events]` 中的 `Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text` 是 ASS 必需结构，必须保留。
 
 标准化时必须保留现有 `ScriptType`、`WrapStyle`、`ScaledBorderAndShadow`、`PlayResX`、`PlayResY` 和 `YCbCr Matrix` 的有效值，只调整字段顺序。默认值或空白工程字段 `Original Script`、`Original Translation`、`Original Timing`、`Original Editing`、`Script Updated By`、`Update Details`、`Timer: 100.0000` 和空 `Synch Point` 不进入正式成品；Aegisub 自动生成说明、网址及整个 `[Aegisub Project Garbage]` 区段必须删除，避免发布本地音视频路径和编辑器状态。
 
@@ -95,7 +97,7 @@ YCbCr Matrix: <preserved value>
 - 全部事件文本中的 `\r<StyleName>` 样式重置；
 - 空 Style 事件对 `Default` 样式的隐式依赖。
 
-只有在上述引用集合中均未出现的样式才能删除。删除后必须重新验证每个事件和 `\r` 重置均能解析到保留样式，并证明 `[Events]` 字节未改变。不得自动合并参数相同的样式，不得重命名样式，不得修改保留样式的字体、颜色、字号、边距、对齐、描边或阴影；这些操作属于独立视觉修改，必须另立审核轮次并完成渲染复核。
+只有在上述引用集合中均未出现的样式才能删除。删除后必须重新验证每个事件和 `\r` 重置均能解析到保留样式。除批准的内联字体映射和已明确识别的 `Source-Metadata` 清理外，必须证明 `[Events]` 字节未改变；清理器不得凭文本内容删除普通注释事件。不得自动合并参数相同的样式，不得重命名样式，不得修改保留样式的字体、颜色、字号、边距、对齐、描边或阴影；这些操作属于独立视觉修改，必须另立审核轮次并完成渲染复核。
 
 ## 5. 项目元数据
 

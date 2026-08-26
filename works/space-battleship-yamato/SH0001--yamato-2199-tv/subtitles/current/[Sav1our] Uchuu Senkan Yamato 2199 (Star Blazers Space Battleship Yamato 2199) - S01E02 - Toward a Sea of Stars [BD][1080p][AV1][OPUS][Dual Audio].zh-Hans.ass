@@ -1,8 +1,9 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Version: 2.0.1
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
+; Subtitle-Hub-Source-Credit: 诸神字幕组；日听 千年幻想 翻译 泠蓝；日校 散仙 中校 臭屁匠；时间 臭屁匠 压制 娜夏；片源 jsum
 Title: bgm54552 - 宇宙战舰大和号2199 - S01E02
 ScriptType: v4.00+
 WrapStyle: 0
@@ -22,12 +23,6 @@ Style: Title,Noto Sans CJK SC,65,&H00FFFFFF,&H000000FF,&HFF000000,&HFF000000,-1,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 诸神字幕组
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日听 千年幻想 翻译 泠蓝
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 本字幕仅供学习交流，不得用于商业用途，若发生违法等行为，诸神恕不承担一切责任,欢迎访问kamigami.org
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日校 散仙 中校 臭屁匠
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 时间 臭屁匠 压制 娜夏
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 片源 jsum
 Dialogue: 10,0:00:08.63,0:00:11.68,CN-Main,,0,0,0,,这么古老的战舰为什么会被敌人？
 Dialogue: 11,0:00:08.63,0:00:11.68,JP-Main,,0,0,0,,こんな大昔の戦艦を なぜ 敵が？
 Dialogue: 10,0:00:16.40,0:00:16.81,CN-Main,,0,0,0,,敌人！
