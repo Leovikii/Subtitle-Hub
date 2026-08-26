@@ -5,11 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "works/**/subtitles/current/**"
-      - "works/**/subtitles/previous/**"
-      - "works/**/project.yaml"
-      - ".github/scripts/build_subtitle_packages.py"
-      - ".github/workflows/package-subtitles.yml"
+      - "works/**/subtitles/current/VERSION"
   workflow_dispatch:
 
 permissions:
@@ -25,25 +21,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Confirm run targets current main
+        id: freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          remote_sha="$(git ls-remote --exit-code origin refs/heads/main | awk '{print $1}')"
+          if [ "$GITHUB_SHA" != "$remote_sha" ]; then
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping stale run for $GITHUB_SHA; current main is $remote_sha."
+            exit 0
+          fi
+          echo "current=true" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        if: steps.freshness.outputs.current == 'true'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
 
       - name: Build deterministic packages
+        if: steps.freshness.outputs.current == 'true'
         run: python .github/scripts/build_subtitle_packages.py
 
       - name: Commit updated packages
+        if: steps.freshness.outputs.current == 'true'
         shell: bash
         run: |
+          set -euo pipefail
           if [ -z "$(git status --porcelain -- packages/)" ]; then
             echo "Packages are already current."
+            exit 0
+          fi
+          remote_sha="$(git ls-remote --exit-code origin refs/heads/main | awk '{print $1}')"
+          if [ "$GITHUB_SHA" != "$remote_sha" ]; then
+            echo "::notice::Discarding packages from stale run $GITHUB_SHA; current main is $remote_sha."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- packages/
           git commit -m "Build current subtitle packages"
-          git push
+          git push origin HEAD:main

@@ -131,6 +131,6 @@ packages/bgm<subject-id> - <name_cn> [v<version>].zip
 
 正式 ASS 统一引用 [字体规范](timing-and-layout.md#9-字体与字形) 中的 Noto Sans CJK SC/JP 静态字体。字体不嵌入 ASS，也不重复放入每个字幕 ZIP；发布说明必须让用户能够识别这一外部字体依赖。任何项目字体例外必须先登记在项目 `docs/project-guide.md`，否则打包门禁应拒绝非标准字体。
 
-`.github/scripts/build_subtitle_packages.py` 必须使用确定性排序、固定时间戳和稳定压缩参数，使相同输入产生相同 ZIP。GitHub Actions 在 `main` 的 `current/` 或 `previous/` 变化后运行门禁，并只在当前分发包确有变化时提交 `packages/`；包目录本身不触发工作流，避免提交循环。
+`.github/scripts/build_subtitle_packages.py` 必须使用确定性排序、固定时间戳和稳定压缩参数，使相同输入产生相同 ZIP。GitHub Actions 只在 `main` 中 `subtitles/current/VERSION` 发生变动时自动运行；字幕、元数据、脚本或 workflow 本身的普通变动不得自动打包，发布者必须以版本号变动明确启动一次正式构建，也可以按需手动触发。工作流在构建前和推送前必须分别确认触发提交仍是远端 `main` 的最新提交；迟到、排队或已被后续提交取代的运行必须正常退出，不得回写旧版本产物。只有当前分发包确有变化时才提交 `packages/`，包目录本身不触发工作流，避免提交循环。
 
 打包前必须同时检查回滚链：当前版本不是首次 `1.0.0` 时，`previous/` 必须存在；`previous/VERSION` 必须与其中全部 ASS 标记一致，并且不得等于当前版本。此检查失败时不得生成或更新下载包。
