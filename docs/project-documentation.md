@@ -50,7 +50,7 @@ docs/
 
 ## 4. project-guide.md：唯一项目规范
 
-只有 `project-guide.md` 可以补充或覆盖全局规范。必须使用固定章节：
+只有 `project-guide.md` 可以补充或覆盖全局规范或系列规范。必须使用固定章节：
 
 1. 范围与语言；
 2. 来源权威分工；
@@ -73,6 +73,8 @@ rule_id type global_ref scope rule rationale
 - `rationale` 说明作品或片源为何需要该规则。
 
 项目规范不得保存当前进度、阶段结论、逐条问题、版本更新记录或大段历史过程。
+
+系列共有的人名、地名、组织、舰船和技术术语不得复制进各项目规范，必须集中到系列目录 `series-guide.md`。项目只记录确有作品差异的覆盖项，并引用系列条目的 `term_id`。
 
 ## 5. progress.yaml：当前进度唯一事实源
 

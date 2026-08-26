@@ -1,6 +1,6 @@
 # <WORK_ID> AI agent 控制面
 
-本目录遵循仓库根目录 `docs/README.md` 中的全局规范。规则优先级为：用户当次要求、项目 `project-guide.md`、仓库全局规范、外部参考。
+本目录遵循仓库根目录 `docs/README.md` 中的全局规范，并在所属系列存在 `series-guide.md` 时读取它。规则优先级为：用户当次要求、项目 `project-guide.md` 中已经确认的明确覆盖项、系列用语规范、仓库全局规范、外部参考。
 
 ## 必读基准
 

@@ -1,1 +1,2 @@
 issue_id	date	episode	start	end	category	severity	description	evidence	proposed_action	status	owner	resolution
+SH0001-TERM-0001	2026-08-26	ALL			terminology	P2	1.0.0 基线同时使用“波动防御壁”和“波动护盾”	works/space-battleship-yamato/series-guide.md#规范术语；当前成品检索结果	后续正文优化时逐事件核对原词“波動防壁”，统一到系列规范并记录逐事件修改	candidate	unassigned	pending

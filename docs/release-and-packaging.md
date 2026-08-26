@@ -78,10 +78,10 @@ subtitles/
 仓库根目录 `packages/` 只保存自动生成的当前分发包：
 
 ```text
-packages/<project-folder-name>.zip
+packages/<imdb-id>--<IMDb-title>.zip
 ```
 
-包名和路径稳定，不含版本号；版本从包内 `VERSION` 读取。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告或历史档案。
+包名直接取自 `project.yaml` 中已经核验的 IMDb ID 和 IMDb 条目名称，具体消歧与最小文件系统字符处理见 [作品身份规范](project-identity.md)。包名不含内部 ID 或版本号；版本从包内 `VERSION` 读取。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告或历史档案。
 
 `.github/scripts/build_subtitle_packages.py` 必须使用确定性排序、固定时间戳和稳定压缩参数，使相同输入产生相同 ZIP。GitHub Actions 在 `main` 的 `current/` 或 `previous/` 变化后运行门禁，并只在当前分发包确有变化时提交 `packages/`；包目录本身不触发工作流，避免提交循环。
 

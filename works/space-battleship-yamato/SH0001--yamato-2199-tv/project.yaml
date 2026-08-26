@@ -9,12 +9,29 @@ status: active
 titles:
   zh-Hans: 宇宙战舰大和号2199
   ja: 宇宙戦艦ヤマト2199
-  en: "Star Blazers: Space Battleship Yamato 2199"
+  en: Space Battleship Yamato 2199
 
 external_ids:
-  douban: "10549231"
-  imdb: null
-  bangumi: null
+  imdb:
+    id: tt2496120
+    title: Space Battleship Yamato 2199
+    url: https://www.imdb.com/title/tt2496120/
+    verification: agent-verified
+    verified_at: 2026-08-26
+  bangumi:
+    id: "54552"
+    title: 宇宙戦艦ヤマト2199
+    title_zh-Hans: 宇宙战舰大和号2199
+    url: https://bgm.tv/subject/54552
+    verification: agent-verified
+    verified_at: 2026-08-26
+  douban:
+    id: "10549231"
+    title: null
+    url: https://movie.douban.com/subject/10549231/
+    verification: user-confirmed
+    verified_at: 2026-08-26
+    optional: true
 
 languages:
   release:
@@ -109,7 +126,7 @@ release:
     human: candidate-only
     basis: imported-1.0.0-record
   package:
-    repository_path: packages/SH0001--yamato-2199-tv.zip
+    naming: "<imdb-id>--<IMDb-title>.zip"
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:

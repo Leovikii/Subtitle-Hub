@@ -4,14 +4,17 @@
 
 1. `docs/README.md`；
 2. `docs/workflow.md`；
-3. 当前作品的 `project.yaml`；
-4. 当前作品的 `docs/README.md` 和 `docs/project-guide.md`；
-5. 当前作品的 `docs/progress.yaml`、`docs/issues.tsv` 和 `docs/change-log.tsv`；
-6. 若本轮正在等待人工反馈，只读取 `project/workspace/temp/review/` 中与当前 `active_round` 对应的审核报告。
+3. 当前系列目录的 `series-guide.md`（若存在）；
+4. 当前作品的 `project.yaml`；
+5. 当前作品的 `docs/README.md` 和 `docs/project-guide.md`；
+6. 当前作品的 `docs/progress.yaml`、`docs/issues.tsv` 和 `docs/change-log.tsv`；
+7. 若本轮正在等待人工反馈，只读取 `project/workspace/temp/review/` 中与当前 `active_round` 对应的审核报告。
 
-规则优先级从高到低为：用户当次明确要求、项目补充规范、仓库全局规范、外部行业参考。低优先级规则不得覆盖高优先级规则；发生冲突时必须记录依据和处理结果。
+规则优先级从高到低为：用户当次明确要求、项目明确覆盖项、系列用语规范、仓库全局规范、外部行业参考。低优先级规则不得覆盖高优先级规则；发生冲突时必须记录依据和处理结果。
 
-项目内只有 `docs/project-guide.md` 可以补充或覆盖全局规则。`progress.yaml` 和台账记录控制面事实；开发者审核报告只是临时反馈文件，不构成规范。当前状态只以 `docs/progress.yaml` 为准，确认后的人工反馈必须回写控制面。
+项目内只有 `docs/project-guide.md` 可以补充或覆盖系列或全局规则，并且偏离系列译名时必须记录用户确认。`progress.yaml` 和台账记录控制面事实；开发者审核报告只是临时反馈文件，不构成规范。当前状态只以 `docs/progress.yaml` 为准，确认后的人工反馈必须回写控制面。
+
+建立新作品前必须按 `docs/project-identity.md` 主动检索并核对 IMDb 和 Bangumi；豆瓣不主动搜索，只在用户提供时作为可选 ID 记录。IMDb ID 与 IMDb 条目名称共同决定成品包名。若任一候选可能指向不同季度、电影版、总集篇或同名作品，必须暂停建项，请用户确认 ID、IMDb 名称和项目中文标题后才能继续。
 
 ## 不可违反的工作边界
 

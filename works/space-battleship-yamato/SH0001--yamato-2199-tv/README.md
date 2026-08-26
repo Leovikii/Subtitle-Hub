@@ -5,11 +5,11 @@
 ## 项目标识
 
 - 内部 ID：`SH0001`
-- 豆瓣 ID：`10549231`
-- IMDb ID：待补充
-- Bangumi ID：待补充
+- IMDb：`tt2496120`，`Space Battleship Yamato 2199`
+- Bangumi：`54552`
+- 豆瓣：`10549231`（用户提供的可选映射，不作为主动检索门禁）
 
-外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md) 和本项目 [AI agent 控制面](docs/README.md)。
+外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md)、上级 [系列用语规范](../series-guide.md) 和本项目 [AI agent 控制面](docs/README.md)。
 
 ## 目录
 
@@ -23,6 +23,8 @@
 - 仓库根目录 `packages`：GitHub Actions 自动生成的当前字幕 ZIP。
 
 当前推荐成品固定在 [subtitles/current](subtitles/current)，版本读取 [subtitles/current/VERSION](subtitles/current/VERSION)。发布范围、来源、机器检查与人工检查覆盖均集中在 [project.yaml](project.yaml)；旧质量报告和被合并的旧发布元数据已经压缩到项目历史文档档案，不属于当前 AI agent 控制面。
+
+当前下载包：[tt2496120--Space Battleship Yamato 2199.zip](<../../../packages/tt2496120--Space Battleship Yamato 2199.zip>)。
 
 ## 片源说明
 

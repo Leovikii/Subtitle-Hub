@@ -21,6 +21,8 @@ SEMVER = re.compile(
 )
 LANGUAGE_SUFFIX = re.compile(r".+\.zh-Hans\.(?:ja|en)\.ass\Z")
 FIXED_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
+IMDB_ID = re.compile(r"tt\d+\Z")
+INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*]+')
 
 
 class PackageError(RuntimeError):
@@ -41,6 +43,41 @@ def zip_info(name: str) -> zipfile.ZipInfo:
 
 def add_bytes(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
     archive.writestr(zip_info(name), data, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+
+
+def yaml_scalar(block: str, field: str) -> str:
+    match = re.search(rf"^    {re.escape(field)}:\s*(.+?)\s*$", block, re.MULTILINE)
+    if not match:
+        raise PackageError(f"project.yaml: missing external_ids.imdb.{field}")
+    value = match.group(1)
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+        value = value[1:-1]
+    return value
+
+
+def package_name(project_root: Path) -> str:
+    metadata_path = project_root / "project.yaml"
+    metadata = metadata_path.read_text(encoding="utf-8")
+    match = re.search(
+        r"^  imdb:\s*\n(?P<body>(?:^    .*(?:\n|\Z))+)", metadata, re.MULTILINE
+    )
+    if not match:
+        raise PackageError(f"{metadata_path}: missing external_ids.imdb block")
+    block = match.group("body")
+    imdb_id = yaml_scalar(block, "id")
+    imdb_title = yaml_scalar(block, "title")
+    verification = yaml_scalar(block, "verification")
+    if not IMDB_ID.fullmatch(imdb_id):
+        raise PackageError(f"{metadata_path}: invalid IMDb title ID {imdb_id!r}")
+    if verification not in {"agent-verified", "user-confirmed"}:
+        raise PackageError(
+            f"{metadata_path}: IMDb identity must be agent-verified or user-confirmed"
+        )
+    safe_title = INVALID_FILENAME_CHARS.sub("-", imdb_title)
+    safe_title = " ".join(safe_title.split()).rstrip(" .")
+    if not safe_title:
+        raise PackageError(f"{metadata_path}: IMDb title is empty after filename normalization")
+    return f"{imdb_id}--{safe_title}.zip"
 
 
 def validate_release_dir(release_dir: Path) -> tuple[str, list[Path]]:
@@ -67,7 +104,9 @@ def validate_release_dir(release_dir: Path) -> tuple[str, list[Path]]:
                 f"{subtitle}: expected exactly one version marker {expected_marker.decode()}"
             )
     unexpected = sorted(
-        path.name for path in release_dir.iterdir() if path.is_file() and path.name != "VERSION" and path.suffix != ".ass"
+        path.name
+        for path in release_dir.iterdir()
+        if path.is_file() and path.name != "VERSION" and path.suffix != ".ass"
     )
     if unexpected:
         raise PackageError(f"{release_dir}: unexpected file(s): {', '.join(unexpected)}")
@@ -93,8 +132,8 @@ def validate_project(version_file: Path) -> tuple[Path, str, list[Path]]:
 
 def build_package(version_file: Path) -> Path:
     project_root, version, subtitles = validate_project(version_file)
-    package_root = project_root.name
-    output = PACKAGES_ROOT / f"{project_root.name}.zip"
+    output = PACKAGES_ROOT / package_name(project_root)
+    package_root = output.stem
 
     checksum_lines: list[str] = []
     subtitle_data: list[tuple[str, bytes]] = []
@@ -134,11 +173,21 @@ def main() -> int:
     version_files = sorted(WORKS_ROOT.glob("**/subtitles/current/VERSION"))
     if not version_files:
         raise PackageError("no works/**/subtitles/current/VERSION files found")
+    planned: dict[Path, Path] = {}
+    for version_file in version_files:
+        project_root = version_file.parent.parent.parent
+        output = (PACKAGES_ROOT / package_name(project_root)).resolve()
+        if output in planned:
+            raise PackageError(
+                f"duplicate package identity: {project_root} and {planned[output]}"
+            )
+        planned[output] = project_root
     expected = {build_package(path).resolve() for path in version_files}
     stale = sorted(path for path in PACKAGES_ROOT.glob("*.zip") if path.resolve() not in expected)
-    if stale:
-        names = ", ".join(str(path.relative_to(REPOSITORY_ROOT)) for path in stale)
-        raise PackageError(f"unexpected stale package(s): {names}")
+    for path in stale:
+        path.resolve().relative_to(PACKAGES_ROOT.resolve())
+        path.unlink()
+        print(f"removed stale {path.relative_to(REPOSITORY_ROOT)}")
     return 0
 
 
