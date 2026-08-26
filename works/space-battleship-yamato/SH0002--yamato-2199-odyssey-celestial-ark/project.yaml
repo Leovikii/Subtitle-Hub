@@ -1,0 +1,105 @@
+schema_version: 2
+
+id: SH0002
+slug: yamato-2199-odyssey-celestial-ark
+type: movie
+episode_count: 1
+status: active
+
+titles:
+  zh-Hans: 宇宙战舰大和号2199 星巡的方舟
+  ja: 宇宙戦艦ヤマト2199 星巡る方舟
+  en: "Space Battleship Yamato 2199: Odyssey of the Celestial Ark"
+
+external_ids:
+  imdb:
+    id: tt3222236
+    title: "Space Battleship Yamato 2199: Odyssey of the Celestial Ark"
+    url: https://www.imdb.com/title/tt3222236/
+    verification: agent-verified
+    verified_at: 2026-08-26
+  bangumi:
+    id: "84701"
+    title: 宇宙戦艦ヤマト2199 星巡る方舟
+    title_zh-Hans: 宇宙战舰大和号2199 星巡的方舟
+    url: https://bgm.tv/subject/84701
+    verification: agent-verified
+    verified_at: 2026-08-26
+  douban: null
+
+languages:
+  release:
+    primary: zh-Hans
+    secondary: ja
+    filename_suffix: zh-Hans.ja
+  references:
+    - en
+
+subtitle_sources:
+  - id: ja-primary-text
+    language: ja
+    kind: subtitle-text-reference
+    path: project/sources/subtitles/ja/primary-text
+    file_count: 1
+    role: primary-japanese
+  - id: ja-bdsup-ocr
+    language: ja
+    kind: bdsup-and-ocr-reference
+    path: project/sources/subtitles/ja/bdsup-ocr
+    file_count: 2
+    role: japanese-verification
+  - id: en-sav1our-embedded
+    language: en
+    kind: embedded-ass
+    path: project/sources/subtitles/en/sav1our-embedded
+    file_count: 1
+    role: timing-and-disambiguation-reference
+
+video_sources:
+  local-movie-file:
+    release_group: unknown
+    medium: local-video
+    timing_reference: true
+    files:
+      MOVIE: "宇宙战舰大和号2199 星巡的方舟.mkv"
+
+workspace:
+  baseline: subtitles/current
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ja.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: historical-full
+    human: candidate-only
+    basis: imported-1.0.0-record
+  package:
+    naming: "<imdb-id>--<IMDb-title>.zip"
+    generated_by: .github/scripts/build_subtitle_packages.py
+
+documentation:
+  entry: docs/README.md
+  guide: docs/project-guide.md
+  progress: docs/progress.yaml
+  change_log: docs/change-log.tsv
+  issues: docs/issues.tsv
+
+developer_review:
+  workspace: project/workspace/temp/review
+  persistent: false
+
+archives:
+  history:
+    path: project/archive/SH0002-history-20260826.zip
+    manifest: MANIFEST.tsv
+    sha256: 8b95c270e7dd086b25d21b0d48c4c0a70b8ed31b2d3f8f1aa0968b41315866db

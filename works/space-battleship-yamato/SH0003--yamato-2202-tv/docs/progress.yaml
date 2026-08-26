@@ -1,0 +1,49 @@
+schema_version: 2
+work_id: SH0003
+updated_at: 2026-08-26
+baseline_release: 1.0.0
+target_release: null
+overall_status: baseline-released
+
+active_round:
+  id: next-optimization
+  scope: S02E01-S02E26
+  status: not-started
+
+stages:
+  source_inventory: verified
+  baseline_setup: verified
+  translation_review: not-started
+  timing_review: not-started
+  typography_review: not-started
+  visual_review: not-started
+  release_qc: not-started
+
+episodes:
+  S02E01: { status: not-started }
+  S02E02: { status: not-started }
+  S02E03: { status: not-started }
+  S02E04: { status: not-started }
+  S02E05: { status: not-started }
+  S02E06: { status: not-started }
+  S02E07: { status: not-started }
+  S02E08: { status: not-started }
+  S02E09: { status: not-started }
+  S02E10: { status: not-started }
+  S02E11: { status: not-started }
+  S02E12: { status: not-started }
+  S02E13: { status: not-started }
+  S02E14: { status: not-started }
+  S02E15: { status: not-started }
+  S02E16: { status: not-started }
+  S02E17: { status: not-started }
+  S02E18: { status: not-started }
+  S02E19: { status: not-started }
+  S02E20: { status: not-started }
+  S02E21: { status: not-started }
+  S02E22: { status: not-started }
+  S02E23: { status: not-started }
+  S02E24: { status: not-started }
+  S02E25: { status: not-started }
+  S02E26: { status: not-started }
+

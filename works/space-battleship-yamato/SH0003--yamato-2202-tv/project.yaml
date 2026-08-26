@@ -1,0 +1,133 @@
+schema_version: 2
+
+id: SH0003
+slug: yamato-2202-tv
+type: tv
+episode_count: 26
+status: active
+
+titles:
+  zh-Hans: 宇宙战舰大和号2202 爱的战士们
+  ja: 宇宙戦艦ヤマト2202 愛の戦士たち
+  en: Star Blazers 2202
+
+external_ids:
+  imdb:
+    id: tt5592004
+    title: Star Blazers 2202
+    url: https://www.imdb.com/title/tt5592004/
+    verification: agent-verified
+    verified_at: 2026-08-26
+  bangumi:
+    id: "246898"
+    title: 宇宙戦艦ヤマト2202 愛の戦士たち
+    title_zh-Hans: 宇宙战舰大和号2202 爱的战士们
+    url: https://bgm.tv/subject/246898
+    verification: agent-verified
+    verified_at: 2026-08-26
+  douban: null
+
+languages:
+  release:
+    primary: zh-Hans
+    secondary: ja
+    filename_suffix: zh-Hans.ja
+  references:
+    - en
+
+subtitle_sources:
+  - id: ja-official-webrip
+    language: ja
+    kind: closed-captions
+    path: project/sources/subtitles/ja/official-webrip
+    file_count: 26
+    role: primary-japanese
+  - id: en-sav1or-embedded
+    language: en
+    kind: embedded-ass
+    path: project/sources/subtitles/en/sav1or-embedded
+    file_count: 26
+    role: timing-and-disambiguation-reference
+  - id: zh-Hans-fansub-baseline
+    language: zh-Hans
+    kind: fansub-ass
+    path: project/sources/subtitles/zh-Hans/fansub-baseline
+    file_count: 26
+    role: chinese-draft-and-style-reference
+
+video_sources:
+  sav1or-bd-1080p-av1:
+    release_group: Sav1or
+    medium: Blu-ray
+    resolution: 1080p
+    video_codec: AV1
+    audio: OPUS Dual Audio
+    timing_reference: true
+    files:
+      S02E01: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E01 - AD 2202 - Revive, Space Battleship Yamato [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E02: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E02 - Tension - Reach the Embassy on the Moon [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E03: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E03 - Shock - Legacy of the Cosmo Reverse [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E04: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E04 - Departure to the Unknown! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E05: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E05 - Clash! Yamato vs. Andromeda [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E06: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E06 - Battle to the Death - The 11th Planet Rescue Operation [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E07: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E07 - The Beam of Light Flashes! Radiance of the Wave Motion Gun [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E08: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E08 - The Trap at Planet Stravase! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E09: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E09 - Zworder, the Devil's Alternative [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E10: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E10 - Bewitching - The Space Fireflies Beckon a Crisis [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E11: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E11 - Desler's Challenge! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E12: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E12 - The Shocking White Comet Empire - The Yamato Rams Through! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E13: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E13 - The Terezart Landing Operation - Crush the Enemy Missile Fleet! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E14: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E14 - Zurvival's Fierce Assault - Find Teresa [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E15: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E15 - O Teresa, Cry for Desler! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E16: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E16 - Farewell, Teresa! Flowers for Two Deslers [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E17: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E17 - Battle off the Coast of Saturn - Gather the Wave Motion Gun Fleet! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E18: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E18 - Yamato in Crisis - The Devil's Alternative Once More [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E19: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E19 - Heir to the Yamato, Her Name is Ginga [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E20: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E20 - Gatlantis, the Cursed Children [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E21: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E21 - Escape from the Nightmare! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E22: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E22 - The Fated Showdown! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E23: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E23 - Warriors of Love [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E24: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E24 - Yamato, Attack the Comet Empire! [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E25: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E25 - Farewell, Space Battleship Yamato [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+      S02E26: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E26 - Earth, Yamato Is… [BD][1080p][AV1][OPUS][Dual Audio].mkv"
+
+workspace:
+  baseline: subtitles/current
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ja.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: historical-full
+    human: candidate-only
+    basis: imported-1.0.0-record
+  package:
+    naming: "<imdb-id>--<IMDb-title>.zip"
+    generated_by: .github/scripts/build_subtitle_packages.py
+
+documentation:
+  entry: docs/README.md
+  guide: docs/project-guide.md
+  progress: docs/progress.yaml
+  change_log: docs/change-log.tsv
+  issues: docs/issues.tsv
+
+developer_review:
+  workspace: project/workspace/temp/review
+  persistent: false
+
+archives:
+  history:
+    path: project/archive/SH0003-history-20260826.zip
+    manifest: MANIFEST.tsv
+    sha256: a03591098326882c30c364ac7c09ed61788fd0ed9cfae9281bab6c12f14a97f9

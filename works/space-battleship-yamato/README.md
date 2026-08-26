@@ -7,3 +7,5 @@
 ## 已收录作品
 
 - [SH0001：宇宙战舰大和号2199 TV](SH0001--yamato-2199-tv/README.md)
+- [SH0002：宇宙战舰大和号2199 星巡的方舟](SH0002--yamato-2199-odyssey-celestial-ark/README.md)
+- [SH0003：宇宙战舰大和号2202 爱的战士们 TV](SH0003--yamato-2202-tv/README.md)

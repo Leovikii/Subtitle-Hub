@@ -10,6 +10,11 @@
 | `YAMATO-SRC-BANGUMI-54552` | 条目数据库 | 宇宙戦艦ヤマト2199 | https://bgm.tv/subject/54552 | 2026-08-26 | 核对作品中文名、原名、TV 类型和 26 集范围。 |
 | `YAMATO-SRC-SH0001-JA` | 原语字幕 | SH0001 日语 WEBrip CC | SH0001--yamato-2199-tv/project/sources/subtitles/ja/official-webrip-cc | 2026-08-26 | 核对 2199 中实际出现的日文专名；具体语境仍需结合音轨。 |
 | `YAMATO-SRC-SH0001-GUIDE` | 仓库基线 | SH0001 项目补充规范 | SH0001--yamato-2199-tv/docs/project-guide.md | 2026-08-26 | 继承已经明确采用且与原词对应的系列译名；不表示 1.0.0 每个事件均已完成术语审计。 |
+| `YAMATO-SRC-BANGUMI-84701` | 条目数据库 | 宇宙戦艦ヤマト2199 星巡る方舟 | https://bgm.tv/subject/84701 | 2026-08-26 | 核对《星巡的方舟》中文名、剧场版类型和单片范围。 |
+| `YAMATO-SRC-BANGUMI-246898` | 条目数据库 | 宇宙戦艦ヤマト2202 愛の戦士たち | https://bgm.tv/subject/246898 | 2026-08-26 | 核对 2202 TV 中文名、TV 类型和 26 集范围，排除七章剧场上映条目。 |
+| `YAMATO-SRC-SH0002-JA` | 原语字幕 | SH0002 日语正文与 BDSUP OCR | SH0002--yamato-2199-odyssey-celestial-ark/project/sources/subtitles/ja | 2026-08-26 | 核对电影实际出现的日文专名；OCR 只作交叉验证。 |
+| `YAMATO-SRC-SH0003-JA` | 原语字幕 | SH0003 日语官方 WEBrip CC | SH0003--yamato-2202-tv/project/sources/subtitles/ja/official-webrip | 2026-08-26 | 核对 2202 实际出现的日文专名；具体语境仍需结合音轨。 |
+| `YAMATO-SRC-SH0003-BASELINE` | 仓库基线 | SH0003 迁入成品 | SH0003--yamato-2202-tv/subtitles/current | 2026-08-26 | 继承旧工程已经逐项审查并统一的系列译名；迁入发现的冲突仍须在项目问题台账逐事件核对。 |
 
 ## 规范术语
 
@@ -30,7 +35,13 @@
 | `YAMATO-TERM-0013` | 人名 | `島大介` | 岛大介 | 岛大助 | 全系列同角色 | `YAMATO-SRC-WIKI-ZH-2199` | `confirmed` |  |
 | `YAMATO-TERM-0014` | 人名 | `森雪` | 森雪 | 森雪儿 | 全系列同角色 | `YAMATO-SRC-WIKI-ZH-2199` | `confirmed` |  |
 | `YAMATO-TERM-0015` | 人名 | `真田志郎` | 真田志郎 | 真田四郎 | 全系列同角色 | `YAMATO-SRC-WIKI-ZH-2199` | `confirmed` |  |
+| `YAMATO-TERM-0016` | 人名 | `デスラー` | 德斯拉 | 迪斯拉、戴斯拉 | 2199 重制系列 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | SH0002 1.0.0 尚有 3 处“迪斯拉”，已登记候选，不得无审查批改。 |
+| `YAMATO-TERM-0017` | 文明/国家 | `ガトランティス` | 加特兰蒂斯 | 加特兰提斯、加特兰迪斯 | 2199 重制系列 | `YAMATO-SRC-SH0003-JA` | `confirmed` | 人、军队和帝国等派生词保持同一词干。 |
+| `YAMATO-TERM-0018` | 人名 | `テレサ` | 特蕾莎 | 特雷莎 | 2202 及同角色 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | 与星球“特蕾莎特”区分。 |
+| `YAMATO-TERM-0019` | 人名 | `ズォーダー` | 佐达 | 兹沃达、佐尔达 | 2202 及同角色 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | 身份称谓可以写作“佐达大帝”。 |
+| `YAMATO-TERM-0020` | 星球 | `テレザート` | 特蕾莎特 | 特雷萨特、特雷莎特 | 2202 及同地点 | `YAMATO-SRC-SH0003-JA` | `confirmed` | 不简化为角色名“特蕾莎”。 |
+| `YAMATO-TERM-0021` | 角色/机器人 | `アナライザー` | 分析士 | 分析器 | 2199 重制系列 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | 作为角色名使用，不按普通名词直译。 |
 
 ## 待用户确认
 
-无。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。
+无。SH0002 与 SH0003 的既有成品冲突已分别登记在项目 `issues.tsv`，不构成系列规范待决项。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。

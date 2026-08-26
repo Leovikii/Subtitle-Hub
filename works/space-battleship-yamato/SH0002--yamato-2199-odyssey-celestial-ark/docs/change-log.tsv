@@ -1,0 +1,3 @@
+change_id	batch_id	date	episode	start	end	category	severity	before	after	source_ref	rationale	status	agent	reviewer
+SH0002-CHG-0001	SH0002-MIGRATION-20260826	2026-08-26	ALL			migration	info	legacy project layout	standard project layout with 1.0.0 version markers	docs/release-and-packaging.md	Migrate the approved subtitle bytes while adding only required release metadata and standardized filenames.	verified	Codex	
+
