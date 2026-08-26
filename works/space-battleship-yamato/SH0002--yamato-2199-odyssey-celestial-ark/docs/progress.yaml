@@ -3,21 +3,21 @@ work_id: SH0002
 updated_at: 2026-08-26
 baseline_release: 1.0.0
 target_release: 1.0.1
-overall_status: candidate-review
+overall_status: released
 
 active_round:
   id: v1.0.1-series-sync-review
   scope: MOVIE
-  status: candidate-review
+  status: verified
 
 stages:
   source_inventory: verified
   baseline_setup: verified
-  translation_review: candidate-review
-  timing_review: candidate-review
-  typography_review: not-started
-  visual_review: not-started
-  release_qc: not-started
+  translation_review: verified
+  timing_review: verified
+  typography_review: verified
+  visual_review: verified
+  release_qc: verified
 
 episodes:
-  MOVIE: { status: candidate-review }
+  MOVIE: { status: verified }

@@ -81,7 +81,7 @@ release:
   embedded_version_field: Subtitle-Hub-Version
   review_coverage:
     machine: historical-full
-    human: candidate-only
+    human: candidate-approved
     basis: imported-1.0.0-record
   package:
     naming: "<imdb-id>--<IMDb-title>.zip"

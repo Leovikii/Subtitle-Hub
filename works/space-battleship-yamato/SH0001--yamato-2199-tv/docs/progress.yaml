@@ -3,46 +3,46 @@ work_id: SH0001
 updated_at: 2026-08-26
 baseline_release: 1.0.0
 target_release: 1.0.1
-overall_status: candidate-review
+overall_status: released
 
 active_round:
   id: v1.0.1-series-sync-review
   scope: S01E01-S01E26
-  status: candidate-review
+  status: verified
 
 stages:
   source_inventory: verified
   baseline_setup: verified
-  translation_review: candidate-review
-  timing_review: candidate-review
-  typography_review: not-started
-  visual_review: not-started
-  release_qc: not-started
+  translation_review: verified
+  timing_review: verified
+  typography_review: verified
+  visual_review: verified
+  release_qc: verified
 
 episodes:
-  S01E01: { status: candidate-review }
-  S01E02: { status: candidate-review }
-  S01E03: { status: candidate-review }
-  S01E04: { status: candidate-review }
-  S01E05: { status: candidate-review }
-  S01E06: { status: candidate-review }
-  S01E07: { status: candidate-review }
-  S01E08: { status: candidate-review }
-  S01E09: { status: candidate-review }
-  S01E10: { status: candidate-review }
-  S01E11: { status: candidate-review }
-  S01E12: { status: candidate-review }
-  S01E13: { status: candidate-review }
-  S01E14: { status: candidate-review }
-  S01E15: { status: candidate-review }
-  S01E16: { status: candidate-review }
-  S01E17: { status: candidate-review }
-  S01E18: { status: candidate-review }
-  S01E19: { status: candidate-review }
-  S01E20: { status: candidate-review }
-  S01E21: { status: candidate-review }
-  S01E22: { status: candidate-review }
-  S01E23: { status: candidate-review }
-  S01E24: { status: candidate-review }
-  S01E25: { status: candidate-review }
-  S01E26: { status: candidate-review }
+  S01E01: { status: verified }
+  S01E02: { status: verified }
+  S01E03: { status: verified }
+  S01E04: { status: verified }
+  S01E05: { status: verified }
+  S01E06: { status: verified }
+  S01E07: { status: verified }
+  S01E08: { status: verified }
+  S01E09: { status: verified }
+  S01E10: { status: verified }
+  S01E11: { status: verified }
+  S01E12: { status: verified }
+  S01E13: { status: verified }
+  S01E14: { status: verified }
+  S01E15: { status: verified }
+  S01E16: { status: verified }
+  S01E17: { status: verified }
+  S01E18: { status: verified }
+  S01E19: { status: verified }
+  S01E20: { status: verified }
+  S01E21: { status: verified }
+  S01E22: { status: verified }
+  S01E23: { status: verified }
+  S01E24: { status: verified }
+  S01E25: { status: verified }
+  S01E26: { status: verified }
