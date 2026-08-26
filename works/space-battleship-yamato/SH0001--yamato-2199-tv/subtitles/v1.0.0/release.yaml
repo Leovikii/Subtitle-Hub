@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 work_id: SH0001
 version: v1.0.0
 status: released
@@ -19,7 +19,8 @@ quality_checks:
   structure: passed
   paired_timing: passed
   typography: passed
-  manual_review: passed
 
-documentation:
-  quality_report: ../../docs/reports/v1.0.0-quality-report.md
+review_coverage:
+  machine: historical-full
+  human: candidate-only
+  basis: imported-v1.0.0-record

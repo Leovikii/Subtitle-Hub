@@ -46,4 +46,4 @@ archives:
   historical_documents:
     path: project/archive/SH0001-historical-documents-20260826.zip
     manifest: project/archive/SH0001-historical-documents-20260826.manifest.tsv
-    sha256: b4c29dc2ba418d23c767fa43bc052506795dbc9d4d5fcd5d3d5e2b9c8fd2525f
+    sha256: 71f38248e993ff3f591e875370e519bbfb57172a380b32ad1eba3b9918150ba8

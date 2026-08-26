@@ -10,5 +10,3 @@
 - [issues.tsv](issues.tsv)：尚需处理或确认的问题。
 
 当前状态只以 `progress.yaml` 为准。开发者审核报告位于 `project/workspace/temp/review/`，属于本轮临时反馈文件，不能覆盖本目录基准；人工反馈确认后必须回写上述文件。
-
-`reports/v1.0.0-quality-report.md` 仅因不可变 `v1.0.0` 发布元数据仍引用原路径而保留，是历史兼容记录，不属于 AI agent 开工必读内容。

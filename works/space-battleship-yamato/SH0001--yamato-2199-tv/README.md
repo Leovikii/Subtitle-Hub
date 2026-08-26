@@ -21,7 +21,7 @@
 - `project/archive`：带清单和校验值的冻结历史工程压缩档案；
 - `subtitles`：正式发布且不可覆盖的最终字幕版本。
 
-当前推荐版本为 `subtitles/v1.0.0/`，发布元数据见 [release.yaml](subtitles/v1.0.0/release.yaml)。其引用的 [v1.0.0 质量报告](docs/reports/v1.0.0-quality-report.md) 是历史兼容记录，不属于当前 AI agent 控制面。
+当前推荐版本为 `subtitles/v1.0.0/`，发布范围、机器检查和人工检查覆盖记录见 [release.yaml](subtitles/v1.0.0/release.yaml)。旧质量报告已经压缩到项目历史文档档案，不属于当前 AI agent 控制面。
 
 ## 片源说明
 
