@@ -1,0 +1,28 @@
+# SH0001《宇宙战舰大和号2199》TV
+
+本项目收录 TV 正篇 26 集的简体中文主字幕、日语副字幕工程和最终 ASS 字幕，不包含 OVA 或剧场版。
+
+## 项目标识
+
+- 内部 ID：`SH0001`
+- 豆瓣 ID：`10549231`
+- IMDb ID：待补充
+- Bangumi ID：待补充
+
+外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md) 和本项目 [补充规范](docs/project-guide.md)。
+
+## 目录
+
+- `docs`：项目补充规范、进度、修改台账、问题、报告和历史归档说明；
+- `project/sources`：保持原貌的日语、英语和旧简日双语参考字幕，以及片源文件名清单；
+- `project/workspace/episodes`：从迁入成品建立的下一轮人工校订主稿；
+- `project/workspace/temp`：本项目的一次性工具、中间文件、未审候选和日志，可按轮次清理；
+- `project/workspace/build`：通过本轮检查的待发布构建，可重新生成且不纳入 Git；
+- `project/archive`：带清单和校验值的冻结历史工程压缩档案；
+- `subtitles`：正式发布且不可覆盖的最终字幕版本。
+
+当前推荐版本为 `subtitles/v1.0.0/`，发布元数据见 [release.yaml](subtitles/v1.0.0/release.yaml)，质量报告见 [v1.0.0-quality-report.md](docs/reports/v1.0.0-quality-report.md)。
+
+## 片源说明
+
+正式字幕文件名与对应的 `[Sav1our]` MKV 主文件名一致，仅扩展名由 `.mkv` 改为 `.ass`。仓库仅记录对应文件名，不提供视频文件、种子、磁力链接或下载地址。

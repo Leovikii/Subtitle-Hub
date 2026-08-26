@@ -1,0 +1,9 @@
+schema_version: 1
+
+works:
+  - id: SH0001
+    path: works/space-battleship-yamato/SH0001--yamato-2199-tv
+    title: 宇宙战舰大和号2199
+    type: tv
+    episode_count: 26
+    current_release: v1.0.0

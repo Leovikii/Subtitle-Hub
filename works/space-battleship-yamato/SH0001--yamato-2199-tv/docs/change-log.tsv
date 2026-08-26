@@ -1,0 +1,5 @@
+change_id	batch_id	date	episode	start	end	category	severity	before	after	source_ref	rationale	status	agent	reviewer
+SH0001-MIG-0001	SH0001-MIG-20260826	2026-08-26	ALL			documentation	P3	旧工程目录与阶段性备份	标准化工程、工作区与 v1.0.0 成品档案	docs/migration.md	建立可追溯仓库基线	verified	Codex	unassigned
+SH0001-DOC-0001	SH0001-DOC-20260826	2026-08-26	ALL			documentation	P3	项目文档分散在 workspace、reviews、pipeline、sources 和 release 子目录	项目人工可读文档集中到项目 docs	根目录 docs/project-documentation.md	降低 AI agent 读取遗漏并统一进度与台账入口	verified	Codex	unassigned
+SH0001-DOC-0002	SH0001-DOC-20260826-TIMING	2026-08-26	ALL			documentation	P3	内嵌时间轴优先，普通数值检测只生成候选	保留内嵌轨优先原则，并明确非法、非预期重叠、明显不可读或严重不同步时必须按全局纠错底线局部修正	根目录 docs/timing-and-layout.md#4-内嵌时间轴纠错底线	防止以内嵌来源为由保留严重时间轴问题，同时避免机械批量改轴	verified	Codex	unassigned
+SH0001-DOC-0003	SH0001-DOC-20260826-WORKSPACE	2026-08-26	ALL			documentation	P3	项目专用脚本、旧 pipeline、未审产物和历史审查资料缺少统一生命周期	建立 episodes、temp、build、archive 分层；39 个 legacy 文件经清单和哈希验证后压缩归档	根目录 docs/workspace-and-artifacts.md；docs/engineering-archive.md	允许各项目使用不同临时工具，同时集中清理范围并保留历史可追溯性	verified	Codex	unassigned

@@ -1,0 +1,17 @@
+schema_version: 1
+work_id: <WORK_ID>
+updated_at: <YYYY-MM-DD>
+baseline_release: null
+target_release: null
+overall_status: not-started
+
+stages:
+  source_inventory: not-started
+  baseline_setup: not-started
+  translation_review: not-started
+  timing_review: not-started
+  typography_review: not-started
+  visual_review: not-started
+  release_qc: not-started
+
+episodes: {}

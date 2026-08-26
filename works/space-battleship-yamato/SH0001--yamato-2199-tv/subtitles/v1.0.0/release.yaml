@@ -1,0 +1,25 @@
+schema_version: 1
+work_id: SH0001
+version: v1.0.0
+status: released
+imported_at: 2026-08-26
+
+languages:
+  - zh-Hans
+  - ja
+
+formats:
+  - ass
+
+episode_count: 26
+video_sources:
+  - sav1our-bd-1080p-av1
+
+quality_checks:
+  structure: passed
+  paired_timing: passed
+  typography: passed
+  manual_review: passed
+
+documentation:
+  quality_report: ../../docs/reports/v1.0.0-quality-report.md

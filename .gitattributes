@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve imported source subtitles and approved release artifacts byte-for-byte.
+works/**/project/sources/subtitles/** -text
+works/**/subtitles/**/ass/*.ass -text
+
+# Keep editable project files consistent across platforms.
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.py text eol=lf
+*.tsv text eol=lf

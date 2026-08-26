@@ -1,0 +1,34 @@
+schema_version: 1
+
+id: SH0001
+slug: yamato-2199-tv
+type: tv
+episode_count: 26
+status: active
+
+titles:
+  zh-Hans: 宇宙战舰大和号2199
+  ja: 宇宙戦艦ヤマト2199
+  en: "Star Blazers: Space Battleship Yamato 2199"
+
+external_ids:
+  douban: "10549231"
+  imdb: null
+  bangumi: null
+
+languages:
+  primary: zh-Hans
+  secondary:
+    - ja
+  references:
+    - en
+
+current_release: v1.0.0
+workspace_baseline: v1.0.0
+primary_video_source: sav1our-bd-1080p-av1
+
+documentation:
+  guide: docs/project-guide.md
+  progress: docs/progress.yaml
+  change_log: docs/change-log.tsv
+  issues: docs/issues.tsv

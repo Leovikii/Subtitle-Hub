@@ -1,0 +1,33 @@
+schema_version: 1
+work_id: SH0001
+
+sources:
+  - id: ja-official-webrip-cc
+    language: ja
+    kind: closed-captions
+    path: subtitles/ja/official-webrip-cc
+    file_count: 26
+    role: primary-japanese
+
+  - id: en-sav1our-embedded
+    language: en
+    kind: embedded-ass
+    path: subtitles/en/sav1our-embedded
+    file_count: 52
+    role: timing-and-sign-reference
+
+  - id: ja-kamigami-fallback
+    language: ja
+    kind: fansub-ass
+    path: subtitles/ja/kamigami-fallback
+    file_count: 26
+    role: fallback-japanese
+
+  - id: zh-Hans-ja-kamigami-bilingual-fallback
+    language:
+      - zh-Hans
+      - ja
+    kind: bilingual-fansub-ass
+    path: subtitles/zh-Hans/kamigami-bilingual-fallback
+    file_count: 26
+    role: chinese-draft-and-layout-reference

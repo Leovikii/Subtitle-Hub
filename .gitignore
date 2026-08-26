@@ -1,0 +1,25 @@
+# Local media and download artifacts
+*.mkv
+*.mp4
+*.m2ts
+*.torrent
+
+# Generated project workspace output
+**/project/workspace/build/**
+!**/project/workspace/build/.gitignore
+**/project/workspace/temp/**
+!**/project/workspace/temp/
+!**/project/workspace/temp/**/
+!**/project/workspace/temp/**/.gitignore
+
+# Machine-local path mappings and temporary files
+**/local.paths.yaml
+**/*.local.yaml
+*.tmp
+*.bak
+
+# Common caches
+__pycache__/
+node_modules/
+.DS_Store
+Thumbs.db

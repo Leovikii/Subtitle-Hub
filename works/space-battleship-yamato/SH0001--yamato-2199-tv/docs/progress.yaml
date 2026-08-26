@@ -1,0 +1,47 @@
+schema_version: 1
+work_id: SH0001
+updated_at: 2026-08-26
+baseline_release: v1.0.0
+target_release: null
+overall_status: baseline-released
+
+stages:
+  source_inventory: verified
+  repository_migration: verified
+  documentation_setup: verified
+  baseline_setup: verified
+  inherited_translation_review: baseline-released
+  inherited_timing_review: baseline-released
+  next_translation_review: not-started
+  next_timing_review: not-started
+  next_typography_review: not-started
+  next_visual_review: not-started
+  next_release_qc: not-started
+
+episodes:
+  S01E01: { baseline: v1.0.0, next_review: not-started }
+  S01E02: { baseline: v1.0.0, next_review: not-started }
+  S01E03: { baseline: v1.0.0, next_review: not-started }
+  S01E04: { baseline: v1.0.0, next_review: not-started }
+  S01E05: { baseline: v1.0.0, next_review: not-started }
+  S01E06: { baseline: v1.0.0, next_review: not-started }
+  S01E07: { baseline: v1.0.0, next_review: not-started }
+  S01E08: { baseline: v1.0.0, next_review: not-started }
+  S01E09: { baseline: v1.0.0, next_review: not-started }
+  S01E10: { baseline: v1.0.0, next_review: not-started }
+  S01E11: { baseline: v1.0.0, next_review: not-started }
+  S01E12: { baseline: v1.0.0, next_review: not-started }
+  S01E13: { baseline: v1.0.0, next_review: not-started }
+  S01E14: { baseline: v1.0.0, next_review: not-started }
+  S01E15: { baseline: v1.0.0, next_review: not-started }
+  S01E16: { baseline: v1.0.0, next_review: not-started }
+  S01E17: { baseline: v1.0.0, next_review: not-started }
+  S01E18: { baseline: v1.0.0, next_review: not-started }
+  S01E19: { baseline: v1.0.0, next_review: not-started }
+  S01E20: { baseline: v1.0.0, next_review: not-started }
+  S01E21: { baseline: v1.0.0, next_review: not-started }
+  S01E22: { baseline: v1.0.0, next_review: not-started }
+  S01E23: { baseline: v1.0.0, next_review: not-started }
+  S01E24: { baseline: v1.0.0, next_review: not-started }
+  S01E25: { baseline: v1.0.0, next_review: not-started }
+  S01E26: { baseline: v1.0.0, next_review: not-started }
