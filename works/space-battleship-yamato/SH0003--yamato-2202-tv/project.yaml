@@ -112,7 +112,7 @@ release:
     human: candidate-approved
     basis: imported-1.0.0-record
   package:
-    naming: "<imdb-id>--<IMDb-title>.zip"
+    naming: "<imdb-id> - <IMDb-title> [v<version>].zip"
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:

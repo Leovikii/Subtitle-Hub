@@ -92,5 +92,5 @@ AI agent 必须先读取全局规范、系列 `series-guide.md`（若存在）�
 3. 如已有当前成品，先删除更旧的 `subtitles/previous/`，再把完整的 `subtitles/current/` 直接重命名为新的 `previous/`；不得为轮换重新打包或逐文件复制；
 4. 以目标视频文件名加 BCP 47 语种后缀生成完整成品集，并在每个 ASS 写入目标版本标记；
 5. 把包含新 `VERSION` 的完整候选目录直接重命名为 `subtitles/current/`；任何失败都必须把刚轮换的 `previous/` 恢复为 `current/`；
-6. 运行仓库打包脚本，核对稳定命名 ZIP、内置清单和逐文件校验值；
-7. 更新项目进度、修改台账和仓库目录。旧版本号目录、`latest.yaml`、逐版本 `release.yaml` 与仓库内散落的校验文件均不得重新建立。
+6. 提交并推送版本变动，由 GitHub Actions 运行仓库打包脚本，生成带版本号的 ZIP；本机不得预先生成并提交 ZIP；
+7. 核对 Actions 生成包的文件名版本、内置 `VERSION`、字幕数量和逐文件校验值。旧版本号目录、`latest.yaml`、逐版本 `release.yaml` 与仓库内散落的校验文件均不得重新建立。

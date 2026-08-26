@@ -22,9 +22,8 @@
 - `subtitles/current`：当前最终字幕及唯一版本文件；首次升级后必须保留 `subtitles/previous`；
 - 仓库根目录 `packages`：自动生成的当前字幕 ZIP。
 
-当前下载包：[tt5592004--Star Blazers 2202.zip](<../../../packages/tt5592004--Star Blazers 2202.zip>)。
+当前下载包位于 [packages](../../../packages)，命名模式见 `project.yaml`；文件名末尾版本由 Actions 从 `subtitles/current/VERSION` 自动生成。
 
 ## 片源说明
 
 正式字幕文件名保留对应 `[Sav1or]` MKV 的完整 stem，再追加 `.zh-Hans.ja.ass`。仓库只在 `project.yaml` 记录片源文件名，不保存视频、种子、磁力链接或下载地址。
-

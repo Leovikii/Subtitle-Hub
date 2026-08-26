@@ -22,9 +22,8 @@
 - `subtitles/current`：当前最终字幕及唯一版本文件；首次升级后必须保留 `subtitles/previous`；
 - 仓库根目录 `packages`：自动生成的当前字幕 ZIP。
 
-当前下载包：[tt3222236--Space Battleship Yamato 2199- Odyssey of the Celestial Ark.zip](<../../../packages/tt3222236--Space Battleship Yamato 2199- Odyssey of the Celestial Ark.zip>)。
+当前下载包位于 [packages](../../../packages)，命名模式见 `project.yaml`；文件名末尾版本由 Actions 从 `subtitles/current/VERSION` 自动生成。
 
 ## 片源说明
 
 正式字幕适配 `宇宙战舰大和号2199 星巡的方舟.mkv`，文件名追加 `.zh-Hans.ja.ass`。仓库只记录片源文件名，不保存视频、种子、磁力链接或下载地址。
-

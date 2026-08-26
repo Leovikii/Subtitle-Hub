@@ -55,7 +55,7 @@ def yaml_scalar(block: str, field: str) -> str:
     return value
 
 
-def package_name(project_root: Path) -> str:
+def package_name(project_root: Path, version: str | None = None) -> str:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
     match = re.search(
@@ -73,11 +73,18 @@ def package_name(project_root: Path) -> str:
         raise PackageError(
             f"{metadata_path}: IMDb identity must be agent-verified or user-confirmed"
         )
-    safe_title = INVALID_FILENAME_CHARS.sub("-", imdb_title)
+    safe_title = INVALID_FILENAME_CHARS.sub(" - ", imdb_title)
     safe_title = " ".join(safe_title.split()).rstrip(" .")
     if not safe_title:
         raise PackageError(f"{metadata_path}: IMDb title is empty after filename normalization")
-    return f"{imdb_id}--{safe_title}.zip"
+    if version is None:
+        version_path = project_root / "subtitles/current/VERSION"
+        if not version_path.is_file():
+            raise PackageError(f"{version_path}: missing VERSION for package name")
+        version = version_path.read_text(encoding="utf-8").strip()
+    if not SEMVER.fullmatch(version):
+        raise PackageError(f"{project_root}: invalid release version {version!r}")
+    return f"{imdb_id} - {safe_title} [v{version}].zip"
 
 
 def validate_release_dir(release_dir: Path) -> tuple[str, list[Path]]:
@@ -132,7 +139,7 @@ def validate_project(version_file: Path) -> tuple[Path, str, list[Path]]:
 
 def build_package(version_file: Path) -> Path:
     project_root, version, subtitles = validate_project(version_file)
-    output = PACKAGES_ROOT / package_name(project_root)
+    output = PACKAGES_ROOT / package_name(project_root, version)
     package_root = output.stem
 
     checksum_lines: list[str] = []
@@ -176,7 +183,8 @@ def main() -> int:
     planned: dict[Path, Path] = {}
     for version_file in version_files:
         project_root = version_file.parent.parent.parent
-        output = (PACKAGES_ROOT / package_name(project_root)).resolve()
+        version = version_file.read_text(encoding="utf-8").strip()
+        output = (PACKAGES_ROOT / package_name(project_root, version)).resolve()
         if output in planned:
             raise PackageError(
                 f"duplicate package identity: {project_root} and {planned[output]}"

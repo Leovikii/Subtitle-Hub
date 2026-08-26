@@ -48,15 +48,15 @@
 ZIP 固定命名为：
 
 ```text
-<imdb-id>--<IMDb-title>.zip
+<imdb-id> - <IMDb-title> [v<version>].zip
 ```
 
 例如：
 
 ```text
-tt2496120--Space Battleship Yamato 2199.zip
+tt2496120 - Space Battleship Yamato 2199 [v1.0.1].zip
 ```
 
-IMDb ID 位于最前，IMDb 条目名称原样紧随其后，避免仓库另行维护一套包名标题。不得加入仓库内部 ID、项目中文标题、版本号、豆瓣 ID、Bangumi ID、语言说明或发布组名称。版本与语言信息从包内 `VERSION` 和字幕文件名读取。
+IMDb ID 位于最前，以 ` - ` 连接 IMDb 条目名称，并在末尾使用 `[v<version>]` 标注版本，避免仓库另行维护一套包名标题。不得加入仓库内部 ID、项目中文标题、豆瓣 ID、Bangumi ID、语言说明或发布组名称。文件名版本用于快速识别，仍须与包内 `VERSION` 一致；语言信息从字幕文件名读取。
 
-IMDb 名称若含 Windows 禁止字符 `<>:"/\\|?*`，打包脚本只把这些字符替换为单个 ASCII 连字符并合并连续空白；除此之外不得改写、翻译或重排 IMDb 名称。IMDb ID 或名称改变时，自动打包必须删除旧的生成包，只保留新名称。
+IMDb 名称若含 Windows 禁止字符 `<>:"/\\|?*`，打包脚本只把这些字符替换为带空格的 ASCII 连字符 ` - ` 并合并连续空白；除此之外不得改写、翻译或重排 IMDb 名称。IMDb ID、名称或当前版本改变时，自动打包必须删除旧的生成包，只保留新名称。

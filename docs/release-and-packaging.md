@@ -36,7 +36,7 @@ subtitles/
 ; Subtitle-Hub-Version: 1.2.3
 ```
 
-当前成品的标记值必须与同目录 `VERSION` 完全一致；旧版标记同样必须与 `previous/VERSION` 一致。不得把版本号写入 `Title`、样式名、事件文本或文件名。发布打包脚本会拒绝当前成品缺失、重复或不一致的版本标记。
+当前成品的标记值必须与同目录 `VERSION` 完全一致；旧版标记同样必须与 `previous/VERSION` 一致。不得把版本号写入 `Title`、样式名、事件文本或字幕文件名。发布打包脚本会拒绝当前成品缺失、重复或不一致的版本标记。
 
 ## 4. 成品文件名
 
@@ -68,8 +68,8 @@ subtitles/
 3. 验证文件名、集数、语言组合、结构、音画抽查和台账；
 4. 删除更旧的 `previous/`，再将完整旧 `current/` 直接重命名为 `previous/`；
 5. 把新成品和新 `VERSION` 写入同盘候选目录，验证通过后把该目录直接重命名为 `current/`；
-6. 运行仓库打包脚本；
-7. 核对 ZIP 内 `VERSION`、字幕数量、版本标记和 `CHECKSUMS.sha256`，提交成品、版本文件、元数据/台账必要更新及生成包。
+6. 提交并推送成品、版本文件和元数据/台账必要更新，由 GitHub Actions 运行仓库打包脚本；本机不得生成并提交 ZIP；
+7. 核对 Actions 生成 ZIP 的文件名版本、包内 `VERSION`、字幕数量、版本标记和 `CHECKSUMS.sha256`。
 
 任何一步失败都不得留下新旧字幕混合的 `current/`。候选目录未能成为 `current/` 时，必须把刚轮换的 `previous/` 直接重命名回 `current/`。主动回滚时交换 `current/` 与 `previous/` 的角色，确保被撤下版本仍可追溯，再重新生成仓库分发包；回滚本身必须登记台账。
 
@@ -78,10 +78,10 @@ subtitles/
 仓库根目录 `packages/` 只保存自动生成的当前分发包：
 
 ```text
-packages/<imdb-id>--<IMDb-title>.zip
+packages/<imdb-id> - <IMDb-title> [v<version>].zip
 ```
 
-包名直接取自 `project.yaml` 中已经核验的 IMDb ID 和 IMDb 条目名称，具体消歧与最小文件系统字符处理见 [作品身份规范](project-identity.md)。包名不含内部 ID 或版本号；版本从包内 `VERSION` 读取。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告或历史档案。
+包名直接取自 `project.yaml` 中已经核验的 IMDb ID 和 IMDb 条目名称，采用 ` - ` 分隔身份与标题，并在末尾以 `[v<version>]` 标注版本；版本只能读取 `subtitles/current/VERSION`，不得在 README 或其他元数据中复制当前版本号。具体消歧与最小文件系统字符处理见 [作品身份规范](project-identity.md)。包名不含内部 ID；文件名版本便于用户直接识别，仍必须与包内 `VERSION` 一致。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告或历史档案。
 
 `.github/scripts/build_subtitle_packages.py` 必须使用确定性排序、固定时间戳和稳定压缩参数，使相同输入产生相同 ZIP。GitHub Actions 在 `main` 的 `current/` 或 `previous/` 变化后运行门禁，并只在当前分发包确有变化时提交 `packages/`；包目录本身不触发工作流，避免提交循环。
 

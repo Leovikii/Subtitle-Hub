@@ -24,7 +24,7 @@
 
 当前推荐成品固定在 [subtitles/current](subtitles/current)，版本读取 [subtitles/current/VERSION](subtitles/current/VERSION)。发布范围、来源、机器检查与人工检查覆盖均集中在 [project.yaml](project.yaml)；旧质量报告和被合并的旧发布元数据已经压缩到项目历史文档档案，不属于当前 AI agent 控制面。
 
-当前下载包：[tt2496120--Space Battleship Yamato 2199.zip](<../../../packages/tt2496120--Space Battleship Yamato 2199.zip>)。
+当前下载包位于 [packages](../../../packages)，命名模式见 `project.yaml`；文件名末尾版本由 Actions 从 `subtitles/current/VERSION` 自动生成。
 
 ## 片源说明
 
