@@ -20,7 +20,7 @@ Style: ED-JP,Yu Gothic UI,42,&H00D9E1EA,&H000000FF,&H00151B24,&H64000000,0,0,0,0
 Style: op-jp,Yu Gothic UI,50,&H00FFFFFF,&H000000FF,&H14050404,&HFFFFFFFF,0,0,0,0,100,100,0,0,1,2,2,1,30,30,15,1
 Style: op-cn,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H14000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,9,30,30,20,1
 Style: not2,Microsoft YaHei UI,55,&H00FFFFFF,&H000000FF,&H00000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
-Style: tittle,Microsoft YaHei UI,60,&H00FFFFFF,&H000000FF,&HFF000000,&HFF000000,-1,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+Style: Title,Microsoft YaHei UI,60,&H00FFFFFF,&H000000FF,&HFF000000,&HFF000000,-1,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -733,7 +733,7 @@ Dialogue: 10,0:21:40.65,0:21:42.27,CN-Main,,0,0,0,,永别了 大和号！
 Dialogue: 11,0:21:40.65,0:21:42.27,JP-Main,,0,0,0,,さらば ヤマト！
 Dialogue: 10,0:21:49.43,0:21:51.45,CN-Main,,0,0,0,,有高能量体靠近就在正上方！
 Dialogue: 11,0:21:49.43,0:21:51.45,JP-Main,,0,0,0,,高エネルギー体 真上です！
-Dialogue: 0,0:22:21.90,0:22:29.41,tittle,,0,0,0,,{\fad(1800,1800)\pos(1600,1065)}没有死角的陷阱
+Dialogue: 0,0:22:21.90,0:22:29.41,Title,,0,0,0,,{\fad(1800,1800)\pos(1600,1065)}没有死角的陷阱
 Dialogue: 12,0:22:51.10,0:22:55.26,ED-CN,,0,0,0,,{\fad(500,300)}未知的宇宙
 Dialogue: 13,0:22:51.10,0:22:55.26,ED-JP,,0,0,0,,{\fad(500,300)}未知の 宙が
 Dialogue: 12,0:22:56.76,0:23:00.53,ED-CN,,0,0,0,,{\fad(500,300)}在呼唤我们

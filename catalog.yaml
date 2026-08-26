@@ -8,7 +8,7 @@ works:
     episode_count: 26
     release_path: subtitles/current
     version_file: subtitles/current/VERSION
-    package: packages/tt2496120--Space Battleship Yamato 2199.zip
+    package_directory: packages
   - id: SH0002
     path: works/space-battleship-yamato/SH0002--yamato-2199-odyssey-celestial-ark
     title: 宇宙战舰大和号2199 星巡的方舟
@@ -16,7 +16,7 @@ works:
     episode_count: 1
     release_path: subtitles/current
     version_file: subtitles/current/VERSION
-    package: "packages/tt3222236--Space Battleship Yamato 2199- Odyssey of the Celestial Ark.zip"
+    package_directory: packages
   - id: SH0003
     path: works/space-battleship-yamato/SH0003--yamato-2202-tv
     title: 宇宙战舰大和号2202 爱的战士们
@@ -24,4 +24,4 @@ works:
     episode_count: 26
     release_path: subtitles/current
     version_file: subtitles/current/VERSION
-    package: packages/tt5592004--Star Blazers 2202.zip
+    package_directory: packages

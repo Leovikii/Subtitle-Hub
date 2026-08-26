@@ -5,9 +5,9 @@
 ## 项目标识
 
 - 内部 ID：`SH0003`
-- IMDb：`tt5592004`，`Star Blazers 2202`
-- Bangumi：`246898`
-- 豆瓣：未提供，不主动检索
+- Bangumi：[`246898`](https://bgm.tv/subject/246898)
+- 日文标题：`宇宙戦艦ヤマト2202 愛の戦士たち`
+- 简中标题：`宇宙战舰大和号2202 爱的战士们`
 
 外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md)、上级 [系列用语规范](../series-guide.md) 和本项目 [AI agent 控制面](docs/README.md)。
 
@@ -26,4 +26,4 @@
 
 ## 片源说明
 
-正式字幕文件名保留对应 `[Sav1or]` MKV 的完整 stem，再追加 `.zh-Hans.ja.ass`。仓库只在 `project.yaml` 记录片源文件名，不保存视频、种子、磁力链接或下载地址。
+正式字幕文件名保留对应 `[Sav1or]` MKV 的完整 stem，再追加主字幕语言后缀 `.zh-Hans.ass`。日语副字幕记录在项目元数据和 ASS 内，不追加到外挂字幕文件名。仓库只在 `project.yaml` 记录片源文件名，不保存视频、种子、磁力链接或下载地址。

@@ -1,0 +1,447 @@
+[Script Info]
+; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Languages: zh-Hans, ja
+; Subtitle-Hub-Primary-Language: zh-Hans
+; Subtitle-Hub-Secondary-Language: ja
+; Subtitle-Hub-Timing-Note: Target MKV mux lead applied to authored events: +0.99s; Japanese reference offsets: main=20.958, post=None
+; Subtitle-Hub-Source-Credit: 精神领袖：冰封的羲和 翻译&时轴：伟大的枪手导师 精校：天下布武 压制&后期：陌生的夏至、光与影100
+Title: bgm246898 - 宇宙战舰大和号2202 爱的战士们 - S02E24
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H00558505,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:22.61,0:00:25.88,OPED,,0,0,0,,再见了 地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
+Dialogue: 0,0:00:26.23,0:00:29.33,OPED,,0,0,0,,告别了心爱之人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
+Dialogue: 0,0:00:29.33,0:00:37.88,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:38.23,0:00:41.53,OPED,,0,0,0,,肩负使命 拯救地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
+Dialogue: 0,0:00:41.62,0:00:45.88,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
+Dialogue: 0,0:00:46.22,0:00:52.53,OPED,,0,0,0,,挺身而出需有人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
+Dialogue: 0,0:00:52.88,0:01:00.98,OPED,,0,0,0,,期待之人若吾辈\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
+Dialogue: 0,0:01:01.72,0:01:08.32,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
+Dialogue: 0,0:01:08.32,0:01:15.34,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:02:05.30,0:02:06.46,DefaultCN-2202,,0,0,0,,结束跃迁
+Dialogue: 0,0:02:06.73,0:02:09.43,DefaultCN-2202,,0,0,0,,误差修正 20 15 10
+Dialogue: 0,0:02:09.43,0:02:10.98,DefaultCN-2202,,0,0,0,,发送修正后数据
+Dialogue: 0,0:02:11.50,0:02:14.03,DefaultCN-2202,,0,0,0,,“回转波动炮”准备射击！
+Dialogue: 0,0:02:14.23,0:02:16.01,DefaultCN-2202,,0,0,0,,目标观测镜 打开
+Dialogue: 0,0:02:18.37,0:02:21.18,DefaultCN-2202,,0,0,0,,目标 敌彗星核心
+Dialogue: 0,0:02:21.18,0:02:22.82,DefaultCN-2202,,0,0,0,,开启波动炮能量回路
+Dialogue: 0,0:02:23.42,0:02:25.38,DefaultCN-2202,,0,0,0,,波动炮能量回路 已开启
+Dialogue: 0,0:02:25.38,0:02:27.48,DefaultCN-2202,,0,0,0,,紧急阀 全部关闭
+Dialogue: 0,0:02:27.48,0:02:29.84,DefaultCN-2202,,0,0,0,,CRS 推进器 已连接
+Dialogue: 0,0:02:30.26,0:02:32.91,DefaultCN-2202,,0,0,0,,“诺伊·迪乌斯拉”舰 已在预设坐标结束跃迁
+Dialogue: 0,0:02:44.21,0:02:46.84,DefaultCN-2202,,0,0,0,,能量充填 120%
+Dialogue: 0,0:02:47.49,0:02:48.63,DefaultCN-2202,,0,0,0,,发射倒计时 10 秒
+Dialogue: 0,0:02:49.24,0:02:49.79,DefaultCN-2202,,0,0,0,,9
+Dialogue: 0,0:02:51.43,0:02:51.98,DefaultCN-2202,,0,0,0,,7
+Dialogue: 0,0:02:48.63,0:02:51.43,DefaultCN-2202,,0,0,0,,全员注意 做好对冲击 对闪光防护
+Dialogue: 0,0:02:51.43,0:02:58.74,DefaultCN-2202,DESLER,0,0,0,,诺伊·迪乌斯拉号会保护大和号 免受回转波动炮能量辐射
+Dialogue: 0,0:02:57.62,0:02:58.17,DefaultCN-2202,,0,0,0,,2
+Dialogue: 0,0:02:58.78,0:02:59.33,DefaultCN-2202,,0,0,0,,1
+Dialogue: 0,0:02:59.33,0:03:01.82,DefaultCN-2202,,0,0,0,,“回转波动炮”发射！
+Dialogue: 0,0:04:05.19,0:04:06.98,DefaultCN-2202,,0,0,0,,竟 竟有这种事！
+Dialogue: 0,0:04:06.98,0:04:09.59,DefaultCN-2202,GENITZ,0,0,0,,竟然是超越波动炮的力量？
+Dialogue: 0,0:04:11.81,0:04:14.63,DefaultCN-2202,,0,0,0,,这可真是奇“缘”哪
+Dialogue: 0,0:04:14.63,0:04:16.98,DefaultCN-2202,,0,0,0,,接受特蕾莎引导之船
+Dialogue: 0,0:04:17.63,0:04:18.78,DefaultCN-2202,,0,0,0,,大和号
+Dialogue: 0,0:04:27.38,0:04:28.73,DefaultCN-2202,,0,0,0,,友军泽鲁古德发来联络！
+Dialogue: 0,0:04:29.99,0:04:31.52,DefaultCN-2202,,0,0,0,,通知大和号
+Dialogue: 0,0:04:31.52,0:04:37.63,DefaultCN-2202,,0,0,0,,接下来加米拉斯军将竭尽全力 把贵舰送往彗星都市帝国核心
+Dialogue: 0,0:04:38.63,0:04:41.69,DefaultCN-2202,,0,0,0,,地球防务就交给我军
+Dialogue: 0,0:04:43.61,0:04:44.97,DefaultCN-2202,,0,0,0,,巴雷尔大使……
+Dialogue: 0,0:04:45.47,0:04:47.63,DefaultCN-2202,,0,0,0,,我方作战方案已共享给贵舰
+Dialogue: 0,0:04:47.63,0:04:51.88,DefaultCN-2202,,0,0,0,,目标是毁灭方舟内的大帝王座大厅
+Dialogue: 0,0:04:51.88,0:04:55.53,DefaultCN-2202,,0,0,0,,虽然无法直接跃迁抵达 但若运用我方技术……
+Dialogue: 0,0:05:00.43,0:05:02.23,DefaultCN-2202,,0,0,0,,次元潜艇正在上浮
+Dialogue: 0,0:05:07.20,0:05:08.92,DefaultCN-2202,,0,0,0,,这种作战方案我们也是第一次尝试
+Dialogue: 0,0:05:12.12,0:05:18.63,DefaultCN-2202,,0,0,0,,即使四艘潜艇都搭载特殊装备 恐怕也只能运送大和号一舰
+Dialogue: 0,0:05:19.11,0:05:22.26,DefaultCN-2202,,0,0,0,,即便如此 我也无法保证成功
+Dialogue: 0,0:05:24.19,0:05:27.30,DefaultCN-2202,,0,0,0,,这也是“缘”所促成之事
+Dialogue: 0,0:05:28.56,0:05:31.43,DefaultCN-2202,,0,0,0,,允许次元潜艇拖曳我舰
+Dialogue: 0,0:05:36.36,0:05:39.11,DefaultCN-2202,,0,0,0,,4 舰联动 急速潜航
+Dialogue: 0,0:05:39.11,0:05:40.18,DefaultCN-2202,,0,0,0,,执行急速潜航
+Dialogue: 0,0:06:04.06,0:06:07.33,DefaultCN-2202,,0,0,0,,在大和号完成任务前 我们一定要坚持住
+Dialogue: 0,0:06:08.33,0:06:09.59,DefaultCN-2202,,0,0,0,,这是命令！
+Dialogue: 0,0:07:01.15,0:07:03.48,DefaultCN-2202,,0,0,0,,即将抵达预定上浮坐标
+Dialogue: 0,0:07:03.48,0:07:06.09,DefaultCN-2202,,0,0,0,,我们能做到的只有这些了
+Dialogue: 0,0:07:07.19,0:07:10.08,DefaultCN-2202,,0,0,0,,接下来就靠你们自己了 大和号
+Dialogue: 0,0:07:25.42,0:07:27.11,DefaultCN-2202,,0,0,0,,期待下次的再会
+Dialogue: 0,0:07:42.55,0:07:44.73,DefaultCN-2202,,0,0,0,,这里就是敌军腹地吗？
+Dialogue: 0,0:07:44.73,0:07:46.39,DefaultCN-2202,,0,0,0,,不要放松索敌警戒
+Dialogue: 0,0:07:46.85,0:07:48.48,DefaultCN-2202,,0,0,0,,发现未知热源
+Dialogue: 0,0:07:49.42,0:07:53.64,DefaultCN-2202,,0,0,0,,是敌 Calakulm 级战舰 但大小比例各异
+Dialogue: 0,0:07:53.64,0:07:54.53,DefaultCN-2202,,0,0,0,,这是……
+Dialogue: 0,0:07:54.93,0:08:00.28,DefaultCN-2202,,0,0,0,,桂木透子的情报无误 这里就是生产加特兰蒂斯战舰的母体工厂
+Dialogue: 0,0:08:01.03,0:08:04.05,DefaultCN-2202,,0,0,0,,各系统 开始与自动导航系统进行联动
+Dialogue: 0,0:08:12.98,0:08:14.08,DefaultCN-2202,,0,0,0,,那光芒是？
+Dialogue: 0,0:08:26.17,0:08:29.16,DefaultCN-2202,,0,0,0,,是 Cosmo Wave 的干扰吗……
+Dialogue: 0,0:08:29.62,0:08:33.13,DefaultCN-2202,,0,0,0,,我无法屏蔽 这是最高级别的指令
+Dialogue: 0,0:08:34.18,0:08:37.31,DefaultCN-2202,,0,0,0,,她也是“白银巫女”
+Dialogue: 0,0:08:39.11,0:08:43.44,DefaultCN-2202,,0,0,0,,她也拥有操控这彗星都市的权限
+Dialogue: 0,0:08:46.88,0:08:47.83,DefaultCN-2202,,0,0,0,,这扇大门居然……
+Dialogue: 0,0:08:47.83,0:08:50.88,DefaultCN-2202,,0,0,0,,这扇千年来从未开启的大门竟然……
+Dialogue: 0,0:08:51.81,0:08:53.42,DefaultCN-2202,,0,0,0,,萨贝拉！
+Dialogue: 0,0:08:56.90,0:08:59.30,DefaultCN-2202,,0,0,0,,人偶已经没有办法对抗了么？
+Dialogue: 0,0:09:00.17,0:09:01.28,DefaultCN-2202,,0,0,0,,拉泽拉！
+Dialogue: 0,0:09:01.28,0:09:02.28,DefaultCN-2202,,0,0,0,,是！
+Dialogue: 0,0:09:03.17,0:09:04.50,DefaultCN-2202,,0,0,0,,让我看看你的忠心吧
+Dialogue: 0,0:09:06.34,0:09:07.88,DefaultCN-2202,,0,0,0,,成功侵入敌人系统
+Dialogue: 0,0:09:08.50,0:09:12.13,DefaultCN-2202,,0,0,0,,全体注意 本舰即将突入敌军大本营！
+Dialogue: 0,0:09:12.62,0:09:14.86,DefaultCN-2202,,0,0,0,,空间骑兵队 出击！
+Dialogue: 0,0:09:15.73,0:09:17.98,DefaultCN-2202,,0,0,0,,航空部队 全体起飞！
+Dialogue: 0,0:09:54.71,0:09:57.48,DefaultCN-2202,,0,0,0,,不行 系统无法接受我这边的操作指令了……
+Dialogue: 0,0:09:59.78,0:10:00.58,DefaultCN-2202,,0,0,0,,发生了什么？
+Dialogue: 0,0:10:00.58,0:10:01.78,DefaultCN-2202,,0,0,0,,舰尾中弹！
+Dialogue: 0,0:10:07.06,0:10:09.20,DefaultCN-2202,,0,0,0,,右舷后方 是轮机室！
+Dialogue: 0,0:10:09.20,0:10:10.02,DefaultCN-2202,,0,0,0,,舰长！
+Dialogue: 0,0:10:10.02,0:10:10.88,DefaultCN-2202,,0,0,0,,拜托你了
+Dialogue: 0,0:10:21.94,0:10:23.08,DefaultCN-2202,,0,0,0,,赶紧报告损伤情况
+Dialogue: 0,0:10:23.51,0:10:24.78,DefaultCN-2202,,0,0,0,,再这么下去 舰体就要……
+Dialogue: 0,0:10:25.40,0:10:29.14,DefaultCN-2202,,0,0,0,,佐达他很清楚 我们的目的就是哥雷姆
+Dialogue: 0,0:10:30.63,0:10:33.03,DefaultCN-2202,,0,0,0,,现在做不到 就只有死路一条
+Dialogue: 0,0:10:34.18,0:10:36.55,DefaultCN-2202,,0,0,0,,其实我们从一开始就明白
+Dialogue: 0,0:10:40.70,0:10:42.39,DefaultCN-2202,,0,0,0,,正面突破！
+Dialogue: 0,0:10:42.88,0:10:45.78,DefaultCN-2202,,0,0,0,,轮机受损严重 落下所有隔离壁
+Dialogue: 0,0:10:45.78,0:10:48.91,DefaultCN-2202,,0,0,0,,开始应急操舵！关闭所有非必要区域的电源！
+Dialogue: 0,0:10:49.46,0:10:51.97,DefaultCN-2202,,0,0,0,,医生 医务室已经无法收容更多伤者了！
+Dialogue: 0,0:10:51.97,0:10:54.47,DefaultCN-2202,,0,0,0,,让他们躺在过道里！你们正在做伤员检伤分类吧？
+Dialogue: 0,0:10:54.47,0:10:54.95,DefaultCN-2202,,0,0,0,,是！
+Dialogue: 0,0:10:54.95,0:10:57.72,DefaultCN-2202,,0,0,0,,还有救的人 一个也不要放弃！
+Dialogue: 0,0:11:11.04,0:11:14.33,DefaultCN-2202,,0,0,0,,特蕾莎 你听得到么？
+Dialogue: 0,0:11:14.33,0:11:15.21,DefaultCN-2202,,0,0,0,,特蕾莎……
+Dialogue: 0,0:11:17.06,0:11:24.32,DefaultCN-2202,,0,0,0,,我已不记得特蕾莎特 但我能感觉到 自己其实知道
+Dialogue: 0,0:11:27.98,0:11:34.24,DefaultCN-2202,,0,0,0,,如果你在那里 请告诉我 我们此刻承受的痛苦真的有意义吗？
+Dialogue: 0,0:11:35.52,0:11:41.01,DefaultCN-2202,,0,0,0,,生命中真的有能与流血牺牲等价的东西吗？
+Dialogue: 0,0:11:42.65,0:11:50.18,DefaultCN-2202,,0,0,0,,引擎输出无法控制……但航行……不受影响……
+Dialogue: 0,0:11:50.73,0:11:51.88,DefaultCN-2202,,0,0,0,,德川轮机长！
+Dialogue: 0,0:11:51.88,0:11:52.98,DefaultCN-2202,,0,0,0,,轮机长！
+Dialogue: 0,0:11:53.73,0:11:57.63,DefaultCN-2202,,0,0,0,,我们孤独地出生 又孤独地死去
+Dialogue: 0,0:11:57.63,0:12:00.12,DefaultCN-2202,,0,0,0,,但为何又会有个体之间的邂逅呢？
+Dialogue: 0,0:12:00.54,0:12:01.79,DefaultCN-2202,,0,0,0,,危险！
+Dialogue: 0,0:12:04.97,0:12:06.33,DefaultCN-2202,,0,0,0,,分析士！
+Dialogue: 0,0:12:06.33,0:12:07.33,DefaultCN-2202,,0,0,0,,医生！
+Dialogue: 0,0:12:07.33,0:12:08.58,DefaultCN-2202,,0,0,0,,放开我！
+Dialogue: 0,0:12:08.58,0:12:13.11,DefaultCN-2202,,0,0,0,,它不是普通机器人 根本无可替代！
+Dialogue: 0,0:12:22.52,0:12:24.34,DefaultCN-2202,,0,0,0,,医生……
+Dialogue: 0,0:12:26.42,0:12:29.53,DefaultCN-2202,,0,0,0,,谢谢你……
+Dialogue: 0,0:12:34.22,0:12:38.13,DefaultCN-2202,,0,0,0,,我们已经失去了太多的东西
+Dialogue: 0,0:12:43.18,0:12:45.98,DefaultCN-2202,,0,0,0,,家人 同伴……
+Dialogue: 0,0:12:46.88,0:12:49.64,DefaultCN-2202,,0,0,0,,甚至连与所爱之人的回忆也……
+Dialogue: 0,0:12:52.18,0:12:54.24,DefaultCN-2202,,0,0,0,,我已经不想再失去更多了
+Dialogue: 0,0:13:00.35,0:13:00.98,DefaultCN-2202,,0,0,0,,舰长！
+Dialogue: 0,0:13:02.71,0:13:04.76,DefaultCN-2202,,0,0,0,,请不要再从我身上夺走更多！
+Dialogue: 0,0:13:09.09,0:13:10.34,DefaultCN-2202,,0,0,0,,坚持住啊！
+Dialogue: 0,0:13:11.28,0:13:12.34,DefaultCN-2202,,0,0,0,,我这就去叫佐渡医生！
+Dialogue: 0,0:13:12.34,0:13:13.36,DefaultCN-2202,,0,0,0,,不用了
+Dialogue: 0,0:13:15.72,0:13:17.00,DefaultCN-2202,,0,0,0,,你冷静一下
+Dialogue: 0,0:13:21.14,0:13:23.43,DefaultCN-2202,,0,0,0,,你看看那些东西
+Dialogue: 0,0:13:23.43,0:13:27.83,DefaultCN-2202,,0,0,0,,它们仍然接受桂木透子的控制
+Dialogue: 0,0:13:29.38,0:13:34.08,DefaultCN-2202,,0,0,0,,可以把它们接入大和号系统 更有效地利用
+Dialogue: 0,0:13:34.84,0:13:36.08,DefaultCN-2202,,0,0,0,,小行星链接战术么
+Dialogue: 0,0:13:36.84,0:13:41.09,DefaultCN-2202,,0,0,0,,用它们保护航空队 一口气冲入星门内侧
+Dialogue: 0,0:13:42.90,0:13:44.12,DefaultCN-2202,,0,0,0,,你能做到的吧？
+Dialogue: 0,0:13:45.79,0:13:46.58,DefaultCN-2202,,0,0,0,,是！
+Dialogue: 0,0:13:50.10,0:13:50.98,DefaultCN-2202,,0,0,0,,古代……
+Dialogue: 0,0:13:53.43,0:13:57.19,DefaultCN-2202,,0,0,0,,下一任舰长 就是你
+Dialogue: 0,0:14:01.67,0:14:04.98,DefaultCN-2202,,0,0,0,,抓住未来……
+Dialogue: 0,0:14:27.92,0:14:29.00,DefaultCN-2202,,0,0,0,,未来……
+Dialogue: 0,0:14:40.12,0:14:43.22,DefaultCN-2202,,0,0,0,,执行土方前舰长的命令！
+Dialogue: 0,0:15:05.93,0:15:09.46,DefaultCN-2202,,0,0,0,,磁控波与透子的“Cosmo Wave”同步情况良好
+Dialogue: 0,0:15:12.73,0:15:13.63,DefaultCN-2202,,0,0,0,,这里是古代
+Dialogue: 0,0:15:13.63,0:15:17.31,DefaultCN-2202,,0,0,0,,我将与航空队汇合 与先头部队一起突入星门内侧
+Dialogue: 0,0:15:17.31,0:15:18.11,DefaultCN-2202,,0,0,0,,好的！
+Dialogue: 0,0:15:18.11,0:15:19.25,DefaultCN-2202,,0,0,0,,前方发现敌影！
+Dialogue: 0,0:15:24.80,0:15:26.07,DefaultCN-2202,,0,0,0,,那是什么？
+Dialogue: 0,0:15:30.36,0:15:32.96,DefaultCN-2202,,0,0,0,,我来对付这家伙 你们赶紧向前推进！
+Dialogue: 0,0:15:32.96,0:15:33.95,DefaultCN-2202,,0,0,0,,拜托你了
+Dialogue: 0,0:15:34.77,0:15:36.88,DefaultCN-2202,,0,0,0,,我再也不会逃避了
+Dialogue: 0,0:15:36.88,0:15:39.46,DefaultCN-2202,,0,0,0,,现在的我 比之前任何时候都更想活下去
+Dialogue: 0,0:15:41.03,0:15:43.23,DefaultCN-2202,,0,0,0,,我想再看到真琴的面庞
+Dialogue: 0,0:15:43.23,0:15:46.01,DefaultCN-2202,,0,0,0,,我想让恢复健康的小翼 再次骑在我的肩上
+Dialogue: 0,0:15:48.12,0:15:51.74,DefaultCN-2202,,0,0,0,,我想弥补过去想做却没能做到的一切！
+Dialogue: 0,0:15:53.95,0:15:56.34,DefaultCN-2202,,0,0,0,,我一定要活着回去！
+Dialogue: 0,0:16:08.05,0:16:10.48,DefaultCN-2202,,0,0,0,,看来是遭报应了……
+Dialogue: 0,0:16:11.83,0:16:17.26,DefaultCN-2202,,0,0,0,,但是爸爸我 到最后一刻也不会放弃！
+Dialogue: 0,0:16:51.48,0:16:53.24,DefaultCN-2202,,0,0,0,,你知道吗？小翼
+Dialogue: 0,0:16:54.23,0:16:57.00,DefaultCN-2202,,0,0,0,,你的爸爸可帅啦
+Dialogue: 0,0:17:10.07,0:17:11.97,DefaultCN-2202,,0,0,0,,我将关闭星门
+Dialogue: 0,0:17:18.94,0:17:20.74,DefaultCN-2202,,0,0,0,,轮机 最大输出功率！
+Dialogue: 0,0:17:33.73,0:17:35.61,DefaultCN-2202,,0,0,0,,古代 这里就交给我吧！
+Dialogue: 0,0:17:45.97,0:17:46.99,DefaultCN-2202,,0,0,0,,基曼
+Dialogue: 0,0:17:54.49,0:17:56.58,DefaultCN-2202,,0,0,0,,开启雷尔特之门
+Dialogue: 0,0:18:00.33,0:18:02.42,DefaultCN-2202,,0,0,0,,我会引导你们到哥雷姆的坐标
+Dialogue: 0,0:18:03.33,0:18:05.29,DefaultCN-2202,,0,0,0,,难道他们要直接到这里来？
+Dialogue: 0,0:18:07.61,0:18:11.70,DefaultCN-2202,,0,0,0,,萨贝拉 你听得到吧？
+Dialogue: 0,0:18:13.42,0:18:17.28,DefaultCN-2202,,0,0,0,,不要关闭链接 你为什么要否定我？
+Dialogue: 0,0:18:18.44,0:18:21.98,DefaultCN-2202,,0,0,0,,比任何人都更了解人类何其徒劳的你……
+Dialogue: 0,0:18:21.98,0:18:25.28,DefaultCN-2202,,0,0,0,,当初启动了毁灭方舟的你
+Dialogue: 0,0:18:25.28,0:18:26.63,DefaultCN-2202,,0,0,0,,事到如今 又为何要……
+Dialogue: 0,0:18:26.63,0:18:28.88,DefaultCN-2202,,0,0,0,,因为当初就不该启动毁灭方舟！
+Dialogue: 0,0:18:32.56,0:18:33.69,DefaultCN-2202,,0,0,0,,为什么？
+Dialogue: 0,0:18:35.34,0:18:37.13,DefaultCN-2202,,0,0,0,,米尔他……
+Dialogue: 0,0:18:37.13,0:18:40.84,DefaultCN-2202,,0,0,0,,我们的孩子竟被杀死了两次！
+Dialogue: 0,0:18:42.08,0:18:43.83,DefaultCN-2202,,0,0,0,,果然
+Dialogue: 0,0:18:43.83,0:18:47.97,DefaultCN-2202,,0,0,0,,你仍有一颗能感受悲伤与绝望的心
+Dialogue: 0,0:18:49.74,0:18:50.73,DefaultCN-2202,,0,0,0,,心灵……
+Dialogue: 0,0:18:52.01,0:18:53.23,DefaultCN-2202,,0,0,0,,你就是人类……
+Dialogue: 0,0:18:54.63,0:18:56.69,DefaultCN-2202,,0,0,0,,你比其他任何人都更有资格称为人类
+Dialogue: 0,0:18:59.30,0:19:00.48,DefaultCN-2202,,0,0,0,,在那里么！
+Dialogue: 0,0:19:33.38,0:19:35.00,DefaultCN-2202,,0,0,0,,快点 门要……
+Dialogue: 0,0:19:35.00,0:19:36.10,DefaultCN-2202,,0,0,0,,该死的！
+Dialogue: 0,0:19:48.36,0:19:49.88,DefaultCN-2202,,0,0,0,,真拼命啊
+Dialogue: 0,0:19:49.88,0:19:53.23,DefaultCN-2202,,0,0,0,,我必须称赞你 竟然能来到这里
+Dialogue: 0,0:19:53.23,0:19:55.79,DefaultCN-2202,,0,0,0,,但是 接下来你要怎么做呢？
+Dialogue: 0,0:19:56.82,0:19:59.78,DefaultCN-2202,,0,0,0,,你不会再受到那个女人的力量保护了
+Dialogue: 0,0:20:00.79,0:20:02.00,DefaultCN-2202,,0,0,0,,透子她……
+Dialogue: 0,0:20:02.65,0:20:03.53,DefaultCN-2202,,0,0,0,,为什么？
+Dialogue: 0,0:20:03.53,0:20:05.33,DefaultCN-2202,,0,0,0,,她可是你的……
+Dialogue: 0,0:20:05.33,0:20:07.28,DefaultCN-2202,,0,0,0,,你还敢质问我？
+Dialogue: 0,0:20:07.28,0:20:13.03,DefaultCN-2202,,0,0,0,,你明明利用那个女人 付出巨大牺牲才来到这里！
+Dialogue: 0,0:20:14.03,0:20:17.15,DefaultCN-2202,,0,0,0,,你明明说过不会再扣动扳机！
+Dialogue: 0,0:20:18.84,0:20:21.89,DefaultCN-2202,,0,0,0,,到此为止了 人类！
+Dialogue: 0,0:20:26.67,0:20:27.55,DefaultCN-2202,,0,0,0,,古代！
+Dialogue: 0,0:20:39.28,0:20:40.10,DefaultCN-2202,,0,0,0,,队长？
+Dialogue: 0,0:20:40.10,0:20:41.42,DefaultCN-2202,,0,0,0,,抱歉！我来迟了
+Dialogue: 0,0:20:41.42,0:20:43.04,DefaultCN-2202,,0,0,0,,赶紧去拿下哥雷姆 快点！
+Dialogue: 0,0:20:43.57,0:20:46.00,DefaultCN-2202,,0,0,0,,大帝 情况紧急 还是立即撤离吧
+Dialogue: 0,0:20:55.26,0:20:59.15,DefaultCN-2202,,0,0,0,,难道你想对我说 胜负已分了么？
+Dialogue: 0,0:20:59.93,0:21:03.25,DefaultCN-2202,,0,0,0,,若你们自认是人类 我想我们还有谈判的余地
+Dialogue: 0,0:21:04.10,0:21:06.45,DefaultCN-2202,,0,0,0,,你说 我们也是人类？
+Dialogue: 0,0:21:07.14,0:21:11.31,DefaultCN-2202,,0,0,0,,这是你的未来 亲口告诉我的
+Dialogue: 0,0:21:13.61,0:21:15.28,DefaultCN-2202,,0,0,0,,但是那个未来却……
+Dialogue: 0,0:21:16.78,0:21:18.03,DefaultCN-2202,,0,0,0,,已经死了……
+Dialogue: 0,0:21:19.55,0:21:21.28,DefaultCN-2202,,0,0,0,,还是一如既往的没完没了
+Dialogue: 0,0:21:22.14,0:21:22.86,DefaultCN-2202,,0,0,0,,小心！
+Dialogue: 0,0:21:45.66,0:21:48.32,DefaultCN-2202,,0,0,0,,你没事就好……
+Dialogue: 0,0:21:55.33,0:21:56.96,DefaultCN-2202,,0,0,0,,我承认……
+Dialogue: 0,0:21:57.96,0:21:58.96,DefaultCN-2202,,0,0,0,,佐达……
+Dialogue: 0,0:22:03.21,0:22:07.02,DefaultCN-2202,,0,0,0,,我们也是人类
+Dialogue: 0,0:22:18.50,0:22:19.18,DefaultCN-2202,,0,0,0,,等等！
+Dialogue: 0,0:22:39.88,0:22:44.88,Title,,0,0,0,,{\bord1\fs50\an7\pos(1250,40)}第二十四话
+Dialogue: 0,0:22:39.88,0:22:44.88,Title,,0,0,0,,{\bord1\fs70\an7\pos(1250,100)}大和号 攻下彗星帝国！
+Dialogue: 0,0:22:49.63,0:22:56.33,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}ようらんか
+Dialogue: 0,0:22:49.63,0:22:56.33,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
+Dialogue: 0,0:22:51.35,0:23:02.43,OPED,,0,0,0,,安静地睡吧 你的吐息宛如幼时\N{\K1171\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そつとやすみなさい 幼子のような吐息
+Dialogue: 0,0:23:02.43,0:23:17.01,OPED,,0,0,0,,我会一直陪伴在旁 合上双眼吧\N{\K1309\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつまでも 傍に居るから瞼閉じて
+Dialogue: 0,0:23:17.01,0:23:30.53,OPED,,0,0,0,,如阳光融化冰雪一般温柔\N{\K1313\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}陽だまりの溶けるような優しさで
+Dialogue: 0,0:23:30.53,0:23:44.13,OPED,,0,0,0,,包围着你 这就是产生幸福的力量\N{\K1368\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}包み込むよ 幸せ生み出す力
+Dialogue: 0,0:23:44.69,0:23:58.00,OPED,,0,0,0,,在轻盈飘荡的睡梦中\N{\K1288\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ゆらり ふらりふわふわ夢の中
+Dialogue: 0,0:23:58.00,0:24:10.69,OPED,,0,0,0,,彼此依靠 思绪奔驰\N{\K1303\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}思い馳せる寄り添いながら
+Dialogue: 0,0:24:12.11,0:24:25.52,OPED,,0,0,0,,暗自祈祷 愿你永葆微笑\N{\K1288\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつでも 笑っていてほしと願う
+Dialogue: 0,0:24:25.51,0:24:38.60,OPED,,0,0,0,,那纯洁的笑颜永不消逝\N{\K1293\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}無垢な笑顔 絶やさぬように
+Dialogue: 0,0:24:39.65,0:24:50.98,OPED,,0,0,0,,唯一臻爱的你哟\N{\K1088\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ひとっしい人よ
+Dialogue: 0,0:25:19.52,0:25:23.14,DefaultCN-2202,,0,0,0,,难道说 它正在吞噬彗星都市帝国
+Dialogue: 0,0:25:23.16,0:25:25.56,DefaultCN-2202,,0,0,0,,这就是毁灭方舟么
+Dialogue: 0,0:25:25.57,0:25:27.27,DefaultCN-2202,,0,0,0,,大和号轮机遭到重创
+Dialogue: 0,0:25:27.27,0:25:29.40,DefaultCN-2202,,0,0,0,,让大和号突入那里
+Dialogue: 0,0:25:29.41,0:25:31.43,DefaultCN-2202,,0,0,0,,我不想再失去任何人了！
+Dialogue: 0,0:25:31.43,0:25:32.28,DefaultCN-2202,,0,0,0,,古代！
+Dialogue: 0,0:25:32.28,0:25:33.46,DefaultCN-2202,,0,0,0,,抓住未来！
+Dialogue: 0,0:25:32.98,0:25:33.98,Title,,0,0,0,,{\fs66\an8\pos(965,620)}第二十五话
+Dialogue: 0,0:25:32.98,0:25:33.98,Title,,0,0,0,,{\fs76\an8\pos(965,690)}再见了 宇宙战舰大和号
+Dialogue: 1,0:02:05.30,0:02:06.46,JapaneseAux,JP-SYNC-0001,0,0,0,Bilingual-JP,ワープ終了
+Dialogue: 1,0:02:06.73,0:02:09.43,JapaneseAux,JP-SYNC-0002,0,0,0,Bilingual-JP,誤差修正 ２０(フタマル) １５(ヒトゴ) １０(ヒトマル)
+Dialogue: 1,0:02:09.43,0:02:10.98,JapaneseAux,JP-SYNC-0003,0,0,0,Bilingual-JP,修正データ 送信
+Dialogue: 1,0:02:11.50,0:02:14.03,JapaneseAux,JP-SYNC-0004,0,0,0,Bilingual-JP,トランジット波動砲 発射準備！
+Dialogue: 1,0:02:14.23,0:02:16.01,JapaneseAux,JP-SYNC-0005,0,0,0,Bilingual-JP,ターゲットスコープ オープン！
+Dialogue: 1,0:02:18.37,0:02:21.18,JapaneseAux,JP-SYNC-0006,0,0,0,Bilingual-JP,目標 彗星中心核
+Dialogue: 1,0:02:21.18,0:02:22.82,JapaneseAux,JP-SYNC-0007,0,0,0,Bilingual-JP,波動砲への回路 開け
+Dialogue: 1,0:02:23.42,0:02:25.38,JapaneseAux,JP-SYNC-0008,0,0,0,Bilingual-JP,波動砲への回路 開きます！
+Dialogue: 1,0:02:25.38,0:02:27.48,JapaneseAux,JP-SYNC-0009,0,0,0,Bilingual-JP,非常弁 全閉鎖！
+Dialogue: 1,0:02:27.48,0:02:29.84,JapaneseAux,JP-SYNC-0010,0,0,0,Bilingual-JP,ＣＲＳブースター 接続！
+Dialogue: 1,0:02:30.26,0:02:32.91,JapaneseAux,JP-SYNC-0011,0,0,0,Bilingual-JP,予定位置に ノイ･デウスーラ ワープアウト
+Dialogue: 1,0:02:44.21,0:02:46.84,JapaneseAux,JP-SYNC-0012,0,0,0,Bilingual-JP,エネルギー充填 120パーセント
+Dialogue: 1,0:02:47.49,0:02:48.63,JapaneseAux,JP-SYNC-0013,0,0,0,Bilingual-JP,発射10秒前
+Dialogue: 1,0:02:48.63,0:02:51.43,JapaneseAux,JP-SYNC-0014,0,0,0,Bilingual-JP,総員 対ショック 対閃光防御
+Dialogue: 1,0:02:51.43,0:02:58.74,JapaneseAux,JP-SYNC-0015,0,0,0,Bilingual-JP,我がノイ･デウスーラが トランジット波動砲の エネルギー輻射から ヤマトを守ってくれよう
+Dialogue: 1,0:02:59.33,0:03:01.82,JapaneseAux,JP-SYNC-0016,0,0,0,Bilingual-JP,トランジット波動砲 発射！
+Dialogue: 1,0:04:05.19,0:04:06.98,JapaneseAux,JP-SYNC-0017,0,0,0,Bilingual-JP,こっ こんなことが…
+Dialogue: 1,0:04:06.98,0:04:09.59,JapaneseAux,JP-SYNC-0018,0,0,0,Bilingual-JP,波動砲を超える力だと！
+Dialogue: 1,0:04:11.81,0:04:14.63,JapaneseAux,JP-SYNC-0019,0,0,0,Bilingual-JP,奇妙な“縁”だ
+Dialogue: 1,0:04:14.63,0:04:16.98,JapaneseAux,JP-SYNC-0020,0,0,0,Bilingual-JP,テレサに導かれし艦…
+Dialogue: 1,0:04:17.63,0:04:18.78,JapaneseAux,JP-SYNC-0021,0,0,0,Bilingual-JP,ヤマト
+Dialogue: 1,0:04:27.38,0:04:28.73,JapaneseAux,JP-SYNC-0022,0,0,0,Bilingual-JP,ゼルグートより入電！
+Dialogue: 1,0:04:29.99,0:04:31.52,JapaneseAux,JP-SYNC-0023,0,0,0,Bilingual-JP,ヤマトに告ぐ
+Dialogue: 1,0:04:31.52,0:04:37.63,JapaneseAux,JP-SYNC-0024,0,0,0,Bilingual-JP,これより ガミラス軍は 総力を挙げて 貴艦を都市帝国の中核へ送り込む
+Dialogue: 1,0:04:38.63,0:04:41.69,JapaneseAux,JP-SYNC-0025,0,0,0,Bilingual-JP,地球の守りは 任せてもらいたい
+Dialogue: 1,0:04:43.61,0:04:44.97,JapaneseAux,JP-SYNC-0026,0,0,0,Bilingual-JP,バレル大使…
+Dialogue: 1,0:04:45.47,0:04:47.63,JapaneseAux,JP-SYNC-0027,0,0,0,Bilingual-JP,作戦は共有している
+Dialogue: 1,0:04:47.63,0:04:51.88,JapaneseAux,JP-SYNC-0028,0,0,0,Bilingual-JP,目指すは滅びの方舟 大帝玉座の間
+Dialogue: 1,0:04:51.88,0:04:55.53,JapaneseAux,JP-SYNC-0029,0,0,0,Bilingual-JP,ワープでは無理だが 我々の技術を用いれば…
+Dialogue: 1,0:05:00.43,0:05:02.23,JapaneseAux,JP-SYNC-0030,0,0,0,Bilingual-JP,次元潜航艦 浮上！
+Dialogue: 1,0:05:07.20,0:05:08.92,JapaneseAux,JP-SYNC-0031,0,0,0,Bilingual-JP,初めての試みだ
+Dialogue: 1,0:05:12.12,0:05:18.63,JapaneseAux,JP-SYNC-0032,0,0,0,Bilingual-JP,特殊装備の４隻をもってしても ヤマト１艦を送り込むのが 限界だろう
+Dialogue: 1,0:05:19.11,0:05:22.26,JapaneseAux,JP-SYNC-0033,0,0,0,Bilingual-JP,それとて 成功の保証はない
+Dialogue: 1,0:05:24.19,0:05:27.30,JapaneseAux,JP-SYNC-0034,0,0,0,Bilingual-JP,これも… 縁のなせる業
+Dialogue: 1,0:05:28.56,0:05:31.43,JapaneseAux,JP-SYNC-0035,0,0,0,Bilingual-JP,次元潜航艦に舵を託す！
+Dialogue: 1,0:05:36.36,0:05:39.11,JapaneseAux,JP-SYNC-0036,0,0,0,Bilingual-JP,全艦連動！ 急速潜航！
+Dialogue: 1,0:05:39.11,0:05:40.18,JapaneseAux,JP-SYNC-0037,0,0,0,Bilingual-JP,急速潜航！
+Dialogue: 1,0:06:04.06,0:06:07.33,JapaneseAux,JP-SYNC-0038,0,0,0,Bilingual-JP,ヤマトが目的を達成するまで 持ちこたえてみせる
+Dialogue: 1,0:06:08.33,0:06:09.59,JapaneseAux,JP-SYNC-0039,0,0,0,Bilingual-JP,絶対にな！
+Dialogue: 1,0:07:01.15,0:07:03.48,JapaneseAux,JP-SYNC-0040,0,0,0,Bilingual-JP,まもなく浮上ポイント
+Dialogue: 1,0:07:03.48,0:07:06.09,JapaneseAux,JP-SYNC-0041,0,0,0,Bilingual-JP,我々にできるのは ここまでだ
+Dialogue: 1,0:07:07.19,0:07:10.08,JapaneseAux,JP-SYNC-0042,0,0,0,Bilingual-JP,後は頼む ヤマト
+Dialogue: 1,0:07:25.42,0:07:27.11,JapaneseAux,JP-SYNC-0043,0,0,0,Bilingual-JP,またの再会を！
+Dialogue: 1,0:07:42.55,0:07:44.73,JapaneseAux,JP-SYNC-0044,0,0,0,Bilingual-JP,ここが敵の腹の中か…
+Dialogue: 1,0:07:44.73,0:07:46.39,JapaneseAux,JP-SYNC-0045,0,0,0,Bilingual-JP,索敵警戒 怠るな！
+Dialogue: 1,0:07:46.85,0:07:48.48,JapaneseAux,JP-SYNC-0046,0,0,0,Bilingual-JP,未知の熱源 感知！
+Dialogue: 1,0:07:49.42,0:07:53.64,JapaneseAux,JP-SYNC-0047,0,0,0,Bilingual-JP,カラクルム級… ですが 小さい サイズがバラバラです
+Dialogue: 1,0:07:53.64,0:07:54.53,JapaneseAux,JP-SYNC-0048,0,0,0,Bilingual-JP,これは…
+Dialogue: 1,0:07:54.93,0:08:00.28,JapaneseAux,JP-SYNC-0049,0,0,0,Bilingual-JP,桂木透子の情報どおり ここは ガトランティス艦を生み出す母胎…
+Dialogue: 1,0:08:01.03,0:08:04.05,JapaneseAux,JP-SYNC-0050,0,0,0,Bilingual-JP,各システム 自動航法装置と連携始め！
+Dialogue: 1,0:08:12.98,0:08:14.08,JapaneseAux,JP-SYNC-0051,0,0,0,Bilingual-JP,ん？ あの光は…
+Dialogue: 1,0:08:26.17,0:08:29.16,JapaneseAux,JP-SYNC-0052,0,0,0,Bilingual-JP,コスモウェーブによる攪乱工作
+Dialogue: 1,0:08:29.62,0:08:33.13,JapaneseAux,JP-SYNC-0053,0,0,0,Bilingual-JP,遮断できません 最上位のコードです
+Dialogue: 1,0:08:34.18,0:08:37.31,JapaneseAux,JP-SYNC-0054,0,0,0,Bilingual-JP,あれもまた 白銀の巫女
+Dialogue: 1,0:08:39.11,0:08:43.44,JapaneseAux,JP-SYNC-0055,0,0,0,Bilingual-JP,この彗星都市を操る権限を 持つ者です
+Dialogue: 1,0:08:46.88,0:08:47.83,JapaneseAux,JP-SYNC-0056,0,0,0,Bilingual-JP,門が…
+Dialogue: 1,0:08:47.83,0:08:50.88,JapaneseAux,JP-SYNC-0057,0,0,0,Bilingual-JP,この千年 開いたことのない門が！
+Dialogue: 1,0:08:51.81,0:08:53.42,JapaneseAux,JP-SYNC-0058,0,0,0,Bilingual-JP,サーベラー！
+Dialogue: 1,0:08:56.90,0:08:59.30,JapaneseAux,JP-SYNC-0059,0,0,0,Bilingual-JP,人形では勝負にならんか
+Dialogue: 1,0:09:00.17,0:09:01.28,JapaneseAux,JP-SYNC-0060,0,0,0,Bilingual-JP,ラーゼラー！
+Dialogue: 1,0:09:01.28,0:09:02.28,JapaneseAux,JP-SYNC-0061,0,0,0,Bilingual-JP,はっ！
+Dialogue: 1,0:09:03.17,0:09:04.50,JapaneseAux,JP-SYNC-0062,0,0,0,Bilingual-JP,見せてもらおう
+Dialogue: 1,0:09:06.34,0:09:07.88,JapaneseAux,JP-SYNC-0063,0,0,0,Bilingual-JP,システム･ジャック 成功です！
+Dialogue: 1,0:09:08.50,0:09:12.13,JapaneseAux,JP-SYNC-0064,0,0,0,Bilingual-JP,総員！ 本艦は これより 敵中枢に突入する
+Dialogue: 1,0:09:12.62,0:09:14.86,JapaneseAux,JP-SYNC-0065,0,0,0,Bilingual-JP,空間騎兵隊 出撃！
+Dialogue: 1,0:09:15.73,0:09:17.98,JapaneseAux,JP-SYNC-0066,0,0,0,Bilingual-JP,航空機隊 全機発進！
+Dialogue: 1,0:09:54.71,0:09:57.48,JapaneseAux,JP-SYNC-0067,0,0,0,Bilingual-JP,ダメ… 操作を受け付けない
+Dialogue: 1,0:09:59.78,0:10:00.58,JapaneseAux,JP-SYNC-0068,0,0,0,Bilingual-JP,うわあ！
+Dialogue: 1,0:10:00.58,0:10:01.78,JapaneseAux,JP-SYNC-0069,0,0,0,Bilingual-JP,どうした！ 艦尾に被弾！
+Dialogue: 1,0:10:07.06,0:10:09.20,JapaneseAux,JP-SYNC-0070,0,0,0,Bilingual-JP,右舷後方！ 機関部です！
+Dialogue: 1,0:10:09.20,0:10:10.02,JapaneseAux,JP-SYNC-0071,0,0,0,Bilingual-JP,艦長！
+Dialogue: 1,0:10:10.02,0:10:10.88,JapaneseAux,JP-SYNC-0072,0,0,0,Bilingual-JP,頼む
+Dialogue: 1,0:10:21.94,0:10:23.08,JapaneseAux,JP-SYNC-0073,0,0,0,Bilingual-JP,損傷報告！
+Dialogue: 1,0:10:23.51,0:10:24.78,JapaneseAux,JP-SYNC-0074,0,0,0,Bilingual-JP,このままじゃ 艦が！
+Dialogue: 1,0:10:25.40,0:10:29.14,JapaneseAux,JP-SYNC-0075,0,0,0,Bilingual-JP,我々の狙いは ゴレムだと ズォーダーは知っている
+Dialogue: 1,0:10:30.63,0:10:33.03,JapaneseAux,JP-SYNC-0076,0,0,0,Bilingual-JP,あっ… 殺るか 殺られるか
+Dialogue: 1,0:10:34.18,0:10:36.55,JapaneseAux,JP-SYNC-0077,0,0,0,Bilingual-JP,最初から分かりきっていることだ
+Dialogue: 1,0:10:40.70,0:10:42.39,JapaneseAux,JP-SYNC-0078,0,0,0,Bilingual-JP,正面突破！
+Dialogue: 1,0:10:42.88,0:10:45.78,JapaneseAux,JP-SYNC-0079,0,0,0,Bilingual-JP,機関 被害甚大 全隔壁閉鎖！
+Dialogue: 1,0:10:45.78,0:10:48.91,JapaneseAux,JP-SYNC-0080,0,0,0,Bilingual-JP,応急操舵始め！ 不要区画の電源 落とせ！
+Dialogue: 1,0:10:49.46,0:10:51.97,JapaneseAux,JP-SYNC-0081,0,0,0,Bilingual-JP,先生！ もう 医務室に収容できません！
+Dialogue: 1,0:10:51.97,0:10:54.47,JapaneseAux,JP-SYNC-0082,0,0,0,Bilingual-JP,通路に置いとけ！ トリアージ やってるな？
+Dialogue: 1,0:10:54.47,0:10:54.95,JapaneseAux,JP-SYNC-0083,0,0,0,Bilingual-JP,はい…
+Dialogue: 1,0:10:54.95,0:10:57.72,JapaneseAux,JP-SYNC-0084,0,0,0,Bilingual-JP,助かるヤツを 一人でも多く助けるんだろうが！
+Dialogue: 1,0:11:11.04,0:11:14.33,JapaneseAux,JP-SYNC-0085,0,0,0,Bilingual-JP,テレサ… 聞こえていますか？
+Dialogue: 1,0:11:14.33,0:11:15.21,JapaneseAux,JP-SYNC-0086,0,0,0,Bilingual-JP,テレサ…
+Dialogue: 1,0:11:17.06,0:11:24.32,JapaneseAux,JP-SYNC-0087,0,0,0,Bilingual-JP,私は テレザートを覚えていない でも 知っているような気が するのです
+Dialogue: 1,0:11:27.98,0:11:34.24,JapaneseAux,JP-SYNC-0088,0,0,0,Bilingual-JP,そこにいるなら教えてほしい この苦しみに意味はありますか？
+Dialogue: 1,0:11:35.52,0:11:41.01,JapaneseAux,JP-SYNC-0089,0,0,0,Bilingual-JP,流された血に見合う何かが 人の一生にはありますか？
+Dialogue: 1,0:11:42.65,0:11:50.18,JapaneseAux,JP-SYNC-0090,0,0,0,Bilingual-JP,エンジン出力 制御ならず しかし 航行に支障… なし…
+Dialogue: 1,0:11:50.73,0:11:51.88,JapaneseAux,JP-SYNC-0091,0,0,0,Bilingual-JP,徳川機関長！
+Dialogue: 1,0:11:51.88,0:11:52.98,JapaneseAux,JP-SYNC-0092,0,0,0,Bilingual-JP,機関長！
+Dialogue: 1,0:11:53.73,0:11:57.63,JapaneseAux,JP-SYNC-0093,0,0,0,Bilingual-JP,一人で生まれて 一人で死んでゆくのに
+Dialogue: 1,0:11:57.63,0:12:00.12,JapaneseAux,JP-SYNC-0094,0,0,0,Bilingual-JP,私たちは なぜ出会うのですか？
+Dialogue: 1,0:12:00.54,0:12:01.79,JapaneseAux,JP-SYNC-0095,0,0,0,Bilingual-JP,アブナイ！ うわっ…
+Dialogue: 1,0:12:04.97,0:12:06.33,JapaneseAux,JP-SYNC-0096,0,0,0,Bilingual-JP,アナライザー！
+Dialogue: 1,0:12:06.33,0:12:07.33,JapaneseAux,JP-SYNC-0097,0,0,0,Bilingual-JP,先生！
+Dialogue: 1,0:12:07.33,0:12:08.58,JapaneseAux,JP-SYNC-0098,0,0,0,Bilingual-JP,放せ！
+Dialogue: 1,0:12:08.58,0:12:13.11,JapaneseAux,JP-SYNC-0099,0,0,0,Bilingual-JP,こいつは ただの機械じゃない！ 替えは利かんのじゃ！
+Dialogue: 1,0:12:22.52,0:12:24.34,JapaneseAux,JP-SYNC-0100,0,0,0,Bilingual-JP,セン… セイ
+Dialogue: 1,0:12:26.42,0:12:29.53,JapaneseAux,JP-SYNC-0101,0,0,0,Bilingual-JP,ア リ ガ ト ウ…
+Dialogue: 1,0:12:34.22,0:12:38.13,JapaneseAux,JP-SYNC-0102,0,0,0,Bilingual-JP,私たちは たくさんのものを失ってきました
+Dialogue: 1,0:12:43.18,0:12:45.98,JapaneseAux,JP-SYNC-0103,0,0,0,Bilingual-JP,家族も 仲間も
+Dialogue: 1,0:12:46.88,0:12:49.64,JapaneseAux,JP-SYNC-0104,0,0,0,Bilingual-JP,愛する人との… 思い出さえも
+Dialogue: 1,0:12:52.18,0:12:54.24,JapaneseAux,JP-SYNC-0105,0,0,0,Bilingual-JP,もう なくしたくない
+Dialogue: 1,0:13:00.35,0:13:00.98,JapaneseAux,JP-SYNC-0106,0,0,0,Bilingual-JP,艦長！
+Dialogue: 1,0:13:02.71,0:13:04.76,JapaneseAux,JP-SYNC-0107,0,0,0,Bilingual-JP,もう奪わないで！
+Dialogue: 1,0:13:09.09,0:13:10.34,JapaneseAux,JP-SYNC-0108,0,0,0,Bilingual-JP,しっかりしてください！
+Dialogue: 1,0:13:11.28,0:13:12.34,JapaneseAux,JP-SYNC-0109,0,0,0,Bilingual-JP,佐渡先生を！
+Dialogue: 1,0:13:12.34,0:13:13.36,JapaneseAux,JP-SYNC-0110,0,0,0,Bilingual-JP,いい
+Dialogue: 1,0:13:15.72,0:13:17.00,JapaneseAux,JP-SYNC-0111,0,0,0,Bilingual-JP,騒ぐな
+Dialogue: 1,0:13:21.14,0:13:23.43,JapaneseAux,JP-SYNC-0112,0,0,0,Bilingual-JP,あれを見ろ
+Dialogue: 1,0:13:23.43,0:13:27.83,JapaneseAux,JP-SYNC-0113,0,0,0,Bilingual-JP,あれらは まだ 桂木透子の支配下にある
+Dialogue: 1,0:13:29.38,0:13:34.08,JapaneseAux,JP-SYNC-0114,0,0,0,Bilingual-JP,ヤマトのシステムと組み合わせて もっと有効に…
+Dialogue: 1,0:13:34.84,0:13:36.08,JapaneseAux,JP-SYNC-0115,0,0,0,Bilingual-JP,アステロイドリング…
+Dialogue: 1,0:13:36.84,0:13:41.09,JapaneseAux,JP-SYNC-0116,0,0,0,Bilingual-JP,それで航空隊を守り 一気にゲートの中へ
+Dialogue: 1,0:13:42.90,0:13:44.12,JapaneseAux,JP-SYNC-0117,0,0,0,Bilingual-JP,できるな？
+Dialogue: 1,0:13:45.79,0:13:46.58,JapaneseAux,JP-SYNC-0118,0,0,0,Bilingual-JP,はい！
+Dialogue: 1,0:13:50.10,0:13:50.98,JapaneseAux,JP-SYNC-0119,0,0,0,Bilingual-JP,うっ… 古代
+Dialogue: 1,0:13:53.43,0:13:57.19,JapaneseAux,JP-SYNC-0120,0,0,0,Bilingual-JP,次の艦長は 君だ
+Dialogue: 1,0:14:01.67,0:14:04.98,JapaneseAux,JP-SYNC-0121,0,0,0,Bilingual-JP,未来を… つかめ
+Dialogue: 1,0:14:27.92,0:14:29.00,JapaneseAux,JP-SYNC-0122,0,0,0,Bilingual-JP,未来を…
+Dialogue: 1,0:14:40.12,0:14:43.22,JapaneseAux,JP-SYNC-0123,0,0,0,Bilingual-JP,土方前艦長の命令を決行する！
+Dialogue: 1,0:15:05.93,0:15:09.46,JapaneseAux,JP-SYNC-0124,0,0,0,Bilingual-JP,マグネトロンウェーブ 透子さんのコスモウェーブとの 同調良好！
+Dialogue: 1,0:15:12.73,0:15:13.63,JapaneseAux,JP-SYNC-0125,0,0,0,Bilingual-JP,こちら古代 航空隊に合流し
+Dialogue: 1,0:15:13.63,0:15:17.31,JapaneseAux,JP-SYNC-0126,0,0,0,Bilingual-JP,先行部隊としてゲートに突入する
+Dialogue: 1,0:15:17.31,0:15:18.11,JapaneseAux,JP-SYNC-0127,0,0,0,Bilingual-JP,よっしゃ！
+Dialogue: 1,0:15:18.11,0:15:19.25,JapaneseAux,JP-SYNC-0128,0,0,0,Bilingual-JP,前方から敵！
+Dialogue: 1,0:15:24.80,0:15:26.07,JapaneseAux,JP-SYNC-0129,0,0,0,Bilingual-JP,なんだ あれは！
+Dialogue: 1,0:15:30.36,0:15:32.96,JapaneseAux,JP-SYNC-0130,0,0,0,Bilingual-JP,こいつは俺がやる お前ら 先に行け！
+Dialogue: 1,0:15:32.96,0:15:33.95,JapaneseAux,JP-SYNC-0131,0,0,0,Bilingual-JP,頼む
+Dialogue: 1,0:15:34.77,0:15:36.88,JapaneseAux,JP-SYNC-0132,0,0,0,Bilingual-JP,俺は もう逃げない
+Dialogue: 1,0:15:36.88,0:15:39.46,JapaneseAux,JP-SYNC-0133,0,0,0,Bilingual-JP,今の俺は 死ぬほど生きたい
+Dialogue: 1,0:15:41.03,0:15:43.23,JapaneseAux,JP-SYNC-0134,0,0,0,Bilingual-JP,真琴の顔が見たい
+Dialogue: 1,0:15:43.23,0:15:46.01,JapaneseAux,JP-SYNC-0135,0,0,0,Bilingual-JP,元気になった翼を肩車してやりたい
+Dialogue: 1,0:15:48.12,0:15:51.74,JapaneseAux,JP-SYNC-0136,0,0,0,Bilingual-JP,これまで できなかったことを 全部してやりたいんだ！
+Dialogue: 1,0:15:53.95,0:15:56.34,JapaneseAux,JP-SYNC-0137,0,0,0,Bilingual-JP,俺は生きて帰る 絶対に…
+Dialogue: 1,0:16:08.05,0:16:10.48,JapaneseAux,JP-SYNC-0138,0,0,0,Bilingual-JP,ざまあ… ねえな
+Dialogue: 1,0:16:11.83,0:16:17.26,JapaneseAux,JP-SYNC-0139,0,0,0,Bilingual-JP,でもよ！ 父ちゃん 最後まで諦めねえぜ！
+Dialogue: 1,0:16:51.48,0:16:53.24,JapaneseAux,JP-SYNC-0140,0,0,0,Bilingual-JP,知ってるか？ 翼
+Dialogue: 1,0:16:54.23,0:16:57.00,JapaneseAux,JP-SYNC-0141,0,0,0,Bilingual-JP,お前の父ちゃん かっこいいんだぞ
+Dialogue: 1,0:17:10.07,0:17:11.97,JapaneseAux,JP-SYNC-0142,0,0,0,Bilingual-JP,門を 閉めます
+Dialogue: 1,0:17:18.94,0:17:20.74,JapaneseAux,JP-SYNC-0143,0,0,0,Bilingual-JP,機関 最大出力！
+Dialogue: 1,0:17:33.73,0:17:35.61,JapaneseAux,JP-SYNC-0144,0,0,0,Bilingual-JP,古代 ここは任せろ！
+Dialogue: 1,0:17:45.97,0:17:46.99,JapaneseAux,JP-SYNC-0145,0,0,0,Bilingual-JP,キーマン…
+Dialogue: 1,0:17:54.49,0:17:56.58,JapaneseAux,JP-SYNC-0146,0,0,0,Bilingual-JP,レルテの門 開放
+Dialogue: 1,0:18:00.33,0:18:02.42,JapaneseAux,JP-SYNC-0147,0,0,0,Bilingual-JP,ゴレムまで誘導します
+Dialogue: 1,0:18:03.33,0:18:05.29,JapaneseAux,JP-SYNC-0148,0,0,0,Bilingual-JP,まさか ここまで…
+Dialogue: 1,0:18:07.61,0:18:11.70,JapaneseAux,JP-SYNC-0149,0,0,0,Bilingual-JP,サーベラーよ 聞こえているな？
+Dialogue: 1,0:18:13.42,0:18:17.28,JapaneseAux,JP-SYNC-0150,0,0,0,Bilingual-JP,閉ざすな！ なぜ 私を否定する？
+Dialogue: 1,0:18:18.44,0:18:21.98,JapaneseAux,JP-SYNC-0151,0,0,0,Bilingual-JP,誰よりも 人の不毛を知るお前が…
+Dialogue: 1,0:18:21.98,0:18:25.28,JapaneseAux,JP-SYNC-0152,0,0,0,Bilingual-JP,滅びの方舟を目覚めさせたお前が
+Dialogue: 1,0:18:25.28,0:18:26.63,JapaneseAux,JP-SYNC-0153,0,0,0,Bilingual-JP,なぜ？
+Dialogue: 1,0:18:26.63,0:18:28.88,JapaneseAux,JP-SYNC-0154,0,0,0,Bilingual-JP,目覚めさせるべきではなかった！
+Dialogue: 1,0:18:32.56,0:18:33.69,JapaneseAux,JP-SYNC-0155,0,0,0,Bilingual-JP,なぜだ？
+Dialogue: 1,0:18:35.34,0:18:37.13,JapaneseAux,JP-SYNC-0156,0,0,0,Bilingual-JP,ミルは… 我らの子は
+Dialogue: 1,0:18:37.13,0:18:40.84,JapaneseAux,JP-SYNC-0157,0,0,0,Bilingual-JP,殺されたのだぞ 二度までも
+Dialogue: 1,0:18:42.08,0:18:43.83,JapaneseAux,JP-SYNC-0158,0,0,0,Bilingual-JP,そう… あなたは それを悲しみ
+Dialogue: 1,0:18:43.83,0:18:47.97,JapaneseAux,JP-SYNC-0159,0,0,0,Bilingual-JP,絶望する心を持っている
+Dialogue: 1,0:18:49.74,0:18:50.73,JapaneseAux,JP-SYNC-0160,0,0,0,Bilingual-JP,心…
+Dialogue: 1,0:18:52.01,0:18:53.23,JapaneseAux,JP-SYNC-0161,0,0,0,Bilingual-JP,あなたは人間
+Dialogue: 1,0:18:54.63,0:18:56.69,JapaneseAux,JP-SYNC-0162,0,0,0,Bilingual-JP,誰よりも人間だった！
+Dialogue: 1,0:18:59.30,0:19:00.48,JapaneseAux,JP-SYNC-0163,0,0,0,Bilingual-JP,そこか ハッ！
+Dialogue: 1,0:19:33.38,0:19:35.00,JapaneseAux,JP-SYNC-0164,0,0,0,Bilingual-JP,急げ！ 扉が！
+Dialogue: 1,0:19:35.00,0:19:36.10,JapaneseAux,JP-SYNC-0165,0,0,0,Bilingual-JP,クソ！
+Dialogue: 1,0:19:48.36,0:19:49.88,JapaneseAux,JP-SYNC-0166,0,0,0,Bilingual-JP,大したものだ
+Dialogue: 1,0:19:49.88,0:19:53.23,JapaneseAux,JP-SYNC-0167,0,0,0,Bilingual-JP,ここまでは よくやったと褒めてやる
+Dialogue: 1,0:19:53.23,0:19:55.79,JapaneseAux,JP-SYNC-0168,0,0,0,Bilingual-JP,だが 次はどうする？
+Dialogue: 1,0:19:56.82,0:19:59.78,JapaneseAux,JP-SYNC-0169,0,0,0,Bilingual-JP,もう あの女の加護はないぞ
+Dialogue: 1,0:20:00.79,0:20:02.00,JapaneseAux,JP-SYNC-0170,0,0,0,Bilingual-JP,ハッ 透子さんを…
+Dialogue: 1,0:20:02.65,0:20:03.53,JapaneseAux,JP-SYNC-0171,0,0,0,Bilingual-JP,なぜ！
+Dialogue: 1,0:20:03.53,0:20:05.33,JapaneseAux,JP-SYNC-0172,0,0,0,Bilingual-JP,彼女は あなたを… なぜと
+Dialogue: 1,0:20:05.33,0:20:07.28,JapaneseAux,JP-SYNC-0173,0,0,0,Bilingual-JP,問うか！
+Dialogue: 1,0:20:07.28,0:20:13.03,JapaneseAux,JP-SYNC-0174,0,0,0,Bilingual-JP,あの女を利用し 多くの犠牲を積み上げて ここに来た お前が
+Dialogue: 1,0:20:14.03,0:20:17.15,JapaneseAux,JP-SYNC-0175,0,0,0,Bilingual-JP,引き金を引かぬと言った お前が
+Dialogue: 1,0:20:18.84,0:20:21.89,JapaneseAux,JP-SYNC-0176,0,0,0,Bilingual-JP,ここまでだ 人間どもよ
+Dialogue: 1,0:20:26.67,0:20:27.55,JapaneseAux,JP-SYNC-0177,0,0,0,Bilingual-JP,古代さん！ ああ！
+Dialogue: 1,0:20:39.28,0:20:40.10,JapaneseAux,JP-SYNC-0178,0,0,0,Bilingual-JP,隊長！
+Dialogue: 1,0:20:40.10,0:20:41.42,JapaneseAux,JP-SYNC-0179,0,0,0,Bilingual-JP,すまねえ 遅れた！
+Dialogue: 1,0:20:41.42,0:20:43.04,JapaneseAux,JP-SYNC-0180,0,0,0,Bilingual-JP,ゴレムの制圧を！ 早く！
+Dialogue: 1,0:20:43.57,0:20:46.00,JapaneseAux,JP-SYNC-0181,0,0,0,Bilingual-JP,大帝 ここは お引きを
+Dialogue: 1,0:20:55.26,0:20:59.15,JapaneseAux,JP-SYNC-0182,0,0,0,Bilingual-JP,勝負は決した… とでも言うつもりか？
+Dialogue: 1,0:20:59.93,0:21:03.25,JapaneseAux,JP-SYNC-0183,0,0,0,Bilingual-JP,あなたたちも人間なら 話し合う余地があるはずだ
+Dialogue: 1,0:21:04.10,0:21:06.45,JapaneseAux,JP-SYNC-0184,0,0,0,Bilingual-JP,人間… だと？
+Dialogue: 1,0:21:07.14,0:21:11.31,JapaneseAux,JP-SYNC-0185,0,0,0,Bilingual-JP,あなたの未来が… 教えてくれた
+Dialogue: 1,0:21:13.61,0:21:15.28,JapaneseAux,JP-SYNC-0186,0,0,0,Bilingual-JP,その未来は…
+Dialogue: 1,0:21:16.78,0:21:18.03,JapaneseAux,JP-SYNC-0187,0,0,0,Bilingual-JP,死んだ
+Dialogue: 1,0:21:19.55,0:21:21.28,JapaneseAux,JP-SYNC-0188,0,0,0,Bilingual-JP,相変わらずキリがないねえ
+Dialogue: 1,0:21:22.14,0:21:22.86,JapaneseAux,JP-SYNC-0189,0,0,0,Bilingual-JP,危ねえ！
+Dialogue: 1,0:21:45.66,0:21:48.32,JapaneseAux,JP-SYNC-0190,0,0,0,Bilingual-JP,無事… だな
+Dialogue: 1,0:21:55.33,0:21:56.96,JapaneseAux,JP-SYNC-0191,0,0,0,Bilingual-JP,認めよう
+Dialogue: 1,0:21:57.96,0:21:58.96,JapaneseAux,JP-SYNC-0192,0,0,0,Bilingual-JP,ズォーダー
+Dialogue: 1,0:22:03.21,0:22:07.02,JapaneseAux,JP-SYNC-0193,0,0,0,Bilingual-JP,我らもまた… 人間
+Dialogue: 1,0:22:18.50,0:22:19.18,JapaneseAux,JP-SYNC-0194,0,0,0,Bilingual-JP,待て！

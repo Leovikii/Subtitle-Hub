@@ -5,9 +5,9 @@
 ## 项目标识
 
 - 内部 ID：`SH0001`
-- IMDb：`tt2496120`，`Space Battleship Yamato 2199`
-- Bangumi：`54552`
-- 豆瓣：`10549231`（用户提供的可选映射，不作为主动检索门禁）
+- Bangumi：[`54552`](https://bgm.tv/subject/54552)
+- 日文标题：`宇宙戦艦ヤマト2199`
+- 简中标题：`宇宙战舰大和号2199`
 
 外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md)、上级 [系列用语规范](../series-guide.md) 和本项目 [AI agent 控制面](docs/README.md)。
 
@@ -28,4 +28,4 @@
 
 ## 片源说明
 
-正式字幕文件名保留对应 `[Sav1our]` MKV 主文件名的 stem，再追加 `.zh-Hans.ja.ass`，表示简体中文主字幕与日语副字幕。仓库仅在 `project.yaml` 记录对应文件名，不提供视频文件、种子、磁力链接或下载地址。
+正式字幕文件名保留对应 `[Sav1our]` MKV 主文件名的 stem，再追加主字幕语言后缀 `.zh-Hans.ass`。日语副字幕记录在项目元数据和 ASS 内，不追加到外挂字幕文件名。仓库仅在 `project.yaml` 记录对应文件名，不提供视频文件、种子、磁力链接或下载地址。

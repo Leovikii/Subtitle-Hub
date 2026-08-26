@@ -1,4 +1,4 @@
-schema_version: 2
+schema_version: 3
 
 id: SH0002
 slug: yamato-2199-odyssey-celestial-ark
@@ -6,32 +6,22 @@ type: movie
 episode_count: 1
 status: active
 
-titles:
-  zh-Hans: 宇宙战舰大和号2199 星巡的方舟
-  ja: 宇宙戦艦ヤマト2199 星巡る方舟
-  en: "Space Battleship Yamato 2199: Odyssey of the Celestial Ark"
-
-external_ids:
-  imdb:
-    id: tt3222236
-    title: "Space Battleship Yamato 2199: Odyssey of the Celestial Ark"
-    url: https://www.imdb.com/title/tt3222236/
-    verification: agent-verified
-    verified_at: 2026-08-26
-  bangumi:
-    id: "84701"
-    title: 宇宙戦艦ヤマト2199 星巡る方舟
-    title_zh-Hans: 宇宙战舰大和号2199 星巡的方舟
-    url: https://bgm.tv/subject/84701
-    verification: agent-verified
-    verified_at: 2026-08-26
-  douban: null
+identity:
+  provider: bangumi
+  id: "84701"
+  url: https://bgm.tv/subject/84701
+  api_url: https://api.bgm.tv/v0/subjects/84701
+  titles:
+    ja: 宇宙戦艦ヤマト2199 星巡る方舟
+    zh-Hans: 宇宙战舰大和号2199 星巡的方舟
+  verification: api-verified
+  verified_at: 2026-08-26
 
 languages:
   release:
     primary: zh-Hans
     secondary: ja
-    filename_suffix: zh-Hans.ja
+    filename_suffix: zh-Hans
   references:
     - en
 
@@ -77,14 +67,14 @@ release:
   previous_rotation: rename-current-directory
   previous_required_after_first_release: true
   format: ass
-  filename_pattern: "<video-stem>.zh-Hans.ja.ass"
+  filename_pattern: "<video-stem>.zh-Hans.ass"
   embedded_version_field: Subtitle-Hub-Version
   review_coverage:
-    machine: historical-full
-    human: candidate-approved
-    basis: imported-1.0.0-record
+    machine: v2.0.0-structural-and-font-mapping-verified
+    human: visual-render-not-performed-owner-waived
+    basis: 2026-08-26-explicit-release-instruction
   package:
-    naming: "<imdb-id> - <IMDb-title> [v<version>].zip"
+    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:

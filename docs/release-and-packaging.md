@@ -40,18 +40,62 @@ subtitles/
 
 ## 4. 成品文件名
 
-文件名必须由“目标视频文件名去掉视频扩展名”加“语言组合后缀”和字幕扩展名组成：
+文件名必须由“目标视频文件名去掉视频扩展名”加“主字幕语言后缀”和字幕扩展名组成：
 
 ```text
-<video-stem>.<primary-language>.<secondary-language>.ass
+<video-stem>.<primary-language>.ass
 ```
 
-语言标签采用 ASCII 的 BCP 47 标签并保持顺序：主字幕在前、副字幕在后。本仓库常用：
+语言标签统一采用 BCP 47，并且只声明播放器应识别的主字幕语言。本仓库简体中文主字幕统一使用：
 
-- 简体中文主字幕 + 日语副字幕：`.zh-Hans.ja.ass`；
-- 简体中文主字幕 + 英语副字幕：`.zh-Hans.en.ass`。
+- 简体中文主字幕：`.zh-Hans.ass`。
 
-不得使用“简日双语”等本地化文字后缀，也不得使用含义不明确的 `chs`、`jp`、`bilingual`。ASCII 后缀可降低跨平台、压缩工具和媒体库扫描器的兼容风险；视频 stem 仍原样保留，以便精确识别适配片源。
+副语种不得进入文件名：简日和简英双语都使用 `.zh-Hans.ass`。完整语言组合必须记录在 `project.yaml`，并在 ASS 的 `[Script Info]` 中使用不可渲染注释 `Subtitle-Hub-Languages`、`Subtitle-Hub-Primary-Language` 和 `Subtitle-Hub-Secondary-Language`。不得并行维护 `chi`、`zho`、`zh-CN`、`chs`、“简日双语”或 `bilingual` 等另一套代码。视频 stem 仍原样保留，以便精确识别适配片源。
+
+正式简日双语 ASS 必须包含：
+
+```ass
+; Subtitle-Hub-Languages: zh-Hans, ja
+; Subtitle-Hub-Primary-Language: zh-Hans
+; Subtitle-Hub-Secondary-Language: ja
+```
+
+简英双语只把副语值改为 `en`。语言标记必须与 `project.yaml` 一致，并且每项恰好出现一次。
+
+### 4.1 ASS 头部规范
+
+正式 ASS 的 `[Script Info]` 使用固定结构顺序：
+
+```ass
+[Script Info]
+; Subtitle-Hub-Version: <version>
+; Subtitle-Hub-Languages: <primary>, <secondary>
+; Subtitle-Hub-Primary-Language: <primary>
+; Subtitle-Hub-Secondary-Language: <secondary>
+; Subtitle-Hub-Timing-Note: <optional project-specific provenance>
+; Subtitle-Hub-Source-Credit: <optional required attribution>
+Title: bgm<subject-id> - <name_cn> - <episode-id>
+ScriptType: v4.00+
+WrapStyle: <preserved value>
+ScaledBorderAndShadow: <preserved value>
+PlayResX: <preserved value>
+PlayResY: <preserved value>
+YCbCr Matrix: <preserved value>
+```
+
+两个可选注释只在现有成品确有需要长期保留的定时依据或来源署名时出现；不得写入本地绝对路径、下载位置或可清理临时报告。单部电影的 `episode-id` 使用 `MOVIE`。
+
+标准化时必须保留现有 `ScriptType`、`WrapStyle`、`ScaledBorderAndShadow`、`PlayResX`、`PlayResY` 和 `YCbCr Matrix` 的有效值，只调整字段顺序。默认值或空白工程字段 `Original Script`、`Original Translation`、`Original Timing`、`Original Editing`、`Script Updated By`、`Update Details`、`Timer: 100.0000` 和空 `Synch Point` 不进入正式成品；Aegisub 自动生成说明、网址及整个 `[Aegisub Project Garbage]` 区段必须删除，避免发布本地音视频路径和编辑器状态。
+
+本规范不建立跨作品统一样式表，也不授权修改仍被引用的样式。正式发布候选可以删除经静态引用闭包证明完全未使用的 `Style:` 定义，以清除不会参与渲染的历史垃圾；除此之外，从 `[V4+ Styles]` 开始的内容和顺序必须保持不变，包括 `Format`、所有保留样式、注释事件、对白、特效和附件区段。
+
+未使用样式的判定必须同时扫描：
+
+- 全部 `Dialogue` 和 `Comment` 事件的 `Style` 字段；
+- 全部事件文本中的 `\r<StyleName>` 样式重置；
+- 空 Style 事件对 `Default` 样式的隐式依赖。
+
+只有在上述引用集合中均未出现的样式才能删除。删除后必须重新验证每个事件和 `\r` 重置均能解析到保留样式，并证明 `[Events]` 字节未改变。不得自动合并参数相同的样式，不得重命名样式，不得修改保留样式的字体、颜色、字号、边距、对齐、描边或阴影；这些操作属于独立视觉修改，必须另立审核轮次并完成渲染复核。
 
 ## 5. 项目元数据
 
@@ -78,10 +122,12 @@ subtitles/
 仓库根目录 `packages/` 只保存自动生成的当前分发包：
 
 ```text
-packages/<imdb-id> - <IMDb-title> [v<version>].zip
+packages/bgm<subject-id> - <name_cn> [v<version>].zip
 ```
 
-包名直接取自 `project.yaml` 中已经核验的 IMDb ID 和 IMDb 条目名称，采用 ` - ` 分隔身份与标题，并在末尾以 `[v<version>]` 标注版本；版本只能读取 `subtitles/current/VERSION`，不得在 README 或其他元数据中复制当前版本号。具体消歧与最小文件系统字符处理见 [作品身份规范](project-identity.md)。包名不含内部 ID；文件名版本便于用户直接识别，仍必须与包内 `VERSION` 一致。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告或历史档案。
+包名直接取自 `project.yaml` 中由 Bangumi API 核验的条目 ID 和 `name_cn`，采用 ` - ` 分隔身份与简中标题，并在末尾以 `[v<version>]` 标注版本；版本只能读取 `subtitles/current/VERSION`，不得在 README 或其他元数据中复制当前版本号。具体消歧、元数据同步和文件系统字符处理见 [作品身份规范](project-identity.md)。包名不含内部 ID 或日文标题；文件名版本便于用户直接识别，仍必须与包内 `VERSION` 一致。ZIP 只包含当前 ASS、`VERSION` 和自动生成的 `CHECKSUMS.sha256`，不包含来源字幕、视频文件名清单、工程主稿、临时报告、字体或历史档案。
+
+正式 ASS 统一引用 [字体规范](timing-and-layout.md#9-字体与字形) 中的 Noto Sans CJK SC/JP 静态字体。字体不嵌入 ASS，也不重复放入每个字幕 ZIP；发布说明必须让用户能够识别这一外部字体依赖。任何项目字体例外必须先登记在项目 `docs/project-guide.md`，否则打包门禁应拒绝非标准字体。
 
 `.github/scripts/build_subtitle_packages.py` 必须使用确定性排序、固定时间戳和稳定压缩参数，使相同输入产生相同 ZIP。GitHub Actions 在 `main` 的 `current/` 或 `previous/` 变化后运行门禁，并只在当前分发包确有变化时提交 `packages/`；包目录本身不触发工作流，避免提交循环。
 

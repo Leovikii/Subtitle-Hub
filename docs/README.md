@@ -10,12 +10,12 @@
 
 ## 必读顺序
 
-1. [project-identity.md](project-identity.md)：建项时的 IMDb/Bangumi 身份检索、可选豆瓣映射、消歧与成品名称；
+1. [project-identity.md](project-identity.md)：建项时的 Bangumi API 身份检索、中日标题同步、消歧与成品名称；
 2. [workflow.md](workflow.md)：标准工作流和发布门禁；
 3. [series-terminology.md](series-terminology.md)：系列级人名、地名和术语规范；
 4. [workspace-and-artifacts.md](workspace-and-artifacts.md)：项目工程区、临时工具、中间产物和历史归档；
 5. [source-and-translation.md](source-and-translation.md)：来源权重、原语核对和翻译纠错；
-6. [timing-and-layout.md](timing-and-layout.md)：时间轴、断句和中主副辅双语布局；
+6. [timing-and-layout.md](timing-and-layout.md)：时间轴、断句、中主副辅双语布局和标准字体；
 7. [chinese-style.md](chinese-style.md)：简体中文文本与标点规范；
 8. [quality-control.md](quality-control.md)：自动检查、人工检查和问题分级；
 9. [project-documentation.md](project-documentation.md)：项目补充规范、统一进度、修改/问题台账和审查报告；
