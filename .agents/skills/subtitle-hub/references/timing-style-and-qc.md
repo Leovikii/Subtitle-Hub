@@ -45,11 +45,11 @@ This differs intentionally from mono Chinese. If Chinese needs two lines, prefer
 
 ## SH-LAYOUT-003 — Ordinary versus special
 
-Normalize only declared ordinary styles. Do not standardize notes, signs, songs, titles, credits, broadcasts, positioned text, multiple-speaker layouts, motion, karaoke, or effects. Preserve useful baseline/embedded-reference design unless a concrete defect or target-video incompatibility is confirmed. A non-source embedded track remains valid timing/layout and disambiguation evidence.
+Normalize size, margins, alignment, colors, outline, shadow, scale, spacing, position, motion, karaoke, and effects only for declared ordinary styles. Do not standardize those properties for notes, signs, songs, titles, credits, broadcasts, positioned text, multiple-speaker layouts, or effects. Preserve useful baseline/embedded-reference design unless a concrete defect or target-video incompatibility is confirmed. Global font-family replacement under `SH-LAYOUT-004` is the sole exception to this property boundary. A non-source embedded track remains valid timing/layout and disambiguation evidence.
 
 ## SH-LAYOUT-004 — Fonts
 
-Use static `Noto Sans CJK SC` for Simplified Chinese and English, and `Noto Sans CJK JP` for Japanese. Do not use ASS `[Fonts]`. Decorative families are permitted only when their form carries narrative meaning. When replacing fonts, update style `Fontname` and inline `\fn` together; check long lines and positioned/effect events locally. No separate screenshot approval is required.
+Replace the font family globally in every retained style and every nonempty inline `\fn`: use static `Noto Sans CJK SC` for Simplified Chinese and English and `Noto Sans CJK JP` for Japanese. This mandatory font-only normalization includes ordinary and special subtitles; it has no decorative-font exception and does not authorize changing any other style or Event property. Resolve Japanese from the confirmed style/event role, a Japanese style label, or visible kana governed by that style/inline override; use the Chinese-primary SC fallback otherwise. Do not use ASS `[Fonts]`. Font replacement is display-preserving by project definition and requires no width, line-break, position, visual, or screenshot review of its own.
 
 ## SH-LAYOUT-005 — Mono ordinary Chinese baseline
 

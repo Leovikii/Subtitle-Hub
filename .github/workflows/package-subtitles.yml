@@ -55,7 +55,7 @@ jobs:
           if [ -n "$(git status --porcelain -- packages/)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "Package files changed."
-          elif ! python .github/scripts/sync_catalog.py --check-package-links; then
+          elif ! python .github/scripts/sync_catalog.py --repository-slug "$GITHUB_REPOSITORY" --check-package-links; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "Package-link recovery is required."
           else
@@ -65,7 +65,7 @@ jobs:
 
       - name: Regenerate package indexes
         if: steps.derived_changes.outputs.changed == 'true'
-        run: python .github/scripts/sync_catalog.py
+        run: python .github/scripts/sync_catalog.py --repository-slug "$GITHUB_REPOSITORY"
 
       - name: Commit updated packages and indexes
         if: steps.freshness.outputs.current == 'true'

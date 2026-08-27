@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.1.1 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.1.2 toolchain."""
 
 from __future__ import annotations
 
@@ -11,12 +11,14 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 SCRIPT_ROOT = Path(__file__).resolve().parent
 SKILL_ROOT = SCRIPT_ROOT.parent
 REPOSITORY_ROOT = SKILL_ROOT.parents[2]
 PACKAGE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "build_subtitle_packages.py"
 CATALOG_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "sync_catalog.py"
+TEST_REPOSITORY_SLUG = "example/repo"
 sys.path.insert(0, str(PACKAGE_SCRIPT.parent))
 from build_subtitle_packages import (  # noqa: E402
     PackageError,
@@ -24,8 +26,12 @@ from build_subtitle_packages import (  # noqa: E402
     validated_source_credit_parts,
 )
 from normalize_ass_release import (  # noqa: E402
+    SC_FONT,
+    JP_FONT,
     NormalizeError,
     ass_section,
+    font_targets_by_style,
+    normalize_inline_fonts,
     normalize_source_metadata,
     normalize_styles,
 )
@@ -125,7 +131,7 @@ def make_repository(root: Path) -> tuple[Path, Path]:
     series = repository / "works" / "test-series"
     series.mkdir(parents=True)
     (series / "series-guide.md").write_text("# Test series\n", encoding="utf-8")
-    (repository / "catalog.yaml").write_text("schema_version: 4\n\nworks:\n", encoding="utf-8")
+    (repository / "catalog.yaml").write_text("schema_version: 5\n\nworks:\n", encoding="utf-8")
     return repository, series
 
 
@@ -214,7 +220,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.1\.1"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.1\.2"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -306,7 +312,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 2)
-            self.assertEqual(data["skill_version"], "1.1.1")
+            self.assertEqual(data["skill_version"], "1.1.2")
             self.assertEqual(data["readiness"]["timing"], "ready")
             self.assertEqual(data["readiness"]["language"], "limited")
             self.assertEqual(data["readiness"]["visual"], "limited")
@@ -514,7 +520,7 @@ class InitializationTests(unittest.TestCase):
             root = Path(raw)
             repository = root / "repository"
             (repository / "works").mkdir(parents=True)
-            (repository / "catalog.yaml").write_text("schema_version: 4\nworks:\n", encoding="utf-8")
+            (repository / "catalog.yaml").write_text("schema_version: 5\nworks:\n", encoding="utf-8")
             video, _, cache = make_materials(root / "materials")
             baseline_root = root / "duplicate-baselines"
             sub1, sub2 = baseline_root / "a/same.srt", baseline_root / "b/same.srt"
@@ -557,17 +563,33 @@ class CatalogAndPackagingTests(unittest.TestCase):
             package.write_bytes(b"action-output")
             mismatch = run_path(
                 CATALOG_SCRIPT, "--repository-root", str(repository),
+                "--repository-slug", TEST_REPOSITORY_SLUG,
                 "--check-package-links", expect=1,
             )
             self.assertIn("stale package links", mismatch.stderr)
-            run_path(CATALOG_SCRIPT, "--repository-root", str(repository))
-            run_path(CATALOG_SCRIPT, "--repository-root", str(repository), "--check")
+            run_path(CATALOG_SCRIPT, "--repository-root", str(repository), "--repository-slug", TEST_REPOSITORY_SLUG)
+            run_path(CATALOG_SCRIPT, "--repository-root", str(repository), "--repository-slug", TEST_REPOSITORY_SLUG, "--check")
             run_path(
-                CATALOG_SCRIPT, "--repository-root", str(repository), "--check-package-links"
+                CATALOG_SCRIPT, "--repository-root", str(repository),
+                "--repository-slug", TEST_REPOSITORY_SLUG, "--check-package-links"
             )
             catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
             self.assertIn("SH0001", catalog)
             self.assertIn("packages/bgm100 - 测试作品 [v1.0.0].zip", catalog)
+            self.assertIn("schema_version: 5", catalog)
+            url_match = re.search(r'package_download_url: "([^"]+)"', catalog)
+            self.assertIsNotNone(url_match)
+            download_url = url_match.group(1)
+            self.assertNotIn(" ", download_url)
+            self.assertIn("%E6%B5%8B%E8%AF%95%E4%BD%9C%E5%93%81", download_url)
+            self.assertIn("%5Bv1.0.0%5D.zip", download_url)
+            self.assertEqual(
+                unquote(urlparse(download_url).path.removeprefix("/example/repo/main/")),
+                "packages/bgm100 - 测试作品 [v1.0.0].zip",
+            )
+            markdown = (repository / "CATALOG.md").read_text(encoding="utf-8")
+            self.assertIn(f"[下载压缩包]({download_url})", markdown)
+            self.assertNotIn("[压缩包](packages/", markdown)
             review = series / "SH0001--test-tv/review.md"
             review.write_text(
                 review.read_text(encoding="utf-8").replace(
@@ -576,7 +598,8 @@ class CatalogAndPackagingTests(unittest.TestCase):
                 encoding="utf-8",
             )
             run_path(
-                CATALOG_SCRIPT, "--repository-root", str(repository), "--check-package-links"
+                CATALOG_SCRIPT, "--repository-root", str(repository),
+                "--repository-slug", TEST_REPOSITORY_SLUG, "--check-package-links"
             )
 
     def test_local_package_builder_is_check_only_and_writes_no_zip(self) -> None:
@@ -642,7 +665,48 @@ class CatalogAndPackagingTests(unittest.TestCase):
             "Style: CN-Main,Noto Sans CJK SC\n"
         )
         with self.assertRaises(NormalizeError):
-            normalize_styles(duplicate, {"CN-Main"})
+            normalize_styles(duplicate, {"CN-Main"}, {"CN-Main": SC_FONT})
+
+    def test_global_font_replacement_preserves_special_style_and_event_properties(self) -> None:
+        styles = (
+            "[V4+ Styles]\n"
+            "Format: Name, Fontname, Fontsize, PrimaryColour, Alignment, MarginL, MarginR, MarginV\n"
+            "Style: CN-Main,Unavailable Dialogue Font,62,&H00FFFFFF,2,90,90,54\n"
+            "Style: Sign-Top,Decorative Missing Font,41,&H00112233,8,17,23,31\n"
+            "Style: JP-Note,Another Missing Font,33,&H00445566,7,5,6,7\n"
+        )
+        events = (
+            "[Events]\n"
+            "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+            "Dialogue: 3,0:00:01.00,0:00:02.00,Sign-Top,sign,11,12,13,fx,{\\pos(222,111)\\fnRare Sign Font}注释\n"
+            "Dialogue: 4,0:00:03.00,0:00:04.00,JP-Note,note,21,22,23,karaoke,{\\fnRare JP Font}テスト\n"
+            "Dialogue: 0,0:00:05.00,0:00:06.00,CN-Main,,0,0,0,,"
+            "{\\fnRare CN Font}English and 中文\\N{\\fnRare Inline JP}テスト\n"
+        )
+        references = {"CN-Main", "Sign-Top", "JP-Note"}
+        targets = font_targets_by_style(events, references)
+        self.assertEqual(targets, {"CN-Main": SC_FONT, "Sign-Top": SC_FONT, "JP-Note": JP_FONT})
+
+        normalized_styles, removed, changes = normalize_styles(styles, references, targets)
+        self.assertEqual(removed, [])
+        self.assertEqual(changes, 3)
+        before_style_lines = [line for line in styles.splitlines() if line.startswith("Style:")]
+        after_style_lines = [line for line in normalized_styles.splitlines() if line.startswith("Style:")]
+        for before, after, target in zip(before_style_lines, after_style_lines, (SC_FONT, SC_FONT, JP_FONT)):
+            before_fields = before.split(",")
+            after_fields = after.split(",")
+            self.assertEqual(after_fields[1], target)
+            self.assertEqual(after_fields[:1] + after_fields[2:], before_fields[:1] + before_fields[2:])
+
+        normalized_events, inline_changes = normalize_inline_fonts(events, targets)
+        self.assertEqual(inline_changes, 4)
+        expected = events.replace("\\fnRare Sign Font", f"\\fn{SC_FONT}")
+        expected = expected.replace("\\fnRare JP Font", f"\\fn{JP_FONT}")
+        expected = expected.replace("\\fnRare CN Font", f"\\fn{SC_FONT}")
+        expected = expected.replace("\\fnRare Inline JP", f"\\fn{JP_FONT}")
+        self.assertEqual(normalized_events, expected)
+        self.assertIn(r"\pos(222,111)", normalized_events)
+        self.assertIn(",Sign-Top,sign,11,12,13,fx,", normalized_events)
 
 
 if __name__ == "__main__":

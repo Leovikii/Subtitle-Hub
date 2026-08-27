@@ -26,6 +26,7 @@ PRIMARY_SUFFIX = re.compile(r"\.(zh-Hans)\.ass\Z")
 EPISODE_ID = re.compile(r"S\d{2}E\d{2}")
 STYLE_RESET = re.compile(r"\\r([^\\}]*)")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
+OVERRIDE_BLOCK = re.compile(r"\{[^}]*\}")
 STYLE_DEFINITION = re.compile(r"^Style:\s*(.*)$")
 REQUIRED_SCRIPT_INFO = (
     "ScriptType",
@@ -35,14 +36,14 @@ REQUIRED_SCRIPT_INFO = (
     "PlayResY",
     "YCbCr Matrix",
 )
-FONT_MAP = {
-    "Microsoft YaHei UI": "Noto Sans CJK SC",
-    "DengXian": "Noto Sans CJK SC",
-    "KaiTi": "Noto Sans CJK SC",
-    "SimHei": "Noto Sans CJK SC",
-    "Yu Gothic UI": "Noto Sans CJK JP",
-}
 STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+SC_FONT = "Noto Sans CJK SC"
+JP_FONT = "Noto Sans CJK JP"
+JAPANESE_KANA = re.compile(r"[\u3040-\u30ff]")
+JAPANESE_STYLE_LABEL = re.compile(
+    r"(?:日文|日本|日语|日語|原文|原語|(?<![0-9A-Za-z])(?:ja|jp|jpn)(?![0-9A-Za-z]))",
+    re.IGNORECASE,
+)
 SOURCE_METADATA_PREFIX = "[源字幕信息]"
 SUBTITLE_GROUP_IN_TEXT = re.compile(
     r"([0-9A-Za-z_\u3040-\u30ff\u3400-\u9fff·&＋+ -]{1,48}字幕组)"
@@ -125,8 +126,46 @@ def event_style_references(events_tail: str) -> set[str]:
     return references
 
 
+def font_targets_by_style(events_tail: str, references: set[str]) -> dict[str, str]:
+    targets = {
+        style: JP_FONT if JAPANESE_STYLE_LABEL.search(style) else SC_FONT
+        for style in references
+    }
+    in_events = False
+    for line in events_tail.splitlines():
+        if line.startswith("[") and line.endswith("]"):
+            in_events = line == EVENTS_SECTION
+            continue
+        if not in_events or not line.startswith(("Dialogue:", "Comment:")):
+            continue
+        parts = line.split(",", 9)
+        if len(parts) != 10:
+            raise NormalizeError(f"malformed event line: {line[:80]}")
+        active_inline_font = False
+        base_text: list[str] = []
+        cursor = 0
+        for block in OVERRIDE_BLOCK.finditer(parts[9]):
+            if not active_inline_font:
+                base_text.append(parts[9][cursor:block.start()])
+            tags = block.group(0)
+            if STYLE_RESET.search(tags):
+                active_inline_font = False
+            if any(value.strip() for value in INLINE_FONT.findall(tags)):
+                active_inline_font = True
+            cursor = block.end()
+        if not active_inline_font:
+            base_text.append(parts[9][cursor:])
+        if not JAPANESE_KANA.search("".join(base_text)):
+            continue
+        styles = [parts[3].strip() or "Default"]
+        styles.extend(reset.strip() for reset in STYLE_RESET.findall(parts[9]) if reset.strip())
+        for style in styles:
+            targets[style] = JP_FONT
+    return targets
+
+
 def normalize_styles(
-    style_section: str, references: set[str]
+    style_section: str, references: set[str], font_targets: dict[str, str]
 ) -> tuple[str, list[str], int]:
     defined: set[str] = set()
     removed: list[str] = []
@@ -147,12 +186,7 @@ def normalize_styles(
             if len(fields) < 2:
                 raise NormalizeError(f"malformed style line: {line[:80]}")
             old_font = fields[1].strip()
-            new_font = FONT_MAP.get(old_font, old_font)
-            if new_font not in STANDARD_FONTS:
-                raise NormalizeError(
-                    f"style {name!r} uses unsupported font {old_font!r}; "
-                    "record a project exception or extend the approved mapping"
-                )
+            new_font = font_targets[name]
             if new_font != old_font:
                 font_changes += 1
             fields[1] = new_font
@@ -169,26 +203,51 @@ def normalize_styles(
     return "".join(output), removed, font_changes
 
 
-def normalize_inline_fonts(events_tail: str) -> tuple[str, int]:
+def normalize_inline_fonts(
+    events_tail: str, font_targets: dict[str, str]
+) -> tuple[str, int]:
     changes = 0
+    output: list[str] = []
+    in_events = False
+    for line in events_tail.splitlines(keepends=True):
+        bare = line.removesuffix("\n")
+        if bare.startswith("[") and bare.endswith("]"):
+            in_events = bare == EVENTS_SECTION
+        if not in_events or not bare.startswith(("Dialogue:", "Comment:")):
+            output.append(line)
+            continue
+        parts = bare.split(",", 9)
+        if len(parts) != 10:
+            raise NormalizeError(f"malformed event line: {bare[:80]}")
+        style = parts[3].strip() or "Default"
+        target = font_targets[style]
 
-    def replace(match: re.Match[str]) -> str:
-        nonlocal changes
-        old_font = match.group(1).strip()
-        if not old_font:
-            return match.group(0)
-        new_font = FONT_MAP.get(old_font, old_font)
-        if new_font not in STANDARD_FONTS:
-            raise NormalizeError(
-                f"event override uses unsupported font {old_font!r}; "
-                "record a project exception or extend the approved mapping"
-            )
-        replacement = f"\\fn{new_font}"
-        if replacement != match.group(0):
-            changes += 1
-        return replacement
+        text = parts[9]
+        blocks = list(OVERRIDE_BLOCK.finditer(text))
+        if blocks:
+            rebuilt: list[str] = []
+            cursor = 0
+            for index, block in enumerate(blocks):
+                rebuilt.append(text[cursor:block.start()])
+                next_start = blocks[index + 1].start() if index + 1 < len(blocks) else len(text)
+                following_text = text[block.end():next_start]
+                inline_target = JP_FONT if JAPANESE_KANA.search(following_text) else target
 
-    return INLINE_FONT.sub(replace, events_tail), changes
+                def replace(match: re.Match[str]) -> str:
+                    nonlocal changes
+                    if not match.group(1).strip():
+                        return match.group(0)
+                    replacement = f"\\fn{inline_target}"
+                    if replacement != match.group(0):
+                        changes += 1
+                    return replacement
+
+                rebuilt.append(INLINE_FONT.sub(replace, block.group(0)))
+                cursor = block.end()
+            rebuilt.append(text[cursor:])
+            parts[9] = "".join(rebuilt)
+        output.append(",".join(parts) + ("\n" if line.endswith("\n") else ""))
+    return "".join(output), changes
 
 
 def source_credit_from_metadata(text: str) -> str | None:
@@ -317,10 +376,13 @@ def normalize_file(
         normalize_source_metadata(events_tail)
     )
     references = event_style_references(events_without_metadata)
+    font_targets = font_targets_by_style(events_without_metadata, references)
     normalized_styles, removed, style_font_changes = normalize_styles(
-        style_section, references
+        style_section, references, font_targets
     )
-    normalized_events, inline_font_changes = normalize_inline_fonts(events_without_metadata)
+    normalized_events, inline_font_changes = normalize_inline_fonts(
+        events_without_metadata, font_targets
+    )
 
     header = normalized_header(
         fields=fields,

@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
 ---
 
 # Subtitle Hub
@@ -40,4 +40,4 @@ Priority: current user instruction; confirmed project overrides in `project.yaml
 
 ## Chinese-primary design
 
-Normalize ordinary dialogue to the repository mono or bilingual profile. Optional source material does not make a release bilingual. Preserve special notes, signs, songs, titles, positioned text, motion, karaoke, and effects unless a concrete defect is confirmed. Font, size, ordinary-dialogue margins, and bilingual separation are covered by plan approval and final review; they do not need a separate screenshot gate.
+Normalize ordinary dialogue to the repository mono or bilingual profile. Optional source material does not make a release bilingual. Font-family replacement is global across every retained style and inline override. Preserve every other property of special notes, signs, songs, titles, positioned text, motion, karaoke, and effects unless a concrete defect is confirmed. Font replacement and approved ordinary-dialogue normalization need no separate screenshot gate.
