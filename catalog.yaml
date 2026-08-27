@@ -45,7 +45,7 @@ works:
     project_path: works/space-battleship-yamato/SH0004--yamato-2205-part1
     review_path: works/space-battleship-yamato/SH0004--yamato-2205-part1/review.md
     release_path: works/space-battleship-yamato/SH0004--yamato-2205-part1/subtitles/current
-    package_path: null
+    package_path: "packages/bgm319390 - 宇宙战舰大和号2205 新的旅程 前篇 -TAKE OFF- [v1.0.1].zip"
   - id: SH0005
     title: "宇宙战舰大和号2205 新的旅程 后篇 -STASHA-"
     type: tv
@@ -56,4 +56,4 @@ works:
     project_path: works/space-battleship-yamato/SH0005--yamato-2205-part2
     review_path: works/space-battleship-yamato/SH0005--yamato-2205-part2/review.md
     release_path: works/space-battleship-yamato/SH0005--yamato-2205-part2/subtitles/current
-    package_path: null
+    package_path: "packages/bgm352905 - 宇宙战舰大和号2205 新的旅程 后篇 -STASHA- [v1.0.1].zip"
