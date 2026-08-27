@@ -1,13 +1,13 @@
-schema_version: 2
+schema_version: 3
 work_id: SH0002
-updated_at: 2026-08-26
+updated_at: 2026-08-27
 baseline_release: 2.0.0
 target_release: 2.0.1
 overall_status: released
 
 active_round:
-  id: v2.0.1-source-metadata-cleanup
-  scope: MOVIE
+  id: skill-standard-migration-20260827
+  scope: CONTROL
   status: completed
 
 stages:

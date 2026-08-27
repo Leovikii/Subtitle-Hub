@@ -86,8 +86,8 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) != "3":
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 3")
+    if yaml_scalar(metadata, "schema_version", 0) != "4":
+        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 4")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)
@@ -112,11 +112,13 @@ def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     return subject_id, title_ja, title_zh_hans, api_url
 
 
-def project_languages(project_root: Path) -> tuple[str, str]:
+def project_languages(project_root: Path) -> tuple[str, str | None]:
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     languages = yaml_block(metadata, "languages", 0)
     release = yaml_block(languages, "release", 2)
-    return yaml_scalar(release, "primary", 4), yaml_scalar(release, "secondary", 4)
+    primary = yaml_scalar(release, "primary", 4)
+    secondary = yaml_scalar(release, "secondary", 4)
+    return primary, None if secondary == "null" else secondary
 
 
 def validate_standard_ass(
@@ -164,13 +166,15 @@ def validate_standard_ass(
         raise PackageError(f"{subtitle}: invalid ASS section order")
 
     header = lines[:styles_index]
+    language_list = primary if secondary is None else f"{primary}, {secondary}"
     required_prefix = [
         "[Script Info]",
         f"; Subtitle-Hub-Version: {version}",
-        f"; Subtitle-Hub-Languages: {primary}, {secondary}",
+        f"; Subtitle-Hub-Languages: {language_list}",
         f"; Subtitle-Hub-Primary-Language: {primary}",
-        f"; Subtitle-Hub-Secondary-Language: {secondary}",
     ]
+    if secondary is not None:
+        required_prefix.append(f"; Subtitle-Hub-Secondary-Language: {secondary}")
     if header[: len(required_prefix)] != required_prefix:
         raise PackageError(f"{subtitle}: noncanonical Subtitle Hub header prefix")
     cursor = len(required_prefix)
@@ -288,19 +292,16 @@ def validate_release_dir(
     marker_prefix = b"; Subtitle-Hub-Version:"
     major_version = int(version.split(".", 1)[0])
     for subtitle in subtitles:
-        if major_version < 2 and not LEGACY_LANGUAGE_SUFFIX.fullmatch(subtitle.name):
-            raise PackageError(
-                f"{subtitle}: expected legacy filename ending in .zh-Hans.<secondary>.ass"
-            )
+        legacy_release = major_version < 2 and LEGACY_LANGUAGE_SUFFIX.fullmatch(subtitle.name)
         data = subtitle.read_bytes()
         markers = [line for line in data.splitlines() if line.startswith(marker_prefix)]
         if markers != [expected_marker]:
             raise PackageError(
                 f"{subtitle}: expected exactly one version marker {expected_marker.decode()}"
             )
-        if major_version >= 2:
+        if not legacy_release:
             if project_root is None:
-                raise PackageError(f"{release_dir}: project root required for version 2+")
+                raise PackageError(f"{release_dir}: project root required for standard release validation")
             validate_standard_ass(subtitle, data, version, project_root)
     unexpected = sorted(
         path.name

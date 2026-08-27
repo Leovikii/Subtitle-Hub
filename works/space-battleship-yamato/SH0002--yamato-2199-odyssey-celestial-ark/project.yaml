@@ -1,4 +1,4 @@
-schema_version: 3
+schema_version: 4
 
 id: SH0002
 slug: yamato-2199-odyssey-celestial-ark
@@ -17,6 +17,12 @@ identity:
   verification: api-verified
   verified_at: 2026-08-26
 
+task:
+  mode: proofreading
+  source_language: ja
+  target_language: zh-Hans
+  scope: MOVIE
+
 languages:
   release:
     primary: zh-Hans
@@ -31,19 +37,58 @@ subtitle_sources:
     kind: subtitle-text-reference
     path: project/sources/subtitles/ja/primary-text
     file_count: 1
-    role: primary-japanese
+    scope: MOVIE
+    roles:
+      - source-text-reference
+      - secondary-language-release-source
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Japanese text source and established project mapping
   - id: ja-bdsup-ocr
     language: ja
     kind: bdsup-and-ocr-reference
     path: project/sources/subtitles/ja/bdsup-ocr
     file_count: 2
-    role: japanese-verification
+    scope: MOVIE
+    roles:
+      - source-text-reference
+      - forced-signs-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Japanese BDSUP plus OCR source pair
   - id: en-sav1our-embedded
     language: en
     kind: embedded-ass
     path: project/sources/subtitles/en/sav1our-embedded
     file_count: 1
-    role: timing-and-disambiguation-reference
+    scope: MOVIE
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: English embedded ASS from the declared target video
+  - id: zh-Hans-migrated-current-baseline
+    language: zh-Hans
+    kind: migrated-release-baseline
+    path: project/sources/subtitles/zh-Hans/migrated-current-baseline
+    file_count: 1
+    scope: MOVIE
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: byte-identical copy of the 2.0.1 current release baseline
 
 video_sources:
   local-movie-file:
@@ -78,7 +123,6 @@ release:
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
-  entry: docs/README.md
   guide: docs/project-guide.md
   progress: docs/progress.yaml
   change_log: docs/change-log.tsv

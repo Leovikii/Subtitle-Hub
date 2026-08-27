@@ -1,0 +1,70 @@
+schema_version: 4
+
+id: "{{WORK_ID}}"
+slug: "{{SLUG}}"
+type: "{{WORK_TYPE}}"
+episode_count: {{EPISODE_COUNT}}
+status: active
+
+identity:
+  provider: bangumi
+  id: "{{BANGUMI_ID}}"
+  url: "https://bgm.tv/subject/{{BANGUMI_ID}}"
+  api_url: "https://api.bgm.tv/v0/subjects/{{BANGUMI_ID}}"
+  titles:
+    ja: {{TITLE_JA_YAML}}
+    zh-Hans: {{TITLE_ZH_HANS_YAML}}
+  verification: api-verified
+  verified_at: "{{VERIFIED_AT}}"
+
+task:
+  mode: proofreading
+  source_language: "{{SOURCE_LANGUAGE}}"
+  target_language: zh-Hans
+  scope: "{{SCOPE}}"
+
+languages:
+  release:
+    primary: zh-Hans
+    secondary: {{SECONDARY_LANGUAGE_YAML}}
+    filename_suffix: zh-Hans
+  references: []
+
+subtitle_sources: []
+video_sources: {}
+
+workspace:
+  baseline: subtitles/current
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: none
+    human: none
+    basis: not-reviewed
+  package:
+    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
+    generated_by: .github/scripts/build_subtitle_packages.py
+
+documentation:
+  guide: docs/project-guide.md
+  progress: docs/progress.yaml
+  change_log: docs/change-log.tsv
+  issues: docs/issues.tsv
+
+developer_review:
+  workspace: project/workspace/temp/review
+  persistent: false
+
+archives: {}

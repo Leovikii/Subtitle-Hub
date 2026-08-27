@@ -1,0 +1,7 @@
+interface:
+  display_name: "Subtitle Hub"
+  short_description: "初始化、校对、验证并发布 Subtitle Hub 字幕"
+  default_prompt: "Use $subtitle-hub to inspect this Subtitle Hub project, determine material readiness, and carry out the requested subtitle work."
+
+policy:
+  allow_implicit_invocation: true

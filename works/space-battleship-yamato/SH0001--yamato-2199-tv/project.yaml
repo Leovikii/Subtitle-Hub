@@ -1,4 +1,4 @@
-schema_version: 3
+schema_version: 4
 
 id: SH0001
 slug: yamato-2199-tv
@@ -17,6 +17,12 @@ identity:
   verification: api-verified
   verified_at: 2026-08-26
 
+task:
+  mode: proofreading
+  source_language: ja
+  target_language: zh-Hans
+  scope: S01E01-S01E26
+
 languages:
   release:
     primary: zh-Hans
@@ -31,19 +37,44 @@ subtitle_sources:
     kind: closed-captions
     path: project/sources/subtitles/ja/official-webrip-cc
     file_count: 26
-    role: primary-japanese
+    scope: S01E01-S01E26
+    roles:
+      - source-text-reference
+      - secondary-language-release-source
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Japanese CC text and established project source mapping
   - id: en-sav1our-embedded
     language: en
     kind: embedded-ass
     path: project/sources/subtitles/en/sav1our-embedded
     file_count: 52
-    role: timing-and-sign-reference
+    scope: S01E01-S01E26
+    roles:
+      - timing-reference
+      - translation-reference
+      - forced-signs-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: English embedded ASS extracted from the declared target release
   - id: ja-kamigami-fallback
     language: ja
     kind: fansub-ass
     path: project/sources/subtitles/ja/kamigami-fallback
     file_count: 26
-    role: fallback-japanese
+    scope: S01E01-S01E26
+    roles:
+      - source-text-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Japanese fansub text and established fallback mapping
   - id: zh-Hans-ja-kamigami-bilingual-fallback
     language:
       - zh-Hans
@@ -51,7 +82,15 @@ subtitle_sources:
     kind: bilingual-fansub-ass
     path: project/sources/subtitles/zh-Hans/kamigami-bilingual-fallback
     file_count: 26
-    role: chinese-draft-and-layout-reference
+    scope: S01E01-S01E26
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: bilingual Chinese-Japanese baseline designated by project history
 
 video_sources:
   sav1our-bd-1080p-av1:
@@ -114,7 +153,6 @@ release:
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
-  entry: docs/README.md
   guide: docs/project-guide.md
   progress: docs/progress.yaml
   change_log: docs/change-log.tsv

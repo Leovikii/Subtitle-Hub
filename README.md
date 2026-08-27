@@ -9,10 +9,10 @@ Subtitle Hub 同时承担两项职责：
 
 同一系列目录使用唯一的 `series-guide.md` 统一人名、地名、组织、舰船和技术术语。面向用户的成品包名采用 Bangumi ID、简体中文标题和当前版本，例如 `bgm54552 - 宇宙战舰大和号2199 [v1.0.1].zip`。
 
-AI agent 和校对者开始工作前必须阅读 [全局字幕规范](docs/README.md)。
+AI agent 和校对者开始工作前必须使用仓库级 [`$subtitle-hub` Skill](.agents/skills/subtitle-hub/SKILL.md)。仓库级规范只在该 Skill 中维护；作品的 `project.yaml`、`docs/project-guide.md`、进度与台账保存项目事实和覆盖项。
 
 最终字幕固定保存在各项目的 `subtitles/current/`，版本号由目录内 `VERSION` 和 ASS 内标记共同声明；从第二个正式版本起，`subtitles/previous/` 强制保留被替换的完整上一版。仓库级 `packages/` 保存由 GitHub Actions 从当前成品自动生成的规范命名 ZIP，供检索和下载；ZIP 不是另一套发布事实源。
 
-正式 ASS 统一使用 `Noto Sans CJK SC`（简体中文及英文）与 `Noto Sans CJK JP`（日文）静态字体。字体不嵌入字幕 ZIP，使用前应在系统或播放器字体目录中一次安装这两套字体；具体规则与兼容性见 [字体与字形规范](docs/timing-and-layout.md#9-字体与字形)。
+正式 ASS 统一使用 `Noto Sans CJK SC`（简体中文及英文）与 `Noto Sans CJK JP`（日文）静态字体。字体不嵌入字幕 ZIP，使用前应在系统或播放器字体目录中一次安装这两套字体；具体规则由 `$subtitle-hub` Skill 维护。
 
 当前已收录作品见 [CATALOG.md](CATALOG.md)。

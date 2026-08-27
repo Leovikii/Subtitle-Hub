@@ -9,7 +9,7 @@
 - 日文标题：`宇宙戦艦ヤマト2199 星巡る方舟`
 - 简中标题：`宇宙战舰大和号2199 星巡的方舟`
 
-外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须先阅读仓库 [全局规范](../../../docs/README.md)、上级 [系列用语规范](../series-guide.md) 和本项目 [AI agent 控制面](docs/README.md)。
+外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须使用仓库 [`$subtitle-hub` Skill](../../../.agents/skills/subtitle-hub/SKILL.md)，再读取上级 [系列用语规范](../series-guide.md) 以及本项目的 [补充规范](docs/project-guide.md)、[进度](docs/progress.yaml)、[问题台账](docs/issues.tsv) 和 [修改台账](docs/change-log.tsv)。
 
 ## 目录
 

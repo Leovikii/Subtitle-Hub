@@ -72,11 +72,13 @@ class NormalizeError(RuntimeError):
     pass
 
 
-def project_languages(project_root: Path) -> tuple[str, str]:
+def project_languages(project_root: Path) -> tuple[str, str | None]:
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     languages = yaml_block(metadata, "languages", 0)
     release = yaml_block(languages, "release", 2)
-    return yaml_scalar(release, "primary", 4), yaml_scalar(release, "secondary", 4)
+    primary = yaml_scalar(release, "primary", 4)
+    secondary = yaml_scalar(release, "secondary", 4)
+    return primary, None if secondary == "null" else secondary
 
 
 def script_info(source: str) -> tuple[dict[str, str], list[str]]:
@@ -229,7 +231,7 @@ def normalized_header(
     comments: list[str],
     version: str,
     primary: str,
-    secondary: str,
+    secondary: str | None,
     subject_id: str,
     title_zh_hans: str,
     episode_id: str,
@@ -255,13 +257,15 @@ def normalized_header(
     if len(timing_notes) > 1:
         raise NormalizeError("multiple timing notes require manual review")
 
+    language_list = primary if secondary is None else f"{primary}, {secondary}"
     lines = [
         "[Script Info]",
         f"; Subtitle-Hub-Version: {version}",
-        f"; Subtitle-Hub-Languages: {primary}, {secondary}",
+        f"; Subtitle-Hub-Languages: {language_list}",
         f"; Subtitle-Hub-Primary-Language: {primary}",
-        f"; Subtitle-Hub-Secondary-Language: {secondary}",
     ]
+    if secondary is not None:
+        lines.append(f"; Subtitle-Hub-Secondary-Language: {secondary}")
     if timing_notes:
         lines.append(f"; Subtitle-Hub-Timing-Note: {timing_notes[0]}")
     if source_credits:
@@ -287,7 +291,7 @@ def normalize_file(
     *,
     version: str,
     primary: str,
-    secondary: str,
+    secondary: str | None,
     subject_id: str,
     title_zh_hans: str,
     episode_id: str,

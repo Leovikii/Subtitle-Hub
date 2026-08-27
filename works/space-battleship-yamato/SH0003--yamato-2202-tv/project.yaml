@@ -1,4 +1,4 @@
-schema_version: 3
+schema_version: 4
 
 id: SH0003
 slug: yamato-2202-tv
@@ -17,6 +17,12 @@ identity:
   verification: api-verified
   verified_at: 2026-08-26
 
+task:
+  mode: proofreading
+  source_language: ja
+  target_language: zh-Hans
+  scope: S02E01-S02E26
+
 languages:
   release:
     primary: zh-Hans
@@ -31,19 +37,44 @@ subtitle_sources:
     kind: closed-captions
     path: project/sources/subtitles/ja/official-webrip
     file_count: 26
-    role: primary-japanese
+    scope: S02E01-S02E26
+    roles:
+      - source-text-reference
+      - secondary-language-release-source
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Japanese official CC text and established project mapping
   - id: en-sav1or-embedded
     language: en
     kind: embedded-ass
     path: project/sources/subtitles/en/sav1or-embedded
     file_count: 26
-    role: timing-and-disambiguation-reference
+    scope: S02E01-S02E26
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: English embedded ASS extracted from the declared target release
   - id: zh-Hans-fansub-baseline
     language: zh-Hans
     kind: fansub-ass
     path: project/sources/subtitles/zh-Hans/fansub-baseline
     file_count: 26
-    role: chinese-draft-and-style-reference
+    scope: S02E01-S02E26
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: developer
+      confirmed_at: 2026-08-27
+      evidence: Simplified Chinese fansub baseline designated by project history
 
 video_sources:
   sav1or-bd-1080p-av1:
@@ -106,7 +137,6 @@ release:
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
-  entry: docs/README.md
   guide: docs/project-guide.md
   progress: docs/progress.yaml
   change_log: docs/change-log.tsv
