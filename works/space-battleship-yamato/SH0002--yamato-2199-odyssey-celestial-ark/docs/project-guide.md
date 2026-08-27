@@ -53,9 +53,9 @@
 
 - 只编辑 `project/workspace/episodes/MOVIE/master.ass`；
 - 项目专用脚本只能放入 `project/workspace/temp/tools/`；
-- 中间字幕、人工审核报告及未审候选只能进入 `project/workspace/temp/`；
+- 中间字幕、候选 diff 和临时证据只能进入 `project/workspace/temp/`；
 - 通过本轮门禁的完整候选才可进入 `project/workspace/build/`；
-- 实质修改写入台账，未解决问题写入 `issues.tsv`。
+- 逐项候选、用户决定、实施和验证写入 `ledger.tsv`，当前轮次和摘要写入 `review.md`。
 
 ## 7. 已知限制和禁止自动处理项
 

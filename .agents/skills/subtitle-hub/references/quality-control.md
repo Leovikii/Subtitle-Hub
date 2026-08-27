@@ -31,7 +31,7 @@ When local fonts/rendering/media access is missing, mark visual readiness `limit
 
 ## SH-QC-005 — Candidate lifecycle
 
-Use `candidate` for detector findings; `confirmed` after evidence; `fixed` after an edit awaiting verification; and `verified` after the disposition is checked. Illegal time and directly provable bilingual boundary mismatch may be confirmed from event data. Semantic, sync, overlap intention, and readability generally need context/audio/video. Recheck neighbors after a timing-floor fix and record old/new time and evidence.
+Use `candidate` for detector findings and `confirmed` after evidence. Move substantive subtitle proposals to `awaiting-approval`; after approval use `in-progress`, then `applied`, and finally `verified` after checking the disposition. Illegal time and directly provable bilingual boundary mismatch may be confirmed from event data. Semantic, sync, overlap intention, and readability generally need context/audio/video. Recheck neighbors after a timing-floor fix and record old/proposed/actual values and evidence in the same ledger row.
 
 Zero machine candidates means only that the current rules found none, not that the work has no language or visual errors.
 
@@ -43,8 +43,8 @@ Before release require:
 - every timing-floor trigger fixed or explicitly waived with audio/visual evidence;
 - explicit review of early-disappearing same-utterance candidates;
 - paired Chinese/secondary boundaries equal;
-- structure checks pass and every substantive change is in the ledger;
-- progress, metadata, issues, and review coverage truthfully distinguish machine/human work;
+- structure checks pass and every substantive change has an approved and verified ledger row;
+- review, metadata, ledger dispositions, and coverage truthfully distinguish machine/human work;
 - the build uses the version, filenames, header, font, credit, and previous-release contracts;
 - no video, download locator, temporary comment, engineering provenance, or unauthorized credit enters release artifacts;
 - the generated ZIP's name, VERSION, count, ASS markers, and checksums are reproducible and verified.

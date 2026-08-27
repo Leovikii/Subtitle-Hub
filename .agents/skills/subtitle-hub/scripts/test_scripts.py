@@ -69,6 +69,27 @@ class ScriptBehaviorTests(unittest.TestCase):
         remaining = sorted(path for path in old_docs.rglob("*") if path.is_file()) if old_docs.exists() else []
         self.assertEqual(remaining, [])
 
+    def test_active_repository_markdown_links_resolve(self) -> None:
+        repository_root = SCRIPT_ROOT.parent.parents[2]
+        markdown_files = [
+            repository_root / "README.md",
+            repository_root / "CATALOG.md",
+            repository_root / "AGENTS.md",
+            *sorted((repository_root / "works").glob("**/*.md")),
+        ]
+        missing = []
+        for markdown in markdown_files:
+            if "project/archive" in markdown.as_posix() or not markdown.is_file():
+                continue
+            text = markdown.read_text(encoding="utf-8")
+            for raw in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
+                target = raw.split("#", 1)[0]
+                if not target or "://" in target or target.startswith("#"):
+                    continue
+                if not (markdown.parent / target).resolve().exists():
+                    missing.append(f"{markdown.relative_to(repository_root)} -> {raw}")
+        self.assertEqual(missing, [])
+
     def make_inputs(self, root: Path, movie: bool = False) -> tuple[Path, Path, Path]:
         video = root / ("movie.mkv" if movie else "episode-01.mkv")
         subtitle = root / ("movie.zh-Hans.srt" if movie else "episode-01.zh-Hans.srt")
@@ -185,6 +206,11 @@ class ScriptBehaviorTests(unittest.TestCase):
             metadata = (project / "project.yaml").read_text(encoding="utf-8")
             self.assertNotIn(str(Path(raw)), metadata)
             self.assertIn('S01E01: "episode-01.mkv"', metadata)
+            self.assertTrue((project / "docs" / "review.md").is_file())
+            self.assertTrue((project / "docs" / "ledger.tsv").is_file())
+            self.assertFalse((project / "docs" / "progress.yaml").exists())
+            self.assertFalse((project / "docs" / "issues.tsv").exists())
+            self.assertFalse((project / "docs" / "change-log.tsv").exists())
             repeated = run(
                 "init_project.py",
                 "--series-dir",

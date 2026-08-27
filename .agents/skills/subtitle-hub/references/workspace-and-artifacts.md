@@ -10,13 +10,13 @@ project/
 │  ├─ temp/
 │  │  ├─ tools/                     project-only scripts
 │  │  ├─ intermediate/              extracts, mappings, conversions
-│  │  ├─ review/                    unapproved candidates/reports/evidence
+│  │  ├─ review/                    disposable candidates/diffs/evidence
 │  │  └─ logs/                      reproducible output/logs
 │  └─ build/                        checked, complete release candidates
 └─ archive/                         frozen historical engineering archives
 ```
 
-Official outputs live outside `project/` under `subtitles/current/` and `subtitles/previous/`. Durable control facts live in the work's `docs/` files.
+Official outputs live outside `project/` under `subtitles/current/` and `subtitles/previous/`. Durable control facts live only in `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`.
 
 ## SH-WS-003 — Lifecycles
 

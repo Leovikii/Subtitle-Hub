@@ -4,7 +4,7 @@ This reference defines the normal lifecycle. Rule IDs are stable; project overri
 
 ## SH-CTRL-001 — Open the control plane
 
-Before modifying an existing work, read the series guide when present, then `project.yaml`, `docs/project-guide.md`, `docs/progress.yaml`, `docs/issues.tsv`, and `docs/change-log.tsv`. Read only the active-round review report when feedback is pending. A diagnose-only request authorizes findings and records, not fixes.
+Before modifying an existing work, read the series guide when present, then `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`. A diagnose-only request authorizes findings and records, not fixes.
 
 ## SH-ID-001 — Verify identity before a formal project
 
@@ -40,7 +40,7 @@ Run structure/encoding/style checks, bilingual pairing checks, language/terminol
 
 ## SH-CTRL-002 — Record and review
 
-Every substantive change gets a change-log row. Confirmed but unresolved work gets an issue row. Update progress on start, pause, scope change, feedback, and completion. Human feedback must be written back to a durable control file before a temporary report is closed or removed.
+Use one ledger row for each substantive item from candidate through decision, implementation, and verification. Before changing subtitle masters, present the proposed scope in `review.md` and obtain item or batch approval under `SH-CTRL-007`. Update `review.md` on start, pause, scope change, approval request, feedback, and completion. Human feedback must be written to the ledger and review before the round closes.
 
 ## SH-REL-001 — Release transactionally
 

@@ -19,10 +19,23 @@ ALLOWED_ROLES = {
     "style-layout-reference",
     "secondary-language-release-source",
 }
-ISSUE_STATUSES = {"candidate", "confirmed", "in-progress", "blocked", "fixed", "verified", "waived", "wont-fix"}
-CHANGE_STATUSES = {"applied", "verified", "reverted", "released"}
-ISSUE_HEADER = "issue_id\tdate\tepisode\tstart\tend\tcategory\tseverity\tdescription\tevidence\tproposed_action\tstatus\towner\tresolution"
-CHANGE_HEADER = "change_id\tbatch_id\tdate\tepisode\tstart\tend\tcategory\tseverity\tbefore\tafter\tsource_ref\trationale\tstatus\tagent\treviewer"
+LEDGER_DECISIONS = {"pending", "approved", "rejected", "deferred", "waived", "not-recorded", "not-required"}
+LEDGER_STATUSES = {
+    "candidate",
+    "confirmed",
+    "awaiting-approval",
+    "in-progress",
+    "blocked",
+    "applied",
+    "verified",
+    "closed",
+    "reverted",
+    "released",
+}
+LEDGER_HEADER = (
+    "item_id\tround_id\tdate\tepisode\tstart\tend\tcategory\tseverity\tbefore\tproposed_after\t"
+    "evidence\trationale\tdecision\tstatus\tactual_after\tactor\treviewer\tresolution"
+)
 
 
 def scalar(text: str, name: str, indent: int = 0) -> str | None:
@@ -83,22 +96,32 @@ def subtitle_entries(text: str) -> list[dict[str, object]]:
     return entries
 
 
-def validate_tsv(path: Path, expected_header: str, status_index: int, allowed: set[str], errors: list[str]) -> None:
+def validate_ledger(path: Path, errors: list[str]) -> None:
     try:
         lines = path.read_text(encoding="utf-8-sig").splitlines()
     except OSError as error:
         errors.append(f"{path}: {error}")
         return
-    if not lines or lines[0] != expected_header:
+    if not lines or lines[0] != LEDGER_HEADER:
         errors.append(f"{path}: unexpected TSV header")
         return
+    expected_fields = len(LEDGER_HEADER.split("\t"))
+    seen: set[str] = set()
     for row_number, row in enumerate(csv.reader(lines[1:], delimiter="\t"), start=2):
         if not row:
             continue
-        if len(row) != len(expected_header.split("\t")):
-            errors.append(f"{path}:{row_number}: expected {len(expected_header.split(chr(9)))} fields, got {len(row)}")
-        elif row[status_index] not in allowed:
-            errors.append(f"{path}:{row_number}: invalid active status {row[status_index]!r}")
+        if len(row) != expected_fields:
+            errors.append(f"{path}:{row_number}: expected {expected_fields} fields, got {len(row)}")
+            continue
+        if not row[0]:
+            errors.append(f"{path}:{row_number}: item_id is required")
+        elif row[0] in seen:
+            errors.append(f"{path}:{row_number}: duplicate item_id {row[0]!r}")
+        seen.add(row[0])
+        if row[12] not in LEDGER_DECISIONS:
+            errors.append(f"{path}:{row_number}: invalid decision {row[12]!r}")
+        if row[13] not in LEDGER_STATUSES:
+            errors.append(f"{path}:{row_number}: invalid status {row[13]!r}")
 
 
 def validate_release(project_root: Path, metadata: str, errors: list[str], warnings: list[str]) -> None:
@@ -168,8 +191,8 @@ def main() -> int:
     except OSError as error:
         parser.error(str(error))
 
-    if scalar(metadata, "schema_version") != "4":
-        errors.append(f"{metadata_path}: schema_version must be 4")
+    if scalar(metadata, "schema_version") != "5":
+        errors.append(f"{metadata_path}: schema_version must be 5")
     work_id = scalar(metadata, "id")
     if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
         errors.append(f"{metadata_path}: invalid work id")
@@ -229,28 +252,41 @@ def main() -> int:
             errors.append(f"{metadata_path}: video map must store basename only, got {name!r}")
 
     docs = root / "docs"
-    required = [docs / "project-guide.md", docs / "progress.yaml", docs / "issues.tsv", docs / "change-log.tsv"]
+    required = [docs / "project-guide.md", docs / "review.md", docs / "ledger.tsv"]
     for path in required:
         if not path.is_file():
             errors.append(f"{path}: required control file is missing")
     if (docs / "README.md").exists():
         errors.append(f"{docs / 'README.md'}: redundant project control README must be removed")
+    for obsolete in ("progress.yaml", "issues.tsv", "change-log.tsv"):
+        if (docs / obsolete).exists():
+            errors.append(f"{docs / obsolete}: obsolete parallel control file must be removed")
     documentation = section(metadata, "documentation")
     if scalar(documentation, "entry", 2):
         errors.append(f"{metadata_path}: documentation.entry is obsolete")
+    expected_documentation = {"guide": "docs/project-guide.md", "review": "docs/review.md", "ledger": "docs/ledger.tsv"}
+    for key, expected in expected_documentation.items():
+        if scalar(documentation, key, 2) != expected:
+            errors.append(f"{metadata_path}: documentation.{key} must be {expected}")
+    for obsolete in ("progress", "change_log", "issues"):
+        if scalar(documentation, obsolete, 2) is not None:
+            errors.append(f"{metadata_path}: documentation.{obsolete} is obsolete")
     if (docs / "project-guide.md").is_file() and re.search(r"docs/(?:timing|quality|source|chinese|release|project|series|workspace|references)[^\s`|;]*\.md", (docs / "project-guide.md").read_text(encoding="utf-8")):
         errors.append(f"{docs / 'project-guide.md'}: active rules must cite stable Skill IDs, not deleted docs paths")
-    progress_path = docs / "progress.yaml"
-    if progress_path.is_file():
-        progress = progress_path.read_text(encoding="utf-8-sig")
-        if scalar(progress, "schema_version") != "3":
-            errors.append(f"{progress_path}: schema_version must be 3")
-        if work_id and scalar(progress, "work_id") != work_id:
-            errors.append(f"{progress_path}: work_id does not match project.yaml")
-    if (docs / "issues.tsv").is_file():
-        validate_tsv(docs / "issues.tsv", ISSUE_HEADER, 10, ISSUE_STATUSES, errors)
-    if (docs / "change-log.tsv").is_file():
-        validate_tsv(docs / "change-log.tsv", CHANGE_HEADER, 12, CHANGE_STATUSES, errors)
+    review_path = docs / "review.md"
+    if review_path.is_file():
+        review = review_path.read_text(encoding="utf-8-sig")
+        if not review.startswith("---\n") or "\n---\n" not in review[4:]:
+            errors.append(f"{review_path}: YAML front matter is required")
+        if scalar(review, "schema_version") != "1":
+            errors.append(f"{review_path}: schema_version must be 1")
+        if work_id and scalar(review, "work_id") != work_id:
+            errors.append(f"{review_path}: work_id does not match project.yaml")
+        for heading in ("# 当前校对轮次", "## 检查覆盖", "## 候选修改摘要", "## 需要用户确认", "## 决策与实施", "## 验证与剩余风险"):
+            if heading not in review:
+                errors.append(f"{review_path}: required section is missing: {heading}")
+    if (docs / "ledger.tsv").is_file():
+        validate_ledger(docs / "ledger.tsv", errors)
 
     if args.release:
         validate_release(root, metadata, errors, warnings)

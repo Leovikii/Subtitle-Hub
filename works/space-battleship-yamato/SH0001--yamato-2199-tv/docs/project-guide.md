@@ -1,6 +1,6 @@
 # SH0001《宇宙战舰大和号2199》TV 项目补充规范
 
-本文件是 SH0001 唯一可以补充或覆盖系列及仓库全局规范的文档。未列出的系列译名遵循上级 `series-guide.md`，其他事项遵循仓库全局规范；偏离系列译名必须记录用户确认。当前进度、问题、修改历史和人工审核结论分别以同目录对应台账为准。
+本文件是 SH0001 唯一可以补充或覆盖系列及仓库全局规范的文档。未列出的系列译名遵循上级 `series-guide.md`，其他事项遵循仓库全局规范；偏离系列译名必须记录用户确认。当前状态与校对报告以 `review.md` 为准，逐项候选、决定、修改和验证以 `ledger.tsv` 为准。
 
 ## 1. 范围与语言
 
@@ -64,9 +64,9 @@
 
 - 只编辑 `project/workspace/episodes/S01E01/master.ass` 至 `S01E26/master.ass`；
 - 项目专用脚本放入 `project/workspace/temp/tools/`；
-- 中间字幕放入 `temp/intermediate/`，人工审核报告和未审候选放入 `temp/review/`；
+- 中间字幕放入 `temp/intermediate/`，候选 diff、机器输出和临时证据放入 `temp/review/`；
 - 通过本轮检查的待发布文件生成到 `project/workspace/build/`；
-- 所有实质修改写入 `change-log.tsv`，未解决问题写入 `issues.tsv`，每轮状态写入 `progress.yaml`；
+- 逐项候选、用户决定、实施和验证写入 `ledger.tsv`，当前轮次和摘要写入 `review.md`；
 - 历史脚本、审查表和旧说明已冻结在 `project/archive/`，只能用于追溯，不得直接运行。
 
 ## 7. 已知限制和禁止自动处理项

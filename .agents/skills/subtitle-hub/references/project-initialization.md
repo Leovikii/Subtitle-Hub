@@ -60,7 +60,7 @@ Record actual language separately from roles. Track language classification uses
 
 ### SH-INIT-004 — Compute per dimension
 
-Report each dimension as `ready`, `limited`, or `blocked` without adding these values to progress-stage enums:
+Report each dimension as `ready`, `limited`, or `blocked` without adding these values to review-stage enums:
 
 - `structure`: baseline parses and episode/language/style/event structure is inspectable.
 - `language`: actual source-language audio is accessible and can be reviewed; matching text/script strengthens this dimension.
@@ -68,7 +68,7 @@ Report each dimension as `ready`, `limited`, or `blocked` without adding these v
 - `visual`: target video, correct fonts, ASS renderer, and local evidence path are available.
 - `release`: required dimensions for this round are covered, release checks pass, and P0/P1 disposition is valid.
 
-Readiness is derived from `project.yaml`, current local availability, and recorded review coverage. Do not persist a second overall readiness truth. Put durable limitations in `issues.tsv`; use `in-progress` with the issue reference when limited work continues, or `blocked` when the stage cannot proceed.
+Readiness is derived from `project.yaml`, current local availability, and recorded review coverage. Do not persist a second overall readiness truth. Put durable limitations in `ledger.tsv`; use `in-progress` with the item reference when limited work continues, or `blocked` when the stage cannot proceed.
 
 The ordinary minimum `video + Chinese baseline` permits structure, Chinese expression, punctuation, internal terminology consistency, numeric candidates, and audio/video timing/visual work when tools permit. It does not justify claiming full source-text search, exact name spelling, low-clarity speech coverage, or visual approval without those capabilities.
 

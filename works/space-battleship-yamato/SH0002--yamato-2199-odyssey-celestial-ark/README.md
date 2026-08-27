@@ -9,11 +9,11 @@
 - 日文标题：`宇宙戦艦ヤマト2199 星巡る方舟`
 - 简中标题：`宇宙战舰大和号2199 星巡的方舟`
 
-外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须使用仓库 [`$subtitle-hub` Skill](../../../.agents/skills/subtitle-hub/SKILL.md)，再读取上级 [系列用语规范](../series-guide.md) 以及本项目的 [补充规范](docs/project-guide.md)、[进度](docs/progress.yaml)、[问题台账](docs/issues.tsv) 和 [修改台账](docs/change-log.tsv)。
+外部 ID 的权威记录位于 [project.yaml](project.yaml)。开始校对前必须使用仓库 [`$subtitle-hub` Skill](../../../.agents/skills/subtitle-hub/SKILL.md)，再读取上级 [系列用语规范](../series-guide.md) 以及本项目的 [补充规范](docs/project-guide.md)、[当前校对轮次](docs/review.md) 和 [统一台账](docs/ledger.tsv)。
 
 ## 目录
 
-- `docs`：AI agent 五文件控制面；
+- `docs`：项目补充规范、当前校对报告和统一台账；
 - `project/sources`：保持原貌的日语与英语参考字幕；
 - `project/workspace/episodes/MOVIE/master.ass`：下一轮校订主稿；
 - `project/workspace/temp`：一次性工具、中间文件、审核候选和日志；

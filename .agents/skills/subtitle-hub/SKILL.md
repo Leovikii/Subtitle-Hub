@@ -19,13 +19,13 @@ Determine the task mode, then read only the listed references:
 - Historical rule-path interpretation only: [legacy-rule-map.md](references/legacy-rule-map.md). Never use it as a second standard.
 - External provenance or a deliberate baseline audit only: [external-basis.md](references/external-basis.md).
 
-For any existing work, also read in order: the nearest series `series-guide.md` when present, the work `project.yaml`, `docs/project-guide.md`, `docs/progress.yaml`, `docs/issues.tsv`, and `docs/change-log.tsv`. Read a temporary review report only when `progress.yaml.active_round` says the work is awaiting human feedback, and only the matching round.
+For any existing work, also read in order: the nearest series `series-guide.md` when present, the work `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`. The review file is the sole current-status and active-round report; the ledger is the sole item history.
 
 ## Priority and authority
 
 Apply, from highest to lowest: the user's current explicit instruction; confirmed project overrides in `docs/project-guide.md`; confirmed series terminology; this Skill; external references. Record any conflict and its resolution. Only `docs/project-guide.md` may supplement or override repository or series rules. A series-term override requires recorded user confirmation.
 
-`project.yaml` records identity, scope, source facts, evidence roles, video mapping, and release configuration. `docs/progress.yaml` is the sole current-status record. Issues and changes belong in their TSV ledgers. Temporary review files are feedback artifacts, not authority.
+`project.yaml` records identity, scope, source facts, evidence roles, video mapping, and release configuration. `docs/review.md` records current state and the user-facing active-round report. `docs/ledger.tsv` records each candidate, decision, applied change, and verification once. Temporary review files are evidence artifacts, not authority.
 
 ## Non-negotiable boundaries
 
@@ -36,7 +36,7 @@ Apply, from highest to lowest: the user's current explicit instruction; confirme
 - Preserve identifiable original subtitle production credits in one `Subtitle-Hub-Source-Credit` header field. Do not put credits, disclaimers, websites, or engineering provenance in Events.
 - Put project-only scripts in `project/workspace/temp/tools/`; do not invent a cross-project pipeline.
 - Treat automated findings as candidates unless the data proves a structural violation. Never bulk-rewrite semantic, timing, or visual candidates without evidence.
-- Record every substantive edit in `docs/change-log.tsv`, unresolved work in `docs/issues.tsv`, and update `docs/progress.yaml` before stopping.
+- Before changing a subtitle master, record substantive candidates in `docs/ledger.tsv`, summarize the proposed scope in `docs/review.md`, and obtain user approval for the item IDs or an explicit batch scope. Apply and verify only the approved scope, then update the same rows and review file before stopping.
 - Never claim human review or full-playback coverage that was not performed and recorded.
 - Perform visual checks locally. Do not attach batches of screenshots, continuous frames, contact sheets, or Base64 images to chat. Record timestamps, conclusions, and local evidence paths. Only when the user explicitly asks for one point may a message contain at most two compressed screenshots.
 

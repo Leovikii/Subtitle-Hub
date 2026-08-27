@@ -14,7 +14,7 @@
 | `YAMATO-SRC-BANGUMI-246898` | 条目数据库 | 宇宙戦艦ヤマト2202 愛の戦士たち | https://bgm.tv/subject/246898 | 2026-08-26 | 核对 2202 TV 中文名、TV 类型和 26 集范围，排除七章剧场上映条目。 |
 | `YAMATO-SRC-SH0002-JA` | 原语字幕 | SH0002 日语正文与 BDSUP OCR | SH0002--yamato-2199-odyssey-celestial-ark/project/sources/subtitles/ja | 2026-08-26 | 核对电影实际出现的日文专名；OCR 只作交叉验证。 |
 | `YAMATO-SRC-SH0003-JA` | 原语字幕 | SH0003 日语官方 WEBrip CC | SH0003--yamato-2202-tv/project/sources/subtitles/ja/official-webrip | 2026-08-26 | 核对 2202 实际出现的日文专名；具体语境仍需结合音轨。 |
-| `YAMATO-SRC-SH0003-BASELINE` | 仓库基线 | SH0003 迁入成品 | SH0003--yamato-2202-tv/subtitles/current | 2026-08-26 | 继承旧工程已经逐项审查并统一的系列译名；迁入发现的冲突仍须在项目问题台账逐事件核对。 |
+| `YAMATO-SRC-SH0003-BASELINE` | 仓库基线 | SH0003 迁入成品 | SH0003--yamato-2202-tv/subtitles/current | 2026-08-26 | 继承旧工程已经逐项审查并统一的系列译名；迁入发现的冲突仍须在项目统一台账逐事件核对。 |
 
 ## 规范术语
 
@@ -44,4 +44,4 @@
 
 ## 待用户确认
 
-无。SH0002 与 SH0003 的既有成品冲突已分别登记在项目 `issues.tsv`，不构成系列规范待决项。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。
+无。SH0002 与 SH0003 的既有成品冲突已分别登记在项目 `ledger.tsv`，不构成系列规范待决项。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。

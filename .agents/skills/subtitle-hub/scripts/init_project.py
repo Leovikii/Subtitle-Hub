@@ -186,9 +186,8 @@ def main() -> int:
 
     (target / "project.yaml").write_text(project_text, encoding="utf-8")
     (target / "docs" / "project-guide.md").write_text(render(template_root / "project-guide.md", values), encoding="utf-8")
-    (target / "docs" / "progress.yaml").write_text(render(template_root / "progress.yaml", values), encoding="utf-8")
-    shutil.copyfile(template_root / "issues.tsv", target / "docs" / "issues.tsv")
-    shutil.copyfile(template_root / "change-log.tsv", target / "docs" / "change-log.tsv")
+    (target / "docs" / "review.md").write_text(render(template_root / "review.md", values), encoding="utf-8")
+    shutil.copyfile(template_root / "ledger.tsv", target / "docs" / "ledger.tsv")
     destination = target / "project" / "sources" / "subtitles" / "zh-Hans" / "candidate-baseline"
     for row in rows:
         source = Path(row["subtitle"])

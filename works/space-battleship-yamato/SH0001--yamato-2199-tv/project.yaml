@@ -1,5 +1,4 @@
-schema_version: 4
-
+schema_version: 5
 id: SH0001
 slug: yamato-2199-tv
 type: tv
@@ -154,12 +153,11 @@ release:
 
 documentation:
   guide: docs/project-guide.md
-  progress: docs/progress.yaml
-  change_log: docs/change-log.tsv
-  issues: docs/issues.tsv
+  review: docs/review.md
+  ledger: docs/ledger.tsv
 
-developer_review:
-  workspace: project/workspace/temp/review
+review_evidence:
+  workspace: project/workspace/temp/review/attachments
   persistent: false
 
 archives:
