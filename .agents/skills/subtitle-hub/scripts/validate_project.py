@@ -344,8 +344,10 @@ def main() -> int:
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
 
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version not in {"1.0.0", "1.1.0"}:
-        errors.append(f"{metadata_path}: initialization.skill_version must be 1.0.0 or 1.1.0")
+    if initialization_version not in {"1.0.0", "1.1.0", "1.1.1"}:
+        errors.append(
+            f"{metadata_path}: initialization.skill_version must be 1.0.0, 1.1.0, or 1.1.1"
+        )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
     if initialization_state == "proofreading-ready":

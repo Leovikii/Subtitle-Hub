@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import tempfile
@@ -31,10 +32,59 @@ BANGUMI_ID = re.compile(r"[1-9]\d*\Z")
 INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*]+')
 MAX_PACKAGE_NAME_BYTES = 240
 STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+CREDIT_GROUP = re.compile(r"[0-9A-Za-z_\u3040-\u30ff\u3400-\u9fff·&＋+ -]{1,48}字幕组\Z")
+CREDIT_ROLES = (
+    "压制&后期", "翻译&时轴", "翻译·校对", "设定校正", "设定校对", "台本整理",
+    "精神领袖", "时间轴", "日听", "日校", "中校", "校对", "精校", "初校",
+    "时轴", "时间", "翻译", "特效", "片源", "压制", "后期",
+)
+CREDIT_ROLE = re.compile(
+    rf"(?<!\S)({'|'.join(re.escape(role) for role in CREDIT_ROLES)})"
+    r"(?:\s*[:：]\s*|\s+)"
+)
+CREDIT_REJECT_MARKERS = (
+    "http://", "https://", "www.", ".com", ".org", "仅供", "不得用于", "禁止用于",
+    "违法", "欢迎访问", "免责声明", "中文底稿", "日文原本", "版本校验",
+    "时间轴与特效参考", "本地", "路径",
+)
 
 
 class PackageError(RuntimeError):
     pass
+
+
+def is_high_confidence_credit_fragment(value: str) -> bool:
+    """Accept only bounded group names or complete role-to-person credit lines."""
+    value = " ".join(value.split())
+    if not value or len(value) > 500 or any(marker in value for marker in CREDIT_REJECT_MARKERS):
+        return False
+    if CREDIT_GROUP.fullmatch(value):
+        return True
+    matches = list(CREDIT_ROLE.finditer(value))
+    if not matches or matches[0].start() != 0:
+        return False
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(value)
+        person = value[match.end() : end].strip()
+        if (
+            not person
+            or len(person) > 120
+            or re.search(r"[。！？!?；;]", person)
+            or not re.search(r"[0-9A-Za-z_\u3040-\u30ff\u3400-\u9fff]", person)
+        ):
+            return False
+    return True
+
+
+def validated_source_credit_parts(value: str) -> list[str]:
+    parts = [" ".join(part.split()) for part in value.split("；")]
+    if not parts or any(not is_high_confidence_credit_fragment(part) for part in parts):
+        raise PackageError("Source-Credit contains ambiguous attribution or non-credit text")
+    if len(parts) != len(set(parts)):
+        raise PackageError("Source-Credit contains duplicate attribution")
+    if "；".join(parts) != value:
+        raise PackageError("Source-Credit is not in canonical form")
+    return parts
 
 
 def sha256(data: bytes) -> str:
@@ -168,6 +218,14 @@ def validate_standard_ass(
     episode_id = project_episode_for_subtitle(project_root, subtitle, primary)
 
     lines = text.splitlines()
+    section_headers = [
+        line for line in lines if re.fullmatch(r"\[[^\[\]\r\n]+\]", line)
+    ]
+    expected_sections = ["[Script Info]", "[V4+ Styles]", "[Events]"]
+    if section_headers != expected_sections:
+        raise PackageError(
+            f"{subtitle}: release sections must be exactly {', '.join(expected_sections)}"
+        )
     try:
         styles_index = lines.index("[V4+ Styles]")
         events_index = lines.index("[Events]")
@@ -200,6 +258,10 @@ def validate_standard_ass(
         source_credit = header[cursor].split(":", 1)[1].strip()
         if not source_credit:
             raise PackageError(f"{subtitle}: empty Source-Credit")
+        try:
+            validated_source_credit_parts(source_credit)
+        except PackageError as error:
+            raise PackageError(f"{subtitle}: {error}") from error
         cursor += 1
     expected_title = f"Title: bgm{subject_id} - {title_zh_hans} - {episode_id}"
     expected_labels = (
@@ -231,7 +293,10 @@ def validate_standard_ass(
         style_parts = style_match.group(1).split(",")
         if len(style_parts) < 2:
             raise PackageError(f"{subtitle}: malformed style line")
-        defined.add(style_parts[0])
+        style_name = style_parts[0]
+        if style_name in defined:
+            raise PackageError(f"{subtitle}: duplicate style definition {style_name!r}")
+        defined.add(style_name)
         style_fonts.add(style_parts[1].strip())
     references: set[str] = set()
     inline_fonts: set[str] = set()
@@ -387,7 +452,19 @@ def main() -> int:
     parser.add_argument(
         "--check", action="store_true", help="validate releases and print planned names only"
     )
+    parser.add_argument(
+        "--action-build", action="store_true",
+        help="build packages inside the package-subtitles GitHub Action only",
+    )
     args = parser.parse_args()
+    if args.check and args.action_build:
+        raise PackageError("--check and --action-build are mutually exclusive")
+    if not args.check and (
+        not args.action_build or os.environ.get("GITHUB_ACTIONS") != "true"
+    ):
+        raise PackageError(
+            "local package generation is disabled; use --check locally and let GitHub Actions build ZIPs"
+        )
     REPOSITORY_ROOT = args.repository_root.resolve()
     WORKS_ROOT = REPOSITORY_ROOT / "works"
     PACKAGES_ROOT = REPOSITORY_ROOT / "packages"

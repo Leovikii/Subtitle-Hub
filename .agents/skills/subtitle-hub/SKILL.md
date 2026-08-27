@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
 ---
 
 # Subtitle Hub

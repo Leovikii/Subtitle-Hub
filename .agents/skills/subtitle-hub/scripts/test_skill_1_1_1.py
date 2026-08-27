@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.1.0 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.1.1 toolchain."""
 
 from __future__ import annotations
 
@@ -16,6 +16,19 @@ SCRIPT_ROOT = Path(__file__).resolve().parent
 SKILL_ROOT = SCRIPT_ROOT.parent
 REPOSITORY_ROOT = SKILL_ROOT.parents[2]
 PACKAGE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "build_subtitle_packages.py"
+CATALOG_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "sync_catalog.py"
+sys.path.insert(0, str(PACKAGE_SCRIPT.parent))
+from build_subtitle_packages import (  # noqa: E402
+    PackageError,
+    is_high_confidence_credit_fragment,
+    validated_source_credit_parts,
+)
+from normalize_ass_release import (  # noqa: E402
+    NormalizeError,
+    ass_section,
+    normalize_source_metadata,
+    normalize_styles,
+)
 
 
 def run_path(path: Path, *args: str, expect: int = 0) -> subprocess.CompletedProcess[str]:
@@ -201,7 +214,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.1\.0"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.1\.1"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -293,7 +306,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 2)
-            self.assertEqual(data["skill_version"], "1.1.0")
+            self.assertEqual(data["skill_version"], "1.1.1")
             self.assertEqual(data["readiness"]["timing"], "ready")
             self.assertEqual(data["readiness"]["language"], "limited")
             self.assertEqual(data["readiness"]["visual"], "limited")
@@ -530,26 +543,25 @@ class InitializationTests(unittest.TestCase):
 
 
 class CatalogAndPackagingTests(unittest.TestCase):
-    def test_catalog_contains_all_projects_and_adds_release_when_available(self) -> None:
+    def test_action_catalog_adds_release_and_package_after_package_exists(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, _, _, args = initialize_project(root)
             run("init_project.py", *args)
-            run("sync_catalog.py", "--repository-root", str(repository))
-            initial_catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
-            self.assertIn("SH0001", initial_catalog)
-            self.assertIn("version: null", initial_catalog)
-            self.assertIn("review_path: works/test-series/SH0001--test-tv/review.md", initial_catalog)
             current = series / "SH0001--test-tv/subtitles/current"
             current.mkdir(parents=True)
             (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")
             (current / "placeholder.zh-Hans.ass").write_text("placeholder\n", encoding="utf-8")
-            run("sync_catalog.py", "--repository-root", str(repository), "--check", expect=1)
-            run("sync_catalog.py", "--repository-root", str(repository))
-            run("sync_catalog.py", "--repository-root", str(repository), "--check")
-            self.assertIn("SH0001", (repository / "catalog.yaml").read_text(encoding="utf-8"))
+            package = repository / "packages/bgm100 - 测试作品 [v1.0.0].zip"
+            package.parent.mkdir()
+            package.write_bytes(b"action-output")
+            run_path(CATALOG_SCRIPT, "--repository-root", str(repository))
+            run_path(CATALOG_SCRIPT, "--repository-root", str(repository), "--check")
+            catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
+            self.assertIn("SH0001", catalog)
+            self.assertIn("packages/bgm100 - 测试作品 [v1.0.0].zip", catalog)
 
-    def test_package_builder_maps_video_stem_without_episode_token(self) -> None:
+    def test_local_package_builder_is_check_only_and_writes_no_zip(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, _, _, args = initialize_project(root, video_name="custom-cut-name.mkv")
@@ -559,11 +571,60 @@ class CatalogAndPackagingTests(unittest.TestCase):
             (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")
             (current / "custom-cut-name.zh-Hans.ass").write_text(
                 release_ass(100, "测试作品", "S01E01"), encoding="utf-8", newline="\n")
-            self.assertIn("valid", run_path(PACKAGE_SCRIPT, "--repository-root", str(repository), "--check").stdout)
-            run_path(PACKAGE_SCRIPT, "--repository-root", str(repository))
-            packages = list((repository / "packages").glob("*.zip"))
-            self.assertEqual(len(packages), 1)
-            self.assertIn("bgm100 - 测试作品 [v1.0.0]", packages[0].name)
+            checked = run_path(PACKAGE_SCRIPT, "--repository-root", str(repository), "--check")
+            self.assertIn("valid", checked.stdout)
+            self.assertIn("bgm100 - 测试作品 [v1.0.0].zip", checked.stdout)
+            refused = run_path(PACKAGE_SCRIPT, "--repository-root", str(repository), expect=1)
+            self.assertIn("local package generation is disabled", refused.stderr)
+            action_refused = run_path(
+                PACKAGE_SCRIPT, "--repository-root", str(repository), "--action-build", expect=1
+            )
+            self.assertIn("local package generation is disabled", action_refused.stderr)
+            self.assertEqual(list((repository / "packages").glob("*.zip")), [])
+
+    def test_credit_filter_is_conservative_and_preserves_identified_attribution(self) -> None:
+        valid = "诸神字幕组；台本整理:散仙 翻译:龟龟之蛋 校对:mam 时间轴:时末"
+        self.assertEqual(validated_source_credit_parts(valid), valid.split("；"))
+        self.assertTrue(is_high_confidence_credit_fragment("翻译 白楸兔引 Riho；".rstrip("；")))
+        for ambiguous in (
+            "欢迎访问 example.org", "本字幕仅供学习交流", "中文底稿：old.ass", "可能是某字幕组制作",
+        ):
+            self.assertFalse(is_high_confidence_credit_fragment(ambiguous))
+            with self.assertRaises(PackageError):
+                validated_source_credit_parts(ambiguous)
+
+    def test_release_cleanup_harvests_credit_before_removing_all_comments(self) -> None:
+        events = (
+            "[Events]\n"
+            "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+            "Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,"
+            "[源字幕信息] 本字幕由诸神字幕组（example.org）制作，仅供交流学习\n"
+            "Comment: 0,0:00:00.00,0:00:00.01,CN-Main,,0,0,0,template,automation code\n"
+            "Dialogue: 0,0:00:01.00,0:00:02.00,CN-Main,,0,0,0,,测试\n"
+        )
+        cleaned, credits, removed = normalize_source_metadata(events)
+        self.assertEqual(credits, ["诸神字幕组"])
+        self.assertEqual(removed, 2)
+        self.assertNotIn("Comment:", cleaned)
+        self.assertIn("Dialogue:", cleaned)
+
+    def test_release_cleanup_drops_nonruntime_sections_and_rejects_duplicate_styles(self) -> None:
+        source = (
+            "[Script Info]\nScriptType: v4.00+\n[Aegisub Project Garbage]\nVideo File: local.mkv\n"
+            "[V4+ Styles]\nFormat: Name, Fontname\nStyle: CN-Main,Noto Sans CJK SC\n"
+            "[Fonts]\nfontname: unwanted\n[Events]\nFormat: Layer, Start, End, Style, Name, "
+            "MarginL, MarginR, MarginV, Effect, Text\n"
+        )
+        styles = ass_section(source, "[V4+ Styles]")
+        events = ass_section(source, "[Events]")
+        self.assertNotIn("[Fonts]", styles)
+        self.assertNotIn("local.mkv", styles + events)
+        duplicate = (
+            "[V4+ Styles]\nStyle: CN-Main,Noto Sans CJK SC\n"
+            "Style: CN-Main,Noto Sans CJK SC\n"
+        )
+        with self.assertRaises(NormalizeError):
+            normalize_styles(duplicate, {"CN-Main"})
 
 
 if __name__ == "__main__":

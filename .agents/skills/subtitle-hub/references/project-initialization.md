@@ -86,7 +86,7 @@ The ordinary minimum `video + Chinese baseline` permits structure, Chinese expre
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.1.0 intake contract
+## Skill 1.1.1 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
@@ -94,7 +94,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames and track titles are weaker signals and may use only known language aliases; never interpret an arbitrary two- or three-letter filename token as a language. If multiple source-language audio streams exist, select the intended one with `--audio-stream VIDEO|INDEX`. Resolve missing or conflicting track language with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language is blocking because its source/timing/translation role cannot otherwise be assigned safely.
 
-The emitted intake JSON uses `schema_version: 2` and `skill_version: 1.1.0`. It may contain local absolute paths and is disposable. Relevant fields are `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty or timing readiness is not `ready`.
+The emitted intake JSON uses `schema_version: 2` and `skill_version: 1.1.1`. It may contain local absolute paths and is disposable. Relevant fields are `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty or timing readiness is not `ready`.
 
 Example:
 

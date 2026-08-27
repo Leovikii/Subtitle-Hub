@@ -12,6 +12,7 @@ from pathlib import Path
 from build_subtitle_packages import (
     PackageError,
     bangumi_identity,
+    is_high_confidence_credit_fragment,
     validate_release_dir,
     yaml_block,
     yaml_scalar,
@@ -43,21 +44,8 @@ FONT_MAP = {
 }
 STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
 SOURCE_METADATA_PREFIX = "[源字幕信息]"
-SUBTITLE_GROUP = re.compile(r"([\w\u3400-\u9fff·&＋+ -]+字幕组)")
-SOURCE_CREDIT_ROLES = (
-    "日听",
-    "翻译",
-    "日校",
-    "中校",
-    "校对",
-    "时间 ",
-    "时间轴",
-    "压制",
-    "片源 ",
-    "台本整理",
-    "精神领袖",
-    "精校",
-    "后期",
+SUBTITLE_GROUP_IN_TEXT = re.compile(
+    r"([0-9A-Za-z_\u3040-\u30ff\u3400-\u9fff·&＋+ -]{1,48}字幕组)"
 )
 SOURCE_PROVENANCE_MARKERS = (
     "中文底稿",
@@ -102,6 +90,20 @@ def script_info(source: str) -> tuple[dict[str, str], list[str]]:
     return fields, comments
 
 
+def ass_section(source: str, header: str) -> str:
+    marker = f"{header}\n"
+    start = source.find(marker)
+    if start < 0:
+        raise NormalizeError(f"missing {header} section")
+    next_section = re.search(r"(?m)^\[[^\n]+\]$", source[start + len(marker) :])
+    end = (
+        start + len(marker) + next_section.start()
+        if next_section
+        else len(source)
+    )
+    return source[start:end]
+
+
 def event_style_references(events_tail: str) -> set[str]:
     references: set[str] = set()
     in_events = False
@@ -136,6 +138,8 @@ def normalize_styles(
             output.append(line)
             continue
         name = style_match.group(1).split(",", 1)[0]
+        if name in defined:
+            raise NormalizeError(f"duplicate style definition: {name!r}")
         defined.add(name)
         if name in references:
             line_ending = "\n" if line.endswith("\n") else ""
@@ -192,12 +196,9 @@ def source_credit_from_metadata(text: str) -> str | None:
     if any(marker in value for marker in SOURCE_PROVENANCE_MARKERS):
         return None
     if any(marker in value for marker in SOURCE_DISCLAIMER_MARKERS):
-        group_match = SUBTITLE_GROUP.search(value.removeprefix("本字幕由"))
+        group_match = SUBTITLE_GROUP_IN_TEXT.search(value.removeprefix("本字幕由"))
         return group_match.group(1).strip() if group_match else None
-    group_match = SUBTITLE_GROUP.search(value)
-    if group_match or any(role in value for role in SOURCE_CREDIT_ROLES):
-        return value
-    return None
+    return value if is_high_confidence_credit_fragment(value) else None
 
 
 def normalize_source_metadata(events_tail: str) -> tuple[str, list[str], int]:
@@ -219,8 +220,8 @@ def normalize_source_metadata(events_tail: str) -> tuple[str, list[str], int]:
                 credit = source_credit_from_metadata(parts[9])
                 if credit and credit not in credits:
                     credits.append(credit)
-                removed += 1
-                continue
+            removed += 1
+            continue
         output.append(line)
     return "".join(output), credits, removed
 
@@ -248,9 +249,14 @@ def normalized_header(
             ("; Original fansub credit (metadata only):", "; Subtitle-Hub-Source-Credit:")
         ):
             continue
-        credit = line.split(":", 1)[1].strip()
-        if credit and credit not in source_credits:
-            source_credits.append(credit)
+        raw_credit = line.split(":", 1)[1].strip()
+        for credit in raw_credit.split("；"):
+            credit = " ".join(credit.split())
+            if (
+                is_high_confidence_credit_fragment(credit)
+                and credit not in source_credits
+            ):
+                source_credits.append(credit)
     for credit in event_source_credits:
         if credit not in source_credits:
             source_credits.append(credit)
@@ -305,8 +311,8 @@ def normalize_file(
         raise NormalizeError(f"{source_path}: invalid Styles/Events section order")
 
     fields, comments = script_info(source)
-    style_section = source[style_start:events_start]
-    events_tail = source[events_start:]
+    style_section = ass_section(source, STYLE_SECTION)
+    events_tail = ass_section(source, EVENTS_SECTION)
     events_without_metadata, event_source_credits, metadata_removed = (
         normalize_source_metadata(events_tail)
     )
@@ -407,7 +413,7 @@ def build_candidate(project_root: Path, version: str) -> None:
     print(
         f"built {output_dir} ({len(release_templates)} subtitles; "
         f"removed {total_removed} unused style definitions; "
-        f"removed {total_source_metadata_removed} source metadata comments; "
+        f"removed {total_source_metadata_removed} non-rendering comment events; "
         f"changed {total_style_font_changes} style fonts and "
         f"{total_inline_font_changes} inline fonts)"
     )

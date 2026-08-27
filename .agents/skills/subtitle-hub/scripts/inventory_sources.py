@@ -490,7 +490,7 @@ def main() -> int:
     source_text_ready = any(group["language"] == source_language and "source-text-reference" in group["roles"] for group in optional_groups) or any(track["language"] == source_language and "source-text-reference" in track["roles"] for track in embedded)
     report = {
         "schema_version": 2,
-        "skill_version": "1.1.0",
+        "skill_version": "1.1.1",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,

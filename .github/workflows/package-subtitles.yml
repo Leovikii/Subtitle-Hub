@@ -44,15 +44,30 @@ jobs:
 
       - name: Build deterministic packages
         if: steps.freshness.outputs.current == 'true'
-        run: python .github/scripts/build_subtitle_packages.py
+        run: python .github/scripts/build_subtitle_packages.py --action-build
 
-      - name: Commit updated packages
+      - name: Detect package changes
+        if: steps.freshness.outputs.current == 'true'
+        id: package_changes
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain -- packages/)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Packages are already current; indexes remain untouched."
+          fi
+
+      - name: Regenerate package indexes
+        if: steps.package_changes.outputs.changed == 'true'
+        run: python .github/scripts/sync_catalog.py
+
+      - name: Commit updated packages and indexes
         if: steps.freshness.outputs.current == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain -- packages/)" ]; then
-            echo "Packages are already current."
+          if [ "${{ steps.package_changes.outputs.changed }}" != "true" ]; then
             exit 0
           fi
           remote_sha="$(git ls-remote --exit-code origin refs/heads/main | awk '{print $1}')"
@@ -62,6 +77,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- packages/
-          git commit -m "Build current subtitle packages"
+          git add -- packages/ CATALOG.md catalog.yaml
+          git commit -m "Build subtitle packages and indexes"
           git push origin HEAD:main
