@@ -349,7 +349,7 @@ workspace:
   build: project/workspace/build
 
 initialization:
-  skill_version: "1.0.0"
+  skill_version: "1.1.0"
   state: proofreading-ready
   intake: probe-confirmed-and-user-approved
   intake_approved_by: "user"
@@ -368,9 +368,9 @@ release:
   filename_pattern: "<video-stem>.zh-Hans.ass"
   embedded_version_field: Subtitle-Hub-Version
   review_coverage:
-    machine: structure-and-candidate-audit
-    human: "project-owner-approved; candidate-point audio/visual checks"
-    basis: "content-audit-20260827; user-approved-release-2026-08-27"
+    machine: "skill-1.1.0-release-candidate-audit"
+    human: "project-owner-approved-final-review; candidate-point local visual checks"
+    basis: "dialogue-style-1.1.0-20260827; user-approved-release-2026-08-27"
   package:
     naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
     generated_by: .github/scripts/build_subtitle_packages.py
