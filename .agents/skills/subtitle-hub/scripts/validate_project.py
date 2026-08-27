@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Validate Subtitle Hub project/control-plane invariants with no external packages."""
+"""Validate Subtitle Hub project and release invariants with no external packages."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 
 ALLOWED_ROLES = {
