@@ -1,18 +1,48 @@
 # Subtitle Hub
 
-Subtitle Hub 同时承担两项职责：
+Subtitle Hub 是一个面向中文字幕校对、维护与发布的开放仓库。它既保存可追溯、可继续修订的字幕工程，也归档已经发布的简体中文主字幕与分发包。
 
-1. 保存可追溯、可继续校订的字幕工程；
-2. 长期存档经过审核的最终字幕产物。
+仓库按作品整理内容，并使用 Bangumi 动画条目统一作品身份与中日标题。这里不提供视频、种子、磁力链接或片源下载地址；仓库中出现的原始文件名只用于说明字幕与目标视频的匹配关系。
 
-工程按作品归档。每个作品使用仓库内部 ID 作为仓库标识，使用 Bangumi 动画条目作为唯一外部身份与中日标题来源。仓库不保存视频、种子、磁力链接或下载地址；片源清单中的原始文件名仅用于说明字幕兼容性。
+## 内容入口
 
-同一系列目录使用唯一的 `series-guide.md` 统一人名、地名、组织、舰船和技术术语。面向用户的成品包名采用 Bangumi ID、简体中文标题和当前版本，例如 `bgm54552 - 宇宙战舰大和号2199 [v1.0.1].zip`。
+- [作品目录](CATALOG.md)：查看当前收录作品及其项目页面。
+- 字幕索引：规划中；独立索引建立后将在此提供入口。
+- 发布压缩包索引：规划中；独立索引建立后将在此提供入口。
 
-AI agent 和校对者开始工作前必须使用仓库级 [`$subtitle-hub` Skill](.agents/skills/subtitle-hub/SKILL.md)。仓库级规范只在该 Skill 中维护；作品的 `project.yaml`、`docs/project-guide.md`、进度与台账保存项目事实和覆盖项。
+在两个独立索引完成前，请统一从作品目录查找字幕和现有发布包。
 
-最终字幕固定保存在各项目的 `subtitles/current/`，版本号由目录内 `VERSION` 和 ASS 内标记共同声明；从第二个正式版本起，`subtitles/previous/` 强制保留被替换的完整上一版。仓库级 `packages/` 保存由 GitHub Actions 从当前成品自动生成的规范命名 ZIP，供检索和下载；ZIP 不是另一套发布事实源。
+## Subtitle Hub Skill
 
-正式 ASS 统一使用 `Noto Sans CJK SC`（简体中文及英文）与 `Noto Sans CJK JP`（日文）静态字体。字体不嵌入字幕 ZIP，使用前应在系统或播放器字体目录中一次安装这两套字体；具体规则由 `$subtitle-hub` Skill 维护。
+[`subtitle-hub` Skill](.agents/skills/subtitle-hub/SKILL.md) 集中了本项目的初始化、素材盘点、字幕校对、时间轴与排版检查、构建验证和发布流程。仓库规范只在该 Skill 中维护；根 README 仅提供面向用户的项目与使用入口。
 
-当前已收录作品见 [CATALOG.md](CATALOG.md)。
+### 在本仓库中使用
+
+克隆仓库并在 Codex 中打开仓库根目录后，Codex 会自动发现位于 `.agents/skills/subtitle-hub/` 的仓库级 Skill，无需另行安装。可在提示词中显式调用：
+
+```text
+$subtitle-hub 初始化一个新的字幕项目，并引导我提供必要素材。
+```
+
+也可以直接说明具体任务，例如：
+
+```text
+$subtitle-hub 盘点这个项目的素材，并评估可用的校对能力层级。
+$subtitle-hub 校对当前中文字幕，记录问题并生成可验证的候选版本。
+```
+
+开始新项目时，至少准备目标视频和待校对的中文字幕。原语字幕或台本、视频内嵌字幕等属于可选材料；提供得越完整，Skill 越能可靠地核对语义、消除翻译歧义，并参考同源时间轴与版式。无法确认内嵌字幕语言或作用时，Skill 会要求用户确认。
+
+### 单独安装 Skill
+
+如果希望在其他仓库或本地任务中使用，可以通过 Codex 自带的 `$skill-installer` 从 [Subtitle Hub Skill 源目录](https://github.com/Leovikii/Subtitle-Hub/tree/main/.agents/skills/subtitle-hub) 安装：
+
+```text
+$skill-installer 请从 https://github.com/Leovikii/Subtitle-Hub/tree/main/.agents/skills/subtitle-hub 安装 Subtitle Hub Skill。
+```
+
+安装完成后，从下一轮对话开始使用 `$subtitle-hub` 调用。Skill 的设计与发现机制可参考 OpenAI 官方文档：[Build skills](https://learn.chatgpt.com/docs/build-skills)。
+
+## 许可
+
+本仓库采用 [GNU General Public License v3.0](LICENSE)。
