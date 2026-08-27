@@ -9,6 +9,8 @@ import re
 import sys
 from pathlib import Path
 
+from build_subtitle_packages import package_name
+
 TYPE_LABELS = {"tv": "TV", "movie": "电影", "ova": "OVA", "ona": "ONA", "special": "特别篇"}
 
 
@@ -53,7 +55,11 @@ def catalog_works(repository: Path) -> list[dict[str, object]]:
         version = version_file.read_text(encoding="utf-8").strip() if version_file.is_file() else None
         subject_id = scalar(identity, "id", 2)
         title = scalar(titles, "zh-Hans", 4)
-        package = repository / "packages" / f"bgm{subject_id} - {title} [v{version}].zip" if version and subject_id and title else None
+        package = (
+            repository / "packages" / package_name(metadata_path.parent, version)
+            if version and subject_id and title
+            else None
+        )
         item = {
             "id": scalar(text, "id"), "project_path": project_path,
             "title": title, "type": scalar(text, "type"), "status": scalar(review, "overall_status") or "untracked",
@@ -100,13 +106,57 @@ def render_markdown(works: list[dict[str, object]]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def indexed_package_paths(path: Path) -> dict[str, str]:
+    if not path.is_file():
+        return {}
+    indexed: dict[str, str] = {}
+    current_id: str | None = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        id_match = re.fullmatch(r"  - id:\s*(SH\d+)", line)
+        if id_match:
+            current_id = id_match.group(1)
+            continue
+        package_match = re.fullmatch(r"    package_path:\s*(.+)", line)
+        if not package_match or current_id is None:
+            continue
+        value = package_match.group(1)
+        if value != "null":
+            indexed[current_id] = json.loads(value)
+    return indexed
+
+
+def package_link_mismatches(repository: Path, works: list[dict[str, object]]) -> list[str]:
+    expected = {
+        str(item["id"]): str(item["package_path"])
+        for item in works
+        if item["package_path"]
+    }
+    indexed = indexed_package_paths(repository / "catalog.yaml")
+    ids = sorted(set(expected) | set(indexed), key=lambda value: int(value[2:]))
+    return [
+        f"{work_id}: indexed={indexed.get(work_id)!r}, expected={expected.get(work_id)!r}"
+        for work_id in ids
+        if indexed.get(work_id) != expected.get(work_id)
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository-root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--check-package-links", action="store_true")
     args = parser.parse_args()
+    if args.check and args.check_package_links:
+        parser.error("--check and --check-package-links are mutually exclusive")
     repository = args.repository_root.resolve()
     works = catalog_works(repository)
+    if args.check_package_links:
+        mismatches = package_link_mismatches(repository, works)
+        if mismatches:
+            print("stale package links: " + "; ".join(mismatches), file=sys.stderr)
+            return 1
+        print("package links valid")
+        return 0
     outputs = {repository / "catalog.yaml": render_yaml(works), repository / "CATALOG.md": render_markdown(works)}
     if args.check:
         stale = [str(path) for path, expected in outputs.items() if not path.is_file() or path.read_text(encoding="utf-8") != expected]

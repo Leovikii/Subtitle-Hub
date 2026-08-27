@@ -46,20 +46,25 @@ jobs:
         if: steps.freshness.outputs.current == 'true'
         run: python .github/scripts/build_subtitle_packages.py --action-build
 
-      - name: Detect package changes
+      - name: Detect package or package-link changes
         if: steps.freshness.outputs.current == 'true'
-        id: package_changes
+        id: derived_changes
         shell: bash
         run: |
+          set -euo pipefail
           if [ -n "$(git status --porcelain -- packages/)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Package files changed."
+          elif ! python .github/scripts/sync_catalog.py --check-package-links; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Package-link recovery is required."
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Packages are already current; indexes remain untouched."
+            echo "Packages and package links are already current; indexes remain untouched."
           fi
 
       - name: Regenerate package indexes
-        if: steps.package_changes.outputs.changed == 'true'
+        if: steps.derived_changes.outputs.changed == 'true'
         run: python .github/scripts/sync_catalog.py
 
       - name: Commit updated packages and indexes
@@ -67,7 +72,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ "${{ steps.package_changes.outputs.changed }}" != "true" ]; then
+          if [ "${{ steps.derived_changes.outputs.changed }}" != "true" ]; then
             exit 0
           fi
           remote_sha="$(git ls-remote --exit-code origin refs/heads/main | awk '{print $1}')"

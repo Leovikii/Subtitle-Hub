@@ -555,11 +555,29 @@ class CatalogAndPackagingTests(unittest.TestCase):
             package = repository / "packages/bgm100 - 测试作品 [v1.0.0].zip"
             package.parent.mkdir()
             package.write_bytes(b"action-output")
+            mismatch = run_path(
+                CATALOG_SCRIPT, "--repository-root", str(repository),
+                "--check-package-links", expect=1,
+            )
+            self.assertIn("stale package links", mismatch.stderr)
             run_path(CATALOG_SCRIPT, "--repository-root", str(repository))
             run_path(CATALOG_SCRIPT, "--repository-root", str(repository), "--check")
+            run_path(
+                CATALOG_SCRIPT, "--repository-root", str(repository), "--check-package-links"
+            )
             catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
             self.assertIn("SH0001", catalog)
             self.assertIn("packages/bgm100 - 测试作品 [v1.0.0].zip", catalog)
+            review = series / "SH0001--test-tv/review.md"
+            review.write_text(
+                review.read_text(encoding="utf-8").replace(
+                    "overall_status: in-progress", "overall_status: final-review"
+                ),
+                encoding="utf-8",
+            )
+            run_path(
+                CATALOG_SCRIPT, "--repository-root", str(repository), "--check-package-links"
+            )
 
     def test_local_package_builder_is_check_only_and_writes_no_zip(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
