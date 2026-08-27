@@ -214,6 +214,18 @@ class SkillStructureTests(unittest.TestCase):
                         missing.append(f"{markdown.relative_to(SKILL_ROOT)} -> {raw}")
         self.assertEqual(missing, [])
 
+    def test_skill_has_four_routed_references_and_one_style_basis(self) -> None:
+        references = {path.name for path in (SKILL_ROOT / "references").glob("*.md")}
+        self.assertEqual(references, {
+            "project-initialization.md", "proofreading-and-approval.md",
+            "timing-style-and-qc.md", "release-and-workspace.md",
+        })
+        style = (SKILL_ROOT / "references" / "timing-style-and-qc.md").read_text(encoding="utf-8")
+        self.assertIn("Netflix", style)
+        self.assertIn("Subtitle Hub engineering adaptations", style)
+        for unrelated in ("BBC", "DCMP", "EBU"):
+            self.assertNotIn(unrelated, style)
+
     def test_rule_ids_are_unique_and_project_refs_resolve(self) -> None:
         rule_sources: dict[str, str] = {}
         duplicates = []
@@ -224,16 +236,27 @@ class SkillStructureTests(unittest.TestCase):
                 rule_sources[rule_id] = markdown.name
         self.assertEqual(duplicates, [])
         unresolved = []
-        for guide in (REPOSITORY_ROOT / "works").glob("**/docs/project-guide.md"):
-            for rule_id in re.findall(r"`(SH-[A-Z]+-\d{3})`", guide.read_text(encoding="utf-8")):
+        for metadata in (REPOSITORY_ROOT / "works").glob("**/project.yaml"):
+            for rule_id in re.findall(r"(?:global_ref:\s*|`)(SH-[A-Z]+-\d{3})", metadata.read_text(encoding="utf-8")):
                 if rule_id not in rule_sources:
-                    unresolved.append(f"{guide.relative_to(REPOSITORY_ROOT)}: {rule_id}")
+                    unresolved.append(f"{metadata.relative_to(REPOSITORY_ROOT)}: {rule_id}")
         self.assertEqual(unresolved, [])
 
     def test_no_parallel_root_docs_standard_remains(self) -> None:
         old_docs = REPOSITORY_ROOT / "docs"
         remaining = sorted(path for path in old_docs.rglob("*") if path.is_file()) if old_docs.exists() else []
         self.assertEqual(remaining, [])
+
+    def test_projects_use_two_file_control_plane(self) -> None:
+        for metadata in (REPOSITORY_ROOT / "works").glob("**/project.yaml"):
+            project = metadata.parent
+            self.assertTrue((project / "review.md").is_file())
+            self.assertFalse((project / "README.md").exists())
+            self.assertFalse((project / "docs").exists())
+            text = metadata.read_text(encoding="utf-8")
+            self.assertRegex(text, r"(?m)^schema_version: 7$")
+            self.assertIn("subtitle_design:", text)
+            self.assertIn("  review: review.md", text)
 
     def test_active_repository_markdown_links_resolve(self) -> None:
         markdown_files = [REPOSITORY_ROOT / "README.md", REPOSITORY_ROOT / "CATALOG.md", REPOSITORY_ROOT / "AGENTS.md",
@@ -373,9 +396,9 @@ class InitializationTests(unittest.TestCase):
             self.assertIn('project_name: "test-tv"', metadata)
             self.assertIn('intake_approved_by: "test-owner"', metadata)
             self.assertFalse((project / "subtitles" / "current").exists())
-            for obsolete in ("progress.yaml", "issues.tsv", "change-log.tsv", "README.md"):
-                self.assertFalse((project / "docs" / obsolete).exists())
-            self.assertTrue((project / "README.md").is_file())
+            self.assertTrue((project / "review.md").is_file())
+            self.assertFalse((project / "README.md").exists())
+            self.assertFalse((project / "docs").exists())
             self.assertFalse((project / "project/archive").exists())
             self.assertFalse((project / "project/workspace/build").exists())
             self.assertFalse((project / "project/workspace/temp").exists())
@@ -507,13 +530,16 @@ class InitializationTests(unittest.TestCase):
 
 
 class CatalogAndPackagingTests(unittest.TestCase):
-    def test_catalog_contains_only_released_projects(self) -> None:
+    def test_catalog_contains_all_projects_and_adds_release_when_available(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, _, _, args = initialize_project(root)
             run("init_project.py", *args)
             run("sync_catalog.py", "--repository-root", str(repository))
-            self.assertNotIn("SH0001", (repository / "catalog.yaml").read_text(encoding="utf-8"))
+            initial_catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
+            self.assertIn("SH0001", initial_catalog)
+            self.assertIn("version: null", initial_catalog)
+            self.assertIn("review_path: works/test-series/SH0001--test-tv/review.md", initial_catalog)
             current = series / "SH0001--test-tv/subtitles/current"
             current.mkdir(parents=True)
             (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")

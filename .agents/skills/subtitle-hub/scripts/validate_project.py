@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import re
 import sys
@@ -27,25 +26,6 @@ EPISODE_PATTERNS = {
     "special": re.compile(r"SP\d{2,3}"),
     "movie": re.compile(r"MOVIE"),
 }
-LEDGER_DECISIONS = {"pending", "approved", "rejected", "deferred", "waived", "not-recorded", "not-required"}
-LEDGER_STATUSES = {
-    "candidate",
-    "confirmed",
-    "awaiting-approval",
-    "in-progress",
-    "blocked",
-    "applied",
-    "verified",
-    "closed",
-    "reverted",
-    "released",
-}
-LEDGER_HEADER = (
-    "item_id\tround_id\tdate\tepisode\tstart\tend\tcategory\tseverity\tbefore\tproposed_after\t"
-    "evidence\trationale\tdecision\tstatus\tactual_after\tactor\treviewer\tresolution"
-)
-
-
 def scalar(text: str, name: str, indent: int = 0) -> str | None:
     pattern = rf"(?m)^{' ' * indent}{re.escape(name)}:\s*(.*?)\s*$"
     match = re.search(pattern, text)
@@ -105,34 +85,6 @@ def subtitle_entries(text: str) -> list[dict[str, object]]:
             }
         )
     return entries
-
-
-def validate_ledger(path: Path, errors: list[str]) -> None:
-    try:
-        lines = path.read_text(encoding="utf-8-sig").splitlines()
-    except OSError as error:
-        errors.append(f"{path}: {error}")
-        return
-    if not lines or lines[0] != LEDGER_HEADER:
-        errors.append(f"{path}: unexpected TSV header")
-        return
-    expected_fields = len(LEDGER_HEADER.split("\t"))
-    seen: set[str] = set()
-    for row_number, row in enumerate(csv.reader(lines[1:], delimiter="\t"), start=2):
-        if not row:
-            continue
-        if len(row) != expected_fields:
-            errors.append(f"{path}:{row_number}: expected {expected_fields} fields, got {len(row)}")
-            continue
-        if not row[0]:
-            errors.append(f"{path}:{row_number}: item_id is required")
-        elif row[0] in seen:
-            errors.append(f"{path}:{row_number}: duplicate item_id {row[0]!r}")
-        seen.add(row[0])
-        if row[12] not in LEDGER_DECISIONS:
-            errors.append(f"{path}:{row_number}: invalid decision {row[12]!r}")
-        if row[13] not in LEDGER_STATUSES:
-            errors.append(f"{path}:{row_number}: invalid status {row[13]!r}")
 
 
 def video_file_map(metadata: str) -> dict[str, str]:
@@ -256,8 +208,8 @@ def main() -> int:
     except OSError as error:
         parser.error(str(error))
 
-    if scalar(metadata, "schema_version") != "6":
-        errors.append(f"{metadata_path}: schema_version must be 6")
+    if scalar(metadata, "schema_version") != "7":
+        errors.append(f"{metadata_path}: schema_version must be 7")
     work_id = scalar(metadata, "id")
     if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
         errors.append(f"{metadata_path}: invalid work id")
@@ -355,29 +307,18 @@ def main() -> int:
     if not episode_count or not episode_count.isdigit() or int(episode_count) != len(videos):
         errors.append(f"{metadata_path}: episode_count must match the target-video map")
 
-    docs = root / "docs"
-    required = [docs / "project-guide.md", docs / "review.md", docs / "ledger.tsv"]
-    for path in required:
-        if not path.is_file():
-            errors.append(f"{path}: required control file is missing")
-    if (docs / "README.md").exists():
-        errors.append(f"{docs / 'README.md'}: redundant project control README must be removed")
-    for obsolete in ("progress.yaml", "issues.tsv", "change-log.tsv"):
-        if (docs / obsolete).exists():
-            errors.append(f"{docs / obsolete}: obsolete parallel control file must be removed")
+    review_path = root / "review.md"
+    if not review_path.is_file():
+        errors.append(f"{review_path}: required control file is missing")
+    for obsolete in (root / "README.md", root / "docs"):
+        if obsolete.exists():
+            errors.append(f"{obsolete}: obsolete parallel project documentation must be removed")
     documentation = section(metadata, "documentation")
-    if scalar(documentation, "entry", 2):
-        errors.append(f"{metadata_path}: documentation.entry is obsolete")
-    expected_documentation = {"guide": "docs/project-guide.md", "review": "docs/review.md", "ledger": "docs/ledger.tsv"}
-    for key, expected in expected_documentation.items():
-        if scalar(documentation, key, 2) != expected:
-            errors.append(f"{metadata_path}: documentation.{key} must be {expected}")
-    for obsolete in ("progress", "change_log", "issues"):
+    if scalar(documentation, "review", 2) != "review.md":
+        errors.append(f"{metadata_path}: documentation.review must be review.md")
+    for obsolete in ("entry", "guide", "ledger", "progress", "change_log", "issues"):
         if scalar(documentation, obsolete, 2) is not None:
             errors.append(f"{metadata_path}: documentation.{obsolete} is obsolete")
-    if (docs / "project-guide.md").is_file() and re.search(r"docs/(?:timing|quality|source|chinese|release|project|series|workspace|references)[^\s`|;]*\.md", (docs / "project-guide.md").read_text(encoding="utf-8")):
-        errors.append(f"{docs / 'project-guide.md'}: active rules must cite stable Skill IDs, not deleted docs paths")
-    review_path = docs / "review.md"
     if review_path.is_file():
         review = review_path.read_text(encoding="utf-8-sig")
         if not review.startswith("---\n") or "\n---\n" not in review[4:]:
@@ -391,8 +332,17 @@ def main() -> int:
                 errors.append(f"{review_path}: required section is missing: {heading}")
         if "## 校对方案" not in review and "## 候选修改摘要" not in review:
             errors.append(f"{review_path}: required section is missing: ## 校对方案")
-    if (docs / "ledger.tsv").is_file():
-        validate_ledger(docs / "ledger.tsv", errors)
+
+    design = section(metadata, "subtitle_design")
+    profile = scalar(design, "profile", 2)
+    if profile not in {"zh-mono", "zh-bilingual"}:
+        errors.append(f"{metadata_path}: subtitle_design.profile must be zh-mono or zh-bilingual")
+    ordinary = section(design, "ordinary_styles", 2)
+    if not scalar(ordinary, "primary", 4):
+        errors.append(f"{metadata_path}: subtitle_design.ordinary_styles.primary is required")
+    secondary_language = scalar(section(section(metadata, "languages"), "release", 2), "secondary", 4)
+    if (profile == "zh-mono") != (secondary_language in {None, "null"}):
+        errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
 
     initialization_version = scalar(initialization, "skill_version", 2)
     if initialization_version not in {"1.0.0", "1.1.0"}:

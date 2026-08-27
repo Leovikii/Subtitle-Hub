@@ -68,7 +68,7 @@ Report each dimension as `ready`, `limited`, or `blocked` without adding these v
 - `visual`: target video, correct fonts, ASS renderer, and local evidence path are available.
 - `release`: required dimensions for this round are covered, release checks pass, and P0/P1 disposition is valid.
 
-Readiness is derived from `project.yaml`, current local availability, and recorded review coverage. Do not persist a second overall readiness truth. Put durable limitations in `ledger.tsv`; use `in-progress` with the item reference when limited work continues, or `blocked` when the stage cannot proceed.
+Readiness is derived from `project.yaml`, current local availability, and recorded review coverage. Do not persist a second overall readiness truth. Put durable source limitations in `project.yaml`; reflect their current impact in `review.md` as `in-progress` or `blocked`.
 
 The ordinary minimum `video + Chinese baseline` permits structure, Chinese expression, punctuation, internal terminology consistency, numeric candidates, and audio/video timing/visual work when tools permit. It does not justify claiming full source-text search, exact name spelling, low-clarity speech coverage, or visual approval without those capabilities.
 
@@ -81,7 +81,7 @@ The ordinary minimum `video + Chinese baseline` permits structure, Chinese expre
 3. Present identity/scope, episode map, material roles, release languages, and proposed short name as one user decision.
 4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
-6. Create the control files, copied sources, local mapping, and episode masters only. Other directories are created with their first output.
+6. Create `project.yaml`, root-level `review.md`, copied sources, local mapping, and episode masters only. Other directories are created with their first output.
 7. Run `scripts/validate_project.py`; do not begin content work until structural errors are resolved.
 
 Initialization never modifies the user's original media or subtitle files.
@@ -153,4 +153,4 @@ python scripts/init_project.py \
 
 Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ... --series-name-approved-by ...` only for an approved new series directory. The initializer copies external subtitle evidence into immutable `project/sources/`, never copies video, writes ignored local video mappings, and prepares one `master.ass` per episode. ASS/SSA baselines are copied byte-for-byte. SRT/VTT baselines are converted deterministically to UTF-8 ASS using `Noto Sans CJK SC`; this fallback is a working baseline, not a claim that styling was human-approved.
 
-Initialization does not create `subtitles/current/`. It promotes the staged work only if `scripts/validate_project.py --ready-for-proofreading` passes and rolls back a failed new-project/new-series transaction.
+Initialization does not create a project README, `docs/`, or `subtitles/current/`. It promotes the staged work only if `scripts/validate_project.py --ready-for-proofreading` passes and rolls back a failed new-project/new-series transaction.

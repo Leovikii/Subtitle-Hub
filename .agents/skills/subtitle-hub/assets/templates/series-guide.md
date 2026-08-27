@@ -1,6 +1,6 @@
 # {{SERIES_TITLE}} 系列用语规范
 
-本文件是本系列唯一活动术语表，遵循 `$subtitle-hub` 的 `SH-TRANS-007`。项目不得复制本表；差异只能在项目 `docs/project-guide.md` 通过 `term_id` 明确覆盖。
+本文件是本系列唯一活动术语表，遵循 `$subtitle-hub` 的 `SH-TRANS-007`。项目不得复制本表；差异只能在项目 `project.yaml` 通过 `term_id` 明确覆盖。
 
 ## 来源
 

@@ -1,4 +1,4 @@
-schema_version: 6
+schema_version: 7
 id: SH0001
 project_name: yamato-2199-tv
 type: tv
@@ -42,6 +42,24 @@ languages:
     filename_suffix: zh-Hans
   references:
     - en
+
+subtitle_design:
+  profile: zh-bilingual
+  ordinary_styles:
+    primary: [CN-Main, CN-Main-OS]
+    secondary: [JP-Main]
+
+project_overrides:
+  - id: SH0001-RULE-002
+    global_ref: SH-ZH-002
+    scope: ordinary Chinese dialogue
+    rule: "Omit commas, full stops, enumeration commas, and semicolons; use one ASCII space for an ordinary pause."
+    rationale: "Preserve the verified minimal-punctuation contract of the existing release."
+    confirmed_by: user
+    confirmed_at: "2026-08-27"
+limitations:
+  - "The released baseline remains open to future language review; migration does not claim a new full-playback pass."
+  - "Top communications, alien speech, songs, notes, and positioned text require scene-specific judgment."
 
 subtitle_sources:
   - id: ja-official-webrip-cc
@@ -174,6 +192,4 @@ release:
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
-  guide: docs/project-guide.md
-  review: docs/review.md
-  ledger: docs/ledger.tsv
+  review: review.md

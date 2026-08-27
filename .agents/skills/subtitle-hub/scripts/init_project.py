@@ -16,7 +16,6 @@ from datetime import date
 from pathlib import Path
 
 SKILL_VERSION = "1.1.0"
-PROJECT_SCHEMA = 6
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -391,22 +390,6 @@ def local_paths_text(rows: list[dict[str, object]]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def append_initialization_ledger(path: Path, work_id: str, approved_by: str, project_name: str, rows: list[dict[str, object]]) -> None:
-    fields = path.read_text(encoding="utf-8").splitlines()[0].split("\t")
-    record = {
-        "item_id": f"{work_id}-INIT-0001", "round_id": "initialization", "date": date.today().isoformat(),
-        "episode": "ALL", "start": "", "end": "", "category": "project-initialization", "severity": "P3",
-        "before": "uninitialized intake", "proposed_after": f"{work_id}--{project_name} with {len(rows)} prepared master(s)",
-        "evidence": "approved intake; Bangumi API snapshot; SH-ID-002; SH-INIT-002; SH-INIT-005",
-        "rationale": "Create a probe-confirmed, user-named proofreading project without modifying source media.",
-        "decision": "approved", "status": "verified", "actual_after": f"{len(rows)} episode master(s) prepared",
-        "actor": "Codex", "reviewer": approved_by, "resolution": "Project structure and proofreading-readiness validation passed at initialization.",
-    }
-    with path.open("a", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t", lineterminator="\n")
-        writer.writerow(record)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--series-dir", required=True, type=Path)
@@ -496,6 +479,8 @@ def main() -> int:
         "SCOPE_APPROVED_BY_YAML": quote(args.scope_approved_by), "PROJECT_NAME_APPROVED_BY_YAML": quote(args.project_name_approved_by),
         "VERIFIED_AT": verified_at, "SOURCE_LANGUAGE": source_language,
         "SECONDARY_LANGUAGE_YAML": quote(args.secondary_language) if args.secondary_language else "null",
+        "SUBTITLE_PROFILE": "zh-bilingual" if args.secondary_language else "zh-mono",
+        "SECONDARY_STYLES_YAML": "\n      - JP-Main" if args.secondary_language else "[]",
         "SECONDARY_LANGUAGE_DISPLAY": args.secondary_language or "无（单语中文字幕）", "SCOPE": scope, "UPDATED_AT": verified_at,
         "EPISODES_YAML": "\n".join(f"  {row['episode']}: {{ status: not-started }}" for row in rows),
         "MACHINE_COVERAGE": "ffprobe media/track inventory; source hashes; project structure and master parsing",
@@ -526,7 +511,7 @@ def main() -> int:
             created_series = True
             series_values = {"SERIES_TITLE": args.series_title}
             (series_dir / "series-guide.md").write_text(render(template_root / "series-guide.md", series_values), encoding="utf-8")
-        directories = [staging / "docs", staging / "project" / "sources" / "subtitles"]
+        directories = [staging / "project" / "sources" / "subtitles"]
         directories.extend(staging / "project" / "workspace" / "episodes" / str(row["episode"]) for row in rows)
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=False)
@@ -546,11 +531,7 @@ def main() -> int:
             master = staging / "project" / "workspace" / "episodes" / str(row["episode"]) / "master.ass"
             methods[str(row["episode"])] = prepare_master(source, master)
         (staging / "project.yaml").write_text(project_text, encoding="utf-8")
-        (staging / "README.md").write_text(render(template_root / "work-readme.md", values), encoding="utf-8")
-        (staging / "docs" / "project-guide.md").write_text(render(template_root / "project-guide.md", values), encoding="utf-8")
-        (staging / "docs" / "review.md").write_text(render(template_root / "review.md", values), encoding="utf-8")
-        shutil.copyfile(template_root / "ledger.tsv", staging / "docs" / "ledger.tsv")
-        append_initialization_ledger(staging / "docs" / "ledger.tsv", work_id, args.intake_approved_by, project_name, rows)
+        (staging / "review.md").write_text(render(template_root / "review.md", values), encoding="utf-8")
         (staging / "project" / "local.paths.yaml").write_text(local_paths_text(rows), encoding="utf-8")
         planned["master_preparation"] = methods
         staging.rename(target)

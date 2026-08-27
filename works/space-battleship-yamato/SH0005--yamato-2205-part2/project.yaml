@@ -1,4 +1,4 @@
-schema_version: 6
+schema_version: 7
 
 id: "SH0005"
 project_name: "yamato-2205-part2"
@@ -43,6 +43,24 @@ languages:
     filename_suffix: zh-Hans
   references:
     - en
+
+subtitle_design:
+  profile: zh-mono
+  ordinary_styles:
+    primary: [常规]
+    secondary: []
+
+project_overrides:
+  - id: SH0005-RULE-001
+    global_ref: SH-SRC-004
+    scope: full project
+    rule: "Japanese audio listening is primary for meaning; English is an auxiliary translation and Japanese PGS/OCR only image evidence."
+    rationale: "No reliable searchable Japanese script is available."
+    confirmed_by: user
+    confirmed_at: "2026-08-27"
+limitations:
+  - "Japanese PGS timing is unreliable and OCR contains character, spacing, line-break, and name errors."
+  - "Low-clarity speech, homophones, negation, numbers, names, simultaneous dialogue, screen text, and songs require manual judgment."
 
 subtitle_sources:
   - id: zh-Hans-candidate-baseline-05
@@ -358,6 +376,4 @@ release:
     generated_by: .github/scripts/build_subtitle_packages.py
 
 documentation:
-  guide: docs/project-guide.md
-  review: docs/review.md
-  ledger: docs/ledger.tsv
+  review: review.md

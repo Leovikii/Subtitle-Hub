@@ -58,10 +58,10 @@ class ScriptBehaviorTests(unittest.TestCase):
         works_root = repository_root / "works"
         if works_root.exists():
             unresolved = []
-            for guide in works_root.glob("**/docs/project-guide.md"):
-                for rule_id in re.findall(r"`(SH-[A-Z]+-\d{3})`", guide.read_text(encoding="utf-8")):
+            for metadata in works_root.glob("**/project.yaml"):
+                for rule_id in re.findall(r"(?:global_ref:\s*|`)(SH-[A-Z]+-\d{3})", metadata.read_text(encoding="utf-8")):
                     if rule_id not in rule_sources:
-                        unresolved.append(f"{guide.relative_to(repository_root)}: {rule_id}")
+                        unresolved.append(f"{metadata.relative_to(repository_root)}: {rule_id}")
             self.assertEqual(unresolved, [])
 
     def test_no_parallel_root_docs_standard_remains(self) -> None:
@@ -207,11 +207,9 @@ class ScriptBehaviorTests(unittest.TestCase):
             metadata = (project / "project.yaml").read_text(encoding="utf-8")
             self.assertNotIn(str(Path(raw)), metadata)
             self.assertIn('S01E01: "episode-01.mkv"', metadata)
-            self.assertTrue((project / "docs" / "review.md").is_file())
-            self.assertTrue((project / "docs" / "ledger.tsv").is_file())
-            self.assertFalse((project / "docs" / "progress.yaml").exists())
-            self.assertFalse((project / "docs" / "issues.tsv").exists())
-            self.assertFalse((project / "docs" / "change-log.tsv").exists())
+            self.assertTrue((project / "review.md").is_file())
+            self.assertFalse((project / "README.md").exists())
+            self.assertFalse((project / "docs").exists())
             repeated = run(
                 "init_project.py",
                 "--series-dir",

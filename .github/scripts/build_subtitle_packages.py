@@ -85,8 +85,8 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) != "6":
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 6")
+    if yaml_scalar(metadata, "schema_version", 0) != "7":
+        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)

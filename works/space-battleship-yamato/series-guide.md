@@ -1,6 +1,6 @@
 # 《宇宙战舰大和号》系列用语规范
 
-本文件遵循仓库 `$subtitle-hub` Skill 的 `SH-TRANS-007`，是本系列唯一活动术语表。SH0001、后续 2202、2205、3199 等项目必须先读取本表；项目不得复制本表，差异只能在项目 `docs/project-guide.md` 中按 `term_id` 明确覆盖。
+本文件遵循仓库 `$subtitle-hub` Skill 的 `SH-TRANS-007`，是本系列唯一活动术语表。SH0001、后续 2202、2205、3199 等项目必须先读取本表；项目不得复制本表，差异只能在项目 `project.yaml` 中按 `term_id` 明确覆盖。
 
 ## 来源
 
@@ -9,7 +9,7 @@
 | `YAMATO-SRC-WIKI-ZH-2199` | 中文维基 | 宇宙战舰大和号2199 | https://zh.wikipedia.org/wiki/宇宙戰艦大和號2199 | 2026-08-26 | 用于发现中文名、人物名和设定术语候选；页面存在个别译名变体，不能单独决定批量替换。 |
 | `YAMATO-SRC-BANGUMI-54552` | 条目数据库 | 宇宙戦艦ヤマト2199 | https://bgm.tv/subject/54552 | 2026-08-26 | 核对作品中文名、原名、TV 类型和 26 集范围。 |
 | `YAMATO-SRC-SH0001-JA` | 原语字幕 | SH0001 日语 WEBrip CC | SH0001--yamato-2199-tv/project/sources/subtitles/ja/official-webrip-cc | 2026-08-26 | 核对 2199 中实际出现的日文专名；具体语境仍需结合音轨。 |
-| `YAMATO-SRC-SH0001-GUIDE` | 仓库基线 | SH0001 项目补充规范 | SH0001--yamato-2199-tv/docs/project-guide.md | 2026-08-26 | 继承已经明确采用且与原词对应的系列译名；不表示 1.0.0 每个事件均已完成术语审计。 |
+| `YAMATO-SRC-SH0001-GUIDE` | 仓库基线 | SH0001 项目确认规则 | SH0001--yamato-2199-tv/project.yaml | 2026-08-26 | 继承已经明确采用且与原词对应的系列译名；不表示 1.0.0 每个事件均已完成术语审计。 |
 | `YAMATO-SRC-BANGUMI-84701` | 条目数据库 | 宇宙戦艦ヤマト2199 星巡る方舟 | https://bgm.tv/subject/84701 | 2026-08-26 | 核对《星巡的方舟》中文名、剧场版类型和单片范围。 |
 | `YAMATO-SRC-BANGUMI-246898` | 条目数据库 | 宇宙戦艦ヤマト2202 愛の戦士たち | https://bgm.tv/subject/246898 | 2026-08-26 | 核对 2202 TV 中文名、TV 类型和 26 集范围，排除七章剧场上映条目。 |
 | `YAMATO-SRC-SH0002-JA` | 原语字幕 | SH0002 日语正文与 BDSUP OCR | SH0002--yamato-2199-odyssey-celestial-ark/project/sources/subtitles/ja | 2026-08-26 | 核对电影实际出现的日文专名；OCR 只作交叉验证。 |
@@ -44,4 +44,4 @@
 
 ## 待用户确认
 
-无。SH0002 与 SH0003 的既有成品冲突已分别登记在项目 `ledger.tsv`，不构成系列规范待决项。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。
+无。SH0002 与 SH0003 的既有成品冲突已在历史提交中关闭，不构成系列规范待决项。尚未收入本表的音译人名和新续作术语不等于已经确认；引入新项目时必须先完成差异审计再扩充。
