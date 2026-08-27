@@ -13,9 +13,9 @@ docs/ledger.tsv
 
 Do not add per-round reports, separate progress/issue/change files, or a project `docs/README.md`. A short work-root README may introduce the work and link the Skill/control files, but cannot duplicate rules, progress, item counts, or release version.
 
-`project.yaml` is the only project descriptor. It records identity, type/scope, languages, source entries and roles, target-video episode map, workspace/release configuration, actual review coverage, and archives. Do not create a second source catalog, video manifest, `latest.yaml`, per-version release YAML, or repository checksum file.
+`project.yaml` is the only project descriptor. It records identity, type/scope, languages, sources/roles, video map, initialization, and release configuration. Do not create a second source catalog, video manifest, `latest.yaml`, archive registry, per-version release YAML, or repository checksum file.
 
-Skill 1.0 projects use `schema_version: 6`. They record the short `project_name`; a `naming` approval block; API-verified Bangumi date/platform/episode count and user-confirmed scope; explicit source classifications; `video_sources.target-video.files`; and an `initialization` block with `skill_version: 1.0.0`, state, intake/map approvers, approval date, and initialization date. An ordinary new project uses `initialization.state: proofreading-ready`; migrated released projects may use `released-existing` with honest historical limitations. Intake JSON, approved map TSV, and local absolute video paths are not additional durable project descriptors.
+Schema 6 remains valid. New projects record `initialization.skill_version: 1.1.0`; existing 1.0 initialization values remain truthful history. Intake JSON, map TSV, and absolute local paths are disposable/not portable control files.
 
 ## SH-CTRL-004 — project-guide.md
 
@@ -29,7 +29,7 @@ Rule table columns are `rule_id type global_ref scope rule rationale`. `type` is
 
 Stage/episode status values are `not-started`, `in-progress`, `candidate-review`, `blocked`, `verified`, `not-applicable`, and `released` only where the existing episode/release state requires it. `overall_status` may also use `baseline-released` or `released`. `active_round.status` may use `completed` and `awaiting-review` for actual round state. Do not use derived readiness values `ready/limited/blocked` as stage values except the already-defined `blocked` stage state.
 
-The body keeps only the current round's goal/scope, actual machine/human coverage, candidate summary, user decisions, implementation result, verification, and remaining risk. Refer to ledger IDs instead of duplicating detailed evidence. Update on start, pause, approval request, feedback, completion, or scope change. Git history preserves older completed reports; do not create one report file per round. `subtitles/current/VERSION`, not review metadata, is the published-version authority.
+The body is the readable proofreading plan and result. It contains categorized proposal tables detailed under `SH-PLAN-001`, actual machine/human coverage, decisions, implemented results, verification, and remaining risk. Update at proposal, approval feedback, implementation completion, and final-review readiness—not after every internal step. Git history preserves prior rounds.
 
 ## SH-CTRL-006 — ledger.tsv
 
@@ -45,14 +45,14 @@ Use one row per substantive item and update that row through proposal, decision,
 
 ## SH-CTRL-007 — Proposal and approval gate
 
-For substantive subtitle meaning, timing, segmentation, style, or layout changes, analyze first without modifying `workspace/episodes/*/master.ass`. Record candidates in the ledger, summarize the proposed scope in `review.md`, set the round to `awaiting-review`, and ask the user or project owner to approve item IDs, a category, or an explicit batch scope. A diagnose-only request never authorizes fixes.
+Analyze first without modifying masters. Record the complete detailed plan in review/ledger, set `awaiting-review`, and ask once for item or bounded-batch approval. A diagnose-only request never authorizes fixes.
 
-Approval may be item-specific or a clearly bounded batch authorization. Do not infer approval from silence or from a request to inspect/report. After feedback, set approved rows to `decision=approved`, rejected rows to `decision=rejected`, deferred rows to `decision=deferred`, and explicit requirement exceptions to `decision=waived`. Apply only approved scope, record `actual_after`, then verify neighbors and affected layout before setting `status=verified`.
+After feedback, record approved/rejected/deferred/waived rows. Apply and verify approved scope continuously through a complete release candidate. Do not seek new approval for routine findings already inside that scope, ordinary dialogue font/size/margin normalization, or local spot checks. A newly discovered semantic change outside scope is added to the plan and deferred unless it is release-blocking.
 
 Project-control, documentation, tooling, and other non-subtitle changes may proceed under the user's current explicit implementation request without a second approval round, but still require ledger and review updates when substantive.
 
 ## SH-CTRL-008 — Feedback, evidence, and closure
 
-Write feedback directly into the affected ledger rows and summarize it in `review.md`; do not create a separate feedback report. Save optional screenshots, diffs, detector output, or logs under the active work's `project/workspace/temp/review/`, with screenshots under `attachments/`. These files are disposable evidence, not status or approval authority.
+Write feedback into the affected rows and summarize it in `review.md`; do not create a separate feedback report. Temporary detector output is disposable. Create no screenshot by default; if one concrete visual question requires it, keep it outside the durable project structure and record the timestamp/conclusion.
 
-Close a round only after approved changes are applied and verified, rejected/deferred/waived dispositions are recorded, remaining risks are stated, and `review.md` is current. Before cleaning temporary evidence, confirm every durable decision and conclusion is represented in `review.md`, `ledger.tsv`, `project-guide.md`, or `project.yaml` as appropriate.
+When implementation is complete, update the proposal into an actual-results report and build the candidate. Pause for the single release-candidate final review. After user acceptance, publish, mark rows/review released, and clean disposable artifacts.

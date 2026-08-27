@@ -16,13 +16,12 @@
 - `docs`：项目补充规范、当前校对报告和统一台账；
 - `project/sources`：保持原貌的日语、英语和旧简日双语参考字幕；来源说明与片源文件名统一记录在 `project.yaml`；
 - `project/workspace/episodes`：从迁入成品建立的下一轮人工校订主稿；
-- `project/workspace/temp`：本项目的一次性工具、中间文件、未审候选和日志，可按轮次清理；
-- `project/workspace/build`：通过本轮检查的待发布构建，可重新生成且不纳入 Git；
-- `project/archive`：带清单和校验值的冻结历史工程压缩档案；
+- `project/workspace/temp`：仅在需要时保存项目专用工具或补充引导；
+- `project/workspace/build`：仅在构建发行候选时按需创建；
 - `subtitles/current`：稳定路径下的当前最终字幕，目录内 `VERSION` 是唯一版本源；首次升级后，`subtitles/previous` 必须保留被替换的完整上一版；
 - 仓库根目录 `packages`：GitHub Actions 自动生成的当前字幕 ZIP。
 
-当前推荐成品固定在 [subtitles/current](subtitles/current)，版本读取 [subtitles/current/VERSION](subtitles/current/VERSION)。发布范围、来源、机器检查与人工检查覆盖均集中在 [project.yaml](project.yaml)；旧质量报告和被合并的旧发布元数据已经压缩到项目历史文档档案，不属于当前 AI agent 控制面。
+当前推荐成品固定在 [subtitles/current](subtitles/current)，版本读取 [subtitles/current/VERSION](subtitles/current/VERSION)。发布范围、来源、机器检查与人工检查覆盖均集中在 [project.yaml](project.yaml)。
 
 当前下载包位于 [packages](../../../packages)，命名模式见 `project.yaml`；文件名末尾版本由 Actions 从 `subtitles/current/VERSION` 自动生成。
 

@@ -16,9 +16,8 @@
 - `docs`：项目补充规范、当前校对报告和统一台账；
 - `project/sources`：保持原貌的日语与英语参考字幕；
 - `project/workspace/episodes/MOVIE/master.ass`：下一轮校订主稿；
-- `project/workspace/temp`：一次性工具、中间文件、审核候选和日志；
-- `project/workspace/build`：可重新生成的待发布构建；
-- `project/archive`：唯一冻结历史工程 ZIP，内含逐文件清单；
+- `project/workspace/temp`：仅按需保存项目专用工具或补充引导；
+- `project/workspace/build`：仅在构建发行候选时按需创建；
 - `subtitles/current`：当前最终字幕及唯一版本文件；首次升级后必须保留 `subtitles/previous`；
 - 仓库根目录 `packages`：自动生成的当前字幕 ZIP。
 

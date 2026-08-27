@@ -49,17 +49,17 @@ Split at semantic pauses, clause boundaries, source punctuation, breath, or spea
 
 ## SH-LAYOUT-002 — Chinese-primary bilingual layout
 
-Chinese stays above and visually primary; English/Japanese stays below, normally at about 65–80% of Chinese size with slightly lower visual weight but clear readability. Keep stable horizontal centering and vertical positions. Paired events share identical boundaries and a one-to-one mapping. If Chinese needs two lines, prefer resplitting or accurate condensation rather than creating routine three-line bilingual dialogue.
+Chinese stays above and visually primary; English/Japanese stays below, normally at about 70–77% of Chinese size with slightly lower visual weight but clear readability. Keep stable horizontal centering and vertical positions. At 1920×1080 use a practical starting pair of Chinese 62 with `MarginV=130` and secondary 46 with `MarginV=68`; adjust within Chinese 125–135 and secondary 65–70 to achieve about 12–20 px of visible separation with the actual fonts/renderer. Paired events share identical boundaries and a one-to-one mapping.
+
+This bilingual height is intentionally different from the monolingual Chinese baseline. If Chinese needs two lines, prefer resplitting or accurate condensation rather than creating routine three-line bilingual dialogue. ASS has no portable style-level line-spacing field: `\fsp` is character spacing and must not be used as a substitute. Let the chosen font's natural line metrics handle an exceptional two-line Chinese event and check it in the final review.
 
 For multiple speakers, prefer consecutive bilingual pairs with real speech timing. If speech truly overlaps, use project-defined concise speaker cues and perform local visual review; do not stack four routine dialogue lines.
 
-## SH-LAYOUT-003 — Style and embedded-reference policy
+## SH-LAYOUT-003 — Ordinary versus special styles
 
-Start from the candidate Chinese subtitle's reviewed styles, not a universal repository style sheet. Preserve useful colors, sizes, margins, alignments, borders, shadows, fades, positioning, motion, karaoke, and project effects unless the task explicitly changes them. Use target-video embedded subtitles to inform same-release timing, splits, screen-text positions, and effects. A non-source-language embedded track can still be valuable for timing/layout and translation disambiguation.
+Normalize ordinary Chinese dialogue to `SH-LAYOUT-005`. Do not extend that normalization to notes, signs, songs, titles, credits, broadcasts, positioned text, multiple-speaker layouts, motion, karaoke, or effects. For those special events, preserve useful baseline/embedded-reference colors, sizes, margins, alignment, border, fades, position, and motion unless clearly defective or incompatible.
 
-Do not copy embedded styles or coordinates directly when PlayRes, video resolution/aspect, crop, safe area, renderer assumptions, or target language width differs. Compare coordinate systems and revalidate locally. For an obvious timing/layout failure, use the built-in baseline and actual audio/video rather than silently preserving a broken inherited design.
-
-Dialogue should stay within the shot when speech does; speech crossing a cut may cross it. Screen text should match its visible interval and avoid key image information. Project guides define top communication, broadcast, signs, songs, notes, and special-scene priority.
+Do not copy coordinates blindly across different PlayRes, aspect, crop, or renderer assumptions. Screen text follows its visible interval and avoids key image information. A non-source-language embedded track remains valid timing/layout and disambiguation evidence.
 
 ## SH-LAYOUT-004 — Fonts and glyphs
 
@@ -67,4 +67,23 @@ Use static `Noto Sans CJK SC` for Simplified Chinese and English, and static `No
 
 Serif, Mincho/Song, Kai, rounded, handwriting, or decorative fonts are permitted only when the font itself carries narrative meaning, such as letters, inscriptions, historical documents, or native title art. Record the exact project style/scenes/reason. Songs, broadcasts, alien speech, and screen text do not automatically justify a font exception.
 
-When replacing fonts, change style `Fontname` and inline `\fn` together while preserving size, weight, scale, spacing, alignment, margins, border, shadow, colors, and effects. Build a risk list for long lines, `\pos`, `\move`, `\clip`, scale, fades, lyrics, and karaoke. Check static overflow and locally render the available risk points. Effect tags remaining does not prove visual equivalence, and partial sampling does not prove full-film visual approval.
+When replacing fonts, change style `Fontname` and inline `\fn` together. Ordinary dialogue then follows `SH-LAYOUT-005`; special styles preserve their remaining geometry and effects. Build a risk list for long lines, `\pos`, `\move`, `\clip`, scale, fades, lyrics, and karaoke. Check static overflow and locally inspect only concrete risk points. Font/size/dialogue-margin normalization does not require a separate screenshot approval; it is covered by the proofreading-plan approval and release-candidate final review.
+
+## SH-LAYOUT-005 — Ordinary Chinese dialogue baseline
+
+Use one coherent style across a work. Scale these 1920×1080 values proportionally to PlayResY:
+
+| Property | Baseline | Allowed adjustment |
+| --- | --- | --- |
+| Font | `Noto Sans CJK SC` | No ordinary-dialogue exception |
+| Size | 62 | 58–64 for actual weight/density; keep one value across episodes |
+| Placement | bottom center (`Alignment=2`) | Fixed unless a scene requires a separately named special style |
+| Bottom margin, Chinese-only | 70 (6.5% of height) | 65–85; use when the released subtitle has no secondary dialogue line |
+| Bottom margin, bilingual Chinese | 130 | 125–135; pair with the secondary baseline in `SH-LAYOUT-002` |
+| Side margins | 96 (5% of width) | Increase for compatibility; do not reduce below 5% without project evidence |
+| Fill | opaque white | May use a consistent near-white |
+| Outline | opaque near-black, 3 px | 2.5–3.5 px according to weight; no routine translucent outline |
+| Shadow | 0 | At most a subtle 1 px if an established project design needs it |
+| Scale/spacing | 100/100/0 | Avoid condensed or expanded ordinary dialogue |
+
+This is a desktop/ASS safe-area and readability baseline, not a claim that one streaming service mandates it. Determine monolingual versus bilingual from the actual release languages, not from whether optional source text exists: a project without a releasable secondary subtitle uses the Chinese-only height. Favor one Chinese line; use meaningful segmentation before reducing size. At final review check representative bright/dark scenes, long lines, bilingual separation where applicable, and any ordinary-dialogue overrides. Do not generate screenshots unless a concrete question remains unresolved.

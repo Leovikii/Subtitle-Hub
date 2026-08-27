@@ -1,5 +1,9 @@
 # Quality control and evidence
 
+## SH-QC-007 — Frozen internal baseline
+
+Routine work uses this Skill's embedded timing, text, and style values and does not re-query Netflix, BBC, DCMP, or similar guides. Consult external material only for a deliberate Skill baseline audit, a new delivery format, or an uncovered contradiction.
+
 ## SH-QC-002 — Severity
 
 | Severity | Meaning | Release disposition |
@@ -23,11 +27,11 @@ Use actual media for homophones, speaker/voice-over, speech boundaries, embedded
 
 ### Visual evidence transport
 
-Perform checks locally at candidate timestamps. Save multiple images, if needed, under the active round's `project/workspace/temp/review/attachments/`. Reports record episode, timestamp, text conclusion, and local evidence path.
+Perform checks locally at candidate timestamps. Prefer playback/render inspection and record episode, timestamp, and text conclusion. Do not create an image merely to prove that a check happened; use a temporary local image only when a concrete visual question cannot otherwise be resolved.
 
 Never batch-upload screenshots, consecutive frames, contact sheets, Base64 images, or other large visual evidence to chat because this can trigger CDN HTTP 413. Only when the user explicitly asks to see one point may one message contain at most two compressed necessary screenshots. Images supplement, not replace, continuous media/audio review.
 
-When local fonts/rendering/media access is missing, mark visual readiness `limited` or `blocked` and open/retain the appropriate issue. Do not claim visual pass.
+When local fonts/rendering/media access is missing, record the limitation and do not claim visual pass. Ordinary dialogue font/size/safe-margin normalization is reviewed in the proofreading plan and release-candidate final review, not through a separate screenshot approval.
 
 ## SH-QC-005 — Candidate lifecycle
 
@@ -37,7 +41,7 @@ Zero machine candidates means only that the current rules found none, not that t
 
 ## SH-QC-006 — Release gate
 
-Before release require:
+Before presenting the release candidate require:
 
 - complete target scope; P0 = 0; P1 = 0 or each has an explicit owner waiver with reason and impact;
 - every timing-floor trigger fixed or explicitly waived with audio/visual evidence;
@@ -47,6 +51,9 @@ Before release require:
 - review, metadata, ledger dispositions, and coverage truthfully distinguish machine/human work;
 - the build uses the version, filenames, header, font, credit, and previous-release contracts;
 - no video, download locator, temporary comment, engineering provenance, or unauthorized credit enters release artifacts;
-- the generated ZIP's name, VERSION, count, ASS markers, and checksums are reproducible and verified.
+- the generated ZIP's name, VERSION, count, ASS markers, and checksums are reproducible and verified;
+- `review.md` has been updated from proposed to actual results, including every individually listed dialogue change and each batch's actual count.
+
+After these checks, ask for one final review of the complete candidate. Release only after the user passes it; do not insert another routine approval gate between plan approval and this final review.
 
 Pure header/style cleanup must prove Events bytes unchanged except separately approved inline font mappings and precisely identified metadata-event removal. Remove an unused style only after closing references from Dialogue/Comment Style fields, `\r<Style>`, and the implicit `Default` style for empty Style fields. Without independent visual review, do not merge, rename, or alter retained styles.

@@ -161,13 +161,3 @@ documentation:
   guide: docs/project-guide.md
   review: docs/review.md
   ledger: docs/ledger.tsv
-
-review_evidence:
-  workspace: project/workspace/temp/review/attachments
-  persistent: false
-
-archives:
-  history:
-    path: project/archive/SH0003-history-20260826.zip
-    manifest: MANIFEST.tsv
-    sha256: a03591098326882c30c364ac7c09ed61788fd0ed9cfae9281bab6c12f14a97f9

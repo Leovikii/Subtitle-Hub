@@ -53,7 +53,7 @@ workspace:
   build: project/workspace/build
 
 initialization:
-  skill_version: "1.0.0"
+  skill_version: "1.1.0"
   state: proofreading-ready
   intake: probe-confirmed-and-user-approved
   intake_approved_by: {{INTAKE_APPROVED_BY_YAML}}
@@ -83,9 +83,3 @@ documentation:
   guide: docs/project-guide.md
   review: docs/review.md
   ledger: docs/ledger.tsv
-
-review_evidence:
-  workspace: project/workspace/temp/review/attachments
-  persistent: false
-
-archives: {}

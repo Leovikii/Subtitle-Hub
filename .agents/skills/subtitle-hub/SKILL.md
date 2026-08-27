@@ -1,65 +1,45 @@
 ---
 name: subtitle-hub
-description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for any work in this repository that changes or assesses project identity, source roles, translation, timing, layout, control files, or release artifacts.
+description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Subtitle Hub
 
-Use this Skill 1.0 as the repository-level standard. Do not look for a parallel standard under root `docs/`, and do not consult external platform guides during routine work.
+This Skill is the repository standard. Do not reconstruct rules from history or query external platform guides during routine work.
 
-## Start here
+## Read only what the task needs
 
-Determine the task mode, then read only the listed references:
+- New project/material intake: [project-initialization.md](references/project-initialization.md).
+- Proofreading plan, translation, Chinese, terminology, and records: [proofreading.md](references/proofreading.md) and [control-plane.md](references/control-plane.md).
+- Timing, dialogue styles, fonts, or visual review: [timing-and-layout.md](references/timing-and-layout.md).
+- QC, final review, or release: [quality-control.md](references/quality-control.md) and [release-and-workspace.md](references/release-and-workspace.md).
 
-- New project or source intake: [project-initialization.md](references/project-initialization.md), [control-plane.md](references/control-plane.md), and [terminology.md](references/terminology.md).
-- Subtitle proofreading or translation review: [workflow.md](references/workflow.md), [source-and-translation.md](references/source-and-translation.md), and [chinese-language.md](references/chinese-language.md).
-- Timing, styles, fonts, or visual review: [timing-and-layout.md](references/timing-and-layout.md) and [quality-control.md](references/quality-control.md).
-- Workspace, temporary evidence, or cleanup: [workspace-and-artifacts.md](references/workspace-and-artifacts.md).
-- Build, release, rollback, or packaging: [release-and-packaging.md](references/release-and-packaging.md) and [quality-control.md](references/quality-control.md).
-- Historical rule-path interpretation only: [legacy-rule-map.md](references/legacy-rule-map.md). Never use it as a second standard.
-- External provenance or a deliberate baseline audit only: [external-basis.md](references/external-basis.md).
+For an existing work also read, in order: nearest `series-guide.md`, `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`.
 
-For any existing work, also read in order: the nearest series `series-guide.md` when present, the work `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`. The review file is the sole current-status and active-round report; the ledger is the sole item history.
+## Skill 1.1 lifecycle
 
-## New-project gate
+1. Probe exact video and Chinese baseline; resolve only facts that block a reliable mapping. Confirm the Bangumi work/scope, episode map, material roles, release languages, and short project name in one initialization decision.
+2. Run the initializer dry-run as an internal safety check, create the project transactionally, and pass `--ready-for-proofreading`. Do not ask for a second dry-run approval unless its result differs materially from the confirmed plan.
+3. Analyze without editing masters. Write one detailed, categorized proofreading plan in `docs/review.md` and its item rows in `docs/ledger.tsv`, then pause for approval. Dialogue retranslations, deletions, additions, and corrections are listed one by one with episode/time/before/proposed/evidence/rationale. Combine only same-category mechanical changes governed by one rule and bounded scope.
+4. After approval, implement and verify the approved scope continuously. Update the same report and ledger rows with actual results; do not interrupt for routine detector findings, font/size/dialogue-margin normalization, or local spot checks.
+5. Build the complete `1.0.0` candidate and request one release-candidate final review. Publish only after the user passes that review. Later versions use the same proposal → implementation → final-review pattern.
 
-For a new proofreading project, follow this contract before creating a work directory:
+Stop outside these gates only for a genuinely blocking identity/source-language ambiguity, a material scope change, an unresolved series-term choice, or a P1 waiver.
 
-1. Verify Bangumi identity and scope.
-2. Run `scripts/inventory_sources.py` against the exact target video(s) and Chinese baseline. Let it probe audio/subtitle tracks and propose material roles and episode relationships.
-3. Resolve every blocking language/audio question, then obtain approval for the episode map, evidence roles, release languages, and a short developer-facing project name such as `yamato-2199-tv`.
-4. Run `scripts/init_project.py --dry-run`; create the project only after the manifest is reviewed.
-5. Require `scripts/validate_project.py --ready-for-proofreading` to pass before subtitle analysis begins.
+## Authority and boundaries
 
-The intake JSON and approved mapping TSV are disposable handoff artifacts, not additional durable control files. Keep absolute video paths only in ignored `project/local.paths.yaml`. The initialized work directory is `<SHxxxx>--<approved-project-name>`; do not derive or create it before approval.
+Priority: current user instruction; confirmed `docs/project-guide.md` overrides; confirmed series terminology; this Skill; external references. Only `project-guide.md` may add project-specific rules.
 
-## Priority and authority
-
-Apply, from highest to lowest: the user's current explicit instruction; confirmed project overrides in `docs/project-guide.md`; confirmed series terminology; this Skill; external references. Record any conflict and its resolution. Only `docs/project-guide.md` may supplement or override repository or series rules. A series-term override requires recorded user confirmation.
-
-`project.yaml` records identity, scope, source facts, evidence roles, video mapping, and release configuration. `docs/review.md` records current state and the user-facing active-round report. `docs/ledger.tsv` records each candidate, decision, applied change, and verification once. Temporary review files are evidence artifacts, not authority.
-
-## Non-negotiable boundaries
-
-- Treat `project/sources/` as immutable. Never edit sources in place.
-- Never edit `subtitles/current/` as a working copy. Work under `project/workspace/`; use the release transaction for promotion.
-- Keep one current release and, after the first replacement release, one complete previous release. `subtitles/current/VERSION` is the release version authority.
-- Name released subtitles `<video-stem>.<primary-language>.ass`; use `.zh-Hans.ass` for Simplified Chinese primary subtitles and never append the secondary language.
-- Preserve identifiable original subtitle production credits in one `Subtitle-Hub-Source-Credit` header field. Do not put credits, disclaimers, websites, or engineering provenance in Events.
-- Put project-only scripts in `project/workspace/temp/tools/`; do not invent a cross-project pipeline.
-- Treat automated findings as candidates unless the data proves a structural violation. Never bulk-rewrite semantic, timing, or visual candidates without evidence.
-- Before changing a subtitle master, record substantive candidates in `docs/ledger.tsv`, summarize the proposed scope in `docs/review.md`, and obtain user approval for the item IDs or an explicit batch scope. Apply and verify only the approved scope, then update the same rows and review file before stopping.
-- Never claim human review or full-playback coverage that was not performed and recorded.
-- Perform visual checks locally. Do not attach batches of screenshots, continuous frames, contact sheets, or Base64 images to chat. Record timestamps, conclusions, and local evidence paths. Only when the user explicitly asks for one point may a message contain at most two compressed screenshots.
+- `project/sources/` is immutable. Never edit `subtitles/current/` as a working copy; work in `project/workspace/` and promote transactionally.
+- `docs/review.md` is the sole current report and approval surface. `docs/ledger.tsv` is the sole item/change history. Do not create per-round reports or parallel issue/change files.
+- Automated findings are candidates unless structure proves the defect. Never claim unperformed listening, viewing, or human review.
+- Create directories only when writing their first file. `temp/` may contain only on-demand `tools/` and `notes/`; ordinary analysis output stays ephemeral. Create `build/`, `subtitles/current/`, and `subtitles/previous/` only when needed. Do not create `archive/`.
+- Perform visual checks locally and normally record only timestamps and text conclusions. Do not generate screenshots without a concrete unresolved visual question. Never batch-send images; when explicitly requested, show at most two compressed screenshots for one point.
 
 ## Chinese-primary design
 
-Maintain one visual system with Simplified Chinese as the primary subtitle. English or Japanese may appear below it as a secondary subtitle. Preserve the reviewed baseline's useful styles and effects, using target-video embedded subtitles as same-release timing/layout evidence when available. Do not create an independent secondary-language visual system or sacrifice Chinese meaning, readability, or stable layout.
+Ordinary Chinese dialogue uses the repository baseline in `timing-and-layout.md`: Noto Sans CJK SC, a consistent readable size, bottom-center placement, safe margins, white fill, and dark outline. Use distinct vertical baselines for Chinese-only and bilingual releases; optional source material does not make a release bilingual. Font, size, ordinary-dialogue margins, and bilingual separation are normalized as part of the approved plan and checked at final review; they do not require a separate screenshot approval.
 
-Use `Noto Sans CJK SC` for Simplified Chinese and English and `Noto Sans CJK JP` for Japanese. Font replacement changes geometry even if ASS effect tags remain; recheck width, wrapping, positioned text, motion, karaoke, and other high-risk events.
-
-## Stop conditions
-
-Pause for the user when Bangumi identity is materially ambiguous, `name_cn` is empty, work scope differs between plausible entries, an embedded track's language/role cannot be established, a series-term decision has real alternatives, or a P1 release exception needs approval. Missing optional sources should reduce a readiness dimension, not automatically block project creation.
+Do not standardize notes, signs, songs, titles, positioned text, motion, karaoke, or effects. Preserve useful reference styling and adapt only when it is visibly defective or incompatible with the target video.

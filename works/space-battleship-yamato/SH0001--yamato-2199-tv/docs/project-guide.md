@@ -46,7 +46,7 @@
 | ED 歌词 | `ED-CN` | `ED-JP` | 中日逐条同进同退 |
 | 科学短注 | `CN-Science-Note` | 无 | 左上安全区单行短注 |
 
-1.0.0 的视觉基准为中文 `Microsoft YaHei UI` 62、日文 `Yu Gothic UI` 40，日文颜色较淡。没有全季视觉验证不得改变字号、边距或颜色体系。
+1.0.0 保留既有视觉历史；下一内容版本的普通中文对白按 `SH-LAYOUT-005` 统一，日文副语仍保持较低视觉权重。特殊布局不随正文批量重置。
 
 ## 5. 项目补充和覆盖规则
 
@@ -63,11 +63,9 @@
 ## 6. 工程区约束
 
 - 只编辑 `project/workspace/episodes/S01E01/master.ass` 至 `S01E26/master.ass`；
-- 项目专用脚本放入 `project/workspace/temp/tools/`；
-- 中间字幕放入 `temp/intermediate/`，候选 diff、机器输出和临时证据放入 `temp/review/`；
-- 通过本轮检查的待发布文件生成到 `project/workspace/build/`；
+- 项目专用脚本按需放入 `project/workspace/temp/tools/`，补充引导按需放入 `temp/notes/`；
+- 普通中间输出使用系统临时目录；完整发行候选按需生成到 `project/workspace/build/`，不预建空目录；
 - 逐项候选、用户决定、实施和验证写入 `ledger.tsv`，当前轮次和摘要写入 `review.md`；
-- 历史脚本、审查表和旧说明已冻结在 `project/archive/`，只能用于追溯，不得直接运行。
 
 ## 7. 已知限制和禁止自动处理项
 

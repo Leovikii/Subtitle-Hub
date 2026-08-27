@@ -386,14 +386,17 @@ def main() -> int:
             errors.append(f"{review_path}: schema_version must be 1")
         if work_id and scalar(review, "work_id") != work_id:
             errors.append(f"{review_path}: work_id does not match project.yaml")
-        for heading in ("# 当前校对轮次", "## 检查覆盖", "## 候选修改摘要", "## 需要用户确认", "## 决策与实施", "## 验证与剩余风险"):
+        for heading in ("# 当前校对轮次", "## 检查覆盖", "## 需要用户确认", "## 决策与实施", "## 验证与剩余风险"):
             if heading not in review:
                 errors.append(f"{review_path}: required section is missing: {heading}")
+        if "## 校对方案" not in review and "## 候选修改摘要" not in review:
+            errors.append(f"{review_path}: required section is missing: ## 校对方案")
     if (docs / "ledger.tsv").is_file():
         validate_ledger(docs / "ledger.tsv", errors)
 
-    if scalar(initialization, "skill_version", 2) != "1.0.0":
-        errors.append(f"{metadata_path}: initialization.skill_version must be 1.0.0")
+    initialization_version = scalar(initialization, "skill_version", 2)
+    if initialization_version not in {"1.0.0", "1.1.0"}:
+        errors.append(f"{metadata_path}: initialization.skill_version must be 1.0.0 or 1.1.0")
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
     if initialization_state == "proofreading-ready":

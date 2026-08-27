@@ -8,7 +8,7 @@ Search only to discover candidate IDs. Fetch `https://api.bgm.tv/v0/subjects/<id
 
 Pause before creating a formal project if `name_cn` is empty, the API is inaccessible, or plausible candidates differ by season, movie, OVA, compilation, special, remake, or scope. Present the candidate ID/title/scope evidence and ask the user. A user-confirmed draft does not satisfy the release-time `api-verified` requirement.
 
-The distribution package is `bgm<subject-id> - <name_cn> [v<version>].zip`; normalization and release details are in `release-and-packaging.md`.
+The distribution package is `bgm<subject-id> - <name_cn> [v<version>].zip`; release details are in `release-and-workspace.md`.
 
 ## Minimum required inputs
 
@@ -38,7 +38,7 @@ Do not copy video into the repository. Record exact basenames, duration/track su
 | Alternate release video/subtitle | Cut-difference and compatibility investigation | Similar names or durations do not prove compatibility |
 | Fonts, renderer, media probe | Visual geometry, track inventory, and local rendering | Environment capability, not source material; rendering success is not human visual approval |
 
-Derived waveforms, frames, media summaries, and track listings live in `project/workspace/temp/` and are not unique durable evidence.
+Derived waveforms, frames, media summaries, and track listings are disposable. Prefer system temporary storage; keep only a small supplemental handoff note under on-demand `project/workspace/temp/notes/` when another run genuinely needs it.
 
 ## Evidence roles
 
@@ -78,15 +78,15 @@ The ordinary minimum `video + Chinese baseline` permits structure, Chinese expre
 
 1. Run identity discovery/check without creating the work directory.
 2. Inventory media/subtitles in a staging directory; classify languages and roles, asking only for unresolved material decisions.
-3. Produce a readiness report and explicit episode map.
-4. Run `scripts/init_project.py --dry-run`, inspect its manifest, then run without `--dry-run` only after identity and minimum inputs pass.
+3. Present identity/scope, episode map, material roles, release languages, and proposed short name as one user decision.
+4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
-6. Create the control files and workspace skeleton from `assets/templates/`.
+6. Create the control files, copied sources, local mapping, and episode masters only. Other directories are created with their first output.
 7. Run `scripts/validate_project.py`; do not begin content work until structural errors are resolved.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.0 intake contract
+## Skill 1.1 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
@@ -94,7 +94,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames and track titles are weaker signals and may use only known language aliases; never interpret an arbitrary two- or three-letter filename token as a language. If multiple source-language audio streams exist, select the intended one with `--audio-stream VIDEO|INDEX`. Resolve missing or conflicting track language with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language is blocking because its source/timing/translation role cannot otherwise be assigned safely.
 
-The emitted intake JSON uses `schema_version: 2` and `skill_version: 1.0.0`. It may contain local absolute paths and is disposable. Relevant fields are `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty or timing readiness is not `ready`.
+The emitted intake JSON uses `schema_version: 2` and `skill_version: 1.1.0`. It may contain local absolute paths and is disposable. Relevant fields are `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty or timing readiness is not `ready`.
 
 Example:
 
@@ -133,7 +133,7 @@ The series directory is also a short developer-facing name. Reuse an established
 
 ### SH-INIT-009 — Transactional initializer and master preparation
 
-Run a dry run first, then the identical command without `--dry-run`:
+Run a dry run as the internal transaction check, then the identical command without `--dry-run`:
 
 ```text
 python scripts/init_project.py \

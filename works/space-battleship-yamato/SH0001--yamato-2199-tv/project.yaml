@@ -177,17 +177,3 @@ documentation:
   guide: docs/project-guide.md
   review: docs/review.md
   ledger: docs/ledger.tsv
-
-review_evidence:
-  workspace: project/workspace/temp/review/attachments
-  persistent: false
-
-archives:
-  legacy_engineering:
-    path: project/archive/SH0001-legacy-engineering-20260826.zip
-    manifest: project/archive/SH0001-legacy-engineering-20260826.manifest.tsv
-    sha256: 2bd01f8d6e9cb95f7f862e78a8ad4a00d4ce7a074c4b4b9f147acde5975e1206
-  historical_documents:
-    path: project/archive/SH0001-historical-documents-20260826.zip
-    manifest: project/archive/SH0001-historical-documents-20260826.manifest.tsv
-    sha256: d09a6571a343fe6cc830ae102254be7144b58da025ad651f2bd268724c8031ce

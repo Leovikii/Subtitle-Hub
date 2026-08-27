@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Legacy test entry point; delegates to the Skill 1.0 behavioral suite."""
+"""Compatibility test entry point for the Skill 1.1 toolchain."""
 
 from __future__ import annotations
 

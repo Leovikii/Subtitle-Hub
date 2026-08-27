@@ -14,7 +14,7 @@ Subtitle Hub 是一个面向中文字幕校对、维护与发布的开放仓库�
 
 ## Subtitle Hub Skill
 
-[`subtitle-hub` Skill 1.0](.agents/skills/subtitle-hub/SKILL.md) 集中了本项目的初始化、素材盘点、字幕校对、时间轴与排版检查、构建验证和发布流程。仓库规范只在该 Skill 中维护；根 README 仅提供面向用户的项目与使用入口。
+[`subtitle-hub` Skill 1.1](.agents/skills/subtitle-hub/SKILL.md) 集中了本项目的初始化、素材盘点、字幕校对、时间轴与排版检查、构建验证和发布流程。仓库规范只在该 Skill 中维护；根 README 仅提供面向用户的项目与使用入口。
 
 ### 在本仓库中使用
 

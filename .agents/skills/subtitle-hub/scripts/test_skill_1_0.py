@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.0 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.1 toolchain."""
 
 from __future__ import annotations
 
@@ -201,7 +201,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.0\.0"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.1\.0"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -270,6 +270,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 2)
+            self.assertEqual(data["skill_version"], "1.1.0")
             self.assertEqual(data["readiness"]["timing"], "ready")
             self.assertEqual(data["readiness"]["language"], "limited")
             self.assertEqual(data["readiness"]["visual"], "limited")
@@ -375,6 +376,9 @@ class InitializationTests(unittest.TestCase):
             for obsolete in ("progress.yaml", "issues.tsv", "change-log.tsv", "README.md"):
                 self.assertFalse((project / "docs" / obsolete).exists())
             self.assertTrue((project / "README.md").is_file())
+            self.assertFalse((project / "project/archive").exists())
+            self.assertFalse((project / "project/workspace/build").exists())
+            self.assertFalse((project / "project/workspace/temp").exists())
 
     def test_movie_uses_movie_episode_id(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -392,6 +396,8 @@ class InitializationTests(unittest.TestCase):
             run("init_project.py", *args)
             master = (series / "SH0001--test-tv" / "project/workspace/episodes/S01E01/master.ass").read_text(encoding="utf-8")
             self.assertIn("Noto Sans CJK SC", master)
+            self.assertIn(",62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000", master)
+            self.assertIn(",2,96,96,70,1", master)
             self.assertIn(r"{\i1}测试{\i0}\N下一行", master)
 
     def test_ass_baseline_master_is_byte_preserving(self) -> None:

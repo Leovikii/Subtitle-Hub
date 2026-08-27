@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.0 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.1 proofreading project."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-SKILL_VERSION = "1.0.0"
+SKILL_VERSION = "1.1.0"
 PROJECT_SCHEMA = 6
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
@@ -296,7 +296,7 @@ def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]]) -> 
         "PlayResX: 1920", "PlayResY: 1080", "YCbCr Matrix: TV.709", "",
         "[V4+ Styles]",
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-        "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H80000000,0,0,0,0,100,100,0,0,1,3,1,2,90,90,54,1", "",
+        "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
         "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
     lines.extend(f"Dialogue: 0,{start},{end},CN-Main,,0,0,0,,{text}" for start, end, text in cues)
@@ -526,23 +526,10 @@ def main() -> int:
             created_series = True
             series_values = {"SERIES_TITLE": args.series_title}
             (series_dir / "series-guide.md").write_text(render(template_root / "series-guide.md", series_values), encoding="utf-8")
-        directories = [
-            staging / "docs", staging / "project" / "sources" / "subtitles",
-            staging / "project" / "workspace" / "temp" / "tools",
-            staging / "project" / "workspace" / "temp" / "intermediate",
-            staging / "project" / "workspace" / "temp" / "review" / "attachments",
-            staging / "project" / "workspace" / "temp" / "logs",
-            staging / "project" / "workspace" / "build", staging / "project" / "archive",
-        ]
+        directories = [staging / "docs", staging / "project" / "sources" / "subtitles"]
         directories.extend(staging / "project" / "workspace" / "episodes" / str(row["episode"]) for row in rows)
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=False)
-        for directory in (
-            staging / "project" / "workspace" / "temp" / "tools", staging / "project" / "workspace" / "temp" / "intermediate",
-            staging / "project" / "workspace" / "temp" / "review", staging / "project" / "workspace" / "temp" / "logs",
-            staging / "project" / "workspace" / "build",
-        ):
-            (directory / ".gitignore").write_text("*\n!.gitignore\n", encoding="utf-8")
         for group in intake["external_source_groups"]:
             destination = staging / "project" / "sources" / "subtitles" / str(group["language"]) / str(group["id"])
             destination.mkdir(parents=True, exist_ok=False)

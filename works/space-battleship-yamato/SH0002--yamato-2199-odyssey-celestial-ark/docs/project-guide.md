@@ -52,14 +52,12 @@
 ## 6. 工程区约束
 
 - 只编辑 `project/workspace/episodes/MOVIE/master.ass`；
-- 项目专用脚本只能放入 `project/workspace/temp/tools/`；
-- 中间字幕、候选 diff 和临时证据只能进入 `project/workspace/temp/`；
-- 通过本轮门禁的完整候选才可进入 `project/workspace/build/`；
+- 项目专用脚本按需放入 `project/workspace/temp/tools/`，补充引导按需放入 `temp/notes/`；
+- 普通中间输出使用系统临时目录；完整发行候选按需生成到 `project/workspace/build/`；
 - 逐项候选、用户决定、实施和验证写入 `ledger.tsv`，当前轮次和摘要写入 `review.md`。
 
 ## 7. 已知限制和禁止自动处理项
 
 - 1.0.0 是迁入基线，不代表全片已经完成新一轮观看复核；
-- 历史工程已压为 `project/archive/SH0002-history-20260826.zip`，包内 `MANIFEST.tsv` 记录原路径、大小和 SHA-256；禁止直接运行其中脚本；
 - `迪斯拉`、特殊画面文字、广播、外星语和歌曲必须人工判断；
 - 不得为消除自动候选而批量替换术语、改轴、改样式或移动特效。

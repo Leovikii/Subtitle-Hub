@@ -361,9 +361,3 @@ documentation:
   guide: docs/project-guide.md
   review: docs/review.md
   ledger: docs/ledger.tsv
-
-review_evidence:
-  workspace: project/workspace/temp/review/attachments
-  persistent: false
-
-archives: {}
