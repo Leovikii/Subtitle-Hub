@@ -1,9 +1,15 @@
-schema_version: 5
+schema_version: 6
 id: SH0001
-slug: yamato-2199-tv
+project_name: yamato-2199-tv
 type: tv
 episode_count: 26
 status: active
+
+naming:
+  directory: SH0001--yamato-2199-tv
+  approved_by: repository-owner-approved-skill-1.0-migration
+  approved_at: 2026-08-27
+  basis: established-developer-facing-project-name
 
 identity:
   provider: bangumi
@@ -13,8 +19,15 @@ identity:
   titles:
     ja: 宇宙戦艦ヤマト2199
     zh-Hans: 宇宙战舰大和号2199
+  date: null
+  platform: TV
+  total_episodes: 26
   verification: api-verified
   verified_at: 2026-08-26
+  scope_verification:
+    status: user-confirmed
+    approved_by: repository-owner-approved-skill-1.0-migration
+    basis: existing-released-scope; API date was not retained in the historical project descriptor
 
 task:
   mode: proofreading
@@ -92,7 +105,7 @@ subtitle_sources:
       evidence: bilingual Chinese-Japanese baseline designated by project history
 
 video_sources:
-  sav1our-bd-1080p-av1:
+  target-video:
     release_group: Sav1our
     medium: Blu-ray
     resolution: 1080p
@@ -132,6 +145,15 @@ workspace:
   episodes: project/workspace/episodes
   temporary: project/workspace/temp
   build: project/workspace/build
+
+initialization:
+  skill_version: "1.0.0"
+  state: released-existing
+  intake: migrated-existing-project
+  intake_approved_by: repository-owner-approved-skill-1.0-migration
+  episode_map_approved_by: repository-owner-approved-skill-1.0-migration
+  approved_at: 2026-08-27
+  initialized_at: 2026-08-27
 
 release:
   version_file: subtitles/current/VERSION

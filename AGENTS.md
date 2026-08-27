@@ -4,6 +4,8 @@
 
 按 Skill 路由读取当前任务所需 reference，再读取系列 `series-guide.md`（若存在）、作品 `project.yaml`、`docs/project-guide.md`、`docs/review.md` 和 `docs/ledger.tsv`。
 
+新建项目必须先由 Skill 主动探测目标视频的音轨与字幕轨，解决阻塞的语种/音轨问题，并取得素材映射和简短项目名审批；只有 dry-run 清单确认后才能创建 `<SHxxxx>--<project-name>`，建项后以 `--ready-for-proofreading` 为内容工作门禁。
+
 规则优先级为：用户当次明确要求、项目确认覆盖项、系列确认术语、Skill、外部参考。只有 `docs/project-guide.md` 可以补充或覆盖 Skill/系列规则；偏离系列译名必须记录用户确认。项目当前状态和本轮报告只以 `docs/review.md` 为准，逐项候选、决定、修改和验证只以 `docs/ledger.tsv` 为准。
 
 ## 不可违反的工作边界

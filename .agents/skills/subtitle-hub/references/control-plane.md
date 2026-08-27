@@ -15,6 +15,8 @@ Do not add per-round reports, separate progress/issue/change files, or a project
 
 `project.yaml` is the only project descriptor. It records identity, type/scope, languages, source entries and roles, target-video episode map, workspace/release configuration, actual review coverage, and archives. Do not create a second source catalog, video manifest, `latest.yaml`, per-version release YAML, or repository checksum file.
 
+Skill 1.0 projects use `schema_version: 6`. They record the short `project_name`; a `naming` approval block; API-verified Bangumi date/platform/episode count and user-confirmed scope; explicit source classifications; `video_sources.target-video.files`; and an `initialization` block with `skill_version: 1.0.0`, state, intake/map approvers, approval date, and initialization date. An ordinary new project uses `initialization.state: proofreading-ready`; migrated released projects may use `released-existing` with honest historical limitations. Intake JSON, approved map TSV, and local absolute video paths are not additional durable project descriptors.
+
 ## SH-CTRL-004 — project-guide.md
 
 Only this file may supplement/override Skill or series rules. Keep sections for scope/languages; evidence-source division; project risks; styles/special layout; rule table; workspace constraints; known limits/prohibited automation.

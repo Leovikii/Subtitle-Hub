@@ -1,10 +1,16 @@
-schema_version: 5
+schema_version: 6
 
 id: "{{WORK_ID}}"
-slug: "{{SLUG}}"
+project_name: "{{PROJECT_NAME}}"
 type: "{{WORK_TYPE}}"
 episode_count: {{EPISODE_COUNT}}
 status: active
+
+naming:
+  directory: "{{WORK_ID}}--{{PROJECT_NAME}}"
+  approved_by: {{PROJECT_NAME_APPROVED_BY_YAML}}
+  approved_at: "{{VERIFIED_AT}}"
+  basis: user-approved-developer-facing-name
 
 identity:
   provider: bangumi
@@ -14,8 +20,15 @@ identity:
   titles:
     ja: {{TITLE_JA_YAML}}
     zh-Hans: {{TITLE_ZH_HANS_YAML}}
+  date: {{BANGUMI_DATE_YAML}}
+  platform: {{BANGUMI_PLATFORM_YAML}}
+  total_episodes: {{BANGUMI_TOTAL_EPISODES}}
   verification: api-verified
   verified_at: "{{VERIFIED_AT}}"
+  scope_verification:
+    status: user-confirmed
+    approved_by: {{SCOPE_APPROVED_BY_YAML}}
+    basis: {{IDENTITY_SCOPE_BASIS_YAML}}
 
 task:
   mode: proofreading
@@ -34,10 +47,19 @@ subtitle_sources: []
 video_sources: {}
 
 workspace:
-  baseline: subtitles/current
+  baseline: project/workspace/episodes
   episodes: project/workspace/episodes
   temporary: project/workspace/temp
   build: project/workspace/build
+
+initialization:
+  skill_version: "1.0.0"
+  state: proofreading-ready
+  intake: probe-confirmed-and-user-approved
+  intake_approved_by: {{INTAKE_APPROVED_BY_YAML}}
+  episode_map_approved_by: {{INTAKE_APPROVED_BY_YAML}}
+  approved_at: "{{VERIFIED_AT}}"
+  initialized_at: "{{VERIFIED_AT}}"
 
 release:
   version_file: subtitles/current/VERSION

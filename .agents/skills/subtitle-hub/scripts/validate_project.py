@@ -19,6 +19,14 @@ ALLOWED_ROLES = {
     "style-layout-reference",
     "secondary-language-release-source",
 }
+PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+EPISODE_PATTERNS = {
+    "tv": re.compile(r"S\d{2}E\d{2,3}"),
+    "ona": re.compile(r"S\d{2}E\d{2,3}"),
+    "ova": re.compile(r"OVA\d{2,3}"),
+    "special": re.compile(r"SP\d{2,3}"),
+    "movie": re.compile(r"MOVIE"),
+}
 LEDGER_DECISIONS = {"pending", "approved", "rejected", "deferred", "waived", "not-recorded", "not-required"}
 LEDGER_STATUSES = {
     "candidate",
@@ -84,6 +92,9 @@ def subtitle_entries(text: str) -> list[dict[str, object]]:
                 "id": match.group(1).strip('"\''),
                 "languages": languages,
                 "path": scalar(chunk, "path", 4),
+                "kind": scalar(chunk, "kind", 4),
+                "container": scalar(chunk, "container", 4),
+                "stream_index": scalar(chunk, "stream_index", 4),
                 "file_count": scalar(chunk, "file_count", 4),
                 "scope": scalar(chunk, "scope", 4),
                 "roles": roles,
@@ -124,6 +135,54 @@ def validate_ledger(path: Path, errors: list[str]) -> None:
             errors.append(f"{path}:{row_number}: invalid status {row[13]!r}")
 
 
+def video_file_map(metadata: str) -> dict[str, str]:
+    video_sources = section(metadata, "video_sources")
+    target_video = section(video_sources, "target-video", 2)
+    files = section(target_video, "files", 4)
+    return {
+        match.group(1): match.group(2).strip().strip('"\'')
+        for match in re.finditer(r"(?m)^      ([A-Za-z0-9]+):\s*(.*?)\s*$", files)
+    }
+
+
+def validate_working_masters(project_root: Path, videos: dict[str, str], errors: list[str], warnings: list[str]) -> None:
+    for episode in sorted(videos):
+        master = project_root / "project" / "workspace" / "episodes" / episode / "master.ass"
+        if not master.is_file():
+            errors.append(f"{master}: proofreading-ready project requires a working master")
+            continue
+        try:
+            text = master.read_text(encoding="utf-8-sig")
+        except (OSError, UnicodeDecodeError) as error:
+            errors.append(f"{master}: unreadable UTF-8 text: {error}")
+            continue
+        if "[Events]" not in text or not re.search(r"(?m)^Format:.*Start.*End.*Text\s*$", text):
+            errors.append(f"{master}: missing a parseable ASS/SSA Events section")
+        if not re.search(r"(?m)^Dialogue:", text):
+            warnings.append(f"{master}: contains no Dialogue events")
+    local_paths = project_root / "project" / "local.paths.yaml"
+    if not local_paths.is_file():
+        errors.append(f"{local_paths}: local video mapping is required for proofreading readiness")
+    else:
+        mapping = local_paths.read_text(encoding="utf-8-sig")
+        for episode, expected_basename in videos.items():
+            match = re.search(rf"(?m)^  {re.escape(episode)}:\s*(.+?)\s*$", mapping)
+            if not match:
+                errors.append(f"{local_paths}: missing local target-video path for {episode}")
+                continue
+            raw_path = match.group(1)
+            try:
+                local_value = json.loads(raw_path) if raw_path.startswith('"') else raw_path.strip("'")
+            except json.JSONDecodeError:
+                errors.append(f"{local_paths}: invalid quoted local path for {episode}")
+                continue
+            local_video = Path(local_value)
+            if not local_video.is_file():
+                errors.append(f"{local_paths}: target video for {episode} is not readable: {local_video}")
+            elif local_video.name != expected_basename:
+                errors.append(f"{local_paths}: target video basename for {episode} does not match project.yaml")
+
+
 def validate_release(project_root: Path, metadata: str, errors: list[str], warnings: list[str]) -> None:
     release_language = scalar(section(section(metadata, "languages"), "release", 2), "primary", 4) or "zh-Hans"
     secondary = scalar(section(section(metadata, "languages"), "release", 2), "secondary", 4)
@@ -133,7 +192,7 @@ def validate_release(project_root: Path, metadata: str, errors: list[str], warni
         directory = project_root / "subtitles" / directory_name
         if not directory.exists():
             if directory_name == "current":
-                warnings.append(f"{directory}: no release exists yet")
+                errors.append(f"{directory}: --release requires a current release")
             continue
         version_file = directory / "VERSION"
         if not version_file.is_file():
@@ -166,6 +225,11 @@ def validate_release(project_root: Path, metadata: str, errors: list[str], warni
                 errors.append(f"{ass}: Source-Metadata must not appear in released ASS")
             if not re.search(r"(?m)^Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text$", text):
                 errors.append(f"{ass}: required Events Format line is missing")
+        if directory_name == "current":
+            expected_names = {f"{Path(name).stem}.{release_language}.ass" for name in video_file_map(metadata).values()}
+            actual_names = {path.name for path in ass_files}
+            if actual_names != expected_names:
+                errors.append(f"{directory}: release filenames/scope differ from target-video map; expected {sorted(expected_names)}, got {sorted(actual_names)}")
     current = project_root / "subtitles" / "current" / "VERSION"
     previous = project_root / "subtitles" / "previous" / "VERSION"
     if current.is_file():
@@ -180,6 +244,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("project", type=Path, help="Work root containing project.yaml")
     parser.add_argument("--release", action="store_true", help="Also require and inspect release artifacts")
+    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and local target-video mappings")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable output")
     args = parser.parse_args()
     root = args.project.resolve()
@@ -191,20 +256,47 @@ def main() -> int:
     except OSError as error:
         parser.error(str(error))
 
-    if scalar(metadata, "schema_version") != "5":
-        errors.append(f"{metadata_path}: schema_version must be 5")
+    if scalar(metadata, "schema_version") != "6":
+        errors.append(f"{metadata_path}: schema_version must be 6")
     work_id = scalar(metadata, "id")
     if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
         errors.append(f"{metadata_path}: invalid work id")
+    project_name = scalar(metadata, "project_name")
+    if not project_name or not PROJECT_NAME_RE.fullmatch(project_name):
+        errors.append(f"{metadata_path}: invalid project_name")
+    elif root.name != f"{work_id}--{project_name}":
+        errors.append(f"{root}: directory must be {work_id}--{project_name}")
+    naming = section(metadata, "naming")
+    if scalar(naming, "directory", 2) != root.name or not scalar(naming, "approved_by", 2) or not scalar(naming, "approved_at", 2):
+        errors.append(f"{metadata_path}: naming approval block is missing or inconsistent")
     identity = section(metadata, "identity")
     if scalar(identity, "provider", 2) != "bangumi":
         errors.append(f"{metadata_path}: identity.provider must be bangumi")
-    for name, indent in (("id", 2), ("verification", 2)):
-        if not scalar(identity, name, indent):
-            errors.append(f"{metadata_path}: identity.{name} is missing")
+    bangumi_id = scalar(identity, "id", 2)
+    if not bangumi_id or not re.fullmatch(r"[1-9]\d*", bangumi_id):
+        errors.append(f"{metadata_path}: identity.id must be a Bangumi numeric ID")
+    if scalar(identity, "verification", 2) != "api-verified":
+        errors.append(f"{metadata_path}: identity.verification must be api-verified")
     titles = section(identity, "titles", 2)
     if not scalar(titles, "ja", 4) or not scalar(titles, "zh-Hans", 4):
         errors.append(f"{metadata_path}: Bangumi ja/name_cn identity titles are required")
+    initialization = section(metadata, "initialization")
+    initialization_state = scalar(initialization, "state", 2)
+    for name in ("date", "platform", "total_episodes"):
+        value = scalar(identity, name, 2)
+        if not value or (value == "null" and initialization_state != "released-existing"):
+            errors.append(f"{metadata_path}: identity.{name} is missing")
+        elif value == "null":
+            warnings.append(f"{metadata_path}: migrated release lacks historical identity.{name}")
+    identity_date = scalar(identity, "date", 2)
+    if identity_date not in {None, "null"} and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", identity_date):
+        errors.append(f"{metadata_path}: identity.date must use YYYY-MM-DD")
+    total_episodes = scalar(identity, "total_episodes", 2)
+    if total_episodes not in {None, "null"} and (not total_episodes.isdigit() or int(total_episodes) <= 0):
+        errors.append(f"{metadata_path}: identity.total_episodes must be positive")
+    scope_verification = section(identity, "scope_verification", 2)
+    if scalar(scope_verification, "status", 4) != "user-confirmed" or not scalar(scope_verification, "approved_by", 4):
+        errors.append(f"{metadata_path}: identity scope requires recorded user confirmation")
     task = section(metadata, "task")
     if scalar(task, "mode", 2) != "proofreading":
         errors.append(f"{metadata_path}: task.mode must be proofreading")
@@ -230,7 +322,10 @@ def main() -> int:
         if not entry["confirmed_by"] or not entry["confirmed_at"] or not entry["evidence"]:
             errors.append(f"{metadata_path}: source {entry['id']} classification lacks confirmer/date/evidence")
         source_path = str(entry["path"] or "")
-        if not source_path.startswith("project/sources/") or re.match(r"^[A-Za-z]:[\\/]", source_path) or source_path.startswith("/"):
+        if entry["kind"] == "embedded-subtitle-track":
+            if not entry["container"] or entry["stream_index"] is None:
+                errors.append(f"{metadata_path}: embedded source {entry['id']} needs container and stream_index")
+        elif not source_path.startswith("project/sources/") or re.match(r"^[A-Za-z]:[\\/]", source_path) or source_path.startswith("/"):
             errors.append(f"{metadata_path}: source {entry['id']} path must be repository-relative under project/sources")
         else:
             directory = root / Path(source_path)
@@ -243,13 +338,22 @@ def main() -> int:
     if "candidate-baseline" not in all_roles:
         errors.append(f"{metadata_path}: proofreading requires a candidate-baseline source")
 
-    video_block = section(metadata, "video_sources")
-    video_names = re.findall(r'(?m)^      [^:]+:\s*["\']?(.*?)["\']?\s*$', video_block)
-    if not video_names:
+    work_type = scalar(metadata, "type") or ""
+    videos = video_file_map(metadata)
+    if not videos:
         errors.append(f"{metadata_path}: target-video episode map is empty")
-    for name in video_names:
+    for episode, name in videos.items():
+        pattern = EPISODE_PATTERNS.get(work_type)
+        if not pattern or not pattern.fullmatch(episode):
+            errors.append(f"{metadata_path}: invalid {work_type} episode ID {episode!r}")
         if re.match(r"^[A-Za-z]:[\\/]", name) or name.startswith("/") or "/" in name or "\\" in name:
             errors.append(f"{metadata_path}: video map must store basename only, got {name!r}")
+    output_names = [f"{Path(name).stem}.zh-Hans.ass".casefold() for name in videos.values()]
+    if len(output_names) != len(set(output_names)):
+        errors.append(f"{metadata_path}: target video stems collide as release filenames")
+    episode_count = scalar(metadata, "episode_count")
+    if not episode_count or not episode_count.isdigit() or int(episode_count) != len(videos):
+        errors.append(f"{metadata_path}: episode_count must match the target-video map")
 
     docs = root / "docs"
     required = [docs / "project-guide.md", docs / "review.md", docs / "ledger.tsv"]
@@ -287,6 +391,19 @@ def main() -> int:
                 errors.append(f"{review_path}: required section is missing: {heading}")
     if (docs / "ledger.tsv").is_file():
         validate_ledger(docs / "ledger.tsv", errors)
+
+    if scalar(initialization, "skill_version", 2) != "1.0.0":
+        errors.append(f"{metadata_path}: initialization.skill_version must be 1.0.0")
+    if initialization_state not in {"proofreading-ready", "released-existing"}:
+        errors.append(f"{metadata_path}: initialization.state is invalid")
+    if initialization_state == "proofreading-ready":
+        for field in ("intake_approved_by", "episode_map_approved_by", "approved_at"):
+            if not scalar(initialization, field, 2):
+                errors.append(f"{metadata_path}: initialization.{field} is required")
+    if args.ready_for_proofreading:
+        if initialization_state not in {"proofreading-ready", "released-existing"}:
+            errors.append(f"{metadata_path}: initialization state is not proofreading-ready")
+        validate_working_masters(root, videos, errors, warnings)
 
     if args.release:
         validate_release(root, metadata, errors, warnings)

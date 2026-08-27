@@ -23,7 +23,6 @@ SEMVER = re.compile(
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
 )
 LEGACY_LANGUAGE_SUFFIX = re.compile(r".+\.zh-Hans\.(?:ja|en)\.ass\Z")
-EPISODE_ID = re.compile(r"S\d{2}E\d{2}")
 STYLE_RESET = re.compile(r"\\r([^\\}]*)")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
 STYLE_DEFINITION = re.compile(r"^Style:\s*(.*)$")
@@ -86,8 +85,8 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) != "5":
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 5")
+    if yaml_scalar(metadata, "schema_version", 0) != "6":
+        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 6")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)
@@ -121,6 +120,25 @@ def project_languages(project_root: Path) -> tuple[str, str | None]:
     return primary, None if secondary == "null" else secondary
 
 
+def project_episode_for_subtitle(project_root: Path, subtitle: Path, primary: str) -> str:
+    metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
+    video_sources = yaml_block(metadata, "video_sources", 0)
+    target_video = yaml_block(video_sources, "target-video", 2)
+    files = yaml_block(target_video, "files", 4)
+    mapping = {
+        match.group(1): match.group(2).strip().strip('"\'')
+        for match in re.finditer(r"(?m)^      ([A-Za-z0-9]+):\s*(.*?)\s*$", files)
+    }
+    suffix = f".{primary}.ass"
+    if not subtitle.name.endswith(suffix):
+        raise PackageError(f"{subtitle}: filename must end in {suffix}")
+    target_stem = subtitle.name[: -len(suffix)]
+    matches = [episode for episode, basename in mapping.items() if Path(basename).stem == target_stem]
+    if len(matches) != 1:
+        raise PackageError(f"{subtitle}: cannot uniquely map filename to project.yaml target video")
+    return matches[0]
+
+
 def validate_standard_ass(
     subtitle: Path, data: bytes, version: str, project_root: Path
 ) -> None:
@@ -147,14 +165,7 @@ def validate_standard_ass(
     if not subtitle.name.endswith(f".{primary}.ass"):
         raise PackageError(f"{subtitle}: filename must end in .{primary}.ass")
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
-    project_type = yaml_scalar(metadata, "type", 0)
-    episode_match = EPISODE_ID.search(subtitle.name)
-    if episode_match:
-        episode_id = episode_match.group(0)
-    elif project_type == "movie":
-        episode_id = "MOVIE"
-    else:
-        raise PackageError(f"{subtitle}: cannot determine episode ID for Title")
+    episode_id = project_episode_for_subtitle(project_root, subtitle, primary)
 
     lines = text.splitlines()
     try:
@@ -370,11 +381,16 @@ def build_package(version_file: Path) -> Path:
 
 
 def main() -> int:
+    global REPOSITORY_ROOT, WORKS_ROOT, PACKAGES_ROOT
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repository-root", type=Path, default=REPOSITORY_ROOT)
     parser.add_argument(
         "--check", action="store_true", help="validate releases and print planned names only"
     )
     args = parser.parse_args()
+    REPOSITORY_ROOT = args.repository_root.resolve()
+    WORKS_ROOT = REPOSITORY_ROOT / "works"
+    PACKAGES_ROOT = REPOSITORY_ROOT / "packages"
     version_files = sorted(WORKS_ROOT.glob("**/subtitles/current/VERSION"))
     if not version_files:
         raise PackageError("no works/**/subtitles/current/VERSION files found")

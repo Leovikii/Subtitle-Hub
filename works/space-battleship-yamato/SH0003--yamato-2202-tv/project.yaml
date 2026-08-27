@@ -1,9 +1,15 @@
-schema_version: 5
+schema_version: 6
 id: SH0003
-slug: yamato-2202-tv
+project_name: yamato-2202-tv
 type: tv
 episode_count: 26
 status: active
+
+naming:
+  directory: SH0003--yamato-2202-tv
+  approved_by: repository-owner-approved-skill-1.0-migration
+  approved_at: 2026-08-27
+  basis: established-developer-facing-project-name
 
 identity:
   provider: bangumi
@@ -13,8 +19,15 @@ identity:
   titles:
     ja: 宇宙戦艦ヤマト2202 愛の戦士たち
     zh-Hans: 宇宙战舰大和号2202 爱的战士们
+  date: null
+  platform: TV
+  total_episodes: 26
   verification: api-verified
   verified_at: 2026-08-26
+  scope_verification:
+    status: user-confirmed
+    approved_by: repository-owner-approved-skill-1.0-migration
+    basis: existing-released-scope; API date was not retained in the historical project descriptor
 
 task:
   mode: proofreading
@@ -76,7 +89,7 @@ subtitle_sources:
       evidence: Simplified Chinese fansub baseline designated by project history
 
 video_sources:
-  sav1or-bd-1080p-av1:
+  target-video:
     release_group: Sav1or
     medium: Blu-ray
     resolution: 1080p
@@ -116,6 +129,15 @@ workspace:
   episodes: project/workspace/episodes
   temporary: project/workspace/temp
   build: project/workspace/build
+
+initialization:
+  skill_version: "1.0.0"
+  state: released-existing
+  intake: migrated-existing-project
+  intake_approved_by: repository-owner-approved-skill-1.0-migration
+  episode_map_approved_by: repository-owner-approved-skill-1.0-migration
+  approved_at: 2026-08-27
+  initialized_at: 2026-08-27
 
 release:
   version_file: subtitles/current/VERSION

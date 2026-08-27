@@ -85,3 +85,72 @@ The ordinary minimum `video + Chinese baseline` permits structure, Chinese expre
 7. Run `scripts/validate_project.py`; do not begin content work until structural errors are resolved.
 
 Initialization never modifies the user's original media or subtitle files.
+
+## Skill 1.0 intake contract
+
+### SH-INIT-006 — Probe before asking for manual inventory
+
+Start from the user-provided target video path(s) and Chinese baseline rather than asking the user to enumerate container tracks. Run `scripts/inventory_sources.py`; it uses `ffprobe` to record container format, duration, resolution, audio/subtitle stream index, codec, language tag/title, default/forced disposition, and a suggested source-language audio stream. It also inventories external subtitle/script files, hashes them, assigns candidate roles, and proposes episode relationships.
+
+Container language tags may use valid BCP 47 forms. Filenames and track titles are weaker signals and may use only known language aliases; never interpret an arbitrary two- or three-letter filename token as a language. If multiple source-language audio streams exist, select the intended one with `--audio-stream VIDEO|INDEX`. Resolve missing or conflicting track language with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language is blocking because its source/timing/translation role cannot otherwise be assigned safely.
+
+The emitted intake JSON uses `schema_version: 2` and `skill_version: 1.0.0`. It may contain local absolute paths and is disposable. Relevant fields are `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty or timing readiness is not `ready`.
+
+Example:
+
+```text
+python scripts/inventory_sources.py \
+  --target-video <video-or-directory> \
+  --candidate-baseline <zh-subtitle-or-directory> \
+  --optional-source <path>|<language>|<comma-separated-roles> \
+  --source-language ja \
+  --project-type tv \
+  --output <temporary-intake.json>
+```
+
+### SH-INIT-007 — Approved episode map and IDs
+
+Convert the proposal into a user/developer-approved UTF-8 TSV with this exact header:
+
+```text
+episode<TAB>video<TAB>subtitle<TAB>audio_stream<TAB>audio_language
+```
+
+Use stable internal episode IDs:
+
+- TV/ONA: `S01E01` style; retain the actual season number when the project scope requires it.
+- OVA: `OVA01`.
+- Special: `SP01`.
+- One film: `MOVIE`, with exactly one row.
+
+Every row must refer to a video and Chinese baseline already present in the intake. The initializer rechecks file fingerprints, audio-stream presence/language, episode safety, and uniqueness of the resulting `<video-stem>.zh-Hans.ass` filenames. Similar filenames or durations alone never prove a mapping.
+
+### SH-INIT-008 — Approve the developer-facing name before creation
+
+The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`; it need not repeat the complete official title. Suggest one or more names from the verified identity/type, but ask the user to choose or approve one before running the initializer. Record the approver and date in `project.yaml`; never silently rename a work from a title guess.
+
+The series directory is also a short developer-facing name. Reuse an established series directory when appropriate. Creating a new one requires an explicit series title and name approval; initialization rolls it back if the project transaction fails.
+
+### SH-INIT-009 — Transactional initializer and master preparation
+
+Run a dry run first, then the identical command without `--dry-run`:
+
+```text
+python scripts/init_project.py \
+  --repository-root <repository> \
+  --series-dir <works/series-name> \
+  --project-name <approved-short-name> \
+  --project-name-approved-by <approver> \
+  --type <tv|movie|ova|ona|special> \
+  --bangumi-id <id> \
+  --bangumi-snapshot <verified-api-json> \
+  --scope-approved-by <approver> \
+  --intake <temporary-intake.json> \
+  --intake-approved-by <approver> \
+  --episode-map <approved-map.tsv> \
+  --dry-run
+```
+
+Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ... --series-name-approved-by ...` only for an approved new series directory. The initializer copies external subtitle evidence into immutable `project/sources/`, never copies video, writes ignored local video mappings, and prepares one `master.ass` per episode. ASS/SSA baselines are copied byte-for-byte. SRT/VTT baselines are converted deterministically to UTF-8 ASS using `Noto Sans CJK SC`; this fallback is a working baseline, not a claim that styling was human-approved.
+
+Initialization does not create `subtitles/current/`. It promotes the staged work only if `scripts/validate_project.py --ready-for-proofreading` passes and rolls back a failed new-project/new-series transaction.

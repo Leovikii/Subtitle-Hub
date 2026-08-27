@@ -4,40 +4,41 @@ work_id: "{{WORK_ID}}"
 updated_at: "{{UPDATED_AT}}"
 baseline_release: null
 target_release: null
-overall_status: not-started
+overall_status: in-progress
 
 active_round:
   id: initialization
   scope: "{{SCOPE}}"
-  status: in-progress
+  status: completed
 
 stages:
-  source_inventory: in-progress
-  baseline_setup: not-started
+  source_inventory: verified
+  baseline_setup: verified
   translation_review: not-started
   timing_review: not-started
   typography_review: not-started
   visual_review: not-started
   release_qc: not-started
 
-episodes: {}
+episodes:
+{{EPISODES_YAML}}
 ---
 
 # 当前校对轮次
 
 ## 目标与范围
 
-初始化项目并确认素材、范围和校对能力。
+完成 Skill 1.0 媒体盘点、命名审批、素材导入和可写主稿准备。
 
 ## 检查覆盖
 
-- 机器检查：未开始
-- 人工检查：未开始
-- 未覆盖：待盘点
+- 机器检查：{{MACHINE_COVERAGE}}
+- 人工确认：{{HUMAN_COVERAGE}}
+- 未覆盖：字幕内容尚未进入正式校对；不得声称语言、时间轴、排版或全片观看通过
 
 ## 候选修改摘要
 
-尚未生成候选。逐项事实记录在 `ledger.tsv`；本节只汇总本轮需要审阅的条目 ID、范围和风险。
+尚未生成字幕修改候选。{{INITIALIZATION_SUMMARY}}
 
 ## 需要用户确认
 
@@ -45,8 +46,8 @@ episodes: {}
 
 ## 决策与实施
 
-尚未实施修改。实质字幕修改必须先获得本轮明确批准或符合用户预先授权的范围。
+已实施用户批准的建项与基线准备，没有修改用户原始视频或字幕。后续实质字幕修改仍须先提交审批。
 
 ## 验证与剩余风险
 
-尚未验证。
+项目结构、素材登记、主稿存在性和解析性已验证；发布仍处于未开始状态。

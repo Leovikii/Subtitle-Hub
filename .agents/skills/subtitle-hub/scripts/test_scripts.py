@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for Subtitle Hub initialization tools."""
+"""Legacy test entry point; delegates to the Skill 1.0 behavioral suite."""
 
 from __future__ import annotations
 
@@ -28,6 +28,7 @@ def run(script: str, *args: str, expect: int = 0) -> subprocess.CompletedProcess
     return result
 
 
+@unittest.skip("superseded by test_skill_1_0.py")
 class ScriptBehaviorTests(unittest.TestCase):
     def test_skill_local_markdown_links_resolve(self) -> None:
         skill_root = SCRIPT_ROOT.parent
@@ -316,4 +317,4 @@ class ScriptBehaviorTests(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    raise SystemExit(subprocess.call([sys.executable, "-B", str(SCRIPT_ROOT / "test_skill_1_0.py")]))

@@ -18,6 +18,10 @@ project/
 
 Official outputs live outside `project/` under `subtitles/current/` and `subtitles/previous/`. Durable control facts live only in `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`.
 
+`project/local.paths.yaml` is an ignored, machine-local bridge from episode ID to the currently accessible target-video path. It may contain absolute paths and is required by `--ready-for-proofreading`, but it is not portable evidence or a fifth control file. `project.yaml` keeps only video basenames, fingerprints, probe facts, selected audio streams, and episode mappings.
+
+A newly initialized, unpublished work has no `subtitles/current/` or `subtitles/previous/`. Create a complete candidate under `project/workspace/build/`; the first release transaction promotes it as `subtitles/current/`. Do not add empty release directories merely to preserve a skeleton in Git.
+
 ## SH-WS-003 — Lifecycles
 
 - `episodes/`: next-release working authority, tracked. A tool writes a candidate, compares it, and only then replaces the master; no temporary result silently becomes the baseline.

@@ -1,11 +1,13 @@
 ---
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for any work in this repository that changes or assesses project identity, source roles, translation, timing, layout, control files, or release artifacts.
+metadata:
+  version: "1.0.0"
 ---
 
 # Subtitle Hub
 
-Use this Skill as the repository-level standard. Do not look for a parallel standard under root `docs/`, and do not consult external platform guides during routine work.
+Use this Skill 1.0 as the repository-level standard. Do not look for a parallel standard under root `docs/`, and do not consult external platform guides during routine work.
 
 ## Start here
 
@@ -20,6 +22,18 @@ Determine the task mode, then read only the listed references:
 - External provenance or a deliberate baseline audit only: [external-basis.md](references/external-basis.md).
 
 For any existing work, also read in order: the nearest series `series-guide.md` when present, the work `project.yaml`, `docs/project-guide.md`, `docs/review.md`, and `docs/ledger.tsv`. The review file is the sole current-status and active-round report; the ledger is the sole item history.
+
+## New-project gate
+
+For a new proofreading project, follow this contract before creating a work directory:
+
+1. Verify Bangumi identity and scope.
+2. Run `scripts/inventory_sources.py` against the exact target video(s) and Chinese baseline. Let it probe audio/subtitle tracks and propose material roles and episode relationships.
+3. Resolve every blocking language/audio question, then obtain approval for the episode map, evidence roles, release languages, and a short developer-facing project name such as `yamato-2199-tv`.
+4. Run `scripts/init_project.py --dry-run`; create the project only after the manifest is reviewed.
+5. Require `scripts/validate_project.py --ready-for-proofreading` to pass before subtitle analysis begins.
+
+The intake JSON and approved mapping TSV are disposable handoff artifacts, not additional durable control files. Keep absolute video paths only in ignored `project/local.paths.yaml`. The initialized work directory is `<SHxxxx>--<approved-project-name>`; do not derive or create it before approval.
 
 ## Priority and authority
 

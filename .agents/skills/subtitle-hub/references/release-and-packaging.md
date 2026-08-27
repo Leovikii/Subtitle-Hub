@@ -11,6 +11,8 @@ subtitles/previous/VERSION + *.ass
 
 `subtitles/current/VERSION` is the published-version authority. Do not create version-number directories or copy the current version into READMEs/YAML. A first `1.0.0` baseline may have no previous directory; after the first content replacement, a complete previous directory is mandatory forever.
 
+An unpublished initialized project has neither release directory. The first release creates `current` from a complete validated build; `scripts/validate_project.py --release` must fail when no current release exists.
+
 Use SemVer without `v`: PATCH for fixes that preserve scope/contract; MINOR for backward-compatible scope/language/compatible-source expansion; MAJOR for incompatible layout/naming/scope/format contract. Documentation, Skill, tooling, or directory-only migration does not change subtitle content version.
 
 ## SH-REL-003 — Released filenames and language metadata
@@ -55,6 +57,8 @@ Omit the secondary-language line, and omit the comma/secondary value from the la
 
 Use `MOVIE` for a single film's episode ID. Preserve valid ScriptType, WrapStyle, resolution, border/shadow, and matrix values. Remove Aegisub project garbage, local media paths, websites, default/blank editor fields, and empty boilerplate.
 
+For all project types, obtain the episode ID by uniquely matching the released filename stem to `video_sources.target-video.files` in `project.yaml`; do not require the video filename itself to contain `SxxExx`.
+
 When the baseline contains identifiable original production credits, preserve the full subtitle group and translation/listening/proofreading/timing/effects/encoding/source roles and people. Merge them into exactly one non-rendered `Subtitle-Hub-Source-Credit`. Never reduce to group name only. Do not invent credits from a filename/directory. Remove disclaimers/websites; keep engineering provenance in project control files, not Events.
 
 Events must keep the required `Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text`. Never represent credits/provenance as Comment, `Source-Metadata`, zero-duration, or hidden Events.
@@ -85,3 +89,5 @@ Use `packages/bgm<subject-id> - <name_cn> [v<version>].zip`. Values come from th
 The ZIP contains current ASS files, VERSION, and generated `CHECKSUMS.sha256` only—no source subtitles, video maps, masters, temporary evidence, fonts, or archives. Noto fonts are an external installation dependency.
 
 `.github/scripts/build_subtitle_packages.py` is the deterministic package implementation. It must sort deterministically and use stable timestamps/compression. Automatic runs are triggered by current VERSION changes on main (or manually), confirm the triggering commit is still current before build and push, and update packages only when content changes. For any version beyond an initial 1.0.0, validate a distinct, self-consistent previous release before packaging.
+
+After any successful release addition, removal, or identity/path change, run `scripts/sync_catalog.py`, then `scripts/sync_catalog.py --check`. Root `catalog.yaml` and `CATALOG.md` are generated views containing only projects with a current VERSION and ASS files; published `project.yaml` files remain their source of truth. Never hand-maintain divergent catalog facts.
