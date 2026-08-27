@@ -7,3 +7,5 @@
 | SH0001 | [宇宙战舰大和号2199](works/space-battleship-yamato/SH0001--yamato-2199-tv/README.md) | TV | 26 | `zh-Hans + ja` / ASS | [packages](packages) |
 | SH0002 | [宇宙战舰大和号2199 星巡的方舟](works/space-battleship-yamato/SH0002--yamato-2199-odyssey-celestial-ark/README.md) | 电影 | 1 | `zh-Hans + ja` / ASS | [packages](packages) |
 | SH0003 | [宇宙战舰大和号2202 爱的战士们](works/space-battleship-yamato/SH0003--yamato-2202-tv/README.md) | TV | 26 | `zh-Hans + ja` / ASS | [packages](packages) |
+| SH0004 | [宇宙战舰大和号2205 新的旅程 前篇 -TAKE OFF-](works/space-battleship-yamato/SH0004--yamato-2205-part1/README.md) | TV | 4 | `zh-Hans` / ASS | [packages](packages) |
+| SH0005 | [宇宙战舰大和号2205 新的旅程 后篇 -STASHA-](works/space-battleship-yamato/SH0005--yamato-2205-part2/README.md) | TV | 4 | `zh-Hans` / ASS | [packages](packages) |

@@ -1,0 +1,369 @@
+schema_version: 6
+
+id: "SH0004"
+project_name: "yamato-2205-part1"
+type: "tv"
+episode_count: 4
+status: active
+
+naming:
+  directory: "SH0004--yamato-2205-part1"
+  approved_by: "user"
+  approved_at: "2026-08-27"
+  basis: user-approved-developer-facing-name
+
+identity:
+  provider: bangumi
+  id: "319390"
+  url: "https://bgm.tv/subject/319390"
+  api_url: "https://api.bgm.tv/v0/subjects/319390"
+  titles:
+    ja: "宇宙戦艦ヤマト2205 新たなる旅立ち 前章 -TAKE OFF-"
+    zh-Hans: "宇宙战舰大和号2205 新的旅程 前篇 -TAKE OFF-"
+  date: "2021-10-08"
+  platform: "剧场版"
+  total_episodes: 4
+  verification: api-verified
+  verified_at: "2026-08-27"
+  scope_verification:
+    status: user-confirmed
+    approved_by: "user"
+    basis: "user-confirmed-exception: platform='剧场版', api_total=4, mapped=4"
+
+task:
+  mode: proofreading
+  source_language: "ja"
+  target_language: zh-Hans
+  scope: "4 mapped episodes"
+
+languages:
+  release:
+    primary: zh-Hans
+    secondary: null
+    filename_suffix: zh-Hans
+  references:
+    - en
+
+subtitle_sources:
+  - id: zh-Hans-candidate-baseline-01
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline-01
+    file_count: 1
+    scope: "S03E01"
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "candidate baseline declaration"
+  - id: zh-Hans-candidate-baseline-02
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline-02
+    file_count: 1
+    scope: "S03E02"
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "candidate baseline declaration"
+  - id: zh-Hans-candidate-baseline-03
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline-03
+    file_count: 1
+    scope: "S03E03"
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "candidate baseline declaration"
+  - id: zh-Hans-candidate-baseline-04
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline-04
+    file_count: 1
+    scope: "S03E04"
+    roles:
+      - candidate-baseline
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "candidate baseline declaration"
+  - id: optional-source-001
+    language: en
+    kind: external-evidence
+    path: project/sources/subtitles/en/optional-source-001
+    file_count: 1
+    scope: "S03E01"
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "explicit declaration"
+  - id: optional-source-002
+    language: en
+    kind: external-evidence
+    path: project/sources/subtitles/en/optional-source-002
+    file_count: 1
+    scope: "S03E02"
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "explicit declaration"
+  - id: optional-source-003
+    language: en
+    kind: external-evidence
+    path: project/sources/subtitles/en/optional-source-003
+    file_count: 1
+    scope: "S03E03"
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "explicit declaration"
+  - id: optional-source-004
+    language: en
+    kind: external-evidence
+    path: project/sources/subtitles/en/optional-source-004
+    file_count: 1
+    scope: "S03E04"
+    roles:
+      - timing-reference
+      - translation-reference
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "explicit declaration"
+  - id: embedded-video-001-s2
+    language: en
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E01 - Galactic War on the Verge of Breaking Out! The Yamato Fleet is Assembled! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 2
+    codec: "ass"
+    scope: "S03E01"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-001-s3
+    language: ja
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E01 - Galactic War on the Verge of Breaking Out! The Yamato Fleet is Assembled! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 3
+    codec: "hdmv_pgs_subtitle"
+    scope: "S03E01"
+    roles:
+      - forced-signs-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-002-s2
+    language: en
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E02 - Yamato, a New Departure! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 2
+    codec: "ass"
+    scope: "S03E02"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-002-s3
+    language: ja
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E02 - Yamato, a New Departure! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 3
+    codec: "hdmv_pgs_subtitle"
+    scope: "S03E02"
+    roles:
+      - forced-signs-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-003-s3
+    language: en
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E03 - The Last Day of Garmillas [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 3
+    codec: "ass"
+    scope: "S03E03"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-003-s4
+    language: ja
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E03 - The Last Day of Garmillas [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 4
+    codec: "hdmv_pgs_subtitle"
+    scope: "S03E03"
+    roles:
+      - forced-signs-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-004-s3
+    language: en
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E04 - Save Iscandar! Rebellion of the Young Heroes! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 3
+    codec: "ass"
+    scope: "S03E04"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+  - id: embedded-video-004-s4
+    language: ja
+    kind: embedded-subtitle-track
+    container: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E04 - Save Iscandar! Rebellion of the Young Heroes! [BD][1080p][AV1][OPUS].mkv"
+    stream_index: 4
+    codec: "hdmv_pgs_subtitle"
+    scope: "S03E04"
+    roles:
+      - forced-signs-reference
+    classification:
+      status: verified
+      confirmed_by: "user"
+      confirmed_at: 2026-08-27
+      evidence: "container language tag"
+video_sources:
+  target-video:
+    medium: user-provided-local-video
+    files:
+      S03E01: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E01 - Galactic War on the Verge of Breaking Out! The Yamato Fleet is Assembled! [BD][1080p][AV1][OPUS].mkv"
+      S03E02: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E02 - Yamato, a New Departure! [BD][1080p][AV1][OPUS].mkv"
+      S03E03: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E03 - The Last Day of Garmillas [BD][1080p][AV1][OPUS].mkv"
+      S03E04: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E04 - Save Iscandar! Rebellion of the Young Heroes! [BD][1080p][AV1][OPUS].mkv"
+    fingerprints:
+      S03E01:
+        size: 285037217
+        sha256_first_mib: 8ac4cc534fb1faac49d3ae181a17106dac2434087bcd5955b403c1b59120f7d5
+        duration_seconds: 1457.133
+      S03E02:
+        size: 323618711
+        sha256_first_mib: 0497e8888faa5098e8bb1208935631f70a297d5982f7b68916004d614aa7c7b8
+        duration_seconds: 1457.633
+      S03E03:
+        size: 337883529
+        sha256_first_mib: f1585bc34bce70b84a8377ddbf1819546b8b0b2b4df48a558277a3b03e2debed
+        duration_seconds: 1457.133
+      S03E04:
+        size: 262785060
+        sha256_first_mib: 3ba2e464a1626b3818422d85e5edd942a93afb7334e3bb39f9581adeaf772231
+        duration_seconds: 1457.128
+    selected_audio:
+      S03E01:
+        stream_index: 1
+        language: ja
+        codec: "opus"
+      S03E02:
+        stream_index: 1
+        language: ja
+        codec: "opus"
+      S03E03:
+        stream_index: 1
+        language: ja
+        codec: "opus"
+      S03E04:
+        stream_index: 1
+        language: ja
+        codec: "opus"
+
+workspace:
+  baseline: project/workspace/episodes
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+initialization:
+  skill_version: "1.0.0"
+  state: proofreading-ready
+  intake: probe-confirmed-and-user-approved
+  intake_approved_by: "user"
+  episode_map_approved_by: "user"
+  approved_at: "2026-08-27"
+  initialized_at: "2026-08-27"
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: structure-and-candidate-audit
+    human: "project-owner-approved; candidate-point audio/visual checks"
+    basis: "content-audit-20260827; user-approved-release-2026-08-27"
+  package:
+    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
+    generated_by: .github/scripts/build_subtitle_packages.py
+
+documentation:
+  guide: docs/project-guide.md
+  review: docs/review.md
+  ledger: docs/ledger.tsv
+
+review_evidence:
+  workspace: project/workspace/temp/review/attachments
+  persistent: false
+
+archives: {}
