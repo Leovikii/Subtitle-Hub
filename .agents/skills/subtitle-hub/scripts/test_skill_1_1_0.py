@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.1 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.1.0 toolchain."""
 
 from __future__ import annotations
 

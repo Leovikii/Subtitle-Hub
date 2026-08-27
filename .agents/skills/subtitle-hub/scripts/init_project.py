@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.1 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.1.0 proofreading project."""
 
 from __future__ import annotations
 

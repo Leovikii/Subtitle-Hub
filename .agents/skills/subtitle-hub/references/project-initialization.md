@@ -86,7 +86,7 @@ The ordinary minimum `video + Chinese baseline` permits structure, Chinese expre
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.1 intake contract
+## Skill 1.1.0 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
