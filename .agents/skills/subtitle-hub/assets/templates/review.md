@@ -1,5 +1,5 @@
 ---
-schema_version: 1
+schema_version: 2
 work_id: "{{WORK_ID}}"
 updated_at: "{{UPDATED_AT}}"
 baseline_release: null
@@ -20,6 +20,24 @@ stages:
   visual_review: not-started
   release_qc: not-started
 
+coverage:
+  evidence_tier: {{EVIDENCE_TIER}}
+  timing_authority: {{TIMING_AUTHORITY_YAML}}
+  master_sha256: {}
+  chinese_in_scope: 0
+  chinese_reviewed: 0
+  chinese_excluded: 0
+  source_in_scope: 0
+  source_resolved: 0
+  source_unresolved: 0
+  static_layout_checked: 0
+  media_candidates: 0
+  media_checked: 0
+  human_source_fidelity_review: not-required
+  human_final_playback: pending
+  unresolved_p0: 0
+  unresolved_p1: 0
+
 episodes:
 {{EPISODES_YAML}}
 ---
@@ -28,7 +46,7 @@ episodes:
 
 ## 目标与范围
 
-完成 Skill 1.1.2 媒体盘点、身份/命名确认、素材导入和可写主稿准备。
+完成 Skill 1.2.0 素材盘点、身份/命名确认、素材导入和可写主稿准备。
 
 ## 检查覆盖
 
@@ -39,10 +57,6 @@ episodes:
 ## 校对方案
 
 尚未生成字幕修改候选。{{INITIALIZATION_SUMMARY}} 后续方案须在同一张表中列出条目、范围、类别、修改前、建议修改、证据、风险、决定、状态、实际结果和验证；重译、删减、增译及对白改正逐条列出，只有同类且同规则的机械修改可以合并。
-
-## 需要用户确认
-
-无。
 
 ## 决策与实施
 

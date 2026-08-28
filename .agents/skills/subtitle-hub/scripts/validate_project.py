@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -96,7 +97,7 @@ def video_file_map(metadata: str) -> dict[str, str]:
     }
 
 
-def validate_working_masters(project_root: Path, videos: dict[str, str], errors: list[str], warnings: list[str]) -> None:
+def validate_working_masters(project_root: Path, videos: dict[str, str], errors: list[str], warnings: list[str], strict_12: bool) -> None:
     for episode in sorted(videos):
         master = project_root / "project" / "workspace" / "episodes" / episode / "master.ass"
         if not master.is_file():
@@ -111,10 +112,19 @@ def validate_working_masters(project_root: Path, videos: dict[str, str], errors:
             errors.append(f"{master}: missing a parseable ASS/SSA Events section")
         if not re.search(r"(?m)^Dialogue:", text):
             warnings.append(f"{master}: contains no Dialogue events")
+        if strict_12:
+            for field in ("ScriptType", "WrapStyle", "ScaledBorderAndShadow", "PlayResX", "PlayResY", "YCbCr Matrix"):
+                if not re.search(rf"(?m)^{re.escape(field)}:\s*\S", text):
+                    errors.append(f"{master}: missing required Script Info field {field}")
+            fonts = set(re.findall(r"(?m)^Style:\s*[^,]+,([^,]+)", text)) | {font.strip() for font in re.findall(r"\\fn([^\\}]*)", text) if font.strip()}
+            release_fonts = sorted(fonts & {"Noto Sans CJK SC", "Noto Sans CJK JP"})
+            unsupported = sorted(fonts - {"Microsoft YaHei UI", "Yu Gothic UI"})
+            if release_fonts:
+                errors.append(f"{master}: release Noto fonts are forbidden in a working master: {', '.join(release_fonts)}")
+            if unsupported:
+                errors.append(f"{master}: unsupported working fonts: {', '.join(unsupported)}")
     local_paths = project_root / "project" / "local.paths.yaml"
-    if not local_paths.is_file():
-        errors.append(f"{local_paths}: local video mapping is required for proofreading readiness")
-    else:
+    if local_paths.is_file():
         mapping = local_paths.read_text(encoding="utf-8-sig")
         for episode, expected_basename in videos.items():
             match = re.search(rf"(?m)^  {re.escape(episode)}:\s*(.+?)\s*$", mapping)
@@ -191,11 +201,60 @@ def validate_release(project_root: Path, metadata: str, errors: list[str], warni
             errors.append(f"{project_root}: current and previous versions are identical")
 
 
+def validate_review_coverage(project_root: Path, review_path: Path, review: str, metadata: str, errors: list[str]) -> None:
+    coverage = section(review, "coverage")
+    tier = scalar(coverage, "evidence_tier", 2)
+    if tier not in {"A", "B", "C", "D"}:
+        errors.append(f"{review_path}: release coverage requires evidence_tier A-D")
+    values: dict[str, int] = {}
+    for field in (
+        "chinese_in_scope", "chinese_reviewed", "chinese_excluded", "source_in_scope",
+        "source_resolved", "source_unresolved", "static_layout_checked", "media_candidates",
+        "media_checked", "unresolved_p0", "unresolved_p1",
+    ):
+        raw = scalar(coverage, field, 2)
+        if raw is None or not raw.isdigit():
+            errors.append(f"{review_path}: coverage.{field} must be a non-negative integer")
+            values[field] = -1
+        else:
+            values[field] = int(raw)
+    if values.get("chinese_in_scope", 0) <= 0:
+        errors.append(f"{review_path}: release coverage has no Chinese events in scope")
+    if values.get("chinese_in_scope") != values.get("chinese_reviewed", 0) + values.get("chinese_excluded", 0):
+        errors.append(f"{review_path}: Chinese coverage denominator is incomplete")
+    if values.get("static_layout_checked", -1) < values.get("chinese_in_scope", 0):
+        errors.append(f"{review_path}: static layout coverage is incomplete")
+    if values.get("unresolved_p0") != 0 or values.get("unresolved_p1") != 0:
+        errors.append(f"{review_path}: unresolved P0/P1 blocks release")
+    if tier in {"A", "B"}:
+        if values.get("source_in_scope", 0) <= 0 or values.get("source_in_scope") != values.get("source_resolved", 0) + values.get("source_unresolved", 0):
+            errors.append(f"{review_path}: A/B source-direction coverage is incomplete")
+        if values.get("source_unresolved") != 0:
+            errors.append(f"{review_path}: unresolved source units block A/B fidelity completion")
+    elif tier in {"C", "D"} and scalar(coverage, "human_source_fidelity_review", 2) != "verified":
+        errors.append(f"{review_path}: C/D release requires verified human full-source-fidelity review")
+    if scalar(coverage, "human_final_playback", 2) != "verified":
+        errors.append(f"{review_path}: release requires verified human final playback")
+    fingerprints = section(coverage, "master_sha256", 2)
+    if not fingerprints.strip():
+        errors.append(f"{review_path}: release coverage requires master_sha256 fingerprints")
+    else:
+        for episode in video_file_map(metadata):
+            match = re.search(rf"(?m)^    {re.escape(episode)}:\s*([0-9a-f]{{64}})\s*$", fingerprints)
+            master = project_root / "project/workspace/episodes" / episode / "master.ass"
+            if not match:
+                errors.append(f"{review_path}: coverage lacks a valid SHA-256 for {episode}")
+            elif not master.is_file():
+                errors.append(f"{master}: release coverage master is missing")
+            elif hashlib.sha256(master.read_bytes()).hexdigest() != match.group(1):
+                errors.append(f"{review_path}: coverage for {episode} is stale after master change")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("project", type=Path, help="Work root containing project.yaml")
     parser.add_argument("--release", action="store_true", help="Also require and inspect release artifacts")
-    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and local target-video mappings")
+    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and validate optional local target-video mappings")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable output")
     args = parser.parse_args()
     root = args.project.resolve()
@@ -207,8 +266,9 @@ def main() -> int:
     except OSError as error:
         parser.error(str(error))
 
-    if scalar(metadata, "schema_version") != "7":
-        errors.append(f"{metadata_path}: schema_version must be 7")
+    project_schema = scalar(metadata, "schema_version")
+    if project_schema not in {"7", "8"}:
+        errors.append(f"{metadata_path}: schema_version must be 8 (7 is accepted only as a legacy release)")
     work_id = scalar(metadata, "id")
     if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
         errors.append(f"{metadata_path}: invalid work id")
@@ -307,11 +367,16 @@ def main() -> int:
         errors.append(f"{metadata_path}: episode_count must match the target-video map")
 
     review_path = root / "review.md"
+    review = ""
     if not review_path.is_file():
         errors.append(f"{review_path}: required control file is missing")
     for obsolete in (root / "README.md", root / "docs"):
         if obsolete.exists():
             errors.append(f"{obsolete}: obsolete parallel project documentation must be removed")
+    forbidden_sidecars = ("audit.json", "coverage.json", "manifest.json", "ledger.md", "progress.md", "issues.md")
+    for name in forbidden_sidecars:
+        for path in root.rglob(name):
+            errors.append(f"{path}: project audit/control sidecar is forbidden")
     documentation = section(metadata, "documentation")
     if scalar(documentation, "review", 2) != "review.md":
         errors.append(f"{metadata_path}: documentation.review must be review.md")
@@ -322,11 +387,15 @@ def main() -> int:
         review = review_path.read_text(encoding="utf-8-sig")
         if not review.startswith("---\n") or "\n---\n" not in review[4:]:
             errors.append(f"{review_path}: YAML front matter is required")
-        if scalar(review, "schema_version") != "1":
-            errors.append(f"{review_path}: schema_version must be 1")
+        review_schema = scalar(review, "schema_version")
+        expected_review = "2" if project_schema == "8" else "1"
+        if review_schema != expected_review:
+            errors.append(f"{review_path}: schema_version must be {expected_review} for project schema {project_schema}")
+        if project_schema == "8" and not section(review, "coverage"):
+            errors.append(f"{review_path}: schema 2 requires a coverage block")
         if work_id and scalar(review, "work_id") != work_id:
             errors.append(f"{review_path}: work_id does not match project.yaml")
-        for heading in ("# 当前校对轮次", "## 检查覆盖", "## 需要用户确认", "## 决策与实施", "## 验证与剩余风险"):
+        for heading in ("# 当前校对轮次", "## 检查覆盖", "## 决策与实施", "## 验证与剩余风险"):
             if heading not in review:
                 errors.append(f"{review_path}: required section is missing: {heading}")
         if "## 校对方案" not in review and "## 候选修改摘要" not in review:
@@ -342,11 +411,13 @@ def main() -> int:
     secondary_language = scalar(section(section(metadata, "languages"), "release", 2), "secondary", 4)
     if (profile == "zh-mono") != (secondary_language in {None, "null"}):
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
+    if project_schema == "8" and section(section(metadata, "release"), "review_coverage", 2):
+        errors.append(f"{metadata_path}: release.review_coverage is obsolete; review.md coverage is authoritative")
 
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version not in {"1.0.0", "1.1.0", "1.1.1", "1.1.2"}:
+    if initialization_version not in {"1.0.0", "1.1.0", "1.1.1", "1.1.2", "1.2.0"}:
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.0.0, 1.1.0, 1.1.1, or 1.1.2"
+            f"{metadata_path}: initialization.skill_version is unsupported"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
@@ -357,10 +428,12 @@ def main() -> int:
     if args.ready_for_proofreading:
         if initialization_state not in {"proofreading-ready", "released-existing"}:
             errors.append(f"{metadata_path}: initialization state is not proofreading-ready")
-        validate_working_masters(root, videos, errors, warnings)
+        validate_working_masters(root, videos, errors, warnings, project_schema == "8")
 
     if args.release:
         validate_release(root, metadata, errors, warnings)
+        if project_schema == "8" and review:
+            validate_review_coverage(root, review_path, review, metadata, errors)
     result = {"project": str(root), "errors": errors, "warnings": warnings, "valid": not errors}
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))

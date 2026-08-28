@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.1.2 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.2.0 proofreading project."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-SKILL_VERSION = "1.1.2"
+SKILL_VERSION = "1.2.0"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -26,9 +26,15 @@ EPISODE_PATTERNS = {
     "special": re.compile(r"SP\d{2,3}"),
     "movie": re.compile(r"MOVIE"),
 }
-EPISODE_MAP_HEADER = ["episode", "video", "subtitle", "audio_stream", "audio_language"]
+EPISODE_MAP_HEADER = ["episode", "video", "target_basename", "subtitle", "audio_stream", "audio_language", "timing_authority"]
 TEXT_BASELINES = {".ass", ".ssa", ".srt", ".vtt"}
 SAFE_COMPONENT_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+SC_WORK_FONT = "Microsoft YaHei UI"
+JP_WORK_FONT = "Yu Gothic UI"
+RELEASE_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+JAPANESE_KANA = re.compile(r"[\u3040-\u30ff]")
+JAPANESE_STYLE = re.compile(r"(?:日文|日本|日语|日語|原文|原語|(?:^|[-_ ])(?:ja|jp|jpn)(?:$|[-_ ]))", re.IGNORECASE)
+INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
 
 
 def quote(value: object) -> str:
@@ -102,12 +108,10 @@ def load_snapshot(path: Path, expected_id: str) -> dict[str, object]:
 
 def load_intake(path: Path) -> dict[str, object]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    if data.get("schema_version") != 2 or data.get("skill_version") != SKILL_VERSION:
-        raise ValueError(f"intake must use schema_version 2 and skill_version {SKILL_VERSION}")
-    if not data.get("target_videos") or not data.get("external_source_groups"):
-        raise ValueError("intake lacks target videos or source groups")
-    if data.get("readiness", {}).get("timing") != "ready":
-        raise ValueError("intake timing readiness is not ready; resolve probing/audio questions before initialization")
+    if data.get("schema_version") != 3 or data.get("skill_version") != SKILL_VERSION:
+        raise ValueError(f"intake must use schema_version 3 and skill_version {SKILL_VERSION}")
+    if not data.get("external_source_groups"):
+        raise ValueError("intake lacks subtitle source groups")
     if data.get("blocking_questions"):
         raise ValueError(f"intake still has blocking questions: {data['blocking_questions']}")
     return data
@@ -146,42 +150,53 @@ def load_episode_map(path: Path, intake: dict[str, object], work_type: str, sour
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle, delimiter="\t")
         if reader.fieldnames != EPISODE_MAP_HEADER:
-            raise ValueError("approved episode map header must be: episode<TAB>video<TAB>subtitle<TAB>audio_stream<TAB>audio_language")
+            raise ValueError("approved episode map must use the Skill 1.2.0 seven-column header")
         for raw in reader:
             episode = raw["episode"].strip()
             if not valid_episode(episode, work_type):
                 raise ValueError(f"unsafe or invalid {work_type} episode ID: {episode!r}")
             if episode in seen_episodes:
                 raise ValueError(f"duplicate episode ID: {episode}")
-            video_path = str(Path(raw["video"]).expanduser().resolve())
+            raw_video = raw["video"].strip()
+            video_path = str(Path(raw_video).expanduser().resolve()) if raw_video else ""
             subtitle_path = str(Path(raw["subtitle"]).expanduser().resolve())
-            if video_path not in videos_by_path:
+            if video_path and video_path not in videos_by_path:
                 raise ValueError(f"episode map video is absent from intake: {video_path}")
             if subtitle_path not in baseline_files:
                 raise ValueError(f"episode map baseline is absent from intake: {subtitle_path}")
-            video_file = Path(video_path)
+            video_file = Path(video_path) if video_path else None
             subtitle_file = Path(subtitle_path)
-            if not video_file.is_file():
+            if video_file is not None and not video_file.is_file():
                 raise ValueError(f"target video is not readable: {video_file}")
             if not subtitle_file.is_file():
                 raise ValueError(f"candidate baseline is not readable: {subtitle_file}")
-            video = videos_by_path[video_path]
-            if video_file.stat().st_size != int(video["size"]) or first_mib_sha256(video_file) != video["sha256_first_mib"]:
+            video = videos_by_path[video_path] if video_path else None
+            if video_file is not None and (video_file.stat().st_size != int(video["size"]) or first_mib_sha256(video_file) != video["sha256_first_mib"]):
                 raise ValueError(f"target video changed after intake: {video_file}")
             baseline = baseline_files[subtitle_path]
             if file_sha256(subtitle_file) != baseline["sha256"]:
                 raise ValueError(f"candidate baseline changed after intake: {subtitle_file}")
             validate_baseline_source(subtitle_file)
-            if not raw["audio_stream"].isdigit():
-                raise ValueError(f"audio_stream must be an integer for {episode}")
-            audio_index = int(raw["audio_stream"])
+            if video and not raw["audio_stream"].isdigit():
+                raise ValueError(f"audio_stream must be an integer for {episode} when video is present")
+            if not video and raw["audio_stream"].strip():
+                raise ValueError(f"audio_stream must be empty for text-only episode {episode}")
+            audio_index = int(raw["audio_stream"]) if video else None
             audio_language = raw["audio_language"].strip()
-            if not LANGUAGE_RE.fullmatch(audio_language) or audio_language.split("-", 1)[0] != source_language.split("-", 1)[0]:
+            if video and (not LANGUAGE_RE.fullmatch(audio_language) or audio_language.split("-", 1)[0] != source_language.split("-", 1)[0]):
                 raise ValueError(f"audio_language {audio_language!r} does not match source language {source_language!r}")
-            streams = [stream for stream in video.get("streams", []) if stream.get("type") == "audio" and stream.get("index") == audio_index]
-            if len(streams) != 1:
+            if not video and audio_language:
+                raise ValueError(f"audio_language must be empty for text-only episode {episode}")
+            streams = [stream for stream in video.get("streams", []) if stream.get("type") == "audio" and stream.get("index") == audio_index] if video else []
+            if video and len(streams) != 1:
                 raise ValueError(f"selected audio stream {audio_index} is not present in {video['basename']}")
-            output_name = f"{Path(video['basename']).stem}.zh-Hans.ass"
+            target_basename = raw["target_basename"].strip() or (video["basename"] if video else "")
+            if not target_basename or Path(target_basename).name != target_basename:
+                raise ValueError(f"safe target_basename is required for {episode}")
+            timing_authority = raw["timing_authority"].strip()
+            if not timing_authority:
+                raise ValueError(f"timing_authority is required for {episode}")
+            output_name = f"{Path(target_basename).stem}.zh-Hans.ass"
             folded = output_name.casefold()
             if folded in seen_outputs:
                 raise ValueError(f"target video stems produce a duplicate release filename: {output_name}")
@@ -194,7 +209,9 @@ def load_episode_map(path: Path, intake: dict[str, object], work_type: str, sour
                 "subtitle_path": subtitle_path,
                 "audio_stream": audio_index,
                 "audio_language": audio_language,
-                "audio_codec": streams[0].get("codec"),
+                "audio_codec": streams[0].get("codec") if streams else None,
+                "target_basename": target_basename,
+                "timing_authority": timing_authority,
                 "output_name": output_name,
             })
     if not rows:
@@ -295,18 +312,81 @@ def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]]) -> 
         "PlayResX: 1920", "PlayResY: 1080", "YCbCr Matrix: TV.709", "",
         "[V4+ Styles]",
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-        "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
+        f"Style: CN-Main,{SC_WORK_FONT},62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
         "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
     lines.extend(f"Dialogue: 0,{start},{end},CN-Main,,0,0,0,,{text}" for start, end, text in cues)
     destination.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def normalize_ass_master(text: str) -> str:
+    text = text.replace("\r\n", "\n").replace("\r", "\n").lstrip("\ufeff")
+    if "[V4+ Styles]\n" not in text or "[Events]\n" not in text:
+        raise ValueError("ASS working master requires V4+ Styles and Events sections")
+    defaults = {
+        "ScriptType": "v4.00+", "WrapStyle": "0", "ScaledBorderAndShadow": "yes",
+        "PlayResX": "1920", "PlayResY": "1080", "YCbCr Matrix": "TV.709",
+    }
+    if not text.startswith("[Script Info]\n"):
+        text = "[Script Info]\n" + "\n".join(f"{key}: {value}" for key, value in defaults.items()) + "\n\n" + text
+    else:
+        next_section = re.search(r"(?m)^\[[^\n]+\]$", text[len("[Script Info]\n"):])
+        if not next_section:
+            raise ValueError("ASS Script Info has no following section")
+        end = len("[Script Info]\n") + next_section.start()
+        head, tail = text[:end], text[end:]
+        existing = {m.group(1) for m in re.finditer(r"(?m)^([^;\s][^:]*):", head)}
+        additions = "".join(f"{key}: {value}\n" for key, value in defaults.items() if key not in existing)
+        text = head.rstrip("\n") + "\n" + additions + "\n" + tail.lstrip("\n")
+
+    events_start = text.index("[Events]\n")
+    japanese_styles: set[str] = set()
+    for line in text[events_start:].splitlines():
+        if not line.startswith(("Dialogue:", "Comment:")):
+            continue
+        parts = line.split(",", 9)
+        if len(parts) == 10 and JAPANESE_KANA.search(re.sub(r"\{[^}]*\}", "", parts[9])):
+            japanese_styles.add(parts[3].strip() or "Default")
+
+    style_start = text.index("[V4+ Styles]\n")
+    head, styles, events = text[:style_start], text[style_start:events_start], text[events_start:]
+    targets: dict[str, str] = {}
+    style_output: list[str] = []
+    for line in styles.splitlines(keepends=True):
+        if not line.startswith("Style:"):
+            style_output.append(line)
+            continue
+        fields = line.removesuffix("\n").split(":", 1)[1].lstrip().split(",")
+        if len(fields) < 2:
+            raise ValueError("malformed ASS style definition")
+        name = fields[0]
+        target = JP_WORK_FONT if name in japanese_styles or JAPANESE_STYLE.search(name) else SC_WORK_FONT
+        targets[name] = target
+        fields[1] = target
+        style_output.append("Style: " + ",".join(fields) + ("\n" if line.endswith("\n") else ""))
+
+    event_output: list[str] = []
+    for line in events.splitlines(keepends=True):
+        if not line.startswith(("Dialogue:", "Comment:")):
+            event_output.append(line)
+            continue
+        bare = line.removesuffix("\n")
+        parts = bare.split(",", 9)
+        if len(parts) != 10:
+            raise ValueError("malformed ASS event")
+        target = targets.get(parts[3].strip() or "Default", SC_WORK_FONT)
+        parts[9] = INLINE_FONT.sub(lambda match: f"\\fn{JP_WORK_FONT if JAPANESE_KANA.search(parts[9]) else target}" if match.group(1).strip() else match.group(0), parts[9])
+        event_output.append(",".join(parts) + ("\n" if line.endswith("\n") else ""))
+    result = head + "".join(style_output) + "".join(event_output)
+    return result if result.endswith("\n") else result + "\n"
+
+
 def prepare_master(source: Path, destination: Path) -> str:
     suffix = source.suffix.lower()
     if suffix in {".ass", ".ssa"}:
-        shutil.copy2(source, destination)
-        return "byte-preserving ASS/SSA baseline copy"
+        normalized = normalize_ass_master(source.read_text(encoding="utf-8-sig"))
+        destination.write_text(normalized, encoding="utf-8", newline="\n")
+        return "content-preserving ASS working-master normalization"
     text = source.read_text(encoding="utf-8-sig")
     if suffix == ".srt":
         write_ass_from_cues(destination, parse_srt(text))
@@ -348,7 +428,7 @@ def source_block(groups: list[dict[str, object]], embedded: list[dict[str, objec
         if not track.get("language") or not track.get("roles"):
             continue
         embedded_scope = ",".join(
-            str(row["episode"]) for row in rows if row["video"].get("id") == track.get("video_id")
+            str(row["episode"]) for row in rows if row["video"] and row["video"].get("id") == track.get("video_id")
         ) or "ALL"
         lines.extend([
             f"  - id: {track['id']}", f"    language: {track['language']}", "    kind: embedded-subtitle-track",
@@ -364,12 +444,21 @@ def source_block(groups: list[dict[str, object]], embedded: list[dict[str, objec
 
 
 def video_block(rows: list[dict[str, object]]) -> str:
-    lines = ["video_sources:", "  target-video:", "    medium: user-provided-local-video", "    files:"]
+    has_video = any(row["video"] for row in rows)
+    lines = ["video_sources:", "  target-video:", f"    medium: {'user-provided-local-video' if has_video else 'not-provided'}", "    files:"]
     for row in rows:
-        lines.append(f"      {row['episode']}: {quote(row['video']['basename'])}")
+        lines.append(f"      {row['episode']}: {quote(row['target_basename'])}")
+    lines.append("    timing_authority:")
+    for row in rows:
+        lines.append(f"      {row['episode']}: {quote(row['timing_authority'])}")
+    if not has_video:
+        lines.extend(["    inventory_status: not-provided", "    fingerprints: {}", "    selected_audio: {}"])
+        return "\n".join(lines)
     lines.append("    fingerprints:")
     for row in rows:
         video = row["video"]
+        if not video:
+            continue
         lines.extend([
             f"      {row['episode']}:", f"        size: {video['size']}",
             f"        sha256_first_mib: {video['sha256_first_mib']}",
@@ -377,6 +466,8 @@ def video_block(rows: list[dict[str, object]]) -> str:
         ])
     lines.append("    selected_audio:")
     for row in rows:
+        if not row["video"]:
+            continue
         lines.extend([
             f"      {row['episode']}:", f"        stream_index: {row['audio_stream']}",
             f"        language: {row['audio_language']}", f"        codec: {quote(row.get('audio_codec'))}",
@@ -386,7 +477,7 @@ def video_block(rows: list[dict[str, object]]) -> str:
 
 def local_paths_text(rows: list[dict[str, object]]) -> str:
     lines = ["schema_version: 1", "videos:"]
-    lines.extend(f"  {row['episode']}: {quote(row['video']['path'])}" for row in rows)
+    lines.extend(f"  {row['episode']}: {quote(row['video']['path'])}" for row in rows if row["video"])
     return "\n".join(lines) + "\n"
 
 
@@ -459,8 +550,6 @@ def main() -> int:
             parser.error("new series directory name must be lowercase ASCII letters/digits/hyphens")
     elif not series_dir.is_dir():
         parser.error(f"series path is not a directory: {series_dir}")
-    elif not (series_dir / "series-guide.md").is_file():
-        parser.error(f"existing series directory lacks series-guide.md: {series_dir}")
 
     target = series_dir / f"{work_id}--{project_name}"
     staging = series_dir / f".{work_id}--{project_name}.initializing"
@@ -483,10 +572,12 @@ def main() -> int:
         "SECONDARY_STYLES_YAML": "\n      - JP-Main" if args.secondary_language else "[]",
         "SECONDARY_LANGUAGE_DISPLAY": args.secondary_language or "无（单语中文字幕）", "SCOPE": scope, "UPDATED_AT": verified_at,
         "EPISODES_YAML": "\n".join(f"  {row['episode']}: {{ status: not-started }}" for row in rows),
-        "MACHINE_COVERAGE": "ffprobe media/track inventory; source hashes; project structure and master parsing",
+        "MACHINE_COVERAGE": ("ffprobe media/track inventory; " if any(row["video"] for row in rows) else "text-only inventory; ") + "source hashes; project structure and master parsing",
         "HUMAN_COVERAGE": f"project name, identity scope, episode map and material roles approved by {args.intake_approved_by}",
         "INITIALIZATION_SUMMARY": f"Prepared {len(rows)} writable master(s) from immutable Chinese baseline sources.",
         "INTAKE_APPROVED_BY_YAML": quote(args.intake_approved_by),
+        "EVIDENCE_TIER": str(intake.get("evidence_tier") or "D"),
+        "TIMING_AUTHORITY_YAML": quote("; ".join(f"{row['episode']}={row['timing_authority']}" for row in rows)),
     }
     project_text = render(template_root / "project.yaml", values)
     project_text = project_text.replace("subtitle_sources: []", source_block(intake["external_source_groups"], intake.get("embedded_subtitle_tracks", []), rows, args.intake_approved_by, verified_at))
@@ -495,7 +586,9 @@ def main() -> int:
         "skill_version": SKILL_VERSION, "target": str(target), "work_id": work_id, "project_name": project_name,
         "project_name_approved_by": args.project_name_approved_by, "episodes": [row["episode"] for row in rows],
         "release_filenames": [row["output_name"] for row in rows],
-        "videos_recorded_by_basename_only": [row["video"]["basename"] for row in rows],
+        "videos_recorded_by_basename_only": [row["video"]["basename"] for row in rows if row["video"]],
+        "evidence_tier": intake.get("evidence_tier"),
+        "timing_authorities": {row["episode"]: row["timing_authority"] for row in rows},
         "masters_to_prepare": [{"episode": row["episode"], "source": row["subtitle_path"]} for row in rows],
         "optional_limitations": [question for question in intake.get("questions", []) if question.startswith("Optional:")],
     }
@@ -509,8 +602,6 @@ def main() -> int:
         if not series_dir.exists():
             series_dir.mkdir(parents=True, exist_ok=False)
             created_series = True
-            series_values = {"SERIES_TITLE": args.series_title}
-            (series_dir / "series-guide.md").write_text(render(template_root / "series-guide.md", series_values), encoding="utf-8")
         directories = [staging / "project" / "sources" / "subtitles"]
         directories.extend(staging / "project" / "workspace" / "episodes" / str(row["episode"]) for row in rows)
         for directory in directories:
@@ -531,8 +622,15 @@ def main() -> int:
             master = staging / "project" / "workspace" / "episodes" / str(row["episode"]) / "master.ass"
             methods[str(row["episode"])] = prepare_master(source, master)
         (staging / "project.yaml").write_text(project_text, encoding="utf-8")
-        (staging / "review.md").write_text(render(template_root / "review.md", values), encoding="utf-8")
-        (staging / "project" / "local.paths.yaml").write_text(local_paths_text(rows), encoding="utf-8")
+        review_text = render(template_root / "review.md", values)
+        fingerprints = "  master_sha256:\n" + "\n".join(
+            f"    {row['episode']}: {file_sha256(staging / 'project' / 'workspace' / 'episodes' / str(row['episode']) / 'master.ass')}"
+            for row in rows
+        )
+        review_text = review_text.replace("  master_sha256: {}", fingerprints)
+        (staging / "review.md").write_text(review_text, encoding="utf-8")
+        if any(row["video"] for row in rows):
+            (staging / "project" / "local.paths.yaml").write_text(local_paths_text(rows), encoding="utf-8")
         planned["master_preparation"] = methods
         staging.rename(target)
         promoted_target = True

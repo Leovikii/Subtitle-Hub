@@ -6,7 +6,7 @@ An active work keeps exactly `project.yaml` and root-level `review.md` as contro
 
 `project.yaml` records durable identity, scope, languages, sources/roles, video map, initialization, release configuration, ordinary-style profile, limitations, and confirmed project overrides. An override cites a stable Skill rule ID, scope, rationale/evidence, confirmer, and date; a terminology deviation also cites the series `term_id`. Do not add a second source catalog, project guide, ledger, progress file, issue file, per-round report, or project README.
 
-`review.md` combines machine-readable current state with the readable active plan and result. Keep YAML front matter with `schema_version work_id updated_at baseline_release target_release overall_status active_round stages episodes`. Git history preserves closed rounds; replace completed current-round detail when a new round begins instead of accumulating an archive.
+`review.md` combines machine-readable current state with the readable active plan and result. Schema 2 front matter keeps `schema_version work_id updated_at baseline_release target_release overall_status active_round stages episodes coverage`. Coverage records evidence tier, timing authority, master fingerprints, Chinese/source denominators, static-layout coverage, media candidates/checks, human responsibilities, and unresolved P0/P1. Git history preserves closed rounds; replace completed current-round detail when a new round begins instead of accumulating an archive.
 
 ## SH-CTRL-007 — Proposal and approval gate
 
@@ -15,6 +15,23 @@ Analyze without modifying masters. In `review.md`, use categorized tables with `
 List every retranslation, dialogue deletion/addition, meaning correction, and context-sensitive terminology change separately. Batch only deterministic same-category work such as one exact confirmed term replacement, punctuation rule, or ordinary-dialogue style mapping; state the match rule, count, episodes, exclusions, and examples. Never hide semantic edits in a batch.
 
 After approval, implement and verify the approved scope continuously through a complete release candidate. New semantic work outside scope is added as pending and deferred unless release-blocking. Documentation/tooling changes explicitly requested by the user need no second approval round. Never create a separate feedback or completion report.
+
+## SH-TRANS-008 — Full-text coverage contract
+
+Count every visible Chinese Dialogue event in the release scope, excluding only documented non-content automation/templates or exact duplicates that will not render. Record `chinese_in_scope = chinese_reviewed + chinese_excluded`; every exclusion needs a bounded rule and count. A changed master fingerprint invalidates prior coverage.
+
+For A/B evidence, also account for every source-text unit in both directions. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when the entire meaning is accounted for. Record unresolved source units explicitly; zero issue rows never substitutes for coverage counts.
+
+For C/D evidence, the Agent still reviews every Chinese event for grammar, wording, consistency, punctuation, segmentation, timing code, and static layout, but cannot mark source fidelity complete. A source-language-capable human must perform full-meaning review before that claim or release gate can pass.
+
+## SH-TRANS-009 — Executable Chinese quality standard
+
+- **Faithfulness:** no mistranslation, omission, unsupported addition, polarity/number/person/object/causality error, term drift, censorship or unjustified compression.
+- **Clarity:** grammatical, unambiguous, natural modern Simplified Chinese that can be understood in one viewing; repair typos, collocation, reference, logic, punctuation and segmentation.
+- **Voice:** preserve register, relationship, attitude, rhythm, humor and reveal order after faithfulness and clarity are secure; elegance never licenses invention.
+- **Continuity:** keep names, terms, honorifics, quantities, time references and recurring phrasing consistent across the complete scope.
+
+An auxiliary translation is a disambiguation witness only. Use it when source wording remains ambiguous, record material conflicts, and never decide by majority vote.
 
 ## SH-TRANS-001 — Review meaning before polish
 
@@ -54,4 +71,4 @@ Notes are exceptional: only for plot-relevant comprehension loss that natural tr
 
 ## SH-TRANS-007 — Series terminology
 
-Each series has one `series-guide.md` with stable `term_id`, source form, canonical Simplified Chinese, variants, scope, evidence, and status. Research only unresolved additions/conflicts. A project deviation is a confirmed `project.yaml` override citing the term, exact scope, evidence, confirmer, and date.
+When a series has cross-project terms, keep one `series-guide.md` with stable `term_id`, source form, canonical Simplified Chinese, variants, scope, evidence, and status. Do not create an empty guide. Research only unresolved additions/conflicts. A project deviation is a confirmed `project.yaml` override citing the term, exact scope, evidence, confirmer, and date.

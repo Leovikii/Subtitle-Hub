@@ -70,6 +70,20 @@ Use the mono profile when the actual release has no secondary dialogue track, re
 
 Check ASS structure/times, filenames/scope, style references, bilingual mapping, overlaps, hidden text, fonts, punctuation/spacing, terminology candidates, width/CPS/duration/gaps, source coverage, version markers, and rollback structure. Machine checks prove structure or raise candidates; they never prove translation, register, sync, obstruction, or full playback.
 
+## SH-QC-008 — Text-first evidence escalation
+
+Resolve each dimension with the cheapest sufficient evidence, then stop: subtitle text/timecodes/static geometry; user-confirmed timing authority; same-cut embedded evidence; source text and auxiliary translations; one candidate frame/minimal waveform/one-point render/concrete scene context; human final review.
+
+Do not run ASR, VAD, OCR generation, full-track extraction, full-video frame processing, scene detection or bulk rendering. Video is optional and may be used only for a flagged short/invalid duration, conflicting timing evidence, suspicious special-subtitle placement/effect, or unresolved scene meaning. `ffprobe` is allowed only when video is supplied. Never imply full listening/viewing from point checks.
+
+## SH-QC-009 — Full static layout audit
+
+Audit every rendered ASS event without video before selecting media points. Report structure-proven defects as `confirmed`, heuristic geometry/wrap findings as `risk`, and points that need media as `media-required`.
+
+Check explicit and predicted wrapping, ordinary-dialogue line count, bilingual vertical stacking, simultaneous time-and-space collisions, off-screen or fully hidden text, zero/abnormal alpha/scale/size, undefined `\rStyle`, and malformed or suspicious `\pos`, `\move`, `\clip`, `\fad`, `\fade`, and `\t`. Account for PlayRes, alignment, margins, style fields, event overrides, and intentional special positioning. A time overlap alone is not a spatial collision.
+
+Run the same audit against working masters and complete release candidates. Candidate construction must not add or alter events, timing, line breaks, positions, margins, alignment, size, scale, Layer, Effect or transformation tags; only the release transformations authorized by `SH-REL-008` may differ.
+
 Use actual media for speech, timing, early reveals, pairing, positioned/animated text, obstruction, multiple speakers, songs, and special layout. Record candidate-point coverage honestly. Keep visual evidence local; do not batch-upload screenshots, frames, contact sheets, or Base64 images. Only at explicit user request may one message show at most two compressed screenshots for one point.
 
 ## SH-QC-006 — Release gate

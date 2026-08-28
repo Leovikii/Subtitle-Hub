@@ -11,6 +11,17 @@ Durable masters are `project/workspace/episodes/<episode>/master.ass`. Initializ
 
 Do not create `archive/`, screenshot/evidence trees, `intermediate/`, or `logs/`. Prefer system temporary storage for disposable generated data. Delete obsolete temporary files after durable conclusions are in `review.md` or `project.yaml`.
 
+Intake JSON, approved episode-map TSV, raw audit details, frames, waveforms and renders stay in system temporary storage. Do not create project audit/coverage/manifest files, per-episode reports, copied shared tools, or placeholders. `project/local.paths.yaml` exists only when external local media paths must be reused; no-video projects omit it. A new series omits `series-guide.md` until the first real cross-project term is recorded.
+
+## SH-REL-008 — Four-stage ASS contract
+
+1. `project/sources/` is an immutable source snapshot and may contain arbitrary source fonts, missing fields, editor data or non-runtime content.
+2. Each workspace `master.ass` is the editable truth. It has complete Script Info/Styles/Events fields and approved non-release working fonts. It must not already use `Noto Sans CJK SC/JP`; all substantive text, timing and layout edits occur here under the review gate.
+3. A complete release candidate is derived once from masters. Only global working-font-to-Noto mapping (including inline `\fn`), canonical Header, non-rendering Comment/metadata cleanup, and unused-style pruning are allowed.
+4. Promotion rotates the checked candidate transactionally. Local work validates package plans but never writes ZIPs.
+
+The candidate validator independently reconstructs the allowed transformation from each master. It verifies header fields and retained source credits, removed Comments, referenced-style pruning, style/inline font mapping, and byte-identical rendered Events apart from inline font names. A master already using a release Noto font is a stage error, not proof of a conversion.
+
 ## SH-REL-002 — Release layout and versioning
 
 `subtitles/current/VERSION + *.ass` is published authority. After the first replacement keep one complete `previous/`; first `1.0.0` needs none. PATCH fixes the same contract, MINOR expands compatible scope/languages, and MAJOR changes an incompatible contract. Skill/tool/directory-only migration does not change subtitle version.

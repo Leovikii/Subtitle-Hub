@@ -21,9 +21,6 @@ from build_subtitle_packages import (
 
 STYLE_SECTION = "[V4+ Styles]"
 EVENTS_SECTION = "[Events]"
-LEGACY_SECONDARY_SUFFIX = re.compile(r"\.(zh-Hans)\.(ja|en)\.ass\Z")
-PRIMARY_SUFFIX = re.compile(r"\.(zh-Hans)\.ass\Z")
-EPISODE_ID = re.compile(r"S\d{2}E\d{2}")
 STYLE_RESET = re.compile(r"\\r([^\\}]*)")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
 OVERRIDE_BLOCK = re.compile(r"\{[^}]*\}")
@@ -37,6 +34,7 @@ REQUIRED_SCRIPT_INFO = (
     "YCbCr Matrix",
 )
 STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+WORKING_FONTS = {"Microsoft YaHei UI", "Yu Gothic UI"}
 SC_FONT = "Noto Sans CJK SC"
 JP_FONT = "Noto Sans CJK JP"
 JAPANESE_KANA = re.compile(r"[\u3040-\u30ff]")
@@ -364,6 +362,19 @@ def normalize_file(
     source = source_path.read_text(encoding="utf-8-sig")
     if "\r" in source:
         raise NormalizeError(f"{source_path}: expected normalized LF line endings")
+    master_fonts = set(re.findall(r"(?m)^Style:\s*[^,]+,([^,]+)", source)) | {
+        value.strip() for value in INLINE_FONT.findall(source) if value.strip()
+    }
+    release_fonts = sorted(master_fonts & STANDARD_FONTS)
+    unsupported = sorted(master_fonts - WORKING_FONTS)
+    if release_fonts:
+        raise NormalizeError(
+            f"{source_path}: working master already uses release font(s) {', '.join(release_fonts)}"
+        )
+    if unsupported:
+        raise NormalizeError(
+            f"{source_path}: working master uses unsupported font(s) {', '.join(unsupported)}"
+        )
     style_start = source.find(f"{STYLE_SECTION}\n")
     events_start = source.find(f"{EVENTS_SECTION}\n")
     if style_start < 0 or events_start <= style_start:
@@ -404,7 +415,6 @@ def normalize_file(
 
 def build_candidate(project_root: Path, version: str) -> None:
     project_root = project_root.resolve()
-    release_dir = project_root / "subtitles/current"
     workspace_episodes = project_root / "project/workspace/episodes"
     output_dir = project_root / "project/workspace/build/current-candidate"
     if output_dir.exists():
@@ -415,44 +425,27 @@ def build_candidate(project_root: Path, version: str) -> None:
     primary, secondary = project_languages(project_root)
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     project_type = yaml_scalar(metadata, "type", 0)
-    release_templates = sorted(release_dir.glob("*.ass"), key=lambda path: path.name)
-    if not release_templates:
-        raise NormalizeError(f"{release_dir}: contains no ASS files")
+    video_sources = yaml_block(metadata, "video_sources", 0)
+    target_video = yaml_block(video_sources, "target-video", 2)
+    files_block = yaml_block(target_video, "files", 4)
+    release_targets = [
+        (match.group(1), f"{Path(match.group(2).strip().strip(chr(34) + chr(39))).stem}.{primary}.ass")
+        for match in re.finditer(r"(?m)^      ([A-Za-z0-9]+):\s*(.*?)\s*$", files_block)
+    ]
+    if not release_targets:
+        raise NormalizeError(f"{project_root / 'project.yaml'}: target-video map is empty")
 
     total_removed = 0
     total_style_font_changes = 0
     total_inline_font_changes = 0
     total_source_metadata_removed = 0
     try:
-        for release_template in release_templates:
-            legacy_match = LEGACY_SECONDARY_SUFFIX.search(release_template.name)
-            primary_match = PRIMARY_SUFFIX.search(release_template.name)
-            if legacy_match:
-                if legacy_match.group(1) != primary or legacy_match.group(2) != secondary:
-                    raise NormalizeError(
-                        f"{release_template}: does not match current language metadata"
-                    )
-            elif not primary_match or primary_match.group(1) != primary:
-                raise NormalizeError(
-                    f"{release_template}: does not match current language metadata"
-                )
-            episode_match = EPISODE_ID.search(release_template.name)
-            if episode_match:
-                episode_id = episode_match.group(0)
-            elif project_type == "movie":
-                episode_id = "MOVIE"
-            else:
-                raise NormalizeError(
-                    f"{release_template}: cannot determine workspace episode ID"
-                )
+        for episode_id, output_name in release_targets:
+            if project_type == "movie" and episode_id != "MOVIE":
+                raise NormalizeError(f"{project_root}: movie target map must use MOVIE")
             source_path = workspace_episodes / episode_id / "master.ass"
             if not source_path.is_file():
                 raise NormalizeError(f"missing workspace master: {source_path}")
-            output_name = (
-                LEGACY_SECONDARY_SUFFIX.sub(f".{primary}.ass", release_template.name)
-                if legacy_match
-                else release_template.name
-            )
             removed, style_font_changes, inline_font_changes, metadata_removed = normalize_file(
                 source_path,
                 output_dir / output_name,
@@ -473,7 +466,7 @@ def build_candidate(project_root: Path, version: str) -> None:
         shutil.rmtree(output_dir)
         raise
     print(
-        f"built {output_dir} ({len(release_templates)} subtitles; "
+        f"built {output_dir} ({len(release_targets)} subtitles; "
         f"removed {total_removed} unused style definitions; "
         f"removed {total_source_metadata_removed} non-rendering comment events; "
         f"changed {total_style_font_changes} style fonts and "

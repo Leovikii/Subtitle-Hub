@@ -22,7 +22,13 @@ from build_subtitle_packages import (
 
 
 USER_AGENT = "Subtitle-Hub/1.0 (Bangumi metadata synchronization)"
-PLATFORMS = {"tv": {"TV"}, "movie": {"剧场版"}}
+PLATFORMS = {
+    "tv": {"TV", "欧美剧", "日剧", "韩剧", "国产剧"},
+    "ona": {"WEB", "网络剧"},
+    "movie": {"剧场版", "电影"},
+    "ova": {"OVA"},
+    "special": {"SP", "特别篇"},
+}
 
 
 class MetadataError(RuntimeError):
@@ -43,21 +49,23 @@ def remote_identity(project_root: Path) -> tuple[str, str]:
     payload = fetch_json(api_url)
     if payload.get("id") != int(subject_id):
         raise MetadataError(f"{api_url}: returned a different subject ID")
-    if payload.get("type") != 2:
-        raise MetadataError(f"{api_url}: subject is not an animation entry")
+    if payload.get("type") not in {2, 6}:
+        raise MetadataError(f"{api_url}: subject is not an animation or live-action entry")
 
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     project_type = yaml_scalar(metadata, "type", 0)
-    episode_count = int(yaml_scalar(metadata, "episode_count", 0))
+    identity_match = re.search(r"(?ms)^identity:\s*$.*?(?=^[^ ]|\Z)", metadata)
+    identity = identity_match.group(0) if identity_match else ""
+    identity_total = int(yaml_scalar(identity, "total_episodes", 2))
     platform = payload.get("platform")
     if project_type not in PLATFORMS or platform not in PLATFORMS[project_type]:
         raise MetadataError(
             f"{api_url}: platform {platform!r} does not match project type {project_type!r}"
         )
     remote_episodes = payload.get("total_episodes") or payload.get("eps")
-    if remote_episodes != episode_count:
+    if remote_episodes != identity_total:
         raise MetadataError(
-            f"{api_url}: episode count {remote_episodes!r} does not match {episode_count}"
+            f"{api_url}: episode count {remote_episodes!r} does not match identity.total_episodes {identity_total}"
         )
 
     title_ja = payload.get("name")

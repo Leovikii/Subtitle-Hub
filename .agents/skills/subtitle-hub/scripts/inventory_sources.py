@@ -420,8 +420,6 @@ def main() -> int:
         parser.error("--source-language must be a resolvable BCP 47 language tag")
     try:
         videos = sorted({file for raw in args.target_video for file in files_from(Path(raw), VIDEO_EXTENSIONS)})
-        if not videos:
-            raise ValueError("at least one target video is required")
         overrides_raw = [parse_track_override(spec) for spec in args.track_language]
         overrides = {(path, index): language for path, index, language in overrides_raw}
         audio_selection_raw = [parse_audio_selection(spec) for spec in args.audio_stream]
@@ -474,8 +472,22 @@ def main() -> int:
             blocking_questions.append(f"Confirm language and roles for optional source {group['declared_path']}")
 
     relationships = propose_relationships(video_items, baseline_groups, args.project_type or "tv")
+    if not video_items:
+        baseline_files = [file for group in baseline_groups for file in group["files"]]
+        relationships = [
+            {
+                "video_id": None,
+                "video": None,
+                "baseline": file["path"],
+                "episode_hint": file.get("episode_hint"),
+                "suggested_audio_stream": None,
+                "confidence": "high" if file.get("episode_hint") else "unresolved",
+                "basis": "text-only episode token" if file.get("episode_hint") else "text-only episode mapping requires confirmation",
+            }
+            for file in baseline_files
+        ]
     required_confirmations = [
-        "Approve the final episode/video/baseline/audio-stream map; resolve every low-confidence proposal there",
+        "Approve the final episode/baseline map, target basenames, timing authority, and any available video/audio mapping; resolve every low-confidence proposal there",
         "Choose and approve a short lowercase project name before any project directory is created",
     ]
     optional_requests = [
@@ -485,15 +497,19 @@ def main() -> int:
         else ""
     ]
     optional_requests = [request for request in optional_requests if request]
-    probe_ready = all(video["probe_status"] == "ok" for video in video_items)
-    audio_ready = all(video["suggested_audio_stream"] is not None for video in video_items)
+    has_video = bool(video_items)
+    probe_ready = has_video and all(video["probe_status"] == "ok" for video in video_items)
+    audio_ready = has_video and all(video["suggested_audio_stream"] is not None for video in video_items)
     source_text_ready = any(group["language"] == source_language and "source-text-reference" in group["roles"] for group in optional_groups) or any(track["language"] == source_language and "source-text-reference" in track["roles"] for track in embedded)
+    auxiliary_ready = any(group["language"] not in {None, "zh-Hans", source_language} and "translation-reference" in group["roles"] for group in optional_groups) or any(track["language"] not in {None, "zh-Hans", source_language} and "translation-reference" in track["roles"] for track in embedded)
+    evidence_tier = "A" if source_text_ready and auxiliary_ready else "B" if source_text_ready else "C" if auxiliary_ready else "D"
     report = {
-        "schema_version": 2,
-        "skill_version": "1.1.2",
+        "schema_version": 3,
+        "skill_version": "1.2.0",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,
+        "evidence_tier": evidence_tier,
         "target_videos": video_items,
         "external_source_groups": baseline_groups + optional_groups,
         "embedded_subtitle_tracks": embedded,
@@ -503,14 +519,14 @@ def main() -> int:
         "optional_requests": optional_requests,
         "readiness": {
             "structure": "ready" if baseline_groups else "blocked",
-            "language": "ready" if probe_ready and audio_ready and source_text_ready else "limited" if probe_ready and audio_ready else "blocked",
-            "timing": "ready" if probe_ready and audio_ready else "blocked",
+            "language": "ready" if source_text_ready else "limited",
+            "timing": "ready" if probe_ready and audio_ready else "limited",
             "visual": "ready" if probe_ready and args.renderer_ready and args.fonts_ready else "limited" if probe_ready else "blocked",
             "release": "blocked",
         },
         "questions": blocking_questions + required_confirmations + [f"Optional: {request}" for request in optional_requests],
         "notes": [
-            "This intake manifest is disposable and may contain local absolute paths; init_project.py folds durable facts into project.yaml and local paths into ignored project/local.paths.yaml.",
+            "This intake manifest is disposable and may contain local absolute paths; init_project.py folds durable facts into project.yaml and writes ignored project/local.paths.yaml only when local video paths exist.",
             "Proposed relationships and detected languages are not user approval. Create an approved episode map after resolving the questions.",
             "Embedded non-source-language subtitles are timing and auxiliary translation evidence, never source-text authority.",
         ],

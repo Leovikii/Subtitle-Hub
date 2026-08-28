@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import tempfile
 import unicodedata
@@ -15,7 +16,8 @@ import zipfile
 from pathlib import Path
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+TOOL_REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+REPOSITORY_ROOT = TOOL_REPOSITORY_ROOT
 WORKS_ROOT = REPOSITORY_ROOT / "works"
 PACKAGES_ROOT = REPOSITORY_ROOT / "packages"
 SEMVER = re.compile(
@@ -135,8 +137,8 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) != "7":
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7")
+    if yaml_scalar(metadata, "schema_version", 0) not in {"7", "8"}:
+        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7 or 8")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)
@@ -393,6 +395,17 @@ def validate_project(version_file: Path) -> tuple[Path, str, list[Path]]:
     current_dir = version_file.parent
     project_root = current_dir.parent.parent
     version, subtitles = validate_release_dir(current_dir, project_root)
+    validator = TOOL_REPOSITORY_ROOT / ".agents/skills/subtitle-hub/scripts/validate_project.py"
+    checked = subprocess.run(
+        [sys.executable, str(validator), str(project_root), "--release", "--json"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if checked.returncode != 0:
+        raise PackageError(
+            f"{project_root}: project/review release gate failed: {checked.stdout or checked.stderr}"
+        )
 
     previous_dir = current_dir.parent / "previous"
     if previous_dir.exists():
