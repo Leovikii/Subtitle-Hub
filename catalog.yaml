@@ -62,3 +62,15 @@ works:
     release_path: works/space-battleship-yamato/SH0005--yamato-2205-part2/subtitles/current
     package_path: "packages/bgm352905 - 宇宙战舰大和号2205 新的旅程 后篇 -STASHA- [v1.0.1].zip"
     package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/bgm352905%20-%20%E5%AE%87%E5%AE%99%E6%88%98%E8%88%B0%E5%A4%A7%E5%92%8C%E5%8F%B72205%20%E6%96%B0%E7%9A%84%E6%97%85%E7%A8%8B%20%E5%90%8E%E7%AF%87%20-STASHA-%20%5Bv1.0.1%5D.zip"
+  - id: SH0006
+    title: "百年孤独"
+    type: tv
+    episode_count: 8
+    languages: ["zh-Hans", "es"]
+    status: released
+    version: "1.0.0"
+    project_path: works/one-hundred-years-of-solitude/SH0006--one-hundred-years-of-solitude-s01
+    review_path: works/one-hundred-years-of-solitude/SH0006--one-hundred-years-of-solitude-s01/review.md
+    release_path: works/one-hundred-years-of-solitude/SH0006--one-hundred-years-of-solitude-s01/subtitles/current
+    package_path: "packages/bgm276863 - 百年孤独 [v1.0.0].zip"
+    package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/bgm276863%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%5Bv1.0.0%5D.zip"
