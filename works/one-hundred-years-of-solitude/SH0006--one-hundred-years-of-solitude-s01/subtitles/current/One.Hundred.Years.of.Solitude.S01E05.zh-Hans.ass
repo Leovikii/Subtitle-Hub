@@ -1,0 +1,955 @@
+[Script Info]
+; Subtitle-Hub-Version: 1.0.0
+; Subtitle-Hub-Languages: zh-Hans, es
+; Subtitle-Hub-Primary-Language: zh-Hans
+; Subtitle-Hub-Secondary-Language: es
+Title: bgm276863 - 百年孤独 - S01E05
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+YCbCr Matrix: None
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H0300FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,130,1
+Style: ES-Main,Noto Sans CJK SC,46,&H00FFFFFF,&H0300FFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:59.38,0:01:00.42,CN-Main,,0,0,0,,妈妈！
+Dialogue: 0,0:00:59.38,0:01:00.42,ES-Main,,0,0,0,,¡Mamá!
+Dialogue: 10,0:01:04.92,0:01:05.67,CN-Main,,0,0,0,,让我看看
+Dialogue: 0,0:01:04.92,0:01:05.67,ES-Main,,0,0,0,,¿Qué pasó? A ver.
+Dialogue: 10,0:01:06.46,0:01:08.46,CN-Main,,0,0,0,,妈妈 我要死了吗？
+Dialogue: 0,0:01:06.46,0:01:08.46,ES-Main,,0,0,0,,Mamá, ¿me voy a morir?
+Dialogue: 10,0:01:09.54,0:01:11.50,CN-Main,,0,0,0,,恰恰相反 蕾梅黛丝
+Dialogue: 0,0:01:09.54,0:01:11.50,ES-Main,,0,0,0,,Todo lo contrario, Remedios.
+Dialogue: 10,0:01:13.04,0:01:15.96,CN-Main,,0,0,0,,《百年孤独》
+Dialogue: 10,0:01:53.21,0:01:55.17,CN-Main,,0,0,0,,虽然颇费了一番心力
+Dialogue: 10,0:01:55.83,0:01:57.50,CN-Main,,0,0,0,,但到了择定的婚礼那日
+Dialogue: 0,0:01:55.83,0:01:57.50,ES-Main,,0,0,0,,pero en la fecha prevista,
+Dialogue: 10,0:01:58.17,0:02:00.58,CN-Main,,0,0,0,,蕾梅黛丝已然如所有姐姐一般
+Dialogue: 0,0:01:58.17,0:02:00.58,ES-Main,,0,0,0,,Remedios era tan diestra en las cosas del mundo
+Dialogue: 10,0:02:00.79,0:02:02.71,CN-Main,,0,0,0,,通晓人情世故
+Dialogue: 0,0:02:00.79,0:02:02.71,ES-Main,,0,0,0,,como cualquiera de sus hermanas.
+Dialogue: 10,0:02:11.83,0:02:13.46,CN-Main,,0,0,0,,另一方面 奥雷里亚诺
+Dialogue: 10,0:02:14.12,0:02:15.83,CN-Main,,0,0,0,,正穿着几年以后
+Dialogue: 0,0:02:14.12,0:02:15.83,ES-Main,,0,0,0,,vestido con los mismos botines
+Dialogue: 10,0:02:16.00,0:02:18.21,CN-Main,,0,0,0,,在面临行刑队时
+Dialogue: 0,0:02:16.00,0:02:18.21,ES-Main,,0,0,0,,que había de llevar pocos años después frente al pelotón de fusilamiento,
+Dialogue: 10,0:02:18.29,0:02:19.88,CN-Main,,0,0,0,,穿的同一双靴子
+Dialogue: 10,0:02:20.83,0:02:22.46,CN-Main,,0,0,0,,紧张得说不出话来
+Dialogue: 0,0:02:20.83,0:02:22.46,ES-Main,,0,0,0,,tenía una bola en la garganta.
+Dialogue: 10,0:02:23.50,0:02:24.88,CN-Main,,0,0,0,,你还是一如既往地帅气
+Dialogue: 0,0:02:23.50,0:02:24.88,ES-Main,,0,0,0,,Estás más bello que nunca.
+Dialogue: 10,0:02:28.50,0:02:29.38,CN-Main,,0,0,0,,丽贝卡在哪里？
+Dialogue: 0,0:02:28.50,0:02:29.38,ES-Main,,0,0,0,,¿Y Rebeca?
+Dialogue: 10,0:02:35.12,0:02:35.96,CN-Main,,0,0,0,,谢谢
+Dialogue: 0,0:02:35.12,0:02:35.96,ES-Main,,0,0,0,,Gracias.
+Dialogue: 10,0:02:49.29,0:02:51.08,CN-Main,,0,0,0,,按照乌苏拉原本的安排
+Dialogue: 10,0:02:51.62,0:02:53.83,CN-Main,,0,0,0,,今天也是丽贝卡的成婚之日…
+Dialogue: 0,0:02:51.62,0:02:53.83,ES-Main,,0,0,0,,Rebeca se casaría en la misma fecha.
+Dialogue: 10,0:02:54.00,0:02:56.58,CN-Main,,0,0,0,,丽贝卡小姐 有人来看你
+Dialogue: 0,0:02:54.00,0:02:56.58,ES-Main,,0,0,0,,Niña Rebeca, la buscan.
+Dialogue: 10,0:02:56.83,0:02:58.38,CN-Main,,0,0,0,,…但就在前一晚
+Dialogue: 10,0:02:58.88,0:03:04.46,CN-Main,,0,0,0,,皮耶特·克雷斯皮收到一封信 信中说他的母亲朱莉娅生命垂危
+Dialogue: 0,0:02:58.88,0:03:04.46,ES-Main,,0,0,0,,Pietro Crespi recibió una carta anunciando la muerte inminente de Giulia, su madre,
+Dialogue: 10,0:03:05.17,0:03:07.42,CN-Main,,0,0,0,,于是他即刻动身去了首都
+Dialogue: 0,0:03:05.17,0:03:07.42,ES-Main,,0,0,0,,y partió a la capital de inmediato.
+Dialogue: 10,0:03:15.38,0:03:16.46,CN-Main,,0,0,0,,丽贝卡
+Dialogue: 0,0:03:15.38,0:03:16.46,ES-Main,,0,0,0,,Rebeca.
+Dialogue: 10,0:03:17.67,0:03:21.08,CN-Main,,0,0,0,,你比皮耶特在信中描述的还要美丽
+Dialogue: 0,0:03:17.67,0:03:21.08,ES-Main,,0,0,0,,Ni siquiera las cartas de Pietro te hacían tan hermosa.
+Dialogue: 10,0:03:21.88,0:03:23.00,CN-Main,,0,0,0,,朱莉娅？
+Dialogue: 0,0:03:21.88,0:03:23.00,ES-Main,,0,0,0,,¿Giulia?
+Dialogue: 10,0:03:27.12,0:03:28.12,CN-Main,,0,0,0,,彼得罗在哪儿？
+Dialogue: 0,0:03:27.12,0:03:28.12,ES-Main,,0,0,0,,¿Dónde está Pietro?
+Dialogue: 10,0:03:28.62,0:03:30.88,CN-Main,,0,0,0,,我想在婚礼开始前见一见他
+Dialogue: 0,0:03:28.62,0:03:30.88,ES-Main,,0,0,0,,Quiero verlo antes de la ceremonia.
+Dialogue: 10,0:03:32.08,0:03:34.79,CN-Main,,0,0,0,,你不会就穿这身去参加婚礼吧？
+Dialogue: 0,0:03:32.08,0:03:34.79,ES-Main,,0,0,0,,Y no irás así vestida a la boda, ¿verdad?
+Dialogue: 10,0:03:47.29,0:03:48.17,CN-Main,,0,0,0,,看这里
+Dialogue: 0,0:03:47.29,0:03:48.17,ES-Main,,0,0,0,,Aquí.
+Dialogue: 10,0:03:50.88,0:03:56.38,CN-Main,,0,0,0,,无论在何处 人都不应压抑地生活
+Dialogue: 0,0:03:50.88,0:03:56.38,ES-Main,,0,0,0,,Nunca debes someter a la vida en todas partes.
+Dialogue: 10,0:03:59.58,0:04:00.88,CN-Main,,0,0,0,,生活
+Dialogue: 0,0:03:59.58,0:04:00.88,ES-Main,,0,0,0,,Vida. - Mmm…
+Dialogue: 10,0:04:07.38,0:04:09.08,CN-Main,,0,0,0,,今天不行 何塞·阿尔卡蒂奥
+Dialogue: 0,0:04:07.38,0:04:09.08,ES-Main,,0,0,0,,Hoy no, José Arcadio.
+Dialogue: 10,0:04:10.04,0:04:11.67,CN-Main,,0,0,0,,今天别胡闹
+Dialogue: 0,0:04:10.04,0:04:11.67,ES-Main,,0,0,0,,Hoy no, ¿mmm?
+Dialogue: 10,0:04:41.42,0:04:43.04,CN-Main,,0,0,0,,婚礼是最简单的部分
+Dialogue: 0,0:04:41.42,0:04:43.04,ES-Main,,0,0,0,,Lo de menos es la boda.
+Dialogue: 10,0:04:43.71,0:04:45.29,CN-Main,,0,0,0,,放轻松
+Dialogue: 0,0:04:43.71,0:04:45.29,ES-Main,,0,0,0,,Ya. Tranquilo.
+Dialogue: 10,0:05:44.17,0:05:46.62,CN-Main,,0,0,0,,奥雷里亚诺 拿着戒指 重复我说的话
+Dialogue: 0,0:05:44.17,0:05:46.62,ES-Main,,0,0,0,,Aureliano, toma el anillo. Repite conmigo.
+Dialogue: 10,0:05:47.62,0:05:49.12,CN-Main,,0,0,0,,我 奥…
+Dialogue: 0,0:05:47.62,0:05:49.12,ES-Main,,0,0,0,,Yo, Au…
+Dialogue: 10,0:06:32.46,0:06:33.83,CN-Main,,0,0,0,,从那天起
+Dialogue: 10,0:06:34.96,0:06:38.00,CN-Main,,0,0,0,,蕾梅黛丝便已展现出
+Dialogue: 0,0:06:34.96,0:06:38.00,ES-Main,,0,0,0,,se reveló la gracia natural y el reposado dominio
+Dialogue: 10,0:06:38.08,0:06:40.96,CN-Main,,0,0,0,,面对逆境时永远镇定自若的从容和优雅
+Dialogue: 0,0:06:38.08,0:06:40.96,ES-Main,,0,0,0,,que siempre había de tener Remedios ante la adversidad.
+Dialogue: 10,0:06:41.62,0:06:44.42,CN-Main,,0,0,0,,我 奥雷里亚诺·布恩迪亚 愿娶你…
+Dialogue: 0,0:06:41.62,0:06:44.42,ES-Main,,0,0,0,,Yo, Aureliano Buendía, te quiero a ti…
+Dialogue: 10,0:06:45.38,0:06:47.38,CN-Main,,0,0,0,,我 奥雷里亚诺·布恩迪亚 愿娶你…
+Dialogue: 0,0:06:45.38,0:06:47.38,ES-Main,,0,0,0,,Yo, Aureliano Buendía, te quiero a ti…
+Dialogue: 10,0:06:47.67,0:06:49.58,CN-Main,,0,0,0,,…蕾梅黛丝·摩斯科特为妻
+Dialogue: 0,0:06:47.67,0:06:49.58,ES-Main,,0,0,0,,…Remedios Moscote, como mi esposa.
+Dialogue: 10,0:06:49.83,0:06:51.58,CN-Main,,0,0,0,,…蕾梅黛丝·摩斯科特为妻
+Dialogue: 0,0:06:49.83,0:06:51.58,ES-Main,,0,0,0,,…Remedios Moscote, como mi esposa.
+Dialogue: 10,0:06:51.67,0:06:53.21,CN-Main,,0,0,0,,我发誓对你忠诚不渝
+Dialogue: 0,0:06:51.67,0:06:53.21,ES-Main,,0,0,0,,Y me entrego a ti…
+Dialogue: 10,0:06:53.46,0:06:54.46,CN-Main,,0,0,0,,我发誓对你忠诚不渝
+Dialogue: 0,0:06:53.46,0:06:54.46,ES-Main,,0,0,0,,Y me entrego a ti…
+Dialogue: 10,0:06:55.00,0:06:56.67,CN-Main,,0,0,0,,直至死亡将我们分开
+Dialogue: 0,0:06:55.00,0:06:56.67,ES-Main,,0,0,0,,…hasta que la muerte nos separe.
+Dialogue: 10,0:06:56.92,0:06:58.50,CN-Main,,0,0,0,,直至死亡将我们分开
+Dialogue: 0,0:06:56.92,0:06:58.50,ES-Main,,0,0,0,,…hasta que la muerte nos separe.
+Dialogue: 10,0:07:02.17,0:07:07.08,CN-Main,,0,0,0,,我 蕾梅黛丝·摩斯科特 愿接受你奥雷里亚诺·布恩迪亚作为我的丈夫
+Dialogue: 0,0:07:02.17,0:07:07.08,ES-Main,,0,0,0,,Yo, Remedios Moscote, te quiero a ti, Aureliano Buendía, como mi esposo.
+Dialogue: 10,0:07:08.04,0:07:13.17,CN-Main,,0,0,0,,无论疾病还是健康我发誓对你忠诚不渝
+Dialogue: 0,0:07:08.04,0:07:13.17,ES-Main,,0,0,0,,Me entrego a ti. Prometo serte fiel en la salud y en la enfermedad,
+Dialogue: 10,0:07:13.67,0:07:15.25,CN-Main,,0,0,0,,直至死亡将我们分开
+Dialogue: 0,0:07:13.67,0:07:15.25,ES-Main,,0,0,0,,hasta que la muerte nos separe.
+Dialogue: 10,0:07:17.38,0:07:20.67,CN-Main,,0,0,0,,-你做了什么？-愿你们的结合为大家做个表率
+Dialogue: 0,0:07:17.38,0:07:20.67,ES-Main,,0,0,0,,¿Qué hiciste? Que esta unión sea un ejemplo para todos. - Shh…
+Dialogue: 10,0:07:21.29,0:07:24.33,CN-Main,,0,0,0,,使一切沿着正确的道路进行下去
+Dialogue: 0,0:07:21.29,0:07:24.33,ES-Main,,0,0,0,,Para que se mantengan del lado que deben ser las cosas,
+Dialogue: 10,0:07:25.58,0:07:29.00,CN-Main,,0,0,0,,正如阿波利纳·摩斯科特先生把我们带到了马孔多
+Dialogue: 0,0:07:25.58,0:07:29.00,ES-Main,,0,0,0,,tal y como don Apolinar Moscote nos trajo aquí a Macondo.
+Dialogue: 10,0:07:30.62,0:07:33.17,CN-Main,,0,0,0,,我现在宣布你们结为夫妻
+Dialogue: 0,0:07:30.62,0:07:33.17,ES-Main,,0,0,0,,Ahora los declaro marido y mujer.
+Dialogue: 10,0:07:44.21,0:07:46.54,CN-Main,,0,0,0,,-这场婚礼他们办得很尽心-是啊
+Dialogue: 0,0:07:44.21,0:07:46.54,ES-Main,,0,0,0,,Aventó la casa por la ventana.
+Dialogue: 10,0:07:47.08,0:07:50.83,CN-Main,,0,0,0,,那边是马尔克和维斯巴家的人
+Dialogue: 0,0:07:47.08,0:07:50.83,ES-Main,,0,0,0,,Y por aquí los Márquez y los Visbales.
+Dialogue: 10,0:07:53.67,0:07:54.88,CN-Main,,0,0,0,,晚上好
+Dialogue: 0,0:07:53.67,0:07:54.88,ES-Main,,0,0,0,,Buenas noches.
+Dialogue: 10,0:07:56.17,0:07:58.21,CN-Main,,0,0,0,,听说你们是小镇的开创者之一
+Dialogue: 0,0:07:56.17,0:07:58.21,ES-Main,,0,0,0,,Son algunos de los fundadores, tengo entendido.
+Dialogue: 10,0:07:58.42,0:08:00.71,CN-Main,,0,0,0,,没错 我是盖里奈多·马尔克
+Dialogue: 0,0:07:58.42,0:08:00.71,ES-Main,,0,0,0,,Así es.
+Dialogue: 10,0:08:00.79,0:08:01.71,CN-Main,,0,0,0,,幸会
+Dialogue: 0,0:08:00.79,0:08:01.71,ES-Main,,0,0,0,,Gerineldo Márquez. - Encantado.
+Dialogue: 10,0:08:01.92,0:08:05.12,CN-Main,,0,0,0,,尼卡诺·雷纳神父放下在圣玛尔塔传福音的工作
+Dialogue: 0,0:08:01.92,0:08:05.12,ES-Main,,0,0,0,,Bueno, el padre Nicanor Reyna nos ha hecho el honor
+Dialogue: 10,0:08:05.21,0:08:09.12,CN-Main,,0,0,0,,专程前来马孔多我们真是三生有幸呀
+Dialogue: 0,0:08:05.21,0:08:09.12,ES-Main,,0,0,0,,de dejar sus actividades espirituales en Santa Marta para venir a acompañarnos.
+Dialogue: 10,0:08:09.21,0:08:13.33,CN-Main,,0,0,0,,摩斯科特夫人 您这么说可折煞我了相信我 这是我的荣幸
+Dialogue: 0,0:08:09.21,0:08:13.33,ES-Main,,0,0,0,,No, doña Leonor, no diga eso, que el honor es enteramente mío, créanme.
+Dialogue: 10,0:08:14.33,0:08:16.33,CN-Main,,0,0,0,,-你好-幸会 我是伊莎贝尔
+Dialogue: 0,0:08:14.33,0:08:16.33,ES-Main,,0,0,0,,¿Cómo está? - Mucho gusto. Isabel.
+Dialogue: 10,0:08:16.83,0:08:18.58,CN-Main,,0,0,0,,您认为这座小镇如何？
+Dialogue: 0,0:08:16.83,0:08:18.58,ES-Main,,0,0,0,,¿Y cómo le ha parecido el pueblo?
+Dialogue: 10,0:08:18.83,0:08:22.54,CN-Main,,0,0,0,,跟想象中一样好 当然如今有了神的临在 更是锦上添花了
+Dialogue: 0,0:08:18.83,0:08:22.54,ES-Main,,0,0,0,,Se imaginarán. Ahora que está Dios, muchísimo mejor, por supuesto.
+Dialogue: 10,0:08:23.67,0:08:25.00,CN-Main,,0,0,0,,-跟我来-谢谢
+Dialogue: 0,0:08:23.67,0:08:25.00,ES-Main,,0,0,0,,Venga, por aquí. - Vamos.
+Dialogue: 10,0:08:25.21,0:08:27.79,CN-Main,,0,0,0,,-他以为自己是谁啊？-冷静点 别激动
+Dialogue: 0,0:08:25.21,0:08:27.79,ES-Main,,0,0,0,,No. ¿Cómo se le ocurre a este? Cálmate.
+Dialogue: 10,0:08:59.17,0:09:02.33,CN-Main,,0,0,0,,乌苏拉女士您凭一己之力维持着这个家
+Dialogue: 0,0:08:59.17,0:09:02.33,ES-Main,,0,0,0,,No quiero imaginar todo lo que ha tenido que hacer, doña Úrsula,
+Dialogue: 10,0:09:02.42,0:09:04.54,CN-Main,,0,0,0,,真难以想象那是何等的操劳
+Dialogue: 0,0:09:02.42,0:09:04.54,ES-Main,,0,0,0,,para sostener esta familia sola.
+Dialogue: 10,0:09:07.83,0:09:10.25,CN-Main,,0,0,0,,幸运的是 我劳碌惯了 尼卡诺先生
+Dialogue: 0,0:09:07.83,0:09:10.25,ES-Main,,0,0,0,,Menos mal he trabajado toda la vida, don Nicanor.
+Dialogue: 10,0:09:10.33,0:09:11.17,CN-Main,,0,0,0,,是啊
+Dialogue: 0,0:09:10.33,0:09:11.17,ES-Main,,0,0,0,,Claro.
+Dialogue: 10,0:09:12.79,0:09:14.96,CN-Main,,0,0,0,,我还是会为二位祈祷的
+Dialogue: 0,0:09:12.79,0:09:14.96,ES-Main,,0,0,0,,Bueno, oraré por ambos, de todas formas.
+Dialogue: 10,0:09:15.79,0:09:17.54,CN-Main,,0,0,0,,别担心 亲爱的
+Dialogue: 0,0:09:15.79,0:09:17.54,ES-Main,,0,0,0,,No te preocupes.
+Dialogue: 10,0:09:17.71,0:09:20.54,CN-Main,,0,0,0,,彼得罗一定会回来娶你的
+Dialogue: 0,0:09:17.71,0:09:20.54,ES-Main,,0,0,0,,Estoy segura de que Pietro regresará y se casará contigo.
+Dialogue: 10,0:09:20.62,0:09:24.96,CN-Main,,0,0,0,,你们的婚姻一定会幸福美满真是天造地设的一对儿
+Dialogue: 0,0:09:20.62,0:09:24.96,ES-Main,,0,0,0,,Será un matrimonio bellísimo, estoy segura. Hacen una pareja maravillosa.
+Dialogue: 10,0:09:25.83,0:09:27.50,CN-Main,,0,0,0,,丽贝卡！你要去哪儿？
+Dialogue: 10,0:09:33.38,0:09:35.54,CN-Main,,0,0,0,,那封该死的信是你寄的吗？
+Dialogue: 0,0:09:33.38,0:09:35.54,ES-Main,,0,0,0,,Tú mandaste esa maldita carta.
+Dialogue: 10,0:09:35.75,0:09:38.00,CN-Main,,0,0,0,,丽贝卡 别闹
+Dialogue: 0,0:09:35.75,0:09:38.00,ES-Main,,0,0,0,,Rebeca… ya.
+Dialogue: 10,0:09:38.88,0:09:40.75,CN-Main,,0,0,0,,我选择了最温和的做法
+Dialogue: 0,0:09:38.88,0:09:40.75,ES-Main,,0,0,0,,Era lo menos grave que podía hacer.
+Dialogue: 10,0:09:41.79,0:09:43.33,CN-Main,,0,0,0,,另一个选项是杀死你
+Dialogue: 0,0:09:41.79,0:09:43.33,ES-Main,,0,0,0,,La otra salida era matarte.
+Dialogue: 10,0:09:45.83,0:09:48.00,CN-Main,,0,0,0,,-阿玛兰妲 能跟我跳支舞吗？-当然
+Dialogue: 0,0:09:45.83,0:09:48.00,ES-Main,,0,0,0,,Amaranta, ¿bailamos? - Claro.
+Dialogue: 10,0:09:49.96,0:09:50.79,CN-Main,,0,0,0,,谢谢
+Dialogue: 0,0:09:49.96,0:09:50.79,ES-Main,,0,0,0,,Gracias.
+Dialogue: 10,0:10:32.62,0:10:33.88,CN-Main,,0,0,0,,我妈妈在哪儿？
+Dialogue: 0,0:10:32.62,0:10:33.88,ES-Main,,0,0,0,,Mi madre, ¿dónde está?
+Dialogue: 10,0:10:36.58,0:10:37.92,CN-Main,,0,0,0,,现在办婚礼也不迟
+Dialogue: 0,0:10:36.58,0:10:37.92,ES-Main,,0,0,0,,Todavía nos podemos casar.
+Dialogue: 10,0:10:39.17,0:10:40.58,CN-Main,,0,0,0,,尼卡诺神父还没走
+Dialogue: 0,0:10:39.17,0:10:40.58,ES-Main,,0,0,0,,El padre Nicanor sigue aquí.
+Dialogue: 10,0:10:41.00,0:10:42.75,CN-Main,,0,0,0,,婚纱也还在 万事俱备了
+Dialogue: 0,0:10:41.00,0:10:42.75,ES-Main,,0,0,0,,Está el vestido, todo está montado…
+Dialogue: 10,0:10:42.96,0:10:44.21,CN-Main,,0,0,0,,她不在场 我不能结婚
+Dialogue: 0,0:10:42.96,0:10:44.21,ES-Main,,0,0,0,,Rebeca, sin ella no puedo.
+Dialogue: 10,0:10:44.96,0:10:46.58,CN-Main,,0,0,0,,她绝不会原谅我的
+Dialogue: 0,0:10:44.96,0:10:46.58,ES-Main,,0,0,0,,No me lo perdonaría jamás.
+Dialogue: 10,0:10:47.96,0:10:48.79,CN-Main,,0,0,0,,丽贝卡
+Dialogue: 0,0:10:47.96,0:10:48.79,ES-Main,,0,0,0,,Rebeca.
+Dialogue: 10,0:10:55.67,0:10:58.04,CN-Main,,0,0,0,,我们会相守一生的
+Dialogue: 0,0:10:55.67,0:10:58.04,ES-Main,,0,0,0,,Vamos a estar juntos toda la vida.
+Dialogue: 10,0:10:58.75,0:11:00.33,CN-Main,,0,0,0,,只是时间早晚的问题
+Dialogue: 0,0:10:58.75,0:11:00.33,ES-Main,,0,0,0,,Es solo cuestión de tiempo.
+Dialogue: 10,0:11:17.21,0:11:20.08,CN-Main,,0,0,0,,一个人不是在该死的时候死而是在能死的时候死
+Dialogue: 0,0:11:17.21,0:11:20.08,ES-Main,,0,0,0,,Uno no se muere cuando debe, sino cuando puede.
+Dialogue: 10,0:11:20.25,0:11:22.67,CN-Main,,0,0,0,,一个人不是在改死的时候死而是在能死的时候死
+Dialogue: 0,0:11:20.25,0:11:22.67,ES-Main,,0,0,0,,Uno no se "mueres" cuando debe, sino cuando puede.
+Dialogue: 10,0:11:24.46,0:11:26.58,CN-Main,,0,0,0,,一个人不是在该死的时候死…
+Dialogue: 0,0:11:24.46,0:11:26.58,ES-Main,,0,0,0,,Uno no se muere cuando debe…
+Dialogue: 10,0:11:26.67,0:11:28.25,CN-Main,,0,0,0,,一个人不是在该死的时候死…
+Dialogue: 0,0:11:26.67,0:11:28.25,ES-Main,,0,0,0,,Uno no se muere cuando debe…
+Dialogue: 10,0:11:28.75,0:11:30.00,CN-Main,,0,0,0,,…而是在能死的时候死
+Dialogue: 0,0:11:28.75,0:11:30.00,ES-Main,,0,0,0,,…sino cuando puede.
+Dialogue: 10,0:11:30.33,0:11:31.42,CN-Main,,0,0,0,,…而是在能死的时候死
+Dialogue: 0,0:11:30.33,0:11:31.42,ES-Main,,0,0,0,,…sino cuando puede.
+Dialogue: 10,0:11:31.83,0:11:34.79,CN-Main,,0,0,0,,蕾梅黛丝投入到了照料何塞·阿尔卡蒂奥·布恩迪亚
+Dialogue: 0,0:11:31.83,0:11:34.79,ES-Main,,0,0,0,,la dispendiosa tarea
+Dialogue: 10,0:11:34.88,0:11:37.04,CN-Main,,0,0,0,,这项繁琐的工作中 并且乐此不疲
+Dialogue: 0,0:11:34.88,0:11:37.04,ES-Main,,0,0,0,,de atender a José Arcadio Buendía.
+Dialogue: 10,0:11:37.83,0:11:41.83,CN-Main,,0,0,0,,她会把他的头发和胡子里的虱子都清理干净
+Dialogue: 0,0:11:37.83,0:11:41.83,ES-Main,,0,0,0,,Le mantenía limpio de piojos los cabellos y la barba,
+Dialogue: 10,0:11:42.67,0:11:44.54,CN-Main,,0,0,0,,在生命的最后几个月里
+Dialogue: 0,0:11:42.67,0:11:44.54,ES-Main,,0,0,0,,y en los últimos meses
+Dialogue: 10,0:11:45.54,0:11:47.38,CN-Main,,0,0,0,,她甚至能与他进行交流了
+Dialogue: 0,0:11:45.54,0:11:47.38,ES-Main,,0,0,0,,había logrado comunicarse con él.
+Dialogue: 10,0:11:47.54,0:11:49.17,CN-Main,,0,0,0,,恐惧？害怕？
+Dialogue: 10,0:11:50.54,0:11:52.33,CN-Main,,0,0,0,,你不怕他吗？
+Dialogue: 0,0:11:50.54,0:11:52.33,ES-Main,,0,0,0,,¿Acaso no le temes?
+Dialogue: 10,0:11:57.96,0:12:01.33,CN-Main,,0,0,0,,小蚂蚁 往这边走就不会被人发现了
+Dialogue: 0,0:11:57.96,0:12:01.33,ES-Main,,0,0,0,,Si pasan por acá, nadie las ve, hormiguitas.
+Dialogue: 10,0:12:01.62,0:12:03.25,CN-Main,,0,0,0,,但是走那条路的话…
+Dialogue: 0,0:12:01.62,0:12:03.25,ES-Main,,0,0,0,,Pero si se quedan de ese lado…
+Dialogue: 10,0:12:04.04,0:12:04.88,CN-Main,,0,0,0,,小心！
+Dialogue: 0,0:12:04.04,0:12:04.88,ES-Main,,0,0,0,,¡Cuidado!
+Dialogue: 10,0:12:11.75,0:12:12.79,CN-Main,,0,0,0,,明白了吧？
+Dialogue: 0,0:12:11.75,0:12:12.79,ES-Main,,0,0,0,,¿Sí ven?
+Dialogue: 10,0:12:15.25,0:12:19.21,CN-Main,,0,0,0,,她宛如一缕令人愉悦的清风吹进了布恩迪亚家的门墙
+Dialogue: 0,0:12:15.25,0:12:19.21,ES-Main,,0,0,0,,trajo un soplo de alegría a los Buendía.
+Dialogue: 10,0:12:19.42,0:12:22.50,CN-Main,,0,0,0,,蕾梅黛丝 过来 我们一起学做糖果
+Dialogue: 0,0:12:19.42,0:12:22.50,ES-Main,,0,0,0,,Remedios, ven, vamos a aprender a hacer los caramelitos.
+Dialogue: 10,0:12:32.42,0:12:34.96,CN-Main,,0,0,0,,孩子 你唱歌真好听
+Dialogue: 0,0:12:32.42,0:12:34.96,ES-Main,,0,0,0,,Ay, mija. Qué lindo cantas.
+Dialogue: 10,0:12:36.58,0:12:40.54,CN-Main,,0,0,0,,整间屋子都洋溢着她那蓬勃的朝气
+Dialogue: 0,0:12:36.58,0:12:40.54,ES-Main,,0,0,0,,desbordaba las paredes de la casa…
+Dialogue: 10,0:12:42.58,0:12:46.21,CN-Main,,0,0,0,,丽贝卡·布恩迪亚小姐我能与你共舞此曲吗？
+Dialogue: 0,0:12:42.58,0:12:46.21,ES-Main,,0,0,0,,Señorita Rebeca Buendía, ¿me concede esta pieza?
+Dialogue: 10,0:13:04.08,0:13:06.46,CN-Main,,0,0,0,,一、二、三
+Dialogue: 0,0:13:04.08,0:13:06.46,ES-Main,,0,0,0,,Un, dos, tres. Un, dos, tres.
+Dialogue: 10,0:13:06.54,0:13:07.75,CN-Main,,0,0,0,,很好
+Dialogue: 0,0:13:06.54,0:13:07.75,ES-Main,,0,0,0,,¡Muy bien! ¡Y… vuelta!
+Dialogue: 10,0:13:07.83,0:13:09.04,CN-Main,,0,0,0,,现在转圈！
+Dialogue: 10,0:13:09.71,0:13:11.29,CN-Main,,0,0,0,,非常好！
+Dialogue: 0,0:13:09.71,0:13:11.29,ES-Main,,0,0,0,,¡Muy bien!
+Dialogue: 10,0:13:14.04,0:13:15.67,CN-Main,,0,0,0,,早上好 美丽的世界
+Dialogue: 0,0:13:14.04,0:13:15.67,ES-Main,,0,0,0,,Buenos días, mundo.
+Dialogue: 10,0:13:15.96,0:13:19.29,CN-Main,,0,0,0,,她穿过回廊时就像一阵活泼健康的旋风
+Dialogue: 0,0:13:15.96,0:13:19.29,ES-Main,,0,0,0,,de buena salud por los corredores.
+Dialogue: 10,0:13:19.46,0:13:22.83,CN-Main,,0,0,0,,-早上好 何塞·阿尔卡蒂奥-早上好 蕾梅黛丝
+Dialogue: 0,0:13:19.46,0:13:22.83,ES-Main,,0,0,0,,Buen día, don José Arcadio. ¡Buen día, Remedios!
+Dialogue: 10,0:13:33.42,0:13:34.83,CN-Main,,0,0,0,,早上好 比希塔森
+Dialogue: 0,0:13:33.42,0:13:34.83,ES-Main,,0,0,0,,Buenos días, Visitación. Buenos días.
+Dialogue: 10,0:13:34.92,0:13:35.75,CN-Main,,0,0,0,,早上好
+Dialogue: 10,0:13:48.38,0:13:50.04,CN-Main,,0,0,0,,早上好 乌苏拉女士
+Dialogue: 0,0:13:48.38,0:13:50.04,ES-Main,,0,0,0,,Buenos días, doña Úrsula.
+Dialogue: 10,0:13:51.21,0:13:52.50,CN-Main,,0,0,0,,早上好 孩子
+Dialogue: 0,0:13:51.21,0:13:52.50,ES-Main,,0,0,0,,Buenos días, mi niña.
+Dialogue: 10,0:14:13.62,0:14:20.71,CN-Main,,0,0,0,,奥雷里亚诺在她身上找到了生活的动力
+Dialogue: 0,0:14:13.62,0:14:20.71,ES-Main,,0,0,0,,la motivación que le hacía falta para vivir.
+Dialogue: 10,0:14:28.50,0:14:29.46,CN-Main,,0,0,0,,这是你做的吗？
+Dialogue: 0,0:14:28.50,0:14:29.46,ES-Main,,0,0,0,,¿Lo hiciste tú?
+Dialogue: 10,0:14:31.92,0:14:33.21,CN-Main,,0,0,0,,这是我的私人空间
+Dialogue: 0,0:14:31.92,0:14:33.21,ES-Main,,0,0,0,,Este lugar es privado.
+Dialogue: 10,0:14:35.83,0:14:37.08,CN-Main,,0,0,0,,抱歉 阿卡蒂奥
+Dialogue: 0,0:14:35.83,0:14:37.08,ES-Main,,0,0,0,,Disculpa, Arcadio.
+Dialogue: 10,0:14:37.75,0:14:39.29,CN-Main,,0,0,0,,我想你会想喝杯咖啡
+Dialogue: 0,0:14:37.75,0:14:39.29,ES-Main,,0,0,0,,Pensé que te gustaría un café.
+Dialogue: 10,0:14:42.88,0:14:43.88,CN-Main,,0,0,0,,她是…
+Dialogue: 10,0:14:44.21,0:14:45.00,CN-Main,,0,0,0,,谢谢
+Dialogue: 0,0:14:44.21,0:14:45.00,ES-Main,,0,0,0,,Gracias.
+Dialogue: 10,0:14:45.08,0:14:48.46,CN-Main,,0,0,0,,…阿卡蒂奥在临死前最后一个想到的人
+Dialogue: 0,0:14:45.08,0:14:48.46,ES-Main,,0,0,0,,…la última persona en la que pensó Arcadio antes de morir.
+Dialogue: 10,0:15:04.62,0:15:06.00,CN-Main,,0,0,0,,蕾梅黛丝 不要动
+Dialogue: 0,0:15:04.62,0:15:06.00,ES-Main,,0,0,0,,Remedios, quieta.
+Dialogue: 10,0:15:40.88,0:15:43.83,CN-Main,,0,0,0,,之前没告诉你是因为不想毁了你的婚姻
+Dialogue: 0,0:15:40.88,0:15:43.83,ES-Main,,0,0,0,,No te lo dije antes porque no quería dañarte el matrimonio.
+Dialogue: 10,0:15:46.12,0:15:48.12,CN-Main,,0,0,0,,我知道这会给你带来麻烦奥雷里亚诺
+Dialogue: 0,0:15:46.12,0:15:48.12,ES-Main,,0,0,0,,Yo sé que es un problema, Aureliano,
+Dialogue: 10,0:15:49.58,0:15:52.67,CN-Main,,0,0,0,,但我已经有两个儿子了 他该有个家
+Dialogue: 0,0:15:49.58,0:15:52.67,ES-Main,,0,0,0,,pero yo ya tengo dos hijos, y él se merece una familia.
+Dialogue: 10,0:15:56.08,0:15:57.04,CN-Main,,0,0,0,,没关系
+Dialogue: 0,0:15:56.08,0:15:57.04,ES-Main,,0,0,0,,Está bien.
+Dialogue: 10,0:15:58.08,0:15:58.92,CN-Main,,0,0,0,,我会照顾他的
+Dialogue: 0,0:15:58.08,0:15:58.92,ES-Main,,0,0,0,,Me haré cargo.
+Dialogue: 10,0:16:02.29,0:16:04.54,CN-Main,,0,0,0,,但你不该这么贸然出现
+Dialogue: 0,0:16:02.29,0:16:04.54,ES-Main,,0,0,0,,Pero no debiste llegar así, sin avisar.
+Dialogue: 10,0:16:34.62,0:16:37.17,CN-Main,,0,0,0,,好了
+Dialogue: 0,0:16:34.62,0:16:37.17,ES-Main,,0,0,0,,Todo está bien. Todo está bien.
+Dialogue: 10,0:16:41.12,0:16:42.08,CN-Main,,0,0,0,,亲爱的
+Dialogue: 0,0:16:41.12,0:16:42.08,ES-Main,,0,0,0,,Amor mío.
+Dialogue: 10,0:16:48.67,0:16:49.54,CN-Main,,0,0,0,,奥雷里亚诺！
+Dialogue: 0,0:16:48.67,0:16:49.54,ES-Main,,0,0,0,,¡Aureliano!
+Dialogue: 10,0:17:06.75,0:17:08.29,CN-Main,,0,0,0,,你怎么能做出这种事？
+Dialogue: 0,0:17:06.75,0:17:08.29,ES-Main,,0,0,0,,¿Cómo se te ocurre, Aureliano?
+Dialogue: 10,0:17:11.46,0:17:14.67,CN-Main,,0,0,0,,这是在我向蕾梅黛丝求婚前发生的事
+Dialogue: 0,0:17:11.46,0:17:14.67,ES-Main,,0,0,0,,Esto pasó… antes de pedir la mano de Remedios.
+Dialogue: 10,0:17:14.75,0:17:15.71,CN-Main,,0,0,0,,那不重要！
+Dialogue: 0,0:17:14.75,0:17:15.71,ES-Main,,0,0,0,,¿Y qué importa?
+Dialogue: 10,0:17:21.92,0:17:23.42,CN-Main,,0,0,0,,你要让她帮你养一个野种吗？
+Dialogue: 0,0:17:21.92,0:17:23.42,ES-Main,,0,0,0,,¿La pondrás a criar a un bastardo?
+Dialogue: 10,0:17:25.67,0:17:26.67,CN-Main,,0,0,0,,你说什么？
+Dialogue: 0,0:17:25.67,0:17:26.67,ES-Main,,0,0,0,,¿Qué dijiste?
+Dialogue: 10,0:17:32.79,0:17:35.21,CN-Main,,0,0,0,,那孩子会冠上布恩迪亚的姓氏
+Dialogue: 0,0:17:32.79,0:17:35.21,ES-Main,,0,0,0,,Este niño va a llevar el apellido Buendía…
+Dialogue: 10,0:17:38.17,0:17:40.25,CN-Main,,0,0,0,,你仔细听好了 乌尔苏拉·伊瓜兰
+Dialogue: 0,0:17:38.17,0:17:40.25,ES-Main,,0,0,0,,porque escúchame bien, Úrsula Iguarán.
+Dialogue: 10,0:17:40.83,0:17:44.67,CN-Main,,0,0,0,,我绝不允许你像对待阿卡蒂奥那样对他！
+Dialogue: 0,0:17:40.83,0:17:44.67,ES-Main,,0,0,0,,¡Jamás te permitiré que lo trates de la misma manera que trataste a Arcadio!
+Dialogue: 10,0:17:46.42,0:17:47.25,CN-Main,,0,0,0,,好啊
+Dialogue: 0,0:17:46.42,0:17:47.25,ES-Main,,0,0,0,,Bueno.
+Dialogue: 10,0:17:49.29,0:17:52.88,CN-Main,,0,0,0,,那就看看她和她的父母得知你有了个儿子会怎么说吧
+Dialogue: 0,0:17:49.29,0:17:52.88,ES-Main,,0,0,0,,Veremos qué dicen ella y tus suegros cuando se enteren de que tienes un hijo.
+Dialogue: 10,0:17:55.17,0:17:56.08,CN-Main,,0,0,0,,我们走着瞧
+Dialogue: 0,0:17:55.17,0:17:56.08,ES-Main,,0,0,0,,Vamos a ver.
+Dialogue: 10,0:17:58.67,0:17:59.54,CN-Main,,0,0,0,,好 走着瞧
+Dialogue: 0,0:17:58.67,0:17:59.54,ES-Main,,0,0,0,,Vamos a ver.
+Dialogue: 10,0:18:02.79,0:18:04.29,CN-Main,,0,0,0,,他有名字了吗？
+Dialogue: 0,0:18:02.79,0:18:04.29,ES-Main,,0,0,0,,¿Y ya tiene nombre?
+Dialogue: 10,0:18:04.79,0:18:06.54,CN-Main,,0,0,0,,就以我和我哥哥的名字命名
+Dialogue: 0,0:18:04.79,0:18:06.54,ES-Main,,0,0,0,,Llevará el mío y el de mi hermano.
+Dialogue: 10,0:18:07.71,0:18:08.96,CN-Main,,0,0,0,,奥雷里亚诺·何塞
+Dialogue: 0,0:18:07.71,0:18:08.96,ES-Main,,0,0,0,,Aureliano José.
+Dialogue: 10,0:18:13.00,0:18:15.75,CN-Main,,0,0,0,,我明天会说服尼卡诺给他行受浸礼
+Dialogue: 0,0:18:13.00,0:18:15.75,ES-Main,,0,0,0,,Convenceré a Nicanor para que lo bautice mañana mismo.
+Dialogue: 10,0:18:16.00,0:18:18.42,CN-Main,,0,0,0,,只要有上帝的祝福并严守他身世的秘密
+Dialogue: 0,0:18:16.00,0:18:18.42,ES-Main,,0,0,0,,Con que Dios lo bendiga y esto quede entre nosotros,
+Dialogue: 10,0:18:18.83,0:18:21.54,CN-Main,,0,0,0,,便不成问题 同意吗？
+Dialogue: 0,0:18:18.83,0:18:21.54,ES-Main,,0,0,0,,no creo que haya problema. ¿De acuerdo?
+Dialogue: 10,0:18:23.83,0:18:24.67,CN-Main,,0,0,0,,同意
+Dialogue: 0,0:18:23.83,0:18:24.67,ES-Main,,0,0,0,,De acuerdo.
+Dialogue: 10,0:18:29.75,0:18:32.38,CN-Main,,0,0,0,,欢迎来到神的国度
+Dialogue: 0,0:18:29.75,0:18:32.38,ES-Main,,0,0,0,,Bienvenido seas al reino del Señor.
+Dialogue: 10,0:18:33.21,0:18:34.62,CN-Main,,0,0,0,,好了
+Dialogue: 0,0:18:33.21,0:18:34.62,ES-Main,,0,0,0,,Eso.
+Dialogue: 10,0:18:47.71,0:18:49.33,CN-Main,,0,0,0,,抱紧他
+Dialogue: 0,0:18:47.71,0:18:49.33,ES-Main,,0,0,0,,Sostenlo con fuerza.
+Dialogue: 10,0:18:53.46,0:18:55.33,CN-Main,,0,0,0,,您会在镇上待多久 神父？
+Dialogue: 0,0:18:53.46,0:18:55.33,ES-Main,,0,0,0,,¿Y hasta cuándo se queda en el pueblo, padre?
+Dialogue: 10,0:18:55.83,0:18:58.83,CN-Main,,0,0,0,,我们想趁您还在时筹划好婚礼
+Dialogue: 0,0:18:55.83,0:18:58.83,ES-Main,,0,0,0,,Pietro y yo quisiéramos aprovechar que está acá para organizar nuestra boda.
+Dialogue: 10,0:18:59.33,0:19:01.08,CN-Main,,0,0,0,,不用着急 亲爱的
+Dialogue: 0,0:18:59.33,0:19:01.08,ES-Main,,0,0,0,,No tienes que afanarte, querida,
+Dialogue: 10,0:19:01.17,0:19:03.62,CN-Main,,0,0,0,,尼卡诺神父决定留下来了
+Dialogue: 0,0:19:01.17,0:19:03.62,ES-Main,,0,0,0,,porque el padre Nicanor ha decidido quedarse.
+Dialogue: 10,0:19:05.88,0:19:09.33,CN-Main,,0,0,0,,乌苏拉女士 你们在这偏僻之地所建立的一切 实在令人叹服
+Dialogue: 0,0:19:05.88,0:19:09.33,ES-Main,,0,0,0,,Es increíble lo que han logrado aquí en medio de la nada, doña Úrsula.
+Dialogue: 10,0:19:09.96,0:19:11.38,CN-Main,,0,0,0,,但让我惊讶的是
+Dialogue: 0,0:19:09.96,0:19:11.38,ES-Main,,0,0,0,,Lo que a mí me sorprende
+Dialogue: 10,0:19:11.92,0:19:14.04,CN-Main,,0,0,0,,自小镇成立的30年以来
+Dialogue: 0,0:19:11.92,0:19:14.04,ES-Main,,0,0,0,,es que, después de 30 años de fundación,
+Dialogue: 10,0:19:14.12,0:19:16.54,CN-Main,,0,0,0,,从未有人想过兴建教堂
+Dialogue: 0,0:19:14.12,0:19:16.54,ES-Main,,0,0,0,,no se les haya ocurrido construir una iglesia.
+Dialogue: 10,0:19:17.62,0:19:21.58,CN-Main,,0,0,0,,事实上 我们从来都不需要教堂来和上帝讨价还价 尼卡诺先生
+Dialogue: 0,0:19:17.62,0:19:21.58,ES-Main,,0,0,0,,Es que nunca hemos necesitado una iglesia para negociar con Dios, don Nicanor.
+Dialogue: 10,0:19:21.75,0:19:26.46,CN-Main,,0,0,0,,上帝从不与人讨价还价 女士《圣经》上清楚地阐述了这一点
+Dialogue: 0,0:19:21.75,0:19:26.46,ES-Main,,0,0,0,,Es que con Dios no se puede negociar, mi señora. Está claro en las Escrituras.
+Dialogue: 10,0:19:26.92,0:19:31.79,CN-Main,,0,0,0,,乌苏拉女士 你可曾想过多年前那场可怕的疫症
+Dialogue: 0,0:19:26.92,0:19:31.79,ES-Main,,0,0,0,,Señora Úrsula, ¿no se le ha ocurrido pensar que la peste esa tan tremenda de hace años
+Dialogue: 10,0:19:32.21,0:19:34.54,CN-Main,,0,0,0,,也许是上天对罪孽生活的惩罚？
+Dialogue: 0,0:19:32.21,0:19:34.54,ES-Main,,0,0,0,,fue un castigo divino por vivir en el pecado?
+Dialogue: 10,0:19:35.38,0:19:38.29,CN-Main,,0,0,0,,你想让乌尔苏拉为整个马孔多负责吗？
+Dialogue: 0,0:19:35.38,0:19:38.29,ES-Main,,0,0,0,,¿Y acaso Úrsula va a tener que responder por todo Macondo?
+Dialogue: 10,0:19:38.38,0:19:40.92,CN-Main,,0,0,0,,不 我并无此意 绝对没有
+Dialogue: 0,0:19:38.38,0:19:40.92,ES-Main,,0,0,0,,No, no. De ninguna manera. ¿Cómo va a hacer eso? No.
+Dialogue: 10,0:19:41.96,0:19:44.42,CN-Main,,0,0,0,,昨晚我梦到了一座神殿
+Dialogue: 0,0:19:41.96,0:19:44.42,ES-Main,,0,0,0,,Anoche estaba soñando justamente con el templo.
+Dialogue: 10,0:19:45.50,0:19:47.71,CN-Main,,0,0,0,,那是举国上下最大的殿宇
+Dialogue: 0,0:19:45.50,0:19:47.71,ES-Main,,0,0,0,,Era el templo más grande del país,
+Dialogue: 10,0:19:48.38,0:19:50.08,CN-Main,,0,0,0,,里面有从地面延伸至天花板的彩绘玻璃窗
+Dialogue: 0,0:19:48.38,0:19:50.08,ES-Main,,0,0,0,,con vitrales del piso al techo,
+Dialogue: 10,0:19:51.08,0:19:52.88,CN-Main,,0,0,0,,等身大小的圣者雕像
+Dialogue: 0,0:19:51.08,0:19:52.88,ES-Main,,0,0,0,,santos de tamaño humano
+Dialogue: 10,0:19:53.71,0:19:54.79,CN-Main,,0,0,0,,还有一架管风琴
+Dialogue: 0,0:19:53.71,0:19:54.79,ES-Main,,0,0,0,,y con un órgano.
+Dialogue: 10,0:19:55.33,0:19:57.54,CN-Main,,0,0,0,,与巴黎圣母院的管风琴如出一辙
+Dialogue: 0,0:19:55.33,0:19:57.54,ES-Main,,0,0,0,,Un órgano como el de Notre Dame.
+Dialogue: 10,0:19:58.92,0:20:01.29,CN-Main,,0,0,0,,我们已经捐款了
+Dialogue: 0,0:19:58.92,0:20:01.29,ES-Main,,0,0,0,,Nosotros ya hicimos nuestro aporte, ¿no?
+Dialogue: 10,0:20:01.96,0:20:04.42,CN-Main,,0,0,0,,希望其他镇民也能出一份力
+Dialogue: 0,0:20:01.96,0:20:04.42,ES-Main,,0,0,0,,Esperamos que el resto del pueblo se una.
+Dialogue: 10,0:20:06.96,0:20:09.46,CN-Main,,0,0,0,,在上帝的祝福和大家的帮助下
+Dialogue: 0,0:20:06.96,0:20:09.46,ES-Main,,0,0,0,,Con la gracia de Dios y la colaboración de todos,
+Dialogue: 10,0:20:09.96,0:20:12.79,CN-Main,,0,0,0,,也许我们三年内就能完工
+Dialogue: 0,0:20:09.96,0:20:12.79,ES-Main,,0,0,0,,es posible que en tres años estemos abriendo las puertas.
+Dialogue: 10,0:20:13.29,0:20:15.46,CN-Main,,0,0,0,,丽贝卡可真是个幸运儿
+Dialogue: 0,0:20:13.29,0:20:15.46,ES-Main,,0,0,0,,Entonces, Rebeca será la más afortunada.
+Dialogue: 10,0:20:16.29,0:20:18.92,CN-Main,,0,0,0,,能成为第一个在新教堂举行婚礼的人
+Dialogue: 0,0:20:16.29,0:20:18.92,ES-Main,,0,0,0,,Tendrás la dicha de inaugurar la iglesia con tu boda.
+Dialogue: 10,0:20:19.17,0:20:20.08,CN-Main,,0,0,0,,不！
+Dialogue: 0,0:20:19.17,0:20:20.08,ES-Main,,0,0,0,,¡No!
+Dialogue: 10,0:20:22.88,0:20:24.17,CN-Main,,0,0,0,,原谅我 神父
+Dialogue: 0,0:20:22.88,0:20:24.17,ES-Main,,0,0,0,,No me malentienda, padre.
+Dialogue: 10,0:20:24.71,0:20:26.67,CN-Main,,0,0,0,,能在新教堂结婚是我的荣幸
+Dialogue: 0,0:20:24.71,0:20:26.67,ES-Main,,0,0,0,,Sería un honor casarnos en la iglesia,
+Dialogue: 10,0:20:27.62,0:20:29.54,CN-Main,,0,0,0,,但我认为没理由等那么久
+Dialogue: 0,0:20:27.62,0:20:29.54,ES-Main,,0,0,0,,pero no veo por qué tendríamos que esperar tanto.
+Dialogue: 10,0:20:29.92,0:20:32.17,CN-Main,,0,0,0,,理由就是你们的结合会得到神的祝福
+Dialogue: 0,0:20:29.92,0:20:32.17,ES-Main,,0,0,0,,Porque su relación estaría bendecida por Dios.
+Dialogue: 10,0:20:32.25,0:20:33.29,CN-Main,,0,0,0,,可不是嘛
+Dialogue: 0,0:20:32.25,0:20:33.29,ES-Main,,0,0,0,,Estaría bendecida.
+Dialogue: 10,0:20:33.92,0:20:35.96,CN-Main,,0,0,0,,-雷梅黛丝他们就没得到吗？-丽贝卡
+Dialogue: 0,0:20:33.92,0:20:35.96,ES-Main,,0,0,0,,¿La de Remedios y Aureliano no lo está? - Rebeca.
+Dialogue: 10,0:20:36.04,0:20:37.83,CN-Main,,0,0,0,,为什么非得等三年？
+Dialogue: 0,0:20:36.04,0:20:37.83,ES-Main,,0,0,0,,¿A cuenta de qué debemos esperar tres años?
+Dialogue: 10,0:20:37.92,0:20:39.25,CN-Main,,0,0,0,,奥雷里亚诺就在这里结的婚
+Dialogue: 0,0:20:37.92,0:20:39.25,ES-Main,,0,0,0,,Si Aureliano se casó aquí.
+Dialogue: 10,0:20:39.33,0:20:42.38,CN-Main,,0,0,0,,因为这个家里的人一夜之间全成了保守派
+Dialogue: 0,0:20:39.33,0:20:42.38,ES-Main,,0,0,0,,A cuenta de que todos se volvieron godos de la noche a la mañana.
+Dialogue: 10,0:20:46.83,0:20:48.25,CN-Main,,0,0,0,,你说什么？
+Dialogue: 0,0:20:46.83,0:20:48.25,ES-Main,,0,0,0,,¿Qué fue lo que dijiste?
+Dialogue: 10,0:20:50.04,0:20:53.46,CN-Main,,0,0,0,,-我说这个家里…-给我闭嘴！
+Dialogue: 0,0:20:50.04,0:20:53.46,ES-Main,,0,0,0,,Que todos se volvieron godos de… ¡Te callas ya!
+Dialogue: 10,0:20:57.17,0:21:00.00,CN-Main,,0,0,0,,我们共同建立了这里的一切尼卡诺先生
+Dialogue: 0,0:20:57.17,0:21:00.00,ES-Main,,0,0,0,,En este pueblo todo se ha construido entre todos, Nicanor.
+Dialogue: 10,0:21:01.33,0:21:05.08,CN-Main,,0,0,0,,我相信那座教堂会很快落成
+Dialogue: 0,0:21:01.33,0:21:05.08,ES-Main,,0,0,0,,Y la iglesia va a estar lista mucho antes de lo que usted se imagina.
+Dialogue: 10,0:21:06.12,0:21:10.38,CN-Main,,0,0,0,,而我们也会有足够的时间筹备你应得的婚礼
+Dialogue: 0,0:21:06.12,0:21:10.38,ES-Main,,0,0,0,,Y nosotros vamos a tener todo el tiempo para organizar la boda que te mereces.
+Dialogue: 10,0:21:26.17,0:21:27.83,CN-Main,,0,0,0,,蕾梅黛丝说得对
+Dialogue: 0,0:21:26.17,0:21:27.83,ES-Main,,0,0,0,,Remedios tenía razón.
+Dialogue: 10,0:21:28.79,0:21:30.08,CN-Main,,0,0,0,,你是个有学识的人
+Dialogue: 0,0:21:28.79,0:21:30.08,ES-Main,,0,0,0,,Usted es un hombre culto.
+Dialogue: 10,0:21:32.54,0:21:34.42,CN-Main,,0,0,0,,谁教你这么进别人房间的？
+Dialogue: 0,0:21:32.54,0:21:34.42,ES-Main,,0,0,0,,¿Y a usted quién le enseñó a entrar así, no?
+Dialogue: 10,0:21:34.83,0:21:35.96,CN-Main,,0,0,0,,这么不请自来
+Dialogue: 0,0:21:34.83,0:21:35.96,ES-Main,,0,0,0,,Sin ser invitado.
+Dialogue: 10,0:21:36.21,0:21:37.71,CN-Main,,0,0,0,,摩斯科特家的人都很好奇
+Dialogue: 0,0:21:36.21,0:21:37.71,ES-Main,,0,0,0,,Los Moscote somos curiosos.
+Dialogue: 10,0:21:42.12,0:21:43.00,CN-Main,,0,0,0,,你想怎样？
+Dialogue: 0,0:21:42.12,0:21:43.00,ES-Main,,0,0,0,,¿Qué quiere?
+Dialogue: 10,0:21:43.71,0:21:44.67,CN-Main,,0,0,0,,阿卡蒂奥
+Dialogue: 10,0:21:45.29,0:21:48.75,CN-Main,,0,0,0,,我向政府争取到了在马孔多兴办学校的资源
+Dialogue: 0,0:21:45.29,0:21:48.75,ES-Main,,0,0,0,,Arcadio, logré que el gobierno me diera los recursos para abrir una escuela en Macondo.
+Dialogue: 10,0:21:49.71,0:21:51.38,CN-Main,,0,0,0,,但尚未找到
+Dialogue: 0,0:21:49.71,0:21:51.38,ES-Main,,0,0,0,,Pero no encuentro al maestro que quiera quedarse ahí
+Dialogue: 10,0:21:51.46,0:21:55.00,CN-Main,,0,0,0,,愿意留在这里全职照看学校的老师
+Dialogue: 0,0:21:51.46,0:21:55.00,ES-Main,,0,0,0,,para cuidar las instalaciones de tiempo completo.
+Dialogue: 10,0:21:55.96,0:21:59.42,CN-Main,,0,0,0,,听着 我不想找工作也没兴趣给任何人打工
+Dialogue: 0,0:21:55.96,0:21:59.42,ES-Main,,0,0,0,,Vea, a mí no me interesa trabajarle ni rendirle cuentas a nadie.
+Dialogue: 10,0:22:00.00,0:22:03.67,CN-Main,,0,0,0,,我还有很多事要忙 可没工夫插手学校的事务
+Dialogue: 0,0:22:00.00,0:22:03.67,ES-Main,,0,0,0,,Tengo demasiadas cosas en la mesa como para andar metiendo mis narices ahí.
+Dialogue: 10,0:22:04.75,0:22:05.62,CN-Main,,0,0,0,,你意下如何？
+Dialogue: 0,0:22:04.75,0:22:05.62,ES-Main,,0,0,0,,¿Qué dice?
+Dialogue: 10,0:22:55.50,0:22:57.50,CN-Main,,0,0,0,,我还在等你道歉
+Dialogue: 0,0:22:55.50,0:22:57.50,ES-Main,,0,0,0,,Todavía estoy esperando una disculpa.
+Dialogue: 10,0:22:59.71,0:23:00.88,CN-Main,,0,0,0,,你要去哪儿？
+Dialogue: 0,0:22:59.71,0:23:00.88,ES-Main,,0,0,0,,¿Adónde vas, Arcadio?
+Dialogue: 10,0:23:02.79,0:23:04.29,CN-Main,,0,0,0,,你现在有空余的房间了
+Dialogue: 0,0:23:02.79,0:23:04.29,ES-Main,,0,0,0,,Ahí le queda un cuarto libre.
+Dialogue: 10,0:23:08.58,0:23:10.08,CN-Main,,0,0,0,,你什么都不用说
+Dialogue: 0,0:23:08.58,0:23:10.08,ES-Main,,0,0,0,,No tiene que decir nada.
+Dialogue: 10,0:23:12.62,0:23:14.21,CN-Main,,0,0,0,,我早该离开这里了
+Dialogue: 0,0:23:12.62,0:23:14.21,ES-Main,,0,0,0,,Tuve que haberme ido hace rato.
+Dialogue: 10,0:24:00.67,0:24:02.25,CN-Main,,0,0,0,,-不好意思-请你配合 医生
+Dialogue: 0,0:24:00.67,0:24:02.25,ES-Main,,0,0,0,,Permiso. Colabore.
+Dialogue: 10,0:24:02.46,0:24:04.33,CN-Main,,0,0,0,,我不知道你说的是什么文件
+Dialogue: 0,0:24:02.46,0:24:04.33,ES-Main,,0,0,0,,Colaboro, pero no sé… - Cualquiera se puede proclamar doctor.
+Dialogue: 10,0:24:04.42,0:24:06.00,CN-Main,,0,0,0,,任何人都可以自称是医生
+Dialogue: 10,0:24:06.08,0:24:08.08,CN-Main,,0,0,0,,放尊重点 我不知道你究竟想要什么
+Dialogue: 0,0:24:06.08,0:24:08.08,ES-Main,,0,0,0,,Me respeta. No sé qué papel quiere. - Los papeles que necesita…
+Dialogue: 10,0:24:08.17,0:24:10.88,CN-Main,,0,0,0,,-开店所需的文件-我什么也不会给你！
+Dialogue: 0,0:24:08.17,0:24:10.88,ES-Main,,0,0,0,,¡Yo no les voy a dar ningún papel! En toda la ciénaga, nadie me había pedido
+Dialogue: 10,0:24:10.96,0:24:12.08,CN-Main,,0,0,0,,在大沼泽地一带
+Dialogue: 10,0:24:12.58,0:24:16.04,CN-Main,,0,0,0,,从来没有人问我要过什么政府签发的经营许可
+Dialogue: 0,0:24:12.58,0:24:16.04,ES-Main,,0,0,0,,un permiso del gobierno para ejercer mi oficio.
+Dialogue: 10,0:24:16.12,0:24:22.12,CN-Main,,0,0,0,,除非你们带一本民法典过来指出哪条相关法律规定了
+Dialogue: 0,0:24:16.12,0:24:22.12,ES-Main,,0,0,0,,Así que a menos que ustedes vengan aquí con el Código Civil y me señalen una ley
+Dialogue: 10,0:24:22.21,0:24:25.75,CN-Main,,0,0,0,,我必须给你们出示除却这份文凭以外的东西
+Dialogue: 0,0:24:22.21,0:24:25.75,ES-Main,,0,0,0,,que me obligue a mostrarles algo diferente a los diplomas que me certifican,
+Dialogue: 10,0:24:25.83,0:24:27.96,CN-Main,,0,0,0,,否则就请好走不送
+Dialogue: 0,0:24:25.83,0:24:27.96,ES-Main,,0,0,0,,les voy a pedir que se vayan de acá.
+Dialogue: 10,0:24:28.58,0:24:31.42,CN-Main,,0,0,0,,离开我的店 客人都被你们吓跑了
+Dialogue: 0,0:24:28.58,0:24:31.42,ES-Main,,0,0,0,,Aléjense de mi negocio, que me están espantando a la clientela.
+Dialogue: 10,0:24:33.04,0:24:34.29,CN-Main,,0,0,0,,抱歉打扰了
+Dialogue: 0,0:24:33.04,0:24:34.29,ES-Main,,0,0,0,,Disculpe la molestia.
+Dialogue: 10,0:24:41.54,0:24:43.79,CN-Main,,0,0,0,,已经有段时间没人敢反抗他们了
+Dialogue: 0,0:24:41.54,0:24:43.79,ES-Main,,0,0,0,,Desde hace tiempo nadie se les enfrentaba así.
+Dialogue: 10,0:24:44.38,0:24:48.29,CN-Main,,0,0,0,,看来需要有人提醒一下镇民们他们是有个人权利的
+Dialogue: 0,0:24:44.38,0:24:48.29,ES-Main,,0,0,0,,Bueno, seguramente que les hace falta alguien que les recuerde sus derechos.
+Dialogue: 10,0:24:50.33,0:24:53.62,CN-Main,,0,0,0,,我是艾利洛·诺盖拉医生主张顺势疗法
+Dialogue: 0,0:24:50.33,0:24:53.62,ES-Main,,0,0,0,,Doctor Alirio Noguera. Homeópata.
+Dialogue: 10,0:24:54.29,0:24:56.12,CN-Main,,0,0,0,,-幸会-我叫阿卡蒂奥
+Dialogue: 0,0:24:54.29,0:24:56.12,ES-Main,,0,0,0,,Mucho gusto. - Arcadio.
+Dialogue: 10,0:24:57.00,0:24:58.25,CN-Main,,0,0,0,,是一名校长
+Dialogue: 0,0:24:57.00,0:24:58.25,ES-Main,,0,0,0,,Director de la escuela.
+Dialogue: 10,0:25:00.54,0:25:01.54,CN-Main,,0,0,0,,天哪
+Dialogue: 0,0:25:00.54,0:25:01.54,ES-Main,,0,0,0,,¡Joder!
+Dialogue: 10,0:25:02.75,0:25:05.46,CN-Main,,0,0,0,,要照看那么多孩子 责任可不小啊
+Dialogue: 0,0:25:02.75,0:25:05.46,ES-Main,,0,0,0,,Tremenda responsabilidad la que tiene con esos pelados.
+Dialogue: 10,0:25:08.38,0:25:10.00,CN-Main,,0,0,0,,如果想找人聊天
+Dialogue: 0,0:25:08.38,0:25:10.00,ES-Main,,0,0,0,,Cuando usted quiera hablar
+Dialogue: 10,0:25:10.08,0:25:11.88,CN-Main,,0,0,0,,或者需要吃药的话
+Dialogue: 0,0:25:10.08,0:25:11.88,ES-Main,,0,0,0,,o cuando necesite un medicamento,
+Dialogue: 10,0:25:12.25,0:25:13.96,CN-Main,,0,0,0,,欢迎随时来找我
+Dialogue: 0,0:25:12.25,0:25:13.96,ES-Main,,0,0,0,,ya sabe dónde encontrarme.
+Dialogue: 10,0:25:16.92,0:25:18.75,CN-Main,,0,0,0,,（公立学校）
+Dialogue: 10,0:25:47.42,0:25:49.25,CN-Main,,0,0,0,,哪怕只是暂时的
+Dialogue: 10,0:25:50.21,0:25:54.21,CN-Main,,0,0,0,,这所学校终于让阿卡蒂奥从那压抑苦闷的家庭中解放了出来
+Dialogue: 0,0:25:50.21,0:25:54.21,ES-Main,,0,0,0,,la escuela borró en Arcadio el peso de esa vieja amargura familiar.
+Dialogue: 10,0:25:56.79,0:25:58.04,CN-Main,,0,0,0,,炼金术…
+Dialogue: 0,0:25:56.79,0:25:58.04,ES-Main,,0,0,0,,La alquimia…
+Dialogue: 10,0:25:59.83,0:26:05.62,CN-Main,,0,0,0,,炼金术为人类历史上最杰出的众多圣贤所痴迷
+Dialogue: 0,0:25:59.83,0:26:05.62,ES-Main,,0,0,0,,La alquimia ha obsesionado a los hombres más geniales de la historia,
+Dialogue: 10,0:26:06.88,0:26:10.83,CN-Main,,0,0,0,,因为他们穷极一生都在探寻着传说中的贤者之石
+Dialogue: 0,0:26:06.88,0:26:10.83,ES-Main,,0,0,0,,con el fin de encontrar la famosa piedra filosofal.
+Dialogue: 10,0:26:11.33,0:26:13.92,CN-Main,,0,0,0,,贤者之石…
+Dialogue: 0,0:26:11.33,0:26:13.92,ES-Main,,0,0,0,,"La piedra filosofal".
+Dialogue: 10,0:26:16.54,0:26:19.50,CN-Main,,0,0,0,,听你这语气 大概不知道那是什么吧
+Dialogue: 0,0:26:16.54,0:26:19.50,ES-Main,,0,0,0,,Me imagino que, por su voz, no tiene ni idea de qué es eso.
+Dialogue: 10,0:26:20.58,0:26:22.83,CN-Main,,0,0,0,,老师 冈萨雷斯本来就什么都不知道
+Dialogue: 0,0:26:20.58,0:26:22.83,ES-Main,,0,0,0,,Profe, es que González nunca sabe nada. Nunca sabe nada.
+Dialogue: 10,0:26:23.33,0:26:24.54,CN-Main,,0,0,0,,他从来都一问三不知
+Dialogue: 10,0:26:25.88,0:26:28.50,CN-Main,,0,0,0,,那就请你来黑板前为大家讲解一番吧 罗哈斯
+Dialogue: 0,0:26:25.88,0:26:28.50,ES-Main,,0,0,0,,Entonces, venga. Pase y explique el tablero, Rojas.
+Dialogue: 10,0:26:28.58,0:26:30.50,CN-Main,,0,0,0,,不 其实我也很无知
+Dialogue: 0,0:26:28.58,0:26:30.50,ES-Main,,0,0,0,,No, pero yo tampoco, tampoco.
+Dialogue: 10,0:26:33.88,0:26:37.21,CN-Main,,0,0,0,,最重要的是别迷失了自己的道路
+Dialogue: 0,0:26:33.88,0:26:37.21,ES-Main,,0,0,0,,Es necesario no perder el rumbo.
+Dialogue: 10,0:26:37.62,0:26:38.79,CN-Main,,0,0,0,,别说了 何塞·阿尔卡蒂奥
+Dialogue: 10,0:26:39.62,0:26:41.58,CN-Main,,0,0,0,,非要说的话 说点我能听懂的
+Dialogue: 0,0:26:39.62,0:26:41.58,ES-Main,,0,0,0,,No más, José Arcadio. Si vas a hablar, dime algo que me sirva.
+Dialogue: 10,0:26:47.38,0:26:48.38,CN-Main,,0,0,0,,谢谢你 孩子
+Dialogue: 0,0:26:47.38,0:26:48.38,ES-Main,,0,0,0,,Gracias, mija.
+Dialogue: 10,0:26:49.79,0:26:51.21,CN-Main,,0,0,0,,谢谢你们
+Dialogue: 0,0:26:49.79,0:26:51.21,ES-Main,,0,0,0,,Te lo agradezco.
+Dialogue: 10,0:26:53.12,0:26:54.08,CN-Main,,0,0,0,,来擦擦
+Dialogue: 0,0:26:53.12,0:26:54.08,ES-Main,,0,0,0,,A ver…
+Dialogue: 10,0:27:01.79,0:27:02.67,CN-Main,,0,0,0,,怎么了？
+Dialogue: 0,0:27:01.79,0:27:02.67,ES-Main,,0,0,0,,¿Qué te pasa?
+Dialogue: 10,0:27:14.46,0:27:15.29,CN-Main,,0,0,0,,出什么事了？
+Dialogue: 0,0:27:14.46,0:27:15.29,ES-Main,,0,0,0,,¿Qué tiene?
+Dialogue: 10,0:27:20.08,0:27:21.88,CN-Main,,0,0,0,,奥雷里亚诺
+Dialogue: 0,0:27:20.08,0:27:21.88,ES-Main,,0,0,0,,Aureliano…
+Dialogue: 10,0:27:23.04,0:27:25.12,CN-Main,,0,0,0,,你们结婚已经好几个月了
+Dialogue: 0,0:27:23.04,0:27:25.12,ES-Main,,0,0,0,,Ya llevan varios meses casados.
+Dialogue: 10,0:27:26.38,0:27:27.71,CN-Main,,0,0,0,,你觉得会生男孩还是女孩？
+Dialogue: 0,0:27:26.38,0:27:27.71,ES-Main,,0,0,0,,¿Qué crees que va a tener?
+Dialogue: 10,0:27:35.12,0:27:37.46,CN-Main,,0,0,0,,奥雷里亚诺·何塞要有兄弟姐妹了？
+Dialogue: 0,0:27:35.12,0:27:37.46,ES-Main,,0,0,0,,¿Le vamos a dar un hermano a Aureliano José?
+Dialogue: 10,0:27:54.46,0:27:56.08,CN-Main,,0,0,0,,你们能一起织一个白色的吗？
+Dialogue: 0,0:27:54.46,0:27:56.08,ES-Main,,0,0,0,,¿Y si juntas hacen una blanca?
+Dialogue: 10,0:27:56.83,0:27:58.83,CN-Main,,0,0,0,,虽然还不知道是男是女
+Dialogue: 0,0:27:56.83,0:27:58.83,ES-Main,,0,0,0,,No sabemos si va a ser niño o niña, pero…
+Dialogue: 10,0:27:59.00,0:28:01.67,CN-Main,,0,0,0,,但如果孩子收到的第一份礼物是姑姑们一起做的该多好
+Dialogue: 0,0:27:59.00,0:28:01.67,ES-Main,,0,0,0,,sería lindo que lo primero que tenga lo hayan hecho sus tías.
+Dialogue: 10,0:28:05.21,0:28:09.46,CN-Main,,0,0,0,,这对夫妇唤起了两个家庭内部的深厚情谊
+Dialogue: 0,0:28:05.21,0:28:09.46,ES-Main,,0,0,0,,que la pareja despertó en la familia de ambos,
+Dialogue: 10,0:28:10.46,0:28:13.29,CN-Main,,0,0,0,,以至于当蕾梅黛丝宣布怀孕的消息时
+Dialogue: 0,0:28:10.46,0:28:13.29,ES-Main,,0,0,0,,que cuando Remedios anunció que iba a tener un hijo,
+Dialogue: 10,0:28:13.88,0:28:16.58,CN-Main,,0,0,0,,连丽贝卡和阿玛兰妲都休战了
+Dialogue: 0,0:28:13.88,0:28:16.58,ES-Main,,0,0,0,,hasta Rebeca y Amaranta hicieron una tregua.
+Dialogue: 10,0:28:18.71,0:28:22.71,CN-Main,,0,0,0,,可你答应过我的 先生！这可是上帝的神殿呀
+Dialogue: 0,0:28:18.71,0:28:22.71,ES-Main,,0,0,0,,¡Me hizo una promesa, hombre! Estamos hablando de la casa del Señor.
+Dialogue: 10,0:28:22.96,0:28:26.96,CN-Main,,0,0,0,,神父 如果上帝付了我们应得的钱到这会儿我们已经完工了
+Dialogue: 0,0:28:22.96,0:28:26.96,ES-Main,,0,0,0,,Hombre, padre, si el Señor hubiera abonado lo que nos debe, ya hubiéramos terminado.
+Dialogue: 10,0:28:27.12,0:28:30.21,CN-Main,,0,0,0,,教堂不能开门迎客我上哪要什一税来付你们钱呢？
+Dialogue: 0,0:28:27.12,0:28:30.21,ES-Main,,0,0,0,,¿Cómo quiere que cobre el diezmo para pagarle si no me deja inaugurar?
+Dialogue: 10,0:28:30.46,0:28:33.58,CN-Main,,0,0,0,,-收到什一税我就有钱给你们了-什么玩意？什一税？
+Dialogue: 0,0:28:30.46,0:28:33.58,ES-Main,,0,0,0,,Con el diezmo le voy a pagar. - ¿Con el qué? ¿Pagará con el diezmo?
+Dialogue: 10,0:28:33.71,0:28:35.83,CN-Main,,0,0,0,,对 没错…
+Dialogue: 0,0:28:33.71,0:28:35.83,ES-Main,,0,0,0,,Con… con… el diezmo… Padre…
+Dialogue: 10,0:28:37.79,0:28:40.33,CN-Main,,0,0,0,,-这种状况持续多久了？-一个月
+Dialogue: 0,0:28:37.79,0:28:40.33,ES-Main,,0,0,0,,No se preocupe, padre. - ¿Cuánto lleva así? Un mes.
+Dialogue: 10,0:28:41.00,0:28:42.54,CN-Main,,0,0,0,,看来他们没钱了
+Dialogue: 0,0:28:41.00,0:28:42.54,ES-Main,,0,0,0,,Mmm. Parece que se les acabó la plata.
+Dialogue: 10,0:28:43.62,0:28:45.75,CN-Main,,0,0,0,,上帝不会用棍棒或鞭子惩戒世人
+Dialogue: 0,0:28:43.62,0:28:45.75,ES-Main,,0,0,0,,Dios castiga sin palo y sin perrero.
+Dialogue: 10,0:28:46.00,0:28:47.88,CN-Main,,0,0,0,,铺瓦片吧 慢点
+Dialogue: 0,0:28:46.00,0:28:47.88,ES-Main,,0,0,0,,Vamos a poner las tejas.
+Dialogue: 10,0:28:47.96,0:28:50.46,CN-Main,,0,0,0,,我可不想被砸到
+Dialogue: 0,0:28:47.96,0:28:50.46,ES-Main,,0,0,0,,Por lo menos que no me caiga algo encima.
+Dialogue: 10,0:28:54.42,0:28:55.54,CN-Main,,0,0,0,,我们私奔吧
+Dialogue: 0,0:28:54.42,0:28:55.54,ES-Main,,0,0,0,,Escapémonos.
+Dialogue: 10,0:28:55.62,0:28:57.00,CN-Main,,0,0,0,,去哪里呢 丽贝卡？
+Dialogue: 0,0:28:55.62,0:28:57.00,ES-Main,,0,0,0,,Rebeca, ¿adónde?
+Dialogue: 10,0:28:58.08,0:28:59.92,CN-Main,,0,0,0,,我所拥有的一切都在这里了
+Dialogue: 0,0:28:58.08,0:28:59.92,ES-Main,,0,0,0,,Si todo lo que tengo está aquí.
+Dialogue: 10,0:29:18.12,0:29:19.50,CN-Main,,0,0,0,,-怎么了？-没什么
+Dialogue: 0,0:29:18.12,0:29:19.50,ES-Main,,0,0,0,,¿Qué pasó?
+Dialogue: 10,0:29:20.33,0:29:21.75,CN-Main,,0,0,0,,一切都好 乌苏拉女士
+Dialogue: 0,0:29:20.33,0:29:21.75,ES-Main,,0,0,0,,Nada. Todo bien, señora Úrsula.
+Dialogue: 10,0:31:29.54,0:31:35.62,CN-Main,,0,0,0,,求主怜悯
+Dialogue: 10,0:31:39.33,0:31:42.25,CN-Main,,0,0,0,,没有募集到安装大门的捐款
+Dialogue: 0,0:31:39.33,0:31:42.25,ES-Main,,0,0,0,,ni lo de las puertas,
+Dialogue: 10,0:31:43.04,0:31:46.04,CN-Main,,0,0,0,,尼卡诺摇晃着小铃铛走遍全镇
+Dialogue: 0,0:31:43.04,0:31:46.04,ES-Main,,0,0,0,,Nicanor recorrió el pueblo con una campanita,
+Dialogue: 10,0:31:46.79,0:31:48.67,CN-Main,,0,0,0,,召集人们参加露天弥撒
+Dialogue: 0,0:31:46.79,0:31:48.67,ES-Main,,0,0,0,,convocando a la misa campal.
+Dialogue: 10,0:31:48.92,0:31:51.21,CN-Main,,0,0,0,,求主怜悯…
+Dialogue: 10,0:31:51.29,0:31:53.21,CN-Main,,0,0,0,,很多人出于好奇前去观看
+Dialogue: 0,0:31:51.29,0:31:53.21,ES-Main,,0,0,0,,Muchos fueron por curiosidad.
+Dialogue: 10,0:31:54.00,0:31:55.62,CN-Main,,0,0,0,,还有些是出于怀旧
+Dialogue: 0,0:31:54.00,0:31:55.62,ES-Main,,0,0,0,,Otros, por nostalgia.
+Dialogue: 10,0:31:57.54,0:31:59.38,CN-Main,,0,0,0,,其余人则是为防万一
+Dialogue: 0,0:31:57.54,0:31:59.38,ES-Main,,0,0,0,,Otros, para que Dios no fuera a tomar como agravio personal
+Dialogue: 10,0:31:59.46,0:32:03.50,CN-Main,,0,0,0,,上帝将他们对其代言人的无视视为渎神之举
+Dialogue: 0,0:31:59.46,0:32:03.50,ES-Main,,0,0,0,,el desprecio a su intermediario.
+Dialogue: 10,0:32:03.58,0:32:06.08,CN-Main,,0,0,0,,现在诸位将见证
+Dialogue: 0,0:32:03.58,0:32:06.08,ES-Main,,0,0,0,,¡Ahora van a ser testigos
+Dialogue: 10,0:32:07.29,0:32:11.46,CN-Main,,0,0,0,,彰显上帝威能的无可辩驳的证据！
+Dialogue: 0,0:32:07.29,0:32:11.46,ES-Main,,0,0,0,,de la prueba irrebatible del poder de Dios!
+Dialogue: 10,0:32:13.08,0:32:15.75,CN-Main,,0,0,0,,那个给他充当助手的男孩
+Dialogue: 0,0:32:13.08,0:32:15.75,ES-Main,,0,0,0,,que había estado ayudándole
+Dialogue: 10,0:32:16.25,0:32:20.38,CN-Main,,0,0,0,,端上来一杯浓稠的巧克力他将其一饮而尽
+Dialogue: 0,0:32:16.25,0:32:20.38,ES-Main,,0,0,0,,le llevó una taza de chocolate espeso que él se tomó sin respirar.
+Dialogue: 10,0:32:43.29,0:32:45.00,CN-Main,,0,0,0,,这是真的吗？
+Dialogue: 0,0:32:43.29,0:32:45.00,ES-Main,,0,0,0,,¿Es real?
+Dialogue: 10,0:33:08.54,0:33:12.17,CN-Main,,0,0,0,,所有人都被他展现的神迹所折服…
+Dialogue: 0,0:33:08.54,0:33:12.17,ES-Main,,0,0,0,,el origen divino de la demostración…
+Dialogue: 10,0:33:14.71,0:33:16.75,CN-Main,,0,0,0,,除了何塞·阿尔卡蒂奥·布恩迪亚
+Dialogue: 0,0:33:14.71,0:33:16.75,ES-Main,,0,0,0,,salvo José Arcadio Buendía.
+Dialogue: 10,0:33:18.79,0:33:20.88,CN-Main,,0,0,0,,其实很简单
+Dialogue: 0,0:33:18.79,0:33:20.88,ES-Main,,0,0,0,,Es muy simple.
+Dialogue: 10,0:33:22.67,0:33:26.33,CN-Main,,0,0,0,,他发现了物质的第四种状态
+Dialogue: 0,0:33:22.67,0:33:26.33,ES-Main,,0,0,0,,Lo que se encontró es el cuarto estado de la materia.
+Dialogue: 10,0:33:29.67,0:33:30.54,CN-Main,,0,0,0,,并非如此
+Dialogue: 0,0:33:29.67,0:33:30.54,ES-Main,,0,0,0,,Lo niego.
+Dialogue: 10,0:33:31.96,0:33:35.00,CN-Main,,0,0,0,,毫无疑问 这证明了上帝的存在
+Dialogue: 0,0:33:31.96,0:33:35.00,ES-Main,,0,0,0,,El hecho prueba sin duda la existencia de Dios.
+Dialogue: 10,0:33:38.25,0:33:42.42,CN-Main,,0,0,0,,你的戏法骗不了我
+Dialogue: 0,0:33:38.25,0:33:42.42,ES-Main,,0,0,0,,A mí no me engaña con sus trucos de magia.
+Dialogue: 10,0:33:44.46,0:33:47.29,CN-Main,,0,0,0,,除非让我看见上帝的银版照片
+Dialogue: 0,0:33:44.46,0:33:47.29,ES-Main,,0,0,0,,Hasta no ver un daguerrotipo de Dios,
+Dialogue: 10,0:33:48.04,0:33:51.04,CN-Main,,0,0,0,,否则我绝不会相信你的把戏
+Dialogue: 0,0:33:48.04,0:33:51.04,ES-Main,,0,0,0,,no voy a creer en sus artificios.
+Dialogue: 10,0:33:54.75,0:33:55.92,CN-Main,,0,0,0,,他说什么？
+Dialogue: 0,0:33:54.75,0:33:55.92,ES-Main,,0,0,0,,¿Qué dijo?
+Dialogue: 10,0:33:58.58,0:33:59.62,CN-Main,,0,0,0,,他在说什么？
+Dialogue: 0,0:33:58.58,0:33:59.62,ES-Main,,0,0,0,,¿Qué está diciendo?
+Dialogue: 10,0:34:00.71,0:34:04.17,CN-Main,,0,0,0,,他说他一直想看上帝的银版照片
+Dialogue: 0,0:34:00.71,0:34:04.17,ES-Main,,0,0,0,,Dice que él siempre quiso ver un daguerrotipo de Dios.
+Dialogue: 10,0:34:07.12,0:34:09.79,CN-Main,,0,0,0,,就这样 人们发现
+Dialogue: 0,0:34:07.12,0:34:09.79,ES-Main,,0,0,0,,como se supo
+Dialogue: 10,0:34:10.54,0:34:13.21,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚一直以来那些晦涩难懂的语句原来是拉丁语
+Dialogue: 0,0:34:10.54,0:34:13.21,ES-Main,,0,0,0,,que era latín la endiablada jerga de José Arcadio Buendía.
+Dialogue: 10,0:34:13.38,0:34:15.75,CN-Main,,0,0,0,,-乌苏拉女士 能借一步说话吗？-过来
+Dialogue: 0,0:34:13.38,0:34:15.75,ES-Main,,0,0,0,,Doña Úrsula, ¿me permite una palabrita?
+Dialogue: 10,0:34:17.46,0:34:19.83,CN-Main,,0,0,0,,你得好好休息 这很重要
+Dialogue: 0,0:34:17.46,0:34:19.83,ES-Main,,0,0,0,,Es importante que vayas a descansar.
+Dialogue: 10,0:34:20.33,0:34:22.38,CN-Main,,0,0,0,,我有几句话想跟您说
+Dialogue: 0,0:34:20.33,0:34:22.38,ES-Main,,0,0,0,,Es que yo quería hacerle un comentario.
+Dialogue: 10,0:34:23.67,0:34:26.50,CN-Main,,0,0,0,,如您所见 我已经竭尽全力
+Dialogue: 0,0:34:23.67,0:34:26.50,ES-Main,,0,0,0,,Usted ve… ha visto, que yo he hecho hasta lo imposible
+Dialogue: 10,0:34:26.75,0:34:28.46,CN-Main,,0,0,0,,给马孔多的人民传播信仰了
+Dialogue: 0,0:34:26.75,0:34:28.46,ES-Main,,0,0,0,,por atraer a los macondinos a la fe.
+Dialogue: 10,0:34:30.54,0:34:35.00,CN-Main,,0,0,0,,但若募集到的捐款一直如此微薄根本不可能在三年内建成教堂
+Dialogue: 0,0:34:30.54,0:34:35.00,ES-Main,,0,0,0,,Pero al paso que vamos con las donaciones, yo no voy a terminar esa iglesia en tres años.
+Dialogue: 10,0:34:35.58,0:34:37.46,CN-Main,,0,0,0,,甚至可能要花上十年
+Dialogue: 0,0:34:35.58,0:34:37.46,ES-Main,,0,0,0,,A lo mucho, la terminaré en diez.
+Dialogue: 10,0:34:38.96,0:34:41.62,CN-Main,,0,0,0,,所以我想恳请您帮忙
+Dialogue: 0,0:34:38.96,0:34:41.62,ES-Main,,0,0,0,,Entonces, quería preguntarle si usted pudiera ayudarme
+Dialogue: 10,0:34:41.83,0:34:43.38,CN-Main,,0,0,0,,劝劝镇民们…
+Dialogue: 0,0:34:41.83,0:34:43.38,ES-Main,,0,0,0,,de repente hablando con la gente…
+Dialogue: 10,0:34:43.46,0:34:46.58,CN-Main,,0,0,0,,我们不该要求乌苏拉女士背负如此重任 神父
+Dialogue: 0,0:34:43.46,0:34:46.58,ES-Main,,0,0,0,,No le pongamos esa responsabilidad a doña Úrsula, padre.
+Dialogue: 10,0:34:47.21,0:34:49.50,CN-Main,,0,0,0,,上帝知晓凡事皆有定数
+Dialogue: 0,0:34:47.21,0:34:49.50,ES-Main,,0,0,0,,Dios sabe que las cosas pasan cuando tienen que pasar.
+Dialogue: 10,0:34:49.58,0:34:53.17,CN-Main,,0,0,0,,-阿门-再说了 我们有什么好心急的呢？
+Dialogue: 0,0:34:49.58,0:34:53.17,ES-Main,,0,0,0,,Amén. Amén. - Igual, ¿cuál es el afán?
+Dialogue: 10,0:35:06.04,0:35:07.29,CN-Main,,0,0,0,,回头见 女士
+Dialogue: 0,0:35:06.04,0:35:07.29,ES-Main,,0,0,0,,Hasta luego, mi señora.
+Dialogue: 10,0:35:07.96,0:35:09.67,CN-Main,,0,0,0,,你快把这群孩子带疯了
+Dialogue: 0,0:35:07.96,0:35:09.67,ES-Main,,0,0,0,,Tienes a los muchachos trastornados,
+Dialogue: 10,0:35:10.21,0:35:12.33,CN-Main,,0,0,0,,这会儿闹着要我给他们买化学书呢
+Dialogue: 0,0:35:10.21,0:35:12.33,ES-Main,,0,0,0,,ahora quieren que les compre libros de química.
+Dialogue: 10,0:35:12.50,0:35:13.33,CN-Main,,0,0,0,,是吗？
+Dialogue: 0,0:35:12.50,0:35:13.33,ES-Main,,0,0,0,,¿Sí?
+Dialogue: 10,0:35:13.42,0:35:16.21,CN-Main,,0,0,0,,是啊 恭喜你找到了合适的工作
+Dialogue: 0,0:35:13.42,0:35:16.21,ES-Main,,0,0,0,,Sí. Felicitaciones por el puesto.
+Dialogue: 10,0:35:16.33,0:35:18.00,CN-Main,,0,0,0,,-谢谢-走吧
+Dialogue: 0,0:35:16.33,0:35:18.00,ES-Main,,0,0,0,,Gracias. - Vamos.
+Dialogue: 10,0:35:32.46,0:35:35.00,CN-Main,,0,0,0,,对自己身世一无所知的阿卡蒂奥
+Dialogue: 0,0:35:32.46,0:35:35.00,ES-Main,,0,0,0,,el secreto de su filiación,
+Dialogue: 10,0:35:35.71,0:35:39.50,CN-Main,,0,0,0,,开始迷恋上庇拉尔·特尔内拉正如他父亲当年一样
+Dialogue: 0,0:35:35.71,0:35:39.50,ES-Main,,0,0,0,,Pilar Ternera se convirtió en una obsesión como lo fue para su padre.
+Dialogue: 10,0:35:50.50,0:35:51.88,CN-Main,,0,0,0,,他会四处找寻她的身影…
+Dialogue: 0,0:35:50.50,0:35:51.88,ES-Main,,0,0,0,,Él la buscaba…
+Dialogue: 10,0:35:53.12,0:35:56.29,CN-Main,,0,0,0,,待到循着她身上的烟味找见了
+Dialogue: 0,0:35:53.12,0:35:56.29,ES-Main,,0,0,0,,y la encontraba en el rastro de su olor a humo,
+Dialogue: 10,0:35:57.21,0:36:00.17,CN-Main,,0,0,0,,又不知该如何接近她
+Dialogue: 0,0:35:57.21,0:36:00.17,ES-Main,,0,0,0,,sin saber exactamente cómo acercarse.
+Dialogue: 10,0:36:04.96,0:36:05.83,CN-Main,,0,0,0,,再来一杯？
+Dialogue: 0,0:36:04.96,0:36:05.83,ES-Main,,0,0,0,,¿Otra?
+Dialogue: 10,0:36:12.12,0:36:13.00,CN-Main,,0,0,0,,谢谢
+Dialogue: 0,0:36:12.12,0:36:13.00,ES-Main,,0,0,0,,Gracias.
+Dialogue: 10,0:36:14.67,0:36:15.50,CN-Main,,0,0,0,,给
+Dialogue: 0,0:36:14.67,0:36:15.50,ES-Main,,0,0,0,,Mira.
+Dialogue: 10,0:36:18.50,0:36:19.50,CN-Main,,0,0,0,,马蒂尔德！
+Dialogue: 0,0:36:18.50,0:36:19.50,ES-Main,,0,0,0,,¡Matilde!
+Dialogue: 10,0:36:26.62,0:36:28.54,CN-Main,,0,0,0,,我们不再是朋友了吗？
+Dialogue: 0,0:36:26.62,0:36:28.54,ES-Main,,0,0,0,,¿Es que ya no somos amigos o qué?
+Dialogue: 10,0:36:28.62,0:36:30.17,CN-Main,,0,0,0,,我也正纳闷儿呢
+Dialogue: 0,0:36:28.62,0:36:30.17,ES-Main,,0,0,0,,Eso me pregunto yo.
+Dialogue: 10,0:36:31.12,0:36:33.29,CN-Main,,0,0,0,,你好久没来我们家坐坐了
+Dialogue: 0,0:36:31.12,0:36:33.29,ES-Main,,0,0,0,,Hace tiempo que no pasas por la casa.
+Dialogue: 10,0:36:34.75,0:36:37.83,CN-Main,,0,0,0,,自从何塞·阿尔卡蒂奥出事以后我每天忙得脚不沾地
+Dialogue: 0,0:36:34.75,0:36:37.83,ES-Main,,0,0,0,,La verdad es que no me queda ni un minuto desde lo de José Arcadio.
+Dialogue: 10,0:36:38.29,0:36:39.38,CN-Main,,0,0,0,,可不是嘛
+Dialogue: 0,0:36:38.29,0:36:39.38,ES-Main,,0,0,0,,Me imagino.
+Dialogue: 10,0:36:39.96,0:36:41.42,CN-Main,,0,0,0,,我们都很想念他
+Dialogue: 0,0:36:39.96,0:36:41.42,ES-Main,,0,0,0,,Hace falta el compadre.
+Dialogue: 10,0:36:43.96,0:36:46.75,CN-Main,,0,0,0,,难以置信的是那天他居然开始跟尼卡诺交谈了
+Dialogue: 0,0:36:43.96,0:36:46.75,ES-Main,,0,0,0,,Imagínate que el otro día se puso a hablar con Nicanor.
+Dialogue: 10,0:36:47.54,0:36:50.75,CN-Main,,0,0,0,,托了那神父的福我们才能听明白他在说什么
+Dialogue: 0,0:36:47.54,0:36:50.75,ES-Main,,0,0,0,,De no ser por él, no nos hubiéramos dado cuenta de lo que dice.
+Dialogue: 10,0:36:52.71,0:36:54.62,CN-Main,,0,0,0,,他们俩现在能聊上一整天
+Dialogue: 0,0:36:52.71,0:36:54.62,ES-Main,,0,0,0,,Se la pasa todo el día conversando, como lo hacía contigo.
+Dialogue: 10,0:36:55.21,0:36:56.46,CN-Main,,0,0,0,,就像你们俩当年一样
+Dialogue: 10,0:36:59.12,0:37:00.54,CN-Main,,0,0,0,,尼卡诺是个好人
+Dialogue: 0,0:36:59.12,0:37:00.54,ES-Main,,0,0,0,,Es un buen hombre, Nicanor.
+Dialogue: 10,0:37:01.04,0:37:02.79,CN-Main,,0,0,0,,乌苏拉 你到底想说什么？
+Dialogue: 0,0:37:01.04,0:37:02.79,ES-Main,,0,0,0,,¿Qué nos estás diciendo, Úrsula?
+Dialogue: 10,0:37:05.08,0:37:07.12,CN-Main,,0,0,0,,有时候我感觉跟摩斯科特家的姻亲关系
+Dialogue: 0,0:37:05.08,0:37:07.12,ES-Main,,0,0,0,,Creo que esa cercanía con los Moscote
+Dialogue: 10,0:37:07.21,0:37:09.96,CN-Main,,0,0,0,,让你忘了这个小镇是我们跟何塞·阿尔卡蒂奥共同创建的
+Dialogue: 0,0:37:07.21,0:37:09.96,ES-Main,,0,0,0,,te hizo olvidar el pueblo que fundamos con José Arcadio.
+Dialogue: 10,0:37:15.92,0:37:18.50,CN-Main,,0,0,0,,很不凑巧何塞·阿尔卡蒂奥如今被绑在树上
+Dialogue: 0,0:37:15.92,0:37:18.50,ES-Main,,0,0,0,,Resulta que José Arcadio está amarrado a un árbol.
+Dialogue: 10,0:37:19.83,0:37:21.75,CN-Main,,0,0,0,,我成了家里的顶梁柱
+Dialogue: 0,0:37:19.83,0:37:21.75,ES-Main,,0,0,0,,Ahora yo tengo que ver por la familia.
+Dialogue: 10,0:37:23.92,0:37:25.92,CN-Main,,0,0,0,,我的记性很好 盖里奈多
+Dialogue: 0,0:37:23.92,0:37:25.92,ES-Main,,0,0,0,,La memoria no me falla, Gerineldo.
+Dialogue: 10,0:37:27.00,0:37:30.71,CN-Main,,0,0,0,,我记得你们两个在奥雷里亚诺的婚礼上中途离席
+Dialogue: 0,0:37:27.00,0:37:30.71,ES-Main,,0,0,0,,Así como sé que ustedes se fueron en la mitad del matrimonio de Aureliano,
+Dialogue: 10,0:37:31.29,0:37:33.33,CN-Main,,0,0,0,,我也记得在何塞·阿尔卡蒂奥疯魔以后
+Dialogue: 0,0:37:31.29,0:37:33.33,ES-Main,,0,0,0,,también sé que los Moscote
+Dialogue: 10,0:37:33.50,0:37:37.12,CN-Main,,0,0,0,,在我孤单无助时来探望过的就只有摩斯科特一家人
+Dialogue: 0,0:37:33.50,0:37:37.12,ES-Main,,0,0,0,,han sido los únicos que han pisado la casa desde que José Arcadio me dejó sola.
+Dialogue: 10,0:37:38.38,0:37:39.58,CN-Main,,0,0,0,,很高兴见到你们两位
+Dialogue: 0,0:37:38.38,0:37:39.58,ES-Main,,0,0,0,,Me dio gusto verlos.
+Dialogue: 10,0:37:42.12,0:37:42.96,CN-Main,,0,0,0,,失陪了
+Dialogue: 0,0:37:42.12,0:37:42.96,ES-Main,,0,0,0,,Permiso.
+Dialogue: 10,0:37:53.62,0:37:55.38,CN-Main,,0,0,0,,我一直无法理解…
+Dialogue: 0,0:37:53.62,0:37:55.38,ES-Main,,0,0,0,,Nunca he entendido…
+Dialogue: 10,0:37:57.33,0:38:00.17,CN-Main,,0,0,0,,两个原则相同的派别斗得不可开交
+Dialogue: 0,0:37:57.33,0:38:00.17,ES-Main,,0,0,0,,el sentido de una contienda entre dos adversarios
+Dialogue: 10,0:38:00.79,0:38:03.12,CN-Main,,0,0,0,,究竟有何意义
+Dialogue: 0,0:38:00.79,0:38:03.12,ES-Main,,0,0,0,,que comparten los mismos principios.
+Dialogue: 10,0:38:12.67,0:38:14.62,CN-Main,,0,0,0,,他们怎么能…
+Dialogue: 0,0:38:12.67,0:38:14.62,ES-Main,,0,0,0,,¿Cómo es posible que lo tengan…
+Dialogue: 10,0:38:16.12,0:38:17.25,CN-Main,,0,0,0,,把你捆在树上？
+Dialogue: 0,0:38:16.12,0:38:17.25,ES-Main,,0,0,0,,amarrado a un árbol?
+Dialogue: 10,0:38:19.75,0:38:21.25,CN-Main,,0,0,0,,很简单
+Dialogue: 0,0:38:19.75,0:38:21.25,ES-Main,,0,0,0,,Es muy simple.
+Dialogue: 10,0:38:24.00,0:38:25.58,CN-Main,,0,0,0,,因为我疯了
+Dialogue: 0,0:38:24.00,0:38:25.58,ES-Main,,0,0,0,,Porque estoy loco.
+Dialogue: 10,0:38:33.38,0:38:35.33,CN-Main,,0,0,0,,害怕信仰被动摇的神父
+Dialogue: 10,0:38:36.00,0:38:38.08,CN-Main,,0,0,0,,没有再回来探望过他
+Dialogue: 0,0:38:36.00,0:38:38.08,ES-Main,,0,0,0,,el cura no volvió a visitarlo.
+Dialogue: 10,0:38:56.12,0:38:58.17,CN-Main,,0,0,0,,至少吃一勺吧 孩子
+Dialogue: 0,0:38:56.12,0:38:58.17,ES-Main,,0,0,0,,Al menos una cucharada, muchacha.
+Dialogue: 10,0:38:58.67,0:39:00.75,CN-Main,,0,0,0,,你不能饿着肚子里的宝宝呀
+Dialogue: 0,0:38:58.67,0:39:00.75,ES-Main,,0,0,0,,No puedes dejar a esa criatura sin comer.
+Dialogue: 10,0:40:21.21,0:40:22.38,CN-Main,,0,0,0,,乌苏拉女士
+Dialogue: 0,0:40:21.21,0:40:22.38,ES-Main,,0,0,0,,Doña Úrsula.
+Dialogue: 10,0:40:23.04,0:40:25.62,CN-Main,,0,0,0,,无论有没有彩绘玻璃和教堂大钟
+Dialogue: 0,0:40:23.04,0:40:25.62,ES-Main,,0,0,0,,Con o sin vitrales, con o sin campanas,
+Dialogue: 10,0:40:25.71,0:40:28.96,CN-Main,,0,0,0,,这个月底必须让丽贝卡举行婚礼
+Dialogue: 0,0:40:25.71,0:40:28.96,ES-Main,,0,0,0,,Rebeca tiene que estar parada en el altar antes de que el mes termine.
+Dialogue: 10,0:40:30.54,0:40:32.00,CN-Main,,0,0,0,,明白了吗 尼卡诺？
+Dialogue: 0,0:40:30.54,0:40:32.00,ES-Main,,0,0,0,,¿Estamos claros, Nicanor?
+Dialogue: 10,0:40:50.42,0:40:53.08,CN-Main,,0,0,0,,亲爱的 早上好
+Dialogue: 0,0:40:50.42,0:40:53.08,ES-Main,,0,0,0,,Amor. Buenos días.
+Dialogue: 10,0:40:54.12,0:40:55.50,CN-Main,,0,0,0,,写信给你妈妈
+Dialogue: 0,0:40:54.12,0:40:55.50,ES-Main,,0,0,0,,Escríbele a tu mamá.
+Dialogue: 10,0:40:55.88,0:40:59.46,CN-Main,,0,0,0,,不管她来不来我们一个月后就要在马孔多完婚了
+Dialogue: 0,0:40:55.88,0:40:59.46,ES-Main,,0,0,0,,En un mes nos casamos, esté ella o no en Macondo.
+Dialogue: 10,0:41:11.46,0:41:15.92,CN-Main,,0,0,0,,阿玛兰妲惴惴不安地等待着那个时刻浑身因恐惧而颤抖
+Dialogue: 0,0:41:11.46,0:41:15.92,ES-Main,,0,0,0,,de pavor esperando aquella hora.
+Dialogue: 10,0:41:52.29,0:41:54.96,CN-Main,,0,0,0,,站稳 好了
+Dialogue: 0,0:41:52.29,0:41:54.96,ES-Main,,0,0,0,,Ay… Ay, se cae. Eso.
+Dialogue: 10,0:42:09.33,0:42:11.54,CN-Main,,0,0,0,,你觉得会是男孩还是女孩？
+Dialogue: 0,0:42:09.33,0:42:11.54,ES-Main,,0,0,0,,¿Qué crees? ¿Va a ser niño o niña?
+Dialogue: 10,0:42:12.08,0:42:15.62,CN-Main,,0,0,0,,不知道 但不是一个 而是两个宝宝
+Dialogue: 0,0:42:12.08,0:42:15.62,ES-Main,,0,0,0,,No sé. Pero no va a ser uno, sino dos.
+Dialogue: 10,0:42:16.71,0:42:17.96,CN-Main,,0,0,0,,你怎么知道？
+Dialogue: 0,0:42:16.71,0:42:17.96,ES-Main,,0,0,0,,¿Y tú cómo sabes eso?
+Dialogue: 10,0:42:19.67,0:42:23.04,CN-Main,,0,0,0,,就跟我在丽贝卡满眼惊恐地走进那扇门之前
+Dialogue: 0,0:42:19.67,0:42:23.04,ES-Main,,0,0,0,,De la misma forma que supe que Rebeca llegaría
+Dialogue: 10,0:42:23.12,0:42:24.67,CN-Main,,0,0,0,,就预感到了她会来一样
+Dialogue: 0,0:42:23.12,0:42:24.67,ES-Main,,0,0,0,,antes de que cruzara esa puerta con ojos de espanto.
+Dialogue: 10,0:42:25.71,0:42:28.50,CN-Main,,0,0,0,,不相信吗？去问我妈妈吧 她会告诉你的
+Dialogue: 0,0:42:25.71,0:42:28.50,ES-Main,,0,0,0,,¿No me crees? Pregúntale a mamá, para que veas.
+Dialogue: 10,0:42:34.21,0:42:35.29,CN-Main,,0,0,0,,米格！
+Dialogue: 0,0:42:34.21,0:42:35.29,ES-Main,,0,0,0,,¡Migue!
+Dialogue: 10,0:42:36.71,0:42:37.67,CN-Main,,0,0,0,,你跑哪儿去了？
+Dialogue: 0,0:42:36.71,0:42:37.67,ES-Main,,0,0,0,,¿Dónde estabas?
+Dialogue: 10,0:42:39.12,0:42:40.04,CN-Main,,0,0,0,,什么？
+Dialogue: 0,0:42:39.12,0:42:40.04,ES-Main,,0,0,0,,¿Qué?
+Dialogue: 10,0:42:53.33,0:42:54.71,CN-Main,,0,0,0,,怎么了？
+Dialogue: 0,0:42:53.33,0:42:54.71,ES-Main,,0,0,0,,¿Vale, qué es lo que tienes ahí? ¿Eh?
+Dialogue: 10,0:42:56.46,0:42:57.50,CN-Main,,0,0,0,,怎么回事？
+Dialogue: 0,0:42:56.46,0:42:57.50,ES-Main,,0,0,0,,¿Qué fue lo que te pasó? ¿Eh?
+Dialogue: 10,0:42:58.29,0:43:00.04,CN-Main,,0,0,0,,-好痒-痒吗？
+Dialogue: 0,0:42:58.29,0:43:00.04,ES-Main,,0,0,0,,Pica. ¿Te pica?
+Dialogue: 10,0:43:04.50,0:43:05.50,CN-Main,,0,0,0,,你好吗？
+Dialogue: 0,0:43:04.50,0:43:05.50,ES-Main,,0,0,0,,¿Cómo estás?
+Dialogue: 10,0:43:21.29,0:43:22.17,CN-Main,,0,0,0,,皮拉！
+Dialogue: 0,0:43:21.29,0:43:22.17,ES-Main,,0,0,0,,¡Pilar!
+Dialogue: 10,0:43:23.04,0:43:23.88,CN-Main,,0,0,0,,校长
+Dialogue: 0,0:43:23.04,0:43:23.88,ES-Main,,0,0,0,,Director.
+Dialogue: 10,0:43:24.38,0:43:25.79,CN-Main,,0,0,0,,我们能谈谈吗？
+Dialogue: 0,0:43:24.38,0:43:25.79,ES-Main,,0,0,0,,¿Podría hablar con usted un segundo?
+Dialogue: 10,0:43:26.29,0:43:28.50,CN-Main,,0,0,0,,-我儿子惹麻烦了吗？-不 当然不是
+Dialogue: 0,0:43:26.29,0:43:28.50,ES-Main,,0,0,0,,¿Hizo algo mi muchacho? - No. Claro que no.
+Dialogue: 10,0:43:29.25,0:43:30.50,CN-Main,,0,0,0,,-麻烦照看一下他-没问题
+Dialogue: 0,0:43:29.25,0:43:30.50,ES-Main,,0,0,0,,¿Lo cuida un momento? - Bien.
+Dialogue: 10,0:43:31.29,0:43:32.21,CN-Main,,0,0,0,,什么事？
+Dialogue: 0,0:43:31.29,0:43:32.21,ES-Main,,0,0,0,,Dígame.
+Dialogue: 10,0:43:33.46,0:43:34.29,CN-Main,,0,0,0,,请进
+Dialogue: 0,0:43:33.46,0:43:34.29,ES-Main,,0,0,0,,Siga.
+Dialogue: 10,0:43:44.75,0:43:47.42,CN-Main,,0,0,0,,不！
+Dialogue: 0,0:43:44.75,0:43:47.42,ES-Main,,0,0,0,,¡No! ¡No, no, no! ¡Arcadio! ¡No!
+Dialogue: 10,0:43:47.50,0:43:49.29,CN-Main,,0,0,0,,-不 阿卡蒂奥 不要！-不要？
+Dialogue: 0,0:43:47.50,0:43:49.29,ES-Main,,0,0,0,,¡No! ¡Arcadio, no, no! - ¿No? ¿No?
+Dialogue: 10,0:43:49.38,0:43:50.71,CN-Main,,0,0,0,,-不要！-不要？
+Dialogue: 10,0:43:51.62,0:43:52.96,CN-Main,,0,0,0,,不要
+Dialogue: 0,0:43:51.62,0:43:52.96,ES-Main,,0,0,0,,Arcadio, no.
+Dialogue: 10,0:43:55.46,0:43:58.71,CN-Main,,0,0,0,,别装出一副圣洁的模样大家都知道你是个娼妇
+Dialogue: 0,0:43:55.46,0:43:58.71,ES-Main,,0,0,0,,No te vas a hacer la santa. Todo el mundo sabe que eres una puta, ¿ah?
+Dialogue: 10,0:44:02.96,0:44:04.54,CN-Main,,0,0,0,,不要在这里
+Dialogue: 0,0:44:02.96,0:44:04.54,ES-Main,,0,0,0,,Aquí no. Aquí no.
+Dialogue: 10,0:44:05.67,0:44:07.75,CN-Main,,0,0,0,,换个地方 换个时间吧
+Dialogue: 0,0:44:05.67,0:44:07.75,ES-Main,,0,0,0,,Aquí no. ¡Ahora no!
+Dialogue: 10,0:44:08.29,0:44:10.71,CN-Main,,0,0,0,,我儿子在外面 他会听见的 阿卡蒂奥
+Dialogue: 0,0:44:08.29,0:44:10.71,ES-Main,,0,0,0,,Afuera está mi hijo y puede escucharnos, Arcadio.
+Dialogue: 10,0:44:10.79,0:44:12.62,CN-Main,,0,0,0,,阿卡蒂奥！
+Dialogue: 0,0:44:10.79,0:44:12.62,ES-Main,,0,0,0,,¡Arcadio! Arcadio.
+Dialogue: 10,0:44:17.17,0:44:18.12,CN-Main,,0,0,0,,我会去找你
+Dialogue: 0,0:44:17.17,0:44:18.12,ES-Main,,0,0,0,,Yo vengo.
+Dialogue: 10,0:44:19.50,0:44:21.00,CN-Main,,0,0,0,,今晚就去
+Dialogue: 0,0:44:19.50,0:44:21.00,ES-Main,,0,0,0,,Yo vengo esta noche.
+Dialogue: 10,0:44:21.54,0:44:24.67,CN-Main,,0,0,0,,给我留着门 关上灯
+Dialogue: 0,0:44:21.54,0:44:24.67,ES-Main,,0,0,0,,Deja la puerta abierta y la luz apagada.
+Dialogue: 10,0:44:27.12,0:44:28.08,CN-Main,,0,0,0,,真的吗？
+Dialogue: 0,0:44:27.12,0:44:28.08,ES-Main,,0,0,0,,¿Sí? - ¿Segura?
+Dialogue: 10,0:44:30.08,0:44:32.08,CN-Main,,0,0,0,,我骗你干什么 阿卡蒂奥？
+Dialogue: 0,0:44:30.08,0:44:32.08,ES-Main,,0,0,0,,¿Por qué habría de mentirte, Arcadio?
+Dialogue: 10,0:44:36.88,0:44:38.17,CN-Main,,0,0,0,,今晚等我
+Dialogue: 0,0:44:36.88,0:44:38.17,ES-Main,,0,0,0,,Espérame esta noche.
+Dialogue: 10,0:44:44.50,0:44:45.96,CN-Main,,0,0,0,,米格尔！我们走吧
+Dialogue: 0,0:44:44.50,0:44:45.96,ES-Main,,0,0,0,,¡Miguel! Vamos.
+Dialogue: 10,0:45:12.29,0:45:13.92,CN-Main,,0,0,0,,他彻夜未眠地等待着
+Dialogue: 10,0:45:15.08,0:45:18.96,CN-Main,,0,0,0,,在漫长无尽的清晨聆听着蟋蟀发情的鸣叫
+Dialogue: 0,0:45:15.08,0:45:18.96,ES-Main,,0,0,0,,oyendo los grillos alborotados de la madrugada sin término,
+Dialogue: 10,0:45:20.00,0:45:22.88,CN-Main,,0,0,0,,他越发坚信自己被骗了
+Dialogue: 0,0:45:20.00,0:45:22.88,ES-Main,,0,0,0,,cada vez más convencido de que lo había engañado.
+Dialogue: 10,0:46:21.71,0:46:24.54,CN-Main,,0,0,0,,阿卡蒂奥意识到这不是他苦苦等待的那个女人
+Dialogue: 0,0:46:21.71,0:46:24.54,ES-Main,,0,0,0,,que no era la mujer que esperaba
+Dialogue: 10,0:46:24.75,0:46:25.96,CN-Main,,0,0,0,,因为她的身上没有烟味
+Dialogue: 0,0:46:24.75,0:46:25.96,ES-Main,,0,0,0,,porque no olía a humo.
+Dialogue: 10,0:46:35.38,0:46:36.67,CN-Main,,0,0,0,,她还是个处女
+Dialogue: 0,0:46:35.38,0:46:36.67,ES-Main,,0,0,0,,Era virgen
+Dialogue: 10,0:46:37.50,0:46:40.71,CN-Main,,0,0,0,,她的名字叫桑塔索菲亚·德拉·皮埃达
+Dialogue: 0,0:46:37.50,0:46:40.71,ES-Main,,0,0,0,,y tenía el nombre de Santa Sofía de la Piedad.
+Dialogue: 10,0:46:41.83,0:46:44.92,CN-Main,,0,0,0,,庇拉尔·特尔内拉给了她50比索
+Dialogue: 0,0:46:41.83,0:46:44.92,ES-Main,,0,0,0,,Pilar Ternera le había pagado 50 pesos,
+Dialogue: 10,0:46:46.00,0:46:48.67,CN-Main,,0,0,0,,用自己一半的积蓄
+Dialogue: 0,0:46:46.00,0:46:48.67,ES-Main,,0,0,0,,la mitad de sus ahorros de toda la vida,
+Dialogue: 10,0:46:49.71,0:46:52.04,CN-Main,,0,0,0,,让她来做此刻在做的事
+Dialogue: 0,0:46:49.71,0:46:52.04,ES-Main,,0,0,0,,para que hiciera lo que estaba haciendo.
+Dialogue: 10,0:46:57.38,0:46:59.71,CN-Main,,0,0,0,,阿卡蒂奥见过她很多次
+Dialogue: 0,0:46:57.38,0:46:59.71,ES-Main,,0,0,0,,Arcadio la había visto muchas veces
+Dialogue: 10,0:47:00.33,0:47:02.50,CN-Main,,0,0,0,,但从未仔细端详过她
+Dialogue: 0,0:47:00.33,0:47:02.50,ES-Main,,0,0,0,,y nunca se había fijado en ella,
+Dialogue: 10,0:47:03.17,0:47:06.54,CN-Main,,0,0,0,,因为她具有一种罕见的品质从来只有稀薄的存在感
+Dialogue: 0,0:47:03.17,0:47:06.54,ES-Main,,0,0,0,,porque tenía la rara virtud de no existir por completo,
+Dialogue: 10,0:47:07.17,0:47:09.04,CN-Main,,0,0,0,,除非碰上了适当的时机
+Dialogue: 0,0:47:07.17,0:47:09.04,ES-Main,,0,0,0,,sino en el momento oportuno.
+Dialogue: 10,0:47:15.58,0:47:17.08,CN-Main,,0,0,0,,但从那天起
+Dialogue: 0,0:47:15.58,0:47:17.08,ES-Main,,0,0,0,,Pero desde aquel día
+Dialogue: 10,0:47:17.83,0:47:20.58,CN-Main,,0,0,0,,他便像只猫一样蜷缩在她温暖的腋下了
+Dialogue: 0,0:47:17.83,0:47:20.58,ES-Main,,0,0,0,,se enroscó como un gato al calor de su axila.
+Dialogue: 10,0:47:54.79,0:47:56.38,CN-Main,,0,0,0,,救命！
+Dialogue: 0,0:47:54.79,0:47:56.38,ES-Main,,0,0,0,,¡Ayuda!
+Dialogue: 10,0:47:57.08,0:47:59.58,CN-Main,,0,0,0,,蕾梅！呼吸！
+Dialogue: 0,0:47:57.08,0:47:59.58,ES-Main,,0,0,0,,¡Reme! ¡Reme, respira! ¡Respira!
+Dialogue: 10,0:48:03.17,0:48:04.96,CN-Main,,0,0,0,,快找人帮忙！
+Dialogue: 0,0:48:03.17,0:48:04.96,ES-Main,,0,0,0,,¡Busquen ayuda!
+Dialogue: 10,0:48:06.67,0:48:08.33,CN-Main,,0,0,0,,叫医生来！
+Dialogue: 0,0:48:06.67,0:48:08.33,ES-Main,,0,0,0,,¡Busquen un médico!
+Dialogue: 10,0:48:08.42,0:48:09.58,CN-Main,,0,0,0,,妈妈！
+Dialogue: 0,0:48:08.42,0:48:09.58,ES-Main,,0,0,0,,¡Mamá!
+Dialogue: 10,0:48:22.38,0:48:25.67,CN-Main,,0,0,0,,蕾梅黛丝！喘口气呀！睁开眼看看我！我在这里！
+Dialogue: 0,0:48:22.38,0:48:25.67,ES-Main,,0,0,0,,Remedios. ¡Remedios, respira! ¡Mírame! ¡Mírame, aquí estoy!
+Dialogue: 10,0:48:26.08,0:48:28.04,CN-Main,,0,0,0,,我就在这里 亲爱的！
+Dialogue: 0,0:48:26.08,0:48:28.04,ES-Main,,0,0,0,,¡Aquí estoy! ¡Mi amor! ¡Mi amor!
+Dialogue: 10,0:48:28.58,0:48:30.17,CN-Main,,0,0,0,,亲爱的！
+Dialogue: 0,0:48:28.58,0:48:30.17,ES-Main,,0,0,0,,¡Mi amor! ¡Mi amor!
+Dialogue: 10,0:48:31.54,0:48:33.46,CN-Main,,0,0,0,,看着我 别睡！
+Dialogue: 0,0:48:31.54,0:48:33.46,ES-Main,,0,0,0,,Mírame. No te duermas.
+Dialogue: 10,0:48:33.67,0:48:35.50,CN-Main,,0,0,0,,别睡过去呀！
+Dialogue: 0,0:48:33.67,0:48:35.50,ES-Main,,0,0,0,,No te duermas. ¡No te duermas! ¡Mi amor!
+Dialogue: 10,0:48:36.71,0:48:38.12,CN-Main,,0,0,0,,亲爱的 别睡！
+Dialogue: 0,0:48:36.71,0:48:38.12,ES-Main,,0,0,0,,¡Mi niña, no te duermas! ¡No te duermas!
+Dialogue: 10,0:48:38.21,0:48:39.38,CN-Main,,0,0,0,,别睡啊！
+Dialogue: 10,0:48:46.67,0:48:51.88,CN-Main,,0,0,0,,蕾梅黛丝浸染在自己的血液里中毒而死
+Dialogue: 0,0:48:46.67,0:48:51.88,ES-Main,,0,0,0,,murió envenenada por su propia sangre,
+Dialogue: 10,0:48:52.83,0:48:56.00,CN-Main,,0,0,0,,连同一对双胞胎也横死腹中
+Dialogue: 0,0:48:52.83,0:48:56.00,ES-Main,,0,0,0,,con un par de gemelos atravesados en el vientre.
+Dialogue: 10,0:49:30.75,0:49:32.62,CN-Main,,0,0,0,,今天 这可怕的悲剧…
+Dialogue: 0,0:49:30.75,0:49:32.62,ES-Main,,0,0,0,,Hoy, más que nunca,
+Dialogue: 10,0:49:34.58,0:49:37.50,CN-Main,,0,0,0,,将我们所有人聚到一起我比以往任何时候…
+Dialogue: 0,0:49:34.58,0:49:37.50,ES-Main,,0,0,0,,dadas las terribles circunstancias que nos reúnen…
+Dialogue: 10,0:49:40.33,0:49:41.92,CN-Main,,0,0,0,,都更加感谢上帝
+Dialogue: 0,0:49:40.33,0:49:41.92,ES-Main,,0,0,0,,le doy gracias a Dios
+Dialogue: 10,0:49:43.62,0:49:45.62,CN-Main,,0,0,0,,他以无限的智慧
+Dialogue: 0,0:49:43.62,0:49:45.62,ES-Main,,0,0,0,,por su infinita sabiduría…
+Dialogue: 10,0:49:48.38,0:49:51.83,CN-Main,,0,0,0,,及时敞开了天国的门
+Dialogue: 0,0:49:48.38,0:49:51.83,ES-Main,,0,0,0,,porque nos ha abierto justo a tiempo
+Dialogue: 10,0:49:53.38,0:49:56.04,CN-Main,,0,0,0,,邀我们入他的神殿
+Dialogue: 0,0:49:53.38,0:49:56.04,ES-Main,,0,0,0,,las puertas de su templo, de su casa,
+Dialogue: 10,0:49:57.29,0:49:58.96,CN-Main,,0,0,0,,使我们能在此卸下
+Dialogue: 0,0:49:57.29,0:49:58.96,ES-Main,,0,0,0,,para que dejemos acá
+Dialogue: 10,0:49:59.96,0:50:01.00,CN-Main,,0,0,0,,这场悲剧
+Dialogue: 0,0:49:59.96,0:50:01.00,ES-Main,,0,0,0,,el dolor
+Dialogue: 10,0:50:01.75,0:50:03.46,CN-Main,,0,0,0,,所带来的痛苦和重负
+Dialogue: 0,0:50:01.75,0:50:03.46,ES-Main,,0,0,0,,y el peso de esta tragedia.
+Dialogue: 10,0:50:10.12,0:50:14.42,CN-Main,,0,0,0,,阿玛兰妲曾切切祈求发生某种可怕的事情阻碍婚礼
+Dialogue: 0,0:50:10.12,0:50:14.42,ES-Main,,0,0,0,,con tanto fervor
+Dialogue: 10,0:50:14.50,0:50:16.62,CN-Main,,0,0,0,,使她不必向丽贝卡下毒
+Dialogue: 0,0:50:14.50,0:50:16.62,ES-Main,,0,0,0,,que algo pavoroso ocurriera para no tener que envenenar a Rebeca,
+Dialogue: 10,0:50:17.29,0:50:20.42,CN-Main,,0,0,0,,她对蕾梅黛丝的死深感内疚
+Dialogue: 0,0:50:17.29,0:50:20.42,ES-Main,,0,0,0,,que se sintió culpable por la muerte de Remedios,
+Dialogue: 10,0:50:21.17,0:50:25.75,CN-Main,,0,0,0,,收养了奥雷里亚诺·何塞这个孩子将陪伴她走过永恒的孤独
+Dialogue: 0,0:50:21.17,0:50:25.75,ES-Main,,0,0,0,,y adoptó a Aureliano José como un hijo que había de acompañar su eterna soledad.
+Dialogue: 10,0:52:16.04,0:52:20.00,CN-Main,,0,0,0,,乌苏拉下令在哀悼期间紧闭门窗
+Dialogue: 0,0:52:16.04,0:52:20.00,ES-Main,,0,0,0,,de puertas y ventanas cerradas
+Dialogue: 10,0:52:20.71,0:52:23.67,CN-Main,,0,0,0,,并且一年内禁止大声说话
+Dialogue: 0,0:52:20.71,0:52:23.67,ES-Main,,0,0,0,,y prohibió hablar en voz alta durante un año.
+Dialogue: 10,0:54:11.29,0:54:13.58,CN-Main,,0,0,0,,当哀悼持续了好一段时间
+Dialogue: 0,0:54:11.29,0:54:13.58,ES-Main,,0,0,0,,llevaba tanto tiempo
+Dialogue: 10,0:54:13.71,0:54:17.12,CN-Main,,0,0,0,,大家又重新开始刺绣的时候
+Dialogue: 0,0:54:13.71,0:54:17.12,ES-Main,,0,0,0,,que ya se habían reanudado las sesiones de punto y cruz,
+Dialogue: 10,0:54:17.79,0:54:21.67,CN-Main,,0,0,0,,一股狂风在下午两点推开了紧闭的家门
+Dialogue: 0,0:54:17.79,0:54:21.67,ES-Main,,0,0,0,,un vendaval empujó la puerta de la calle a las dos de la tarde.
+Dialogue: 10,0:55:00.38,0:55:01.54,CN-Main,,0,0,0,,不会吧
+Dialogue: 0,0:55:00.38,0:55:01.54,ES-Main,,0,0,0,,No puede ser…
+Dialogue: 10,0:55:03.83,0:55:05.58,CN-Main,,0,0,0,,真不敢相信
+Dialogue: 0,0:55:03.83,0:55:05.58,ES-Main,,0,0,0,,No puede ser. No puede ser.
+Dialogue: 10,0:55:09.46,0:55:10.92,CN-Main,,0,0,0,,是何塞·阿尔卡蒂奥
+Dialogue: 10,0:55:11.67,0:55:14.04,CN-Main,,0,0,0,,他回来时 如离家时一般穷困
+Dialogue: 0,0:55:11.67,0:55:14.04,ES-Main,,0,0,0,,Regresaba tan pobre como se fue,
+Dialogue: 10,0:55:14.62,0:55:17.75,CN-Main,,0,0,0,,就连他那孤身坐在栗子树下的父亲
+Dialogue: 0,0:55:14.62,0:55:17.75,ES-Main,,0,0,0,,y hasta su padre bajo el castaño solitario
+Dialogue: 10,0:55:18.62,0:55:22.83,CN-Main,,0,0,0,,都感到房子在大地的震动中摇摇欲坠
+Dialogue: 0,0:55:18.62,0:55:22.83,ES-Main,,0,0,0,,tuvo la impresión de que un temblor de tierra estaba desquiciando la casa.
+Dialogue: 10,0:55:48.67,0:55:51.00,CN-Main,,0,0,0,,（根据加夫列尔·加西亚·马尔克斯小说改编）
+Dialogue: 10,1:01:23.67,1:01:26.08,CN-Main,,0,0,0,,字幕翻译：覃璇

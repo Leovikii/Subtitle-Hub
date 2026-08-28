@@ -1,0 +1,961 @@
+[Script Info]
+Title:
+ScriptType: v4.00+
+Collisions: Normal
+PlayDepth: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: 中文,Microsoft YaHei,16,&H00FFFFFF,&H0300FFFF,&H00000000,&H02848484,0,0,0,0,100,100,0,0,1,1.2,0.3,2,10,10,18,1
+Style: 副字幕,Arial,12,&H00FFFFFF,&H0300FFFF,&H00000000,&H02818181,0,-1,0,0,100,100,0,0,1,1.2,0.3,2,10,10,5,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:17.42,0:00:19.42,副字幕,,0,0,0,,[ventisca]
+Dialogue: 0,0:00:31.75,0:00:33.75,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:02:17.00,0:02:18.58,中文,,0,0,0,,多年以后
+Dialogue: 0,0:02:17.00,0:02:18.58,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:02:20.46,0:02:22.67,中文,,0,0,0,,面对行刑队…
+Dialogue: 0,0:02:20.46,0:02:22.67,副字幕,,0,0,0,,frente al pelotón de fusilamiento…
+Dialogue: 10,0:02:26.92,0:02:28.96,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:02:26.92,0:02:28.96,副字幕,,0,0,0,,el coronel Aureliano Buendía
+Dialogue: 10,0:02:30.71,0:02:33.08,中文,,0,0,0,,将会回想起父亲带他…
+Dialogue: 0,0:02:30.71,0:02:33.08,副字幕,,0,0,0,,había de recordar aquella tarde remota
+Dialogue: 10,0:02:35.75,0:02:38.21,中文,,0,0,0,,去见识冰块的那个遥远的下午
+Dialogue: 0,0:02:35.75,0:02:38.21,副字幕,,0,0,0,,en que su padre lo llevó a conocer el hielo.
+Dialogue: 10,0:02:40.21,0:02:45.58,中文,,0,0,0,,《百年孤独》
+Dialogue: 0,0:02:45.67,0:02:47.79,副字幕,,0,0,0,,- [suena música animada] - [multitud] ¡Eso!
+Dialogue: 10,0:03:08.62,0:03:11.88,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚和乌苏拉·伊瓜兰是表兄妹
+Dialogue: 0,0:03:08.62,0:03:11.88,副字幕,,0,0,0,,[narrador] y Úrsula Iguarán eran primos.
+Dialogue: 10,0:03:13.21,0:03:15.54,中文,,0,0,0,,他们从小一起长大而他们居住的村庄
+Dialogue: 0,0:03:13.21,0:03:15.54,副字幕,,0,0,0,,Habían crecido juntos en la antigua ranchería
+Dialogue: 0,0:03:15.62,0:03:17.46,副字幕,,0,0,0,,que sus antepasados transformaron
+Dialogue: 10,0:03:15.75,0:03:19.92,中文,,0,0,0,,逐渐被先祖们改造成了那一带最繁荣的小镇
+Dialogue: 0,0:03:17.54,0:03:19.92,副字幕,,0,0,0,,en uno de los mejores pueblos de la provincia.
+Dialogue: 0,0:03:20.79,0:03:22.79,副字幕,,0,0,0,,[gritan]
+Dialogue: 10,0:03:23.88,0:03:26.71,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚让可怜的乌苏拉喘口气吧
+Dialogue: 0,0:03:23.88,0:03:26.71,副字幕,,0,0,0,,José Arcadio Buendía, ya deja respirar a la pobre Úrsula.
+Dialogue: 10,0:03:26.79,0:03:28.21,中文,,0,0,0,,再多等会儿 老兄
+Dialogue: 0,0:03:26.79,0:03:28.25,副字幕,,0,0,0,,¡Aguántate un ratito, hombre!
+Dialogue: 10,0:03:28.33,0:03:30.08,中文,,0,0,0,,先过去庆祝！这可是你们的派对
+Dialogue: 0,0:03:28.33,0:03:30.08,副字幕,,0,0,0,,A celebrar, la fiesta es para ustedes.
+Dialogue: 0,0:03:30.17,0:03:32.29,副字幕,,0,0,0,,- Hombre, sí, vamos. - ¡Vamos!
+Dialogue: 10,0:03:30.25,0:03:32.29,中文,,0,0,0,,-走吧 老兄！快来-我们走
+Dialogue: 0,0:03:34.29,0:03:36.25,副字幕,,0,0,0,,[mujer] ¡Llegó la fiesta!
+Dialogue: 10,0:03:39.83,0:03:42.33,中文,,0,0,0,,虽然二人的结合早有预兆
+Dialogue: 0,0:03:39.83,0:03:42.33,副字幕,,0,0,0,,[narrador] era previsible,
+Dialogue: 10,0:03:42.96,0:03:47.25,中文,,0,0,0,,但他们提出结婚时还是遭到了亲族的反对
+Dialogue: 0,0:03:42.96,0:03:45.04,副字幕,,0,0,0,,cuando expresaron la voluntad de casarse,
+Dialogue: 0,0:03:45.12,0:03:47.25,副字幕,,0,0,0,,sus parientes trataron de impedirlo.
+Dialogue: 10,0:03:55.46,0:03:58.12,中文,,0,0,0,,虽然两人都很健康 但族人们害怕
+Dialogue: 0,0:03:55.46,0:03:56.38,副字幕,,0,0,0,,Tenían el temor
+Dialogue: 0,0:03:56.46,0:04:00.38,副字幕,,0,0,0,,de que aquellos saludables cabos de dos razas secularmente entrecruzadas
+Dialogue: 10,0:03:58.21,0:04:00.33,中文,,0,0,0,,几个世纪以来的异族通婚和近亲结婚
+Dialogue: 10,0:04:00.46,0:04:03.00,中文,,0,0,0,,会令他们生出鬣蜥模样的怪胎
+Dialogue: 0,0:04:00.46,0:04:03.00,副字幕,,0,0,0,,pasaran por la vergüenza de engendrar iguanas.
+Dialogue: 0,0:04:08.92,0:04:10.92,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:04:17.00,0:04:20.79,中文,,0,0,0,,假如乌苏拉的母亲没有对他们的后代做各种不祥的预示
+Dialogue: 0,0:04:17.00,0:04:19.42,副字幕,,0,0,0,,[narrador] si la madre de Úrsula
+Dialogue: 0,0:04:19.50,0:04:20.83,副字幕,,0,0,0,,no la hubiera aterrorizado
+Dialogue: 10,0:04:20.92,0:04:24.12,中文,,0,0,0,,令她担惊受怕他们婚后的生活本该是美满的
+Dialogue: 0,0:04:20.92,0:04:24.12,副字幕,,0,0,0,,con toda clase de pronósticos siniestros sobre su descendencia.
+Dialogue: 0,0:04:34.00,0:04:36.00,副字幕,,0,0,0,,[música animada continúa]
+Dialogue: 10,0:04:39.71,0:04:41.92,中文,,0,0,0,,嘿！过来！
+Dialogue: 0,0:04:39.71,0:04:41.92,副字幕,,0,0,0,,- ¡Ey! ¡Vamos! - [hombre] ¡Vamos!
+Dialogue: 0,0:05:24.62,0:05:26.62,副字幕,,0,0,0,,[canto de grillos]
+Dialogue: 0,0:05:35.92,0:05:37.92,副字幕,,0,0,0,,[crujido de la puerta]
+Dialogue: 0,0:05:56.21,0:05:57.50,副字幕,,0,0,0,,[ulular de búho]
+Dialogue: 0,0:06:10.79,0:06:13.04,副字幕,,0,0,0,,[jadean]
+Dialogue: 10,0:06:20.21,0:06:21.25,中文,,0,0,0,,这是什么？
+Dialogue: 0,0:06:20.21,0:06:21.25,副字幕,,0,0,0,,¿Y esto?
+Dialogue: 10,0:06:26.46,0:06:27.54,中文,,0,0,0,,是妈妈给我的
+Dialogue: 0,0:06:26.46,0:06:27.54,副字幕,,0,0,0,,Me lo dio mamá.
+Dialogue: 0,0:06:28.58,0:06:29.79,副字幕,,0,0,0,,[José Arcadio B. ríe]
+Dialogue: 10,0:06:30.79,0:06:34.67,中文,,0,0,0,,真不敢相信她还在用那些迷信思想折磨你
+Dialogue: 0,0:06:30.79,0:06:33.12,副字幕,,0,0,0,,No puedo creer que todavía te siga atormentando
+Dialogue: 0,0:06:33.21,0:06:34.67,副字幕,,0,0,0,,con estas supersticiones.
+Dialogue: 10,0:06:35.46,0:06:37.04,中文,,0,0,0,,而你居然还听她的
+Dialogue: 0,0:06:35.46,0:06:37.04,副字幕,,0,0,0,,Y que aparte tú le hagas caso.
+Dialogue: 10,0:06:38.04,0:06:41.42,中文,,0,0,0,,这不是迷信她跟我说了一件很可怕的事
+Dialogue: 0,0:06:38.04,0:06:41.42,副字幕,,0,0,0,,No, no son supersticiones. Esta vez me contó algo espantoso.
+Dialogue: 10,0:06:42.21,0:06:45.17,中文,,0,0,0,,还有什么能比你戴的这东西更可怕？
+Dialogue: 0,0:06:42.21,0:06:45.17,副字幕,,0,0,0,,¿Y qué puede ser más espantoso que esto que llevas puesto?
+Dialogue: 10,0:06:49.21,0:06:50.79,中文,,0,0,0,,孕育一个怪物
+Dialogue: 0,0:06:49.21,0:06:50.79,副字幕,,0,0,0,,Parir un monstruo.
+Dialogue: 10,0:06:52.12,0:06:54.75,中文,,0,0,0,,我母亲的表亲在近亲结婚后生下了一个畸形儿
+Dialogue: 0,0:06:52.12,0:06:54.75,副字幕,,0,0,0,,Unos primos de mamá se casaron y tuvieron un hijo.
+Dialogue: 10,0:06:55.29,0:06:58.50,中文,,0,0,0,,那孩子一生都因此而蒙羞
+Dialogue: 0,0:06:55.29,0:06:58.50,副字幕,,0,0,0,,El niño nació con una malformación que lo avergonzó toda su vida.
+Dialogue: 0,0:06:59.17,0:07:00.62,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:07:00.71,0:07:01.96,中文,,0,0,0,,什么样的畸形？
+Dialogue: 0,0:07:00.71,0:07:01.96,副字幕,,0,0,0,,¿Qué malformación?
+Dialogue: 10,0:07:03.17,0:07:04.50,中文,,0,0,0,,他长了一条猪尾巴
+Dialogue: 0,0:07:03.17,0:07:04.50,副字幕,,0,0,0,,Una cola de cerdo.
+Dialogue: 10,0:07:06.00,0:07:08.79,中文,,0,0,0,,卷卷的 像开塞钻一样 末梢还长了毛
+Dialogue: 0,0:07:06.00,0:07:08.79,副字幕,,0,0,0,,Una tripa enroscada con pelos en la punta como un tirabuzón.
+Dialogue: 0,0:07:09.38,0:07:10.46,副字幕,,0,0,0,,[ríe]
+Dialogue: 10,0:07:12.83,0:07:14.58,中文,,0,0,0,,她没必要编故事骗我们
+Dialogue: 0,0:07:12.83,0:07:14.58,副字幕,,0,0,0,,¿Por qué iba a inventarse algo así?
+Dialogue: 10,0:07:15.29,0:07:16.71,中文,,0,0,0,,她还告诉我 那个可怜人
+Dialogue: 0,0:07:15.29,0:07:16.71,副字幕,,0,0,0,,Me dijo que murió desangrado
+Dialogue: 0,0:07:16.79,0:07:19.79,副字幕,,0,0,0,,después de que le cortaran la cola con un hacha de carnicero.
+Dialogue: 10,0:07:17.00,0:07:19.79,中文,,0,0,0,,在被大砍刀切掉尾巴后因失血过多而死了
+Dialogue: 10,0:07:20.88,0:07:23.33,中文,,0,0,0,,就算生下小猪崽我也不在乎
+Dialogue: 0,0:07:20.88,0:07:23.33,副字幕,,0,0,0,,A mí no me importa tener cochinillos,
+Dialogue: 10,0:07:24.17,0:07:25.71,中文,,0,0,0,,只要孩子能说话就行
+Dialogue: 0,0:07:24.17,0:07:25.71,副字幕,,0,0,0,,siempre que puedan hablar.
+Dialogue: 10,0:07:28.25,0:07:29.62,中文,,0,0,0,,我在乎
+Dialogue: 0,0:07:28.25,0:07:29.62,副字幕,,0,0,0,,A mí sí me importa.
+Dialogue: 10,0:07:30.62,0:07:32.29,中文,,0,0,0,,我不要生小猪！
+Dialogue: 0,0:07:30.62,0:07:32.29,副字幕,,0,0,0,,Yo no voy a parir cerdos.
+Dialogue: 0,0:07:37.08,0:07:38.33,副字幕,,0,0,0,,[José Arcadio B. resopla]
+Dialogue: 0,0:07:42.50,0:07:43.67,副字幕,,0,0,0,,[Úrsula suspira]
+Dialogue: 0,0:07:47.42,0:07:49.42,副字幕,,0,0,0,,[música inquietante]
+Dialogue: 0,0:07:49.50,0:07:51.50,副字幕,,0,0,0,,[bullicio a lo lejos]
+Dialogue: 10,0:07:55.58,0:07:59.71,中文,,0,0,0,,白天 他会去照料自己养的斗鸡
+Dialogue: 0,0:07:55.58,0:08:00.96,副字幕,,0,0,0,,[narrador] sus gallos de pelea, y ella bordaba.
+Dialogue: 10,0:07:59.79,0:08:01.00,中文,,0,0,0,,而她则专心刺绣
+Dialogue: 10,0:08:05.96,0:08:11.00,中文,,0,0,0,,到了晚上他们会进行长达数小时的痛苦角力
+Dialogue: 0,0:08:05.96,0:08:11.00,副字幕,,0,0,0,,Durante la noche, forcejeaban varias horas con una ansiosa violencia…
+Dialogue: 10,0:08:12.25,0:08:14.92,中文,,0,0,0,,那似乎已然替代了爱的表达
+Dialogue: 0,0:08:12.25,0:08:14.92,副字幕,,0,0,0,,que ya parecía un sustituto del acto de amor.
+Dialogue: 0,0:08:17.46,0:08:19.46,副字幕,,0,0,0,,[música inquietante continúa]
+Dialogue: 0,0:08:22.08,0:08:23.29,副字幕,,0,0,0,,[cacareos]
+Dialogue: 0,0:08:25.00,0:08:27.33,副字幕,,0,0,0,,[balidos]
+Dialogue: 0,0:08:35.17,0:08:37.17,副字幕,,0,0,0,,[música sombría]
+Dialogue: 0,0:08:51.38,0:08:53.38,副字幕,,0,0,0,,[José Arcadio B. jadea]
+Dialogue: 10,0:08:55.00,0:08:58.71,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚和乌苏拉·伊瓜兰如此生活了数月
+Dialogue: 0,0:08:55.00,0:08:57.17,副字幕,,0,0,0,,[narrador] y Úrsula Iguarán
+Dialogue: 0,0:08:57.25,0:08:58.71,副字幕,,0,0,0,,estuvieron así por meses.
+Dialogue: 0,0:09:03.88,0:09:05.00,副字幕,,0,0,0,,[balidos]
+Dialogue: 0,0:09:08.54,0:09:11.17,副字幕,,0,0,0,,- [cacareo] - Pensé que no ibas a llegar, compadre.
+Dialogue: 10,0:09:09.42,0:09:11.17,中文,,0,0,0,,真没想到你会来
+Dialogue: 10,0:09:11.92,0:09:14.08,中文,,0,0,0,,我下了大注押你的公鸡赢它准备好了吗？
+Dialogue: 0,0:09:11.92,0:09:14.08,副字幕,,0,0,0,,Aposté mucho por ese gallo. ¿Sí está listo?
+Dialogue: 0,0:09:14.17,0:09:16.46,副字幕,,0,0,0,,Si lo traje es porque está listo, compadre.
+Dialogue: 10,0:09:14.25,0:09:16.46,中文,,0,0,0,,我既然带它来就说明它准备好了 朋友
+Dialogue: 10,0:09:18.17,0:09:19.79,中文,,0,0,0,,马尼费科 赔率如何？
+Dialogue: 0,0:09:18.17,0:09:19.88,副字幕,,0,0,0,,Magnífico. ¿Cómo van las apuestas?
+Dialogue: 10,0:09:19.96,0:09:22.29,中文,,0,0,0,,何塞 他们一如既往地看好你
+Dialogue: 0,0:09:19.96,0:09:22.29,副字幕,,0,0,0,,José, te tienen fe, compadre. Como siempre.
+Dialogue: 0,0:09:22.38,0:09:23.54,副字幕,,0,0,0,,[hombre] ¡Ajá, Buendía!
+Dialogue: 10,0:09:22.50,0:09:23.54,中文,,0,0,0,,你来了 布恩迪亚！
+Dialogue: 10,0:09:25.29,0:09:29.62,中文,,0,0,0,,你等那么久才来跟我对战就为了今天跑来找输啊
+Dialogue: 0,0:09:25.29,0:09:29.62,副字幕,,0,0,0,,Tanto tiempo queriendo tú pelear conmigo para venir a perder hoy.
+Dialogue: 10,0:09:30.33,0:09:31.33,中文,,0,0,0,,简直难以置信！
+Dialogue: 0,0:09:30.33,0:09:31.33,副字幕,,0,0,0,,¡No jodas!
+Dialogue: 10,0:09:32.58,0:09:35.21,中文,,0,0,0,,希望你喜欢鸡汤 因为它死定了
+Dialogue: 0,0:09:32.58,0:09:36.29,副字幕,,0,0,0,,Ve alistando ese sancocho, que te voy a matar ese gallo. ¿Me oíste?
+Dialogue: 10,0:09:35.29,0:09:36.29,中文,,0,0,0,,听见了吗？
+Dialogue: 0,0:09:36.38,0:09:38.04,副字幕,,0,0,0,,[todos ríen]
+Dialogue: 0,0:09:40.00,0:09:42.00,副字幕,,0,0,0,,[bullicio]
+Dialogue: 0,0:09:43.38,0:09:46.83,副字幕,,0,0,0,,- [diálogos indistintos] - [música de tensión]
+Dialogue: 10,0:09:55.33,0:09:56.21,中文,,0,0,0,,上啊！
+Dialogue: 0,0:09:55.33,0:09:56.21,副字幕,,0,0,0,,¡Vamos!
+Dialogue: 10,0:09:57.21,0:09:58.79,中文,,0,0,0,,加油！
+Dialogue: 0,0:09:57.21,0:09:58.79,副字幕,,0,0,0,,¡Vamos! ¡Duro!
+Dialogue: 0,0:10:00.04,0:10:01.54,副字幕,,0,0,0,,¡Pica, gallo!
+Dialogue: 0,0:10:01.62,0:10:05.00,副字幕,,0,0,0,,¡Ahí, ahí! ¡Pica, gallo, pica!
+Dialogue: 10,0:10:03.38,0:10:05.00,中文,,0,0,0,,啄它！对了！
+Dialogue: 0,0:10:05.08,0:10:07.21,副字幕,,0,0,0,,¡Vamos, gallo! ¡Mata, gallo!
+Dialogue: 10,0:10:05.58,0:10:07.21,中文,,0,0,0,,干掉它！
+Dialogue: 0,0:10:07.29,0:10:09.21,副字幕,,0,0,0,,- ¡Mata, gallo! - ¡Pica, gallo! ¡Pica!
+Dialogue: 10,0:10:07.79,0:10:09.21,中文,,0,0,0,,啄它！
+Dialogue: 10,0:10:09.29,0:10:11.58,中文,,0,0,0,,干死它！弄它！
+Dialogue: 0,0:10:09.29,0:10:10.46,副字幕,,0,0,0,,¡Pícalo, gallo!
+Dialogue: 0,0:10:11.08,0:10:14.42,副字幕,,0,0,0,,¡Vamos! ¡Mata, gallo! ¡Mata, gallo! ¡Mata, gallo!
+Dialogue: 10,0:10:11.67,0:10:14.42,中文,,0,0,0,,弄死它！
+Dialogue: 10,0:10:14.50,0:10:15.83,中文,,0,0,0,,啄它！
+Dialogue: 0,0:10:14.50,0:10:15.83,副字幕,,0,0,0,,¡Eso es! ¡Vamos!
+Dialogue: 10,0:10:15.92,0:10:18.21,中文,,0,0,0,,快啄它啊！
+Dialogue: 0,0:10:15.92,0:10:18.21,副字幕,,0,0,0,,¡Pica, pica, gallo! ¡Pica, pica!
+Dialogue: 10,0:10:18.29,0:10:22.88,中文,,0,0,0,,上啊 可恶！弄它！快啊！
+Dialogue: 0,0:10:18.29,0:10:19.83,副字幕,,0,0,0,,¡Vamos, carajo!
+Dialogue: 0,0:10:19.92,0:10:21.12,副字幕,,0,0,0,,¡Pica, gallo!
+Dialogue: 0,0:10:21.21,0:10:22.88,副字幕,,0,0,0,,¡Échalo! ¡Échalo!
+Dialogue: 10,0:10:22.96,0:10:26.58,中文,,0,0,0,,就是这样！弄死它！
+Dialogue: 0,0:10:23.88,0:10:26.58,副字幕,,0,0,0,,- ¡Cuidado! - [José Arcadio B.] ¡Ahí! ¡Mátalo!
+Dialogue: 10,0:10:28.38,0:10:29.38,中文,,0,0,0,,起来！
+Dialogue: 0,0:10:28.38,0:10:31.17,副字幕,,0,0,0,,- ¡Vamos! ¡Vamos, carajo! - ¡Eso, compadre!
+Dialogue: 10,0:10:29.46,0:10:31.17,中文,,0,0,0,,拜托！快起来！
+Dialogue: 10,0:10:31.25,0:10:32.17,中文,,0,0,0,,我的公鸡！
+Dialogue: 0,0:10:31.25,0:10:32.83,副字幕,,0,0,0,,¡Échale, gallo! ¡Échale!
+Dialogue: 10,0:10:32.92,0:10:35.00,中文,,0,0,0,,我的公鸡啊！
+Dialogue: 0,0:10:32.92,0:10:36.08,副字幕,,0,0,0,,¡Mi gallo! ¡Gallo! Mi gallo…
+Dialogue: 0,0:10:36.17,0:10:38.17,副字幕,,0,0,0,,[gritos]
+Dialogue: 10,0:10:37.96,0:10:39.08,中文,,0,0,0,,厉害啊
+Dialogue: 10,0:10:46.46,0:10:49.58,中文,,0,0,0,,听着 朋友 这就是生活
+Dialogue: 0,0:10:46.46,0:10:47.71,副字幕,,0,0,0,,Mira, compadre.
+Dialogue: 0,0:10:48.62,0:10:49.79,副字幕,,0,0,0,,Así es esto.
+Dialogue: 10,0:10:50.83,0:10:51.88,中文,,0,0,0,,你养了只好鸡
+Dialogue: 0,0:10:50.83,0:10:53.29,副字幕,,0,0,0,,Tienes un buen animal. Te felicito.
+Dialogue: 10,0:10:51.96,0:10:53.04,中文,,0,0,0,,恭喜你
+Dialogue: 0,0:10:53.83,0:10:56.17,副字幕,,0,0,0,,[celebran]
+Dialogue: 10,0:10:57.71,0:10:59.08,中文,,0,0,0,,过来 小可爱
+Dialogue: 0,0:10:57.71,0:11:00.42,副字幕,,0,0,0,,- [hombre 1] Venga acá. - [hombre 2] Está envenenado.
+Dialogue: 10,0:11:00.50,0:11:01.75,中文,,0,0,0,,嘿 布恩迪亚！
+Dialogue: 0,0:11:00.50,0:11:01.75,副字幕,,0,0,0,,[hombre 3] ¡Oye, Buendía!
+Dialogue: 10,0:11:03.42,0:11:05.04,中文,,0,0,0,,也许你那只公鸡
+Dialogue: 0,0:11:03.42,0:11:07.62,副字幕,,0,0,0,,A ver si por fin ese gallo le hace el favor a tu mujer.
+Dialogue: 10,0:11:06.17,0:11:07.67,中文,,0,0,0,,能帮上你妻子的忙
+Dialogue: 0,0:11:16.21,0:11:18.04,副字幕,,0,0,0,,[murmullos]
+Dialogue: 10,0:11:18.58,0:11:21.92,中文,,0,0,0,,回家拿武器 我要杀了你
+Dialogue: 0,0:11:18.58,0:11:21.92,副字幕,,0,0,0,,Vete para tu casa y ármate, que te voy a matar.
+Dialogue: 10,0:11:22.96,0:11:24.25,中文,,0,0,0,,他生气了
+Dialogue: 0,0:11:22.96,0:11:25.33,副字幕,,0,0,0,,- [música de tensión] - [hombre 4] Se puso malo.
+Dialogue: 10,0:11:26.42,0:11:27.33,中文,,0,0,0,,他生气了
+Dialogue: 0,0:11:26.42,0:11:27.33,副字幕,,0,0,0,,Se puso malo.
+Dialogue: 10,0:11:34.58,0:11:35.92,中文,,0,0,0,,你发什么神经？
+Dialogue: 0,0:11:34.58,0:11:35.92,副字幕,,0,0,0,,[hombre 5] Compadre, ¿qué?
+Dialogue: 10,0:11:39.21,0:11:41.21,中文,,0,0,0,,-太棒了-没错
+Dialogue: 0,0:11:39.21,0:11:41.21,副字幕,,0,0,0,,- Estaba buenísima. - Es cierto.
+Dialogue: 10,0:11:49.92,0:11:51.04,中文,,0,0,0,,何塞·阿卡蒂奥
+Dialogue: 0,0:11:49.92,0:11:51.04,副字幕,,0,0,0,,[Úrsula] José Arcadio.
+Dialogue: 10,0:11:54.29,0:11:55.33,中文,,0,0,0,,何塞·阿卡蒂奥！
+Dialogue: 0,0:11:54.29,0:11:55.33,副字幕,,0,0,0,,¡José Arcadio!
+Dialogue: 0,0:12:09.33,0:12:10.83,副字幕,,0,0,0,,[exclamaciones]
+Dialogue: 0,0:12:12.33,0:12:13.62,副字幕,,0,0,0,,[gorgotea]
+Dialogue: 0,0:12:14.58,0:12:16.21,副字幕,,0,0,0,,[se ahoga]
+Dialogue: 0,0:12:31.83,0:12:33.12,副字幕,,0,0,0,,[agoniza]
+Dialogue: 10,0:13:20.96,0:13:23.75,中文,,0,0,0,,你如果生了鬣蜥 我们就养鬣蜥
+Dialogue: 0,0:13:20.96,0:13:23.75,副字幕,,0,0,0,,Si pares iguanas, vamos a criar iguanas.
+Dialogue: 10,0:13:24.58,0:13:27.54,中文,,0,0,0,,但是这镇上不能再有人因我们而死了
+Dialogue: 0,0:13:24.58,0:13:27.54,副字幕,,0,0,0,,Pero no habrá más muertos en este pueblo por culpa nuestra.
+Dialogue: 0,0:13:31.21,0:13:33.21,副字幕,,0,0,0,,[música sombría]
+Dialogue: 0,0:14:20.67,0:14:22.83,副字幕,,0,0,0,,[Úrsula jadea]
+Dialogue: 0,0:14:30.54,0:14:32.54,副字幕,,0,0,0,,[jadean]
+Dialogue: 0,0:14:50.92,0:14:53.42,副字幕,,0,0,0,,[gimen]
+Dialogue: 0,0:15:06.12,0:15:08.12,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:15:08.21,0:15:10.71,中文,,0,0,0,,身为本镇的高级官员
+Dialogue: 0,0:15:08.21,0:15:11.29,副字幕,,0,0,0,,[hombre] Como autoridades principales de este pueblo,
+Dialogue: 10,0:15:11.38,0:15:15.67,中文,,0,0,0,,镇长和我已经得出结论
+Dialogue: 0,0:15:11.38,0:15:14.33,副字幕,,0,0,0,,el señor alcalde y este humilde servidor
+Dialogue: 0,0:15:14.42,0:15:18.83,副字幕,,0,0,0,,concluimos que la lamentable muerte del señor Prudencio Aguilar
+Dialogue: 10,0:15:15.75,0:15:18.83,中文,,0,0,0,,虽然普鲁丹修·阿圭拉的死是一个悲剧
+Dialogue: 10,0:15:19.42,0:15:23.38,中文,,0,0,0,,但经查实他是在光明正大的对决中不幸身亡
+Dialogue: 0,0:15:19.42,0:15:20.50,副字幕,,0,0,0,,fue el resultado
+Dialogue: 0,0:15:20.58,0:15:23.38,副字幕,,0,0,0,,de un enfrentamiento legítimo por el honor.
+Dialogue: 10,0:15:24.58,0:15:29.71,中文,,0,0,0,,因此 光荣胜出的何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:15:24.58,0:15:28.12,副字幕,,0,0,0,,Por lo tanto, el joven José Arcadio Buendía,
+Dialogue: 0,0:15:28.75,0:15:30.29,副字幕,,0,0,0,,hombre de bien,
+Dialogue: 10,0:15:30.38,0:15:32.08,中文,,0,0,0,,被判定无罪
+Dialogue: 0,0:15:30.38,0:15:32.08,副字幕,,0,0,0,,queda absuelto ante la ley.
+Dialogue: 0,0:15:32.17,0:15:33.62,副字幕,,0,0,0,,- ¡No! - ¡No es justo!
+Dialogue: 10,0:15:32.29,0:15:33.62,中文,,0,0,0,,-不！-这不公平！
+Dialogue: 10,0:15:33.71,0:15:34.62,中文,,0,0,0,,太离谱了！
+Dialogue: 0,0:15:33.71,0:15:34.62,副字幕,,0,0,0,,¡Injusto!
+Dialogue: 10,0:15:35.42,0:15:37.79,中文,,0,0,0,,够了！放尊重点！
+Dialogue: 0,0:15:35.42,0:15:37.79,副字幕,,0,0,0,,[hombre] ¡Bueno, ya! ¡Más respeto ante la ley!
+Dialogue: 10,0:15:52.71,0:15:54.38,中文,,0,0,0,,很公正的裁决 谢谢
+Dialogue: 0,0:15:52.71,0:15:54.38,副字幕,,0,0,0,,Buen trabajo.
+Dialogue: 0,0:15:54.46,0:15:55.75,副字幕,,0,0,0,,- Gracias. - Compadre.
+Dialogue: 10,0:15:55.83,0:15:59.42,中文,,0,0,0,,去喝几杯吧 忘了这些不愉快的事
+Dialogue: 0,0:15:55.83,0:15:59.42,副字幕,,0,0,0,,Necesita unos buenos tragos para que se le quite esa amargura.
+Dialogue: 0,0:16:04.42,0:16:06.42,副字幕,,0,0,0,,[canto de grillos]
+Dialogue: 0,0:16:08.38,0:16:10.38,副字幕,,0,0,0,,[ulular de búho]
+Dialogue: 0,0:16:32.12,0:16:33.71,副字幕,,0,0,0,,[ladridos a lo lejos]
+Dialogue: 0,0:16:48.12,0:16:50.12,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:17:11.08,0:17:12.67,中文,,0,0,0,,你来干什么？
+Dialogue: 0,0:17:11.08,0:17:12.67,副字幕,,0,0,0,,¿Qué estás haciendo aquí?
+Dialogue: 10,0:17:13.42,0:17:15.29,中文,,0,0,0,,你知道这是你自找的
+Dialogue: 0,0:17:13.42,0:17:15.29,副字幕,,0,0,0,,Tú te lo buscaste y lo sabes.
+Dialogue: 10,0:17:16.33,0:17:17.46,中文,,0,0,0,,下地狱吧
+Dialogue: 0,0:17:16.33,0:17:17.46,副字幕,,0,0,0,,Vete al carajo.
+Dialogue: 10,0:17:44.38,0:17:47.50,中文,,0,0,0,,一直阴魂不散的话来几次我就再杀你几次
+Dialogue: 0,0:17:44.38,0:17:47.50,副字幕,,0,0,0,,Cuantas veces aparezcas volveré a matarte.
+Dialogue: 10,0:17:50.17,0:17:53.58,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚没有勇气掷出长矛
+Dialogue: 0,0:17:50.17,0:17:53.58,副字幕,,0,0,0,,[narrador] no se atrevió a arrojar la lanza.
+Dialogue: 10,0:17:54.58,0:17:56.33,中文,,0,0,0,,而普鲁丹修·阿圭拉也并未离去
+Dialogue: 0,0:17:54.58,0:17:56.33,副字幕,,0,0,0,,Y Prudencio Aguilar no se fue.
+Dialogue: 10,0:18:05.17,0:18:07.17,中文,,0,0,0,,从那以后 他们再也不得安宁
+Dialogue: 0,0:18:05.17,0:18:07.17,副字幕,,0,0,0,,Desde entonces no tuvieron paz.
+Dialogue: 10,0:18:15.58,0:18:17.71,中文,,0,0,0,,那晚死人眼中无尽的凄凉
+Dialogue: 0,0:18:15.58,0:18:17.71,副字幕,,0,0,0,,Los atormentaba la inmensa desolación
+Dialogue: 10,0:18:17.79,0:18:20.21,中文,,0,0,0,,将他们折磨得寝食难安
+Dialogue: 0,0:18:17.79,0:18:20.21,副字幕,,0,0,0,,con que el muerto los había mirado esa noche.
+Dialogue: 0,0:18:20.29,0:18:21.92,副字幕,,0,0,0,,[diálogos indistintos]
+Dialogue: 10,0:18:27.42,0:18:30.29,中文,,0,0,0,,那幽怨的眼神中流露出对活人的深沉眷恋
+Dialogue: 0,0:18:27.42,0:18:30.29,副字幕,,0,0,0,,[narrador] con que añoraba a los vivos.
+Dialogue: 10,0:18:39.04,0:18:41.08,中文,,0,0,0,,他在屋里急切地找寻
+Dialogue: 0,0:18:39.04,0:18:41.08,副字幕,,0,0,0,,La ansiedad con que registraba la casa
+Dialogue: 10,0:18:41.17,0:18:43.92,中文,,0,0,0,,想找清水浸湿手中的芦苇团
+Dialogue: 0,0:18:41.17,0:18:43.92,副字幕,,0,0,0,,buscando agua para mojar su tapón de esparto.
+Dialogue: 10,0:18:48.83,0:18:51.62,中文,,0,0,0,,看到死人掀开锅碗瓢盆翻找的样子
+Dialogue: 0,0:18:48.83,0:18:51.71,副字幕,,0,0,0,,Úrsula estaba tan conmovida que, después de ver al muerto
+Dialogue: 10,0:18:51.79,0:18:54.96,中文,,0,0,0,,乌苏拉内心大为触动便在家中各处摆放水罐
+Dialogue: 0,0:18:51.79,0:18:54.96,副字幕,,0,0,0,,destapando las ollas, le puso tazones de agua por toda la casa.
+Dialogue: 0,0:18:55.71,0:18:57.71,副字幕,,0,0,0,,[música sombría continúa]
+Dialogue: 10,0:18:57.79,0:18:59.83,中文,,0,0,0,,要我怎么做你才肯离开？
+Dialogue: 0,0:18:57.79,0:18:59.83,副字幕,,0,0,0,,¿Qué tengo que hacer para que te vayas?
+Dialogue: 0,0:19:08.33,0:19:10.33,副字幕,,0,0,0,,[jadean]
+Dialogue: 0,0:19:18.00,0:19:18.83,副字幕,,0,0,0,,No.
+Dialogue: 0,0:19:19.46,0:19:20.33,副字幕,,0,0,0,,¿Qué?
+Dialogue: 10,0:19:28.04,0:19:29.50,中文,,0,0,0,,没关系 普鲁丹修
+Dialogue: 0,0:19:28.04,0:19:29.50,副字幕,,0,0,0,,Está bien, Prudencio.
+Dialogue: 10,0:19:31.04,0:19:33.79,中文,,0,0,0,,我们会远离这座小镇
+Dialogue: 0,0:19:31.04,0:19:33.79,副字幕,,0,0,0,,Nos iremos de este pueblo lo más lejos que podamos,
+Dialogue: 10,0:19:34.46,0:19:36.17,中文,,0,0,0,,再也不回来
+Dialogue: 0,0:19:34.46,0:19:36.17,副字幕,,0,0,0,,y no regresaremos jamás.
+Dialogue: 0,0:19:37.29,0:19:39.21,副字幕,,0,0,0,,[zumbido]
+Dialogue: 0,0:19:39.29,0:19:41.04,副字幕,,0,0,0,,[chirrido de insectos]
+Dialogue: 10,0:20:06.00,0:20:07.17,中文,,0,0,0,,我们去哪儿好呢？
+Dialogue: 0,0:20:06.00,0:20:07.17,副字幕,,0,0,0,,¿Adónde vamos a ir?
+Dialogue: 10,0:20:14.54,0:20:17.54,中文,,0,0,0,,到山的那头去寻找大海
+Dialogue: 0,0:20:14.54,0:20:17.54,副字幕,,0,0,0,,Vamos a buscar el mar que está del otro lado de la sierra.
+Dialogue: 10,0:20:21.21,0:20:24.21,中文,,0,0,0,,胡说 从来没有人去到过那么远
+Dialogue: 0,0:20:21.21,0:20:22.58,副字幕,,0,0,0,,Es muy absurdo.
+Dialogue: 0,0:20:22.67,0:20:24.21,副字幕,,0,0,0,,Nadie ha hecho ese recorrido.
+Dialogue: 10,0:20:25.46,0:20:26.54,中文,,0,0,0,,没错
+Dialogue: 0,0:20:25.46,0:20:26.54,副字幕,,0,0,0,,Por eso mismo.
+Dialogue: 10,0:20:28.71,0:20:30.46,中文,,0,0,0,,我们要找到一个
+Dialogue: 0,0:20:28.71,0:20:30.46,副字幕,,0,0,0,,Vamos a encontrar un lugar
+Dialogue: 10,0:20:31.71,0:20:35.42,中文,,0,0,0,,祖辈的恐惧无法企及之地 在那里
+Dialogue: 0,0:20:31.71,0:20:35.42,副字幕,,0,0,0,,donde no tengamos que cargar con los miedos de nuestros antepasados.
+Dialogue: 10,0:20:36.08,0:20:38.29,中文,,0,0,0,,我们可以没有负担 平静地相爱…
+Dialogue: 0,0:20:36.08,0:20:38.29,副字幕,,0,0,0,,Donde tú y yo nos podamos querer en paz…
+Dialogue: 10,0:20:40.50,0:20:42.00,中文,,0,0,0,,组建我们的小家庭
+Dialogue: 0,0:20:40.50,0:20:42.00,副字幕,,0,0,0,,y tener una familia.
+Dialogue: 0,0:20:45.29,0:20:47.29,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:20:52.92,0:20:53.79,中文,,0,0,0,,大海
+Dialogue: 0,0:20:52.92,0:20:53.79,副字幕,,0,0,0,,El mar.
+Dialogue: 10,0:20:56.58,0:20:57.50,中文,,0,0,0,,大海
+Dialogue: 0,0:20:56.58,0:20:57.50,副字幕,,0,0,0,,El mar.
+Dialogue: 0,0:20:57.58,0:20:59.58,副字幕,,0,0,0,,[rugido del mar]
+Dialogue: 10,0:21:14.00,0:21:14.96,中文,,0,0,0,,谢谢爸爸
+Dialogue: 0,0:21:14.00,0:21:14.96,副字幕,,0,0,0,,Gracias, papá.
+Dialogue: 10,0:21:18.67,0:21:19.50,中文,,0,0,0,,再见 妈妈
+Dialogue: 0,0:21:18.67,0:21:19.50,副字幕,,0,0,0,,Adiós, mamá.
+Dialogue: 10,0:21:22.88,0:21:23.79,中文,,0,0,0,,乌苏拉
+Dialogue: 0,0:21:22.88,0:21:23.79,副字幕,,0,0,0,,Úrsula.
+Dialogue: 10,0:21:26.58,0:21:28.12,中文,,0,0,0,,无论去到哪里…
+Dialogue: 0,0:21:26.58,0:21:28.12,副字幕,,0,0,0,,No importa a dónde vayas…
+Dialogue: 10,0:21:31.08,0:21:33.62,中文,,0,0,0,,你都永远无法逃离命运
+Dialogue: 0,0:21:31.08,0:21:33.62,副字幕,,0,0,0,,nunca vas a poder escapar de tu destino.
+Dialogue: 10,0:21:43.17,0:21:44.38,中文,,0,0,0,,你们都照顾好自己
+Dialogue: 0,0:21:43.17,0:21:44.38,副字幕,,0,0,0,,Cuídense mucho.
+Dialogue: 0,0:21:53.50,0:21:55.50,副字幕,,0,0,0,,[bullicio]
+Dialogue: 0,0:22:01.62,0:22:03.62,副字幕,,0,0,0,,[diálogos indistintos]
+Dialogue: 10,0:22:10.12,0:22:12.04,中文,,0,0,0,,出发吧 朋友
+Dialogue: 0,0:22:10.12,0:22:12.04,副字幕,,0,0,0,,[José Arcadio B.] Vámonos, compadre.
+Dialogue: 0,0:22:13.50,0:22:15.50,副字幕,,0,0,0,,[música suave]
+Dialogue: 10,0:22:36.54,0:22:39.62,中文,,0,0,0,,他们就这样踏上了翻山越岭的征程
+Dialogue: 0,0:22:36.54,0:22:39.62,副字幕,,0,0,0,,[narrador] la travesía de la sierra.
+Dialogue: 10,0:22:40.88,0:22:44.42,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚有几个和他一样年轻的朋友
+Dialogue: 0,0:22:40.88,0:22:44.42,副字幕,,0,0,0,,Varios amigos de José Arcadio Buendía, jóvenes como él,
+Dialogue: 10,0:22:45.67,0:22:47.46,中文,,0,0,0,,也兴奋地加入了冒险
+Dialogue: 0,0:22:45.67,0:22:47.46,副字幕,,0,0,0,,embullados con la aventura,
+Dialogue: 10,0:22:48.62,0:22:51.96,中文,,0,0,0,,他们拆掉房子收拾好行囊 带上妻子和孩子
+Dialogue: 0,0:22:48.62,0:22:51.96,副字幕,,0,0,0,,desmantelaron sus casas y cargaron con sus mujeres y sus hijos
+Dialogue: 10,0:22:52.04,0:22:54.50,中文,,0,0,0,,前往想象中那渺茫未知的应许之地
+Dialogue: 0,0:22:52.04,0:22:54.50,副字幕,,0,0,0,,hacia la tierra que nadie les había prometido.
+Dialogue: 0,0:22:54.58,0:22:56.58,副字幕,,0,0,0,,[música inquietante]
+Dialogue: 0,0:23:20.46,0:23:21.33,副字幕,,0,0,0,,Agua.
+Dialogue: 10,0:23:29.50,0:23:30.58,中文,,0,0,0,,危险
+Dialogue: 0,0:23:29.50,0:23:30.58,副字幕,,0,0,0,,Peligro.
+Dialogue: 10,0:23:31.67,0:23:33.79,中文,,0,0,0,,倒吊人以不同的方式看世界
+Dialogue: 0,0:23:31.67,0:23:33.79,副字幕,,0,0,0,,El colgado. El hombre que mira diferente.
+Dialogue: 10,0:23:39.92,0:23:41.38,中文,,0,0,0,,她给你解读过塔罗牌吗？
+Dialogue: 0,0:23:39.92,0:23:41.38,副字幕,,0,0,0,,¿Y a ti te las ha echado?
+Dialogue: 10,0:23:41.46,0:23:42.75,中文,,0,0,0,,有啊 有段时间了
+Dialogue: 0,0:23:41.46,0:23:42.75,副字幕,,0,0,0,,Claro, como hacía tiempo.
+Dialogue: 10,0:23:44.29,0:23:45.21,中文,,0,0,0,,谢谢
+Dialogue: 0,0:23:44.29,0:23:45.21,副字幕,,0,0,0,,Gracias.
+Dialogue: 0,0:23:57.88,0:23:58.71,副字幕,,0,0,0,,[Úrsula tose]
+Dialogue: 0,0:24:13.46,0:24:14.29,副字幕,,0,0,0,,[jadea]
+Dialogue: 0,0:24:15.21,0:24:16.21,副字幕,,0,0,0,,[chirrido de animal]
+Dialogue: 0,0:24:41.25,0:24:42.42,副字幕,,0,0,0,,- [chirrido] - [grita]
+Dialogue: 0,0:24:43.33,0:24:45.21,副字幕,,0,0,0,,[jadea]
+Dialogue: 0,0:24:50.96,0:24:52.96,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 0,0:24:57.96,0:24:59.96,副字幕,,0,0,0,,[hombre] Vamos a la tierra prometida.
+Dialogue: 0,0:25:01.62,0:25:03.62,副字幕,,0,0,0,,[diálogos indistintos]
+Dialogue: 0,0:25:28.38,0:25:29.38,副字幕,,0,0,0,,[Úrsula tose]
+Dialogue: 0,0:25:32.71,0:25:33.88,副字幕,,0,0,0,,[grita]
+Dialogue: 0,0:25:36.04,0:25:38.04,副字幕,,0,0,0,,[gime]
+Dialogue: 10,0:25:45.12,0:25:46.25,中文,,0,0,0,,用力！
+Dialogue: 0,0:25:45.12,0:25:48.29,副字幕,,0,0,0,,¡Empuja profundo! ¡Un último, empuja!
+Dialogue: 10,0:25:46.96,0:25:47.96,中文,,0,0,0,,再来一次！用力！
+Dialogue: 10,0:25:48.96,0:25:51.83,中文,,0,0,0,,加把劲！出来了！
+Dialogue: 0,0:25:48.96,0:25:51.83,副字幕,,0,0,0,,- ¡Duro! ¡Ahí viene, viene, viene! - [grita]
+Dialogue: 0,0:25:58.04,0:25:59.33,副字幕,,0,0,0,,[jadea]
+Dialogue: 0,0:26:11.38,0:26:12.67,副字幕,,0,0,0,,[mujer] Hola, mi amor.
+Dialogue: 10,0:26:13.29,0:26:17.12,中文,,0,0,0,,虽然被猴肉和蛇汤吃坏了肚子
+Dialogue: 0,0:26:13.29,0:26:17.12,副字幕,,0,0,0,,[narrador] por carne de mico y caldo de culebra…
+Dialogue: 0,0:26:17.21,0:26:18.67,副字幕,,0,0,0,,[Úrsula llora]
+Dialogue: 10,0:26:18.75,0:26:21.67,中文,,0,0,0,,乌苏拉还是在皮拉·特内拉的帮助下
+Dialogue: 0,0:26:18.75,0:26:21.67,副字幕,,0,0,0,,…Úrsula dio a luz un hijo con todas sus partes humanas,
+Dialogue: 0,0:26:21.75,0:26:23.75,副字幕,,0,0,0,,con la ayuda de Pilar Ternera.
+Dialogue: 10,0:26:21.88,0:26:23.75,中文,,0,0,0,,生下了一名完全正常的男婴
+Dialogue: 0,0:26:26.67,0:26:28.71,副字幕,,0,0,0,,[bebé llora]
+Dialogue: 0,0:26:35.33,0:26:37.33,副字幕,,0,0,0,,[ventisca]
+Dialogue: 0,0:26:40.58,0:26:41.58,副字幕,,0,0,0,,[balido]
+Dialogue: 10,0:27:05.08,0:27:06.71,中文,,0,0,0,,快跟上！
+Dialogue: 0,0:27:05.08,0:27:06.71,副字幕,,0,0,0,,¡Vamos!
+Dialogue: 0,0:27:11.92,0:27:13.17,副字幕,,0,0,0,,[rebuzno]
+Dialogue: 10,0:27:13.25,0:27:15.17,中文,,0,0,0,,哇哦！冷静！
+Dialogue: 0,0:27:13.25,0:27:15.17,副字幕,,0,0,0,,[hombre 1] ¡Ey, ey! ¡Tranquilo!
+Dialogue: 10,0:27:15.25,0:27:17.88,中文,,0,0,0,,冷静下来！
+Dialogue: 0,0:27:15.25,0:27:17.88,副字幕,,0,0,0,,- ¡Tranquilo, tranquilo! - [gritan]
+Dialogue: 0,0:27:17.96,0:27:20.88,副字幕,,0,0,0,,- [hombre 2] ¡Contención! - [hombre 3] ¡Páralo!
+Dialogue: 10,0:27:20.96,0:27:21.83,中文,,0,0,0,,拽住它！
+Dialogue: 0,0:27:20.96,0:27:21.83,副字幕,,0,0,0,,¡Páralo!
+Dialogue: 0,0:27:28.71,0:27:30.50,副字幕,,0,0,0,,[gritan]
+Dialogue: 0,0:27:34.83,0:27:36.04,副字幕,,0,0,0,,[gruñe]
+Dialogue: 10,0:27:38.21,0:27:39.08,中文,,0,0,0,,上来 盖里
+Dialogue: 0,0:27:38.21,0:27:39.08,副字幕,,0,0,0,,Gerineldo.
+Dialogue: 0,0:27:40.96,0:27:42.04,副字幕,,0,0,0,,[gruñen]
+Dialogue: 0,0:27:45.58,0:27:46.83,副字幕,,0,0,0,,[jadean]
+Dialogue: 0,0:27:53.83,0:27:55.83,副字幕,,0,0,0,,[música sombría]
+Dialogue: 0,0:27:59.92,0:28:01.92,副字幕,,0,0,0,,[truenos]
+Dialogue: 0,0:28:09.38,0:28:10.38,副字幕,,0,0,0,,[balido]
+Dialogue: 10,0:28:25.42,0:28:28.46,中文,,0,0,0,,别担心 盖里奈多 我们就快到海边了
+Dialogue: 0,0:28:25.42,0:28:28.46,副字幕,,0,0,0,,No te preocupes, Gerineldo. Ya queda poco para llegar al mar.
+Dialogue: 0,0:28:30.50,0:28:32.50,副字幕,,0,0,0,,[truenos continúan]
+Dialogue: 0,0:28:37.29,0:28:38.29,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:28:45.38,0:28:48.96,中文,,0,0,0,,某一个早晨在将近两年的穿山越岭之后
+Dialogue: 0,0:28:45.38,0:28:46.54,副字幕,,0,0,0,,[narrador]
+Dialogue: 0,0:28:47.08,0:28:50.50,副字幕,,0,0,0,,después de casi dos años de travesía, fueron los primeros mortales
+Dialogue: 10,0:28:49.04,0:28:53.21,中文,,0,0,0,,他们成了第一批看见山脉西坡的人
+Dialogue: 0,0:28:50.58,0:28:53.21,副字幕,,0,0,0,,que vieron la vertiente occidental de la sierra.
+Dialogue: 10,0:29:01.21,0:29:02.58,中文,,0,0,0,,在云雾缭绕的山顶
+Dialogue: 0,0:29:01.21,0:29:02.58,副字幕,,0,0,0,,Desde la cumbre nublada,
+Dialogue: 10,0:29:02.67,0:29:06.29,中文,,0,0,0,,他们看见了大沼泽地辽阔的水域
+Dialogue: 0,0:29:02.67,0:29:06.29,副字幕,,0,0,0,,contemplaron la inmensa llanura acuática de la ciénaga grande,
+Dialogue: 10,0:29:07.50,0:29:09.79,中文,,0,0,0,,那水面纵横漫延 直至世界的另一边
+Dialogue: 0,0:29:07.50,0:29:09.79,副字幕,,0,0,0,,explayada hasta el otro lado del mundo.
+Dialogue: 10,0:29:14.12,0:29:15.58,中文,,0,0,0,,然而大海却杳无踪迹
+Dialogue: 0,0:29:14.12,0:29:15.58,副字幕,,0,0,0,,Pero nunca vieron el mar.
+Dialogue: 10,0:29:18.54,0:29:21.58,中文,,0,0,0,,-大海呢？大海在哪里？-嘿！住手！
+Dialogue: 0,0:29:18.54,0:29:20.00,副字幕,,0,0,0,,¿Dónde carajo está el mar?
+Dialogue: 0,0:29:20.08,0:29:21.58,副字幕,,0,0,0,,- ¡Ey, ya! ¡Ya! - ¿Dónde?
+Dialogue: 0,0:29:21.67,0:29:22.96,副字幕,,0,0,0,,¡Cálmate, Gerineldo!
+Dialogue: 10,0:29:21.75,0:29:22.96,中文,,0,0,0,,盖里奈多 冷静点！
+Dialogue: 10,0:29:25.79,0:29:27.79,中文,,0,0,0,,肯定就在大沼泽地的那一头
+Dialogue: 0,0:29:25.79,0:29:27.79,副字幕,,0,0,0,,Tiene que estar más allá de la ciénaga.
+Dialogue: 0,0:29:28.88,0:29:30.88,副字幕,,0,0,0,,[chirrido de insectos]
+Dialogue: 0,0:29:43.62,0:29:44.62,副字幕,,0,0,0,,[balido]
+Dialogue: 0,0:29:46.62,0:29:49.17,副字幕,,0,0,0,,[rebuzno]
+Dialogue: 0,0:29:50.25,0:29:51.25,副字幕,,0,0,0,,[balido]
+Dialogue: 0,0:29:52.75,0:29:54.75,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:30:19.00,0:30:20.17,中文,,0,0,0,,嘿！
+Dialogue: 0,0:30:19.00,0:30:20.17,副字幕,,0,0,0,,¡Ey!
+Dialogue: 10,0:30:20.75,0:30:22.29,中文,,0,0,0,,请停一下！
+Dialogue: 0,0:30:20.75,0:30:22.29,副字幕,,0,0,0,,¡Paren, por favor!
+Dialogue: 10,0:30:22.92,0:30:23.92,中文,,0,0,0,,停下！
+Dialogue: 0,0:30:22.92,0:30:23.92,副字幕,,0,0,0,,¡Ey!
+Dialogue: 10,0:30:36.38,0:30:37.96,中文,,0,0,0,,我们一直在原地打转
+Dialogue: 0,0:30:36.38,0:30:37.96,副字幕,,0,0,0,,Estamos caminando en círculos.
+Dialogue: 10,0:30:39.33,0:30:41.29,中文,,0,0,0,,他根本摸不清方向
+Dialogue: 0,0:30:39.33,0:30:41.29,副字幕,,0,0,0,,No tienen idea de dónde mierda estamos.
+Dialogue: 10,0:30:43.25,0:30:45.46,中文,,0,0,0,,我们得找一条可行的陆路
+Dialogue: 0,0:30:43.25,0:30:45.46,副字幕,,0,0,0,,Tenemos que encontrar un camino por tierra.
+Dialogue: 0,0:30:47.83,0:30:49.83,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:30:58.29,0:30:59.04,中文,,0,0,0,,某一个下午
+Dialogue: 0,0:30:58.29,0:30:59.79,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:30:59.88,0:31:03.38,中文,,0,0,0,,在沼泽中盲目游荡了数月之后
+Dialogue: 0,0:30:59.88,0:31:03.38,副字幕,,0,0,0,,después de varios meses de andar perdidos por entre los pantanos,
+Dialogue: 10,0:31:04.75,0:31:06.88,中文,,0,0,0,,他们在一个多石的河岸上扎营
+Dialogue: 0,0:31:04.75,0:31:06.88,副字幕,,0,0,0,,acamparon a la orilla de un río pedregoso,
+Dialogue: 10,0:31:06.96,0:31:09.75,中文,,0,0,0,,那奔腾的河水宛如凝固的液体玻璃
+Dialogue: 0,0:31:06.96,0:31:09.75,副字幕,,0,0,0,,cuyas aguas parecían un torrente de vidrio helado.
+Dialogue: 0,0:31:12.04,0:31:13.29,副字幕,,0,0,0,,[Úrsula jadea]
+Dialogue: 10,0:31:16.67,0:31:18.67,中文,,0,0,0,,大沼泽地一定有尽头
+Dialogue: 0,0:31:16.67,0:31:18.67,副字幕,,0,0,0,,La ciénaga no puede ser infinita.
+Dialogue: 10,0:31:20.67,0:31:24.00,中文,,0,0,0,,我们得想办法到另一边去 到海边去
+Dialogue: 0,0:31:20.67,0:31:24.00,副字幕,,0,0,0,,Tenemos que buscar la forma de llegar al otro lado y salir al mar.
+Dialogue: 0,0:31:24.08,0:31:25.38,副字幕,,0,0,0,,[toses]
+Dialogue: 10,0:31:27.17,0:31:28.42,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:31:27.17,0:31:28.42,副字幕,,0,0,0,,José Arcadio Buendía…
+Dialogue: 10,0:31:30.29,0:31:32.25,中文,,0,0,0,,停止你那无望的幻想吧
+Dialogue: 0,0:31:30.29,0:31:32.25,副字幕,,0,0,0,,ya sal de tu cabeza de una buena vez.
+Dialogue: 10,0:31:35.42,0:31:37.08,中文,,0,0,0,,你没看见大家都成什么样了吗？
+Dialogue: 0,0:31:35.42,0:31:37.08,副字幕,,0,0,0,,¿Tú ya viste cómo está tu gente?
+Dialogue: 0,0:31:38.17,0:31:40.17,副字幕,,0,0,0,,[varios tosen]
+Dialogue: 0,0:31:40.25,0:31:42.25,副字幕,,0,0,0,,[música sombría]
+Dialogue: 0,0:32:16.62,0:32:18.62,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:32:46.67,0:32:49.29,中文,,0,0,0,,是夜 何塞·阿卡蒂奥·布恩迪亚做了一个梦
+Dialogue: 0,0:32:46.67,0:32:49.29,副字幕,,0,0,0,,[narrador] soñó esa noche
+Dialogue: 10,0:32:50.58,0:32:53.54,中文,,0,0,0,,脚下的这片土地矗立起一座喧嚣的城市
+Dialogue: 0,0:32:50.58,0:32:53.54,副字幕,,0,0,0,,que en aquel lugar se levantaba una ciudad ruidosa
+Dialogue: 10,0:32:55.33,0:32:57.33,中文,,0,0,0,,城中林立着以镜面为墙的房屋
+Dialogue: 0,0:32:55.33,0:32:57.33,副字幕,,0,0,0,,con casas de paredes de espejo.
+Dialogue: 10,0:32:59.17,0:33:00.83,中文,,0,0,0,,他询问那座城叫什么
+Dialogue: 0,0:32:59.17,0:33:00.83,副字幕,,0,0,0,,Preguntó qué ciudad era,
+Dialogue: 10,0:33:01.67,0:33:04.62,中文,,0,0,0,,得到的回答是一个他从未听过
+Dialogue: 0,0:33:01.67,0:33:04.62,副字幕,,0,0,0,,y le contestaron con un nombre que nunca había oído…
+Dialogue: 10,0:33:06.38,0:33:08.71,中文,,0,0,0,,也没有任何含义的名字
+Dialogue: 0,0:33:06.38,0:33:08.71,副字幕,,0,0,0,,que no tenía significado alguno,
+Dialogue: 10,0:33:10.25,0:33:13.46,中文,,0,0,0,,但那名字却不断在梦中神秘地回响…
+Dialogue: 0,0:33:10.25,0:33:13.46,副字幕,,0,0,0,,pero que tuvo en el sueño una resonancia sobrenatural…
+Dialogue: 10,0:33:16.67,0:33:17.58,中文,,0,0,0,,马孔多
+Dialogue: 0,0:33:16.67,0:33:17.58,副字幕,,0,0,0,,Macondo.
+Dialogue: 0,0:33:18.25,0:33:20.25,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:33:28.33,0:33:29.17,中文,,0,0,0,,来吧
+Dialogue: 0,0:33:28.33,0:33:29.17,副字幕,,0,0,0,,Vamos.
+Dialogue: 10,0:33:30.42,0:33:31.42,中文,,0,0,0,,过来
+Dialogue: 0,0:33:30.42,0:33:31.42,副字幕,,0,0,0,,Vamos, vamos.
+Dialogue: 10,0:33:47.12,0:33:48.04,中文,,0,0,0,,盖里奈多…
+Dialogue: 0,0:33:47.12,0:33:48.04,副字幕,,0,0,0,,Gerineldo.
+Dialogue: 10,0:33:52.67,0:33:54.62,中文,,0,0,0,,我知道我们还没找到大海
+Dialogue: 0,0:33:52.67,0:33:54.62,副字幕,,0,0,0,,Yo sé que no hemos encontrado el mar
+Dialogue: 10,0:33:55.42,0:33:57.25,中文,,0,0,0,,也没找到安家之所
+Dialogue: 0,0:33:55.42,0:33:57.25,副字幕,,0,0,0,,ni tampoco un lugar donde vivir.
+Dialogue: 10,0:33:59.25,0:34:01.17,中文,,0,0,0,,但再继续寻找下去实在荒唐可笑
+Dialogue: 0,0:33:59.25,0:34:01.17,副字幕,,0,0,0,,Pero seguir buscándolo es absurdo.
+Dialogue: 10,0:34:05.88,0:34:08.67,中文,,0,0,0,,大家可以自由选择何去何从
+Dialogue: 0,0:34:05.88,0:34:08.67,副字幕,,0,0,0,,Cada uno es libre de elegir el camino que quiera tomar…
+Dialogue: 10,0:34:10.79,0:34:12.62,中文,,0,0,0,,但我们会留在这里
+Dialogue: 0,0:34:10.79,0:34:12.62,副字幕,,0,0,0,,pero nosotros nos vamos a quedar.
+Dialogue: 10,0:34:15.12,0:34:17.33,中文,,0,0,0,,在这里建立梦想中的家园
+Dialogue: 0,0:34:15.12,0:34:17.33,副字幕,,0,0,0,,Vamos a construir ese lugar soñado.
+Dialogue: 10,0:34:18.17,0:34:19.79,中文,,0,0,0,,为孩子们打造一个家
+Dialogue: 0,0:34:18.17,0:34:19.79,副字幕,,0,0,0,,El lugar de nuestros hijos.
+Dialogue: 10,0:34:21.25,0:34:25.08,中文,,0,0,0,,在这里 所有人的命运不受他人摆布生死但凭自己做主
+Dialogue: 0,0:34:21.25,0:34:25.08,副字幕,,0,0,0,,Donde nadie pueda decidir por otros hasta la forma de morir.
+Dialogue: 10,0:34:30.71,0:34:31.92,中文,,0,0,0,,这个地方…
+Dialogue: 0,0:34:30.71,0:34:31.92,副字幕,,0,0,0,,Y este lugar…
+Dialogue: 10,0:34:34.25,0:34:35.75,中文,,0,0,0,,就叫做马孔多
+Dialogue: 0,0:34:34.25,0:34:35.75,副字幕,,0,0,0,,se va a llamar Macondo.
+Dialogue: 0,0:34:37.42,0:34:39.42,副字幕,,0,0,0,,[música animada]
+Dialogue: 0,0:34:39.50,0:34:41.50,副字幕,,0,0,0,,[diálogos indistintos]
+Dialogue: 10,0:34:45.50,0:34:48.33,中文,,0,0,0,,何塞·阿卡蒂奥你怎么光着身子？快回家去
+Dialogue: 0,0:34:45.50,0:34:48.33,副字幕,,0,0,0,,José Arcadio, ¿qué haces en cueros? Anda para la casa.
+Dialogue: 10,0:34:49.29,0:34:53.33,中文,,0,0,0,,马孔多是一个只有二十户人家的村落
+Dialogue: 0,0:34:49.29,0:34:53.33,副字幕,,0,0,0,,[narrador] de veinte casas de barro y cañabrava,
+Dialogue: 10,0:34:54.12,0:34:56.50,中文,,0,0,0,,众人在河岸边用黏土和芦苇搭建起房屋
+Dialogue: 0,0:34:54.12,0:34:56.58,副字幕,,0,0,0,,construida a la orilla de un río de aguas diáfanas
+Dialogue: 10,0:34:56.67,0:34:59.71,中文,,0,0,0,,清澈的河水沿着石头铺设的河床奔流不息
+Dialogue: 0,0:34:56.67,0:34:59.75,副字幕,,0,0,0,,que se precipitaban por un lecho de piedras pulidas,
+Dialogue: 10,0:34:59.83,0:35:02.54,中文,,0,0,0,,那些石头光洁圆润如同史前遗留的白色巨蛋
+Dialogue: 0,0:34:59.83,0:35:02.54,副字幕,,0,0,0,,blancas y enormes como huevos prehistóricos.
+Dialogue: 10,0:35:08.54,0:35:10.38,中文,,0,0,0,,-你好 爸爸！-儿子！
+Dialogue: 0,0:35:08.54,0:35:10.38,副字幕,,0,0,0,,- Hola, papi. - Mijo.
+Dialogue: 10,0:35:11.08,0:35:14.75,中文,,0,0,0,,在这个偏远荒凉之地许多事物都尚未被命名
+Dialogue: 0,0:35:11.08,0:35:14.75,副字幕,,0,0,0,,[narrador] que muchas cosas carecían de nombre,
+Dialogue: 10,0:35:15.50,0:35:18.21,中文,,0,0,0,,因而在提及时 必须用手指点比划
+Dialogue: 0,0:35:15.50,0:35:18.21,副字幕,,0,0,0,,y para mencionarlas había que señalarlas con el dedo.
+Dialogue: 10,0:35:18.29,0:35:19.42,中文,,0,0,0,,何塞·阿卡蒂奥
+Dialogue: 0,0:35:18.29,0:35:19.42,副字幕,,0,0,0,,[Pilar] ¡José Arcadio!
+Dialogue: 10,0:35:22.38,0:35:26.88,中文,,0,0,0,,亲爱的 把这些象牙果拿去给你妈妈让她给你做些美味的果汁吧
+Dialogue: 0,0:35:22.38,0:35:24.79,副字幕,,0,0,0,,Tengo estos corozos para que se los lleves a tu mamá
+Dialogue: 0,0:35:24.88,0:35:26.88,副字幕,,0,0,0,,para que te haga un jugo bien sabroso.
+Dialogue: 10,0:35:26.96,0:35:28.12,中文,,0,0,0,,谢谢
+Dialogue: 0,0:35:26.96,0:35:28.12,副字幕,,0,0,0,,[José Arcadio] Gracias.
+Dialogue: 10,0:35:30.33,0:35:33.83,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚精心设计了房屋的位置
+Dialogue: 0,0:35:30.33,0:35:33.83,副字幕,,0,0,0,,[narrador] había dispuesto de tal modo las casas,
+Dialogue: 10,0:35:34.79,0:35:36.62,中文,,0,0,0,,确保从任意一间屋子
+Dialogue: 0,0:35:34.79,0:35:39.00,副字幕,,0,0,0,,que desde todas podía llegarse al río y abastecerse de agua con igual esfuerzo,
+Dialogue: 10,0:35:36.71,0:35:39.08,中文,,0,0,0,,到河边取水都同样省力
+Dialogue: 10,0:35:40.79,0:35:42.75,中文,,0,0,0,,他对街道的规划亦彰显出卓越的判断力
+Dialogue: 0,0:35:40.79,0:35:42.75,副字幕,,0,0,0,,y trazó las calles con tan buen sentido
+Dialogue: 0,0:35:42.83,0:35:45.67,副字幕,,0,0,0,,que ninguna casa recibía más sol a la hora del calor.
+Dialogue: 10,0:35:43.04,0:35:45.67,中文,,0,0,0,,哪怕在最炎热的午后也不会有房屋承受过多的暴晒
+Dialogue: 10,0:35:55.38,0:35:56.25,中文,,0,0,0,,你好 妈妈
+Dialogue: 0,0:35:55.38,0:35:56.25,副字幕,,0,0,0,,Hola, mami.
+Dialogue: 10,0:35:56.33,0:35:58.71,中文,,0,0,0,,又没穿衣服？你都不会害臊的吗？
+Dialogue: 0,0:35:56.33,0:35:58.71,副字幕,,0,0,0,,¿Otra vez en cueros? ¿Es que no te da vergüenza?
+Dialogue: 10,0:35:59.42,0:36:00.62,中文,,0,0,0,,这是象牙果？
+Dialogue: 0,0:35:59.42,0:36:00.62,副字幕,,0,0,0,,¿Y estos corozos?
+Dialogue: 10,0:36:01.29,0:36:02.38,中文,,0,0,0,,你想喝果汁吗？
+Dialogue: 0,0:36:01.29,0:36:03.79,副字幕,,0,0,0,,¿Quieres que te haga un juguito? Vamos, pues.
+Dialogue: 10,0:36:02.88,0:36:03.83,中文,,0,0,0,,好吧 过来
+Dialogue: 10,0:36:14.25,0:36:15.12,中文,,0,0,0,,看！
+Dialogue: 0,0:36:14.25,0:36:15.12,副字幕,,0,0,0,,¡Mira!
+Dialogue: 10,0:36:17.25,0:36:18.33,中文,,0,0,0,,真漂亮
+Dialogue: 0,0:36:17.25,0:36:18.33,副字幕,,0,0,0,,Es hermoso.
+Dialogue: 0,0:36:18.42,0:36:20.00,副字幕,,0,0,0,,[canto de pájaro]
+Dialogue: 10,0:36:20.08,0:36:22.12,中文,,0,0,0,,-它要住在哪儿呢？-来
+Dialogue: 0,0:36:20.08,0:36:21.17,副字幕,,0,0,0,,¿Dónde va a vivir?
+Dialogue: 0,0:36:21.25,0:36:22.12,副字幕,,0,0,0,,Vamos.
+Dialogue: 10,0:36:39.21,0:36:40.83,中文,,0,0,0,,小鸟以后就住这里了
+Dialogue: 0,0:36:39.21,0:36:40.83,副字幕,,0,0,0,,El pajarito va a vivir acá.
+Dialogue: 0,0:36:42.08,0:36:44.08,副字幕,,0,0,0,,[canto de pájaro]
+Dialogue: 10,0:36:45.75,0:36:47.46,中文,,0,0,0,,在接下来的几年里
+Dialogue: 0,0:36:45.75,0:36:47.46,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:36:48.33,0:36:51.50,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚又陆续带回了拟鹂、金丝雀
+Dialogue: 0,0:36:48.33,0:36:51.62,副字幕,,0,0,0,,José Arcadio Buendía llenó de turpiales, canarios,
+Dialogue: 10,0:36:51.71,0:36:54.17,中文,,0,0,0,,蓝鸲和知更鸟直至家里鸟满为患 不仅如此
+Dialogue: 0,0:36:51.71,0:36:54.17,副字幕,,0,0,0,,azulejos y petirrojos no solo su casa,
+Dialogue: 10,0:36:55.04,0:36:56.71,中文,,0,0,0,,他还给每家每户都送去了鸟儿
+Dialogue: 0,0:36:55.04,0:36:56.71,副字幕,,0,0,0,,sino todas las de la aldea.
+Dialogue: 0,0:37:00.42,0:37:02.08,副字幕,,0,0,0,,[canto de pájaros]
+Dialogue: 10,0:37:02.17,0:37:05.75,中文,,0,0,0,,形形色色的鸟儿开起演唱会令人晕头转向
+Dialogue: 0,0:37:02.17,0:37:05.75,副字幕,,0,0,0,,[narrador] llegó a ser tan aturdidor
+Dialogue: 10,0:37:06.83,0:37:09.12,中文,,0,0,0,,乌苏拉几乎被吵得灵魂出窍
+Dialogue: 0,0:37:06.83,0:37:09.42,副字幕,,0,0,0,,que Úrsula se tapó los oídos con cera de abejas
+Dialogue: 10,0:37:09.50,0:37:11.00,中文,,0,0,0,,只好用蜂蜡塞住耳朵
+Dialogue: 0,0:37:09.50,0:37:11.25,副字幕,,0,0,0,,para no perder el sentido de la realidad.
+Dialogue: 10,0:37:11.33,0:37:12.33,中文,,0,0,0,,放到那边去
+Dialogue: 0,0:37:11.33,0:37:12.33,副字幕,,0,0,0,,Ve, déjalo allá.
+Dialogue: 10,0:37:15.46,0:37:16.96,中文,,0,0,0,,乌苏拉！
+Dialogue: 0,0:37:15.46,0:37:16.96,副字幕,,0,0,0,,[José Arcadio B.] ¡Úrsula!
+Dialogue: 10,0:37:22.50,0:37:23.58,中文,,0,0,0,,是一张床
+Dialogue: 0,0:37:22.50,0:37:23.58,副字幕,,0,0,0,,Una cama.
+Dialogue: 10,0:37:24.12,0:37:25.04,中文,,0,0,0,,没错
+Dialogue: 0,0:37:24.12,0:37:25.04,副字幕,,0,0,0,,Ajá.
+Dialogue: 10,0:37:28.92,0:37:30.00,中文,,0,0,0,,真舒服
+Dialogue: 0,0:37:28.92,0:37:30.00,副字幕,,0,0,0,,Está cómoda.
+Dialogue: 10,0:37:30.79,0:37:32.17,中文,,0,0,0,,我们试用一下吧
+Dialogue: 0,0:37:30.79,0:37:32.17,副字幕,,0,0,0,,Vamos a probar para ver.
+Dialogue: 10,0:37:34.12,0:37:35.00,中文,,0,0,0,,现在吗？
+Dialogue: 0,0:37:34.12,0:37:35.00,副字幕,,0,0,0,,¿Ahora?
+Dialogue: 0,0:37:53.88,0:37:55.88,副字幕,,0,0,0,,[jadean]
+Dialogue: 0,0:38:02.17,0:38:03.46,副字幕,,0,0,0,,[Úrsula gime]
+Dialogue: 0,0:38:22.83,0:38:26.25,副字幕,,0,0,0,,- [Úrsula gime] - [suenan tambores]
+Dialogue: 10,0:38:28.71,0:38:29.75,中文,,0,0,0,,什么声音？
+Dialogue: 0,0:38:28.71,0:38:29.75,副字幕,,0,0,0,,¿Y eso?
+Dialogue: 0,0:38:47.92,0:38:49.92,副字幕,,0,0,0,,[suena música animada]
+Dialogue: 0,0:38:50.79,0:38:53.42,副字幕,,0,0,0,,[hombre] ¡Ea! ¡Ea!
+Dialogue: 0,0:38:56.50,0:38:58.50,副字幕,,0,0,0,,¡Ey! ¡Ey! ¡Ey!
+Dialogue: 0,0:39:13.88,0:39:15.00,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:39:23.42,0:39:24.62,中文,,0,0,0,,你们是什么人？
+Dialogue: 0,0:39:23.42,0:39:24.62,副字幕,,0,0,0,,¿Y ustedes quiénes son?
+Dialogue: 10,0:39:25.83,0:39:27.75,中文,,0,0,0,,我叫梅贾德斯
+Dialogue: 0,0:39:25.83,0:39:27.75,副字幕,,0,0,0,,[con acento español] Mi nombre es Melquíades.
+Dialogue: 10,0:39:28.75,0:39:29.96,中文,,0,0,0,,这是我的家人
+Dialogue: 0,0:39:28.75,0:39:29.96,副字幕,,0,0,0,,Y esta es mi familia.
+Dialogue: 10,0:39:31.17,0:39:33.21,中文,,0,0,0,,我们自远方来办集市
+Dialogue: 0,0:39:31.17,0:39:33.21,副字幕,,0,0,0,,Venimos de muy lejos con nuestra feria.
+Dialogue: 10,0:39:35.83,0:39:37.17,中文,,0,0,0,,你是怎么找到我们的？
+Dialogue: 0,0:39:35.83,0:39:37.17,副字幕,,0,0,0,,¿Cómo nos encontraron?
+Dialogue: 10,0:39:39.25,0:39:40.42,中文,,0,0,0,,是鸟叫声
+Dialogue: 0,0:39:39.25,0:39:40.42,副字幕,,0,0,0,,Los pájaros.
+Dialogue: 10,0:39:41.17,0:39:43.54,中文,,0,0,0,,我们在穿越大沼泽地时
+Dialogue: 0,0:39:41.17,0:39:43.54,副字幕,,0,0,0,,Venimos viajando por los pantanos de la ciénaga
+Dialogue: 10,0:39:45.17,0:39:46.88,中文,,0,0,0,,受它们强有力的歌声吸引而来
+Dialogue: 0,0:39:45.17,0:39:46.88,副字幕,,0,0,0,,y nos atrajo su poderoso canto.
+Dialogue: 10,0:39:48.08,0:39:49.42,中文,,0,0,0,,幸会
+Dialogue: 0,0:39:48.08,0:39:49.42,副字幕,,0,0,0,,Un gusto en conocerlo.
+Dialogue: 10,0:39:54.75,0:39:56.33,中文,,0,0,0,,我是何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:39:54.75,0:39:56.33,副字幕,,0,0,0,,Soy José Arcadio Buendía.
+Dialogue: 10,0:39:58.96,0:40:00.75,中文,,0,0,0,,这个小镇叫马孔多
+Dialogue: 0,0:39:58.96,0:40:00.75,副字幕,,0,0,0,,Y este pueblo se llama Macondo.
+Dialogue: 0,0:40:06.25,0:40:07.38,副字幕,,0,0,0,,[suena música animada]
+Dialogue: 10,0:40:07.46,0:40:11.71,中文,,0,0,0,,女士们先生们我们给这片遥远的土地带来了
+Dialogue: 0,0:40:07.46,0:40:08.75,副字幕,,0,0,0,,Señoras y señores,
+Dialogue: 0,0:40:09.46,0:40:11.71,副字幕,,0,0,0,,hemos traído a estas remotas tierras
+Dialogue: 10,0:40:12.25,0:40:15.58,中文,,0,0,0,,马其顿的炼金术圣贤们创造的第八大奇迹
+Dialogue: 0,0:40:12.25,0:40:15.58,副字幕,,0,0,0,,la octava maravilla de los sabios alquimistas de Macedonia.
+Dialogue: 10,0:40:16.88,0:40:21.58,中文,,0,0,0,,想见证这一非凡发明的人
+Dialogue: 0,0:40:16.88,0:40:19.17,副字幕,,0,0,0,,Así que todo aquel que quiera ver por su ojo
+Dialogue: 0,0:40:19.67,0:40:21.58,副字幕,,0,0,0,,este extraordinario invento,
+Dialogue: 10,0:40:22.17,0:40:23.54,中文,,0,0,0,,请随我来
+Dialogue: 0,0:40:22.17,0:40:23.54,副字幕,,0,0,0,,venga conmigo, por favor.
+Dialogue: 10,0:40:40.88,0:40:43.42,中文,,0,0,0,,今天你们将见证物品被赋予生命
+Dialogue: 0,0:40:40.88,0:40:43.42,副字幕,,0,0,0,,Hoy van a poder ver cómo las cosas cobran vida.
+Dialogue: 10,0:40:46.79,0:40:49.08,中文,,0,0,0,,只要唤醒它们的灵魂就好
+Dialogue: 0,0:40:46.79,0:40:49.08,副字幕,,0,0,0,,Solo es cuestión de despertarles el ánima.
+Dialogue: 0,0:40:54.75,0:40:57.17,副字幕,,0,0,0,,[suenan tambores]
+Dialogue: 0,0:41:37.08,0:41:38.71,副字幕,,0,0,0,,- [aplausos] - [bullicio]
+Dialogue: 0,0:41:39.62,0:41:40.75,副字幕,,0,0,0,,[hombre] ¡Hechicero!
+Dialogue: 10,0:41:40.83,0:41:41.75,中文,,0,0,0,,那是巫术！
+Dialogue: 0,0:41:40.83,0:41:41.75,副字幕,,0,0,0,,¡Eso es brujería!
+Dialogue: 10,0:41:43.71,0:41:44.79,中文,,0,0,0,,不 女士
+Dialogue: 0,0:41:43.71,0:41:44.79,副字幕,,0,0,0,,No, señora.
+Dialogue: 10,0:41:45.29,0:41:46.33,中文,,0,0,0,,这是科学
+Dialogue: 0,0:41:45.29,0:41:46.33,副字幕,,0,0,0,,Esto es ciencia.
+Dialogue: 10,0:41:48.46,0:41:49.58,中文,,0,0,0,,如果还没看够
+Dialogue: 0,0:41:48.46,0:41:49.58,副字幕,,0,0,0,,Y si quieren ver más,
+Dialogue: 10,0:41:51.08,0:41:53.08,中文,,0,0,0,,欢迎光顾我们的集市
+Dialogue: 0,0:41:51.08,0:41:53.08,副字幕,,0,0,0,,están todos invitados a nuestra feria.
+Dialogue: 0,0:41:53.71,0:41:54.88,副字幕,,0,0,0,,Por acá. Siga.
+Dialogue: 0,0:41:54.96,0:41:56.96,副字幕,,0,0,0,,[suena música animada]
+Dialogue: 10,0:42:00.42,0:42:02.08,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:42:00.42,0:42:02.08,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:42:02.62,0:42:04.54,中文,,0,0,0,,他天马行空的想象力
+Dialogue: 0,0:42:02.62,0:42:05.25,副字幕,,0,0,0,,cuya desaforada imaginación iba más lejos
+Dialogue: 10,0:42:05.33,0:42:09.04,中文,,0,0,0,,总是超乎各种奇迹、魔法和大自然的天才设计
+Dialogue: 0,0:42:05.33,0:42:09.04,副字幕,,0,0,0,,que el ingenio de la naturaleza y del milagro y la magia,
+Dialogue: 10,0:42:10.04,0:42:13.17,中文,,0,0,0,,他一厢情愿地认为那看似无用的发明
+Dialogue: 0,0:42:10.04,0:42:13.17,副字幕,,0,0,0,,pensó que era posible servirse de aquella invención inútil
+Dialogue: 10,0:42:13.25,0:42:15.33,中文,,0,0,0,,能帮他从地下开采黄金
+Dialogue: 0,0:42:13.25,0:42:15.33,副字幕,,0,0,0,,para desentrañar el oro de la tierra.
+Dialogue: 10,0:42:20.29,0:42:21.50,中文,,0,0,0,,你不能把羊牵走
+Dialogue: 0,0:42:20.29,0:42:23.58,副字幕,,0,0,0,,- No te las vas a llevar. - Lo viste. Esas cosas arrastran metales.
+Dialogue: 10,0:42:21.58,0:42:23.58,中文,,0,0,0,,可那些东西能吸引金属！
+Dialogue: 10,0:42:23.67,0:42:25.29,中文,,0,0,0,,我们需要山羊来养家糊口
+Dialogue: 0,0:42:23.67,0:42:25.29,副字幕,,0,0,0,,Y estas cabras nos dan de comer.
+Dialogue: 10,0:42:25.83,0:42:27.79,中文,,0,0,0,,我们能淘出一屋子黄金 明白吗？
+Dialogue: 0,0:42:25.83,0:42:27.79,副字幕,,0,0,0,,¿Te das cuenta de que nos podemos llenar de oro?
+Dialogue: 10,0:42:27.88,0:42:30.00,中文,,0,0,0,,黄金在这个镇上有什么用？
+Dialogue: 0,0:42:27.88,0:42:30.00,副字幕,,0,0,0,,¿Para qué te va a servir eso en este pueblo?
+Dialogue: 10,0:42:30.58,0:42:33.21,中文,,0,0,0,,亲爱的 马孔多不会永远一成不变
+Dialogue: 0,0:42:30.58,0:42:33.21,副字幕,,0,0,0,,Mi amor, Macondo no se va a quedar así toda la vida.
+Dialogue: 10,0:42:33.88,0:42:35.50,中文,,0,0,0,,我们得放眼未来
+Dialogue: 0,0:42:33.88,0:42:35.50,副字幕,,0,0,0,,Tenemos que ver hacia el futuro.
+Dialogue: 0,0:42:39.50,0:42:40.50,副字幕,,0,0,0,,[balido]
+Dialogue: 0,0:42:43.33,0:42:44.29,副字幕,,0,0,0,,[balido]
+Dialogue: 0,0:42:48.12,0:42:50.12,副字幕,,0,0,0,,[suena música animada]
+Dialogue: 0,0:43:20.04,0:43:22.08,副字幕,,0,0,0,,[bullicio]
+Dialogue: 0,0:43:22.17,0:43:24.17,副字幕,,0,0,0,,[música de misterio]
+Dialogue: 10,0:43:47.46,0:43:50.71,中文,,0,0,0,,如果是为了这个恕我不能将磁铁卖给你
+Dialogue: 0,0:43:47.46,0:43:50.71,副字幕,,0,0,0,,Me temo que no puedo venderle los imanes para lo que usted planea.
+Dialogue: 10,0:43:52.46,0:43:54.00,中文,,0,0,0,,我明白你的逻辑
+Dialogue: 0,0:43:52.46,0:43:54.00,副字幕,,0,0,0,,Su lógica tiene sentido,
+Dialogue: 10,0:43:55.00,0:43:58.50,中文,,0,0,0,,但矛盾的是贵重金属不会受磁铁吸引
+Dialogue: 0,0:43:55.00,0:43:56.38,副字幕,,0,0,0,,pero paradójicamente,
+Dialogue: 0,0:43:56.92,0:43:58.50,副字幕,,0,0,0,,no atrae los metales preciosos.
+Dialogue: 10,0:44:11.67,0:44:14.17,中文,,0,0,0,,少量的或许不行
+Dialogue: 0,0:44:11.67,0:44:14.17,副字幕,,0,0,0,,Puede ser que no funcione para pequeñas cantidades.
+Dialogue: 10,0:44:16.71,0:44:19.50,中文,,0,0,0,,但遇上大块的宝石或者一整座金矿
+Dialogue: 0,0:44:16.71,0:44:21.58,副字幕,,0,0,0,,Pero de seguro servirá para desenterrar grandes rocas o tesoros completos.
+Dialogue: 10,0:44:20.17,0:44:21.38,中文,,0,0,0,,一定行得通
+Dialogue: 10,0:44:22.62,0:44:24.12,中文,,0,0,0,,我买得起
+Dialogue: 0,0:44:22.62,0:44:24.12,副字幕,,0,0,0,,Yo le puedo pagar por ellos.
+Dialogue: 10,0:44:25.17,0:44:27.33,中文,,0,0,0,,凭良心讲 我不能卖给你 相信我
+Dialogue: 0,0:44:25.17,0:44:27.33,副字幕,,0,0,0,,No se los puedo vender para ese fin, créame.
+Dialogue: 10,0:44:28.17,0:44:29.42,中文,,0,0,0,,这笔投资有去无回
+Dialogue: 0,0:44:28.17,0:44:29.42,副字幕,,0,0,0,,Perdería su inversión.
+Dialogue: 10,0:44:34.67,0:44:36.38,中文,,0,0,0,,耳听为虚 眼见为实
+Dialogue: 0,0:44:34.67,0:44:36.38,副字幕,,0,0,0,,Déjeme que yo lo compruebe.
+Dialogue: 10,0:44:37.12,0:44:38.75,中文,,0,0,0,,你又不会有任何损失
+Dialogue: 0,0:44:37.12,0:44:38.75,副字幕,,0,0,0,,Usted no tiene nada que perder.
+Dialogue: 10,0:44:47.25,0:44:48.08,中文,,0,0,0,,那好吧
+Dialogue: 0,0:44:47.25,0:44:48.08,副字幕,,0,0,0,,Está bien.
+Dialogue: 10,0:44:49.92,0:44:51.29,中文,,0,0,0,,我喜欢你的激情
+Dialogue: 0,0:44:49.92,0:44:51.29,副字幕,,0,0,0,,Me gusta su entusiasmo.
+Dialogue: 0,0:44:52.46,0:44:54.46,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:45:00.29,0:45:02.12,中文,,0,0,0,,盖里奈多 你在干什么？
+Dialogue: 0,0:45:00.29,0:45:04.21,副字幕,,0,0,0,,Gerineldo, ¿qué haces viniendo para acá? Aquí ya buscamos, toca ir hacia allá.
+Dialogue: 10,0:45:02.21,0:45:04.12,中文,,0,0,0,,这里已经试过了 去看看那边
+Dialogue: 10,0:45:04.29,0:45:06.00,中文,,0,0,0,,你怎么不早说？
+Dialogue: 0,0:45:04.29,0:45:06.46,副字幕,,0,0,0,,[Gerineldo] ¿Por qué no me dijiste antes?
+Dialogue: 10,0:45:06.54,0:45:08.71,中文,,0,0,0,,很显然 你是个白痴
+Dialogue: 0,0:45:06.54,0:45:08.71,副字幕,,0,0,0,,[Magnífico] Es lógico. Si eres bruto.
+Dialogue: 10,0:45:09.21,0:45:10.21,中文,,0,0,0,,你留下 我去看
+Dialogue: 0,0:45:09.21,0:45:12.04,副字幕,,0,0,0,,- [Gerineldo] Voy para allá. - [Magnífico] Ponte a trabajar.
+Dialogue: 10,0:45:10.29,0:45:11.62,中文,,0,0,0,,好 继续干你的活去吧
+Dialogue: 10,0:45:14.88,0:45:16.67,中文,,0,0,0,,嘿！过来！
+Dialogue: 0,0:45:14.88,0:45:16.67,副字幕,,0,0,0,,¡Ey! ¡Vengan!
+Dialogue: 0,0:45:16.75,0:45:18.50,副字幕,,0,0,0,,[temblor]
+Dialogue: 0,0:45:18.58,0:45:19.62,副字幕,,0,0,0,,[gruñe]
+Dialogue: 10,0:45:24.38,0:45:25.71,中文,,0,0,0,,一定是个大家伙
+Dialogue: 0,0:45:24.38,0:45:25.71,副字幕,,0,0,0,,Tiene que ser algo grande.
+Dialogue: 10,0:45:38.54,0:45:39.67,中文,,0,0,0,,一个死人
+Dialogue: 0,0:45:38.54,0:45:39.67,副字幕,,0,0,0,,[Magnífico] Un muerto.
+Dialogue: 10,0:45:41.29,0:45:45.92,中文,,0,0,0,,我们找了一个星期 就挖出一个死人
+Dialogue: 0,0:45:41.29,0:45:43.46,副字幕,,0,0,0,,Después de una semana, lo único que logramos
+Dialogue: 0,0:45:43.54,0:45:45.92,副字幕,,0,0,0,,es encontrar un puto muerto.
+Dialogue: 0,0:46:00.75,0:46:02.75,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 0,0:46:30.29,0:46:32.29,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:46:59.54,0:47:01.83,中文,,0,0,0,,你要挖的那座金矿在哪儿呢？
+Dialogue: 0,0:46:59.54,0:47:01.83,副字幕,,0,0,0,,¿Y los costales de oro que ibas a desenterrar?
+Dialogue: 10,0:47:11.29,0:47:13.42,中文,,0,0,0,,你得把山羊要回来
+Dialogue: 0,0:47:11.29,0:47:13.42,副字幕,,0,0,0,,Vas a tener que traer los chivos de vuelta.
+Dialogue: 10,0:47:14.33,0:47:15.67,中文,,0,0,0,,那些羊已经不属于我们了
+Dialogue: 0,0:47:14.33,0:47:15.67,副字幕,,0,0,0,,Esos ya no son nuestros.
+Dialogue: 10,0:47:18.54,0:47:21.46,中文,,0,0,0,,你不去找那个吉普赛奸商我就自己去
+Dialogue: 0,0:47:18.54,0:47:21.46,副字幕,,0,0,0,,Si tú no eres capaz de ir donde ese gitano tramposo, yo sí.
+Dialogue: 10,0:47:25.62,0:47:28.29,中文,,0,0,0,,家里的牲畜不能白白送人我们送不起
+Dialogue: 0,0:47:25.62,0:47:28.29,副字幕,,0,0,0,,No podemos darnos el lujo de estar regalando animales.
+Dialogue: 10,0:47:30.29,0:47:31.33,中文,,0,0,0,,尤其是现在
+Dialogue: 0,0:47:30.29,0:47:31.33,副字幕,,0,0,0,,Y menos ahora.
+Dialogue: 10,0:47:33.17,0:47:34.04,中文,,0,0,0,,尤其是现在？
+Dialogue: 0,0:47:33.17,0:47:34.04,副字幕,,0,0,0,,¿Menos ahora?
+Dialogue: 10,0:47:38.54,0:47:39.50,中文,,0,0,0,,我怀孕了
+Dialogue: 0,0:47:38.54,0:47:39.50,副字幕,,0,0,0,,Estoy preñada.
+Dialogue: 10,0:47:44.75,0:47:46.21,中文,,0,0,0,,真是天大的好消息
+Dialogue: 0,0:47:44.75,0:47:46.21,副字幕,,0,0,0,,Hombre, qué felicidad.
+Dialogue: 10,0:47:55.42,0:47:57.54,中文,,0,0,0,,我妻子甚至不想把它们留在屋里
+Dialogue: 0,0:47:55.42,0:47:57.54,副字幕,,0,0,0,,Mi esposa no los quiere ni ver en la casa.
+Dialogue: 10,0:47:59.42,0:48:01.08,中文,,0,0,0,,至少你亲眼证实过了
+Dialogue: 0,0:47:59.42,0:48:01.08,副字幕,,0,0,0,,Al menos lo comprobó usted mismo.
+Dialogue: 10,0:48:02.92,0:48:06.46,中文,,0,0,0,,阅历是人生最宝贵的财富
+Dialogue: 0,0:48:02.92,0:48:04.29,副字幕,,0,0,0,,La experiencia
+Dialogue: 0,0:48:05.21,0:48:06.46,副字幕,,0,0,0,,lo es todo en esta vida.
+Dialogue: 10,0:48:08.00,0:48:11.08,中文,,0,0,0,,把羊牵回去吧 它们在等你
+Dialogue: 0,0:48:08.00,0:48:11.08,副字幕,,0,0,0,,Puede llevarse a sus cabras. Lo están esperando.
+Dialogue: 10,0:48:17.96,0:48:18.96,中文,,0,0,0,,梅贾德斯…
+Dialogue: 0,0:48:17.96,0:48:18.96,副字幕,,0,0,0,,Melquíades.
+Dialogue: 10,0:48:21.42,0:48:22.96,中文,,0,0,0,,我能问你一件事吗？
+Dialogue: 0,0:48:21.42,0:48:22.96,副字幕,,0,0,0,,¿Le puedo hacer una pregunta?
+Dialogue: 10,0:48:23.88,0:48:24.71,中文,,0,0,0,,当然
+Dialogue: 0,0:48:23.88,0:48:24.71,副字幕,,0,0,0,,Claro.
+Dialogue: 10,0:48:29.42,0:48:31.50,中文,,0,0,0,,为什么你们在大沼泽地没有迷路？
+Dialogue: 0,0:48:29.42,0:48:31.83,副字幕,,0,0,0,,¿Cómo hicieron para no perderse en esos pantanos?
+Dialogue: 10,0:48:31.92,0:48:33.04,中文,,0,0,0,,那些沼泽凶险万分
+Dialogue: 0,0:48:31.92,0:48:33.04,副字幕,,0,0,0,,Son traicioneros.
+Dialogue: 10,0:48:34.50,0:48:36.62,中文,,0,0,0,,那段旅途确实漫长而艰难
+Dialogue: 0,0:48:34.50,0:48:36.62,副字幕,,0,0,0,,Fue una larga y difícil travesía,
+Dialogue: 10,0:48:37.29,0:48:39.75,中文,,0,0,0,,但我们有能够指引方向的仪器
+Dialogue: 0,0:48:37.29,0:48:39.75,副字幕,,0,0,0,,pero nos dejamos guiar por los instrumentos.
+Dialogue: 10,0:48:41.46,0:48:42.58,中文,,0,0,0,,什么仪器？
+Dialogue: 0,0:48:41.46,0:48:42.58,副字幕,,0,0,0,,¿Qué instrumentos?
+Dialogue: 10,0:48:46.29,0:48:47.12,中文,,0,0,0,,稍等
+Dialogue: 0,0:48:46.29,0:48:47.12,副字幕,,0,0,0,,Aguarde.
+Dialogue: 10,0:48:53.96,0:48:56.83,中文,,0,0,0,,看 这是星象盘
+Dialogue: 0,0:48:53.96,0:48:54.88,副字幕,,0,0,0,,Mire.
+Dialogue: 0,0:48:55.42,0:48:56.83,副字幕,,0,0,0,,Esto es un astrolabio.
+Dialogue: 10,0:48:57.42,0:49:03.29,中文,,0,0,0,,几个世纪以来 人类都在尝试通过研究天空来了解地球
+Dialogue: 0,0:48:57.42,0:49:01.29,副字幕,,0,0,0,,Durante siglos, los humanos han intentado escrutar los cielos
+Dialogue: 0,0:49:01.88,0:49:03.25,副字幕,,0,0,0,,para descifrar la Tierra.
+Dialogue: 10,0:49:03.33,0:49:04.21,中文,,0,0,0,,来看这里
+Dialogue: 0,0:49:03.33,0:49:04.21,副字幕,,0,0,0,,Tenga.
+Dialogue: 10,0:49:05.42,0:49:07.54,中文,,0,0,0,,科学正在消除因距离而产生的障碍
+Dialogue: 0,0:49:05.42,0:49:07.54,副字幕,,0,0,0,,La ciencia está eliminando las distancias.
+Dialogue: 10,0:49:10.50,0:49:12.92,中文,,0,0,0,,你看 这是指南针
+Dialogue: 0,0:49:10.50,0:49:12.92,副字幕,,0,0,0,,Mire. Esto es una brújula.
+Dialogue: 10,0:49:13.67,0:49:14.88,中文,,0,0,0,,还有六分仪
+Dialogue: 0,0:49:13.67,0:49:14.88,副字幕,,0,0,0,,Y un sextante.
+Dialogue: 10,0:49:15.83,0:49:20.42,中文,,0,0,0,,要不了多久人类即使足不出户都能看见
+Dialogue: 0,0:49:15.83,0:49:19.08,副字幕,,0,0,0,,Dentro de muy poco, el hombre podrá ver
+Dialogue: 0,0:49:19.17,0:49:22.17,副字幕,,0,0,0,,lo que ocurre en cualquier lugar de la Tierra
+Dialogue: 10,0:49:20.50,0:49:22.17,中文,,0,0,0,,世界上任何地方
+Dialogue: 10,0:49:23.42,0:49:25.04,中文,,0,0,0,,发生的事情
+Dialogue: 0,0:49:23.42,0:49:25.04,副字幕,,0,0,0,,sin moverse de su casa.
+Dialogue: 10,0:49:26.29,0:49:29.21,中文,,0,0,0,,这些是葡萄牙的旧地图
+Dialogue: 0,0:49:26.29,0:49:29.21,副字幕,,0,0,0,,Son unos mapas portugueses. Antiguos.
+Dialogue: 10,0:49:30.04,0:49:30.88,中文,,0,0,0,,你看
+Dialogue: 0,0:49:30.04,0:49:30.88,副字幕,,0,0,0,,Mire.
+Dialogue: 10,0:49:33.38,0:49:35.50,中文,,0,0,0,,这能帮你学习如何使用它们
+Dialogue: 0,0:49:33.38,0:49:35.50,副字幕,,0,0,0,,Eso le servirá para que aprenda a usarlos.
+Dialogue: 10,0:49:43.38,0:49:44.33,中文,,0,0,0,,送给你了
+Dialogue: 0,0:49:43.38,0:49:44.33,副字幕,,0,0,0,,Son suyos.
+Dialogue: 10,0:49:46.58,0:49:47.67,中文,,0,0,0,,谢谢你 梅贾德斯
+Dialogue: 0,0:49:46.58,0:49:47.67,副字幕,,0,0,0,,Gracias, Melquíades.
+Dialogue: 10,0:49:48.33,0:49:51.79,中文,,0,0,0,,就在那天何塞·阿卡蒂奥·布恩迪亚确信
+Dialogue: 0,0:49:48.33,0:49:51.79,副字幕,,0,0,0,,[narrador] tuvo la certidumbre
+Dialogue: 10,0:49:52.50,0:49:55.08,中文,,0,0,0,,一段伟大的友谊开始了
+Dialogue: 0,0:49:52.50,0:49:55.08,副字幕,,0,0,0,,de que aquel era el principio de una grande amistad.
+Dialogue: 0,0:49:56.92,0:49:58.92,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:50:13.17,0:50:16.88,中文,,0,0,0,,他夜复一夜地观察星辰的运行
+Dialogue: 0,0:50:13.17,0:50:16.88,副字幕,,0,0,0,,[narrador] vigilando el curso de los astros.
+Dialogue: 10,0:50:19.75,0:50:23.17,中文,,0,0,0,,等到精通了这些仪器的使用和操控时
+Dialogue: 0,0:50:19.75,0:50:23.17,副字幕,,0,0,0,,Cuando se hizo experto en el uso y manejo de sus instrumentos,
+Dialogue: 10,0:50:24.08,0:50:25.46,中文,,0,0,0,,他勾勒了一幅空间的愿景
+Dialogue: 0,0:50:24.08,0:50:25.46,副字幕,,0,0,0,,tuvo una noción del espacio
+Dialogue: 10,0:50:25.54,0:50:28.17,中文,,0,0,0,,他在其中穿越未知的海洋
+Dialogue: 0,0:50:25.54,0:50:28.17,副字幕,,0,0,0,,que le permitió navegar por mares incógnitos,
+Dialogue: 10,0:50:29.12,0:50:31.54,中文,,0,0,0,,探访其他无人居住的领域
+Dialogue: 0,0:50:29.12,0:50:31.54,副字幕,,0,0,0,,visitar territorios deshabitados
+Dialogue: 10,0:50:32.25,0:50:34.62,中文,,0,0,0,,结交拥有璀璨文明的芸芸众生
+Dialogue: 0,0:50:32.25,0:50:34.62,副字幕,,0,0,0,,y trabar relación con seres espléndidos.
+Dialogue: 10,0:50:42.75,0:50:46.33,中文,,0,0,0,,真不知道你对着这些地图在研究什么 到别处看去
+Dialogue: 0,0:50:42.75,0:50:46.33,副字幕,,0,0,0,,No sé qué haces con esos mapas, pero lo tendrás que hacer en otra parte.
+Dialogue: 10,0:50:47.29,0:50:48.96,中文,,0,0,0,,我想搞清楚马孔多在哪里
+Dialogue: 0,0:50:47.29,0:50:48.96,副字幕,,0,0,0,,Quiero entender dónde está Macondo,
+Dialogue: 0,0:50:49.04,0:50:51.71,副字幕,,0,0,0,,a ver si por fin logro una vía a la civilización.
+Dialogue: 10,0:50:49.17,0:50:51.71,中文,,0,0,0,,好看看能否找到一条通往文明世界的道路
+Dialogue: 10,0:50:52.38,0:50:53.62,中文,,0,0,0,,我知道答案
+Dialogue: 0,0:50:52.38,0:50:53.96,副字幕,,0,0,0,,Eso te lo contesto yo.
+Dialogue: 10,0:50:54.04,0:50:56.67,中文,,0,0,0,,马孔多就在脚下 而你在做白日梦
+Dialogue: 0,0:50:54.04,0:50:56.67,副字幕,,0,0,0,,Macondo está aquí, y tú estás en la luna.
+Dialogue: 10,0:50:58.08,0:50:59.92,中文,,0,0,0,,何塞·阿卡蒂奥 吃饭了！
+Dialogue: 0,0:50:58.08,0:50:59.92,副字幕,,0,0,0,,¡José Arcadio, a comer!
+Dialogue: 10,0:51:04.08,0:51:06.79,中文,,0,0,0,,瞧这一手的泥 先去洗手吧
+Dialogue: 0,0:51:04.08,0:51:07.50,副字幕,,0,0,0,,Pero primero te lavamos estas manos, que las tienes sucias de tierra.
+Dialogue: 10,0:51:07.58,0:51:08.46,中文,,0,0,0,,我们走
+Dialogue: 0,0:51:07.58,0:51:08.46,副字幕,,0,0,0,,Vamos a lavarte.
+Dialogue: 0,0:51:34.42,0:51:36.42,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:51:46.83,0:51:48.21,中文,,0,0,0,,再见 爸爸！
+Dialogue: 0,0:51:46.83,0:51:48.21,副字幕,,0,0,0,,¡Adiós, papá!
+Dialogue: 10,0:51:50.29,0:51:51.21,中文,,0,0,0,,再见 儿子！
+Dialogue: 0,0:51:50.29,0:51:51.21,副字幕,,0,0,0,,¡Adiós, mijo!
+Dialogue: 0,0:52:14.38,0:52:16.38,副字幕,,0,0,0,,[canto de aves y chirrido de insectos]
+Dialogue: 10,0:52:35.96,0:52:38.46,中文,,0,0,0,,这艘大帆船得有200年历史了吧
+Dialogue: 0,0:52:35.96,0:52:38.46,副字幕,,0,0,0,,Este galeón debe tener como 200 años.
+Dialogue: 10,0:53:13.29,0:53:14.50,中文,,0,0,0,,一定就在附近了
+Dialogue: 0,0:53:13.29,0:53:14.50,副字幕,,0,0,0,,Tiene que estar cerca.
+Dialogue: 10,0:53:17.50,0:53:18.67,中文,,0,0,0,,什么就在附近？
+Dialogue: 0,0:53:17.50,0:53:18.67,副字幕,,0,0,0,,¿Estar cerca qué?
+Dialogue: 10,0:53:19.17,0:53:20.75,中文,,0,0,0,,大海！
+Dialogue: 0,0:53:19.17,0:53:20.75,副字幕,,0,0,0,,[José Arcadio B.] ¡El mar!
+Dialogue: 10,0:53:38.96,0:53:42.33,中文,,0,0,0,,这个发现令何塞·阿卡蒂奥·布恩迪亚近乎崩溃
+Dialogue: 0,0:53:38.96,0:53:42.33,副字幕,,0,0,0,,[narrador] de José Arcadio Buendía.
+Dialogue: 10,0:53:44.29,0:53:46.25,中文,,0,0,0,,他将其视为命运的捉弄
+Dialogue: 0,0:53:44.29,0:53:48.58,副字幕,,0,0,0,,Consideró como una burla del destino haber buscado el mar sin encontrarlo,
+Dialogue: 10,0:53:46.33,0:53:48.42,中文,,0,0,0,,曾经苦苦寻觅而未果
+Dialogue: 10,0:53:49.21,0:53:50.88,中文,,0,0,0,,为之牺牲良多的大海
+Dialogue: 0,0:53:49.21,0:53:50.88,副字幕,,0,0,0,,al precio de sacrificios,
+Dialogue: 10,0:53:51.38,0:53:53.75,中文,,0,0,0,,如今却无心插柳地找到了
+Dialogue: 0,0:53:51.38,0:53:53.75,副字幕,,0,0,0,,y haberlo encontrado entonces sin buscarlo.
+Dialogue: 10,0:54:03.83,0:54:06.67,中文,,0,0,0,,我们当初放弃时只差一步就到大海了 乌苏拉
+Dialogue: 0,0:54:03.83,0:54:06.67,副字幕,,0,0,0,,Nos rendimos justo antes de encontrar el mar, Úrsula.
+Dialogue: 10,0:54:06.75,0:54:08.42,中文,,0,0,0,,马孔多四面都是水
+Dialogue: 0,0:54:06.75,0:54:08.42,副字幕,,0,0,0,,Macondo está rodeado de agua.
+Dialogue: 10,0:54:19.08,0:54:23.33,中文,,0,0,0,,我们做了几次测量但还需要更多数据才能完善地图
+Dialogue: 0,0:54:19.08,0:54:20.50,副字幕,,0,0,0,,Logramos varias mediciones,
+Dialogue: 0,0:54:20.58,0:54:23.33,副字幕,,0,0,0,,pero quedaron faltando más para poder completar el mapa.
+Dialogue: 10,0:54:25.21,0:54:27.12,中文,,0,0,0,,我们得再次远征
+Dialogue: 0,0:54:25.21,0:54:27.12,副字幕,,0,0,0,,Necesitamos hacer otra expedición.
+Dialogue: 10,0:54:33.08,0:54:35.00,中文,,0,0,0,,我们得去接触外面的世界
+Dialogue: 0,0:54:33.08,0:54:35.00,副字幕,,0,0,0,,Tenemos que comunicarnos con el mundo.
+Dialogue: 10,0:54:35.88,0:54:38.00,中文,,0,0,0,,别再离开了何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:54:35.88,0:54:38.00,副字幕,,0,0,0,,No te puedes ir más, José Arcadio Buendía.
+Dialogue: 10,0:54:41.38,0:54:42.96,中文,,0,0,0,,你难道不明白我们需要你吗？
+Dialogue: 0,0:54:41.38,0:54:42.96,副字幕,,0,0,0,,¿No ves la falta que nos haces?
+Dialogue: 0,0:54:55.33,0:54:56.54,副字幕,,0,0,0,,[llanto de bebé]
+Dialogue: 0,0:54:59.21,0:55:01.96,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 0,0:55:08.58,0:55:10.46,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 10,0:55:11.04,0:55:11.92,中文,,0,0,0,,何塞·阿卡蒂奥
+Dialogue: 0,0:55:11.04,0:55:12.67,副字幕,,0,0,0,,- José Arcadio. - ¿Eh?
+Dialogue: 10,0:55:12.75,0:55:13.62,中文,,0,0,0,,你听
+Dialogue: 0,0:55:12.75,0:55:13.62,副字幕,,0,0,0,,Escucha.
+Dialogue: 0,0:55:14.71,0:55:15.67,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 10,0:55:17.54,0:55:18.62,中文,,0,0,0,,怎么了？
+Dialogue: 0,0:55:17.54,0:55:18.62,副字幕,,0,0,0,,¿Qué es eso?
+Dialogue: 0,0:55:25.00,0:55:26.25,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 0,0:55:32.38,0:55:34.12,副字幕,,0,0,0,,¡Shh! Ven acá.
+Dialogue: 10,0:55:33.33,0:55:34.12,中文,,0,0,0,,过来
+Dialogue: 10,0:55:35.92,0:55:36.75,中文,,0,0,0,,你听
+Dialogue: 0,0:55:35.92,0:55:36.75,副字幕,,0,0,0,,Escucha.
+Dialogue: 0,0:55:36.83,0:55:38.29,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 10,0:55:47.54,0:55:49.62,中文,,0,0,0,,宝宝在我肚子里哭呢
+Dialogue: 0,0:55:47.54,0:55:49.62,副字幕,,0,0,0,,Está llorando desde adentro de la panza.
+Dialogue: 0,0:55:52.54,0:55:54.54,副字幕,,0,0,0,,[llanto continúa]
+Dialogue: 10,0:55:56.38,0:55:57.83,中文,,0,0,0,,玛蒂尔达 拿止血布来
+Dialogue: 0,0:55:56.38,0:55:58.50,副字幕,,0,0,0,,[Pilar] ¡Matilda, las compresas! ¡Rápido!
+Dialogue: 10,0:55:58.58,0:55:59.17,中文,,0,0,0,,-快点！-来了！
+Dialogue: 0,0:55:58.58,0:56:01.08,副字幕,,0,0,0,,- [Matilda] Estoy aquí. - [Úrsula grita]
+Dialogue: 10,0:56:01.17,0:56:03.04,中文,,0,0,0,,呼吸！深呼吸！
+Dialogue: 0,0:56:01.17,0:56:03.46,副字幕,,0,0,0,,Profundo, profundo. Respira profundo.
+Dialogue: 10,0:56:03.54,0:56:05.88,中文,,0,0,0,,先别用力 稳住呼吸
+Dialogue: 0,0:56:03.54,0:56:05.88,副字幕,,0,0,0,,No pujes, no pujes. Respira, respira.
+Dialogue: 10,0:56:06.38,0:56:10.21,中文,,0,0,0,,乌苏拉因某种猜想而浑身战栗那深沉的嚎叫
+Dialogue: 0,0:56:06.38,0:56:08.71,副字幕,,0,0,0,,[narrador] con la certidumbre
+Dialogue: 0,0:56:08.79,0:56:10.25,副字幕,,0,0,0,,de que aquel bramido profundo
+Dialogue: 10,0:56:10.33,0:56:12.92,中文,,0,0,0,,无疑暗示了孩子生有可怕的猪尾巴
+Dialogue: 0,0:56:10.33,0:56:12.92,副字幕,,0,0,0,,era un primer indicio de la temible cola de cerdo.
+Dialogue: 10,0:56:14.88,0:56:18.12,中文,,0,0,0,,她祈求上帝让那畸形的生物死在她的子宫里
+Dialogue: 0,0:56:14.88,0:56:18.12,副字幕,,0,0,0,,Y rogó a Dios que le dejara morir la criatura en el vientre.
+Dialogue: 0,0:56:18.21,0:56:19.25,副字幕,,0,0,0,,[grita]
+Dialogue: 10,0:56:20.54,0:56:21.88,中文,,0,0,0,,就快好了
+Dialogue: 0,0:56:20.54,0:56:21.88,副字幕,,0,0,0,,Ya lo siento, va a venir.
+Dialogue: 10,0:56:22.50,0:56:23.79,中文,,0,0,0,,来了！
+Dialogue: 0,0:56:22.50,0:56:23.79,副字幕,,0,0,0,,¡Úrsula, ahí viene!
+Dialogue: 10,0:56:24.38,0:56:25.38,中文,,0,0,0,,出来了！
+Dialogue: 0,0:56:24.38,0:56:26.75,副字幕,,0,0,0,,¡Úrsula, ahí viene! ¡Vamos, uno más!
+Dialogue: 10,0:56:25.46,0:56:28.79,中文,,0,0,0,,加把劲！再来一次！对！
+Dialogue: 0,0:56:26.83,0:56:28.79,副字幕,,0,0,0,,- ¡Uno más! ¡Eso! - [gime]
+Dialogue: 0,0:56:28.88,0:56:30.12,副字幕,,0,0,0,,[jadea]
+Dialogue: 10,0:56:50.25,0:56:53.75,中文,,0,0,0,,奥雷里亚诺是在马孔多诞生的第一个新生儿
+Dialogue: 0,0:56:50.25,0:56:53.75,副字幕,,0,0,0,,[narrador] el primer ser humano que nació en Macondo.
+Dialogue: 10,0:56:56.58,0:56:58.83,中文,,0,0,0,,他出生时便睁着双眼
+Dialogue: 0,0:56:56.58,0:56:58.83,副字幕,,0,0,0,,Nació con los ojos abiertos,
+Dialogue: 10,0:56:59.79,0:57:02.62,中文,,0,0,0,,好奇又冷漠地审视着这个世界
+Dialogue: 0,0:56:59.79,0:57:02.62,副字幕,,0,0,0,,mirando el mundo con una curiosidad sin asombro.
+Dialogue: 10,0:57:04.38,0:57:07.67,中文,,0,0,0,,多年以后乌苏拉已然遗忘了这炯炯的目光
+Dialogue: 0,0:57:04.38,0:57:07.67,副字幕,,0,0,0,,Úrsula no volvió a acordarse de la intensidad de esa mirada
+Dialogue: 10,0:57:08.17,0:57:09.67,中文,,0,0,0,,直到那个下午
+Dialogue: 0,0:57:08.17,0:57:09.67,副字幕,,0,0,0,,hasta años después,
+Dialogue: 10,0:57:10.17,0:57:13.25,中文,,0,0,0,,奥雷里亚诺·布恩迪亚第一次接收到预感
+Dialogue: 0,0:57:10.17,0:57:13.25,副字幕,,0,0,0,,la tarde en que Aureliano Buendía tuvo su primer presagio.
+Dialogue: 10,0:57:15.25,0:57:17.46,中文,,0,0,0,,妈妈 盆子要掉了
+Dialogue: 0,0:57:15.25,0:57:17.46,副字幕,,0,0,0,,Mamá, la olla se va a caer.
+Dialogue: 10,0:57:18.79,0:57:20.25,中文,,0,0,0,,盆子好着呢 奥雷里亚诺
+Dialogue: 0,0:57:18.79,0:57:20.25,副字幕,,0,0,0,,Está bien puesta, Aureliano.
+Dialogue: 0,0:57:24.83,0:57:26.50,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:57:34.21,0:57:37.12,中文,,0,0,0,,开始意识到自己有预知能力时
+Dialogue: 0,0:57:34.21,0:57:37.12,副字幕,,0,0,0,,[narrador] a ser consciente de sus presagios…
+Dialogue: 10,0:57:41.33,0:57:45.04,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校以为他的死亡
+Dialogue: 0,0:57:41.33,0:57:43.88,副字幕,,0,0,0,,el coronel Aureliano Buendía pensó que la muerte
+Dialogue: 0,0:57:43.96,0:57:46.92,副字幕,,0,0,0,,había de anunciarse con una señal definida,
+Dialogue: 10,0:57:45.12,0:57:50.71,中文,,0,0,0,,将以一种明确的、毫不含糊的斩钉截铁的方式宣告其到来
+Dialogue: 0,0:57:47.62,0:57:48.75,副字幕,,0,0,0,,inequívoca
+Dialogue: 0,0:57:49.62,0:57:50.88,副字幕,,0,0,0,,e irrevocable.
+Dialogue: 10,0:57:54.08,0:57:56.42,中文,,0,0,0,,但直到被处决的前一刻
+Dialogue: 0,0:57:54.08,0:57:56.42,副字幕,,0,0,0,,Pero cuando le faltaba poco para morir…
+Dialogue: 10,0:57:59.21,0:58:00.50,中文,,0,0,0,,那样的预感仍未降临
+Dialogue: 0,0:57:59.21,0:58:00.50,副字幕,,0,0,0,,la señal aún no llegaba.
+Dialogue: 10,0:58:07.21,0:58:10.08,中文,,0,0,0,,（根据加夫列尔·加西亚·马尔克斯小说改编）
+Dialogue: 0,0:58:08.08,0:58:10.08,副字幕,,0,0,0,,[música inquietante]
+Dialogue: 10,1:03:37.17,1:03:39.54,中文,,0,0,0,,字幕翻译：覃璇

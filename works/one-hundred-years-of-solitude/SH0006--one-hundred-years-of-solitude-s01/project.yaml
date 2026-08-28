@@ -1,0 +1,163 @@
+schema_version: 7
+
+id: SH0006
+project_name: one-hundred-years-of-solitude-s01
+type: tv
+episode_count: 8
+status: active
+
+naming:
+  directory: SH0006--one-hundred-years-of-solitude-s01
+  approved_by: user
+  approved_at: "2026-08-28"
+  basis: user-approved-developer-facing-name
+
+identity:
+  provider: bangumi
+  id: "276863"
+  url: "https://bgm.tv/subject/276863"
+  api_url: "https://api.bgm.tv/v0/subjects/276863"
+  titles:
+    ja: "Cien años de soledad"
+    zh-Hans: "百年孤独"
+  date: "2024-12-11"
+  platform: "欧美剧"
+  total_episodes: 16
+  verification: api-verified
+  verified_at: "2026-08-28"
+  scope_verification:
+    status: user-confirmed
+    approved_by: user
+    basis: user-confirmed-S01E01-S01E08-material-scope
+
+task:
+  mode: proofreading
+  source_language: es
+  target_language: zh-Hans
+  scope: S01E01-S01E08
+
+languages:
+  release:
+    primary: zh-Hans
+    secondary: es
+    filename_suffix: zh-Hans
+  references: []
+
+subtitle_design:
+  profile: zh-bilingual
+  ordinary_styles:
+    primary:
+      - CN-Main
+    secondary:
+      - ES-Main
+
+project_overrides:
+  - id: SH0006-EXCEPTION-001
+    scope: target media availability
+    rule: "The screenshot-confirmed MKV basenames are the matched target-video identity and episode map; the video binaries are not copied or locally probed."
+    rationale: "User-approved exception for an oversized source video; the provided official bilingual subtitles are the complete working material."
+    confirmed_by: user
+    confirmed_at: "2026-08-28"
+  - id: SH0006-RULE-001
+    scope: all retained Spanish dialogue
+    rule: "Use the Chinese event start and end times as the sole timing authority; synchronize retained Spanish dialogue to the Chinese event structure."
+    rationale: "User manually confirmed the Chinese subtitle timing."
+    confirmed_by: user
+    confirmed_at: "2026-08-28"
+  - id: SH0006-RULE-002
+    scope: Spanish accessibility text
+    rule: "Remove Spanish hearing-impaired or descriptive text that has no matching Chinese event/content; strip unmatched bracketed SDH fragments from retained Spanish dialogue events."
+    rationale: "The user observed that the Spanish SDH layer contains extra content not represented in the Chinese official translation."
+    confirmed_by: user
+    confirmed_at: "2026-08-28"
+  - id: SH0006-RULE-003
+    scope: Chinese dialogue
+    rule: "Use Spanish as the source-text reference for checking the official Chinese translation; do not retranslate or alter Chinese text without a confirmed concrete error."
+    rationale: "The supplied subtitle is an official Netflix bilingual translation."
+    confirmed_by: user
+    confirmed_at: "2026-08-28"
+  - id: SH0006-RULE-004
+    scope: series terminology conflicts in S01E01-S01E08
+    rule: "Use the Chinese Wikipedia novel entry for conflicting proper-name translations; do not copy parenthetical explanatory text into subtitles."
+    rationale: "User directed that the more complete novel entry is the reference and that conflicting terms adopt its translations."
+    confirmed_by: user
+    confirmed_at: "2026-08-28"
+
+limitations:
+  - "No video binary is present in the repository; the eight target-video basenames and their episode relationships are user-confirmed from the supplied screenshot."
+  - "No audio-stream, shot-boundary, visual-layout, forced-sign, or playback verification is claimed in this round."
+  - "Spanish source text is used for translation comparison; this round does not claim a full human linguistic review of every event."
+
+subtitle_sources:
+  - id: official-netflix-bilingual
+    language:
+      - zh-Hans
+      - es
+    kind: official-bilingual-ass
+    path: project/sources/subtitles/zh-Hans/official-netflix-bilingual
+    file_count: 8
+    scope: S01E01-S01E08
+    roles:
+      - candidate-baseline
+      - source-text-reference
+      - secondary-language-release-source
+      - timing-reference
+      - style-layout-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: user
+      confirmed_at: "2026-08-28"
+      evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and Chinese event timing is the project timing authority."
+
+video_sources:
+  target-video:
+    release_group: Netflix
+    medium: WEB-DL
+    timing_reference: true
+    inventory_status: basename-confirmed-not-local
+    audio: not-probed
+    files:
+      S01E01: "One.Hundred.Years.of.Solitude.S01E01.mkv"
+      S01E02: "One.Hundred.Years.of.Solitude.S01E02.mkv"
+      S01E03: "One.Hundred.Years.of.Solitude.S01E03.mkv"
+      S01E04: "One.Hundred.Years.of.Solitude.S01E04.mkv"
+      S01E05: "One.Hundred.Years.of.Solitude.S01E05.mkv"
+      S01E06: "One.Hundred.Years.of.Solitude.S01E06.mkv"
+      S01E07: "One.Hundred.Years.of.Solitude.S01E07.mkv"
+      S01E08: "One.Hundred.Years.of.Solitude.S01E08.mkv"
+
+workspace:
+  baseline: project/sources/subtitles/zh-Hans/official-netflix-bilingual
+  episodes: project/workspace/episodes
+  temporary: project/workspace/temp
+  build: project/workspace/build
+
+initialization:
+  skill_version: "1.1.2"
+  state: proofreading-ready
+  intake: exception-basename-video-map-and-user-confirmed-subtitle-timing
+  intake_approved_by: user
+  episode_map_approved_by: user
+  approved_at: "2026-08-28"
+  initialized_at: "2026-08-28"
+
+release:
+  version_file: subtitles/current/VERSION
+  current_path: subtitles/current
+  previous_path: subtitles/previous
+  previous_retention: 1
+  previous_rotation: rename-current-directory
+  previous_required_after_first_release: true
+  format: ass
+  filename_pattern: "<video-stem>.zh-Hans.ass"
+  embedded_version_field: Subtitle-Hub-Version
+  review_coverage:
+    machine: verified
+    human: pending-user-final-visual-review-after-release
+    basis: released-under-user-approved-no-video-exception
+  package:
+    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
+    generated_by: .github/scripts/build_subtitle_packages.py
+
+documentation:
+  review: review.md

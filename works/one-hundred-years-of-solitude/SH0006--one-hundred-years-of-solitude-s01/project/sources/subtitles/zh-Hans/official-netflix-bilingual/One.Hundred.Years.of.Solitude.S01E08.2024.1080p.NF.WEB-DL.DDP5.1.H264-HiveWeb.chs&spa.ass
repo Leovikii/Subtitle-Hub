@@ -1,0 +1,1050 @@
+[Script Info]
+Title:
+ScriptType: v4.00+
+Collisions: Normal
+PlayDepth: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: 中文,Microsoft YaHei,16,&H00FFFFFF,&H0300FFFF,&H00000000,&H02848484,0,0,0,0,100,100,0,0,1,1.2,0.3,2,10,10,18,1
+Style: 副字幕,Arial,12,&H00FFFFFF,&H0300FFFF,&H00000000,&H02818181,0,-1,0,0,100,100,0,0,1,1.2,0.3,2,10,10,5,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:11.29,0:00:13.92,中文,,0,0,0,,阿卡蒂奥被处决的几个月后
+Dialogue: 0,0:00:11.29,0:00:13.92,副字幕,,0,0,0,,[narrador] del fusilamiento de Arcadio,
+Dialogue: 10,0:00:14.50,0:00:16.79,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:00:14.50,0:00:16.79,副字幕,,0,0,0,,el coronel Aureliano Buendía cayó prisionero
+Dialogue: 10,0:00:16.88,0:00:19.92,中文,,0,0,0,,在就快到达西部边境时被俘
+Dialogue: 0,0:00:16.88,0:00:19.92,副字幕,,0,0,0,,cuando estaba a punto de alcanzar la frontera occidental.
+Dialogue: 10,0:00:21.33,0:00:25.08,中文,,0,0,0,,跟随他参战的21个人里只有一人幸存
+Dialogue: 0,0:00:21.33,0:00:25.08,副字幕,,0,0,0,,De los 21 hombres que lo siguieron en la guerra, solo uno sobrevivió,
+Dialogue: 10,0:00:25.92,0:00:27.79,中文,,0,0,0,,就是盖里奈多·马奎斯上校
+Dialogue: 0,0:00:25.92,0:00:27.79,副字幕,,0,0,0,,el coronel Gerinaldo Márquez.
+Dialogue: 0,0:00:27.88,0:00:30.38,副字幕,,0,0,0,,- [música dramática] - [mujer] Es Buendía.
+Dialogue: 0,0:00:31.21,0:00:33.83,副字幕,,0,0,0,,[hombre] ¡Ay, Diosito! ¡Gracias, Dios!
+Dialogue: 0,0:00:33.92,0:00:35.17,副字幕,,0,0,0,,[bullicio]
+Dialogue: 10,0:00:41.21,0:00:43.92,中文,,0,0,0,,-你的手怎么了？-没什么 烧伤而已
+Dialogue: 0,0:00:41.21,0:00:43.92,副字幕,,0,0,0,,- ¿Qué te pasó en la mano? - No es nada, una quemadura.
+Dialogue: 10,0:00:44.50,0:00:46.33,中文,,0,0,0,,你儿子奥雷里亚诺·何塞长大了！
+Dialogue: 0,0:00:44.50,0:00:46.33,副字幕,,0,0,0,,Tu hijo Aureliano José está enorme.
+Dialogue: 0,0:00:46.42,0:00:47.96,副字幕,,0,0,0,,[soldado] Señora, no puede pasar.
+Dialogue: 10,0:00:48.04,0:00:50.12,中文,,0,0,0,,奥雷里亚诺
+Dialogue: 0,0:00:48.04,0:00:50.12,副字幕,,0,0,0,,Aureliano, Aureliano…
+Dialogue: 0,0:00:51.33,0:00:52.62,副字幕,,0,0,0,,[Magnífico] ¿Y Magnífico?
+Dialogue: 10,0:00:52.71,0:00:55.12,中文,,0,0,0,,-我们的儿子在哪里？-他在哪儿？
+Dialogue: 0,0:00:52.71,0:00:55.12,副字幕,,0,0,0,,- ¿Dónde está nuestro hijo? - ¿Dónde está?
+Dialogue: 10,0:00:55.83,0:00:57.58,中文,,0,0,0,,-奥雷里亚诺！-退后！
+Dialogue: 0,0:00:55.83,0:00:57.58,副字幕,,0,0,0,,- [Úrsula] ¡Aureliano! - [soldado] ¡Atrás!
+Dialogue: 10,0:00:58.71,0:01:00.50,中文,,0,0,0,,回家去吧 妈妈
+Dialogue: 0,0:00:58.71,0:01:00.50,副字幕,,0,0,0,,¡Váyase para casa, mamá!
+Dialogue: 10,0:01:01.04,0:01:04.54,中文,,0,0,0,,得到当局的许可再来监狱探望我
+Dialogue: 0,0:01:01.04,0:01:04.92,副字幕,,0,0,0,,Pídale permiso a las autoridades y vaya a visitarme a la cárcel.
+Dialogue: 10,0:01:05.00,0:01:06.17,中文,,0,0,0,,奥雷里亚诺！
+Dialogue: 0,0:01:05.00,0:01:06.17,副字幕,,0,0,0,,[Úrsula] ¡Aureliano!
+Dialogue: 10,0:01:11.33,0:01:12.75,中文,,0,0,0,,布恩迪亚上校万岁！
+Dialogue: 0,0:01:11.33,0:01:14.54,副字幕,,0,0,0,,- ¡Que viva el coronel Buendía! - ¡Que viva!
+Dialogue: 10,0:01:12.83,0:01:14.54,中文,,0,0,0,,布恩迪亚上校万岁！
+Dialogue: 0,0:01:14.62,0:01:16.88,副字幕,,0,0,0,,- [disparo] - [gritos]
+Dialogue: 10,0:01:16.96,0:01:18.46,中文,,0,0,0,,奥雷里亚诺！
+Dialogue: 0,0:01:16.96,0:01:18.46,副字幕,,0,0,0,,¡Aureliano!
+Dialogue: 10,0:01:18.54,0:01:20.17,中文,,0,0,0,,别再胡言乱语了！
+Dialogue: 0,0:01:18.54,0:01:20.17,副字幕,,0,0,0,,¡Se acabó la guachafita!
+Dialogue: 10,0:01:20.96,0:01:22.29,中文,,0,0,0,,这里没什么好看的！
+Dialogue: 0,0:01:20.96,0:01:22.88,副字幕,,0,0,0,,¡Aquí no hay nada que ver, carajo!
+Dialogue: 10,0:01:23.38,0:01:24.79,中文,,0,0,0,,都回家去！
+Dialogue: 0,0:01:23.38,0:01:24.79,副字幕,,0,0,0,,¡Todo el mundo para la casa!
+Dialogue: 0,0:01:24.88,0:01:26.33,副字幕,,0,0,0,,[Isabel llora]
+Dialogue: 10,0:01:32.04,0:01:35.42,中文,,0,0,0,,他们把奥雷里亚诺·布恩迪亚上校带到马孔多判刑
+Dialogue: 0,0:01:32.04,0:01:35.42,副字幕,,0,0,0,,[narrador] sería sentenciado en Macondo
+Dialogue: 10,0:01:35.50,0:01:37.46,中文,,0,0,0,,以儆效尤
+Dialogue: 0,0:01:35.50,0:01:37.46,副字幕,,0,0,0,,para escarmiento de la población.
+Dialogue: 10,0:01:40.38,0:01:44.29,中文,,0,0,0,,《百年孤独》
+Dialogue: 10,0:01:45.00,0:01:48.42,中文,,0,0,0,,我要见奥雷里亚诺·布恩迪亚上校他是我儿子 让我进去
+Dialogue: 0,0:01:45.00,0:01:47.50,副字幕,,0,0,0,,[Úrsula] Necesito ver al coronel Aureliano Buendía, es mi hijo.
+Dialogue: 0,0:01:47.58,0:01:49.29,副字幕,,0,0,0,,- ¡Déjeme entrar! - [soldado] Atrás.
+Dialogue: 10,0:01:49.38,0:01:53.25,中文,,0,0,0,,-上尉！我叫你让我进去！-让她进来！
+Dialogue: 0,0:01:49.38,0:01:51.88,副字幕,,0,0,0,,[Úrsula] ¡Capitán! ¡Que me deje entrar le estoy diciendo!
+Dialogue: 0,0:01:51.96,0:01:53.25,副字幕,,0,0,0,,¡Déjenla pasar!
+Dialogue: 10,0:02:04.83,0:02:06.38,中文,,0,0,0,,我要见我的儿子
+Dialogue: 0,0:02:04.83,0:02:06.38,副字幕,,0,0,0,,Vengo a ver a mi hijo,
+Dialogue: 10,0:02:07.17,0:02:09.21,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:02:07.17,0:02:09.21,副字幕,,0,0,0,,el coronel Aureliano Buendía.
+Dialogue: 10,0:02:10.17,0:02:11.00,中文,,0,0,0,,这位夫人
+Dialogue: 0,0:02:10.17,0:02:11.00,副字幕,,0,0,0,,Señora…
+Dialogue: 10,0:02:12.54,0:02:15.96,中文,,0,0,0,,你指的是“布恩迪亚先生”吧？
+Dialogue: 0,0:02:12.54,0:02:15.96,副字幕,,0,0,0,,¿querrá decir el "señor" Buendía?
+Dialogue: 10,0:02:17.17,0:02:18.25,中文,,0,0,0,,随你怎么说
+Dialogue: 0,0:02:17.17,0:02:18.25,副字幕,,0,0,0,,Como usted diga.
+Dialogue: 10,0:02:18.92,0:02:20.58,中文,,0,0,0,,只要让我见他就行
+Dialogue: 0,0:02:18.92,0:02:20.58,副字幕,,0,0,0,,Con tal de que me deje verlo.
+Dialogue: 10,0:02:21.08,0:02:24.54,中文,,0,0,0,,我们在等待政府确认对他的判决
+Dialogue: 0,0:02:21.08,0:02:24.54,副字幕,,0,0,0,,Estamos esperando que el gobierno ratifique la condena contra él.
+Dialogue: 10,0:02:29.25,0:02:30.38,中文,,0,0,0,,什么判决？
+Dialogue: 0,0:02:29.25,0:02:30.38,副字幕,,0,0,0,,¿Qué condena?
+Dialogue: 10,0:02:32.92,0:02:34.12,中文,,0,0,0,,死刑判决
+Dialogue: 0,0:02:32.92,0:02:34.12,副字幕,,0,0,0,,La pena de muerte.
+Dialogue: 10,0:02:36.83,0:02:40.50,中文,,0,0,0,,在此期间 上头命我们将他单独囚禁
+Dialogue: 0,0:02:36.83,0:02:38.00,副字幕,,0,0,0,,Mientras tanto,
+Dialogue: 0,0:02:38.50,0:02:40.50,副字幕,,0,0,0,,la orden es aislamiento absoluto.
+Dialogue: 10,0:02:43.08,0:02:44.83,中文,,0,0,0,,无论如何我都要进去
+Dialogue: 0,0:02:43.08,0:02:44.83,副字幕,,0,0,0,,De todos modos, voy a entrar.
+Dialogue: 10,0:02:47.42,0:02:50.54,中文,,0,0,0,,有本事就开枪打死我如果这也是上头的命令
+Dialogue: 0,0:02:47.42,0:02:50.54,副字幕,,0,0,0,,Así que me pueden ir disparando de una vez, si esa es la orden.
+Dialogue: 10,0:02:54.21,0:02:55.04,中文,,0,0,0,,送她进去
+Dialogue: 0,0:02:54.21,0:02:55.04,副字幕,,0,0,0,,Llévenla.
+Dialogue: 10,0:03:29.88,0:03:33.38,中文,,0,0,0,,我还没告诉你 我们给阿卡蒂奥的长女取名叫蕾梅黛丝了
+Dialogue: 0,0:03:29.88,0:03:33.38,副字幕,,0,0,0,,No te he contado que a la hija mayor de Arcadio le pusimos Remedios.
+Dialogue: 10,0:03:37.21,0:03:39.08,中文,,0,0,0,,他让我们叫她乌苏拉
+Dialogue: 0,0:03:37.21,0:03:39.08,副字幕,,0,0,0,,Pidió que la llamaran Úrsula, pero…
+Dialogue: 10,0:03:40.38,0:03:42.58,中文,,0,0,0,,但这个名字会招来太多苦难
+Dialogue: 0,0:03:40.38,0:03:42.58,副字幕,,0,0,0,,con ese nombre se sufre demasiado.
+Dialogue: 0,0:03:43.21,0:03:44.46,副字幕,,0,0,0,,- [Úrsula solloza] - [ríe]
+Dialogue: 10,0:03:47.33,0:03:48.92,中文,,0,0,0,,虽然你没告诉过我
+Dialogue: 0,0:03:47.33,0:03:48.92,副字幕,,0,0,0,,No, no me lo contaste,
+Dialogue: 10,0:03:49.92,0:03:51.21,中文,,0,0,0,,但我已经知道了
+Dialogue: 0,0:03:49.92,0:03:51.21,副字幕,,0,0,0,,pero ya lo sabía.
+Dialogue: 10,0:03:54.50,0:03:57.12,中文,,0,0,0,,你出生时就睁大着眼睛…
+Dialogue: 0,0:03:54.50,0:03:57.12,副字幕,,0,0,0,,Naciste con los ojos muy abiertos…
+Dialogue: 10,0:04:02.04,0:04:03.21,中文,,0,0,0,,好奇又无畏地…
+Dialogue: 0,0:04:02.04,0:04:03.21,副字幕,,0,0,0,,viéndolo todo…
+Dialogue: 10,0:04:05.33,0:04:07.54,中文,,0,0,0,,审视着这个世界
+Dialogue: 0,0:04:05.33,0:04:07.54,副字幕,,0,0,0,,con una curiosidad sin asombro.
+Dialogue: 10,0:04:09.08,0:04:10.46,中文,,0,0,0,,我没有忘记
+Dialogue: 0,0:04:09.08,0:04:10.46,副字幕,,0,0,0,,Eso no se me olvida.
+Dialogue: 10,0:04:14.17,0:04:16.71,中文,,0,0,0,,我也没有忘记 我丢下你和阿玛兰妲
+Dialogue: 0,0:04:14.17,0:04:16.71,副字幕,,0,0,0,,Como tampoco se me olvida tu mirada triste
+Dialogue: 10,0:04:18.42,0:04:20.46,中文,,0,0,0,,去找你哥哥 却无功而返时…
+Dialogue: 0,0:04:18.42,0:04:20.46,副字幕,,0,0,0,,cuando viste que volví sin tu hermano…
+Dialogue: 10,0:04:23.21,0:04:25.58,中文,,0,0,0,,你眼中的悲伤
+Dialogue: 0,0:04:23.21,0:04:25.58,副字幕,,0,0,0,,después de haberte dejado a ti y a Amaranta.
+Dialogue: 10,0:04:31.38,0:04:33.21,中文,,0,0,0,,那眼神至今仍令我心痛
+Dialogue: 0,0:04:31.38,0:04:33.21,副字幕,,0,0,0,,Esa mirada todavía me duele.
+Dialogue: 10,0:04:39.04,0:04:41.00,中文,,0,0,0,,我感觉已然经历过这一切了…
+Dialogue: 0,0:04:39.04,0:04:41.00,副字幕,,0,0,0,,Siento que ya viví todo esto…
+Dialogue: 10,0:04:46.29,0:04:47.92,中文,,0,0,0,,只是我没预见到我的死亡
+Dialogue: 0,0:04:46.29,0:04:47.92,副字幕,,0,0,0,,pero no logro ver mi muerte.
+Dialogue: 10,0:04:49.50,0:04:51.88,中文,,0,0,0,,似乎预感已经弃我而去了
+Dialogue: 0,0:04:49.50,0:04:51.88,副字幕,,0,0,0,,Es como si los presagios me hubieran abandonado.
+Dialogue: 10,0:04:56.96,0:04:58.54,中文,,0,0,0,,我也有东西要给你
+Dialogue: 0,0:04:56.96,0:04:58.54,副字幕,,0,0,0,,También tengo algo para usted.
+Dialogue: 10,0:05:03.33,0:05:05.04,中文,,0,0,0,,这些是我写给蕾梅黛丝的诗
+Dialogue: 0,0:05:03.33,0:05:05.04,副字幕,,0,0,0,,Son los poemas que le escribí a Remedios.
+Dialogue: 10,0:05:06.33,0:05:07.33,中文,,0,0,0,,答应我…
+Dialogue: 0,0:05:06.33,0:05:07.33,副字幕,,0,0,0,,Prométame…
+Dialogue: 10,0:05:09.25,0:05:10.54,中文,,0,0,0,,烧了它们
+Dialogue: 0,0:05:09.25,0:05:10.54,副字幕,,0,0,0,,que los va a quemar.
+Dialogue: 10,0:05:12.58,0:05:14.17,中文,,0,0,0,,我不想让任何人看到
+Dialogue: 0,0:05:12.58,0:05:14.17,副字幕,,0,0,0,,No quiero que nadie los lea.
+Dialogue: 0,0:05:17.46,0:05:19.04,副字幕,,0,0,0,,[soldado] ¿Está de guardia hoy?
+Dialogue: 10,0:05:22.71,0:05:23.79,中文,,0,0,0,,你该走了 女士
+Dialogue: 0,0:05:22.71,0:05:23.79,副字幕,,0,0,0,,Vamos, señora.
+Dialogue: 10,0:05:36.21,0:05:37.25,中文,,0,0,0,,不要说再见
+Dialogue: 0,0:05:36.21,0:05:37.25,副字幕,,0,0,0,,No se despida.
+Dialogue: 10,0:05:40.17,0:05:43.96,中文,,0,0,0,,别为了我去哀求任何人或者卑躬屈膝
+Dialogue: 0,0:05:40.17,0:05:41.54,副字幕,,0,0,0,,No le suplique a nadie
+Dialogue: 0,0:05:42.08,0:05:43.96,副字幕,,0,0,0,,ni se humille ante nadie por mí.
+Dialogue: 10,0:05:45.17,0:05:46.33,中文,,0,0,0,,战争就是如此
+Dialogue: 0,0:05:45.17,0:05:46.33,副字幕,,0,0,0,,Esta es la guerra.
+Dialogue: 10,0:05:48.50,0:05:52.25,中文,,0,0,0,,你就当我早被他们处决了吧
+Dialogue: 0,0:05:48.50,0:05:49.33,副字幕,,0,0,0,,Mejor,
+Dialogue: 0,0:05:50.08,0:05:52.25,副字幕,,0,0,0,,haga de cuenta que me fusilaron hace rato.
+Dialogue: 0,0:05:58.00,0:06:00.00,副字幕,,0,0,0,,[música dramática]
+Dialogue: 0,0:06:16.79,0:06:18.79,副字幕,,0,0,0,,[murmullo]
+Dialogue: 10,0:06:23.04,0:06:25.29,中文,,0,0,0,,上尉 今晚感觉如何？
+Dialogue: 0,0:06:23.04,0:06:25.29,副字幕,,0,0,0,,[soldado] ¿Cómo encuentra esta noche, capitán?
+Dialogue: 10,0:06:33.08,0:06:34.17,中文,,0,0,0,,晚上好
+Dialogue: 0,0:06:33.08,0:06:34.17,副字幕,,0,0,0,,Buenas noches.
+Dialogue: 10,0:06:37.54,0:06:38.96,中文,,0,0,0,,晚上好
+Dialogue: 0,0:06:37.54,0:06:38.96,副字幕,,0,0,0,,Buenas noches.
+Dialogue: 0,0:06:44.29,0:06:46.29,副字幕,,0,0,0,,[murmullo]
+Dialogue: 10,0:06:54.42,0:06:55.38,中文,,0,0,0,,先生
+Dialogue: 0,0:06:54.42,0:06:57.29,副字幕,,0,0,0,,Caballero, no venimos persiguiendo a nadie.
+Dialogue: 10,0:06:55.46,0:06:57.25,中文,,0,0,0,,我们不是来找人的
+Dialogue: 10,0:06:58.46,0:07:01.04,中文,,0,0,0,,我和我的军官们只想来喝一杯
+Dialogue: 0,0:06:58.46,0:07:01.04,副字幕,,0,0,0,,Mis oficiales y yo solo queremos un trago
+Dialogue: 10,0:07:02.00,0:07:03.54,中文,,0,0,0,,找找乐子
+Dialogue: 0,0:07:02.00,0:07:03.54,副字幕,,0,0,0,,y pasar un buen momento.
+Dialogue: 10,0:07:09.21,0:07:12.83,中文,,0,0,0,,没有人会想跟被判了死刑的人上床
+Dialogue: 0,0:07:09.21,0:07:10.50,副字幕,,0,0,0,,Nadie quiere acostarse
+Dialogue: 0,0:07:10.58,0:07:12.83,副字幕,,0,0,0,,con un condenado a muerte, capitán Carnicero.
+Dialogue: 0,0:07:12.92,0:07:13.92,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:07:14.00,0:07:15.29,中文,,0,0,0,,会触霉头的
+Dialogue: 0,0:07:14.00,0:07:15.29,副字幕,,0,0,0,,Es de mala suerte.
+Dialogue: 10,0:07:15.38,0:07:17.75,中文,,0,0,0,,要被判死刑的是那些反叛人士
+Dialogue: 0,0:07:15.38,0:07:17.75,副字幕,,0,0,0,,Los condenados van a ser los rebeldes.
+Dialogue: 10,0:07:20.75,0:07:21.62,中文,,0,0,0,,也许吧
+Dialogue: 0,0:07:20.75,0:07:21.62,副字幕,,0,0,0,,Puede ser.
+Dialogue: 10,0:07:24.25,0:07:25.92,中文,,0,0,0,,但大家都说
+Dialogue: 0,0:07:24.25,0:07:25.92,副字幕,,0,0,0,,Pero todo el mundo anda diciendo
+Dialogue: 10,0:07:26.88,0:07:29.92,中文,,0,0,0,,为奥雷里亚诺·布恩迪亚上校执行死刑的士兵
+Dialogue: 0,0:07:26.88,0:07:29.92,副字幕,,0,0,0,,que el oficial que fusile al coronel Aureliano Buendía
+Dialogue: 10,0:07:30.71,0:07:33.42,中文,,0,0,0,,和他所在行刑队的所有军士
+Dialogue: 0,0:07:30.71,0:07:33.42,副字幕,,0,0,0,,y todos los soldados de su pelotón, uno…
+Dialogue: 10,0:07:34.42,0:07:35.42,中文,,0,0,0,,会一个…
+Dialogue: 0,0:07:34.42,0:07:35.42,副字幕,,0,0,0,,por uno…
+Dialogue: 10,0:07:37.54,0:07:41.62,中文,,0,0,0,,接一个地被杀 无论如何、无论早晚
+Dialogue: 0,0:07:37.54,0:07:39.67,副字幕,,0,0,0,,serán asesinados sin remedio,
+Dialogue: 0,0:07:39.75,0:07:41.62,副字幕,,0,0,0,,tarde o temprano,
+Dialogue: 10,0:07:43.12,0:07:45.33,中文,,0,0,0,,即使走到世界的尽头也无法逃脱
+Dialogue: 0,0:07:43.12,0:07:45.33,副字幕,,0,0,0,,así se escondan en el fin del mundo.
+Dialogue: 10,0:08:02.58,0:08:03.46,中文,,0,0,0,,听着
+Dialogue: 0,0:08:02.58,0:08:03.46,副字幕,,0,0,0,,Miren.
+Dialogue: 10,0:08:06.12,0:08:08.38,中文,,0,0,0,,我和那位上校并无仇怨
+Dialogue: 0,0:08:06.12,0:08:08.38,副字幕,,0,0,0,,No tengo nada en contra del coronel.
+Dialogue: 10,0:08:11.33,0:08:12.92,中文,,0,0,0,,事实上 我很敬佩他的英勇
+Dialogue: 0,0:08:11.33,0:08:12.92,副字幕,,0,0,0,,De hecho, admiro su valentía,
+Dialogue: 10,0:08:14.17,0:08:16.38,中文,,0,0,0,,可一旦政府下达命令
+Dialogue: 0,0:08:14.17,0:08:16.38,副字幕,,0,0,0,,pero, si la orden llega del gobierno,
+Dialogue: 10,0:08:17.92,0:08:19.46,中文,,0,0,0,,我们就必须执行
+Dialogue: 0,0:08:17.92,0:08:19.46,副字幕,,0,0,0,,la tendremos que ejecutar.
+Dialogue: 10,0:08:21.62,0:08:22.67,中文,,0,0,0,,这是军人的职责
+Dialogue: 0,0:08:21.62,0:08:22.67,副字幕,,0,0,0,,Es nuestro deber.
+Dialogue: 10,0:08:34.00,0:08:34.83,中文,,0,0,0,,那就祈祷…
+Dialogue: 0,0:08:34.00,0:08:34.83,副字幕,,0,0,0,,Rece…
+Dialogue: 10,0:08:39.17,0:08:41.71,中文,,0,0,0,,那份命令永远不会到来吧 上尉
+Dialogue: 0,0:08:39.17,0:08:41.71,副字幕,,0,0,0,,para ver si la orden nunca llega, capitán.
+Dialogue: 0,0:08:46.08,0:08:48.08,副字幕,,0,0,0,,[murmullo]
+Dialogue: 0,0:08:48.17,0:08:50.17,副字幕,,0,0,0,,[música sombría continúa]
+Dialogue: 0,0:09:26.04,0:09:27.33,副字幕,,0,0,0,,[chirrido metálico]
+Dialogue: 10,0:09:35.12,0:09:36.62,中文,,0,0,0,,打扰了 上尉
+Dialogue: 0,0:09:35.12,0:09:36.62,副字幕,,0,0,0,,Permiso, capitán.
+Dialogue: 10,0:09:42.54,0:09:43.38,中文,,0,0,0,,这么快？
+Dialogue: 0,0:09:42.54,0:09:43.38,副字幕,,0,0,0,,¿Ya?
+Dialogue: 10,0:10:01.25,0:10:02.67,中文,,0,0,0,,盖里奈多·马奎斯
+Dialogue: 0,0:10:01.25,0:10:02.67,副字幕,,0,0,0,,Gerineldo Márquez.
+Dialogue: 10,0:10:04.50,0:10:07.21,中文,,0,0,0,,你被判七年监禁
+Dialogue: 0,0:10:04.50,0:10:07.21,副字幕,,0,0,0,,Ha sido sentenciado a siete años de prisión.
+Dialogue: 10,0:10:30.12,0:10:31.75,中文,,0,0,0,,你和我就没那么幸运了
+Dialogue: 0,0:10:30.12,0:10:32.46,副字幕,,0,0,0,,Usted y yo no corremos con tanta suerte.
+Dialogue: 10,0:10:32.54,0:10:35.00,中文,,0,0,0,,政府以叛乱罪判处你死刑
+Dialogue: 0,0:10:32.54,0:10:35.00,副字幕,,0,0,0,,Le dieron pena de muerte por rebelión.
+Dialogue: 10,0:10:36.67,0:10:40.71,中文,,0,0,0,,电报上的命令是即刻行刑
+Dialogue: 0,0:10:36.67,0:10:40.71,副字幕,,0,0,0,,El telegrama ordena que la ejecución se cumpla de inmediato.
+Dialogue: 10,0:10:41.38,0:10:43.00,中文,,0,0,0,,好消息啊
+Dialogue: 0,0:10:41.38,0:10:43.00,副字幕,,0,0,0,,Esa es una buena noticia.
+Dialogue: 10,0:10:45.08,0:10:46.88,中文,,0,0,0,,我们马孔多终于有电报了
+Dialogue: 0,0:10:45.08,0:10:46.88,副字幕,,0,0,0,,Ya tenemos telégrafo en Macondo.
+Dialogue: 0,0:11:02.46,0:11:04.46,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:11:29.75,0:11:31.92,中文,,0,0,0,,他既无恐惧 也没有留恋
+Dialogue: 0,0:11:29.75,0:11:31.92,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:11:32.50,0:11:36.08,中文,,0,0,0,,只有深沉的愤怒愤怒于这人为带来的死亡
+Dialogue: 0,0:11:32.50,0:11:36.08,副字幕,,0,0,0,,sino una rabia intestinal ante la idea de que aquella muerte artificiosa
+Dialogue: 10,0:11:36.17,0:11:39.79,中文,,0,0,0,,害得他看不到那么多未竟之事将如何收场了
+Dialogue: 0,0:11:36.17,0:11:39.79,副字幕,,0,0,0,,no le permitiría conocer tantas cosas que dejaba sin terminar.
+Dialogue: 0,0:11:58.62,0:12:00.62,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 10,0:12:09.17,0:12:11.08,中文,,0,0,0,,有什么遗言吗 布恩迪亚上校？
+Dialogue: 0,0:12:09.17,0:12:11.08,副字幕,,0,0,0,,¿Algo que decir, coronel Buendía?
+Dialogue: 10,0:12:12.75,0:12:14.88,中文,,0,0,0,,面对行刑队
+Dialogue: 0,0:12:12.75,0:12:15.33,副字幕,,0,0,0,,[narrador] al pelotón de fusilamiento,
+Dialogue: 10,0:12:15.42,0:12:17.71,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:12:15.42,0:12:17.71,副字幕,,0,0,0,,el coronel Aureliano Buendía
+Dialogue: 10,0:12:18.21,0:12:20.42,中文,,0,0,0,,回想起父亲带他
+Dialogue: 0,0:12:18.21,0:12:20.42,副字幕,,0,0,0,,había de recordar aquella tarde remota
+Dialogue: 10,0:12:20.50,0:12:23.04,中文,,0,0,0,,去见识冰块的那个遥远的下午
+Dialogue: 0,0:12:20.50,0:12:23.04,副字幕,,0,0,0,,en que su padre lo llevó a conocer el hielo.
+Dialogue: 10,0:12:24.00,0:12:25.58,中文,,0,0,0,,他又看见了儿时的自己
+Dialogue: 0,0:12:24.00,0:12:27.54,副字幕,,0,0,0,,Volvió a verse a sí mismo muy niño,
+Dialogue: 10,0:12:26.33,0:12:30.17,中文,,0,0,0,,穿着短裤 脖子上系着领结
+Dialogue: 0,0:12:27.62,0:12:30.17,副字幕,,0,0,0,,con pantalones cortos y un lazo en el cuello.
+Dialogue: 10,0:12:31.62,0:12:33.71,中文,,0,0,0,,他又想到何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:12:31.62,0:12:34.12,副字幕,,0,0,0,,Y pensó en José Arcadio Buendía,
+Dialogue: 10,0:12:34.21,0:12:36.75,中文,,0,0,0,,而那老人此刻也正在栗子树下
+Dialogue: 0,0:12:34.21,0:12:36.75,副字幕,,0,0,0,,que en ese momento estaba pensando en él
+Dialogue: 10,0:12:37.46,0:12:39.71,中文,,0,0,0,,晦暗的晨曦中想着他
+Dialogue: 0,0:12:37.46,0:12:39.71,副字幕,,0,0,0,,bajo la madrugada lúgubre del castaño.
+Dialogue: 10,0:12:54.50,0:12:55.62,中文,,0,0,0,,士兵
+Dialogue: 0,0:12:54.50,0:12:55.62,副字幕,,0,0,0,,Soldados.
+Dialogue: 10,0:12:56.79,0:12:57.79,中文,,0,0,0,,预备
+Dialogue: 0,0:12:56.79,0:12:57.79,副字幕,,0,0,0,,Preparen.
+Dialogue: 0,0:13:01.46,0:13:03.46,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:13:08.50,0:13:09.58,中文,,0,0,0,,瞄准
+Dialogue: 0,0:13:08.50,0:13:09.58,副字幕,,0,0,0,,Apunten.
+Dialogue: 0,0:13:40.00,0:13:40.96,副字幕,,0,0,0,,[disparo]
+Dialogue: 0,0:13:46.96,0:13:48.83,副字幕,,0,0,0,,[soldados murmuran]
+Dialogue: 10,0:13:57.54,0:13:58.46,中文,,0,0,0,,别开枪
+Dialogue: 0,0:13:57.54,0:13:58.46,副字幕,,0,0,0,,No disparen.
+Dialogue: 10,0:14:01.58,0:14:02.54,中文,,0,0,0,,士兵
+Dialogue: 0,0:14:01.58,0:14:02.54,副字幕,,0,0,0,,¡Soldados!
+Dialogue: 10,0:14:03.04,0:14:04.33,中文,,0,0,0,,放下武器！
+Dialogue: 0,0:14:03.04,0:14:04.33,副字幕,,0,0,0,,¡Bajen las armas!
+Dialogue: 10,0:14:09.12,0:14:11.17,中文,,0,0,0,,你的到来是神的旨意
+Dialogue: 0,0:14:09.12,0:14:11.17,副字幕,,0,0,0,,Viene enviado por la Divina Providencia.
+Dialogue: 10,0:14:16.04,0:14:16.92,中文,,0,0,0,,放了他
+Dialogue: 0,0:14:16.04,0:14:16.92,副字幕,,0,0,0,,¡Libérenlo!
+Dialogue: 10,0:14:21.04,0:14:21.92,中文,,0,0,0,,放了他！
+Dialogue: 0,0:14:21.04,0:14:21.92,副字幕,,0,0,0,,¡Que lo liberen!
+Dialogue: 0,0:14:23.50,0:14:25.04,副字幕,,0,0,0,,[soldados murmuran]
+Dialogue: 10,0:14:46.71,0:14:49.08,中文,,0,0,0,,我愿听你指挥 布恩迪亚上校
+Dialogue: 0,0:14:46.71,0:14:49.08,副字幕,,0,0,0,,Me pongo a sus órdenes, coronel Buendía.
+Dialogue: 10,0:15:02.54,0:15:04.75,中文,,0,0,0,,欢迎加入革命 卡尼塞罗
+Dialogue: 0,0:15:02.54,0:15:04.75,副字幕,,0,0,0,,Bienvenido a la revolución, Carnicero.
+Dialogue: 0,0:15:09.88,0:15:11.25,副字幕,,0,0,0,,[Rebeca suspira]
+Dialogue: 0,0:15:14.58,0:15:16.58,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:15:21.54,0:15:24.33,中文,,0,0,0,,你现在成了神的旨意了
+Dialogue: 0,0:15:21.54,0:15:24.33,副字幕,,0,0,0,,Ahora resulta que eres la Divina Providencia.
+Dialogue: 0,0:15:25.62,0:15:26.46,副字幕,,0,0,0,,[Aureliano ríe]
+Dialogue: 10,0:15:28.67,0:15:30.67,中文,,0,0,0,,总得有人来救你
+Dialogue: 0,0:15:28.67,0:15:30.67,副字幕,,0,0,0,,Alguien tenía que salvarte el pellejo.
+Dialogue: 10,0:15:33.42,0:15:34.88,中文,,0,0,0,,别再让自己有生命危险
+Dialogue: 0,0:15:33.42,0:15:34.88,副字幕,,0,0,0,,No te vuelvas a hacer matar…
+Dialogue: 10,0:15:36.38,0:15:37.88,中文,,0,0,0,,我不会跟过去保护你
+Dialogue: 0,0:15:36.38,0:15:37.88,副字幕,,0,0,0,,que no voy a ir detrás tuyo.
+Dialogue: 10,0:15:41.29,0:15:44.92,中文,,0,0,0,,没有人知道他干预了枪决的执行
+Dialogue: 0,0:15:41.29,0:15:43.12,副字幕,,0,0,0,,[narrador] se enteró de su intervención
+Dialogue: 0,0:15:43.21,0:15:44.92,副字幕,,0,0,0,,para impedir el fusilamiento.
+Dialogue: 10,0:16:05.00,0:16:09.33,中文,,0,0,0,,罗克·卡尼塞罗上尉和他的手下追随奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:16:05.00,0:16:09.33,副字幕,,0,0,0,,El capitán Roque Carnicero y sus hombres se fueron con el coronel Aureliano Buendía
+Dialogue: 0,0:16:09.42,0:16:13.42,副字幕,,0,0,0,,para unirse a las fuerzas revolucionarias del coronel Victoriano Medina.
+Dialogue: 10,0:16:09.58,0:16:13.42,中文,,0,0,0,,投奔了维托里亚诺·梅迪纳上校的革命军
+Dialogue: 0,0:16:14.67,0:16:16.67,副字幕,,0,0,0,,[campanadas]
+Dialogue: 10,0:16:23.08,0:16:26.62,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校死里逃生的一年后
+Dialogue: 0,0:16:23.08,0:16:26.62,副字幕,,0,0,0,,[narrador] del coronel Aureliano Buendía,
+Dialogue: 10,0:16:27.12,0:16:29.50,中文,,0,0,0,,布恩迪亚宅中挤满了孩子
+Dialogue: 0,0:16:27.12,0:16:29.50,副字幕,,0,0,0,,la casa se había llenado de niños.
+Dialogue: 10,0:16:32.38,0:16:35.29,中文,,0,0,0,,乌苏拉收留了桑塔索菲亚·德拉·皮埃达
+Dialogue: 0,0:16:32.38,0:16:35.29,副字幕,,0,0,0,,Úrsula había recogido a Santa Sofía de la Piedad
+Dialogue: 10,0:16:35.38,0:16:37.79,中文,,0,0,0,,和她的大女儿蕾梅黛丝…
+Dialogue: 0,0:16:35.38,0:16:37.79,副字幕,,0,0,0,,con su hija mayor, Remedios…
+Dialogue: 10,0:16:37.88,0:16:39.71,中文,,0,0,0,,别这么玩
+Dialogue: 0,0:16:37.88,0:16:39.71,副字幕,,0,0,0,,Esto no se hace.
+Dialogue: 10,0:16:40.42,0:16:44.46,中文,,0,0,0,,…还有她在阿卡蒂奥被枪决的五个月后诞下的一对双胞胎
+Dialogue: 0,0:16:40.42,0:16:42.79,副字幕,,0,0,0,,…y un par de gemelos que nacieron cinco meses después
+Dialogue: 0,0:16:42.88,0:16:44.42,副字幕,,0,0,0,,del fusilamiento de Arcadio,
+Dialogue: 10,0:16:44.50,0:16:47.42,中文,,0,0,0,,他们被命名为奥雷里亚诺第二和何塞·阿卡蒂奥第二
+Dialogue: 0,0:16:44.50,0:16:47.42,副字幕,,0,0,0,,a quienes llamó Aureliano Segundo y José Arcadio Segundo.
+Dialogue: 10,0:16:48.50,0:16:49.54,中文,,0,0,0,,“星期六”
+Dialogue: 0,0:16:48.50,0:16:49.54,副字幕,,0,0,0,,"Sá-ba-do".
+Dialogue: 0,0:16:49.62,0:16:50.62,副字幕,,0,0,0,,"Sa-ba-do".
+Dialogue: 10,0:16:49.75,0:16:50.62,中文,,0,0,0,,“星期六”
+Dialogue: 10,0:16:51.21,0:16:52.96,中文,,0,0,0,,-再试一次-“星…”
+Dialogue: 0,0:16:51.21,0:16:52.96,副字幕,,0,0,0,,- Otra vez. De nuevo. - Sa…
+Dialogue: 10,0:16:53.04,0:16:55.17,中文,,0,0,0,,阿玛兰妲悉心照料着孩子们
+Dialogue: 0,0:16:53.04,0:16:55.17,副字幕,,0,0,0,,[narrador] se hizo cargo de todos.
+Dialogue: 10,0:16:55.67,0:16:56.79,中文,,0,0,0,,听听这个
+Dialogue: 0,0:16:55.67,0:16:56.79,副字幕,,0,0,0,,Escucha esto.
+Dialogue: 10,0:16:57.75,0:16:59.75,中文,,0,0,0,,“经过多年的对抗
+Dialogue: 0,0:16:57.75,0:16:59.75,副字幕,,0,0,0,,"Después de años de enfrentamientos,
+Dialogue: 10,0:16:59.83,0:17:04.17,中文,,0,0,0,,政府将与自由党政客进行首次会谈
+Dialogue: 0,0:16:59.83,0:17:02.25,副字幕,,0,0,0,,el gobierno se reúne por primera vez
+Dialogue: 0,0:17:02.75,0:17:04.04,副字幕,,0,0,0,,con políticos liberales
+Dialogue: 0,0:17:04.12,0:17:07.17,副字幕,,0,0,0,,para discutir los términos de una posible tregua".
+Dialogue: 10,0:17:04.25,0:17:07.17,中文,,0,0,0,,商讨休战条件”
+Dialogue: 10,0:17:13.33,0:17:15.67,中文,,0,0,0,,你早就预见到了 何塞·阿卡蒂奥
+Dialogue: 0,0:17:13.33,0:17:15.67,副字幕,,0,0,0,,Lo viste venir, José Arcadio.
+Dialogue: 10,0:17:17.38,0:17:20.92,中文,,0,0,0,,你不需要预感就能知道政治是一场瘟疫
+Dialogue: 0,0:17:17.38,0:17:20.92,副字幕,,0,0,0,,No te hizo falta un presagio para saber que la política es una plaga.
+Dialogue: 0,0:17:27.46,0:17:29.46,副字幕,,0,0,0,,[música de misterio]
+Dialogue: 10,0:17:35.33,0:17:36.25,中文,,0,0,0,,还差一部分？
+Dialogue: 0,0:17:35.33,0:17:36.25,副字幕,,0,0,0,,¿Y el resto?
+Dialogue: 10,0:17:36.83,0:17:39.12,中文,,0,0,0,,我的儿子们都去自由党军中效力了 先生
+Dialogue: 0,0:17:36.83,0:17:39.50,副字幕,,0,0,0,,Mis hijos están peleando con los cuadros liberales, señor.
+Dialogue: 10,0:17:39.58,0:17:41.88,中文,,0,0,0,,跟你弟弟布恩迪亚上校并肩作战
+Dialogue: 0,0:17:39.58,0:17:41.88,副字幕,,0,0,0,,Con su hermano, el coronel Buendía.
+Dialogue: 10,0:17:42.50,0:17:43.83,中文,,0,0,0,,那又怎样？
+Dialogue: 0,0:17:42.50,0:17:43.83,副字幕,,0,0,0,,¿Y eso qué tiene que ver?
+Dialogue: 10,0:17:44.62,0:17:45.46,中文,,0,0,0,,就是…
+Dialogue: 0,0:17:44.62,0:17:45.46,副字幕,,0,0,0,,No, que…
+Dialogue: 10,0:17:46.08,0:17:49.29,中文,,0,0,0,,家里只有我们夫妻俩没法一下子收割这么多庄稼
+Dialogue: 0,0:17:46.08,0:17:49.29,副字幕,,0,0,0,,Estamos solos y no damos abasto para recoger toda la cosecha.
+Dialogue: 10,0:17:49.79,0:17:51.50,中文,,0,0,0,,请再给我们一点时间
+Dialogue: 0,0:17:49.79,0:17:51.50,副字幕,,0,0,0,,Le pedimos un plazo, por favor.
+Dialogue: 10,0:17:58.29,0:17:59.54,中文,,0,0,0,,叫他们别再打打杀杀了
+Dialogue: 0,0:17:58.29,0:17:59.54,副字幕,,0,0,0,,Que dejen de echar balas
+Dialogue: 10,0:18:00.08,0:18:01.50,中文,,0,0,0,,回来干活儿
+Dialogue: 0,0:18:00.08,0:18:01.50,副字幕,,0,0,0,,y que vengan a trabajar.
+Dialogue: 0,0:18:12.54,0:18:14.54,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:18:28.00,0:18:29.38,中文,,0,0,0,,疼吗？
+Dialogue: 0,0:18:28.00,0:18:29.38,副字幕,,0,0,0,,[Aureliano José] ¿Te duele?
+Dialogue: 10,0:18:33.42,0:18:34.42,中文,,0,0,0,,疼
+Dialogue: 0,0:18:33.42,0:18:34.42,副字幕,,0,0,0,,Sí.
+Dialogue: 10,0:18:49.25,0:18:50.08,中文,,0,0,0,,姑姑
+Dialogue: 0,0:18:49.25,0:18:50.54,副字幕,,0,0,0,,- Tía… - [asiente]
+Dialogue: 10,0:18:50.62,0:18:52.67,中文,,0,0,0,,我今晚能和你一起睡吗？
+Dialogue: 0,0:18:50.62,0:18:52.67,副字幕,,0,0,0,,¿Me puedo quedar esta noche contigo?
+Dialogue: 10,0:18:58.46,0:19:01.17,中文,,0,0,0,,奥雷里亚诺·何塞你得习惯一个人睡
+Dialogue: 0,0:18:58.46,0:19:01.17,副字幕,,0,0,0,,Aureliano José, tienes que acostumbrarte a dormir solo.
+Dialogue: 10,0:19:01.71,0:19:03.92,中文,,0,0,0,,这是最后一次了 我保证
+Dialogue: 0,0:19:01.71,0:19:03.92,副字幕,,0,0,0,,Es la última vez, te lo prometo.
+Dialogue: 10,0:19:06.88,0:19:08.50,中文,,0,0,0,,好吧
+Dialogue: 0,0:19:06.88,0:19:08.50,副字幕,,0,0,0,,Está bien. [ríe]
+Dialogue: 0,0:19:19.96,0:19:20.92,副字幕,,0,0,0,,[suspira]
+Dialogue: 0,0:19:21.00,0:19:23.00,副字幕,,0,0,0,,[bullicio]
+Dialogue: 10,0:19:37.00,0:19:39.17,中文,,0,0,0,,厌烦了生活在死人堆里
+Dialogue: 0,0:19:37.00,0:19:39.17,副字幕,,0,0,0,,[narrador] de vivir entre muertos,
+Dialogue: 10,0:19:40.25,0:19:44.33,中文,,0,0,0,,何塞·阿卡蒂奥和丽贝卡搬进了阿卡蒂奥修建的房子
+Dialogue: 0,0:19:40.25,0:19:44.33,副字幕,,0,0,0,,José Arcadio y Rebeca se fueron a vivir en la casa construida por Arcadio.
+Dialogue: 10,0:19:46.21,0:19:48.08,中文,,0,0,0,,他们把这里当成自己的家
+Dialogue: 0,0:19:46.21,0:19:48.08,副字幕,,0,0,0,,Donde establecieron su hogar,
+Dialogue: 10,0:19:48.79,0:19:51.25,中文,,0,0,0,,在屋里纵情相爱而不征求任何人的许可
+Dialogue: 0,0:19:48.79,0:19:51.25,副字幕,,0,0,0,,amándose sin pedirle permiso a nadie.
+Dialogue: 0,0:19:52.33,0:19:53.50,副字幕,,0,0,0,,[Rebeca ríe]
+Dialogue: 0,0:20:28.67,0:20:30.67,副字幕,,0,0,0,,- [canto de pajaritos] - [ventisca]
+Dialogue: 0,0:20:32.54,0:20:34.04,副字幕,,0,0,0,,- [disparo] - [cuerpo cae]
+Dialogue: 0,0:20:42.58,0:20:44.58,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:21:09.67,0:21:11.83,中文,,0,0,0,,再来一次 三乘以三等于多少？
+Dialogue: 0,0:21:09.67,0:21:11.83,副字幕,,0,0,0,,Entonces, de nuevo. ¿Tres por tres?
+Dialogue: 10,0:21:11.92,0:21:13.50,中文,,0,0,0,,三乘以三等于…
+Dialogue: 0,0:21:11.92,0:21:13.50,副字幕,,0,0,0,,[Aureliano José] Tres por tres…
+Dialogue: 10,0:21:15.67,0:21:16.50,中文,,0,0,0,,九！
+Dialogue: 0,0:21:15.67,0:21:16.50,副字幕,,0,0,0,,¡Nueve!
+Dialogue: 0,0:21:32.17,0:21:34.17,副字幕,,0,0,0,,[música sombría continúa]
+Dialogue: 10,0:21:52.50,0:21:55.00,中文,,0,0,0,,丽贝卡声称对他的死因一无所知
+Dialogue: 0,0:21:52.50,0:21:55.00,副字幕,,0,0,0,,[narrador] que no se dio cuenta de nada.
+Dialogue: 10,0:21:57.58,0:21:59.54,中文,,0,0,0,,这一说法令人难以信服
+Dialogue: 0,0:21:57.58,0:21:59.54,副字幕,,0,0,0,,Era una versión difícil de creer,
+Dialogue: 10,0:21:59.62,0:22:01.46,中文,,0,0,0,,但没有其他更合理的解释
+Dialogue: 0,0:21:59.62,0:22:01.46,副字幕,,0,0,0,,pero no había otra más verosímil,
+Dialogue: 10,0:22:01.54,0:22:03.17,中文,,0,0,0,,也没有人能想到任何动机
+Dialogue: 0,0:22:01.54,0:22:03.17,副字幕,,0,0,0,,y nadie pudo concebir un motivo
+Dialogue: 0,0:22:03.25,0:22:06.25,副字幕,,0,0,0,,para que Rebeca asesinara al hombre que la había hecho feliz.
+Dialogue: 10,0:22:03.83,0:22:06.25,中文,,0,0,0,,会使丽贝卡谋杀这个带给她幸福的男人
+Dialogue: 10,0:22:11.67,0:22:15.12,中文,,0,0,0,,这也许是马孔多唯一一个从未解开的谜团
+Dialogue: 0,0:22:11.67,0:22:15.12,副字幕,,0,0,0,,Este fue tal vez el único misterio que nunca se esclareció en Macondo.
+Dialogue: 10,0:22:18.54,0:22:21.42,中文,,0,0,0,,丽贝卡从此紧闭房门过上了活死人般的生活
+Dialogue: 0,0:22:18.54,0:22:21.42,副字幕,,0,0,0,,Rebeca cerró las puertas de su casa y se enterró en vida…
+Dialogue: 10,0:22:23.38,0:22:25.54,中文,,0,0,0,,她穿上了藐视整个世界的坚实甲胄
+Dialogue: 0,0:22:23.38,0:22:25.54,副字幕,,0,0,0,,cubierta con una gruesa costra de desdén
+Dialogue: 10,0:22:25.62,0:22:28.58,中文,,0,0,0,,没有世俗的诱惑能够将其打破
+Dialogue: 0,0:22:25.62,0:22:28.58,副字幕,,0,0,0,,que ninguna tentación terrenal consiguió romper.
+Dialogue: 10,0:23:04.21,0:23:06.12,中文,,0,0,0,,上校 他们在等我们
+Dialogue: 0,0:23:04.21,0:23:06.12,副字幕,,0,0,0,,[Gerineldo] Coronel, nos están esperando.
+Dialogue: 10,0:23:06.71,0:23:07.58,中文,,0,0,0,,您没事吧？
+Dialogue: 0,0:23:06.71,0:23:07.58,副字幕,,0,0,0,,¿Está bien?
+Dialogue: 10,0:23:10.12,0:23:11.75,中文,,0,0,0,,我在想我的哥哥
+Dialogue: 0,0:23:10.12,0:23:11.75,副字幕,,0,0,0,,Estaba pensando en mi hermano.
+Dialogue: 10,0:23:14.54,0:23:17.00,中文,,0,0,0,,我已经接连两晚梦见他现在我知道原因了
+Dialogue: 0,0:23:14.54,0:23:17.00,副字幕,,0,0,0,,Llevo dos noches soñando con él, y ya sé por qué.
+Dialogue: 10,0:23:21.25,0:23:24.00,中文,,0,0,0,,我们呼吁该地区的起义军领袖们
+Dialogue: 0,0:23:21.25,0:23:24.00,副字幕,,0,0,0,,Los hemos convocado como líderes de la región
+Dialogue: 10,0:23:24.58,0:23:28.58,中文,,0,0,0,,在决定国家命运的关键时刻支持自由党！
+Dialogue: 0,0:23:24.58,0:23:28.58,副字幕,,0,0,0,,para apoyar al Partido Liberal en un día crucial para el país.
+Dialogue: 10,0:23:30.58,0:23:34.79,中文,,0,0,0,,保守党政府打开了对话的大门
+Dialogue: 0,0:23:30.58,0:23:32.25,副字幕,,0,0,0,,El gobierno conservador
+Dialogue: 0,0:23:33.00,0:23:34.79,副字幕,,0,0,0,,ha abierto las puertas al diálogo,
+Dialogue: 10,0:23:35.96,0:23:37.75,中文,,0,0,0,,我们应该响应这个号召
+Dialogue: 0,0:23:35.96,0:23:37.75,副字幕,,0,0,0,,y debemos atender ese llamado.
+Dialogue: 10,0:23:37.83,0:23:39.58,中文,,0,0,0,,我们应该让他们吃枪子儿！
+Dialogue: 0,0:23:37.83,0:23:39.58,副字幕,,0,0,0,,¡Lo que debemos hacer es darles plomo!
+Dialogue: 0,0:23:39.67,0:23:41.92,副字幕,,0,0,0,,- ¡Eso debemos hacer! - ¡Seguiremos luchando!
+Dialogue: 10,0:23:39.83,0:23:41.92,中文,,0,0,0,,-没错！-继续战斗！
+Dialogue: 10,0:23:42.00,0:23:44.46,中文,,0,0,0,,先生们！
+Dialogue: 0,0:23:42.00,0:23:44.46,副字幕,,0,0,0,,¡Señores, señores, señores, señores!
+Dialogue: 10,0:23:44.96,0:23:48.17,中文,,0,0,0,,你们必须明白要想结束战争 只有一个方法
+Dialogue: 0,0:23:44.96,0:23:48.17,副字幕,,0,0,0,,Entiendan que la única forma de ponerle fin a esta guerra
+Dialogue: 10,0:23:49.12,0:23:51.75,中文,,0,0,0,,-那就是达成协议-什么协议？
+Dialogue: 0,0:23:49.12,0:23:50.21,副字幕,,0,0,0,,es llegando a acuerdos.
+Dialogue: 0,0:23:50.29,0:23:51.75,副字幕,,0,0,0,,¿Y qué acuerdos son esos?
+Dialogue: 10,0:23:52.38,0:23:54.21,中文,,0,0,0,,任何有必要的协议
+Dialogue: 0,0:23:52.38,0:23:56.04,副字幕,,0,0,0,,Los acuerdos que sean necesarios. Lo primero es ir a la capital y poder…
+Dialogue: 10,0:23:54.29,0:23:56.12,中文,,0,0,0,,我们应先前往首都…
+Dialogue: 0,0:23:56.12,0:23:57.54,副字幕,,0,0,0,,Por ejemplo, para empezar,
+Dialogue: 10,0:23:56.21,0:23:57.54,中文,,0,0,0,,举个例子 首先
+Dialogue: 0,0:23:57.62,0:24:00.83,副字幕,,0,0,0,,la representación de los liberales en el Congreso de la República
+Dialogue: 10,0:23:57.79,0:24:00.83,中文,,0,0,0,,在共和国国民议会里和其他政府职位上
+Dialogue: 10,0:24:00.92,0:24:02.71,中文,,0,0,0,,必须有自由党代表出任
+Dialogue: 0,0:24:00.92,0:24:02.71,副字幕,,0,0,0,,y en otros cargos del gobierno.
+Dialogue: 0,0:24:02.79,0:24:04.88,副字幕,,0,0,0,,¡Eso es lo que ustedes quieren!
+Dialogue: 10,0:24:02.88,0:24:04.88,中文,,0,0,0,,那是你们想要的！
+Dialogue: 0,0:24:04.96,0:24:06.46,副字幕,,0,0,0,,[bullicio]
+Dialogue: 10,0:24:06.54,0:24:09.92,中文,,0,0,0,,先生们 这关系到哥伦比亚的未来
+Dialogue: 0,0:24:06.54,0:24:09.92,副字幕,,0,0,0,,El futuro de Colombia es lo que está en juego, señores.
+Dialogue: 0,0:24:10.00,0:24:13.58,副字幕,,0,0,0,,Para llegar a este tipo de negociaciones, tenemos que dejar de combatir.
+Dialogue: 10,0:24:10.12,0:24:13.21,中文,,0,0,0,,要达成这种类型的谈判就必须停止战斗
+Dialogue: 10,0:24:13.67,0:24:15.67,中文,,0,0,0,,我们是不会停止战斗的 可恶！
+Dialogue: 0,0:24:13.67,0:24:15.67,副字幕,,0,0,0,,¡No vamos a dejar de combatir, carajo!
+Dialogue: 0,0:24:15.75,0:24:17.08,副字幕,,0,0,0,,[bullicio]
+Dialogue: 10,0:24:17.17,0:24:18.08,中文,,0,0,0,,那样不行！
+Dialogue: 0,0:24:17.17,0:24:18.08,副字幕,,0,0,0,,¡Así no es!
+Dialogue: 10,0:24:20.00,0:24:21.54,中文,,0,0,0,,这件事关系到的…
+Dialogue: 0,0:24:20.00,0:24:22.62,副字幕,,0,0,0,,- ¡Lo que está en juego…! - [hombre] …debe continuar.
+Dialogue: 10,0:24:24.25,0:24:25.83,中文,,0,0,0,,是人民的尊严
+Dialogue: 0,0:24:24.25,0:24:25.83,副字幕,,0,0,0,,…es la dignidad del pueblo,
+Dialogue: 10,0:24:27.33,0:24:28.92,中文,,0,0,0,,而那不容商榷
+Dialogue: 0,0:24:27.33,0:24:28.92,副字幕,,0,0,0,,y con eso no se negocia.
+Dialogue: 10,0:24:32.46,0:24:34.21,中文,,0,0,0,,只要您签下停战协议
+Dialogue: 0,0:24:32.46,0:24:34.21,副字幕,,0,0,0,,Si firma a favor de un armisticio,
+Dialogue: 10,0:24:35.21,0:24:38.00,中文,,0,0,0,,我们也可以为您争取
+Dialogue: 0,0:24:35.21,0:24:38.00,副字幕,,0,0,0,,también podemos pedir participaciones regionales
+Dialogue: 10,0:24:39.25,0:24:40.38,中文,,0,0,0,,地区代表的职位
+Dialogue: 0,0:24:39.25,0:24:40.38,副字幕,,0,0,0,,para usted.
+Dialogue: 10,0:24:40.96,0:24:41.79,中文,,0,0,0,,上校
+Dialogue: 0,0:24:40.96,0:24:41.79,副字幕,,0,0,0,,Coronel.
+Dialogue: 10,0:24:47.54,0:24:48.54,中文,,0,0,0,,这里 上校
+Dialogue: 0,0:24:47.54,0:24:48.54,副字幕,,0,0,0,,Acá, coronel.
+Dialogue: 10,0:24:57.88,0:24:58.83,中文,,0,0,0,,我们会签字的
+Dialogue: 0,0:24:57.88,0:24:58.83,副字幕,,0,0,0,,Firmamos…
+Dialogue: 10,0:25:00.12,0:25:02.58,中文,,0,0,0,,但要等到你们给人民提供更多利益的时候
+Dialogue: 0,0:25:00.12,0:25:02.58,副字幕,,0,0,0,,cuando tengan algo más que ofrecerle a la gente.
+Dialogue: 10,0:25:04.38,0:25:07.38,中文,,0,0,0,,在那之前 我们会继续战斗
+Dialogue: 0,0:25:04.38,0:25:07.38,副字幕,,0,0,0,,Mientras tanto, vamos a continuar con nuestras luchas.
+Dialogue: 10,0:25:07.46,0:25:08.29,中文,,0,0,0,,没错
+Dialogue: 0,0:25:07.46,0:25:08.29,副字幕,,0,0,0,,Así es.
+Dialogue: 0,0:25:08.38,0:25:10.25,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:25:11.79,0:25:14.62,中文,,0,0,0,,由于支持自由党叛乱…
+Dialogue: 0,0:25:11.79,0:25:15.04,副字幕,,0,0,0,,- [gritos] - ¡Por su apoyo a la insurgencia liberal…!
+Dialogue: 10,0:25:15.12,0:25:16.21,中文,,0,0,0,,退后 女士
+Dialogue: 0,0:25:15.12,0:25:16.21,副字幕,,0,0,0,,¡Deténgase, señora!
+Dialogue: 0,0:25:16.29,0:25:18.88,副字幕,,0,0,0,,[gritos continúan]
+Dialogue: 10,0:25:18.96,0:25:21.58,中文,,0,0,0,,…你们被国家政府宣判死刑
+Dialogue: 0,0:25:18.96,0:25:21.58,副字幕,,0,0,0,,[soldado] ¡El gobierno nacional los condena a muerte!
+Dialogue: 10,0:25:23.25,0:25:24.21,中文,,0,0,0,,预备！
+Dialogue: 0,0:25:23.25,0:25:24.21,副字幕,,0,0,0,,¡Preparen!
+Dialogue: 10,0:25:26.92,0:25:27.75,中文,,0,0,0,,瞄准！
+Dialogue: 0,0:25:26.92,0:25:27.75,副字幕,,0,0,0,,¡Apunten!
+Dialogue: 10,0:25:29.04,0:25:31.00,中文,,0,0,0,,自由党万岁！
+Dialogue: 0,0:25:29.04,0:25:31.00,副字幕,,0,0,0,,¡Que viva el Partido Liberal!
+Dialogue: 10,0:25:39.96,0:25:42.71,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校的传奇就此上演
+Dialogue: 0,0:25:39.96,0:25:42.71,副字幕,,0,0,0,,[narrador] del coronel Aureliano Buendía.
+Dialogue: 10,0:25:42.79,0:25:47.50,中文,,0,0,0,,布恩迪亚上校万岁！
+Dialogue: 0,0:25:42.79,0:25:45.00,副字幕,,0,0,0,,¡Que viva el coronel Aureliano Buendía!
+Dialogue: 0,0:25:45.08,0:25:46.46,副字幕,,0,0,0,,¡Que viva!
+Dialogue: 10,0:25:47.58,0:25:52.00,中文,,0,0,0,,（惠灿市政厅）
+Dialogue: 10,0:25:53.29,0:25:56.71,中文,,0,0,0,,在接下来的几年里上校武装了一千多人
+Dialogue: 0,0:25:53.29,0:25:54.88,副字幕,,0,0,0,,[narrador]
+Dialogue: 0,0:25:54.96,0:25:56.71,副字幕,,0,0,0,,el coronel logró armar a más de mil hombres
+Dialogue: 0,0:25:56.79,0:25:59.04,副字幕,,0,0,0,,y proclamó la guerra total contra el gobierno.
+Dialogue: 10,0:25:57.00,0:25:59.04,中文,,0,0,0,,对政府全面宣战
+Dialogue: 10,0:26:04.04,0:26:05.42,中文,,0,0,0,,革命万岁
+Dialogue: 0,0:26:04.04,0:26:05.42,副字幕,,0,0,0,,Que viva la revolución.
+Dialogue: 0,0:26:10.12,0:26:11.62,副字幕,,0,0,0,,[música de tensión]
+Dialogue: 10,0:26:36.12,0:26:37.00,中文,,0,0,0,,上校
+Dialogue: 0,0:26:36.12,0:26:37.00,副字幕,,0,0,0,,Coronel.
+Dialogue: 0,0:26:40.54,0:26:43.88,副字幕,,0,0,0,,Estaba fallando yo, él lo sabía y me hizo sufrir…
+Dialogue: 0,0:26:44.96,0:26:46.96,副字幕,,0,0,0,,[bullicio]
+Dialogue: 0,0:26:51.38,0:26:53.38,副字幕,,0,0,0,,[diálogos indistintos]
+Dialogue: 10,0:27:00.42,0:27:03.58,中文,,0,0,0,,对于我们在战场上的牺牲这就是他们的答谢方式
+Dialogue: 0,0:27:00.42,0:27:03.58,副字幕,,0,0,0,,Así nos agradecen por dejar el cuero en el campo de batalla.
+Dialogue: 0,0:27:08.08,0:27:10.08,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:27:10.17,0:27:13.62,中文,,0,0,0,,如果自由党要对那些保守党的混蛋卑躬屈膝…
+Dialogue: 0,0:27:10.17,0:27:13.62,副字幕,,0,0,0,,Si los liberales se le van a arrodillar a los godos hijos de puta…
+Dialogue: 10,0:27:17.67,0:27:19.67,中文,,0,0,0,,那我们就也去声讨他们
+Dialogue: 0,0:27:17.67,0:27:19.67,副字幕,,0,0,0,,pues vamos a ir por ellos también.
+Dialogue: 10,0:27:30.79,0:27:31.79,中文,,0,0,0,,-抱歉打扰了 上校-进来
+Dialogue: 0,0:27:30.79,0:27:31.79,副字幕,,0,0,0,,Permiso, coronel.
+Dialogue: 0,0:27:31.88,0:27:32.88,副字幕,,0,0,0,,Adelante.
+Dialogue: 10,0:27:50.75,0:27:52.88,中文,,0,0,0,,混蛋 你想杀我？
+Dialogue: 0,0:27:50.75,0:27:52.88,副字幕,,0,0,0,,¿Me quieres matar a mí, hijo de puta?
+Dialogue: 0,0:28:04.83,0:28:06.58,副字幕,,0,0,0,,[gruñen]
+Dialogue: 0,0:28:34.75,0:28:36.29,副字幕,,0,0,0,,[jadea]
+Dialogue: 0,0:28:36.38,0:28:37.46,副字幕,,0,0,0,,[grita]
+Dialogue: 10,0:28:37.54,0:28:39.25,中文,,0,0,0,,另一场战争就此开始
+Dialogue: 0,0:28:37.54,0:28:39.25,副字幕,,0,0,0,,[narrador]
+Dialogue: 0,0:28:43.08,0:28:45.08,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:28:47.00,0:28:47.83,中文,,0,0,0,,您的包裹
+Dialogue: 0,0:28:47.00,0:28:47.83,副字幕,,0,0,0,,Aquí tiene.
+Dialogue: 10,0:28:48.33,0:28:50.62,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校的追随者
+Dialogue: 0,0:28:48.33,0:28:50.62,副字幕,,0,0,0,,[narrador] del coronel Aureliano Buendía
+Dialogue: 0,0:28:50.71,0:28:53.67,副字幕,,0,0,0,,lo proclamaron jefe de las fuerzas revolucionarias del Caribe,
+Dialogue: 10,0:28:51.50,0:28:53.67,中文,,0,0,0,,拥戴他为加勒比海革命军总司令
+Dialogue: 10,0:28:53.75,0:28:55.54,中文,,0,0,0,,头衔是将军
+Dialogue: 0,0:28:53.75,0:28:55.54,副字幕,,0,0,0,,con el grado de general.
+Dialogue: 10,0:28:59.21,0:29:01.42,中文,,0,0,0,,他接受了职务 但拒绝升衔
+Dialogue: 0,0:28:59.21,0:29:01.42,副字幕,,0,0,0,,Él asumió el cargo, pero rechazó el ascenso,
+Dialogue: 10,0:29:01.50,0:29:04.38,中文,,0,0,0,,并表态只要保守党政府仍在掌权
+Dialogue: 0,0:29:01.50,0:29:04.38,副字幕,,0,0,0,,y se puso a sí mismo la condición de no aceptarlo
+Dialogue: 10,0:29:04.46,0:29:06.88,中文,,0,0,0,,就绝不会接受这一头衔
+Dialogue: 0,0:29:04.46,0:29:06.88,副字幕,,0,0,0,,mientras no derribaran al régimen conservador.
+Dialogue: 0,0:29:24.33,0:29:26.33,副字幕,,0,0,0,,[gritos]
+Dialogue: 0,0:29:28.38,0:29:30.17,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 0,0:29:53.62,0:29:55.62,副字幕,,0,0,0,,[canto de aves]
+Dialogue: 10,0:30:05.33,0:30:06.21,中文,,0,0,0,,上校
+Dialogue: 0,0:30:05.33,0:30:06.21,副字幕,,0,0,0,,Coronel.
+Dialogue: 10,0:30:12.29,0:30:14.54,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:30:12.29,0:30:14.54,副字幕,,0,0,0,,Coronel Aureliano Buendía…
+Dialogue: 10,0:30:22.88,0:30:24.71,中文,,0,0,0,,何塞·拉奎·蒙卡达将军
+Dialogue: 0,0:30:22.88,0:30:24.71,副字幕,,0,0,0,,General José Raquel Moncada.
+Dialogue: 10,0:30:28.04,0:30:31.04,中文,,0,0,0,,所有政客都是一丘之貉 蒙卡达
+Dialogue: 0,0:30:28.04,0:30:31.04,副字幕,,0,0,0,,Todos los políticos son la misma mierda, Moncada.
+Dialogue: 10,0:30:32.00,0:30:35.38,中文,,0,0,0,,唯一的区别就是自由派去做五点的弥撒
+Dialogue: 0,0:30:32.00,0:30:35.71,副字幕,,0,0,0,,La única diferencia es que los liberales van a misa de cinco,
+Dialogue: 10,0:30:35.79,0:30:38.00,中文,,0,0,0,,而保守派去做八点的
+Dialogue: 0,0:30:35.79,0:30:38.00,副字幕,,0,0,0,,y los conservadores, a misa de ocho.
+Dialogue: 0,0:30:38.75,0:30:39.75,副字幕,,0,0,0,,[Moncada ríe]
+Dialogue: 10,0:30:40.62,0:30:41.62,中文,,0,0,0,,确实如此
+Dialogue: 0,0:30:40.62,0:30:41.62,副字幕,,0,0,0,,Eso es cierto.
+Dialogue: 10,0:30:44.00,0:30:47.21,中文,,0,0,0,,所以这场战争毫无意义
+Dialogue: 0,0:30:44.00,0:30:45.33,副字幕,,0,0,0,,Por eso es que esta guerra
+Dialogue: 0,0:30:45.83,0:30:47.21,副字幕,,0,0,0,,no tiene ningún sentido.
+Dialogue: 10,0:30:48.04,0:30:51.00,中文,,0,0,0,,其他自由党领袖正在和政府谈判
+Dialogue: 0,0:30:48.04,0:30:51.00,副字幕,,0,0,0,,Los demás jefes liberales están negociando con el gobierno.
+Dialogue: 10,0:30:51.75,0:30:53.46,中文,,0,0,0,,他们要签订协议了 奥雷里亚诺
+Dialogue: 0,0:30:51.75,0:30:53.46,副字幕,,0,0,0,,Y van a firmar, Aureliano.
+Dialogue: 10,0:30:54.88,0:30:56.25,中文,,0,0,0,,他们都已疲惫不堪
+Dialogue: 0,0:30:54.88,0:30:56.25,副字幕,,0,0,0,,Ya todos están cansados.
+Dialogue: 10,0:30:56.75,0:30:57.96,中文,,0,0,0,,战争已经持续了十多年
+Dialogue: 0,0:30:56.75,0:30:57.96,副字幕,,0,0,0,,Son más de diez años.
+Dialogue: 10,0:30:58.67,0:31:00.92,中文,,0,0,0,,我们愿意再战十年乃至更长时间 无论多久
+Dialogue: 0,0:30:58.67,0:31:00.92,副字幕,,0,0,0,,Pelearemos diez años más o los que hagan falta
+Dialogue: 0,0:31:01.00,0:31:03.33,副字幕,,0,0,0,,para que sea el pueblo el que decida su suerte.
+Dialogue: 10,0:31:01.42,0:31:03.33,中文,,0,0,0,,必须让人民掌控自己的命运
+Dialogue: 10,0:31:03.96,0:31:06.67,中文,,0,0,0,,我们受够了让他人为自己做决定
+Dialogue: 0,0:31:03.96,0:31:06.67,副字幕,,0,0,0,,Estamos mamados de que decidan por nosotros.
+Dialogue: 10,0:31:06.75,0:31:08.67,中文,,0,0,0,,你我都心知肚明 你坚持战斗
+Dialogue: 0,0:31:06.75,0:31:08.67,副字幕,,0,0,0,,Los dos sabemos que estás peleando
+Dialogue: 10,0:31:08.75,0:31:11.38,中文,,0,0,0,,是为了证明你们党派对你的不公
+Dialogue: 0,0:31:08.75,0:31:11.38,副字幕,,0,0,0,,para quitarte el clavo por lo que te hizo tu partido.
+Dialogue: 10,0:31:15.46,0:31:16.46,中文,,0,0,0,,那也是原因之一
+Dialogue: 0,0:31:15.46,0:31:16.46,副字幕,,0,0,0,,También.
+Dialogue: 10,0:31:17.38,0:31:18.54,中文,,0,0,0,,我不否认
+Dialogue: 0,0:31:17.38,0:31:18.54,副字幕,,0,0,0,,No lo niego.
+Dialogue: 10,0:31:19.79,0:31:24.04,中文,,0,0,0,,自由党领袖必须再次承认我们是一支合法的军队
+Dialogue: 0,0:31:19.79,0:31:21.00,副字幕,,0,0,0,,Los dirigentes liberales
+Dialogue: 0,0:31:21.08,0:31:24.04,副字幕,,0,0,0,,nos tienen que volver a reconocer como un ejército legítimo.
+Dialogue: 10,0:31:24.54,0:31:26.58,中文,,0,0,0,,而非一群不法之徒
+Dialogue: 0,0:31:24.54,0:31:26.58,副字幕,,0,0,0,,No somos unos bandoleros.
+Dialogue: 10,0:31:26.67,0:31:29.38,中文,,0,0,0,,那就停止攻击无辜的人 奥雷里亚诺
+Dialogue: 0,0:31:26.67,0:31:29.38,副字幕,,0,0,0,,Entonces, deja de atacar a gente inocente, Aureliano.
+Dialogue: 10,0:31:30.08,0:31:32.29,中文,,0,0,0,,你开始给自己树敌了
+Dialogue: 0,0:31:30.08,0:31:32.29,副字幕,,0,0,0,,Te estás ganando un poco de enemigos.
+Dialogue: 10,0:31:34.67,0:31:36.17,中文,,0,0,0,,你为何来此 蒙卡达？
+Dialogue: 0,0:31:34.67,0:31:36.17,副字幕,,0,0,0,,¿A qué viniste, Moncada?
+Dialogue: 10,0:31:37.33,0:31:40.46,中文,,0,0,0,,是奉命来贿赂 或者威胁我？
+Dialogue: 0,0:31:37.33,0:31:40.46,副字幕,,0,0,0,,¿Te mandaron a sobornarme o a amenazarme?
+Dialogue: 10,0:31:41.62,0:31:43.29,中文,,0,0,0,,没有人派我来做任何事
+Dialogue: 0,0:31:41.62,0:31:43.29,副字幕,,0,0,0,,A mí nadie me mandó a nada.
+Dialogue: 10,0:31:44.38,0:31:47.04,中文,,0,0,0,,我是来道别的 我要退下前线了
+Dialogue: 0,0:31:44.38,0:31:47.04,副字幕,,0,0,0,,Yo vine a despedirme porque dejo el frente.
+Dialogue: 10,0:31:47.88,0:31:50.46,中文,,0,0,0,,政府任命我为马孔多的军政领袖
+Dialogue: 0,0:31:47.88,0:31:50.46,副字幕,,0,0,0,,Me designaron jefe civil y militar de Macondo.
+Dialogue: 10,0:31:56.79,0:31:58.58,中文,,0,0,0,,我会照顾好你的乡亲们
+Dialogue: 0,0:31:56.79,0:31:58.58,副字幕,,0,0,0,,Yo a tu gente la voy a cuidar.
+Dialogue: 10,0:31:59.12,0:32:00.38,中文,,0,0,0,,我保证
+Dialogue: 0,0:31:59.12,0:32:00.38,副字幕,,0,0,0,,Eso te lo prometo.
+Dialogue: 10,0:32:01.71,0:32:05.00,中文,,0,0,0,,你是我认识的人里最正派的之一 何塞·拉奎
+Dialogue: 0,0:32:01.71,0:32:05.00,副字幕,,0,0,0,,Eres una de las personas más decentes que conozco, José Raquel.
+Dialogue: 10,0:32:07.33,0:32:08.71,中文,,0,0,0,,话虽如此…
+Dialogue: 0,0:32:07.33,0:32:08.71,副字幕,,0,0,0,,Pero antes de eso…
+Dialogue: 10,0:32:11.96,0:32:13.46,中文,,0,0,0,,你依然是保守党
+Dialogue: 0,0:32:11.96,0:32:13.46,副字幕,,0,0,0,,eres un conservador.
+Dialogue: 0,0:32:20.62,0:32:22.62,副字幕,,0,0,0,,[música suave]
+Dialogue: 10,0:32:24.46,0:32:26.21,中文,,0,0,0,,早餐好了！
+Dialogue: 0,0:32:24.46,0:32:26.21,副字幕,,0,0,0,,[Úrsula] ¡El desayuno está listo!
+Dialogue: 10,0:32:28.62,0:32:31.67,中文,,0,0,0,,奥雷里亚诺第二何塞·阿卡蒂奥第二！
+Dialogue: 0,0:32:28.62,0:32:31.67,副字幕,,0,0,0,,¡Aureliano Segundo, José Arcadio Segundo!
+Dialogue: 10,0:32:32.29,0:32:34.50,中文,,0,0,0,,双胞胎不但外表相似 而且同样调皮
+Dialogue: 0,0:32:32.29,0:32:34.50,副字幕,,0,0,0,,[narrador] eran tan parecidos y traviesos
+Dialogue: 10,0:32:34.58,0:32:37.50,中文,,0,0,0,,以至于连他们的母亲和祖母都无法分辨二人
+Dialogue: 0,0:32:34.58,0:32:37.50,副字幕,,0,0,0,,que ni su propia madre y su abuela podían distinguirlos.
+Dialogue: 10,0:32:38.50,0:32:40.71,中文,,0,0,0,,-早上好 奶奶-早上好 奶奶
+Dialogue: 0,0:32:38.50,0:32:40.71,副字幕,,0,0,0,,- Buenos días, abuela. - Buenos días, abuela.
+Dialogue: 10,0:32:40.79,0:32:43.54,中文,,0,0,0,,早上好 坐那边去 奥雷里亚诺第二
+Dialogue: 0,0:32:40.79,0:32:43.54,副字幕,,0,0,0,,Buenos días. Siéntate ahí, Aureliano Segundo.
+Dialogue: 10,0:32:45.83,0:32:47.08,中文,,0,0,0,,奥雷里亚诺·何塞
+Dialogue: 0,0:32:45.83,0:32:47.08,副字幕,,0,0,0,,Aureliano José.
+Dialogue: 10,0:32:47.71,0:32:49.58,中文,,0,0,0,,奥雷里亚诺·何塞！
+Dialogue: 0,0:32:47.71,0:32:49.58,副字幕,,0,0,0,,¡Aureliano José!
+Dialogue: 10,0:32:50.12,0:32:54.21,中文,,0,0,0,,奥雷里亚诺·何塞已经成年长得和父亲一样高大
+Dialogue: 0,0:32:50.12,0:32:52.88,副字幕,,0,0,0,,[narrador] largo como su padre,
+Dialogue: 0,0:32:52.96,0:32:54.21,副字幕,,0,0,0,,ya era todo un hombre.
+Dialogue: 10,0:32:58.71,0:32:59.58,中文,,0,0,0,,什么事 奶奶？
+Dialogue: 0,0:32:58.71,0:32:59.58,副字幕,,0,0,0,,¿Sí, abuela?
+Dialogue: 10,0:33:00.33,0:33:02.21,中文,,0,0,0,,去叫蕾梅黛丝和你阿玛兰妲姑姑
+Dialogue: 0,0:33:00.33,0:33:04.04,副字幕,,0,0,0,,Ve y llama a Remedios y a tu tía Amaranta. El desayuno se les va a enfriar.
+Dialogue: 10,0:33:02.29,0:33:03.83,中文,,0,0,0,,早餐要凉了
+Dialogue: 0,0:33:22.17,0:33:23.38,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:33:23.46,0:33:26.83,中文,,0,0,0,,当视线触及那丰满的胸脯和褐色的乳头时
+Dialogue: 0,0:33:23.46,0:33:26.83,副字幕,,0,0,0,,[narrador] un estremecimiento desconocido
+Dialogue: 10,0:33:26.92,0:33:30.38,中文,,0,0,0,,奥雷里亚诺·何塞感到一阵奇异的颤栗
+Dialogue: 0,0:33:26.92,0:33:30.38,副字幕,,0,0,0,,ante la visión de los senos espléndidos de pezones morados.
+Dialogue: 10,0:33:32.75,0:33:34.21,中文,,0,0,0,,他继续打量着她
+Dialogue: 0,0:33:32.75,0:33:34.21,副字幕,,0,0,0,,Siguió examinándola,
+Dialogue: 10,0:33:35.12,0:33:38.21,中文,,0,0,0,,一寸一寸地探索这奇迹般的亲密
+Dialogue: 0,0:33:35.12,0:33:38.21,副字幕,,0,0,0,,descubriendo palmo a palmo el milagro de su intimidad,
+Dialogue: 10,0:33:39.58,0:33:42.29,中文,,0,0,0,,他感到自己的皮肤在这样的观感下泛起了鸡皮疙瘩
+Dialogue: 0,0:33:39.58,0:33:42.29,副字幕,,0,0,0,,y sintió que su piel se erizaba en la contemplación.
+Dialogue: 0,0:34:12.33,0:34:14.33,副字幕,,0,0,0,,[música de intriga]
+Dialogue: 0,0:34:17.04,0:34:18.46,副字幕,,0,0,0,,[relincho]
+Dialogue: 0,0:34:31.54,0:34:33.54,副字幕,,0,0,0,,[murmullo]
+Dialogue: 0,0:34:43.21,0:34:44.67,副字幕,,0,0,0,,[tocan la puerta]
+Dialogue: 10,0:34:53.00,0:34:54.00,中文,,0,0,0,,晚上好
+Dialogue: 0,0:34:53.00,0:34:54.00,副字幕,,0,0,0,,Buenas tardes.
+Dialogue: 10,0:34:55.33,0:34:57.62,中文,,0,0,0,,乌苏拉·伊瓜兰·布恩迪亚夫人？
+Dialogue: 0,0:34:55.33,0:34:57.62,副字幕,,0,0,0,,¿La señora Úrsula Iguarán de Buendía?
+Dialogue: 10,0:34:59.33,0:35:01.62,中文,,0,0,0,,-是的-请容我自我介绍
+Dialogue: 0,0:34:59.33,0:35:00.17,副字幕,,0,0,0,,Sí.
+Dialogue: 0,0:35:00.75,0:35:01.62,副字幕,,0,0,0,,Me presento.
+Dialogue: 10,0:35:01.71,0:35:04.42,中文,,0,0,0,,在下何塞·拉奎·蒙卡达将军愿为您效劳
+Dialogue: 0,0:35:01.71,0:35:04.42,副字幕,,0,0,0,,Soy el general José Raquel Moncada. A su servicio.
+Dialogue: 10,0:35:05.83,0:35:06.92,中文,,0,0,0,,您有何贵干？
+Dialogue: 0,0:35:05.83,0:35:06.92,副字幕,,0,0,0,,¿Qué necesita?
+Dialogue: 10,0:35:07.88,0:35:10.88,中文,,0,0,0,,我被指派为马孔多的新任军政首领
+Dialogue: 0,0:35:07.88,0:35:11.21,副字幕,,0,0,0,,He sido designado nuevo jefe civil y militar de Macondo,
+Dialogue: 10,0:35:11.29,0:35:13.33,中文,,0,0,0,,不知可否有这样的荣幸
+Dialogue: 0,0:35:11.29,0:35:13.33,副字幕,,0,0,0,,y sería un honor muy especial para mí
+Dialogue: 0,0:35:13.42,0:35:15.08,副字幕,,0,0,0,,si usted acepta acompañarme
+Dialogue: 10,0:35:13.50,0:35:17.25,中文,,0,0,0,,能请您带我到镇上四处转转？
+Dialogue: 0,0:35:15.75,0:35:17.25,副字幕,,0,0,0,,a conocer su pueblo.
+Dialogue: 10,0:35:30.54,0:35:33.50,中文,,0,0,0,,士兵们对马孔多造成了很多伤害 将军
+Dialogue: 0,0:35:30.54,0:35:34.00,副字幕,,0,0,0,,[Úrsula] Los militares le han hecho mucho daño a Macondo, general.
+Dialogue: 10,0:35:34.08,0:35:36.00,中文,,0,0,0,,红色和蓝色的都是
+Dialogue: 0,0:35:34.08,0:35:36.00,副字幕,,0,0,0,,Los rojos y los azules.
+Dialogue: 10,0:35:36.08,0:35:36.96,中文,,0,0,0,,我知道
+Dialogue: 0,0:35:36.08,0:35:36.96,副字幕,,0,0,0,,Lo sé.
+Dialogue: 10,0:35:38.42,0:35:41.42,中文,,0,0,0,,我的职责是照看这座小镇不论它是何颜色
+Dialogue: 0,0:35:38.42,0:35:41.83,副字幕,,0,0,0,,Y mi propósito es cuidar del pueblo sin que importen las banderas.
+Dialogue: 10,0:35:41.92,0:35:43.88,中文,,0,0,0,,这是我对布恩迪亚上校的承诺
+Dialogue: 0,0:35:41.92,0:35:43.88,副字幕,,0,0,0,,Se lo prometí al coronel Buendía.
+Dialogue: 10,0:35:47.92,0:35:49.42,中文,,0,0,0,,您和我儿子谈过话？
+Dialogue: 0,0:35:47.92,0:35:49.42,副字幕,,0,0,0,,¿Usted habló con mi hijo?
+Dialogue: 10,0:35:50.33,0:35:51.25,中文,,0,0,0,,是的
+Dialogue: 0,0:35:50.33,0:35:51.25,副字幕,,0,0,0,,Sí.
+Dialogue: 10,0:35:51.92,0:35:54.04,中文,,0,0,0,,我来之前见过他
+Dialogue: 0,0:35:51.92,0:35:54.04,副字幕,,0,0,0,,Yo me reuní con él antes de venir aquí.
+Dialogue: 10,0:35:55.88,0:35:56.88,中文,,0,0,0,,他被抓了吗？
+Dialogue: 0,0:35:55.88,0:35:56.88,副字幕,,0,0,0,,¿Está preso?
+Dialogue: 10,0:35:57.75,0:36:00.83,中文,,0,0,0,,不 他和手下的人在一起他在领导反叛军
+Dialogue: 0,0:35:57.75,0:36:00.83,副字幕,,0,0,0,,No, está con su tropa, liderando el ejército rebelde.
+Dialogue: 10,0:36:03.62,0:36:04.67,中文,,0,0,0,,我们是敌人
+Dialogue: 0,0:36:03.62,0:36:04.67,副字幕,,0,0,0,,Somos enemigos.
+Dialogue: 10,0:36:05.17,0:36:06.04,中文,,0,0,0,,亦敌亦友
+Dialogue: 0,0:36:05.17,0:36:06.04,副字幕,,0,0,0,,Íntimos.
+Dialogue: 10,0:36:08.12,0:36:11.04,中文,,0,0,0,,但我们有一个更为强大的共同敌人
+Dialogue: 0,0:36:08.12,0:36:11.04,副字幕,,0,0,0,,Pero tenemos un enemigo en común que todavía es más fuerte:
+Dialogue: 10,0:36:12.00,0:36:13.17,中文,,0,0,0,,这世间的不公
+Dialogue: 0,0:36:12.00,0:36:13.17,副字幕,,0,0,0,,la injusticia.
+Dialogue: 10,0:36:13.75,0:36:17.17,中文,,0,0,0,,不公会随着利益的变动改换其面貌 将军
+Dialogue: 0,0:36:13.75,0:36:17.54,副字幕,,0,0,0,,[Úrsula] La injusticia cambia de cara según los intereses, general.
+Dialogue: 10,0:36:17.62,0:36:19.71,中文,,0,0,0,,现如今 言语就像
+Dialogue: 0,0:36:17.62,0:36:19.71,副字幕,,0,0,0,,Las palabras están ahora tan vacías
+Dialogue: 0,0:36:19.79,0:36:22.42,副字幕,,0,0,0,,como en los tiempos de la peste del insomnio.
+Dialogue: 10,0:36:19.96,0:36:22.42,中文,,0,0,0,,失眠症肆虐那阵子一样空洞无力
+Dialogue: 10,0:36:23.21,0:36:24.29,中文,,0,0,0,,乌苏拉夫人
+Dialogue: 0,0:36:23.21,0:36:26.21,副字幕,,0,0,0,,Doña Úrsula, yo a su hijo lo respeto,
+Dialogue: 10,0:36:24.38,0:36:26.04,中文,,0,0,0,,我敬佩您的儿子
+Dialogue: 10,0:36:26.88,0:36:29.29,中文,,0,0,0,,我也会怀着同样的敬意治理马孔多
+Dialogue: 0,0:36:26.88,0:36:29.38,副字幕,,0,0,0,,y a Macondo lo voy a tratar con ese mismo respeto.
+Dialogue: 10,0:36:29.46,0:36:30.96,中文,,0,0,0,,我向您保证
+Dialogue: 0,0:36:29.46,0:36:30.96,副字幕,,0,0,0,,Usted tiene mi palabra.
+Dialogue: 10,0:36:31.71,0:36:33.29,中文,,0,0,0,,但愿如此 将军
+Dialogue: 0,0:36:31.71,0:36:33.29,副字幕,,0,0,0,,Pues eso espero, general.
+Dialogue: 10,0:36:35.71,0:36:38.54,中文,,0,0,0,,马孔多不能再有人为这场战争送命了
+Dialogue: 0,0:36:35.71,0:36:38.54,副字幕,,0,0,0,,Macondo no puede darle más muertos a la guerra.
+Dialogue: 10,0:36:39.50,0:36:40.71,中文,,0,0,0,,祝您今晚愉快
+Dialogue: 0,0:36:39.50,0:36:40.71,副字幕,,0,0,0,,Que tenga buena tarde.
+Dialogue: 0,0:37:17.58,0:37:19.67,副字幕,,0,0,0,,Ay… Me asustaste.
+Dialogue: 10,0:37:18.62,0:37:20.79,中文,,0,0,0,,-你吓我一跳-对不起
+Dialogue: 0,0:37:19.75,0:37:20.79,副字幕,,0,0,0,,Me disculpas.
+Dialogue: 0,0:37:24.12,0:37:26.12,副字幕,,0,0,0,,[música dramática]
+Dialogue: 0,0:37:38.83,0:37:40.38,副字幕,,0,0,0,,[Aureliano José jadea]
+Dialogue: 10,0:37:51.58,0:37:52.50,中文,,0,0,0,,阿玛兰妲？
+Dialogue: 0,0:37:51.58,0:37:52.50,副字幕,,0,0,0,,[Úrsula] ¡Amaranta!
+Dialogue: 0,0:37:55.58,0:37:57.46,副字幕,,0,0,0,,- ¿Mmm? - [Úrsula] Las velas.
+Dialogue: 10,0:37:56.50,0:37:57.46,中文,,0,0,0,,蜡烛
+Dialogue: 10,0:37:58.04,0:38:00.04,中文,,0,0,0,,马上来 我拿过去给你
+Dialogue: 0,0:37:58.04,0:38:00.04,副字幕,,0,0,0,,Ya voy. Ya las llevo.
+Dialogue: 0,0:38:03.46,0:38:05.79,副字幕,,0,0,0,,[Aureliano José ríe]
+Dialogue: 10,0:38:05.88,0:38:07.92,中文,,0,0,0,,别紧张 她没发现
+Dialogue: 0,0:38:05.88,0:38:07.92,副字幕,,0,0,0,,Tranquila. No se dio cuenta.
+Dialogue: 10,0:38:09.67,0:38:10.54,中文,,0,0,0,,今天没有
+Dialogue: 0,0:38:09.67,0:38:10.54,副字幕,,0,0,0,,Hoy no.
+Dialogue: 10,0:38:12.12,0:38:14.21,中文,,0,0,0,,但我们再这样下去 她迟早会发现的
+Dialogue: 0,0:38:12.12,0:38:14.21,副字幕,,0,0,0,,Pero si seguimos así, se va a dar cuenta.
+Dialogue: 0,0:38:15.08,0:38:17.54,副字幕,,0,0,0,,[Amaranta jadea]
+Dialogue: 10,0:38:22.88,0:38:24.42,中文,,0,0,0,,妈妈 蜡烛给你
+Dialogue: 0,0:38:22.88,0:38:24.42,副字幕,,0,0,0,,¡Mamá! Acá están.
+Dialogue: 10,0:38:25.38,0:38:27.46,中文,,0,0,0,,正当奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:38:25.38,0:38:27.50,副字幕,,0,0,0,,[narrador] el coronel Aureliano Buendía
+Dialogue: 10,0:38:27.58,0:38:30.92,中文,,0,0,0,,在颠覆政权的狭窄小径上暗自穿行时
+Dialogue: 0,0:38:27.58,0:38:30.92,副字幕,,0,0,0,,se escabullía por los desfiladeros de la subversión permanente,
+Dialogue: 10,0:38:31.00,0:38:35.67,中文,,0,0,0,,蒙卡达将军以不带武器的警察取代了士兵
+Dialogue: 0,0:38:31.00,0:38:33.33,副字幕,,0,0,0,,el general Moncada sustituyó a los militares
+Dialogue: 0,0:38:33.42,0:38:35.58,副字幕,,0,0,0,,por agentes de la policía desarmados,
+Dialogue: 0,0:38:35.67,0:38:38.62,副字幕,,0,0,0,,y creó un ambiente de confianza que hizo pensar en la guerra
+Dialogue: 10,0:38:35.75,0:38:37.54,中文,,0,0,0,,营造出一种笃定的氛围
+Dialogue: 10,0:38:37.62,0:38:40.96,中文,,0,0,0,,令人们相信战争已成为昔日荒诞的噩梦
+Dialogue: 0,0:38:38.71,0:38:40.96,副字幕,,0,0,0,,como una absurda pesadilla del pasado.
+Dialogue: 0,0:38:41.04,0:38:42.00,副字幕,,0,0,0,,[música de intriga]
+Dialogue: 10,0:38:42.08,0:38:45.83,中文,,0,0,0,,任何旗帜都不能凌驾于人的尊严之上
+Dialogue: 0,0:38:42.08,0:38:43.42,副字幕,,0,0,0,,[Moncada] Ninguna bandera
+Dialogue: 0,0:38:43.50,0:38:45.83,副字幕,,0,0,0,,debe estar por encima de la dignidad humana.
+Dialogue: 10,0:38:46.46,0:38:50.00,中文,,0,0,0,,所以马孔多的每一个人必须享有同等的权利
+Dialogue: 0,0:38:46.46,0:38:50.00,副字幕,,0,0,0,,Por eso en Macondo todos deben tener los mismos derechos.
+Dialogue: 10,0:38:50.50,0:38:52.17,中文,,0,0,0,,同样的机会
+Dialogue: 0,0:38:50.50,0:38:52.17,副字幕,,0,0,0,,Las mismas oportunidades.
+Dialogue: 10,0:38:53.08,0:38:55.46,中文,,0,0,0,,这是它的创建者们一心所求的
+Dialogue: 0,0:38:53.08,0:38:55.46,副字幕,,0,0,0,,Eso fue lo que siempre quisieron sus fundadores.
+Dialogue: 10,0:38:56.58,0:39:00.42,中文,,0,0,0,,而实现这个理想的第一步
+Dialogue: 0,0:38:56.58,0:38:58.04,副字幕,,0,0,0,,Y el primer paso
+Dialogue: 0,0:38:59.17,0:39:00.58,副字幕,,0,0,0,,para hacerlo realidad
+Dialogue: 10,0:39:01.50,0:39:04.62,中文,,0,0,0,,就是保障公共教育
+Dialogue: 0,0:39:01.50,0:39:04.62,副字幕,,0,0,0,,es garantizar la educación pública.
+Dialogue: 10,0:39:06.33,0:39:08.25,中文,,0,0,0,,所以 从今天起
+Dialogue: 0,0:39:06.33,0:39:08.25,副字幕,,0,0,0,,Así que, a partir de hoy,
+Dialogue: 10,0:39:08.92,0:39:15.38,中文,,0,0,0,,这个地方将再次回归原本的用途
+Dialogue: 0,0:39:08.92,0:39:11.92,副字幕,,0,0,0,,este espacio se volverá a destinar
+Dialogue: 0,0:39:12.00,0:39:15.38,副字幕,,0,0,0,,a los que fueron sus fines originales.
+Dialogue: 0,0:39:16.17,0:39:18.17,副字幕,,0,0,0,,[aplausos]
+Dialogue: 10,0:39:28.08,0:39:31.38,中文,,0,0,0,,我得承认 我没想到您会信守诺言
+Dialogue: 0,0:39:28.08,0:39:31.38,副字幕,,0,0,0,,Tengo que confesar que no pensé que cumpliría su promesa,
+Dialogue: 10,0:39:32.96,0:39:36.58,中文,,0,0,0,,也没想到有生之年还能再看见何塞·阿卡蒂奥那个时代的马孔多
+Dialogue: 0,0:39:32.96,0:39:36.58,副字幕,,0,0,0,,y que no viviría para ver a Macondo como en los tiempos de José Arcadio.
+Dialogue: 10,0:39:37.25,0:39:38.71,中文,,0,0,0,,那是怎样的马孔多？
+Dialogue: 0,0:39:37.25,0:39:38.71,副字幕,,0,0,0,,¿Cómo era eso, comadre?
+Dialogue: 0,0:39:38.79,0:39:40.79,副字幕,,0,0,0,,Mmm… No había bandos
+Dialogue: 10,0:39:39.75,0:39:40.79,中文,,0,0,0,,没有政治立场
+Dialogue: 10,0:39:41.67,0:39:42.75,中文,,0,0,0,,也没有士兵
+Dialogue: 0,0:39:41.67,0:39:42.75,副字幕,,0,0,0,,ni soldados.
+Dialogue: 10,0:39:45.46,0:39:47.29,中文,,0,0,0,,我们不知道何为恐惧
+Dialogue: 0,0:39:45.46,0:39:47.29,副字幕,,0,0,0,,No sabíamos lo que era el miedo.
+Dialogue: 10,0:39:48.71,0:39:51.75,中文,,0,0,0,,大家可以将自家房屋随意粉刷成喜欢的颜色
+Dialogue: 0,0:39:48.71,0:39:51.75,副字幕,,0,0,0,,Y la gente pintaba la casa del color que se le daba la gana.
+Dialogue: 10,0:39:54.04,0:39:56.92,中文,,0,0,0,,很高兴听到我们努力的方向是正确的
+Dialogue: 0,0:39:54.04,0:39:56.92,副字幕,,0,0,0,,Bueno, me alegra saber que vamos por buen camino.
+Dialogue: 10,0:39:57.42,0:39:58.25,中文,,0,0,0,,是的
+Dialogue: 0,0:39:57.42,0:39:58.25,副字幕,,0,0,0,,[Úrsula] Sí…
+Dialogue: 10,0:40:04.21,0:40:05.83,中文,,0,0,0,,有奥雷里亚诺的消息吗？
+Dialogue: 0,0:40:04.21,0:40:05.83,副字幕,,0,0,0,,¿Hay noticias de Aureliano?
+Dialogue: 10,0:40:09.46,0:40:10.33,中文,,0,0,0,,没有
+Dialogue: 0,0:40:09.46,0:40:10.33,副字幕,,0,0,0,,No.
+Dialogue: 10,0:40:13.04,0:40:15.50,中文,,0,0,0,,但愿他在考虑放下武器了
+Dialogue: 0,0:40:13.04,0:40:15.50,副字幕,,0,0,0,,Solo espero que esté considerando dejar las armas.
+Dialogue: 10,0:40:18.00,0:40:20.38,中文,,0,0,0,,人会逐渐习惯战争
+Dialogue: 0,0:40:18.00,0:40:20.38,副字幕,,0,0,0,,Los hombres se acostumbran a la guerra.
+Dialogue: 10,0:40:22.29,0:40:24.54,中文,,0,0,0,,然后再也无法抽离
+Dialogue: 0,0:40:22.29,0:40:24.54,副字幕,,0,0,0,,Luego ya no saben cómo salir de ella.
+Dialogue: 10,0:41:23.75,0:41:24.88,中文,,0,0,0,,我是你的姑姑
+Dialogue: 0,0:41:23.75,0:41:24.88,副字幕,,0,0,0,,Soy tu tía.
+Dialogue: 10,0:41:24.96,0:41:26.71,中文,,0,0,0,,我们在做可怕的事
+Dialogue: 0,0:41:24.96,0:41:28.79,副字幕,,0,0,0,,- Lo que estamos haciendo es horrible. - No es cierto. Es hermoso.
+Dialogue: 10,0:41:26.79,0:41:28.71,中文,,0,0,0,,不 一点也不可怕 它非常美好
+Dialogue: 10,0:41:39.38,0:41:40.21,中文,,0,0,0,,出去
+Dialogue: 0,0:41:39.38,0:41:40.21,副字幕,,0,0,0,,Vete.
+Dialogue: 0,0:41:44.08,0:41:45.71,副字幕,,0,0,0,,[jadean]
+Dialogue: 10,0:41:48.75,0:41:50.88,中文,,0,0,0,,你难道不明白我们在做什么吗？
+Dialogue: 0,0:41:48.75,0:41:50.88,副字幕,,0,0,0,,¿No te das cuenta de lo que estamos haciendo?
+Dialogue: 10,0:41:50.96,0:41:51.88,中文,,0,0,0,,这是罪孽
+Dialogue: 0,0:41:50.96,0:41:51.88,副字幕,,0,0,0,,Es un pecado.
+Dialogue: 10,0:41:52.38,0:41:53.92,中文,,0,0,0,,别再来找我 拜托
+Dialogue: 0,0:41:52.38,0:41:53.92,副字幕,,0,0,0,,Déjame en paz, por favor.
+Dialogue: 10,0:41:56.54,0:41:58.17,中文,,0,0,0,,这是你的真心话吗？
+Dialogue: 0,0:41:56.54,0:41:58.17,副字幕,,0,0,0,,¿En serio eso es lo que quieres?
+Dialogue: 10,0:42:00.92,0:42:03.29,中文,,0,0,0,,再说一遍让我离开 我发誓一定照做
+Dialogue: 0,0:42:00.92,0:42:03.29,副字幕,,0,0,0,,Dime otra vez que te deje y te juro que lo hago.
+Dialogue: 10,0:42:09.75,0:42:11.96,中文,,0,0,0,,我要你离开 走得越远越好
+Dialogue: 0,0:42:09.75,0:42:11.96,副字幕,,0,0,0,,Quiero que te vayas lo más lejos que puedas.
+Dialogue: 10,0:42:16.04,0:42:18.12,中文,,0,0,0,,既然如此 那就让我死在战壕里吧
+Dialogue: 0,0:42:16.04,0:42:18.12,副字幕,,0,0,0,,Entonces, que me maten en una trinchera.
+Dialogue: 10,0:42:20.17,0:42:21.58,中文,,0,0,0,,总好过被你冰冷地对待
+Dialogue: 0,0:42:20.17,0:42:21.58,副字幕,,0,0,0,,Prefiero eso a tu frialdad.
+Dialogue: 0,0:42:23.62,0:42:25.62,副字幕,,0,0,0,,[música sombría]
+Dialogue: 0,0:42:27.00,0:42:28.00,副字幕,,0,0,0,,[puerta se cierra]
+Dialogue: 0,0:42:55.50,0:42:56.50,副字幕,,0,0,0,,[puerta se cierra]
+Dialogue: 0,0:43:00.79,0:43:02.79,副字幕,,0,0,0,,[música sombría continúa]
+Dialogue: 0,0:43:34.12,0:43:36.12,副字幕,,0,0,0,,[música sombría continúa]
+Dialogue: 10,0:44:33.83,0:44:35.12,中文,,0,0,0,,你爷爷呢？
+Dialogue: 0,0:44:33.83,0:44:35.12,副字幕,,0,0,0,,¿Y dónde está tu abuelo?
+Dialogue: 0,0:44:35.21,0:44:36.46,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:44:36.54,0:44:37.54,中文,,0,0,0,,在树后面
+Dialogue: 0,0:44:36.54,0:44:37.54,副字幕,,0,0,0,,Está aquí atrás.
+Dialogue: 10,0:44:38.21,0:44:39.58,中文,,0,0,0,,他一整个早上都那么站着
+Dialogue: 0,0:44:38.21,0:44:39.58,副字幕,,0,0,0,,Lleva así toda la mañana.
+Dialogue: 10,0:44:55.38,0:44:56.96,中文,,0,0,0,,我们刚收到了一封信
+Dialogue: 0,0:44:55.38,0:44:56.96,副字幕,,0,0,0,,Acaba de llegar una carta.
+Dialogue: 10,0:44:57.83,0:44:58.88,中文,,0,0,0,,是奥雷里亚诺写来的
+Dialogue: 0,0:44:57.83,0:44:58.88,副字幕,,0,0,0,,Es de Aureliano.
+Dialogue: 10,0:45:17.42,0:45:19.25,中文,,0,0,0,,他又开始有预感了
+Dialogue: 0,0:45:17.42,0:45:19.25,副字幕,,0,0,0,,Le volvieron los presagios.
+Dialogue: 0,0:45:21.62,0:45:23.88,副字幕,,0,0,0,,[Úrsula llora]
+Dialogue: 0,0:45:30.17,0:45:32.17,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:45:37.71,0:45:39.42,中文,,0,0,0,,我们自水中来
+Dialogue: 0,0:45:37.71,0:45:39.42,副字幕,,0,0,0,,[en latín] ¿Pertenecemos al agua?
+Dialogue: 0,0:46:05.67,0:46:07.67,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 10,0:46:11.08,0:46:16.21,中文,,0,0,0,,（乌苏拉 妈妈 好好照顾爸爸）
+Dialogue: 10,0:46:16.29,0:46:21.54,中文,,0,0,0,,（因为他快要死了奥雷里亚诺·布恩迪亚）
+Dialogue: 10,0:46:27.08,0:46:29.08,中文,,0,0,0,,尽管力量丝毫未减
+Dialogue: 0,0:46:27.08,0:46:29.08,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:46:30.04,0:46:32.83,中文,,0,0,0,,但何塞·阿卡蒂奥·布恩迪亚根本无意反抗
+Dialogue: 0,0:46:30.04,0:46:32.83,副字幕,,0,0,0,,José Arcadio Buendía no estaba en condiciones de luchar.
+Dialogue: 10,0:46:34.00,0:46:37.04,中文,,0,0,0,,这个身量巨硕的老人饱受淫雨骄阳的折磨
+Dialogue: 0,0:46:34.00,0:46:37.04,副字幕,,0,0,0,,Al viejo colosal, macerado por el sol y la lluvia,
+Dialogue: 10,0:46:38.00,0:46:39.75,中文,,0,0,0,,已然对一切都无所谓了
+Dialogue: 0,0:46:38.00,0:46:39.75,副字幕,,0,0,0,,ya todo le daba lo mismo.
+Dialogue: 0,0:46:51.58,0:46:53.58,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 10,0:47:10.38,0:47:11.54,中文,,0,0,0,,你会看到他们的命运
+Dialogue: 0,0:47:10.38,0:47:11.54,副字幕,,0,0,0,,[en latín] Sus destinos
+Dialogue: 10,0:47:12.88,0:47:15.12,中文,,0,0,0,,也会纠缠在一起
+Dialogue: 0,0:47:12.88,0:47:15.12,副字幕,,0,0,0,,también se mezclarán.
+Dialogue: 10,0:47:19.12,0:47:21.12,中文,,0,0,0,,睡一觉吧
+Dialogue: 0,0:47:19.12,0:47:21.12,副字幕,,0,0,0,,[en español] Trata de dormir un poquito.
+Dialogue: 10,0:47:23.29,0:47:25.17,中文,,0,0,0,,多么美好的下午呀
+Dialogue: 0,0:47:23.29,0:47:25.17,副字幕,,0,0,0,,Mira, que la tarde está bonita.
+Dialogue: 10,0:47:26.58,0:47:27.50,中文,,0,0,0,,凉爽宜人
+Dialogue: 0,0:47:26.58,0:47:27.50,副字幕,,0,0,0,,Fresca.
+Dialogue: 0,0:47:52.58,0:47:54.58,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 10,0:48:01.54,0:48:02.88,中文,,0,0,0,,等等 亲爱的！
+Dialogue: 0,0:48:01.54,0:48:02.88,副字幕,,0,0,0,,¡Espérate, mujer!
+Dialogue: 10,0:48:04.38,0:48:06.17,中文,,0,0,0,,我还不困
+Dialogue: 0,0:48:04.38,0:48:06.17,副字幕,,0,0,0,,Yo todavía no tengo sueño.
+Dialogue: 10,0:48:06.96,0:48:11.29,中文,,0,0,0,,何塞·阿卡蒂奥·布恩迪亚在一个有无穷房间的梦中得到了慰藉
+Dialogue: 0,0:48:06.96,0:48:09.12,副字幕,,0,0,0,,[narrador] se consolaba
+Dialogue: 0,0:48:09.21,0:48:11.29,副字幕,,0,0,0,,con el sueño de los cuartos infinitos.
+Dialogue: 10,0:48:12.17,0:48:14.50,中文,,0,0,0,,他梦见自己从床上起来
+Dialogue: 0,0:48:12.17,0:48:14.50,副字幕,,0,0,0,,Soñaba que se levantaba de la cama,
+Dialogue: 10,0:48:15.71,0:48:16.92,中文,,0,0,0,,打开房门
+Dialogue: 0,0:48:15.71,0:48:16.92,副字幕,,0,0,0,,abría la puerta
+Dialogue: 10,0:48:17.83,0:48:19.08,中文,,0,0,0,,走进另一个房间
+Dialogue: 0,0:48:17.83,0:48:19.08,副字幕,,0,0,0,,y pasaba a otro cuarto.
+Dialogue: 10,0:48:35.67,0:48:36.71,中文,,0,0,0,,我的孩子
+Dialogue: 0,0:48:35.67,0:48:36.71,副字幕,,0,0,0,,Mi muchacho…
+Dialogue: 0,0:48:41.17,0:48:43.17,副字幕,,0,0,0,,[música suave alegre]
+Dialogue: 10,0:49:11.38,0:49:12.62,中文,,0,0,0,,梅贾德斯
+Dialogue: 0,0:49:11.38,0:49:12.62,副字幕,,0,0,0,,Melquíades.
+Dialogue: 10,0:49:14.12,0:49:15.29,中文,,0,0,0,,我的老朋友
+Dialogue: 0,0:49:14.12,0:49:15.29,副字幕,,0,0,0,,Mi viejo amigo…
+Dialogue: 10,0:49:28.04,0:49:29.46,中文,,0,0,0,,再进入另一个房间
+Dialogue: 0,0:49:28.04,0:49:29.46,副字幕,,0,0,0,,[narrador]
+Dialogue: 10,0:49:30.25,0:49:32.08,中文,,0,0,0,,如同在镜廊中漫步
+Dialogue: 0,0:49:30.25,0:49:32.08,副字幕,,0,0,0,,como en una galería de espejos,
+Dialogue: 10,0:49:32.75,0:49:35.62,中文,,0,0,0,,直到在某个房间里发现他的一个后代
+Dialogue: 0,0:49:32.75,0:49:35.62,副字幕,,0,0,0,,hasta que se encontró en uno de ellos con su descendiente,
+Dialogue: 10,0:49:36.46,0:49:38.04,中文,,0,0,0,,奥雷里亚诺·巴比罗尼亚
+Dialogue: 0,0:49:36.46,0:49:38.12,副字幕,,0,0,0,,Aureliano Babilonia,
+Dialogue: 10,0:49:38.21,0:49:40.33,中文,,0,0,0,,在多年以后阅读着
+Dialogue: 0,0:49:38.21,0:49:40.38,副字幕,,0,0,0,,leyendo muchos años después
+Dialogue: 10,0:49:40.46,0:49:42.12,中文,,0,0,0,,梅贾德斯留下的手稿
+Dialogue: 0,0:49:40.46,0:49:42.12,副字幕,,0,0,0,,en los manuscritos de Melquíades
+Dialogue: 10,0:49:43.71,0:49:46.33,中文,,0,0,0,,而书正翻到他生命中的这一刻
+Dialogue: 0,0:49:43.71,0:49:46.33,副字幕,,0,0,0,,ese mismo momento que él estaba viviendo.
+Dialogue: 10,0:49:51.54,0:49:52.83,中文,,0,0,0,,普鲁丹修
+Dialogue: 0,0:49:51.54,0:49:52.83,副字幕,,0,0,0,,Prudencio…
+Dialogue: 0,0:49:59.75,0:50:01.75,副字幕,,0,0,0,,[música suave continúa]
+Dialogue: 0,0:50:28.50,0:50:30.50,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:50:33.50,0:50:35.96,中文,,0,0,0,,无数小黄花如细雨般缤纷飘落
+Dialogue: 0,0:50:33.50,0:50:35.96,副字幕,,0,0,0,,[narrador] de minúsculas flores amarillas
+Dialogue: 0,0:50:36.04,0:50:39.33,副字幕,,0,0,0,,cayó toda la noche sobre el pueblo en una tormenta silenciosa.
+Dialogue: 10,0:50:36.46,0:50:39.33,中文,,0,0,0,,满天花雨形成一场寂静的风暴在镇上落了一夜
+Dialogue: 10,0:50:49.04,0:50:51.67,中文,,0,0,0,,花朵覆盖了屋顶 堵住了房门
+Dialogue: 0,0:50:49.04,0:50:51.67,副字幕,,0,0,0,,Cubrieron los techos y atascaron las puertas.
+Dialogue: 10,0:50:56.75,0:51:00.33,中文,,0,0,0,,大街小巷都覆上了一层细密的花毯人们只好用铲子
+Dialogue: 0,0:50:56.75,0:51:00.33,副字幕,,0,0,0,,Tantas flores cayeron que tuvieron que despejar las calles con palas
+Dialogue: 10,0:51:00.42,0:51:02.50,中文,,0,0,0,,为送葬的队伍清理出通道来
+Dialogue: 0,0:51:00.42,0:51:02.50,副字幕,,0,0,0,,para que pudiera pasar el entierro.
+Dialogue: 0,0:51:08.92,0:51:10.92,副字幕,,0,0,0,,[suena música triste]
+Dialogue: 0,0:52:40.21,0:52:42.21,副字幕,,0,0,0,,[bullicio]
+Dialogue: 10,0:52:43.25,0:52:45.92,中文,,0,0,0,,在父亲去世多年后的
+Dialogue: 0,0:52:43.25,0:52:45.92,副字幕,,0,0,0,,[narrador] de la muerte de su padre,
+Dialogue: 10,0:52:46.54,0:52:47.67,中文,,0,0,0,,某个十月一日
+Dialogue: 0,0:52:46.54,0:52:47.67,副字幕,,0,0,0,,un primero de octubre,
+Dialogue: 10,0:52:48.88,0:52:50.33,中文,,0,0,0,,奥雷里亚诺·布恩迪亚上校
+Dialogue: 0,0:52:48.88,0:52:51.79,副字幕,,0,0,0,,el coronel Aureliano Buendía, con mil hombres bien armados,
+Dialogue: 10,0:52:50.42,0:52:53.00,中文,,0,0,0,,率领一千名全副武装的士兵返回马孔多
+Dialogue: 0,0:52:51.88,0:52:53.00,副字幕,,0,0,0,,volvió a Macondo,
+Dialogue: 10,0:52:54.08,0:52:57.33,中文,,0,0,0,,当地驻军收到的命令是坚守到底
+Dialogue: 0,0:52:54.08,0:52:57.33,副字幕,,0,0,0,,y la guarnición recibió la orden de resistir hasta el final.
+Dialogue: 10,0:52:57.42,0:53:00.58,中文,,0,0,0,,女士们先生们 请各自回家去！
+Dialogue: 0,0:52:57.42,0:52:58.88,副字幕,,0,0,0,,¡Señoras, señores!
+Dialogue: 0,0:52:58.96,0:53:00.58,副字幕,,0,0,0,,¡Vayan a sus casas!
+Dialogue: 0,0:53:04.17,0:53:06.17,副字幕,,0,0,0,,[bullicio continúa]
+Dialogue: 10,0:53:08.42,0:53:11.08,中文,,0,0,0,,保护好自己！叛军来了 警醒一点！
+Dialogue: 0,0:53:08.42,0:53:11.08,副字幕,,0,0,0,,[Moncada] ¡Defiendan que ya vinieron! ¡Despiertos!
+Dialogue: 10,0:53:11.17,0:53:14.62,中文,,0,0,0,,快走！到前面去 把那架大炮推过去
+Dialogue: 0,0:53:11.17,0:53:12.71,副字幕,,0,0,0,,¡Vamos, adelante!
+Dialogue: 0,0:53:13.25,0:53:14.62,副字幕,,0,0,0,,¡Ese cañón, adelante!
+Dialogue: 10,0:53:16.58,0:53:17.42,中文,,0,0,0,,很好！
+Dialogue: 0,0:53:16.58,0:53:17.42,副字幕,,0,0,0,,¡Muy bien!
+Dialogue: 10,0:53:18.62,0:53:19.62,中文,,0,0,0,,何塞·拉奎！
+Dialogue: 0,0:53:18.62,0:53:19.62,副字幕,,0,0,0,,¡José Raquel!
+Dialogue: 10,0:53:20.46,0:53:22.04,中文,,0,0,0,,何塞·拉奎 出什么事了？
+Dialogue: 0,0:53:20.46,0:53:22.04,副字幕,,0,0,0,,José Raquel, ¿qué está pasando?
+Dialogue: 10,0:53:22.54,0:53:23.62,中文,,0,0,0,,奥雷里亚诺
+Dialogue: 0,0:53:22.54,0:53:23.62,副字幕,,0,0,0,,Aureliano.
+Dialogue: 10,0:53:24.12,0:53:26.08,中文,,0,0,0,,他和他的军队在黎明时抵达
+Dialogue: 0,0:53:24.12,0:53:26.08,副字幕,,0,0,0,,Llegó de madrugada con su ejército.
+Dialogue: 10,0:53:30.54,0:53:31.67,中文,,0,0,0,,您打算怎么办？
+Dialogue: 0,0:53:30.54,0:53:31.67,副字幕,,0,0,0,,¿Usted qué va a hacer?
+Dialogue: 10,0:53:32.33,0:53:33.38,中文,,0,0,0,,若他们发动进攻
+Dialogue: 0,0:53:32.33,0:53:33.38,副字幕,,0,0,0,,Si nos atacan,
+Dialogue: 10,0:53:33.88,0:53:34.96,中文,,0,0,0,,我们只好反击
+Dialogue: 0,0:53:33.88,0:53:34.96,副字幕,,0,0,0,,nos vamos a defender.
+Dialogue: 10,0:53:35.46,0:53:37.92,中文,,0,0,0,,把机关枪放这里！前面也要放！
+Dialogue: 0,0:53:35.46,0:53:37.92,副字幕,,0,0,0,,¡La ametralladora, acá! ¡Adelante también!
+Dialogue: 10,0:53:39.29,0:53:42.12,中文,,0,0,0,,-都准备好了吗？-真不知道你们两个谁更蠢
+Dialogue: 0,0:53:39.29,0:53:42.12,副字幕,,0,0,0,,- ¿Todo listo? - ¡No sé cuál de los dos es más bruto!
+Dialogue: 10,0:53:44.62,0:53:50.79,中文,,0,0,0,,（公立学校）
+Dialogue: 0,0:53:44.62,0:53:46.62,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:54:10.54,0:54:13.79,中文,,0,0,0,,乌苏拉感觉眼前的儿子恍如一个陌生人
+Dialogue: 0,0:54:10.54,0:54:13.79,副字幕,,0,0,0,,[narrador] de que su hijo era un extraño.
+Dialogue: 10,0:54:15.75,0:54:18.21,中文,,0,0,0,,他的脸庞镀上了一层钢铁般的冷硬
+Dialogue: 0,0:54:15.75,0:54:18.21,副字幕,,0,0,0,,Su rostro había adquirido una dureza metálica
+Dialogue: 10,0:54:18.92,0:54:22.50,中文,,0,0,0,,显现出以往不曾有过的不念旧情的凉薄
+Dialogue: 0,0:54:18.92,0:54:22.50,副字幕,,0,0,0,,y manifestaba los primeros síntomas de resistencia a la nostalgia.
+Dialogue: 10,0:54:28.00,0:54:28.88,中文,,0,0,0,,奥雷里亚诺
+Dialogue: 0,0:54:28.00,0:54:28.88,副字幕,,0,0,0,,Aureliano…
+Dialogue: 10,0:54:29.88,0:54:30.79,中文,,0,0,0,,母亲
+Dialogue: 0,0:54:29.88,0:54:30.79,副字幕,,0,0,0,,Madre…
+Dialogue: 0,0:54:30.88,0:54:32.17,副字幕,,0,0,0,,[música cesa]
+Dialogue: 10,0:54:34.17,0:54:35.71,中文,,0,0,0,,你要进攻马孔多吗？
+Dialogue: 0,0:54:34.17,0:54:35.71,副字幕,,0,0,0,,¿Vas a atacar a Macondo?
+Dialogue: 10,0:54:37.08,0:54:38.29,中文,,0,0,0,,太荒谬了
+Dialogue: 0,0:54:37.08,0:54:38.29,副字幕,,0,0,0,,Es una atrocidad.
+Dialogue: 10,0:54:38.96,0:54:40.12,中文,,0,0,0,,我别无选择
+Dialogue: 0,0:54:38.96,0:54:40.12,副字幕,,0,0,0,,No hay otra forma.
+Dialogue: 10,0:54:40.83,0:54:42.79,中文,,0,0,0,,我们必须推翻政府的统治
+Dialogue: 0,0:54:40.83,0:54:42.79,副字幕,,0,0,0,,Tenemos que derrocar al gobierno.
+Dialogue: 10,0:54:43.75,0:54:45.08,中文,,0,0,0,,奥雷里亚诺 天啊…
+Dialogue: 0,0:54:43.75,0:54:45.08,副字幕,,0,0,0,,Aureliano, por Dios…
+Dialogue: 10,0:54:47.50,0:54:50.00,中文,,0,0,0,,大伙儿已经好久没有过如此平静的生活了
+Dialogue: 0,0:54:47.50,0:54:50.00,副字幕,,0,0,0,,Hace rato que no estábamos tan tranquilos.
+Dialogue: 10,0:54:52.21,0:54:55.25,中文,,0,0,0,,镇上没有人想再回到谈论政党的日子
+Dialogue: 0,0:54:52.21,0:54:55.25,副字幕,,0,0,0,,Nadie volvió a hablar de partidos en el pueblo.
+Dialogue: 10,0:54:57.71,0:54:59.00,中文,,0,0,0,,别这么做 儿子
+Dialogue: 0,0:54:57.71,0:54:59.00,副字幕,,0,0,0,,No lo hagas, hijo.
+Dialogue: 10,0:55:11.21,0:55:13.83,中文,,0,0,0,,我会给蒙卡达投降的机会
+Dialogue: 0,0:55:11.21,0:55:13.83,副字幕,,0,0,0,,Le voy a dar a Moncada la opción de rendirse.
+Dialogue: 10,0:55:14.50,0:55:16.04,中文,,0,0,0,,这已经是仁至义尽了
+Dialogue: 0,0:55:14.50,0:55:16.04,副字幕,,0,0,0,,Eso es más que suficiente.
+Dialogue: 10,0:55:16.67,0:55:19.00,中文,,0,0,0,,你是这群不法之徒的首领
+Dialogue: 0,0:55:16.67,0:55:19.00,副字幕,,0,0,0,,¡Tú eres el jefe de estos bandidos
+Dialogue: 0,0:55:19.08,0:55:22.17,副字幕,,0,0,0,,y puedes decidir no dejar entrar otra vez la guerra a Macondo!
+Dialogue: 10,0:55:19.21,0:55:22.17,中文,,0,0,0,,你可以选择不再给马孔多带来战争！
+Dialogue: 10,0:55:22.79,0:55:24.88,中文,,0,0,0,,我要为了自由主义事业夺回马孔多
+Dialogue: 0,0:55:22.79,0:55:24.88,副字幕,,0,0,0,,¿Sabes cuántos años llevo esperando
+Dialogue: 0,0:55:24.96,0:55:27.96,副字幕,,0,0,0,,el momento de recuperar Macondo para nuestra causa?
+Dialogue: 10,0:55:25.50,0:55:27.96,中文,,0,0,0,,你知道为这一刻我等了多少年吗？
+Dialogue: 10,0:55:31.12,0:55:32.17,中文,,0,0,0,,我不知道
+Dialogue: 0,0:55:31.12,0:55:32.17,副字幕,,0,0,0,,No sé.
+Dialogue: 10,0:55:36.17,0:55:37.67,中文,,0,0,0,,但我知道的是
+Dialogue: 0,0:55:36.17,0:55:37.67,副字幕,,0,0,0,,Pero lo que sí sé…
+Dialogue: 10,0:55:39.04,0:55:41.54,中文,,0,0,0,,你现在做正确的事还不算晚
+Dialogue: 0,0:55:39.04,0:55:41.54,副字幕,,0,0,0,,es que estás a tiempo de hacer lo correcto.
+Dialogue: 0,0:55:42.67,0:55:44.67,副字幕,,0,0,0,,[música sombría]
+Dialogue: 10,0:55:53.21,0:55:56.71,中文,,0,0,0,,（全副武装 我们必胜）
+Dialogue: 10,0:55:58.75,0:55:59.88,中文,,0,0,0,,…亡者
+Dialogue: 0,0:55:58.75,0:55:59.88,副字幕,,0,0,0,,[Úrsula] …difuntos.
+Dialogue: 10,0:56:00.62,0:56:02.33,中文,,0,0,0,,赎世的天主圣子
+Dialogue: 0,0:56:00.62,0:56:04.38,副字幕,,0,0,0,,Dios, Hijo, redentor del mundo, ten piedad de todos tus fieles.
+Dialogue: 10,0:56:02.42,0:56:04.25,中文,,0,0,0,,求你垂怜亡者
+Dialogue: 10,0:56:05.83,0:56:07.08,中文,,0,0,0,,（何塞·阿卡蒂奥·布恩迪亚）
+Dialogue: 0,0:56:06.75,0:56:10.75,副字幕,,0,0,0,,Dios, Espíritu Santo, ten piedad de todos tus fieles difuntos.
+Dialogue: 10,0:56:07.17,0:56:08.83,中文,,0,0,0,,赎世的天主圣子
+Dialogue: 10,0:56:08.92,0:56:10.62,中文,,0,0,0,,求你垂怜亡者
+Dialogue: 10,0:56:12.67,0:56:15.88,中文,,0,0,0,,掌握死亡和阴间之钥匙的圣神
+Dialogue: 0,0:56:12.67,0:56:15.88,副字幕,,0,0,0,,Tú que tienes las llaves de la muerte y del infierno,
+Dialogue: 10,0:56:16.71,0:56:18.17,中文,,0,0,0,,吾等向你祈求…
+Dialogue: 0,0:56:16.71,0:56:18.17,副字幕,,0,0,0,,te rogamos, óyenos.
+Dialogue: 10,0:56:19.54,0:56:20.71,中文,,0,0,0,,仁爱救世天主
+Dialogue: 0,0:56:19.54,0:56:20.71,副字幕,,0,0,0,,Redentor del mundo,
+Dialogue: 10,0:56:21.38,0:56:24.12,中文,,0,0,0,,求你垂怜亡者
+Dialogue: 0,0:56:21.38,0:56:24.12,副字幕,,0,0,0,,ten piedad de todos tus fieles difuntos.
+Dialogue: 10,0:56:27.62,0:56:29.88,中文,,0,0,0,,三位一体的天主
+Dialogue: 0,0:56:27.62,0:56:30.29,副字幕,,0,0,0,,Santísima Trinidad, un solo Dios.
+Dialogue: 10,0:56:30.38,0:56:34.00,中文,,0,0,0,,在天的天主圣父 求你垂怜亡者
+Dialogue: 0,0:56:30.38,0:56:34.00,副字幕,,0,0,0,,Dios, padre del cielo, ten piedad de todos tus fieles difuntos.
+Dialogue: 10,0:56:35.38,0:56:38.88,中文,,0,0,0,,掌握死亡和阴间之钥匙的圣神
+Dialogue: 0,0:56:35.38,0:56:38.88,副字幕,,0,0,0,,Tú que tienes las llaves de la muerte y el infierno,
+Dialogue: 10,0:56:40.42,0:56:41.58,中文,,0,0,0,,吾等向你祈求
+Dialogue: 0,0:56:40.42,0:56:41.58,副字幕,,0,0,0,,te rogamos…
+Dialogue: 0,0:56:44.04,0:56:44.92,副字幕,,0,0,0,,[disparo]
+Dialogue: 0,0:56:46.08,0:56:48.08,副字幕,,0,0,0,,[gritos]
+Dialogue: 10,0:57:01.62,0:57:04.92,中文,,0,0,0,,我们没能逃脱命运何塞·阿卡蒂奥·布恩迪亚
+Dialogue: 0,0:57:01.62,0:57:04.92,副字幕,,0,0,0,,No nos libramos de nada, José Arcadio Buendía.
+Dialogue: 0,0:57:05.00,0:57:07.00,副字幕,,0,0,0,,[música dramática]
+Dialogue: 10,0:57:08.71,0:57:10.83,中文,,0,0,0,,我们最终还是生出了一个怪物
+Dialogue: 0,0:57:08.71,0:57:10.83,副字幕,,0,0,0,,Terminamos creando un monstruo.
+Dialogue: 10,0:57:10.92,0:57:13.92,中文,,0,0,0,,进攻！
+Dialogue: 0,0:57:10.92,0:57:13.92,副字幕,,0,0,0,,¡Ataquen!
+Dialogue: 0,0:57:14.00,0:57:16.00,副字幕,,0,0,0,,[música dramática continúa]
+Dialogue: 10,0:57:20.25,0:57:22.50,中文,,0,0,0,,（根据加夫列尔·加西亚·马尔克斯小说改编）
+Dialogue: 0,0:58:10.92,0:58:12.92,副字幕,,0,0,0,,[música inquietante]
+Dialogue: 10,1:03:12.67,1:03:15.08,中文,,0,0,0,,字幕翻译：覃璇
