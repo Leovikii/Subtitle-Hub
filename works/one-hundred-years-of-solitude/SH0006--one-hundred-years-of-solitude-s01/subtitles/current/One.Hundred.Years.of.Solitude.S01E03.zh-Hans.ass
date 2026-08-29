@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.2
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -438,7 +438,7 @@ Dialogue: 10,0:24:26.75,0:24:29.67,CN-Main,,0,0,0,,（卡塔利诺）
 Dialogue: 10,0:24:31.12,0:24:33.04,CN-Main,,0,0,0,,顾客就该喝酒！
 Dialogue: 0,0:24:31.12,0:24:33.04,ES-Main,,0,0,0,,¡Quiero tener clientes que chupen!
 Dialogue: 10,0:24:43.33,0:24:46.46,CN-Main,,0,0,0,,（马孔多-上帝存在）
-Dialogue: 10,0:24:46.54,0:24:49.58,CN-Main,,0,0,0,,乌苏拉！快带上孩子们！
+Dialogue: 10,0:24:46.54,0:24:49.58,CN-Main,,0,0,0,,乌尔苏拉！快带上孩子们！
 Dialogue: 0,0:24:46.54,0:24:49.58,ES-Main,,0,0,0,,¡Úrsula! ¡Agarra a los niños!
 Dialogue: 10,0:24:49.67,0:24:51.00,CN-Main,,0,0,0,,嘿 布恩迪亚！
 Dialogue: 10,0:24:54.67,0:24:58.21,CN-Main,,0,0,0,,或许你那只公鸡能帮上你妻子的忙
@@ -503,7 +503,7 @@ Dialogue: 10,0:31:27.50,0:31:29.58,CN-Main,,0,0,0,,耐心点 何塞·阿尔卡�
 Dialogue: 0,0:31:27.50,0:31:29.58,ES-Main,,0,0,0,,Tienes que tener paciencia, José Arcadio.
 Dialogue: 10,0:31:30.21,0:31:32.12,CN-Main,,0,0,0,,你会亲眼见证的
 Dialogue: 0,0:31:30.21,0:31:32.12,ES-Main,,0,0,0,,Lo vas a ver por tus propios ojos.
-Dialogue: 10,0:31:32.71,0:31:33.75,CN-Main,,0,0,0,,乌苏拉
+Dialogue: 10,0:31:32.71,0:31:33.75,CN-Main,,0,0,0,,乌尔苏拉
 Dialogue: 0,0:31:32.71,0:31:33.75,ES-Main,,0,0,0,,¡Úrsula!
 Dialogue: 10,0:31:34.42,0:31:35.46,CN-Main,,0,0,0,,-我们准备好了-来了！
 Dialogue: 0,0:31:34.42,0:31:35.46,ES-Main,,0,0,0,,Ya estamos.
@@ -806,7 +806,7 @@ Dialogue: 10,0:43:40.33,0:43:41.92,CN-Main,,0,0,0,,你们吵什么呢？
 Dialogue: 0,0:43:40.33,0:43:41.92,ES-Main,,0,0,0,,¿Y ustedes por qué están así?
 Dialogue: 10,0:43:42.83,0:43:44.00,CN-Main,,0,0,0,,还都光着身子
 Dialogue: 0,0:43:42.83,0:43:44.00,ES-Main,,0,0,0,,¿Desvestidas?
-Dialogue: 10,0:43:45.67,0:43:51.08,CN-Main,,0,0,0,,乌苏拉意识到女儿们已经到了适婚的年龄
+Dialogue: 10,0:43:45.67,0:43:51.08,CN-Main,,0,0,0,,乌尔苏拉意识到女儿们已经到了适婚的年龄
 Dialogue: 0,0:43:45.67,0:43:51.08,ES-Main,,0,0,0,,de que sus hijas estaban en edad de casarse.
 Dialogue: 10,0:43:51.71,0:43:55.33,CN-Main,,0,0,0,,犹如感染了丈夫的头脑发热
 Dialogue: 0,0:43:51.71,0:43:55.33,ES-Main,,0,0,0,,Y como si hubiera contraído la fiebre alucinante de su esposo,
@@ -972,7 +972,7 @@ Dialogue: 10,0:51:56.58,0:51:58.29,CN-Main,,0,0,0,,很荣幸认识你 丽贝卡
 Dialogue: 0,0:51:56.58,0:51:58.29,ES-Main,,0,0,0,,Ha sido un placer, Rebeca.
 Dialogue: 10,0:52:06.71,0:52:07.79,CN-Main,,0,0,0,,阿玛兰妲小姐
 Dialogue: 0,0:52:06.71,0:52:07.79,ES-Main,,0,0,0,,Señorita Amaranta.
-Dialogue: 10,0:52:11.71,0:52:14.75,CN-Main,,0,0,0,,乌苏拉女士 谢谢款待
+Dialogue: 10,0:52:11.71,0:52:14.75,CN-Main,,0,0,0,,乌尔苏拉女士 谢谢款待
 Dialogue: 0,0:52:11.71,0:52:14.75,ES-Main,,0,0,0,,Señora Úrsula.
 Dialogue: 10,0:52:14.83,0:52:17.33,CN-Main,,0,0,0,,这次到访很愉快 我一定会再回来
 Dialogue: 0,0:52:14.83,0:52:17.33,ES-Main,,0,0,0,,Gracias por todo. Ha estado bellísimo. Prometo regresar.
@@ -998,7 +998,7 @@ Dialogue: 10,0:55:05.25,0:55:06.38,CN-Main,,0,0,0,,谢谢
 Dialogue: 0,0:55:05.25,0:55:06.38,ES-Main,,0,0,0,,Gracias.
 Dialogue: 10,0:55:06.46,0:55:08.92,CN-Main,,0,0,0,,谢谢 请进
 Dialogue: 0,0:55:06.46,0:55:08.92,ES-Main,,0,0,0,,Gracias. Sigan, por favor, adelante. Muchas gracias. Sigan.
-Dialogue: 10,0:55:09.00,0:55:11.17,CN-Main,,0,0,0,,-谢谢 请进-乌苏拉！
+Dialogue: 10,0:55:09.00,0:55:11.17,CN-Main,,0,0,0,,-谢谢 请进-乌尔苏拉！
 Dialogue: 10,0:55:11.25,0:55:14.08,CN-Main,,0,0,0,,你好 晚上好 请进
 Dialogue: 0,0:55:11.25,0:55:14.08,ES-Main,,0,0,0,,Gracias por la invitación. ¿Cómo está? Buenas noches, gracias.
 Dialogue: 10,0:55:14.29,0:55:17.08,CN-Main,,0,0,0,,比西塔西翁 去给客人上点心吧
@@ -1015,7 +1015,7 @@ Dialogue: 10,0:55:48.33,0:55:50.58,CN-Main,,0,0,0,,在那些前途不明的岁�
 Dialogue: 0,0:55:48.33,0:55:50.58,ES-Main,,0,0,0,,¿Quién sabe dónde estaríamos José Arcadio y yo
 Dialogue: 10,0:55:51.17,0:55:53.88,CN-Main,,0,0,0,,否则我和何塞·阿尔卡蒂奥真不知会是何光景
 Dialogue: 0,0:55:51.17,0:55:53.88,ES-Main,,0,0,0,,si ustedes no nos hubieran seguido en semejante locura?
-Dialogue: 10,0:55:54.46,0:55:58.04,CN-Main,,0,0,0,,乌苏拉 你邀请我们来是为了让大伙儿抱头痛哭吗？
+Dialogue: 10,0:55:54.46,0:55:58.04,CN-Main,,0,0,0,,乌尔苏拉 你邀请我们来是为了让大伙儿抱头痛哭吗？
 Dialogue: 0,0:55:54.46,0:55:58.04,ES-Main,,0,0,0,,Bueno, ¿y entonces, comadre? ¿Nos invitaste a llorar afuera o qué?
 Dialogue: 10,0:55:59.33,0:56:01.17,CN-Main,,0,0,0,,当然不是 马尼费科
 Dialogue: 0,0:55:59.33,0:56:01.17,ES-Main,,0,0,0,,Pues claro que no, Magnífico.

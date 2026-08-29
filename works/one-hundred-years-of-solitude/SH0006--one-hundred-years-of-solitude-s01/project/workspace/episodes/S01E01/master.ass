@@ -32,7 +32,7 @@ Dialogue: 10,0:03:13.21,0:03:15.54,CN-Main,,0,0,0,,他们从小一起长大而�
 Dialogue: 0,0:03:13.21,0:03:15.54,ES-Main,,0,0,0,,Habían crecido juntos en la antigua ranchería
 Dialogue: 10,0:03:15.75,0:03:19.92,CN-Main,,0,0,0,,逐渐被先祖们改造成了那一带最繁荣的小镇
 Dialogue: 0,0:03:15.75,0:03:19.92,ES-Main,,0,0,0,,que sus antepasados transformaron en uno de los mejores pueblos de la provincia.
-Dialogue: 10,0:03:23.88,0:03:26.71,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚让可怜的乌苏拉喘口气吧
+Dialogue: 10,0:03:23.88,0:03:26.71,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚让可怜的乌尔苏拉喘口气吧
 Dialogue: 0,0:03:23.88,0:03:26.71,ES-Main,,0,0,0,,José Arcadio Buendía, ya deja respirar a la pobre Úrsula.
 Dialogue: 10,0:03:26.79,0:03:28.21,CN-Main,,0,0,0,,再多等会儿 老兄
 Dialogue: 0,0:03:26.79,0:03:28.21,ES-Main,,0,0,0,,¡Aguántate un ratito, hombre!
@@ -50,7 +50,7 @@ Dialogue: 10,0:03:58.21,0:04:00.33,CN-Main,,0,0,0,,几个世纪以来的异族�
 Dialogue: 0,0:03:58.21,0:04:00.33,ES-Main,,0,0,0,,de que aquellos saludables cabos de dos razas secularmente entrecruzadas
 Dialogue: 10,0:04:00.46,0:04:03.00,CN-Main,,0,0,0,,会令他们生出鬣蜥模样的怪胎
 Dialogue: 0,0:04:00.46,0:04:03.00,ES-Main,,0,0,0,,pasaran por la vergüenza de engendrar iguanas.
-Dialogue: 10,0:04:17.00,0:04:20.79,CN-Main,,0,0,0,,假如乌苏拉的母亲没有对他们的后代做各种不祥的预示
+Dialogue: 10,0:04:17.00,0:04:20.79,CN-Main,,0,0,0,,假如乌尔苏拉的母亲没有对他们的后代做各种不祥的预示
 Dialogue: 0,0:04:17.00,0:04:20.79,ES-Main,,0,0,0,,si la madre de Úrsula no la hubiera aterrorizado
 Dialogue: 10,0:04:20.92,0:04:24.12,CN-Main,,0,0,0,,令她担惊受怕他们婚后的生活本该是美满的
 Dialogue: 0,0:04:20.92,0:04:24.12,ES-Main,,0,0,0,,con toda clase de pronósticos siniestros sobre su descendencia.
@@ -230,7 +230,7 @@ Dialogue: 10,0:18:41.17,0:18:43.92,CN-Main,,0,0,0,,想找清水浸湿手中的�
 Dialogue: 0,0:18:41.17,0:18:43.92,ES-Main,,0,0,0,,buscando agua para mojar su tapón de esparto.
 Dialogue: 10,0:18:48.83,0:18:51.62,CN-Main,,0,0,0,,看到死人掀开锅碗瓢盆翻找的样子
 Dialogue: 0,0:18:48.83,0:18:51.62,ES-Main,,0,0,0,,Úrsula estaba tan conmovida que, después de ver al muerto
-Dialogue: 10,0:18:51.79,0:18:54.96,CN-Main,,0,0,0,,乌苏拉内心大为触动便在家中各处摆放水罐
+Dialogue: 10,0:18:51.79,0:18:54.96,CN-Main,,0,0,0,,乌尔苏拉内心大为触动便在家中各处摆放水罐
 Dialogue: 0,0:18:51.79,0:18:54.96,ES-Main,,0,0,0,,destapando las ollas, le puso tazones de agua por toda la casa.
 Dialogue: 10,0:18:57.79,0:18:59.83,CN-Main,,0,0,0,,要我怎么做你才肯离开？
 Dialogue: 0,0:18:57.79,0:18:59.83,ES-Main,,0,0,0,,¿Qué tengo que hacer para que te vayas?
@@ -264,7 +264,7 @@ Dialogue: 10,0:21:14.00,0:21:14.96,CN-Main,,0,0,0,,谢谢爸爸
 Dialogue: 0,0:21:14.00,0:21:14.96,ES-Main,,0,0,0,,Gracias, papá.
 Dialogue: 10,0:21:18.67,0:21:19.50,CN-Main,,0,0,0,,再见 妈妈
 Dialogue: 0,0:21:18.67,0:21:19.50,ES-Main,,0,0,0,,Adiós, mamá.
-Dialogue: 10,0:21:22.88,0:21:23.79,CN-Main,,0,0,0,,乌苏拉
+Dialogue: 10,0:21:22.88,0:21:23.79,CN-Main,,0,0,0,,乌尔苏拉
 Dialogue: 0,0:21:22.88,0:21:23.79,ES-Main,,0,0,0,,Úrsula.
 Dialogue: 10,0:21:26.58,0:21:28.12,CN-Main,,0,0,0,,无论去到哪里…
 Dialogue: 0,0:21:26.58,0:21:28.12,ES-Main,,0,0,0,,No importa a dónde vayas…
@@ -301,7 +301,7 @@ Dialogue: 10,0:25:48.96,0:25:51.83,CN-Main,,0,0,0,,加把劲！出来了！
 Dialogue: 0,0:25:48.96,0:25:51.83,ES-Main,,0,0,0,,¡Duro! ¡Ahí viene, viene, viene!
 Dialogue: 10,0:26:13.29,0:26:17.12,CN-Main,,0,0,0,,虽然吃了猴肉 喝了蛇汤……
 Dialogue: 0,0:26:13.29,0:26:17.12,ES-Main,,0,0,0,,por carne de mico y caldo de culebra…
-Dialogue: 10,0:26:18.75,0:26:23.75,CN-Main,,0,0,0,,乌苏拉在庇拉尔·特尔内拉的帮助下生下了一名完全正常的男婴
+Dialogue: 10,0:26:18.75,0:26:23.75,CN-Main,,0,0,0,,乌尔苏拉在庇拉尔·特尔内拉的帮助下生下了一名完全正常的男婴
 Dialogue: 0,0:26:18.75,0:26:21.67,ES-Main,,0,0,0,,…Úrsula dio a luz un hijo con todas sus partes humanas,
 Dialogue: 0,0:26:21.88,0:26:23.75,ES-Main,,0,0,0,,con la ayuda de Pilar Ternera.
 Dialogue: 10,0:27:05.08,0:27:06.71,CN-Main,,0,0,0,,快跟上！
@@ -462,13 +462,13 @@ Dialogue: 10,0:36:55.04,0:36:56.71,CN-Main,,0,0,0,,他还给每家每户都送�
 Dialogue: 0,0:36:55.04,0:36:56.71,ES-Main,,0,0,0,,sino todas las de la aldea.
 Dialogue: 10,0:37:02.17,0:37:05.75,CN-Main,,0,0,0,,形形色色的鸟儿开起演唱会令人晕头转向
 Dialogue: 0,0:37:02.17,0:37:05.75,ES-Main,,0,0,0,,llegó a ser tan aturdidor
-Dialogue: 10,0:37:06.83,0:37:09.12,CN-Main,,0,0,0,,乌苏拉几乎被吵得灵魂出窍
+Dialogue: 10,0:37:06.83,0:37:09.12,CN-Main,,0,0,0,,乌尔苏拉几乎被吵得灵魂出窍
 Dialogue: 0,0:37:06.83,0:37:09.12,ES-Main,,0,0,0,,que Úrsula se tapó los oídos con cera de abejas
 Dialogue: 10,0:37:09.50,0:37:11.00,CN-Main,,0,0,0,,只好用蜂蜡塞住耳朵
 Dialogue: 0,0:37:09.50,0:37:11.00,ES-Main,,0,0,0,,para no perder el sentido de la realidad.
 Dialogue: 10,0:37:11.33,0:37:12.33,CN-Main,,0,0,0,,放到那边去
 Dialogue: 0,0:37:11.33,0:37:12.33,ES-Main,,0,0,0,,Ve, déjalo allá.
-Dialogue: 10,0:37:15.46,0:37:16.96,CN-Main,,0,0,0,,乌苏拉！
+Dialogue: 10,0:37:15.46,0:37:16.96,CN-Main,,0,0,0,,乌尔苏拉！
 Dialogue: 0,0:37:15.46,0:37:16.96,ES-Main,,0,0,0,,¡Úrsula!
 Dialogue: 10,0:37:22.50,0:37:23.58,CN-Main,,0,0,0,,是一张床
 Dialogue: 0,0:37:22.50,0:37:23.58,ES-Main,,0,0,0,,Una cama.
@@ -716,7 +716,7 @@ Dialogue: 10,0:53:49.21,0:53:50.88,CN-Main,,0,0,0,,为之牺牲良多的大海
 Dialogue: 0,0:53:49.21,0:53:50.88,ES-Main,,0,0,0,,al precio de sacrificios,
 Dialogue: 10,0:53:51.38,0:53:53.75,CN-Main,,0,0,0,,如今却无心插柳地找到了
 Dialogue: 0,0:53:51.38,0:53:53.75,ES-Main,,0,0,0,,y haberlo encontrado entonces sin buscarlo.
-Dialogue: 10,0:54:03.83,0:54:06.67,CN-Main,,0,0,0,,我们当初放弃时只差一步就到大海了 乌苏拉
+Dialogue: 10,0:54:03.83,0:54:06.67,CN-Main,,0,0,0,,我们当初放弃时只差一步就到大海了 乌尔苏拉
 Dialogue: 0,0:54:03.83,0:54:06.67,ES-Main,,0,0,0,,Nos rendimos justo antes de encontrar el mar, Úrsula.
 Dialogue: 10,0:54:06.75,0:54:08.42,CN-Main,,0,0,0,,马孔多四面都是水
 Dialogue: 0,0:54:06.75,0:54:08.42,ES-Main,,0,0,0,,Macondo está rodeado de agua.
@@ -750,7 +750,7 @@ Dialogue: 10,0:56:01.17,0:56:03.04,CN-Main,,0,0,0,,呼吸！深呼吸！
 Dialogue: 0,0:56:01.17,0:56:03.04,ES-Main,,0,0,0,,Profundo, profundo. Respira profundo.
 Dialogue: 10,0:56:03.54,0:56:05.88,CN-Main,,0,0,0,,先别用力 稳住呼吸
 Dialogue: 0,0:56:03.54,0:56:05.88,ES-Main,,0,0,0,,No pujes, no pujes. Respira, respira.
-Dialogue: 10,0:56:06.38,0:56:10.21,CN-Main,,0,0,0,,乌苏拉因某种猜想而浑身战栗那深沉的嚎叫
+Dialogue: 10,0:56:06.38,0:56:10.21,CN-Main,,0,0,0,,乌尔苏拉因某种猜想而浑身战栗那深沉的嚎叫
 Dialogue: 0,0:56:06.38,0:56:10.21,ES-Main,,0,0,0,,con la certidumbre de que aquel bramido profundo
 Dialogue: 10,0:56:10.33,0:56:12.92,CN-Main,,0,0,0,,无疑暗示了孩子生有可怕的猪尾巴
 Dialogue: 0,0:56:10.33,0:56:12.92,ES-Main,,0,0,0,,era un primer indicio de la temible cola de cerdo.
@@ -769,7 +769,7 @@ Dialogue: 10,0:56:56.58,0:56:58.83,CN-Main,,0,0,0,,他出生时便睁着双眼
 Dialogue: 0,0:56:56.58,0:56:58.83,ES-Main,,0,0,0,,Nació con los ojos abiertos,
 Dialogue: 10,0:56:59.79,0:57:02.62,CN-Main,,0,0,0,,带着好奇却毫不惊讶地审视着这个世界
 Dialogue: 0,0:56:59.79,0:57:02.62,ES-Main,,0,0,0,,mirando el mundo con una curiosidad sin asombro.
-Dialogue: 10,0:57:04.38,0:57:07.67,CN-Main,,0,0,0,,多年以后乌苏拉已然遗忘了这炯炯的目光
+Dialogue: 10,0:57:04.38,0:57:07.67,CN-Main,,0,0,0,,多年以后乌尔苏拉已然遗忘了这炯炯的目光
 Dialogue: 0,0:57:04.38,0:57:07.67,ES-Main,,0,0,0,,Úrsula no volvió a acordarse de la intensidad de esa mirada
 Dialogue: 10,0:57:08.17,0:57:09.67,CN-Main,,0,0,0,,直到那个下午
 Dialogue: 0,0:57:08.17,0:57:09.67,ES-Main,,0,0,0,,hasta años después,

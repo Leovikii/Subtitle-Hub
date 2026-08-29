@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.0
+; Subtitle-Hub-Version: 1.0.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -18,7 +18,7 @@ Style: ES-Main,Noto Sans CJK SC,46,&H00FFFFFF,&H0300FFFF,&H00000000,&H00000000,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 10,0:00:11.29,0:00:13.92,CN-Main,,0,0,0,,阿卡蒂奥被处决的几个月后
+Dialogue: 10,0:00:11.29,0:00:13.92,CN-Main,,0,0,0,,阿尔卡蒂奥被处决的几个月后
 Dialogue: 0,0:00:11.29,0:00:13.92,ES-Main,,0,0,0,,del fusilamiento de Arcadio,
 Dialogue: 10,0:00:14.50,0:00:16.79,CN-Main,,0,0,0,,奥雷里亚诺·布恩迪亚上校
 Dialogue: 0,0:00:14.50,0:00:16.79,ES-Main,,0,0,0,,el coronel Aureliano Buendía cayó prisionero
@@ -26,7 +26,7 @@ Dialogue: 10,0:00:16.88,0:00:19.92,CN-Main,,0,0,0,,在就快到达西部边境�
 Dialogue: 0,0:00:16.88,0:00:19.92,ES-Main,,0,0,0,,cuando estaba a punto de alcanzar la frontera occidental.
 Dialogue: 10,0:00:21.33,0:00:25.08,CN-Main,,0,0,0,,跟随他参战的21个人里只有一人幸存
 Dialogue: 0,0:00:21.33,0:00:25.08,ES-Main,,0,0,0,,De los 21 hombres que lo siguieron en la guerra, solo uno sobrevivió,
-Dialogue: 10,0:00:25.92,0:00:27.79,CN-Main,,0,0,0,,就是盖里奈多·马奎斯上校
+Dialogue: 10,0:00:25.92,0:00:27.79,CN-Main,,0,0,0,,就是格林列尔多·马尔克斯上校
 Dialogue: 0,0:00:25.92,0:00:27.79,ES-Main,,0,0,0,,el coronel Gerinaldo Márquez.
 Dialogue: 10,0:00:41.21,0:00:43.92,CN-Main,,0,0,0,,-你的手怎么了？-没什么 烧伤而已
 Dialogue: 0,0:00:41.21,0:00:43.92,ES-Main,,0,0,0,,¿Qué te pasó en la mano? - No es nada, una quemadura.
@@ -90,7 +90,7 @@ Dialogue: 10,0:02:47.42,0:02:50.54,CN-Main,,0,0,0,,有本事就开枪打死我�
 Dialogue: 0,0:02:47.42,0:02:50.54,ES-Main,,0,0,0,,Así que me pueden ir disparando de una vez, si esa es la orden.
 Dialogue: 10,0:02:54.21,0:02:55.04,CN-Main,,0,0,0,,送她进去
 Dialogue: 0,0:02:54.21,0:02:55.04,ES-Main,,0,0,0,,Llévenla.
-Dialogue: 10,0:03:29.88,0:03:33.38,CN-Main,,0,0,0,,我还没告诉你 我们给阿卡蒂奥的长女取名叫蕾梅黛丝了
+Dialogue: 10,0:03:29.88,0:03:33.38,CN-Main,,0,0,0,,我还没告诉你 我们给阿尔卡蒂奥的长女取名叫蕾梅黛丝了
 Dialogue: 0,0:03:29.88,0:03:33.38,ES-Main,,0,0,0,,No te he contado que a la hija mayor de Arcadio le pusimos Remedios.
 Dialogue: 10,0:03:37.21,0:03:39.08,CN-Main,,0,0,0,,他让我们叫她乌苏拉
 Dialogue: 0,0:03:37.21,0:03:39.08,ES-Main,,0,0,0,,Pidió que la llamaran Úrsula, pero…
@@ -195,7 +195,7 @@ Dialogue: 10,0:09:35.12,0:09:36.62,CN-Main,,0,0,0,,打扰了 上尉
 Dialogue: 0,0:09:35.12,0:09:36.62,ES-Main,,0,0,0,,Permiso, capitán.
 Dialogue: 10,0:09:42.54,0:09:43.38,CN-Main,,0,0,0,,这么快？
 Dialogue: 0,0:09:42.54,0:09:43.38,ES-Main,,0,0,0,,¿Ya?
-Dialogue: 10,0:10:01.25,0:10:02.67,CN-Main,,0,0,0,,盖里奈多·马奎斯
+Dialogue: 10,0:10:01.25,0:10:02.67,CN-Main,,0,0,0,,格林列尔多·马尔克斯
 Dialogue: 0,0:10:01.25,0:10:02.67,ES-Main,,0,0,0,,Gerineldo Márquez.
 Dialogue: 10,0:10:04.50,0:10:07.21,CN-Main,,0,0,0,,你被判七年监禁
 Dialogue: 0,0:10:04.50,0:10:07.21,ES-Main,,0,0,0,,Ha sido sentenciado a siete años de prisión.
@@ -210,7 +210,7 @@ Dialogue: 0,0:10:41.38,0:10:43.00,ES-Main,,0,0,0,,Esa es una buena noticia.
 Dialogue: 10,0:10:45.08,0:10:46.88,CN-Main,,0,0,0,,我们马孔多终于有电报了
 Dialogue: 0,0:10:45.08,0:10:46.88,ES-Main,,0,0,0,,Ya tenemos telégrafo en Macondo.
 Dialogue: 10,0:11:29.75,0:11:31.92,CN-Main,,0,0,0,,他既无恐惧 也没有留恋
-Dialogue: 10,0:11:32.50,0:11:36.08,CN-Main,,0,0,0,,只有深沉的愤怒愤怒于这人为带来的死亡
+Dialogue: 10,0:11:32.50,0:11:36.08,CN-Main,,0,0,0,,只有深沉的愤怒 源于这场人为制造的死亡
 Dialogue: 0,0:11:32.50,0:11:36.08,ES-Main,,0,0,0,,sino una rabia intestinal ante la idea de que aquella muerte artificiosa
 Dialogue: 10,0:11:36.17,0:11:39.79,CN-Main,,0,0,0,,害得他看不到那么多未竟之事将如何收场了
 Dialogue: 0,0:11:36.17,0:11:39.79,ES-Main,,0,0,0,,no le permitiría conocer tantas cosas que dejaba sin terminar.
@@ -268,7 +268,7 @@ Dialogue: 10,0:15:41.29,0:15:44.92,CN-Main,,0,0,0,,没有人知道他干预了�
 Dialogue: 0,0:15:41.29,0:15:44.92,ES-Main,,0,0,0,,se enteró de su intervención para impedir el fusilamiento.
 Dialogue: 10,0:16:05.00,0:16:09.33,CN-Main,,0,0,0,,罗克·卡尼塞罗上尉和他的手下追随奥雷里亚诺·布恩迪亚上校
 Dialogue: 0,0:16:05.00,0:16:09.33,ES-Main,,0,0,0,,El capitán Roque Carnicero y sus hombres se fueron con el coronel Aureliano Buendía
-Dialogue: 10,0:16:09.58,0:16:13.42,CN-Main,,0,0,0,,投奔了维托里亚诺·梅迪纳上校的革命军
+Dialogue: 10,0:16:09.58,0:16:13.42,CN-Main,,0,0,0,,投奔了维多利奥·梅迪纳上校的革命军
 Dialogue: 0,0:16:09.58,0:16:13.42,ES-Main,,0,0,0,,para unirse a las fuerzas revolucionarias del coronel Victoriano Medina.
 Dialogue: 10,0:16:23.08,0:16:26.62,CN-Main,,0,0,0,,奥雷里亚诺·布恩迪亚上校死里逃生的一年后
 Dialogue: 0,0:16:23.08,0:16:26.62,ES-Main,,0,0,0,,del coronel Aureliano Buendía,
@@ -280,7 +280,7 @@ Dialogue: 10,0:16:35.38,0:16:37.79,CN-Main,,0,0,0,,和她的大女儿蕾梅黛�
 Dialogue: 0,0:16:35.38,0:16:37.79,ES-Main,,0,0,0,,con su hija mayor, Remedios…
 Dialogue: 10,0:16:37.88,0:16:39.71,CN-Main,,0,0,0,,别这么玩
 Dialogue: 0,0:16:37.88,0:16:39.71,ES-Main,,0,0,0,,Esto no se hace.
-Dialogue: 10,0:16:40.42,0:16:44.46,CN-Main,,0,0,0,,…还有她在阿卡蒂奥被枪决的五个月后诞下的一对双胞胎
+Dialogue: 10,0:16:40.42,0:16:44.46,CN-Main,,0,0,0,,…还有她在阿尔卡蒂奥被枪决的五个月后诞下的一对双胞胎
 Dialogue: 0,0:16:40.42,0:16:44.46,ES-Main,,0,0,0,,…y un par de gemelos que nacieron cinco meses después del fusilamiento de Arcadio,
 Dialogue: 10,0:16:44.50,0:16:47.42,CN-Main,,0,0,0,,他们被命名为奥雷里亚诺第二和何塞·阿尔卡蒂奥第二
 Dialogue: 0,0:16:44.50,0:16:47.42,ES-Main,,0,0,0,,a quienes llamó Aureliano Segundo y José Arcadio Segundo.
@@ -338,7 +338,7 @@ Dialogue: 10,0:19:06.88,0:19:08.50,CN-Main,,0,0,0,,好吧
 Dialogue: 0,0:19:06.88,0:19:08.50,ES-Main,,0,0,0,,Está bien.
 Dialogue: 10,0:19:37.00,0:19:39.17,CN-Main,,0,0,0,,厌烦了生活在死人堆里
 Dialogue: 0,0:19:37.00,0:19:39.17,ES-Main,,0,0,0,,de vivir entre muertos,
-Dialogue: 10,0:19:40.25,0:19:44.33,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥和丽贝卡搬进了阿卡蒂奥修建的房子
+Dialogue: 10,0:19:40.25,0:19:44.33,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥和丽贝卡搬进了阿尔卡蒂奥修建的房子
 Dialogue: 0,0:19:40.25,0:19:44.33,ES-Main,,0,0,0,,José Arcadio y Rebeca se fueron a vivir en la casa construida por Arcadio.
 Dialogue: 10,0:19:46.21,0:19:48.08,CN-Main,,0,0,0,,他们把这里当成自己的家
 Dialogue: 0,0:19:46.21,0:19:48.08,ES-Main,,0,0,0,,Donde establecieron su hogar,
@@ -491,7 +491,7 @@ Dialogue: 10,0:30:05.33,0:30:06.21,CN-Main,,0,0,0,,上校
 Dialogue: 0,0:30:05.33,0:30:06.21,ES-Main,,0,0,0,,Coronel.
 Dialogue: 10,0:30:12.29,0:30:14.54,CN-Main,,0,0,0,,奥雷里亚诺·布恩迪亚上校
 Dialogue: 0,0:30:12.29,0:30:14.54,ES-Main,,0,0,0,,Coronel Aureliano Buendía…
-Dialogue: 10,0:30:22.88,0:30:24.71,CN-Main,,0,0,0,,何塞·拉奎·蒙卡达将军
+Dialogue: 10,0:30:22.88,0:30:24.71,CN-Main,,0,0,0,,何塞·拉克尔·蒙卡达将军
 Dialogue: 0,0:30:22.88,0:30:24.71,ES-Main,,0,0,0,,General José Raquel Moncada.
 Dialogue: 10,0:30:28.04,0:30:31.04,CN-Main,,0,0,0,,所有政客都是一丘之貉 蒙卡达
 Dialogue: 0,0:30:28.04,0:30:31.04,ES-Main,,0,0,0,,Todos los políticos son la misma mierda, Moncada.
@@ -547,7 +547,7 @@ Dialogue: 10,0:31:56.79,0:31:58.58,CN-Main,,0,0,0,,我会照顾好你的乡亲�
 Dialogue: 0,0:31:56.79,0:31:58.58,ES-Main,,0,0,0,,Yo a tu gente la voy a cuidar.
 Dialogue: 10,0:31:59.12,0:32:00.38,CN-Main,,0,0,0,,我保证
 Dialogue: 0,0:31:59.12,0:32:00.38,ES-Main,,0,0,0,,Eso te lo prometo.
-Dialogue: 10,0:32:01.71,0:32:05.00,CN-Main,,0,0,0,,你是我认识的人里最正派的之一 何塞·拉奎
+Dialogue: 10,0:32:01.71,0:32:05.00,CN-Main,,0,0,0,,你是我认识的人里最正派的之一 何塞·拉克尔
 Dialogue: 0,0:32:01.71,0:32:05.00,ES-Main,,0,0,0,,Eres una de las personas más decentes que conozco, José Raquel.
 Dialogue: 10,0:32:07.33,0:32:08.71,CN-Main,,0,0,0,,话虽如此…
 Dialogue: 0,0:32:07.33,0:32:08.71,ES-Main,,0,0,0,,Pero antes de eso…
@@ -592,7 +592,7 @@ Dialogue: 10,0:34:55.33,0:34:57.62,CN-Main,,0,0,0,,乌尔苏拉·伊瓜兰·布�
 Dialogue: 0,0:34:55.33,0:34:57.62,ES-Main,,0,0,0,,¿La señora Úrsula Iguarán de Buendía?
 Dialogue: 10,0:34:59.33,0:35:01.62,CN-Main,,0,0,0,,-是的-请容我自我介绍
 Dialogue: 0,0:34:59.33,0:35:01.62,ES-Main,,0,0,0,,Sí. Me presento.
-Dialogue: 10,0:35:01.71,0:35:04.42,CN-Main,,0,0,0,,在下何塞·拉奎·蒙卡达将军愿为您效劳
+Dialogue: 10,0:35:01.71,0:35:04.42,CN-Main,,0,0,0,,在下何塞·拉克尔·蒙卡达将军愿为您效劳
 Dialogue: 0,0:35:01.71,0:35:04.42,ES-Main,,0,0,0,,Soy el general José Raquel Moncada. A su servicio.
 Dialogue: 10,0:35:05.83,0:35:06.92,CN-Main,,0,0,0,,您有何贵干？
 Dialogue: 0,0:35:05.83,0:35:06.92,ES-Main,,0,0,0,,¿Qué necesita?
@@ -806,7 +806,7 @@ Dialogue: 10,0:49:40.46,0:49:42.12,CN-Main,,0,0,0,,梅尔基亚德斯留下的�
 Dialogue: 0,0:49:40.46,0:49:42.12,ES-Main,,0,0,0,,en los manuscritos de Melquíades
 Dialogue: 10,0:49:43.71,0:49:46.33,CN-Main,,0,0,0,,而书正翻到他生命中的这一刻
 Dialogue: 0,0:49:43.71,0:49:46.33,ES-Main,,0,0,0,,ese mismo momento que él estaba viviendo.
-Dialogue: 10,0:49:51.54,0:49:52.83,CN-Main,,0,0,0,,普鲁丹修
+Dialogue: 10,0:49:51.54,0:49:52.83,CN-Main,,0,0,0,,普鲁邓希奥
 Dialogue: 0,0:49:51.54,0:49:52.83,ES-Main,,0,0,0,,Prudencio…
 Dialogue: 10,0:50:33.50,0:50:35.96,CN-Main,,0,0,0,,无数小黄花如细雨般缤纷飘落
 Dialogue: 0,0:50:33.50,0:50:35.96,ES-Main,,0,0,0,,de minúsculas flores amarillas
@@ -836,9 +836,9 @@ Dialogue: 10,0:53:11.17,0:53:14.62,CN-Main,,0,0,0,,快走！到前面去 把那�
 Dialogue: 0,0:53:11.17,0:53:14.62,ES-Main,,0,0,0,,¡Vamos, adelante! ¡Ese cañón, adelante!
 Dialogue: 10,0:53:16.58,0:53:17.42,CN-Main,,0,0,0,,很好！
 Dialogue: 0,0:53:16.58,0:53:17.42,ES-Main,,0,0,0,,¡Muy bien!
-Dialogue: 10,0:53:18.62,0:53:19.62,CN-Main,,0,0,0,,何塞·拉奎！
+Dialogue: 10,0:53:18.62,0:53:19.62,CN-Main,,0,0,0,,何塞·拉克尔！
 Dialogue: 0,0:53:18.62,0:53:19.62,ES-Main,,0,0,0,,¡José Raquel!
-Dialogue: 10,0:53:20.46,0:53:22.04,CN-Main,,0,0,0,,何塞·拉奎 出什么事了？
+Dialogue: 10,0:53:20.46,0:53:22.04,CN-Main,,0,0,0,,何塞·拉克尔 出什么事了？
 Dialogue: 0,0:53:20.46,0:53:22.04,ES-Main,,0,0,0,,José Raquel, ¿qué está pasando?
 Dialogue: 10,0:53:22.54,0:53:23.62,CN-Main,,0,0,0,,奥雷里亚诺
 Dialogue: 0,0:53:22.54,0:53:23.62,ES-Main,,0,0,0,,Aureliano.

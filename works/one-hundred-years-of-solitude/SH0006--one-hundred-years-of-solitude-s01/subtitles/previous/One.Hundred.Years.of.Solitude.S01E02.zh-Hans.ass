@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.0
+; Subtitle-Hub-Version: 1.0.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -48,7 +48,7 @@ Dialogue: 10,0:02:38.54,0:02:43.12,CN-Main,,0,0,0,,昔日简朴的村庄已然�
 Dialogue: 0,0:02:38.54,0:02:43.12,ES-Main,,0,0,0,,se convirtió en esos años en un pueblo activo,
 Dialogue: 10,0:02:43.21,0:02:45.62,CN-Main,,0,0,0,,镇上有了店铺和手工作坊
 Dialogue: 0,0:02:43.21,0:02:45.62,ES-Main,,0,0,0,,con tiendas y talleres de artesanías,
-Dialogue: 10,0:02:45.83,0:02:49.88,CN-Main,,0,0,0,,有朝一日还会迎来穿尖头靴戴耳环的阿拉伯人
+Dialogue: 10,0:02:45.83,0:02:49.88,CN-Main,,0,0,0,,有朝一日还会迎来穿拖鞋戴耳环的阿拉伯人
 Dialogue: 0,0:02:45.83,0:02:49.88,ES-Main,,0,0,0,,donde algún día llegarían árabes de pantuflas y argollas en las orejas.
 Dialogue: 10,0:02:49.96,0:02:51.62,CN-Main,,0,0,0,,-马蒂尔德！-来啦
 Dialogue: 0,0:02:49.96,0:02:51.62,ES-Main,,0,0,0,,¡Matilde! ¡Ahí voy!
@@ -269,7 +269,7 @@ Dialogue: 10,0:13:32.46,0:13:34.62,CN-Main,,0,0,0,,他是一个充满激情和�
 Dialogue: 0,0:13:32.46,0:13:34.62,ES-Main,,0,0,0,,Es un hombre de pasiones y obsesiones,
 Dialogue: 10,0:13:35.12,0:13:37.71,CN-Main,,0,0,0,,你应该庆幸他执迷的不是女人或者其他恶习
 Dialogue: 0,0:13:35.12,0:13:37.71,ES-Main,,0,0,0,,pero debes agradecer que no son ni las mujeres ni los vicios,
-Dialogue: 10,0:13:37.96,0:13:40.17,CN-Main,,0,0,0,,否则就会整天在卡塔里诺的酒吧买醉了
+Dialogue: 10,0:13:37.96,0:13:40.17,CN-Main,,0,0,0,,否则就会整天在卡塔利诺的酒吧买醉了
 Dialogue: 0,0:13:37.96,0:13:40.17,ES-Main,,0,0,0,,sino viviría zampado en la tienda de Catarino.
 Dialogue: 10,0:13:42.38,0:13:45.71,CN-Main,,0,0,0,,看我怎么骂他们我们回头再聊 谢啦 皮拉
 Dialogue: 0,0:13:42.38,0:13:45.71,ES-Main,,0,0,0,,Estos muchachitos me van a oír. Terminamos después. Gracias, Pilar.
@@ -361,7 +361,7 @@ Dialogue: 10,0:17:26.79,0:17:29.75,CN-Main,,0,0,0,,那让她重温了新婚时�
 Dialogue: 0,0:17:26.79,0:17:29.75,ES-Main,,0,0,0,,Y vivió de nuevo sus terrores de recién casada.
 Dialogue: 10,0:17:30.92,0:17:32.00,CN-Main,,0,0,0,,你这是什么表情？
 Dialogue: 0,0:17:30.92,0:17:32.00,ES-Main,,0,0,0,,¿Y esa cara?
-Dialogue: 10,0:17:32.75,0:17:35.50,CN-Main,,0,0,0,,活像看见了普鲁丹修·阿圭拉的鬼魂似的
+Dialogue: 10,0:17:32.75,0:17:35.50,CN-Main,,0,0,0,,活像看见了普鲁邓希奥·阿基拉尔的鬼魂似的
 Dialogue: 0,0:17:32.75,0:17:35.50,ES-Main,,0,0,0,,Parece que hubieras visto el fantasma de Prudencio Aguilar.
 Dialogue: 10,0:17:37.75,0:17:40.58,CN-Main,,0,0,0,,-我看见了更糟的东西-还有什么能比那更糟？
 Dialogue: 0,0:17:37.75,0:17:40.58,ES-Main,,0,0,0,,Vi algo peor. ¿Qué puede ser peor que eso?
@@ -601,7 +601,7 @@ Dialogue: 10,0:34:03.58,0:34:05.38,CN-Main,,0,0,0,,山中之王来啦！
 Dialogue: 0,0:34:03.58,0:34:05.38,ES-Main,,0,0,0,,¡Salió el tigre de la montaña!
 Dialogue: 10,0:34:05.46,0:34:07.50,CN-Main,,0,0,0,,是啊 因为他再待在山上就要死了
 Dialogue: 0,0:34:05.46,0:34:07.50,ES-Main,,0,0,0,,Sí, porque se iba muriendo allá adentro.
-Dialogue: 10,0:34:07.58,0:34:10.21,CN-Main,,0,0,0,,这位朋友 马尼费科、盖里奈多
+Dialogue: 10,0:34:07.58,0:34:10.21,CN-Main,,0,0,0,,这位朋友 马尼费科、格林列尔多
 Dialogue: 0,0:34:07.58,0:34:10.21,ES-Main,,0,0,0,,Comadre, Magnífico, Gerineldo.
 Dialogue: 10,0:34:11.17,0:34:12.75,CN-Main,,0,0,0,,你们看 这是金币
 Dialogue: 0,0:34:11.17,0:34:12.75,ES-Main,,0,0,0,,Están viendo monedas de oro.
@@ -708,9 +708,9 @@ Dialogue: 10,0:39:53.83,0:39:54.67,CN-Main,,0,0,0,,皮拉！
 Dialogue: 0,0:39:53.83,0:39:54.67,ES-Main,,0,0,0,,¡Pilar!
 Dialogue: 10,0:39:57.04,0:39:58.54,CN-Main,,0,0,0,,你见到何塞·阿尔卡蒂奥了吗？
 Dialogue: 0,0:39:57.04,0:39:58.54,ES-Main,,0,0,0,,¿Has visto a José Arcadio?
-Dialogue: 10,0:40:07.25,0:40:08.33,CN-Main,,0,0,0,,卡塔里诺！
+Dialogue: 10,0:40:07.25,0:40:08.33,CN-Main,,0,0,0,,卡塔利诺！
 Dialogue: 0,0:40:07.25,0:40:08.33,ES-Main,,0,0,0,,¡Catarino!
-Dialogue: 10,0:40:12.42,0:40:15.00,CN-Main,,0,0,0,,-卡塔里诺 你看见我儿子了吗？-你儿子？没有
+Dialogue: 10,0:40:12.42,0:40:15.00,CN-Main,,0,0,0,,-卡塔利诺 你看见我儿子了吗？-你儿子？没有
 Dialogue: 0,0:40:12.42,0:40:15.00,ES-Main,,0,0,0,,Catarino, ¿has visto a mi hijo? - ¿Tu hijo? Nada.
 Dialogue: 10,0:40:15.33,0:40:16.71,CN-Main,,0,0,0,,我昨晚看到他和吉普赛人在一起
 Dialogue: 0,0:40:15.33,0:40:16.71,ES-Main,,0,0,0,,Yo lo vi anoche con los gitanos.
@@ -790,7 +790,7 @@ Dialogue: 10,0:47:28.33,0:47:29.33,CN-Main,,0,0,0,,你做到了
 Dialogue: 0,0:47:28.33,0:47:29.33,ES-Main,,0,0,0,,Lo lograste.
 Dialogue: 10,0:47:30.29,0:47:33.04,CN-Main,,0,0,0,,你找到了让马孔多和这个世界相联系的渠道
 Dialogue: 0,0:47:30.29,0:47:33.04,ES-Main,,0,0,0,,Encontraste los caminos que unen a Macondo con el mundo.
-Dialogue: 10,0:47:38.46,0:47:40.79,CN-Main,,0,0,0,,我想介绍比希塔森和卡陶雷给你认识
+Dialogue: 10,0:47:38.46,0:47:40.79,CN-Main,,0,0,0,,我想介绍比西塔西翁和卡塔乌雷给你认识
 Dialogue: 0,0:47:38.46,0:47:40.79,ES-Main,,0,0,0,,Te quiero presentar a Visitación y Cataure.
 Dialogue: 10,0:47:42.08,0:47:43.96,CN-Main,,0,0,0,,这一路上都是他们陪着我
 Dialogue: 0,0:47:42.08,0:47:43.96,ES-Main,,0,0,0,,Me acompañaron durante el viaje.
@@ -869,7 +869,7 @@ Dialogue: 10,0:51:09.96,0:51:11.21,CN-Main,,0,0,0,,他在这里会过得更好
 Dialogue: 0,0:51:09.96,0:51:11.21,ES-Main,,0,0,0,,Él va a estar mejor aquí.
 Dialogue: 10,0:51:27.88,0:51:30.50,CN-Main,,0,0,0,,孩子被命名为何塞·阿尔卡蒂奥
 Dialogue: 0,0:51:27.88,0:51:30.50,ES-Main,,0,0,0,,el nombre de José Arcadio,
-Dialogue: 10,0:51:31.50,0:51:34.33,CN-Main,,0,0,0,,但为防混淆 他们直接叫他阿卡蒂奥
+Dialogue: 10,0:51:31.50,0:51:34.33,CN-Main,,0,0,0,,但为防混淆 他们直接叫他阿尔卡蒂奥
 Dialogue: 0,0:51:31.50,0:51:34.33,ES-Main,,0,0,0,,pero lo llamaron Arcadio para evitar confusiones.
 Dialogue: 10,0:51:52.67,0:51:56.67,CN-Main,,0,0,0,,奥雷里亚诺无休止地埋头在实验室里
 Dialogue: 0,0:51:52.67,0:51:56.67,ES-Main,,0,0,0,,horas interminables en el laboratorio,
@@ -907,7 +907,7 @@ Dialogue: 10,0:53:15.08,0:53:15.96,CN-Main,,0,0,0,,跑啊！
 Dialogue: 0,0:53:15.08,0:53:15.96,ES-Main,,0,0,0,,¡Vamos!
 Dialogue: 10,0:53:16.50,0:53:17.67,CN-Main,,0,0,0,,到底是什么嘛？
 Dialogue: 0,0:53:16.50,0:53:17.67,ES-Main,,0,0,0,,¿Qué es eso?
-Dialogue: 10,0:53:21.58,0:53:22.79,CN-Main,,0,0,0,,阿卡蒂奥、阿玛兰妲！
+Dialogue: 10,0:53:21.58,0:53:22.79,CN-Main,,0,0,0,,阿尔卡蒂奥、阿玛兰妲！
 Dialogue: 10,0:53:23.29,0:53:24.92,CN-Main,,0,0,0,,别再说瓦尤语了
 Dialogue: 0,0:53:23.29,0:53:24.92,ES-Main,,0,0,0,,¡Arcadio, Amaranta! Dejen de estar hablando en wayuunaiki.
 Dialogue: 10,0:53:25.42,0:53:27.38,CN-Main,,0,0,0,,我不是让你们说西班牙语吗？

@@ -96,6 +96,7 @@ subtitle_sources:
     path: project/sources/subtitles/zh-Hans/official-netflix-bilingual
     file_count: 8
     scope: S01E01-S01E08
+    evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and Chinese event timing is the project timing authority."
     roles:
       - candidate-baseline
       - source-text-reference
@@ -126,7 +127,7 @@ video_sources:
       S01E08: "One.Hundred.Years.of.Solitude.S01E08.mkv"
 
 initialization:
-  skill_version: "1.3.0"
+  skill_version: "1.3.2"
   state: proofreading-ready
   approved_by: user
   approved_at: "2026-08-28"

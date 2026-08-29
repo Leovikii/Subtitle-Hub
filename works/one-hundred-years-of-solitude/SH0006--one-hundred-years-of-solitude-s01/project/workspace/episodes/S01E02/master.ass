@@ -28,7 +28,7 @@ Dialogue: 0,0:02:04.50,0:02:06.71,ES-Main,,0,0,0,,Estoy desarrollando un arma so
 Dialogue: 10,0:02:09.17,0:02:12.42,CN-Main,,0,0,0,,-一个什么？-一种利用阳光来攻击的武器
 Dialogue: 0,0:02:09.17,0:02:12.42,ES-Main,,0,0,0,,¿Una qué? Un arma solar que funciona con la luz. Mira el diseño.
 Dialogue: 10,0:02:12.50,0:02:13.62,CN-Main,,0,0,0,,你看这个设计
-Dialogue: 10,0:02:14.79,0:02:16.62,CN-Main,,0,0,0,,它不需要火药 乌苏拉
+Dialogue: 10,0:02:14.79,0:02:16.62,CN-Main,,0,0,0,,它不需要火药 乌尔苏拉
 Dialogue: 0,0:02:14.79,0:02:16.62,ES-Main,,0,0,0,,No necesita pólvora, Úrsula.
 Dialogue: 10,0:02:17.17,0:02:18.75,CN-Main,,0,0,0,,真是天才般的设想
 Dialogue: 0,0:02:17.17,0:02:18.75,ES-Main,,0,0,0,,Es una idea magnífica.
@@ -69,7 +69,7 @@ Dialogue: 0,0:03:14.50,0:03:16.50,ES-Main,,0,0,0,,Te traje más dulces para ti y
 Dialogue: 10,0:03:16.58,0:03:18.29,CN-Main,,0,0,0,,谢谢！放去那边吧
 Dialogue: 10,0:03:20.38,0:03:22.38,CN-Main,,0,0,0,,嘿 你做的糖果很好吃
 Dialogue: 0,0:03:20.38,0:03:22.38,ES-Main,,0,0,0,,Mmm… Oye, es que te quedan sabrosos.
-Dialogue: 10,0:03:23.00,0:03:25.25,CN-Main,,0,0,0,,真的 乌苏拉 你该拿去卖
+Dialogue: 10,0:03:23.00,0:03:25.25,CN-Main,,0,0,0,,真的 乌尔苏拉 你该拿去卖
 Dialogue: 0,0:03:23.00,0:03:25.25,ES-Main,,0,0,0,,Hazme caso, Úrsula. Deberías venderlos.
 Dialogue: 10,0:03:25.75,0:03:28.21,CN-Main,,0,0,0,,马蒂尔德 我要忙的事已经够多了
 Dialogue: 0,0:03:25.75,0:03:28.21,ES-Main,,0,0,0,,Ay, Matilde. Con todo lo que tengo que hacer.
@@ -92,7 +92,7 @@ Dialogue: 10,0:04:45.42,0:04:46.83,CN-Main,,0,0,0,,一定会再来见你
 Dialogue: 0,0:04:45.42,0:04:46.83,ES-Main,,0,0,0,,estaba volver a verte.
 Dialogue: 10,0:04:48.58,0:04:50.25,CN-Main,,0,0,0,,快让我看看吧 教教我
 Dialogue: 0,0:04:48.58,0:04:50.25,ES-Main,,0,0,0,,Pero muéstrame. Enséñame.
-Dialogue: 10,0:04:53.83,0:04:56.42,CN-Main,,0,0,0,,乌苏拉不让我在孩子们面前提这个
+Dialogue: 10,0:04:53.83,0:04:56.42,CN-Main,,0,0,0,,乌尔苏拉不让我在孩子们面前提这个
 Dialogue: 0,0:04:53.83,0:04:56.42,ES-Main,,0,0,0,,Úrsula no quiere que diga esto frente a los niños…
 Dialogue: 10,0:04:58.50,0:05:00.25,CN-Main,,0,0,0,,但我得出了一个结论
 Dialogue: 0,0:04:58.50,0:05:00.25,ES-Main,,0,0,0,,pero llegué a la conclusión
@@ -148,7 +148,7 @@ Dialogue: 10,0:06:59.92,0:07:01.04,CN-Main,,0,0,0,,奥雷里亚诺 快来
 Dialogue: 0,0:06:59.92,0:07:01.04,ES-Main,,0,0,0,,¡Aureliano, ven!
 Dialogue: 10,0:07:12.79,0:07:16.42,CN-Main,,0,0,0,,在何塞·阿尔卡蒂奥·布恩迪亚醉心于炼金术之际
 Dialogue: 0,0:07:12.79,0:07:16.42,ES-Main,,0,0,0,,se sumía en la alquimia,
-Dialogue: 10,0:07:17.67,0:07:21.67,CN-Main,,0,0,0,,乌苏拉创建了绝妙的糖果小动物生意
+Dialogue: 10,0:07:17.67,0:07:21.67,CN-Main,,0,0,0,,乌尔苏拉创建了绝妙的糖果小动物生意
 Dialogue: 0,0:07:17.67,0:07:21.67,ES-Main,,0,0,0,,Úrsula emprendió su maravillosa industria de animalitos de caramelo,
 Dialogue: 10,0:07:22.50,0:07:26.54,CN-Main,,0,0,0,,她将糖果串在巴沙木上一天分两次售卖
 Dialogue: 0,0:07:22.50,0:07:26.54,ES-Main,,0,0,0,,que dos veces al día salían de la casa insertados en palos de balso.
@@ -189,7 +189,7 @@ Dialogue: 0,0:08:52.29,0:08:55.83,ES-Main,,0,0,0,,así que yo te aconsejo contin
 Dialogue: 10,0:09:00.54,0:09:02.79,CN-Main,,0,0,0,,（转化金属 复制黄金）
 Dialogue: 10,0:09:04.00,0:09:07.21,CN-Main,,0,0,0,,…因为我真的对复制黄金很感兴趣
 Dialogue: 0,0:09:04.00,0:09:07.21,ES-Main,,0,0,0,,…porque esto de doblar el oro me ha llamado bastante la atención.
-Dialogue: 10,0:09:07.38,0:09:09.92,CN-Main,,0,0,0,,乌苏拉 梅尔基亚德斯今晚留下吃饭
+Dialogue: 10,0:09:07.38,0:09:09.92,CN-Main,,0,0,0,,乌尔苏拉 梅尔基亚德斯今晚留下吃饭
 Dialogue: 0,0:09:07.38,0:09:09.92,ES-Main,,0,0,0,,Úrsula. Melquíades se queda a comer.
 Dialogue: 10,0:09:12.25,0:09:14.71,CN-Main,,0,0,0,,你们随便吃吧 晚饭就是这些
 Dialogue: 0,0:09:12.25,0:09:14.71,ES-Main,,0,0,0,,Lo que puedan. Lo que ven es lo que hay.
@@ -247,7 +247,7 @@ Dialogue: 10,0:11:30.12,0:11:31.54,CN-Main,,0,0,0,,它往那边跑了！
 Dialogue: 0,0:11:30.12,0:11:31.54,ES-Main,,0,0,0,,¡Va por allá! ¡Por allá!
 Dialogue: 10,0:11:40.54,0:11:43.00,CN-Main,,0,0,0,,去那边 奥雷里亚诺！快跑！
 Dialogue: 0,0:11:40.54,0:11:43.00,ES-Main,,0,0,0,,¡Corre por allá, Aureliano! ¡Corre, corre!
-Dialogue: 10,0:12:41.42,0:12:43.54,CN-Main,,0,0,0,,皮拉 你看见我家孩子了吗？
+Dialogue: 10,0:12:41.42,0:12:43.54,CN-Main,,0,0,0,,庇拉尔 你看见我家孩子了吗？
 Dialogue: 0,0:12:41.42,0:12:43.54,ES-Main,,0,0,0,,Pilar. ¿Viste a mis hijos?
 Dialogue: 10,0:12:46.17,0:12:48.25,CN-Main,,0,0,0,,他们一早就出门了 现在还没回来
 Dialogue: 0,0:12:46.17,0:12:48.25,ES-Main,,0,0,0,,Salieron en la madrugada y no han vuelto.
@@ -269,7 +269,7 @@ Dialogue: 10,0:13:35.12,0:13:37.71,CN-Main,,0,0,0,,你应该庆幸他执迷的�
 Dialogue: 0,0:13:35.12,0:13:37.71,ES-Main,,0,0,0,,pero debes agradecer que no son ni las mujeres ni los vicios,
 Dialogue: 10,0:13:37.96,0:13:40.17,CN-Main,,0,0,0,,否则就会整天在卡塔利诺的酒吧买醉了
 Dialogue: 0,0:13:37.96,0:13:40.17,ES-Main,,0,0,0,,sino viviría zampado en la tienda de Catarino.
-Dialogue: 10,0:13:42.38,0:13:45.71,CN-Main,,0,0,0,,看我怎么骂他们我们回头再聊 谢啦 皮拉
+Dialogue: 10,0:13:42.38,0:13:45.71,CN-Main,,0,0,0,,看我怎么骂他们我们回头再聊 谢啦 庇拉尔
 Dialogue: 0,0:13:42.38,0:13:45.71,ES-Main,,0,0,0,,Estos muchachitos me van a oír. Terminamos después. Gracias, Pilar.
 Dialogue: 10,0:13:47.92,0:13:48.88,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥！
 Dialogue: 0,0:13:47.92,0:13:48.88,ES-Main,,0,0,0,,¡José Arcadio! ¡Aureliano!
@@ -349,7 +349,7 @@ Dialogue: 10,0:16:58.00,0:17:00.17,CN-Main,,0,0,0,,我去叫何塞·阿尔卡蒂
 Dialogue: 0,0:16:58.00,0:17:00.17,ES-Main,,0,0,0,,Le voy a decir a José Arcadio que se aliste.
 Dialogue: 10,0:17:01.46,0:17:04.46,CN-Main,,0,0,0,,别想偷吃 我数过了的
 Dialogue: 0,0:17:01.46,0:17:04.46,ES-Main,,0,0,0,,Están contados, por si piensas hacer alguna diablura.
-Dialogue: 10,0:17:14.58,0:17:17.04,CN-Main,,0,0,0,,一天早晨 乌苏拉走进房间
+Dialogue: 10,0:17:14.58,0:17:17.04,CN-Main,,0,0,0,,一天早晨 乌尔苏拉走进房间
 Dialogue: 0,0:17:14.58,0:17:17.04,ES-Main,,0,0,0,,Úrsula entró en el cuarto
 Dialogue: 10,0:17:17.92,0:17:21.79,CN-Main,,0,0,0,,看见儿子的裸体一股令人困惑的羞赧感油然而生
 Dialogue: 0,0:17:17.92,0:17:21.79,ES-Main,,0,0,0,,y experimentó un confuso sentimiento de vergüenza al ver a su hijo,
@@ -369,10 +369,10 @@ Dialogue: 10,0:17:44.38,0:17:46.50,CN-Main,,0,0,0,,-我刚才看到了他的裸�
 Dialogue: 0,0:17:44.38,0:17:46.50,ES-Main,,0,0,0,,Lo acabo de ver desnudo. - ¿Y?
 Dialogue: 10,0:17:48.58,0:17:50.12,CN-Main,,0,0,0,,他的阴茎大得出奇
 Dialogue: 0,0:17:48.58,0:17:50.12,ES-Main,,0,0,0,,Tiene un miembro descomunal.
-Dialogue: 10,0:17:53.29,0:17:54.71,CN-Main,,0,0,0,,乌苏拉 这很正常
+Dialogue: 10,0:17:53.29,0:17:54.71,CN-Main,,0,0,0,,乌尔苏拉 这很正常
 Dialogue: 10,0:17:54.79,0:17:57.08,CN-Main,,0,0,0,,他在长身体呀全身上下都会一起长大
 Dialogue: 0,0:17:54.79,0:17:57.08,ES-Main,,0,0,0,,Es normal, Úrsula. Está creciendo. Todo se le desarrolla al mismo tiempo.
-Dialogue: 10,0:17:57.58,0:17:59.08,CN-Main,,0,0,0,,一点也不正常 皮拉
+Dialogue: 10,0:17:57.58,0:17:59.08,CN-Main,,0,0,0,,一点也不正常 庇拉尔
 Dialogue: 0,0:17:57.58,0:17:59.08,ES-Main,,0,0,0,,No es normal, Pilar.
 Dialogue: 10,0:18:00.00,0:18:01.67,CN-Main,,0,0,0,,那东西都大得畸形了
 Dialogue: 0,0:18:00.00,0:18:01.67,ES-Main,,0,0,0,,Parece una malformación.
@@ -432,7 +432,7 @@ Dialogue: 10,0:22:53.62,0:22:56.62,CN-Main,,0,0,0,,-罗望子、象牙果、酸�
 Dialogue: 0,0:22:53.62,0:22:56.62,ES-Main,,0,0,0,,Tamarindo, corozo, limón y naranja. - Deme naranja y corozo.
 Dialogue: 10,0:22:56.83,0:22:57.75,CN-Main,,0,0,0,,好
 Dialogue: 0,0:22:56.83,0:22:57.75,ES-Main,,0,0,0,,Claro.
-Dialogue: 10,0:22:57.83,0:22:59.08,CN-Main,,0,0,0,,-亲爱的！-皮拉！
+Dialogue: 10,0:22:57.83,0:22:59.08,CN-Main,,0,0,0,,-亲爱的！-庇拉尔！
 Dialogue: 0,0:22:57.83,0:22:59.08,ES-Main,,0,0,0,,¡Oh, comadre!
 Dialogue: 10,0:23:00.25,0:23:01.42,CN-Main,,0,0,0,,生意好吗？
 Dialogue: 0,0:23:00.25,0:23:01.42,ES-Main,,0,0,0,,¿Está buena la venta?
@@ -487,7 +487,7 @@ Dialogue: 0,0:25:42.08,0:25:44.88,ES-Main,,0,0,0,,Al estar concentrados en un so
 Dialogue: 10,0:25:45.46,0:25:47.62,CN-Main,,0,0,0,,就能让目标燃烧
 Dialogue: 10,0:26:10.42,0:26:12.04,CN-Main,,0,0,0,,-成功了！-妈妈！
 Dialogue: 0,0:26:10.42,0:26:12.04,ES-Main,,0,0,0,,¡Eso! - ¡Mamá!
-Dialogue: 10,0:26:16.96,0:26:18.04,CN-Main,,0,0,0,,你看见了吗 乌苏拉？
+Dialogue: 10,0:26:16.96,0:26:18.04,CN-Main,,0,0,0,,你看见了吗 乌尔苏拉？
 Dialogue: 0,0:26:16.96,0:26:18.04,ES-Main,,0,0,0,,¿Lo viste, Úrsula?
 Dialogue: 10,0:26:18.54,0:26:19.42,CN-Main,,0,0,0,,我们成功了
 Dialogue: 0,0:26:18.54,0:26:19.42,ES-Main,,0,0,0,,Lo logramos.
@@ -566,7 +566,7 @@ Dialogue: 10,0:33:05.21,0:33:08.12,CN-Main,,0,0,0,,一月里的一个星期四 �
 Dialogue: 0,0:33:05.21,0:33:08.12,ES-Main,,0,0,0,,a las dos de la madrugada,
 Dialogue: 10,0:33:08.62,0:33:09.96,CN-Main,,0,0,0,,阿玛兰妲出生了
 Dialogue: 0,0:33:08.62,0:33:09.96,ES-Main,,0,0,0,,nació Amaranta.
-Dialogue: 10,0:33:11.46,0:33:14.33,CN-Main,,0,0,0,,乌苏拉仔细检查了她
+Dialogue: 10,0:33:11.46,0:33:14.33,CN-Main,,0,0,0,,乌尔苏拉仔细检查了她
 Dialogue: 0,0:33:11.46,0:33:14.33,ES-Main,,0,0,0,,Úrsula la examinó minuciosamente.
 Dialogue: 10,0:33:15.38,0:33:18.12,CN-Main,,0,0,0,,她很轻 身上湿漉漉的 像一只蜥蜴
 Dialogue: 0,0:33:15.38,0:33:18.12,ES-Main,,0,0,0,,Era liviana y acuosa como una lagartija,
@@ -589,9 +589,9 @@ Dialogue: 10,0:33:51.79,0:33:53.38,CN-Main,,0,0,0,,一定是在作坊吧
 Dialogue: 0,0:33:51.79,0:33:53.38,ES-Main,,0,0,0,,Debe estar trabajando en el taller.
 Dialogue: 10,0:33:53.46,0:33:55.08,CN-Main,,0,0,0,,-我想抱抱她-他一会儿就来
 Dialogue: 0,0:33:53.46,0:33:55.08,ES-Main,,0,0,0,,La quiero cargar. - No demora en venir.
-Dialogue: 10,0:33:56.04,0:33:58.88,CN-Main,,0,0,0,,我们成功了！乌苏拉！
+Dialogue: 10,0:33:56.04,0:33:58.88,CN-Main,,0,0,0,,我们成功了！乌尔苏拉！
 Dialogue: 0,0:33:56.04,0:33:58.88,ES-Main,,0,0,0,,¡Sí, lo logramos! ¡Úrsula!
-Dialogue: 10,0:33:58.96,0:34:00.58,CN-Main,,0,0,0,,-妈妈！-乌苏拉！
+Dialogue: 10,0:33:58.96,0:34:00.58,CN-Main,,0,0,0,,-妈妈！-乌尔苏拉！
 Dialogue: 0,0:33:58.96,0:34:00.58,ES-Main,,0,0,0,,¡Mamá! ¡Úrsula!
 Dialogue: 10,0:34:02.04,0:34:03.21,CN-Main,,0,0,0,,家里来客人了
 Dialogue: 0,0:34:02.04,0:34:03.21,ES-Main,,0,0,0,,Tenemos visitas.
@@ -700,9 +700,9 @@ Dialogue: 10,0:39:41.75,0:39:42.71,CN-Main,,0,0,0,,没有
 Dialogue: 0,0:39:41.75,0:39:42.71,ES-Main,,0,0,0,,No.
 Dialogue: 10,0:39:42.88,0:39:44.75,CN-Main,,0,0,0,,我上次见他还是在你家
 Dialogue: 0,0:39:42.88,0:39:44.75,ES-Main,,0,0,0,,La última vez que lo vi fue en tu casa.
-Dialogue: 10,0:39:44.83,0:39:46.25,CN-Main,,0,0,0,,我们去问问皮拉吧
+Dialogue: 10,0:39:44.83,0:39:46.25,CN-Main,,0,0,0,,我们去问问庇拉尔吧
 Dialogue: 0,0:39:44.83,0:39:46.25,ES-Main,,0,0,0,,Vamos a preguntarle a Pilar.
-Dialogue: 10,0:39:53.83,0:39:54.67,CN-Main,,0,0,0,,皮拉！
+Dialogue: 10,0:39:53.83,0:39:54.67,CN-Main,,0,0,0,,庇拉尔！
 Dialogue: 0,0:39:53.83,0:39:54.67,ES-Main,,0,0,0,,¡Pilar!
 Dialogue: 10,0:39:57.04,0:39:58.54,CN-Main,,0,0,0,,你见到何塞·阿尔卡蒂奥了吗？
 Dialogue: 0,0:39:57.04,0:39:58.54,ES-Main,,0,0,0,,¿Has visto a José Arcadio?
@@ -755,11 +755,11 @@ Dialogue: 10,0:45:08.71,0:45:12.83,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布�
 Dialogue: 0,0:45:08.71,0:45:12.83,ES-Main,,0,0,0,,José Arcadio Buendía rogaba en el fondo de su corazón
 Dialogue: 10,0:45:12.92,0:45:15.50,CN-Main,,0,0,0,,不是将金属炼成黄金
 Dialogue: 0,0:45:12.92,0:45:15.50,ES-Main,,0,0,0,,que el prodigio esperado no fuera convertir en oro los metales,
-Dialogue: 10,0:45:16.88,0:45:18.58,CN-Main,,0,0,0,,而是乌苏拉的回归
+Dialogue: 10,0:45:16.88,0:45:18.58,CN-Main,,0,0,0,,而是乌尔苏拉的回归
 Dialogue: 0,0:45:16.88,0:45:18.58,ES-Main,,0,0,0,,sino el regreso de Úrsula.
 Dialogue: 10,0:45:49.79,0:45:51.25,CN-Main,,0,0,0,,爸爸！你看！
 Dialogue: 0,0:45:49.79,0:45:51.25,ES-Main,,0,0,0,,¡Papá! ¡Mira esto!
-Dialogue: 10,0:46:01.62,0:46:03.83,CN-Main,,0,0,0,,五个月后 乌苏拉回来了
+Dialogue: 10,0:46:01.62,0:46:03.83,CN-Main,,0,0,0,,五个月后 乌尔苏拉回来了
 Dialogue: 0,0:46:01.62,0:46:03.83,ES-Main,,0,0,0,,volvió Úrsula.
 Dialogue: 10,0:46:03.92,0:46:05.79,CN-Main,,0,0,0,,是你妈妈！快去！
 Dialogue: 0,0:46:03.92,0:46:05.79,ES-Main,,0,0,0,,¡Tu mamá! ¡Anda!
@@ -807,7 +807,7 @@ Dialogue: 10,0:49:06.92,0:49:08.21,CN-Main,,0,0,0,,别再离开了
 Dialogue: 0,0:49:06.92,0:49:08.21,ES-Main,,0,0,0,,No te vuelvas a ir.
 Dialogue: 10,0:49:10.54,0:49:11.54,CN-Main,,0,0,0,,你也是
 Dialogue: 0,0:49:10.54,0:49:11.54,ES-Main,,0,0,0,,Tú tampoco.
-Dialogue: 10,0:49:21.29,0:49:22.17,CN-Main,,0,0,0,,皮拉
+Dialogue: 10,0:49:21.29,0:49:22.17,CN-Main,,0,0,0,,庇拉尔
 Dialogue: 0,0:49:21.29,0:49:22.17,ES-Main,,0,0,0,,Pilar.
 Dialogue: 10,0:49:26.08,0:49:27.38,CN-Main,,0,0,0,,你怎么来了？
 Dialogue: 0,0:49:26.08,0:49:27.38,ES-Main,,0,0,0,,¿Qué haces aquí?
@@ -825,7 +825,7 @@ Dialogue: 10,0:49:48.79,0:49:50.29,CN-Main,,0,0,0,,我来把他交给你们
 Dialogue: 0,0:49:48.79,0:49:50.29,ES-Main,,0,0,0,,Por eso vine a entregártelo.
 Dialogue: 10,0:49:51.29,0:49:52.92,CN-Main,,0,0,0,,你是在开玩笑吧？
 Dialogue: 0,0:49:51.29,0:49:52.92,ES-Main,,0,0,0,,¿Qué barbaridad estás diciendo?
-Dialogue: 10,0:49:56.83,0:49:58.42,CN-Main,,0,0,0,,我们相爱了 乌苏拉
+Dialogue: 10,0:49:56.83,0:49:58.42,CN-Main,,0,0,0,,我们相爱了 乌尔苏拉
 Dialogue: 0,0:49:56.83,0:49:58.42,ES-Main,,0,0,0,,Nos enamoramos, Úrsula.
 Dialogue: 10,0:50:00.12,0:50:01.25,CN-Main,,0,0,0,,不可能
 Dialogue: 0,0:50:00.12,0:50:01.25,ES-Main,,0,0,0,,Eso no puede ser.
@@ -845,7 +845,7 @@ Dialogue: 10,0:50:24.42,0:50:25.33,CN-Main,,0,0,0,,你看看他
 Dialogue: 0,0:50:24.42,0:50:25.33,ES-Main,,0,0,0,,Míralo.
 Dialogue: 10,0:50:26.50,0:50:27.38,CN-Main,,0,0,0,,看看他
 Dialogue: 0,0:50:26.50,0:50:27.38,ES-Main,,0,0,0,,Míralo.
-Dialogue: 10,0:50:28.67,0:50:30.50,CN-Main,,0,0,0,,看呀 乌苏拉 他是你的血脉
+Dialogue: 10,0:50:28.67,0:50:30.50,CN-Main,,0,0,0,,看呀 乌尔苏拉 他是你的血脉
 Dialogue: 0,0:50:28.67,0:50:30.50,ES-Main,,0,0,0,,Míralo, Úrsula. Es tu sangre.
 Dialogue: 10,0:50:39.62,0:50:41.29,CN-Main,,0,0,0,,他长得很像我们的父母
 Dialogue: 0,0:50:39.62,0:50:41.29,ES-Main,,0,0,0,,Tiene la cara de nuestros padres.
@@ -861,7 +861,7 @@ Dialogue: 10,0:50:55.29,0:50:57.29,CN-Main,,0,0,0,,那孩子也不能知道他�
 Dialogue: 0,0:50:55.29,0:50:57.29,ES-Main,,0,0,0,,Y ese niño no va a saber quién lo parió,
 Dialogue: 10,0:50:57.38,0:51:00.21,CN-Main,,0,0,0,,因为她的所作所为令这个家族蒙羞
 Dialogue: 0,0:50:57.38,0:51:00.21,ES-Main,,0,0,0,,porque lo que ella hizo es una vergüenza para esta familia.
-Dialogue: 10,0:51:03.42,0:51:05.21,CN-Main,,0,0,0,,这就是我们的条件 皮拉
+Dialogue: 10,0:51:03.42,0:51:05.21,CN-Main,,0,0,0,,这就是我们的条件 庇拉尔
 Dialogue: 0,0:51:03.42,0:51:05.21,ES-Main,,0,0,0,,Esas son las condiciones, Pilar.
 Dialogue: 10,0:51:09.96,0:51:11.21,CN-Main,,0,0,0,,他在这里会过得更好
 Dialogue: 0,0:51:09.96,0:51:11.21,ES-Main,,0,0,0,,Él va a estar mejor aquí.

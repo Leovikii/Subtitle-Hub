@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.0
+; Subtitle-Hub-Version: 1.0.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -86,9 +86,9 @@ Dialogue: 10,0:03:36.46,0:03:37.33,CN-Main,,0,0,0,,外面的世界
 Dialogue: 0,0:03:36.46,0:03:37.33,ES-Main,,0,0,0,,Por ahí.
 Dialogue: 10,0:03:52.38,0:03:54.62,CN-Main,,0,0,0,,我结婚时 搬去了二楼
 Dialogue: 0,0:03:52.38,0:03:54.62,ES-Main,,0,0,0,,Cuando me casé, me mudé al segundo piso.
-Dialogue: 10,0:04:02.71,0:04:05.62,CN-Main,,0,0,0,,这是阿卡蒂奥的房间没离开家前 他一直睡在这里
+Dialogue: 10,0:04:02.71,0:04:05.62,CN-Main,,0,0,0,,这是阿尔卡蒂奥的房间没离开家前 他一直睡在这里
 Dialogue: 0,0:04:02.71,0:04:05.62,ES-Main,,0,0,0,,Y aquí durmió Arcadio hasta que se fue de la casa.
-Dialogue: 10,0:04:06.62,0:04:07.50,CN-Main,,0,0,0,,阿卡蒂奥？
+Dialogue: 10,0:04:06.62,0:04:07.50,CN-Main,,0,0,0,,阿尔卡蒂奥？
 Dialogue: 0,0:04:06.62,0:04:07.50,ES-Main,,0,0,0,,¿Arcadio?
 Dialogue: 10,0:04:08.54,0:04:09.38,CN-Main,,0,0,0,,你儿子
 Dialogue: 0,0:04:08.54,0:04:09.38,ES-Main,,0,0,0,,Tu hijo.
@@ -118,7 +118,7 @@ Dialogue: 10,0:05:02.04,0:05:03.21,CN-Main,,0,0,0,,然后成了鳏夫
 Dialogue: 0,0:05:02.04,0:05:03.21,ES-Main,,0,0,0,,y luego enviudé.
 Dialogue: 10,0:05:04.17,0:05:05.25,CN-Main,,0,0,0,,故事结束
 Dialogue: 0,0:05:04.17,0:05:05.25,ES-Main,,0,0,0,,Fin de la historia.
-Dialogue: 10,0:05:11.71,0:05:13.12,CN-Main,,0,0,0,,卡塔里诺的店怎么样了？
+Dialogue: 10,0:05:11.71,0:05:13.12,CN-Main,,0,0,0,,卡塔利诺的店怎么样了？
 Dialogue: 0,0:05:11.71,0:05:13.12,ES-Main,,0,0,0,,¿Y la tienda de Catarino?
 Dialogue: 10,0:05:13.83,0:05:14.79,CN-Main,,0,0,0,,还开着吗？
 Dialogue: 0,0:05:13.83,0:05:14.79,ES-Main,,0,0,0,,¿Todavía existe?
@@ -161,11 +161,11 @@ Dialogue: 10,0:07:18.38,0:07:22.08,CN-Main,,0,0,0,,买卖酒精饮料、饮酒
 Dialogue: 0,0:07:18.38,0:07:22.08,ES-Main,,0,0,0,,la venta y el consumo de bebidas alcohólicas,
 Dialogue: 10,0:07:22.62,0:07:27.12,CN-Main,,0,0,0,,以及三人或以上的集会家庭聚会除外
 Dialogue: 0,0:07:22.62,0:07:27.12,ES-Main,,0,0,0,,y las reuniones de más de tres personas que no sean de la misma familia.
-Dialogue: 10,0:07:33.38,0:07:35.54,CN-Main,,0,0,0,,阿卡蒂奥去找了唯一一个预见到
+Dialogue: 10,0:07:33.38,0:07:35.54,CN-Main,,0,0,0,,阿尔卡蒂奥去找了唯一一个预见到
 Dialogue: 0,0:07:33.38,0:07:35.54,ES-Main,,0,0,0,,a la única persona
 Dialogue: 10,0:07:35.75,0:07:38.88,CN-Main,,0,0,0,,保守党政权会滥用职权的人
 Dialogue: 0,0:07:35.75,0:07:38.88,ES-Main,,0,0,0,,que había anticipado los abusos del régimen conservador.
-Dialogue: 10,0:07:40.38,0:07:43.29,CN-Main,,0,0,0,,-谁？-阿卡蒂奥 那个校长
+Dialogue: 10,0:07:40.38,0:07:43.29,CN-Main,,0,0,0,,-谁？-阿尔卡蒂奥 那个校长
 Dialogue: 0,0:07:40.38,0:07:43.29,ES-Main,,0,0,0,,¿Quién es? Arcadio, el director de la escuela.
 Dialogue: 10,0:07:45.17,0:07:46.04,CN-Main,,0,0,0,,嘿
 Dialogue: 10,0:07:46.58,0:07:48.42,CN-Main,,0,0,0,,你先前说的话应验了
@@ -277,13 +277,13 @@ Dialogue: 10,0:12:27.79,0:12:30.67,CN-Main,,0,0,0,,不能让保守党赢得选�
 Dialogue: 0,0:12:27.79,0:12:30.67,ES-Main,,0,0,0,,No permitiremos que esos conservadores nos roben las elecciones.
 Dialogue: 10,0:12:30.75,0:12:33.42,CN-Main,,0,0,0,,随着反叛行动的日渐逼近
 Dialogue: 0,0:12:30.75,0:12:33.42,ES-Main,,0,0,0,,cada vez más exaltado
-Dialogue: 10,0:12:33.50,0:12:35.46,CN-Main,,0,0,0,,阿卡蒂奥越来越兴奋
+Dialogue: 10,0:12:33.50,0:12:35.46,CN-Main,,0,0,0,,阿尔卡蒂奥越来越兴奋
 Dialogue: 0,0:12:33.50,0:12:35.46,ES-Main,,0,0,0,,con la inminencia de la rebelión.
 Dialogue: 10,0:12:39.50,0:12:40.96,CN-Main,,0,0,0,,马孔多投给红色
 Dialogue: 0,0:12:39.50,0:12:40.96,ES-Main,,0,0,0,,Macondo vota rojo.
 Dialogue: 10,0:12:44.62,0:12:45.46,CN-Main,,0,0,0,,我的同胞们…
 Dialogue: 0,0:12:44.62,0:12:45.46,ES-Main,,0,0,0,,Paisano.
-Dialogue: 10,0:12:45.58,0:12:48.04,CN-Main,,0,0,0,,有人开始谈论射杀尼卡诺神父
+Dialogue: 10,0:12:45.58,0:12:48.04,CN-Main,,0,0,0,,有人开始谈论射杀尼卡诺尔神父
 Dialogue: 0,0:12:45.58,0:12:48.04,ES-Main,,0,0,0,,de fusilar al padre Nicanor.
 Dialogue: 10,0:12:48.92,0:12:50.88,CN-Main,,0,0,0,,把教堂变成学校
 Dialogue: 0,0:12:48.92,0:12:50.88,ES-Main,,0,0,0,,De convertir el templo en escuela…
@@ -416,7 +416,7 @@ Dialogue: 0,0:19:02.67,0:19:07.42,ES-Main,,0,0,0,,Quedan oficialmente abiertas l
 Dialogue: 10,0:19:51.04,0:19:53.17,CN-Main,,0,0,0,,依照诺盖拉医生的指示
 Dialogue: 10,0:19:53.25,0:19:55.46,CN-Main,,0,0,0,,提交红色选票的人
 Dialogue: 0,0:19:53.25,0:19:55.46,ES-Main,,0,0,0,,los hombres que votaban con la papeleta roja
-Dialogue: 10,0:19:56.04,0:19:59.75,CN-Main,,0,0,0,,必须喝下瓶中的液体以表明支持自由党的决心
+Dialogue: 10,0:19:56.04,0:19:59.75,CN-Main,,0,0,0,,必须服下瓶中的药丸以表明支持自由党的决心
 Dialogue: 0,0:19:56.04,0:19:59.75,ES-Main,,0,0,0,,debían tomar sus globulitos para ratificar su compromiso liberal.
 Dialogue: 10,0:21:23.42,0:21:25.75,CN-Main,,0,0,0,,共计收到236票
 Dialogue: 0,0:21:23.42,0:21:25.75,ES-Main,,0,0,0,,236 votos en total.
@@ -540,7 +540,7 @@ Dialogue: 10,0:29:51.04,0:29:54.12,CN-Main,,0,0,0,,有些地方的自由党已�
 Dialogue: 0,0:29:51.04,0:29:54.12,ES-Main,,0,0,0,,En algunos lugares, los liberales se están alzando en armas.
 Dialogue: 10,0:29:54.21,0:29:55.67,CN-Main,,0,0,0,,我们也该那么干！
 Dialogue: 0,0:29:54.21,0:29:55.67,ES-Main,,0,0,0,,¡Deberíamos hacer lo mismo!
-Dialogue: 10,0:29:56.17,0:29:58.71,CN-Main,,0,0,0,,要拿起武器首先得有武器才行 阿卡蒂奥
+Dialogue: 10,0:29:56.17,0:29:58.71,CN-Main,,0,0,0,,要拿起武器首先得有武器才行 阿尔卡蒂奥
 Dialogue: 0,0:29:56.17,0:29:58.71,ES-Main,,0,0,0,,Para alzarse en armas hay que tener armas, Arcadio.
 Dialogue: 10,0:29:59.08,0:30:00.33,CN-Main,,0,0,0,,当心
 Dialogue: 10,0:30:00.42,0:30:04.88,CN-Main,,0,0,0,,在里奥阿查 所有站出来反抗政府的自由党人士都被处决了
@@ -555,7 +555,7 @@ Dialogue: 10,0:30:24.79,0:30:26.58,CN-Main,,0,0,0,,并非亲兄妹！
 Dialogue: 0,0:30:24.79,0:30:26.58,ES-Main,,0,0,0,,¡no son hermanos!
 Dialogue: 10,0:30:29.25,0:30:34.25,CN-Main,,0,0,0,,以圣父、圣子和圣灵之名 阿门
 Dialogue: 0,0:30:29.25,0:30:34.25,ES-Main,,0,0,0,,En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.
-Dialogue: 10,0:31:20.00,0:31:23.67,CN-Main,,0,0,0,,阿卡蒂奥从来不知道何塞·阿尔卡蒂奥是他的父亲
+Dialogue: 10,0:31:20.00,0:31:23.67,CN-Main,,0,0,0,,阿尔卡蒂奥从来不知道何塞·阿尔卡蒂奥是他的父亲
 Dialogue: 0,0:31:20.00,0:31:23.67,ES-Main,,0,0,0,,que José Arcadio era su padre.
 Dialogue: 10,0:31:46.00,0:31:49.50,CN-Main,,0,0,0,,丽贝卡和何塞·阿尔卡蒂奥在墓地对面租下了一所房子
 Dialogue: 0,0:31:46.00,0:31:49.50,ES-Main,,0,0,0,,alquilaron una casita frente al cementerio.
@@ -573,10 +573,10 @@ Dialogue: 10,0:32:23.96,0:32:27.54,CN-Main,,0,0,0,,镇民们只能默默祈祷�
 Dialogue: 0,0:32:23.96,0:32:27.54,ES-Main,,0,0,0,,rogaban que una pasión tan desaforada
 Dialogue: 10,0:32:27.71,0:32:30.04,CN-Main,,0,0,0,,不会搅扰死人的安眠
 Dialogue: 0,0:32:27.71,0:32:30.04,ES-Main,,0,0,0,,no fuera a perturbar la paz de los muertos.
-Dialogue: 10,0:32:30.54,0:32:33.29,CN-Main,,0,0,0,,-你有刀吗 卡塔里诺？-连切柠檬的刀都没有
+Dialogue: 10,0:32:30.54,0:32:33.29,CN-Main,,0,0,0,,-你有刀吗 卡塔利诺？-连切柠檬的刀都没有
 Dialogue: 0,0:32:30.54,0:32:33.29,ES-Main,,0,0,0,,¿Tienes cuchillo, Catarino? No hay cuchillos ni para cortar limón. - ¿Qué pasó?
 Dialogue: 10,0:32:33.38,0:32:34.21,CN-Main,,0,0,0,,好啊
-Dialogue: 10,0:32:37.00,0:32:38.08,CN-Main,,0,0,0,,你好 卡塔里诺
+Dialogue: 10,0:32:37.00,0:32:38.08,CN-Main,,0,0,0,,你好 卡塔利诺
 Dialogue: 0,0:32:37.00,0:32:38.08,ES-Main,,0,0,0,,Ajá, Catarino.
 Dialogue: 10,0:32:39.08,0:32:40.58,CN-Main,,0,0,0,,劳驾 请给我来杯酒
 Dialogue: 0,0:32:39.08,0:32:40.58,ES-Main,,0,0,0,,Dame un trago, hazme el favor.
@@ -600,19 +600,19 @@ Dialogue: 10,0:33:29.88,0:33:32.33,CN-Main,,0,0,0,,这是真心话吗 奥雷里�
 Dialogue: 0,0:33:29.88,0:33:32.33,ES-Main,,0,0,0,,¿Estás seguro de lo que estás diciendo, Aureliano?
 Dialogue: 10,0:33:35.58,0:33:37.29,CN-Main,,0,0,0,,千真万确
 Dialogue: 0,0:33:35.58,0:33:37.29,ES-Main,,0,0,0,,Completamente seguro.
-Dialogue: 10,0:33:40.42,0:33:41.33,CN-Main,,0,0,0,,卡塔里诺！
+Dialogue: 10,0:33:40.42,0:33:41.33,CN-Main,,0,0,0,,卡塔利诺！
 Dialogue: 0,0:33:40.42,0:33:41.33,ES-Main,,0,0,0,,¡Catarino!
 Dialogue: 10,0:34:14.71,0:34:17.75,CN-Main,,0,0,0,,我们在策划革命
 Dialogue: 0,0:34:14.71,0:34:17.75,ES-Main,,0,0,0,,Estamos planeando una revolución.
 Dialogue: 10,0:34:20.17,0:34:21.54,CN-Main,,0,0,0,,哪种类型的革命？
 Dialogue: 0,0:34:20.17,0:34:21.54,ES-Main,,0,0,0,,¿Qué tipo de revolución?
-Dialogue: 10,0:34:22.71,0:34:26.92,CN-Main,,0,0,0,,我们要协同全国各地的一系列武装起义
+Dialogue: 10,0:34:22.71,0:34:26.92,CN-Main,,0,0,0,,全国各地正在协调一系列武装袭击
 Dialogue: 0,0:34:22.71,0:34:26.92,ES-Main,,0,0,0,,Se están coordinando una serie de atentados en todo el país
 Dialogue: 10,0:34:27.17,0:34:31.58,CN-Main,,0,0,0,,消灭保守党政权的所有官吏及其家人
 Dialogue: 0,0:34:27.17,0:34:31.58,ES-Main,,0,0,0,,para liquidar a todos los funcionarios del régimen conservador con sus respectivas familias.
 Dialogue: 10,0:34:32.38,0:34:33.50,CN-Main,,0,0,0,,所以我们需要你
 Dialogue: 0,0:34:32.38,0:34:33.50,ES-Main,,0,0,0,,Y ahí es donde entras tú, Aureliano.
-Dialogue: 10,0:34:34.33,0:34:36.71,CN-Main,,0,0,0,,协助我们除掉阿波利纳·摩斯科特
+Dialogue: 10,0:34:34.33,0:34:36.71,CN-Main,,0,0,0,,协助我们除掉阿波利纳尔·摩斯科特
 Dialogue: 0,0:34:34.33,0:34:36.71,ES-Main,,0,0,0,,Necesitamos su ayuda para matar a Apolinar Moscote,
 Dialogue: 10,0:34:36.96,0:34:38.79,CN-Main,,0,0,0,,还有他的妻子和六个女儿
 Dialogue: 0,0:34:36.96,0:34:38.79,ES-Main,,0,0,0,,a su esposa y a sus seis hijas.
@@ -727,7 +727,7 @@ Dialogue: 10,0:40:23.83,0:40:25.38,CN-Main,,0,0,0,,-他们攻击我！-你们凭
 Dialogue: 0,0:40:23.83,0:40:25.38,ES-Main,,0,0,0,,¡Me vulneran! - ¡No tienen derecho!
 Dialogue: 10,0:40:25.62,0:40:26.29,CN-Main,,0,0,0,,过来！
 Dialogue: 0,0:40:25.62,0:40:26.29,ES-Main,,0,0,0,,¡Ven acá!
-Dialogue: 10,0:40:27.04,0:40:29.17,CN-Main,,0,0,0,,-救命啊！-别逞英雄 阿卡蒂奥
+Dialogue: 10,0:40:27.04,0:40:29.17,CN-Main,,0,0,0,,-救命啊！-别逞英雄 阿尔卡蒂奥
 Dialogue: 0,0:40:27.04,0:40:29.17,ES-Main,,0,0,0,,¡Ayúdenme! No te hagas el héroe, Arcadio.
 Dialogue: 10,0:40:29.83,0:40:33.42,CN-Main,,0,0,0,,-他们会杀了你的-什么都不做的话 我们都会被杀光
 Dialogue: 0,0:40:29.83,0:40:33.42,ES-Main,,0,0,0,,Esos tipos te pueden matar. Nos van a matar a todos como no hagamos algo ya.
@@ -825,7 +825,7 @@ Dialogue: 10,0:48:50.38,0:48:51.50,CN-Main,,0,0,0,,什么事？
 Dialogue: 0,0:48:50.38,0:48:51.50,ES-Main,,0,0,0,,¿Qué pasa?
 Dialogue: 10,0:48:51.58,0:48:54.21,CN-Main,,0,0,0,,我们要把保守党赶出马孔多
 Dialogue: 0,0:48:51.58,0:48:54.21,ES-Main,,0,0,0,,Vamos a sacar a los conservadores de Macondo.
-Dialogue: 10,0:48:55.08,0:48:57.50,CN-Main,,0,0,0,,盖里奈多、马尼费科和其他人都已经加入我了
+Dialogue: 10,0:48:55.08,0:48:57.50,CN-Main,,0,0,0,,格林列尔多、马尼费科和其他人都已经加入我了
 Dialogue: 0,0:48:55.08,0:48:57.50,ES-Main,,0,0,0,,Estamos Gerineldo, Magnífico y otros más.
 Dialogue: 10,0:48:58.79,0:48:59.62,CN-Main,,0,0,0,,所以呢？
 Dialogue: 0,0:48:58.79,0:48:59.62,ES-Main,,0,0,0,,¿Y?

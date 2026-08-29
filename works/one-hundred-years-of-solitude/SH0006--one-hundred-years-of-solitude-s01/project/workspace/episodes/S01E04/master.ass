@@ -37,7 +37,7 @@ Dialogue: 0,0:01:23.21,0:01:25.12,ES-Main,,0,0,0,,Tengo que advertirle: estoy ar
 Dialogue: 10,0:01:58.12,0:02:03.04,CN-Main,,0,0,0,,我宁愿今天把你活着扛出来 也不想余生扛着你的尸体
 Dialogue: 0,0:01:58.12,0:02:03.04,ES-Main,,0,0,0,,Prefiero cargarlo vivo que tener que cargarlo muerto el resto de mi vida.
 Dialogue: 10,0:02:41.25,0:02:45.17,CN-Main,,0,0,0,,《百年孤独》
-Dialogue: 10,0:02:47.88,0:02:50.83,CN-Main,,0,0,0,,乌苏拉着手扩建房屋时
+Dialogue: 10,0:02:47.88,0:02:50.83,CN-Main,,0,0,0,,乌尔苏拉着手扩建房屋时
 Dialogue: 0,0:02:47.88,0:02:50.83,ES-Main,,0,0,0,,la ampliación de la casa,
 Dialogue: 10,0:02:51.50,0:02:54.62,CN-Main,,0,0,0,,让人给梅尔基亚德斯造了一个专门的房间
 Dialogue: 0,0:02:51.50,0:02:54.62,ES-Main,,0,0,0,,le hizo construir a Melquíades un cuarto especial,
@@ -139,13 +139,13 @@ Dialogue: 10,0:08:12.12,0:08:14.33,CN-Main,,0,0,0,,他们俩初见时闹得很�
 Dialogue: 0,0:08:12.12,0:08:14.33,ES-Main,,0,0,0,,Ellos empezaron con el pie izquierdo,
 Dialogue: 10,0:08:15.00,0:08:18.67,CN-Main,,0,0,0,,但我们不必如此 对吧？
 Dialogue: 0,0:08:15.00,0:08:18.67,ES-Main,,0,0,0,,pero usted y yo podemos hacer las cosas de manera distinta, ¿no le parece?
-Dialogue: 10,0:08:21.17,0:08:24.50,CN-Main,,0,0,0,,乌苏拉女士我听说你家是镇上最漂亮的呢
+Dialogue: 10,0:08:21.17,0:08:24.50,CN-Main,,0,0,0,,乌尔苏拉女士我听说你家是镇上最漂亮的呢
 Dialogue: 0,0:08:21.17,0:08:24.50,ES-Main,,0,0,0,,Señora Úrsula, he escuchado que su casa es la más linda del pueblo.
 Dialogue: 10,0:08:24.58,0:08:28.21,CN-Main,,0,0,0,,我家大门永远敞开 欢迎随时来做客
 Dialogue: 0,0:08:24.58,0:08:28.21,ES-Main,,0,0,0,,Las puertas de mi casa están siempre abiertas.
 Dialogue: 10,0:08:28.29,0:08:29.62,CN-Main,,0,0,0,,谢谢
 Dialogue: 0,0:08:28.29,0:08:29.62,ES-Main,,0,0,0,,Bienvenidas cuando quieran. Gracias.
-Dialogue: 10,0:08:29.71,0:08:32.29,CN-Main,,0,0,0,,很高兴见到你 乌苏拉女士
+Dialogue: 10,0:08:29.71,0:08:32.29,CN-Main,,0,0,0,,很高兴见到你 乌尔苏拉女士
 Dialogue: 0,0:08:29.71,0:08:32.29,ES-Main,,0,0,0,,Un gusto conocerla, doña Úrsula.
 Dialogue: 10,0:08:32.38,0:08:34.42,CN-Main,,0,0,0,,彼此彼此 摩斯科特夫人
 Dialogue: 0,0:08:32.38,0:08:34.42,ES-Main,,0,0,0,,Encantada, señora Moscote.
@@ -211,7 +211,7 @@ Dialogue: 0,0:10:42.00,0:10:43.71,ES-Main,,0,0,0,,Sí, pero está desafinada.
 Dialogue: 10,0:10:47.83,0:10:49.83,CN-Main,,0,0,0,,（皮耶特·克雷斯皮）
 Dialogue: 10,0:10:50.83,0:10:51.67,CN-Main,,0,0,0,,你们要来吗？
 Dialogue: 0,0:10:50.83,0:10:51.67,ES-Main,,0,0,0,,¿Vienen?
-Dialogue: 10,0:10:53.88,0:10:56.58,CN-Main,,0,0,0,,你家里真的很漂亮 乌苏拉女士
+Dialogue: 10,0:10:53.88,0:10:56.58,CN-Main,,0,0,0,,你家里真的很漂亮 乌尔苏拉女士
 Dialogue: 0,0:10:53.88,0:10:56.58,ES-Main,,0,0,0,,En verdad tiene una casa hermosa, doña Úrsula.
 Dialogue: 10,0:10:56.96,0:10:58.25,CN-Main,,0,0,0,,谢谢
 Dialogue: 0,0:10:56.96,0:10:58.25,ES-Main,,0,0,0,,Muchas gracias.
@@ -514,7 +514,7 @@ Dialogue: 10,0:28:36.92,0:28:37.79,CN-Main,,0,0,0,,快走！
 Dialogue: 0,0:28:36.92,0:28:37.79,ES-Main,,0,0,0,,¡Ya!
 Dialogue: 10,0:28:41.83,0:28:42.67,CN-Main,,0,0,0,,我来处理吧
 Dialogue: 0,0:28:41.83,0:28:42.67,ES-Main,,0,0,0,,Déjame a mí.
-Dialogue: 10,0:28:44.17,0:28:46.88,CN-Main,,0,0,0,,乌苏拉女士 我能跟您谈谈吗？
+Dialogue: 10,0:28:44.17,0:28:46.88,CN-Main,,0,0,0,,乌尔苏拉女士 我能跟您谈谈吗？
 Dialogue: 0,0:28:44.17,0:28:46.88,ES-Main,,0,0,0,,Doña Úrsula, hablemos un momento usted y yo.
 Dialogue: 10,0:28:47.38,0:28:48.21,CN-Main,,0,0,0,,单独谈
 Dialogue: 0,0:28:47.38,0:28:48.21,ES-Main,,0,0,0,,A solas.
@@ -781,7 +781,7 @@ Dialogue: 0,0:47:47.21,0:47:49.71,ES-Main,,0,0,0,,¿Sabes qué significa eso?
 Dialogue: 10,0:47:50.42,0:47:52.17,CN-Main,,0,0,0,,这一发现比其它任何
 Dialogue: 10,0:47:52.46,0:47:54.75,CN-Main,,0,0,0,,不切实际的追求都更令他激动
 Dialogue: 0,0:47:52.46,0:47:54.75,ES-Main,,0,0,0,,que cualquiera de sus empresas descabelladas.
-Dialogue: 10,0:47:56.12,0:47:59.92,CN-Main,,0,0,0,,少了乌苏拉的约束他开始沦为臆想的奴仆
+Dialogue: 10,0:47:56.12,0:47:59.92,CN-Main,,0,0,0,,少了乌尔苏拉的约束他开始沦为臆想的奴仆
 Dialogue: 0,0:47:56.12,0:47:59.92,ES-Main,,0,0,0,,Sin la vigilancia de Úrsula, se dejó arrastrar por su imaginación.
 Dialogue: 10,0:48:00.67,0:48:02.54,CN-Main,,0,0,0,,她的皮肤变成了树皮
 Dialogue: 0,0:48:00.67,0:48:02.54,ES-Main,,0,0,0,,Su piel se convirtió en corteza.
@@ -822,7 +822,7 @@ Dialogue: 10,0:48:59.04,0:49:00.50,CN-Main,,0,0,0,,我原本也这么认为…
 Dialogue: 0,0:48:59.04,0:49:00.50,ES-Main,,0,0,0,,Yo pensaba lo mismo…
 Dialogue: 10,0:49:03.71,0:49:05.17,CN-Main,,0,0,0,,但今天还是星期一
 Dialogue: 0,0:49:03.71,0:49:05.17,ES-Main,,0,0,0,,pero sigue siendo lunes.
-Dialogue: 10,0:49:39.00,0:49:43.88,CN-Main,,0,0,0,,乌苏拉不在 家里显得空旷莫名
+Dialogue: 10,0:49:39.00,0:49:43.88,CN-Main,,0,0,0,,乌尔苏拉不在 家里显得空旷莫名
 Dialogue: 0,0:49:39.00,0:49:43.88,ES-Main,,0,0,0,,la casa pareció enorme y vacía.
 Dialogue: 10,0:50:11.67,0:50:12.79,CN-Main,,0,0,0,,普鲁邓希奥
 Dialogue: 0,0:50:11.67,0:50:12.79,ES-Main,,0,0,0,,Prudencio.
@@ -874,7 +874,7 @@ Dialogue: 10,0:52:36.29,0:52:37.88,CN-Main,,0,0,0,,今天还是星期一
 Dialogue: 0,0:52:36.29,0:52:37.88,ES-Main,,0,0,0,,Sigue siendo lunes.
 Dialogue: 10,0:52:39.12,0:52:41.54,CN-Main,,0,0,0,,时间机器损坏了
 Dialogue: 0,0:52:39.12,0:52:41.54,ES-Main,,0,0,0,,La máquina del tiempo se ha averiado.
-Dialogue: 10,0:52:42.88,0:52:45.29,CN-Main,,0,0,0,,乌苏拉和阿玛兰妲都遥不可及
+Dialogue: 10,0:52:42.88,0:52:45.29,CN-Main,,0,0,0,,乌尔苏拉和阿玛兰妲都遥不可及
 Dialogue: 0,0:52:42.88,0:52:45.29,ES-Main,,0,0,0,,Y Úrsula y Amaranta, tan lejos.
 Dialogue: 10,0:53:17.25,0:53:18.25,CN-Main,,0,0,0,,冷静！
 Dialogue: 0,0:53:17.25,0:53:18.25,ES-Main,,0,0,0,,¡Cálmate!

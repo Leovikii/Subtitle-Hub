@@ -65,3 +65,30 @@
 | `SOLITUDE-TERM-034` | `Coronel Carmona` | 无对应小说人物 | `卡莫纳` | no-novel-correspondence | `SOLITUDE-SRC-NOVEL-LATEST-CN`；剧集专名保留现行形式 |
 
 状态只使用 `confirmed`、`confirmed-consistent`、`provisional`、`no-novel-correspondence` 或 `pending-user-confirmation`。歧义项确认前不得批量替换。
+
+## SH0006 全季实际表面形式闭合清单
+
+以下清单来自 S01E01–S01E08 工作母本的完整双向文本扫描（2026-08-29）。只登记实际出现的源文或中文字幕表面形式；同一事件中出现全名和简称时分别记录。数量是中文字幕 `CN-Main` 可见事件数，源文数量以对应扫描结果为准。未列入本节的已确认形式，均按上表中的规范全名或已登记变体处理。
+
+| term_id | 已确认实体 | 实际出现的源文形式 | 实际出现的中文形式 | 中文字幕事件数 | 处理状态与边界 |
+| --- | --- | --- | --- | ---: | --- |
+| `SOLITUDE-TERM-005` | Úrsula Iguarán | `Úrsula`、`Úrsula Iguarán` | `乌苏拉`、`乌尔苏拉·伊瓜兰`、`乌尔苏拉·伊瓜兰·布恩迪亚` | `乌苏拉` 69；规范形式 7 | `乌苏拉` 均指同一人物，作为待替换表面形式；完整姓名及扩展称谓保留实体映射。 |
+| `SOLITUDE-TERM-017` | Pilar Ternera | `Pilar`、`Pilar Ternera` | `皮拉`、`庇拉尔·特尔内拉` | `皮拉` 11；规范全名 5 | 11 个 `皮拉` 均与源文 `Pilar` 对齐，拟统一为短称 `庇拉尔`；短称不得与其他实体混用。 |
+| `SOLITUDE-TERM-021` | Gerineldo Márquez | `Gerineldo`、`Gerineldo Márquez` | `格林列尔多·马尔克`、`格林列尔多·马尔克斯` | 缺字形式 1；规范形式 2 | `格林列尔多·马尔克` 仅登记为一个完整事件的错字，不按字符串前缀扫描规范形式。 |
+| `SOLITUDE-TERM-025` | Aureliano Babilonia | `Aureliano Babilonia` | `奥雷里亚诺·巴比罗尼亚` | 1 | 与源文同一事件对齐，拟改为 `奥雷里亚诺·巴比伦`。 |
+| `SOLITUDE-TERM-012` | Santa Sofía de la Piedad | `Santa Sofía de la Piedad` | `桑塔索菲亚·德拉·皮埃达` | 2 | 这是已确认人物的扩展全名；小说词条/后备译本的细分写法尚未形成变更决定，暂保留并标记为 `provisional`。 |
+| `SOLITUDE-TERM-020` | Nicanor / Nicanor Reyna | `Nicanor`、`Nicanor Reyna` | `尼卡诺尔`、`尼卡诺尔·雷纳` | `尼卡诺尔·雷纳` 1 | 全名与神父称谓的简称属于同一人物；`尼卡诺`只作为独立称谓候选检查，不能把`尼卡诺尔`的前缀误判为禁用形式。 |
+| `SOLITUDE-TERM-009` | Rebeca / Rebeca Montiel | `Rebeca`、`Rebeca Montiel` | `丽贝卡`、`丽贝卡·蒙铁尔`、`丽贝卡·布恩迪亚` | `丽贝卡·布恩迪亚` 3 | `丽贝卡·布恩迪亚`是剧情中的婚后家族名组合，登记为实体变体，不因与娘家名不同而改写。 |
+| `SOLITUDE-TERM-031` | José Raquel Moncada | `José Raquel`、`José Raquel Moncada` | `何塞·拉克尔`、`何塞·拉克尔·蒙卡达` | 简称 3；全名 2 | 简称、全名和将军称谓均已确认指向同一人物；保留短称，不盲目补全。 |
+
+## 无小说词条对应的剧集专名闭合登记
+
+以下表面形式在完整范围内实际出现，但中文维基百科小说词条没有对应人物。依据系列规则不凭西语拼写臆造小说译名；它们是项目现行形式的排除项或待确认项，不纳入本轮机械替换。
+
+| 实体源文 | 实际中文形式 | 实际出现范围 | 状态 | 说明 |
+| --- | --- | --- | --- | --- |
+| `Roque Carnicero` | `罗克·卡尼塞罗`、`卡尼塞罗` | S01E07–S01E08，3 条 | `no-novel-correspondence` | 简称已由同一源文上下文确认。 |
+| `Alirio Noguera` / `Noguera` | `艾利洛·诺盖拉`、`诺盖拉` | S01E05–S01E06，9 条 | `no-novel-correspondence` | 全名与姓氏简称已由源文对齐，暂不按音译另改。 |
+| `Gregorio Stevenson` | `格雷戈·史蒂文森` | S01E07，2 条 | `no-novel-correspondence` | 剧集人物，小说词条无对应项。 |
+| `Napoleón Bonaparte` | `拿破仑·波拿巴` | S01E07，1 条 | `no-novel-correspondence` | 历史人物画面文字，保留现行形式。 |
+| `Gabriel García Márquez` | `加夫列尔·加西亚·马尔克斯` | S01E01–S01E08，8 条 | `no-novel-correspondence` | 作者署名画面文字，不作为剧中人物译名处理。 |
