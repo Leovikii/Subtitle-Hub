@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.0 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.1 toolchain."""
 
 from __future__ import annotations
 
@@ -136,7 +136,7 @@ def make_repository(root: Path) -> tuple[Path, Path]:
     series = repository / "works" / "test-series"
     series.mkdir(parents=True)
     (series / "series-guide.md").write_text("# Test series\n", encoding="utf-8")
-    (repository / "catalog.yaml").write_text("schema_version: 5\n\nworks:\n", encoding="utf-8")
+    (repository / "catalog.yaml").write_text("schema_version: 6\n\nworks:\n", encoding="utf-8")
     return repository, series
 
 
@@ -254,7 +254,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.0"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.1"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -309,20 +309,20 @@ class SkillStructureTests(unittest.TestCase):
             text = metadata.read_text(encoding="utf-8")
             schema = re.search(r"(?m)^schema_version: (\d+)$", text)
             self.assertIsNotNone(schema)
-            self.assertIn(schema.group(1), {"7", "8", "9"})
             self.assertIn("subtitle_design:", text)
             if schema.group(1) == "9":
                 self.assertIn("release_languages:", text)
                 self.assertNotIn("  review: review.md", text)
             else:
-                self.assertIn("  review: review.md", text)
+                result = run("validate_project.py", str(project), "--json", expect=1)
+                self.assertIn("upgrade required before processing", result.stdout)
 
     def test_active_repository_markdown_links_resolve(self) -> None:
         markdown_files = [REPOSITORY_ROOT / "README.md", REPOSITORY_ROOT / "CATALOG.md", REPOSITORY_ROOT / "AGENTS.md",
                           *sorted((REPOSITORY_ROOT / "works").glob("**/*.md"))]
         missing = []
         for markdown in markdown_files:
-            if "project/archive" in markdown.as_posix() or not markdown.is_file():
+            if not markdown.is_file():
                 continue
             for raw in re.findall(r"\[[^\]]+\]\(([^)]+)\)", markdown.read_text(encoding="utf-8")):
                 target = raw.split("#", 1)[0]
@@ -372,7 +372,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.3.0")
+            self.assertEqual(data["skill_version"], "1.3.1")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -647,7 +647,7 @@ class InitializationTests(unittest.TestCase):
             root = Path(raw)
             repository = root / "repository"
             (repository / "works").mkdir(parents=True)
-            (repository / "catalog.yaml").write_text("schema_version: 5\nworks:\n", encoding="utf-8")
+            (repository / "catalog.yaml").write_text("schema_version: 6\nworks:\n", encoding="utf-8")
             video, _, cache = make_materials(root / "materials")
             baseline_root = root / "duplicate-baselines"
             sub1, sub2 = baseline_root / "a/same.srt", baseline_root / "b/same.srt"
@@ -673,6 +673,22 @@ class InitializationTests(unittest.TestCase):
             video.unlink()
             result = run("validate_project.py", str(project), "--ready-for-proofreading", "--json", expect=1)
             self.assertIn("not readable", "\n".join(json.loads(result.stdout)["errors"]))
+
+    def test_existing_project_must_upgrade_skill_contract_before_processing(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _, series, _, _, args = initialize_project(root)
+            run("init_project.py", *args)
+            project = series / "SH0001--test-tv"
+            metadata = project / "project.yaml"
+            metadata.write_text(
+                metadata.read_text(encoding="utf-8").replace(
+                    'skill_version: "1.3.1"', 'skill_version: "1.3.0"'
+                ),
+                encoding="utf-8",
+            )
+            result = run("validate_project.py", str(project), "--json", expect=1)
+            self.assertIn("upgrade before processing", result.stdout)
 
 
 class CatalogAndPackagingTests(unittest.TestCase):
@@ -703,10 +719,13 @@ class CatalogAndPackagingTests(unittest.TestCase):
             catalog = (repository / "catalog.yaml").read_text(encoding="utf-8")
             self.assertIn("SH0001", catalog)
             self.assertIn("packages/bgm100 - 测试作品 [v1.0.0].zip", catalog)
-            self.assertIn("schema_version: 5", catalog)
+            self.assertIn("schema_version: 6", catalog)
             url_match = re.search(r'package_download_url: "([^"]+)"', catalog)
             self.assertIsNotNone(url_match)
             download_url = url_match.group(1)
+            cdn_match = re.search(r'package_cdn_url: "([^"]+)"', catalog)
+            self.assertIsNotNone(cdn_match)
+            cdn_url = cdn_match.group(1)
             self.assertNotIn(" ", download_url)
             self.assertIn("%E6%B5%8B%E8%AF%95%E4%BD%9C%E5%93%81", download_url)
             self.assertIn("%5Bv1.0.0%5D.zip", download_url)
@@ -714,8 +733,11 @@ class CatalogAndPackagingTests(unittest.TestCase):
                 unquote(urlparse(download_url).path.removeprefix("/example/repo/main/")),
                 "packages/bgm100 - 测试作品 [v1.0.0].zip",
             )
+            self.assertIn("cdn.jsdelivr.net/gh/example/repo@main/", cdn_url)
             markdown = (repository / "CATALOG.md").read_text(encoding="utf-8")
-            self.assertIn(f"[下载压缩包]({download_url})", markdown)
+            self.assertIn("| 项目资料 | 字幕成品 |", markdown)
+            self.assertIn(f"[原始下载]({download_url})", markdown)
+            self.assertIn(f"[CDN 加速]({cdn_url})", markdown)
             self.assertNotIn("[压缩包](packages/", markdown)
             review = series / "SH0001--test-tv/review.md"
             review.write_text(
@@ -854,7 +876,6 @@ class CandidateContractTests(unittest.TestCase):
                 events,
                 events,
                 {"CN-Main"},
-                legacy_fonts=False,
             )
         with self.assertRaises(NormalizeError):
             assert_rendered_regression(
@@ -863,7 +884,6 @@ class CandidateContractTests(unittest.TestCase):
                 events,
                 events.replace("0:00:02.00", "0:00:03.00"),
                 {"CN-Main"},
-                legacy_fonts=False,
             )
 
     def test_release_coverage_is_invalidated_by_master_change(self) -> None:
@@ -903,32 +923,21 @@ class CandidateContractTests(unittest.TestCase):
             master = project / "project/workspace/episodes/S01E01/master.ass"
             master.write_text(master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Arial"), encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("schema 9 master has non-Noto fonts", result.stderr)
+            self.assertIn("master has non-Noto fonts", result.stderr)
 
-    def test_legacy_master_build_compatibility_changes_only_fonts(self) -> None:
+    def test_candidate_builder_requires_current_project_contract(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            _, series, _, _, args = initialize_project(root, video_name="legacy-cut.S01E01.mkv")
+            _, series, _, _, args = initialize_project(root, video_name="old-contract-cut.S01E01.mkv")
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             metadata = project / "project.yaml"
             text = metadata.read_text(encoding="utf-8")
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
-            text = text.replace(
-                "release_languages:\n  primary: zh-Hans\n  secondary: null",
-                "languages:\n  release:\n    primary: zh-Hans\n    secondary: null",
-            )
             metadata.write_text(text, encoding="utf-8")
-            master = project / "project/workspace/episodes/S01E01/master.ass"
-            before = master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Unavailable Legacy Font")
-            master.write_text(before, encoding="utf-8")
-            run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
-            candidate = project / "project/workspace/build/current-candidate/legacy-cut.S01E01.zh-Hans.ass"
-            after = candidate.read_text(encoding="utf-8")
-            self.assertIn("Noto Sans CJK SC", after)
-            before_event = ass_section(before, "[Events]")
-            after_event = ass_section(after, "[Events]")
-            self.assertEqual(before_event, after_event)
+            result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
+            self.assertIn("upgrade project to the Skill 1.3.1 contract", result.stderr)
+            self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
 class StaticAuditTests(unittest.TestCase):

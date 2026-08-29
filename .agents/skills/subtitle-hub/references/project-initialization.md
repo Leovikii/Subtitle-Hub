@@ -90,7 +90,7 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.3.0 intake contract
+## Skill 1.3.1 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
@@ -98,7 +98,11 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.3.0`. It may contain local absolute paths. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.3.1`. It may contain local absolute paths. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+
+### SH-INIT-010 — Upgrade before reopening an older project
+
+Do not maintain old-schema execution branches and do not bulk-upgrade dormant projects. When an existing project is selected for new proofreading or release work, first compare it with the current `project.yaml` and `review.md` templates. Re-express confirmed durable facts in project schema 9 and current Skill version, fold current state and still-open decisions into review schema 3, and prepare complete Noto masters from the immutable sources or current release. Preserve source files and released subtitles unchanged; invalidate coverage fingerprints whenever a master changes. Resolve only genuinely missing or conflicting identity, scope, mapping, language, timing-authority, or naming facts with the user, then pass `validate_project.py --ready-for-proofreading` before content work. Git retains the old control history; do not create migration reports, compatibility sidecars, or per-version converters.
 
 Example:
 

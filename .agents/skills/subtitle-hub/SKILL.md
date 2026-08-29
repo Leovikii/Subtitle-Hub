@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
 ---
 
 # Subtitle Hub
@@ -20,6 +20,7 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 ## Lifecycle
 
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.3.1"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
 1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Resolve identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one confirmation.
 2. Dry-run internally, initialize transactionally, and pass `--ready-for-proofreading`. Ask again only if the result materially differs from the approval.
 3. Audit the complete scope without editing masters. Put the categorized proposal in `review.md`, list every semantic edit separately, batch only bounded same-rule mechanical work, and pause for approval.

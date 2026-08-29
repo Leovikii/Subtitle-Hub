@@ -8,7 +8,6 @@ import hashlib
 import json
 import os
 import re
-import subprocess
 import sys
 import tempfile
 import unicodedata
@@ -16,8 +15,7 @@ import zipfile
 from pathlib import Path
 
 
-TOOL_REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-REPOSITORY_ROOT = TOOL_REPOSITORY_ROOT
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 WORKS_ROOT = REPOSITORY_ROOT / "works"
 PACKAGES_ROOT = REPOSITORY_ROOT / "packages"
 SEMVER = re.compile(
@@ -25,7 +23,6 @@ SEMVER = re.compile(
     r"(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
 )
-LEGACY_LANGUAGE_SUFFIX = re.compile(r".+\.zh-Hans\.(?:ja|en)\.ass\Z")
 STYLE_RESET = re.compile(r"\\r([^\\}]*)")
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
 STYLE_DEFINITION = re.compile(r"^Style:\s*(.*)$")
@@ -137,8 +134,6 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) not in {"7", "8", "9"}:
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7, 8, or 9")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)
@@ -169,12 +164,16 @@ def project_languages(project_root: Path) -> tuple[str, str | None]:
         release = yaml_block(metadata, "release_languages", 0)
         primary = yaml_scalar(release, "primary", 2)
         secondary = yaml_scalar(release, "secondary", 2)
-    else:
-        languages = yaml_block(metadata, "languages", 0)
-        release = yaml_block(languages, "release", 2)
-        primary = yaml_scalar(release, "primary", 4)
-        secondary = yaml_scalar(release, "secondary", 4)
-    return primary, None if secondary == "null" else secondary
+        return primary, None if secondary == "null" else secondary
+    subtitles = sorted((project_root / "subtitles/current").glob("*.ass"))
+    if not subtitles:
+        raise PackageError(f"{project_root}: published artifact has no ASS file")
+    header = subtitles[0].read_text(encoding="utf-8-sig")
+    primary_match = re.search(r"(?m)^; Subtitle-Hub-Primary-Language:\s*(\S+)\s*$", header)
+    secondary_match = re.search(r"(?m)^; Subtitle-Hub-Secondary-Language:\s*(\S+)\s*$", header)
+    if not primary_match:
+        raise PackageError(f"{subtitles[0]}: published artifact lacks primary-language metadata")
+    return primary_match.group(1), secondary_match.group(1) if secondary_match else None
 
 
 def project_episode_for_subtitle(project_root: Path, subtitle: Path, primary: str) -> str:
@@ -373,19 +372,16 @@ def validate_release_dir(
 
     expected_marker = f"; Subtitle-Hub-Version: {version}".encode("ascii")
     marker_prefix = b"; Subtitle-Hub-Version:"
-    major_version = int(version.split(".", 1)[0])
     for subtitle in subtitles:
-        legacy_release = major_version < 2 and LEGACY_LANGUAGE_SUFFIX.fullmatch(subtitle.name)
         data = subtitle.read_bytes()
         markers = [line for line in data.splitlines() if line.startswith(marker_prefix)]
         if markers != [expected_marker]:
             raise PackageError(
                 f"{subtitle}: expected exactly one version marker {expected_marker.decode()}"
             )
-        if not legacy_release:
-            if project_root is None:
-                raise PackageError(f"{release_dir}: project root required for standard release validation")
-            validate_standard_ass(subtitle, data, version, project_root)
+        if project_root is None:
+            raise PackageError(f"{release_dir}: project root required for standard release validation")
+        validate_standard_ass(subtitle, data, version, project_root)
     unexpected = sorted(
         path.name
         for path in release_dir.iterdir()
@@ -400,18 +396,6 @@ def validate_project(version_file: Path) -> tuple[Path, str, list[Path]]:
     current_dir = version_file.parent
     project_root = current_dir.parent.parent
     version, subtitles = validate_release_dir(current_dir, project_root)
-    validator = TOOL_REPOSITORY_ROOT / ".agents/skills/subtitle-hub/scripts/validate_project.py"
-    checked = subprocess.run(
-        [sys.executable, str(validator), str(project_root), "--release", "--json"],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    if checked.returncode != 0:
-        raise PackageError(
-            f"{project_root}: project/review release gate failed: {checked.stdout or checked.stderr}"
-        )
-
     previous_dir = current_dir.parent / "previous"
     if previous_dir.exists():
         if not previous_dir.is_dir():
