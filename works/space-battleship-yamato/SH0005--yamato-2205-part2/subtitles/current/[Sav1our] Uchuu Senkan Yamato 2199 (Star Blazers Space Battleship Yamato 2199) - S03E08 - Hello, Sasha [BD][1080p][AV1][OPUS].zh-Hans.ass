@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.2
 ; Subtitle-Hub-Languages: zh-Hans
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Source-Credit: 冷番补完字幕组；翻译：这就是大人的特权吗 时轴：两津勘吉 狗喵 设定校对：所罗门の疯狗 校对: 这就是大人的特权吗 松柏の凋む 特效：漫之影 压制：違
@@ -357,38 +357,6 @@ Dialogue: 0,0:23:51.80,0:23:52.64,常规,,0,0,0,,
 Dialogue: 0,0:23:53.14,0:23:58.14,常规,,0,0,0,,但这艘船的舷号远大于我们实际建造的
 Dialogue: 0,0:23:59.48,0:24:01.44,常规,,0,0,0,,迪萨利亚姆
 Dialogue: 0,0:24:02.14,0:24:05.52,常规,,0,0,0,,究竟是什么来路
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,code once all,function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end;temp = {};function set_temp(ref,val) temp[ref] = val; return val; end;dirk = {"m 20 0 l 20 0 l 21 0 l 20 40 l 21 40 m 0 20 l 0 21 l 40 20 l 40 21 l 40 21  "};shape = {"m 0 0 l 40 40 m 40 40 b 42 38 45 41 43 43 b 41 45 38 42 40 40 m 0 0 b -2 2 -5 -1 -3 -3 b -1 -5 2 -2 0 0 "};tf = {"1","-1"}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,code line all,ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ",""))
-Comment: 1,1:26:52.97,1:26:52.97,日文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur1\an5\pos($center,$middle)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur3\an5\pos($center,$middle)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
-Comment: 2,1:26:52.97,1:26:52.97,日文,,0,0,0,template multi,!retime("syl",0,300)!{\an5\pos($center,$middle)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,$dur,\fscx100\fscy100\3c&H888888&\1c!line.styleref.color1!)\fad(0,300)}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,template syl noblank notext loop 10,!retime("syl",-300,200)!{\an5\bord1\shad0\blur4\b0\1a&H00&\1c&H74F463&\3c&HFFFFFF&\move(!(syl.i == 0) and syl.center -50 or math.floor(line.left+line.kara[syl.i-1].right)!,$middle,$right,$middle)\fr!temp.angle11!\fscx0\fscy0\t(0,!$dur+500!,\fr!set_temp("angle11",math.random(60)+$dur*0.2)!\fscx!math.random(500)!\fscy!math.random(500)!)\t($dur,!$dur+500!,\alpha&HFF&\blur10)\p1}!dirk[1]!
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,code once all,function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end;temp = {};function set_temp(ref,val) temp[ref] = val; return val; end;dirk = {"m 20 0 l 20 0 l 21 0 l 20 40 l 21 40 m 0 20 l 0 21 l 40 20 l 40 21 l 40 21  "};shape = {"m 0 0 l 40 40 m 40 40 b 42 38 45 41 43 43 b 41 45 38 42 40 40 m 0 0 b -2 2 -5 -1 -3 -3 b -1 -5 2 -2 0 0 "};tf = {"1","-1"}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,code line all,ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ",""))
-Comment: 1,1:26:52.97,1:26:52.97,中文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur1\an5\pos($center,$middle)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur3\an5\pos($center,$middle)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
-Comment: 2,1:26:52.97,1:26:52.97,中文,,0,0,0,template multi,!retime("syl",0,300)!{\an5\pos($center,$middle)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,$dur,\fscx100\fscy100\3c&H888888&\1c!line.styleref.color1!)\fad(0,300)}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,template syl noblank notext loop 10,!retime("syl",-300,200)!{\an5\bord1\shad0\blur4\b0\1a&H00&\1c&H74F463&\3c&HFFFFFF&\move(!(syl.i == 0) and syl.center -50 or math.floor(line.left+line.kara[syl.i-1].right)!,$middle,$right,$middle)\fr!temp.angle11!\fscx0\fscy0\t(0,!$dur+500!,\fr!set_temp("angle11",math.random(60)+$dur*0.2)!\fscx!math.random(500)!\fscy!math.random(500)!)\t($dur,!$dur+500!,\alpha&HFF&\blur10)\p1}!dirk[1]!
-Comment: 0,0:21:24.68,0:21:31.03,日文,,0,0,0,,{\kf258}壊{\kf49}れ{\kf38}ゆ{\kf77}く{\kf43}{\kf29}世{\kf141}界{\kf0}
-Comment: 0,0:21:24.68,0:21:31.03,中文,,0,0,0,,{\kf91}逐{\kf91}渐{\kf91}崩{\kf90}坏{\kf90}的{\kf91}世{\kf91}界
-Comment: 0,0:21:31.03,0:21:37.89,日文,,0,0,0,,{\kf60}火{\kf45}も{\kf168}{\kf47}希{\kf86}望{\kf133}も{\kf50}凍{\kf97}る
-Comment: 0,0:21:31.03,0:21:37.89,中文,,0,0,0,,{\kf86}火{\kf86}和{\kf86}希{\kf86}望{\kf85}都{\kf86}被{\kf85}冰{\kf86}封
-Comment: 0,0:21:38.23,0:21:47.03,日文,,0,0,0,,{\kf27}で{\kf41}も{\kf94}{\kf135}涙{\kf45}だ{\kf48}け{\kf103}は{\kf29}{\kf34}あ{\kf35}た{\kf107}た{\kf14}{\kf28}か{\kf140}い
-Comment: 0,0:21:38.23,0:21:47.03,中文,,0,0,0,,{\kf98}但{\kf98}唯{\kf98}有{\kf98}眼{\kf98}泪{\kf97}是{\kf98}温{\kf97}暖{\kf98}的
-Comment: 0,0:21:49.40,0:21:55.63,日文,,0,0,0,,{\kf76}悲{\kf42}し{\kf62}み{\kf39}の{\kf70}後{\kf61}ろ{\kf46}で{\kf31}い{\kf37}つ{\kf159}も
-Comment: 0,0:21:49.40,0:21:55.63,中文,,0,0,0,,{\kf156}悲{\kf156}伤{\kf155}之{\kf156}后
-Comment: 0,0:21:56.22,0:22:01.70,日文,,0,0,0,,{\kf55}次{\kf55}は{\kf55}幸{\kf55}せ{\kf55}が{\kf55}待{\kf54}っ{\kf55}て{\kf54}る{\kf55}…{\kf0}
-Comment: 0,0:21:56.22,0:22:01.70,中文,,0,0,0,,{\kf46}总{\kf46}会{\kf46}有{\kf46}下{\kf45}一{\kf46}个{\kf45}幸{\kf46}福{\kf45}在{\kf46}等{\kf45}待{\kf46}着
-Comment: 0,0:22:03.14,0:22:14.83,日文,,0,0,0,,{\kf63}そ{\kf42}ん{\kf24}な{\kf103}寓{\kf28}話{\kf24}を{\kf114}真{\kf74}実{\kf60}に{\kf47}{\kf46}変{\kf42}え{\kf34}ま{\kf43}しょ{\kf425}う
-Comment: 0,0:22:03.14,0:22:14.83,中文,,0,0,0,,{\kf130}把{\kf130}那{\kf130}寓{\kf130}言{\kf130}变{\kf130}成{\kf130}现{\kf129}实{\kf130}吧
-Comment: 0,0:22:16.29,0:22:25.60,日文,,0,0,0,,{\kf47}あ{\kf49}な{\kf42}た{\kf36}の{\kf30}瞳{\kf94}が{\kf51}{\kf77}眩{\kf42}し{\kf54}そ{\kf26}う{\kf113}に{\kf192}　囁{\kf78}く
-Comment: 0,0:22:16.29,0:22:25.60,中文,,0,0,0,,{\kf76}你{\kf75}的{\kf76}眼{\kf75}眸{\kf76}炯{\kf75}炯{\kf76}有{\kf75}神{\kf76}地{\kf25} {\kf75}低{\kf75}语{\kf76}着
-Comment: 0,0:22:29.32,0:22:44.33,日文,,0,0,0,,{\kf131}夢{\kf41}を{\kf49}見{\kf37}る{\kf26}の{\kf99}は{\kf50}　{\kf88}傷{\kf42}つ{\kf46}く{\kf30}た{\kf109}め{\kf39}じゃ{\kf52}な{\kf662}い
-Comment: 0,0:22:29.32,0:22:44.33,中文,,0,0,0,,{\kf188}做{\kf188}梦{\kf187}不{\kf188}是{\kf187}为{\kf188}了{\kf187}受{\kf188}伤
-Comment: 0,0:22:52.82,0:22:59.22,日文,,0,0,0,,{\kf36}火{\kf49}も{\kf158}{\kf53}希{\kf86}望{\kf106}も{\kf67}凍{\kf85}る
-Comment: 0,0:22:52.82,0:22:59.22,中文,,0,0,0,,{\kf80}火{\kf80}和{\kf80}希{\kf80}望{\kf80}都{\kf80}被{\kf80}冰{\kf80}封
-Comment: 0,0:22:59.76,0:23:09.43,日文,,0,0,0,,{\kf35}で{\kf44}も{\kf87}{\kf134}涙{\kf49}だ{\kf40}け{\kf148}は{\kf37}あ{\kf41}た{\kf173}た{\kf103}か{\kf76}い
-Comment: 0,0:22:59.76,0:23:09.43,中文,,0,0,0,,{\kf107}但{\kf107}唯{\kf108}有{\kf107}眼{\kf107}泪{\kf108}是{\kf108}温{\kf107}暖{\kf108}的
 Dialogue: 1,0:21:23.68,0:21:24.68,中文,,0,0,0,fx,{\fad(1000,0)\blur1\an5\pos(651,1020)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
 Dialogue: 0,0:21:23.68,0:21:24.68,中文,,0,0,0,fx,{\fad(1000,0)\blur3\an5\pos(651,1020)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
 Dialogue: 2,0:21:24.68,0:21:24.98,中文,,0,0,0,fx,{\an5\pos(651,1020)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,0,\fscx100\fscy100\3c&H888888&\1c&H00FFFFFF&)\fad(0,300)}

@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.2
 ; Subtitle-Hub-Languages: zh-Hans
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Source-Credit: 翻译 白楸兔引 寻结 Riho；时轴 枕头46 狗喵；特效 漫之影；校对 松柏の凋む 这就是大人的特权吗；压制 違；设定校正 所罗门の疯狗
@@ -163,8 +163,8 @@ Dialogue: 0,0:12:52.94,0:12:54.46,常规,,0,0,0,,那……那个
 Dialogue: 0,0:12:54.86,0:12:55.95,常规,,0,0,0,,什么嘛 那家伙
 Dialogue: 0,0:12:56.95,0:12:58.97,常规,,0,0,0,,明明是个叛徒却那么自来熟
 Dialogue: 0,0:12:59.65,0:13:01.54,背景,,0,0,0,,还说着地球话呢
-Dialogue: 0,0:13:01.95,0:13:03.24,常规,,0,0,0,,人家可是ヤーブ技官大人呢
-Dialogue: 0,0:13:01.95,0:13:03.24,注释,,0,0,0,,*这里船员们没有使用薮助治名字的日语发音やぶ\N而是用其名字的加米拉斯语发音ヤーブ来称呼他 以此嘲讽其背叛行为
+Dialogue: 0,0:13:01.95,0:13:03.24,常规,,0,0,0,,人家可是{\fnNoto Sans CJK JP}ヤーブ{\fnNoto Sans CJK SC}技官大人呢
+Dialogue: 0,0:13:01.95,0:13:03.24,注释,,0,0,0,,*这里船员们没有使用薮助治名字的日语发音{\fnNoto Sans CJK JP}やぶ{\fnNoto Sans CJK SC}\N而是用其名字的加米拉斯语发音{\fnNoto Sans CJK JP}ヤーブ{\fnNoto Sans CJK SC}来称呼他 以此嘲讽其背叛行为
 Dialogue: 0,0:13:04.86,0:13:05.75,常规,,0,0,0,,那个
 Dialogue: 0,0:13:09.01,0:13:09.67,常规,,0,0,0,,可以的话
 Dialogue: 0,0:13:10.60,0:13:11.61,常规,,0,0,0,,我来看看吧
@@ -301,36 +301,6 @@ Dialogue: 0,0:22:33.76,0:22:34.90,常规,,0,0,0,,行星它……
 Dialogue: 0,0:22:35.96,0:22:37.56,常规,,0,0,0,,Geas Tam Jump（跃迁）了！？
 Dialogue: 0,0:22:39.44,0:22:44.95,中文4,,0,0,0,,{\fad(1000,0)}第三话\N加米拉斯星 最后的一天
 Dialogue: 0,0:22:46.07,0:22:52.00,中文5,,0,0,0,,{\fad(1000,1000)}下一话\N拯救伊斯坎达尔！年轻勇者们的叛乱！！
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,code once all,function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end;temp = {};function set_temp(ref,val) temp[ref] = val; return val; end;dirk = {"m 20 0 l 20 0 l 21 0 l 20 40 l 21 40 m 0 20 l 0 21 l 40 20 l 40 21 l 40 21  "};shape = {"m 0 0 l 40 40 m 40 40 b 42 38 45 41 43 43 b 41 45 38 42 40 40 m 0 0 b -2 2 -5 -1 -3 -3 b -1 -5 2 -2 0 0 "};tf = {"1","-1"}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,code line all,ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ",""))
-Comment: 1,1:26:52.97,1:26:52.97,日文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur1\an5\pos($center,$middle)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur3\an5\pos($center,$middle)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
-Comment: 2,1:26:52.97,1:26:52.97,日文,,0,0,0,template multi,!retime("syl",0,300)!{\an5\pos($center,$middle)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,$dur,\fscx100\fscy100\3c&H888888&\1c!line.styleref.color1!)\fad(0,300)}
-Comment: 0,1:26:52.97,1:26:52.97,日文,,0,0,0,template syl noblank notext loop 10,!retime("syl",-300,200)!{\an5\bord1\shad0\blur4\b0\1a&H00&\1c&H74F463&\3c&HFFFFFF&\move(!(syl.i == 0) and syl.center -50 or math.floor(line.left+line.kara[syl.i-1].right)!,$middle,$right,$middle)\fr!temp.angle11!\fscx0\fscy0\t(0,!$dur+500!,\fr!set_temp("angle11",math.random(60)+$dur*0.2)!\fscx!math.random(500)!\fscy!math.random(500)!)\t($dur,!$dur+500!,\alpha&HFF&\blur10)\p1}!dirk[1]!
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,code once all,function char_counter(ref) ci[ref] = ci[ref] + 1; return "" end;temp = {};function set_temp(ref,val) temp[ref] = val; return val; end;dirk = {"m 20 0 l 20 0 l 21 0 l 20 40 l 21 40 m 0 20 l 0 21 l 40 20 l 40 21 l 40 21  "};shape = {"m 0 0 l 40 40 m 40 40 b 42 38 45 41 43 43 b 41 45 38 42 40 40 m 0 0 b -2 2 -5 -1 -3 -3 b -1 -5 2 -2 0 0 "};tf = {"1","-1"}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,code line all,ci = { 0 }; cn = _G.unicode.len(orgline.text_stripped:gsub(" ",""))
-Comment: 1,1:26:52.97,1:26:52.97,中文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur1\an5\pos($center,$middle)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,template,!retime("start2syl",-1000+syl.i*60,0)!{\fad(1000,0)\blur3\an5\pos($center,$middle)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
-Comment: 2,1:26:52.97,1:26:52.97,中文,,0,0,0,template multi,!retime("syl",0,300)!{\an5\pos($center,$middle)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,$dur,\fscx100\fscy100\3c&H888888&\1c!line.styleref.color1!)\fad(0,300)}
-Comment: 0,1:26:52.97,1:26:52.97,中文,,0,0,0,template syl noblank notext loop 10,!retime("syl",-300,200)!{\an5\bord1\shad0\blur4\b0\1a&H00&\1c&H74F463&\3c&HFFFFFF&\move(!(syl.i == 0) and syl.center -50 or math.floor(line.left+line.kara[syl.i-1].right)!,$middle,$right,$middle)\fr!temp.angle11!\fscx0\fscy0\t(0,!$dur+500!,\fr!set_temp("angle11",math.random(60)+$dur*0.2)!\fscx!math.random(500)!\fscy!math.random(500)!)\t($dur,!$dur+500!,\alpha&HFF&\blur10)\p1}!dirk[1]!
-Comment: 0,0:22:52.05,0:22:58.18,中文,,0,0,0,karaoke,{\k123}悲{\k123}伤{\k123}的{\k122}背{\k123}后
-Comment: 0,0:22:52.05,0:22:58.18,日文,,0,0,0,karaoke,{\k78}悲{\k40}し{\k62}み{\k40}の{\k69}後{\k58}ろ{\k44}で{\k35}い{\k33}つ{\k155}も
-Comment: 0,0:22:58.85,0:23:04.82,中文,,0,0,0,karaoke,{\k85}总{\k86}有{\k85}幸{\k85}福{\k85}在{\k85}等{\k86}候
-Comment: 0,0:22:58.85,0:23:04.82,日文,,0,0,0,karaoke,{\k103}次{\k20}は{\k141}幸{\k56}せ{\k43}が{\k66}待{\k24}っ{\k24}て{\k120}る
-Comment: 0,0:23:05.73,0:23:11.32,中文,,0,0,0,karaoke,{\k70}把{\k70}这{\k69}样{\k70}的{\k69}寓{\k70}言{\k69}变{\k70}成
-Comment: 0,0:23:05.73,0:23:11.32,日文,,0,0,0,karaoke,{\k72}そ{\k40}ん{\k22}な{\k104}寓{\k31}話{\k21}を{\k118}真{\k69}実{\k80}に
-Comment: 0,0:23:11.61,0:23:17.37,中文,,0,0,0,karaoke,{\k72}真{\k72}的{\k72}发{\k72}生{\k71}过{\k72}的{\k71}事{\k72}吧
-Comment: 0,0:23:11.61,0:23:17.37,日文,,0,0,0,karaoke,{\k46}変{\k41}え{\k32}ま{\k23}し{\k24}ょ{\k408}う
-Comment: 0,0:23:18.96,0:23:28.92,中文,,0,0,0,karaoke,{\k91}你{\k91}的{\k91}目{\k90}光{\k91}耀{\k91}眼{\k91}地{\k91}对{\k91}我{\k90}低{\k91}语
-Comment: 0,0:23:18.96,0:23:28.92,日文,,0,0,0,karaoke,{\k45}あ{\k45}な{\k45}た{\k39}の{\k25}目{\k98}が{\k49}{\k80}眩{\k44}し{\k57}そ{\k19}う{\k113}に{\k43}さ{\k38}さ{\k126}や{\k133}く
-Comment: 0,0:23:32.01,0:23:46.90,中文,,0,0,0,karaoke,{\k124}怀{\k124}抱{\k124}梦{\k124}想{\k124}不{\k124}是{\k124}为{\k124}了{\k124}让{\k125}人{\k124}受{\k125}伤
-Comment: 0,0:23:32.01,0:23:46.90,日文,,0,0,0,karaoke,{\k132}夢{\k43}を{\k45}見{\k39}る{\k24}の{\k93}は{\k56}{\k90}傷{\k41}つ{\k45}く{\k27}た{\k99}め{\k50}　じゃ{\k49}な{\k657}い
-Comment: 0,0:23:48.90,0:23:54.95,中文,,0,0,0,karaoke,{\k86}爱{\k87}至{\k86}今{\k86}仍{\k87}是{\k86}光{\k87}芒
-Comment: 0,0:23:48.90,0:23:54.95,日文,,0,0,0,karaoke,{\k195}愛{\k64}は{\k83}今{\k119}も{\k144}光
-Comment: 0,0:23:55.49,0:24:01.83,中文,,0,0,0,karaoke,{\k68}不{\k68}过{\k23} {\k68}这{\k68}只{\k68}是{\k68}一{\k68}个{\k68}祈{\k69}愿
-Comment: 0,0:23:55.49,0:24:01.83,日文,,0,0,0,karaoke,{\k46}た{\k45}だ{\k149}　{\k102}一{\k49}つ{\k72}の{\k49}{\k52}祈{\k72}り
-Comment: 0,0:24:02.46,0:24:11.63,中文,,0,0,0,karaoke,{\k131}未{\k131}来{\k131}已{\k131}经{\k131}开{\k130}始{\k131}了
-Comment: 0,0:24:02.46,0:24:11.63,日文,,0,0,0,karaoke,{\k37}未{\k179}来{\k41}は{\k42}も{\k42}う{\k28}{\k158}始{\k37}ま{\k24}っ{\k126}て{\k35}い{\k167}る
 Dialogue: 1,0:22:51.05,0:22:52.05,中文,,0,0,0,fx,{\fad(1000,0)\blur1\an5\pos(10,1025)\shad0.5\1a&HFF&\4a&H80&\fscx100\fscy100}
 Dialogue: 0,0:22:51.05,0:22:52.05,中文,,0,0,0,fx,{\fad(1000,0)\blur3\an5\pos(10,1025)\shad0\bord3\1c&H000000&\3c&HFFFFFF&\fscx100\fscy100}
 Dialogue: 2,0:22:52.05,0:22:52.35,中文,,0,0,0,fx,{\an5\pos(10,1025)\bord2\blur3\t(0,25,\fscx150\fscy150\3c&HFFFFFF&\1c&HFFFFFF&)\t(25,0,\fscx100\fscy100\3c&H888888&\1c&H00FFFFFF&)\fad(0,300)}
