@@ -12,7 +12,7 @@ An active work keeps exactly `project.yaml` and root-level `review.md` as contro
 
 Analyze without modifying masters. In `review.md`, use categorized tables with `item_id`, episode/time or bounded scope, category, before, proposed result, evidence/rationale, severity/risk, decision, status, actual result, and verification. Initial proposal rows use pending/awaiting approval; update the same rows after feedback, implementation, verification, final review, and release.
 
-List every retranslation, dialogue deletion/addition, meaning correction, and context-sensitive terminology change separately. Batch only deterministic same-category work such as one exact confirmed term replacement, punctuation rule, or ordinary-dialogue style mapping; state the match rule, count, episodes, exclusions, and examples. Never hide semantic edits in a batch.
+List every retranslation, dialogue deletion/addition, meaning correction, and context-sensitive terminology change separately. Batch only deterministic same-category work such as confirmed surface forms of one entity, punctuation rule, or ordinary-dialogue style mapping; state every matched form, its count, episodes, exclusions, and examples. A full name does not authorize substring replacement: a short name, surname, nickname, or name-plus-title joins the batch only after its entity and canonical form are confirmed. Never hide semantic edits in a batch.
 
 After approval, implement and verify the approved scope continuously through a complete release candidate. New semantic work outside scope is added as pending and deferred unless release-blocking. Documentation/tooling changes explicitly requested by the user need no second approval round. Never create a separate feedback or completion report.
 
@@ -23,6 +23,8 @@ Count every visible Chinese Dialogue event in the release scope, excluding only 
 For A/B evidence, also account for every source-text unit in both directions. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when meaning, order, timing, and layout remain complete. Time alignment raises candidates but never proves semantic resolution. Record unresolved units explicitly; zero issue rows never substitutes for coverage counts.
 
 For C/D evidence, the Agent still reviews every Chinese event for grammar, wording, consistency, punctuation, segmentation, timing code, and static layout, but cannot mark source fidelity complete. A source-language-capable human must perform full-meaning review before that claim or release gate can pass.
+
+Terminology coverage is part of these same denominators, not a separate report. For A/B evidence, account for every source mention of a confirmed entity and its aligned Chinese rendering; for every tier, assign each observed Chinese proper-name form to a confirmed `term_id`, a documented exclusion, or an unresolved proposal. Replacing and scanning only the full name never closes the term. In the relevant `review.md` row record the checked surface-form set, per-form counts, scope, ambiguous exclusions, and remaining forbidden or unclassified hits. Claim terminology completion only when forbidden and unclassified hits are both zero within the declared scope.
 
 ## SH-TRANS-009 — Executable Chinese quality standard
 
@@ -72,3 +74,11 @@ Notes are exceptional: only for plot-relevant comprehension loss that natural tr
 ## SH-TRANS-007 — Series terminology
 
 When a series has cross-project terms, keep one `series-guide.md` with stable `term_id`, source form, canonical Simplified Chinese, variants, scope, evidence, and status. Do not create an empty guide. Research only unresolved additions/conflicts. A project deviation is a confirmed `project.yaml` override citing the term, exact scope, evidence, confirmer, and date.
+
+For a person or other entity, `variants` is a form-to-entity inventory rather than a loose synonym list. Scan the complete available source and Chinese scope and record each form that actually occurs: full name, given name, family name, nickname, and title/honorific combination when applicable. Distinguish approved Chinese forms from forbidden or unresolved forms. Do not invent unused variants or derive a short form by blindly truncating a full name; use aligned source text, dialogue context, or other confirmed identity evidence where a form could name more than one entity. Keep temporary occurrence lists outside the project and write only the durable mappings to `series-guide.md` and the current decision/counts to `review.md`.
+
+## SH-TRANS-010 — Entity surface-form closure
+
+Before proposing or verifying a terminology batch, search both directions: known source aliases to their Chinese renderings, and every known approved/forbidden Chinese form across all visible Chinese events. Expand the inventory when this search exposes an unlisted partial name, surname-only use, nickname, title combination, spelling variant, or typo. Confirm its entity before changing it; ambiguous hits remain separate proposal rows.
+
+After implementation, repeat the same full-scope searches against the changed master. Verification must show the per-form before/after counts, zero forbidden forms, and zero unclassified entity forms or list each unresolved hit explicitly. “Full name replaced”, “exact old string absent”, and a clean scan limited to previously listed forms are insufficient evidence of terminology completion.
