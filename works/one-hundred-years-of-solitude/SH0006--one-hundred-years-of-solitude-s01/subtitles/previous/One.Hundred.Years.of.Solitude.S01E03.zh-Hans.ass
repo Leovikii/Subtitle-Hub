@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -38,7 +38,7 @@ Dialogue: 10,0:01:46.83,0:01:48.50,CN-Main,,0,0,0,,护送她和她父母的遗�
 Dialogue: 10,0:01:49.50,0:01:50.46,CN-Main,,0,0,0,,上面写了什么？
 Dialogue: 10,0:01:50.54,0:01:52.92,CN-Main,,0,0,0,,说她是我们的远房表亲
 Dialogue: 0,0:01:50.54,0:01:52.92,ES-Main,,0,0,0,,Que es prima nuestra en yo no sé qué grado.
-Dialogue: 10,0:01:53.50,0:01:55.62,CN-Main,,0,0,0,,她是我那位难忘的朋友尼卡诺尔·乌略亚
+Dialogue: 10,0:01:53.50,0:01:55.62,CN-Main,,0,0,0,,她是我那位难忘的朋友尼卡诺·乌略亚
 Dialogue: 0,0:01:53.50,0:01:55.62,ES-Main,,0,0,0,,Hija del inolvidable Nicanor Ulloa
 Dialogue: 10,0:01:55.71,0:01:57.71,CN-Main,,0,0,0,,和他高贵妻子丽贝卡·蒙铁尔的女儿
 Dialogue: 0,0:01:55.71,0:01:57.71,ES-Main,,0,0,0,,y su noble esposa Rebeca Montiel.
@@ -50,13 +50,13 @@ Dialogue: 10,0:02:07.46,0:02:08.54,CN-Main,,0,0,0,,你叫什么名字？
 Dialogue: 0,0:02:07.46,0:02:08.54,ES-Main,,0,0,0,,¿Cómo te llamas?
 Dialogue: 10,0:02:14.08,0:02:15.00,CN-Main,,0,0,0,,肚子饿了吗？
 Dialogue: 0,0:02:14.08,0:02:15.00,ES-Main,,0,0,0,,¿Tienes hambre?
-Dialogue: 10,0:02:25.75,0:02:28.21,CN-Main,,0,0,0,,奥雷里亚诺 阿尔卡蒂奥搬去跟你睡
+Dialogue: 10,0:02:25.75,0:02:28.21,CN-Main,,0,0,0,,奥雷里亚诺 阿卡蒂奥搬去跟你睡
 Dialogue: 0,0:02:25.75,0:02:28.21,ES-Main,,0,0,0,,Aureliano, Arcadio desde hoy duerme contigo.
-Dialogue: 10,0:02:28.38,0:02:30.96,CN-Main,,0,0,0,,-好-比西塔西翁 准备洗澡水
+Dialogue: 10,0:02:28.38,0:02:30.96,CN-Main,,0,0,0,,-好-比希塔森 准备洗澡水
 Dialogue: 0,0:02:28.38,0:02:30.96,ES-Main,,0,0,0,,Bueno. Visitación, prepara un baño.
 Dialogue: 10,0:02:36.46,0:02:38.88,CN-Main,,0,0,0,,我能搬去奥雷里亚诺的房间吗？
 Dialogue: 0,0:02:36.46,0:02:38.88,ES-Main,,0,0,0,,¿Y si soy yo quien duerme con Aureliano?
-Dialogue: 10,0:02:39.04,0:02:42.12,CN-Main,,0,0,0,,不行 阿尔卡蒂奥是大男孩了该他搬过去
+Dialogue: 10,0:02:39.04,0:02:42.12,CN-Main,,0,0,0,,不行 阿卡蒂奥是大男孩了该他搬过去
 Dialogue: 0,0:02:39.04,0:02:42.12,ES-Main,,0,0,0,,No, Arcadio ya está en edad de dormir con tu hermano.
 Dialogue: 10,0:02:42.67,0:02:44.79,CN-Main,,0,0,0,,拿条你的旧裙子过来
 Dialogue: 0,0:02:42.67,0:02:44.79,ES-Main,,0,0,0,,Busca un vestido que no utilices y tráelo.
@@ -81,7 +81,7 @@ Dialogue: 10,0:03:23.04,0:03:23.96,CN-Main,,0,0,0,,跟我来
 Dialogue: 0,0:03:23.04,0:03:23.96,ES-Main,,0,0,0,,Vamos.
 Dialogue: 10,0:03:31.21,0:03:34.54,CN-Main,,0,0,0,,这个家什么时候成孤儿院了？
 Dialogue: 0,0:03:31.21,0:03:34.54,ES-Main,,0,0,0,,No sé en qué momento se convirtió esta casa en un orfanato.
-Dialogue: 10,0:03:37.88,0:03:40.08,CN-Main,,0,0,0,,有了阿尔卡蒂奥还不够吗？
+Dialogue: 10,0:03:37.88,0:03:40.08,CN-Main,,0,0,0,,有了阿卡蒂奥还不够吗？
 Dialogue: 0,0:03:37.88,0:03:40.08,ES-Main,,0,0,0,,Como si no fuera suficiente con Arcadio.
 Dialogue: 10,0:03:47.71,0:03:52.50,CN-Main,,0,0,0,,奥雷里亚诺耐心地把所有圣人的名字念给她听
 Dialogue: 0,0:03:47.71,0:03:52.50,ES-Main,,0,0,0,,de leer frente a ella todo el santoral
@@ -141,7 +141,7 @@ Dialogue: 10,0:06:02.71,0:06:03.58,CN-Main,,0,0,0,,“B”？
 Dialogue: 0,0:06:02.71,0:06:03.58,ES-Main,,0,0,0,,¿La B?
 Dialogue: 10,0:06:04.96,0:06:05.79,CN-Main,,0,0,0,,很好
 Dialogue: 0,0:06:04.96,0:06:05.79,ES-Main,,0,0,0,,Muy bien.
-Dialogue: 10,0:06:07.08,0:06:08.54,CN-Main,,0,0,0,,阿尔卡蒂奥 该睡觉了
+Dialogue: 10,0:06:07.08,0:06:08.54,CN-Main,,0,0,0,,阿卡蒂奥 该睡觉了
 Dialogue: 0,0:06:07.08,0:06:08.54,ES-Main,,0,0,0,,Ya es hora, Arcadio.
 Dialogue: 10,0:06:11.46,0:06:12.46,CN-Main,,0,0,0,,我们明天再继续吧
 Dialogue: 0,0:06:11.46,0:06:12.46,ES-Main,,0,0,0,,Mañana seguimos.
@@ -221,9 +221,9 @@ Dialogue: 10,0:09:50.96,0:09:53.83,CN-Main,,0,0,0,,阿玛兰妲、丽贝卡 开�
 Dialogue: 0,0:09:50.96,0:09:53.83,ES-Main,,0,0,0,,¡Amaranta, Rebeca! ¡A comer!
 Dialogue: 10,0:09:54.00,0:09:56.38,CN-Main,,0,0,0,,U、A…
 Dialogue: 0,0:09:54.00,0:09:56.38,ES-Main,,0,0,0,,"U… A…".
-Dialogue: 10,0:09:56.46,0:09:59.12,CN-Main,,0,0,0,,-别在这儿写 阿尔卡蒂奥 去拿勺子-U
+Dialogue: 10,0:09:56.46,0:09:59.12,CN-Main,,0,0,0,,-别在这儿写 阿卡蒂奥 去拿勺子-U
 Dialogue: 0,0:09:56.46,0:09:59.12,ES-Main,,0,0,0,,En la mesa no, Arcadio. Ve por cuchara.
-Dialogue: 10,0:10:00.12,0:10:02.29,CN-Main,,0,0,0,,卡塔乌雷！把丽贝卡带过来
+Dialogue: 10,0:10:00.12,0:10:02.29,CN-Main,,0,0,0,,卡陶雷！把丽贝卡带过来
 Dialogue: 0,0:10:00.12,0:10:02.29,ES-Main,,0,0,0,,¡Cataure! ¡Trae a Rebeca!
 Dialogue: 10,0:10:04.75,0:10:06.12,CN-Main,,0,0,0,,需要我帮忙吗？
 Dialogue: 0,0:10:04.75,0:10:06.12,ES-Main,,0,0,0,,Te ayudo, papá.
@@ -245,7 +245,7 @@ Dialogue: 10,0:11:22.50,0:11:23.83,CN-Main,,0,0,0,,快吃 孩子
 Dialogue: 0,0:11:22.50,0:11:23.83,ES-Main,,0,0,0,,Atrévete, muchachita.
 Dialogue: 10,0:11:39.79,0:11:43.96,CN-Main,,0,0,0,,你想饿死自己 随便你但不许浪费我们的食物
 Dialogue: 0,0:11:39.79,0:11:43.96,ES-Main,,0,0,0,,Si te quieres morir de hambre no es problema mío, pero en esta casa no se desperdicia la comida.
-Dialogue: 10,0:11:44.04,0:11:45.88,CN-Main,,0,0,0,,卡塔乌雷！把袋子拿走！
+Dialogue: 10,0:11:44.04,0:11:45.88,CN-Main,,0,0,0,,卡陶雷！把袋子拿走！
 Dialogue: 0,0:11:44.04,0:11:45.88,ES-Main,,0,0,0,,¡Cataure! ¡Llévatelo!
 Dialogue: 10,0:13:33.42,0:13:34.29,CN-Main,,0,0,0,,丽贝卡？
 Dialogue: 0,0:13:33.42,0:13:34.29,ES-Main,,0,0,0,,Rebeca.
@@ -316,21 +316,21 @@ Dialogue: 10,0:16:21.46,0:16:22.42,CN-Main,,0,0,0,,吃饭
 Dialogue: 0,0:16:21.46,0:16:22.42,ES-Main,,0,0,0,,Come.
 Dialogue: 10,0:16:27.42,0:16:28.29,CN-Main,,0,0,0,,快吃
 Dialogue: 0,0:16:27.42,0:16:28.29,ES-Main,,0,0,0,,Hazlo.
-Dialogue: 10,0:16:48.54,0:16:49.83,CN-Main,,0,0,0,,卡塔乌雷
+Dialogue: 10,0:16:48.54,0:16:49.83,CN-Main,,0,0,0,,卡陶雷
 Dialogue: 0,0:16:48.54,0:16:49.83,ES-Main,,0,0,0,,Cataure.
 Dialogue: 10,0:16:51.67,0:16:53.17,CN-Main,,0,0,0,,你听见那个声音了吗？
 Dialogue: 0,0:16:51.67,0:16:53.17,ES-Main,,0,0,0,,¿Escuchas ese ruido?
 Dialogue: 10,0:16:55.17,0:16:58.04,CN-Main,,0,0,0,,肯定是有动物溜进栅栏了
 Dialogue: 0,0:16:55.17,0:16:58.04,ES-Main,,0,0,0,,Es un animal que entró al corral.
-Dialogue: 10,0:17:04.88,0:17:07.62,CN-Main,,0,0,0,,卡塔乌雷 快起来
+Dialogue: 10,0:17:04.88,0:17:07.62,CN-Main,,0,0,0,,卡陶雷 快起来
 Dialogue: 0,0:17:04.88,0:17:07.62,ES-Main,,0,0,0,,Cataure, levántate. Levántate.
 Dialogue: 10,0:17:55.08,0:17:56.17,CN-Main,,0,0,0,,丽贝卡？
 Dialogue: 0,0:17:55.08,0:17:56.17,ES-Main,,0,0,0,,¿Rebeca?
-Dialogue: 10,0:17:59.46,0:18:02.71,CN-Main,,0,0,0,,比西塔西翁和卡塔乌雷从那双眼睛里
+Dialogue: 10,0:17:59.46,0:18:02.71,CN-Main,,0,0,0,,比希塔森和卡陶雷从那双眼睛里
 Dialogue: 0,0:17:59.46,0:18:02.71,ES-Main,,0,0,0,,reconocieron en esos ojos
 Dialogue: 10,0:18:03.33,0:18:05.67,CN-Main,,0,0,0,,认出了一种可怕的疾病
 Dialogue: 0,0:18:03.33,0:18:05.67,ES-Main,,0,0,0,,los síntomas de una terrible enfermedad.
-Dialogue: 10,0:18:13.17,0:18:15.58,CN-Main,,0,0,0,,卡塔乌雷从此再也没在家里出现过
+Dialogue: 10,0:18:13.17,0:18:15.58,CN-Main,,0,0,0,,卡陶雷从此再也没在家里出现过
 Dialogue: 0,0:18:13.17,0:18:15.58,ES-Main,,0,0,0,,huyó de la casa para siempre.
 Dialogue: 10,0:18:19.58,0:18:21.88,CN-Main,,0,0,0,,那是失眠症
 Dialogue: 0,0:18:19.58,0:18:21.88,ES-Main,,0,0,0,,Era la peste del insomnio.
@@ -338,7 +338,7 @@ Dialogue: 10,0:18:23.54,0:18:27.83,CN-Main,,0,0,0,,你都离开家乡那么久�
 Dialogue: 0,0:18:23.54,0:18:27.83,ES-Main,,0,0,0,,Ya llevas mucho tiempo fuera de tu pueblo. Deja de creer esos cuentos.
 Dialogue: 10,0:18:29.08,0:18:31.08,CN-Main,,0,0,0,,这不是胡言乱语 先生
 Dialogue: 0,0:18:29.08,0:18:31.08,ES-Main,,0,0,0,,No es ningún cuento, señor.
-Dialogue: 10,0:18:32.17,0:18:33.46,CN-Main,,0,0,0,,比西塔西翁…
+Dialogue: 10,0:18:32.17,0:18:33.46,CN-Main,,0,0,0,,比希塔森…
 Dialogue: 0,0:18:32.17,0:18:33.46,ES-Main,,0,0,0,,Ay, Visitación…
 Dialogue: 10,0:18:42.21,0:18:43.21,CN-Main,,0,0,0,,不！
 Dialogue: 0,0:18:42.21,0:18:43.21,ES-Main,,0,0,0,,¡No!
@@ -354,7 +354,7 @@ Dialogue: 10,0:18:54.79,0:18:57.92,CN-Main,,0,0,0,,一旦哪户人家被这种�
 Dialogue: 0,0:18:54.79,0:18:57.92,ES-Main,,0,0,0,,Una vez que la peste entra a la casa,
 Dialogue: 10,0:18:58.75,0:19:00.21,CN-Main,,0,0,0,,就谁都别想睡觉了
 Dialogue: 0,0:18:58.75,0:19:00.21,ES-Main,,0,0,0,,nadie vuelve a dormir.
-Dialogue: 10,0:19:05.00,0:19:07.58,CN-Main,,0,0,0,,比西塔西翁 那只是迷信而已
+Dialogue: 10,0:19:05.00,0:19:07.58,CN-Main,,0,0,0,,比希塔森 那只是迷信而已
 Dialogue: 0,0:19:05.00,0:19:07.58,ES-Main,,0,0,0,,Son puras supersticiones, Visitación.
 Dialogue: 10,0:19:08.00,0:19:10.25,CN-Main,,0,0,0,,就算我们真的再也睡不着觉
 Dialogue: 0,0:19:08.00,0:19:10.25,ES-Main,,0,0,0,,Pero si fuera cierto y no volviéramos a dormir, mejor.
@@ -432,9 +432,9 @@ Dialogue: 10,0:23:53.00,0:23:54.88,CN-Main,,0,0,0,,伊莎贝尔 冷静 他是你
 Dialogue: 0,0:23:53.00,0:23:54.88,ES-Main,,0,0,0,,¡Isabel, tranquila! ¡Es tu marido!
 Dialogue: 10,0:23:56.50,0:23:57.62,CN-Main,,0,0,0,,别碰我！
 Dialogue: 0,0:23:56.50,0:23:57.62,ES-Main,,0,0,0,,¡Suéltame!
-Dialogue: 10,0:24:22.83,0:24:23.92,CN-Main,,0,0,0,,卡塔利诺！
+Dialogue: 10,0:24:22.83,0:24:23.92,CN-Main,,0,0,0,,卡塔里诺！
 Dialogue: 0,0:24:22.83,0:24:23.92,ES-Main,,0,0,0,,¡Catarino!
-Dialogue: 10,0:24:26.75,0:24:29.67,CN-Main,,0,0,0,,（卡塔利诺）
+Dialogue: 10,0:24:26.75,0:24:29.67,CN-Main,,0,0,0,,（卡塔里诺）
 Dialogue: 10,0:24:31.12,0:24:33.04,CN-Main,,0,0,0,,顾客就该喝酒！
 Dialogue: 0,0:24:31.12,0:24:33.04,ES-Main,,0,0,0,,¡Quiero tener clientes que chupen!
 Dialogue: 10,0:24:43.33,0:24:46.46,CN-Main,,0,0,0,,（马孔多-上帝存在）
@@ -446,7 +446,7 @@ Dialogue: 0,0:24:54.67,0:24:58.21,ES-Main,,0,0,0,,A ver si por fin ese gallo le 
 Dialogue: 10,0:24:59.04,0:25:00.58,CN-Main,,0,0,0,,回家拿武器
 Dialogue: 0,0:24:59.04,0:25:00.58,ES-Main,,0,0,0,,Vete para tu casa y ármate, que te voy a matar.
 Dialogue: 10,0:25:01.58,0:25:02.58,CN-Main,,0,0,0,,我要杀了你
-Dialogue: 10,0:25:05.21,0:25:06.25,CN-Main,,0,0,0,,普鲁邓希奥？
+Dialogue: 10,0:25:05.21,0:25:06.25,CN-Main,,0,0,0,,普鲁丹修？
 Dialogue: 0,0:25:05.21,0:25:06.25,ES-Main,,0,0,0,,¿Prudencio?
 Dialogue: 10,0:25:07.29,0:25:12.83,CN-Main,,0,0,0,,到最后失眠症将剥夺病人的自我意识
 Dialogue: 0,0:25:07.29,0:25:12.83,ES-Main,,0,0,0,,la peste del insomnio se llevaba la conciencia del propio ser
@@ -531,15 +531,15 @@ Dialogue: 10,0:32:18.50,0:32:19.67,CN-Main,,0,0,0,,阿玛兰妲 快点！
 Dialogue: 0,0:32:18.50,0:32:19.67,ES-Main,,0,0,0,,¡Amaranta, ya!
 Dialogue: 10,0:32:20.58,0:32:23.67,CN-Main,,0,0,0,,虽然展现出了如父亲一般的动手能力…
 Dialogue: 0,0:32:20.58,0:32:23.67,ES-Main,,0,0,0,,el impulso físico de su padre…
-Dialogue: 10,0:32:23.75,0:32:24.88,CN-Main,,0,0,0,,阿尔卡蒂奥！
+Dialogue: 10,0:32:23.75,0:32:24.88,CN-Main,,0,0,0,,阿卡蒂奥！
 Dialogue: 0,0:32:23.75,0:32:24.88,ES-Main,,0,0,0,,¡Arcadio!
-Dialogue: 10,0:32:25.42,0:32:29.12,CN-Main,,0,0,0,,…但阿尔卡蒂奥的外表宛如孩童还有人说他的背影像女人
+Dialogue: 10,0:32:25.42,0:32:29.12,CN-Main,,0,0,0,,…但阿卡蒂奥的外表宛如孩童还有人说他的背影像女人
 Dialogue: 0,0:32:25.42,0:32:29.12,ES-Main,,0,0,0,,… y decían que tenía las nalgas de mujer.
 Dialogue: 10,0:32:33.08,0:32:33.96,CN-Main,,0,0,0,,很好
 Dialogue: 0,0:32:33.08,0:32:33.96,ES-Main,,0,0,0,,Muy bien.
 Dialogue: 10,0:32:35.75,0:32:37.79,CN-Main,,0,0,0,,等一下 好了
 Dialogue: 0,0:32:35.75,0:32:37.79,ES-Main,,0,0,0,,Así… acá. Así.
-Dialogue: 10,0:32:40.08,0:32:42.50,CN-Main,,0,0,0,,比西塔西翁不是照你的尺寸缝了几条裤子吗？
+Dialogue: 10,0:32:40.08,0:32:42.50,CN-Main,,0,0,0,,比希塔森不是照你的尺寸缝了几条裤子吗？
 Dialogue: 0,0:32:40.08,0:32:42.50,ES-Main,,0,0,0,,¿Visitación no te había cortado un pantalón más ancho?
 Dialogue: 10,0:32:42.58,0:32:43.92,CN-Main,,0,0,0,,对 几个月前缝的
 Dialogue: 0,0:32:42.58,0:32:43.92,ES-Main,,0,0,0,,Sí, hace unos meses, sí.
@@ -566,7 +566,7 @@ Dialogue: 10,0:33:18.29,0:33:19.29,CN-Main,,0,0,0,,别动
 Dialogue: 0,0:33:18.29,0:33:19.29,ES-Main,,0,0,0,,Quietos todos.
 Dialogue: 10,0:33:32.62,0:33:34.42,CN-Main,,0,0,0,,好的 拍好了
 Dialogue: 0,0:33:32.62,0:33:34.42,ES-Main,,0,0,0,,Bueno, ya está, señores.
-Dialogue: 10,0:34:01.08,0:34:02.21,CN-Main,,0,0,0,,阿尔卡蒂奥
+Dialogue: 10,0:34:01.08,0:34:02.21,CN-Main,,0,0,0,,阿卡蒂奥
 Dialogue: 0,0:34:01.08,0:34:02.21,ES-Main,,0,0,0,,Arcadio.
 Dialogue: 10,0:34:03.75,0:34:06.25,CN-Main,,0,0,0,,去阿拉伯人的商店买些水银来
 Dialogue: 0,0:34:03.75,0:34:06.25,ES-Main,,0,0,0,,Ve a la tienda del árabe a por mercurio.
@@ -638,7 +638,7 @@ Dialogue: 10,0:36:15.54,0:36:17.83,CN-Main,,0,0,0,,奥雷里亚诺！过来！
 Dialogue: 0,0:36:15.54,0:36:17.83,ES-Main,,0,0,0,,¡Ajá, Aureliano! ¡Ven acá!
 Dialogue: 10,0:36:18.88,0:36:22.21,CN-Main,,0,0,0,,你居然舍得出门了真是奇迹啊 朋友！
 Dialogue: 0,0:36:18.88,0:36:22.21,ES-Main,,0,0,0,,¡Compadre! ¿Y ese milagro que estás afuera, compadre?
-Dialogue: 10,0:36:22.29,0:36:25.08,CN-Main,,0,0,0,,格林列尔多一大早就见你酒醒了才是奇迹呢
+Dialogue: 10,0:36:22.29,0:36:25.08,CN-Main,,0,0,0,,盖里奈多一大早就见你酒醒了才是奇迹呢
 Dialogue: 0,0:36:22.29,0:36:25.08,ES-Main,,0,0,0,,No, milagro verte a ti sobrio a esta hora, Gerineldo.
 Dialogue: 10,0:36:25.25,0:36:27.46,CN-Main,,0,0,0,,他终于肯出来转转 就别挖苦他了
 Dialogue: 0,0:36:25.25,0:36:27.46,ES-Main,,0,0,0,,Deja de molestarlo, que por fin está aquí. ¿Cómo estás? Qué gusto verte.
@@ -653,11 +653,11 @@ Dialogue: 10,0:36:34.50,0:36:36.33,CN-Main,,0,0,0,,有些人是有工作要忙�
 Dialogue: 0,0:36:34.50,0:36:36.33,ES-Main,,0,0,0,,Bueno, es que algunos sí trabajamos.
 Dialogue: 10,0:36:36.42,0:36:40.12,CN-Main,,0,0,0,,连跟朋友一起喝朗姆酒都没时间埋头工作还有什么意义？
 Dialogue: 0,0:36:36.42,0:36:40.12,ES-Main,,0,0,0,,¿Para qué te sirve ese poco de plata si no puedes tomarte un ron con tus amigos?
-Dialogue: 10,0:36:44.58,0:36:46.92,CN-Main,,0,0,0,,卡塔利诺！看看谁来了！
+Dialogue: 10,0:36:44.58,0:36:46.92,CN-Main,,0,0,0,,卡塔里诺！看看谁来了！
 Dialogue: 0,0:36:44.58,0:36:46.92,ES-Main,,0,0,0,,¡Catarino! ¡Mira quién está aquí!
 Dialogue: 10,0:36:47.00,0:36:50.54,CN-Main,,0,0,0,,奥雷里亚诺 你小子可真是赏心悦目
 Dialogue: 0,0:36:47.00,0:36:50.54,ES-Main,,0,0,0,,¡Aurelito, mijo! ¡Dichosos los ojos que te ven!
-Dialogue: 10,0:36:50.62,0:36:52.75,CN-Main,,0,0,0,,-卡塔利诺-你随意 别拘束
+Dialogue: 10,0:36:50.62,0:36:52.75,CN-Main,,0,0,0,,-卡塔里诺-你随意 别拘束
 Dialogue: 0,0:36:50.62,0:36:52.75,ES-Main,,0,0,0,,Ajá, Catarino. Bienvenido.
 Dialogue: 10,0:36:53.17,0:36:54.38,CN-Main,,0,0,0,,你家人还好吗？
 Dialogue: 0,0:36:53.17,0:36:54.38,ES-Main,,0,0,0,,¿Cómo están por la casa? - Muy bien, ¿tú?
@@ -755,7 +755,7 @@ Dialogue: 10,0:41:37.75,0:41:38.58,CN-Main,,0,0,0,,你没事吧？
 Dialogue: 0,0:41:37.75,0:41:38.58,ES-Main,,0,0,0,,¿Estás bien?
 Dialogue: 10,0:41:39.17,0:41:40.00,CN-Main,,0,0,0,,没事
 Dialogue: 0,0:41:39.17,0:41:40.00,ES-Main,,0,0,0,,Sí.
-Dialogue: 10,0:41:40.92,0:41:43.17,CN-Main,,0,0,0,,阿尔卡蒂奥 你去作坊看书吧
+Dialogue: 10,0:41:40.92,0:41:43.17,CN-Main,,0,0,0,,阿卡蒂奥 你去作坊看书吧
 Dialogue: 0,0:41:40.92,0:41:43.17,ES-Main,,0,0,0,,Arcadio, si quieres leer, vete para el taller.
 Dialogue: 10,0:41:43.83,0:41:44.83,CN-Main,,0,0,0,,我累了
 Dialogue: 0,0:41:43.83,0:41:44.83,ES-Main,,0,0,0,,Estoy cansado.
@@ -763,7 +763,7 @@ Dialogue: 10,0:41:52.83,0:41:53.75,CN-Main,,0,0,0,,奥雷里亚诺
 Dialogue: 0,0:41:52.83,0:41:53.75,ES-Main,,0,0,0,,Aureliano.
 Dialogue: 10,0:41:57.29,0:41:58.96,CN-Main,,0,0,0,,虽然太过久远 我记不清了
 Dialogue: 0,0:41:57.29,0:41:58.96,ES-Main,,0,0,0,,Yo no me acuerdo, pero…
-Dialogue: 10,0:42:01.04,0:42:03.12,CN-Main,,0,0,0,,但比西塔西翁总说
+Dialogue: 10,0:42:01.04,0:42:03.12,CN-Main,,0,0,0,,但比希塔森总说
 Dialogue: 0,0:42:01.04,0:42:03.12,ES-Main,,0,0,0,,Visitación siempre habla
 Dialogue: 10,0:42:03.92,0:42:06.71,CN-Main,,0,0,0,,你当时好几个月前就预感到了丽贝卡会来
 Dialogue: 0,0:42:03.92,0:42:06.71,ES-Main,,0,0,0,,de cómo viste la llegada de Rebeca meses antes.
@@ -896,7 +896,7 @@ Dialogue: 10,0:47:55.92,0:47:57.75,CN-Main,,0,0,0,,到时候会有舞会
 Dialogue: 0,0:47:55.92,0:47:57.75,ES-Main,,0,0,0,,Y para presentarnos en sociedad.
 Dialogue: 10,0:48:01.29,0:48:02.21,CN-Main,,0,0,0,,好吧
 Dialogue: 0,0:48:01.29,0:48:02.21,ES-Main,,0,0,0,,Bueno.
-Dialogue: 10,0:48:03.38,0:48:05.54,CN-Main,,0,0,0,,你们上课时阿尔卡蒂奥会全程陪同
+Dialogue: 10,0:48:03.38,0:48:05.54,CN-Main,,0,0,0,,你们上课时阿卡蒂奥会全程陪同
 Dialogue: 0,0:48:03.38,0:48:05.54,ES-Main,,0,0,0,,Pero Arcadio siempre tiene que estar acompañándolas.
 Dialogue: 10,0:48:06.88,0:48:08.29,CN-Main,,0,0,0,,不许有身体接触
 Dialogue: 0,0:48:06.88,0:48:08.29,ES-Main,,0,0,0,,Y nada de tocarse.
@@ -1001,7 +1001,7 @@ Dialogue: 0,0:55:06.46,0:55:08.92,ES-Main,,0,0,0,,Gracias. Sigan, por favor, ade
 Dialogue: 10,0:55:09.00,0:55:11.17,CN-Main,,0,0,0,,-谢谢 请进-乌苏拉！
 Dialogue: 10,0:55:11.25,0:55:14.08,CN-Main,,0,0,0,,你好 晚上好 请进
 Dialogue: 0,0:55:11.25,0:55:14.08,ES-Main,,0,0,0,,Gracias por la invitación. ¿Cómo está? Buenas noches, gracias.
-Dialogue: 10,0:55:14.29,0:55:17.08,CN-Main,,0,0,0,,比西塔西翁 去给客人上点心吧
+Dialogue: 10,0:55:14.29,0:55:17.08,CN-Main,,0,0,0,,比希塔森 去给客人上点心吧
 Dialogue: 0,0:55:14.29,0:55:17.08,ES-Main,,0,0,0,,Visitación, para irle dando los bizcochos. ¿Bueno?
 Dialogue: 10,0:55:30.67,0:55:32.96,CN-Main,,0,0,0,,一晃眼快三十年了
 Dialogue: 0,0:55:30.67,0:55:32.96,ES-Main,,0,0,0,,Han pasado casi 30 años
@@ -1091,7 +1091,7 @@ Dialogue: 10,1:01:27.17,1:01:28.25,CN-Main,,0,0,0,,里正？
 Dialogue: 0,1:01:27.17,1:01:28.25,ES-Main,,0,0,0,,¿Corregidor?
 Dialogue: 10,1:01:29.25,1:01:30.71,CN-Main,,0,0,0,,哪个里正？
 Dialogue: 0,1:01:29.25,1:01:30.71,ES-Main,,0,0,0,,¿Qué corregidor?
-Dialogue: 10,1:01:36.75,1:01:39.17,CN-Main,,0,0,0,,阿波利纳尔·摩斯科特是谁？
+Dialogue: 10,1:01:36.75,1:01:39.17,CN-Main,,0,0,0,,阿波利纳·摩斯科特是谁？
 Dialogue: 0,1:01:36.75,1:01:39.17,ES-Main,,0,0,0,,¿Quién carajo es Apolinar Moscote?
 Dialogue: 10,1:01:46.83,1:01:48.96,CN-Main,,0,0,0,,（根据加夫列尔·加西亚·马尔克斯小说改编）
 Dialogue: 10,1:07:01.67,1:07:04.08,CN-Main,,0,0,0,,字幕翻译：覃璇

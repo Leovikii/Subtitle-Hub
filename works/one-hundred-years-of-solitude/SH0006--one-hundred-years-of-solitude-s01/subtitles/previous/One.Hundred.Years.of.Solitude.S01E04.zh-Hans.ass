@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -25,7 +25,7 @@ Dialogue: 10,0:00:58.42,0:00:59.71,CN-Main,,0,0,0,,你凭什么？
 Dialogue: 0,0:00:58.42,0:00:59.71,ES-Main,,0,0,0,,¿Con qué derecho?
 Dialogue: 10,0:01:02.54,0:01:04.00,CN-Main,,0,0,0,,谁给你的权利？
 Dialogue: 0,0:01:02.54,0:01:04.00,ES-Main,,0,0,0,,¿Con qué derecho?
-Dialogue: 10,0:01:05.33,0:01:08.38,CN-Main,,0,0,0,,幸会 我是阿波利纳尔·摩斯科特
+Dialogue: 10,0:01:05.33,0:01:08.38,CN-Main,,0,0,0,,幸会 我是阿波利纳·摩斯科特
 Dialogue: 0,0:01:05.33,0:01:08.38,ES-Main,,0,0,0,,Mucho gusto, soy Apolinar Moscote.
 Dialogue: 10,0:01:11.33,0:01:13.33,CN-Main,,0,0,0,,受命出任本镇的里正
 Dialogue: 0,0:01:11.33,0:01:13.33,ES-Main,,0,0,0,,Y he sido nombrado corregidor.
@@ -45,10 +45,10 @@ Dialogue: 10,0:02:51.50,0:02:54.62,CN-Main,,0,0,0,,让人给梅尔基亚德斯�
 Dialogue: 0,0:02:51.50,0:02:54.62,ES-Main,,0,0,0,,le hizo construir a Melquíades un cuarto especial,
 Dialogue: 10,0:02:55.38,0:02:59.50,CN-Main,,0,0,0,,他便日以继夜地在里面埋头书写他的神秘文学
 Dialogue: 0,0:02:55.38,0:02:59.50,ES-Main,,0,0,0,,donde pasaba horas y horas garrapateando su literatura enigmática.
-Dialogue: 10,0:03:03.00,0:03:04.17,CN-Main,,0,0,0,,阿尔卡蒂奥…
+Dialogue: 10,0:03:03.00,0:03:04.17,CN-Main,,0,0,0,,阿卡蒂奥…
 Dialogue: 0,0:03:03.00,0:03:04.17,ES-Main,,0,0,0,,Arcadio…
 Dialogue: 10,0:03:07.58,0:03:08.79,CN-Main,,0,0,0,,多年以后
-Dialogue: 10,0:03:09.33,0:03:12.92,CN-Main,,0,0,0,,阿尔卡蒂奥依然记得梅尔基亚德斯用颤抖的声音
+Dialogue: 10,0:03:09.33,0:03:12.92,CN-Main,,0,0,0,,阿卡蒂奥依然记得梅尔基亚德斯用颤抖的声音
 Dialogue: 0,0:03:09.33,0:03:12.92,ES-Main,,0,0,0,,Arcadio había de acordarse del temblor con que Melquíades le hizo escuchar
 Dialogue: 10,0:03:13.08,0:03:15.79,CN-Main,,0,0,0,,将好几页令人费解的文字念给他听
 Dialogue: 0,0:03:13.08,0:03:15.79,ES-Main,,0,0,0,,varias páginas de su escritura impenetrable,
@@ -180,7 +180,7 @@ Dialogue: 10,0:09:55.96,0:09:57.00,CN-Main,,0,0,0,,是我女儿们亲手绣的
 Dialogue: 0,0:09:55.96,0:09:57.00,ES-Main,,0,0,0,,Lo hacen mis hijas. - Ah.
 Dialogue: 10,0:09:57.46,0:09:59.79,CN-Main,,0,0,0,,你一定要看看她们绣的桌布可精致了呢
 Dialogue: 0,0:09:57.46,0:09:59.79,ES-Main,,0,0,0,,Tiene que ver los manteles, son suntuosos.
-Dialogue: 10,0:09:59.88,0:10:01.75,CN-Main,,0,0,0,,可以想象 比西塔西翁！
+Dialogue: 10,0:09:59.88,0:10:01.75,CN-Main,,0,0,0,,可以想象 比希塔森！
 Dialogue: 0,0:09:59.88,0:10:01.75,ES-Main,,0,0,0,,Me imagino. ¡Visitación!
 Dialogue: 10,0:10:02.42,0:10:05.17,CN-Main,,0,0,0,,把饼干和面包拿来招待摩斯科特夫人和小姐
 Dialogue: 0,0:10:02.42,0:10:05.17,ES-Main,,0,0,0,,Trae por favor mantecadas y galletas para las señoritas.
@@ -454,7 +454,7 @@ Dialogue: 10,0:24:37.12,0:24:39.71,CN-Main,,0,0,0,,他的女儿都是好姑娘�
 Dialogue: 0,0:24:37.12,0:24:39.71,ES-Main,,0,0,0,,Las Moscote son unas buenas muchachas, José Arcadio.
 Dialogue: 10,0:24:39.79,0:24:41.79,CN-Main,,0,0,0,,你讨厌的是她们的父亲 不是她们
 Dialogue: 0,0:24:39.79,0:24:41.79,ES-Main,,0,0,0,,Tu problema es con el padre, no con ellas.
-Dialogue: 10,0:24:42.00,0:24:44.79,CN-Main,,0,0,0,,我绝不会同意跟阿波利纳尔·摩斯科特结亲！
+Dialogue: 10,0:24:42.00,0:24:44.79,CN-Main,,0,0,0,,我绝不会同意跟阿波利纳·摩斯科特结亲！
 Dialogue: 0,0:24:42.00,0:24:44.79,ES-Main,,0,0,0,,Apolinar Moscote jamás va a ser parte de esta familia.
 Dialogue: 10,0:24:51.29,0:24:52.79,CN-Main,,0,0,0,,这个家之所以会存在
 Dialogue: 0,0:24:51.29,0:24:52.79,ES-Main,,0,0,0,,Esta familia existe
@@ -629,7 +629,7 @@ Dialogue: 10,0:35:12.71,0:35:15.50,CN-Main,,0,0,0,,他亲口说了复活他的�
 Dialogue: 0,0:35:12.71,0:35:15.50,ES-Main,,0,0,0,,Él mismo reveló la fórmula de su resurrección.
 Dialogue: 10,0:35:26.38,0:35:27.62,CN-Main,,0,0,0,,一、二、三！
 Dialogue: 0,0:35:26.38,0:35:27.62,ES-Main,,0,0,0,,¡Uno, dos, tres!
-Dialogue: 10,0:35:29.75,0:35:31.25,CN-Main,,0,0,0,,阿尔卡蒂奥 去准备炼金炉
+Dialogue: 10,0:35:29.75,0:35:31.25,CN-Main,,0,0,0,,阿卡蒂奥 去准备炼金炉
 Dialogue: 0,0:35:29.75,0:35:31.25,ES-Main,,0,0,0,,Arcadio, el atanor.
 Dialogue: 10,0:35:32.21,0:35:33.46,CN-Main,,0,0,0,,水银！
 Dialogue: 0,0:35:32.21,0:35:33.46,ES-Main,,0,0,0,,¡Mercurio!
@@ -650,7 +650,7 @@ Dialogue: 0,0:37:07.71,0:37:12.83,ES-Main,,0,0,0,,El tiempo se ha detenido, y la
 Dialogue: 10,0:37:32.42,0:37:33.92,CN-Main,,0,0,0,,时间停止
 Dialogue: 10,0:37:34.96,0:37:36.67,CN-Main,,0,0,0,,永恒开启了 梅尔基亚德斯
 Dialogue: 0,0:37:34.96,0:37:36.67,ES-Main,,0,0,0,,El tiempo se ha detenido, y la eternidad ha comenzado, Melquíades.
-Dialogue: 10,0:39:04.17,0:39:06.58,CN-Main,,0,0,0,,阿尔卡蒂奥永远不会知道
+Dialogue: 10,0:39:04.17,0:39:06.58,CN-Main,,0,0,0,,阿卡蒂奥永远不会知道
 Dialogue: 10,0:39:07.46,0:39:10.62,CN-Main,,0,0,0,,这个忽然出现 为他抚慰悲伤的女人
 Dialogue: 0,0:39:07.46,0:39:10.62,ES-Main,,0,0,0,,que aquella mujer que parecía entender su tristeza
 Dialogue: 10,0:39:11.42,0:39:13.38,CN-Main,,0,0,0,,其实是他的母亲
@@ -826,9 +826,9 @@ Dialogue: 10,0:49:03.71,0:49:05.17,CN-Main,,0,0,0,,但今天还是星期一
 Dialogue: 0,0:49:03.71,0:49:05.17,ES-Main,,0,0,0,,pero sigue siendo lunes.
 Dialogue: 10,0:49:39.00,0:49:43.88,CN-Main,,0,0,0,,乌苏拉不在 家里显得空旷莫名
 Dialogue: 0,0:49:39.00,0:49:43.88,ES-Main,,0,0,0,,la casa pareció enorme y vacía.
-Dialogue: 10,0:50:11.67,0:50:12.79,CN-Main,,0,0,0,,普鲁邓希奥
+Dialogue: 10,0:50:11.67,0:50:12.79,CN-Main,,0,0,0,,普鲁丹修
 Dialogue: 0,0:50:11.67,0:50:12.79,ES-Main,,0,0,0,,Prudencio.
-Dialogue: 10,0:50:14.25,0:50:15.75,CN-Main,,0,0,0,,普鲁邓希奥·阿基拉尔
+Dialogue: 10,0:50:14.25,0:50:15.75,CN-Main,,0,0,0,,普鲁丹修·阿圭拉
 Dialogue: 0,0:50:14.25,0:50:15.75,ES-Main,,0,0,0,,Prudencio Aguilar.
 Dialogue: 10,0:50:17.38,0:50:19.25,CN-Main,,0,0,0,,你怎么会跑到这么远的地方？
 Dialogue: 0,0:50:17.38,0:50:19.25,ES-Main,,0,0,0,,¿Cómo has venido a parar tan lejos?
@@ -862,7 +862,7 @@ Dialogue: 10,0:52:01.04,0:52:02.08,CN-Main,,0,0,0,,您还好吗？
 Dialogue: 0,0:52:01.04,0:52:02.08,ES-Main,,0,0,0,,¿Todo bien?
 Dialogue: 10,0:52:02.17,0:52:03.42,CN-Main,,0,0,0,,爸爸
 Dialogue: 0,0:52:02.17,0:52:03.42,ES-Main,,0,0,0,,Papá…
-Dialogue: 10,0:52:05.96,0:52:07.21,CN-Main,,0,0,0,,普鲁邓希奥
+Dialogue: 10,0:52:05.96,0:52:07.21,CN-Main,,0,0,0,,普鲁丹修
 Dialogue: 0,0:52:05.96,0:52:07.21,ES-Main,,0,0,0,,Prudencio…
 Dialogue: 10,0:52:08.71,0:52:09.83,CN-Main,,0,0,0,,梅尔基亚德斯
 Dialogue: 0,0:52:08.71,0:52:09.83,ES-Main,,0,0,0,,Melquíades…

@@ -307,9 +307,15 @@ class SkillStructureTests(unittest.TestCase):
             self.assertFalse((project / "README.md").exists())
             self.assertFalse((project / "docs").exists())
             text = metadata.read_text(encoding="utf-8")
-            self.assertRegex(text, r"(?m)^schema_version: (?:7|8)$")
+            schema = re.search(r"(?m)^schema_version: (\d+)$", text)
+            self.assertIsNotNone(schema)
+            self.assertIn(schema.group(1), {"7", "8", "9"})
             self.assertIn("subtitle_design:", text)
-            self.assertIn("  review: review.md", text)
+            if schema.group(1) == "9":
+                self.assertIn("release_languages:", text)
+                self.assertNotIn("  review: review.md", text)
+            else:
+                self.assertIn("  review: review.md", text)
 
     def test_active_repository_markdown_links_resolve(self) -> None:
         markdown_files = [REPOSITORY_ROOT / "README.md", REPOSITORY_ROOT / "CATALOG.md", REPOSITORY_ROOT / "AGENTS.md",
