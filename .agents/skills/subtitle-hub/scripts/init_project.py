@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.2.0 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.3.0 proofreading project."""
 
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import html
 import json
@@ -15,7 +14,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-SKILL_VERSION = "1.2.0"
+SKILL_VERSION = "1.3.0"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -26,12 +25,10 @@ EPISODE_PATTERNS = {
     "special": re.compile(r"SP\d{2,3}"),
     "movie": re.compile(r"MOVIE"),
 }
-EPISODE_MAP_HEADER = ["episode", "video", "target_basename", "subtitle", "audio_stream", "audio_language", "timing_authority"]
 TEXT_BASELINES = {".ass", ".ssa", ".srt", ".vtt"}
 SAFE_COMPONENT_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
-SC_WORK_FONT = "Microsoft YaHei UI"
-JP_WORK_FONT = "Yu Gothic UI"
-RELEASE_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
+SC_FONT = "Noto Sans CJK SC"
+JP_FONT = "Noto Sans CJK JP"
 JAPANESE_KANA = re.compile(r"[\u3040-\u30ff]")
 JAPANESE_STYLE = re.compile(r"(?:日文|日本|日语|日語|原文|原語|(?:^|[-_ ])(?:ja|jp|jpn)(?:$|[-_ ]))", re.IGNORECASE)
 INLINE_FONT = re.compile(r"\\fn([^\\}]*)")
@@ -108,12 +105,19 @@ def load_snapshot(path: Path, expected_id: str) -> dict[str, object]:
 
 def load_intake(path: Path) -> dict[str, object]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    if data.get("schema_version") != 3 or data.get("skill_version") != SKILL_VERSION:
-        raise ValueError(f"intake must use schema_version 3 and skill_version {SKILL_VERSION}")
+    if data.get("schema_version") != 4 or data.get("skill_version") != SKILL_VERSION:
+        raise ValueError(f"intake must use schema_version 4 and skill_version {SKILL_VERSION}")
     if not data.get("external_source_groups"):
         raise ValueError("intake lacks subtitle source groups")
     if data.get("blocking_questions"):
         raise ValueError(f"intake still has blocking questions: {data['blocking_questions']}")
+    if not data.get("episode_map"):
+        raise ValueError("intake lacks an approved episode map")
+    for track in data.get("embedded_subtitle_tracks", []):
+        if not track.get("ignored", False) and (not track.get("language") or not track.get("roles")):
+            raise ValueError(
+                f"selected embedded subtitle {track.get('id', '<unknown>')} requires confirmed language and roles"
+            )
     return data
 
 
@@ -136,7 +140,7 @@ def valid_episode(episode: str, work_type: str) -> bool:
     return bool(EPISODE_PATTERNS[work_type].fullmatch(episode))
 
 
-def load_episode_map(path: Path, intake: dict[str, object], work_type: str, source_language: str) -> list[dict[str, object]]:
+def load_episode_map(intake: dict[str, object], work_type: str, source_language: str) -> list[dict[str, object]]:
     videos_by_path = {str(Path(item["path"]).resolve()): item for item in intake["target_videos"]}
     baseline_files = {
         str(Path(file["path"]).resolve()): file
@@ -147,93 +151,56 @@ def load_episode_map(path: Path, intake: dict[str, object], work_type: str, sour
     rows: list[dict[str, object]] = []
     seen_episodes: set[str] = set()
     seen_outputs: set[str] = set()
-    with path.open("r", encoding="utf-8-sig", newline="") as handle:
-        reader = csv.DictReader(handle, delimiter="\t")
-        if reader.fieldnames != EPISODE_MAP_HEADER:
-            raise ValueError("approved episode map must use the Skill 1.2.0 seven-column header")
-        for raw in reader:
-            episode = raw["episode"].strip()
-            if not valid_episode(episode, work_type):
-                raise ValueError(f"unsafe or invalid {work_type} episode ID: {episode!r}")
-            if episode in seen_episodes:
-                raise ValueError(f"duplicate episode ID: {episode}")
-            raw_video = raw["video"].strip()
-            video_path = str(Path(raw_video).expanduser().resolve()) if raw_video else ""
-            subtitle_path = str(Path(raw["subtitle"]).expanduser().resolve())
-            if video_path and video_path not in videos_by_path:
-                raise ValueError(f"episode map video is absent from intake: {video_path}")
-            if subtitle_path not in baseline_files:
-                raise ValueError(f"episode map baseline is absent from intake: {subtitle_path}")
-            video_file = Path(video_path) if video_path else None
-            subtitle_file = Path(subtitle_path)
-            if video_file is not None and not video_file.is_file():
-                raise ValueError(f"target video is not readable: {video_file}")
-            if not subtitle_file.is_file():
-                raise ValueError(f"candidate baseline is not readable: {subtitle_file}")
-            video = videos_by_path[video_path] if video_path else None
-            if video_file is not None and (video_file.stat().st_size != int(video["size"]) or first_mib_sha256(video_file) != video["sha256_first_mib"]):
-                raise ValueError(f"target video changed after intake: {video_file}")
-            baseline = baseline_files[subtitle_path]
-            if file_sha256(subtitle_file) != baseline["sha256"]:
-                raise ValueError(f"candidate baseline changed after intake: {subtitle_file}")
-            validate_baseline_source(subtitle_file)
-            if video and not raw["audio_stream"].isdigit():
-                raise ValueError(f"audio_stream must be an integer for {episode} when video is present")
-            if not video and raw["audio_stream"].strip():
-                raise ValueError(f"audio_stream must be empty for text-only episode {episode}")
-            audio_index = int(raw["audio_stream"]) if video else None
-            audio_language = raw["audio_language"].strip()
-            if video and (not LANGUAGE_RE.fullmatch(audio_language) or audio_language.split("-", 1)[0] != source_language.split("-", 1)[0]):
-                raise ValueError(f"audio_language {audio_language!r} does not match source language {source_language!r}")
-            if not video and audio_language:
-                raise ValueError(f"audio_language must be empty for text-only episode {episode}")
-            streams = [stream for stream in video.get("streams", []) if stream.get("type") == "audio" and stream.get("index") == audio_index] if video else []
-            if video and len(streams) != 1:
-                raise ValueError(f"selected audio stream {audio_index} is not present in {video['basename']}")
-            target_basename = raw["target_basename"].strip() or (video["basename"] if video else "")
-            if not target_basename or Path(target_basename).name != target_basename:
-                raise ValueError(f"safe target_basename is required for {episode}")
-            timing_authority = raw["timing_authority"].strip()
-            if not timing_authority:
-                raise ValueError(f"timing_authority is required for {episode}")
-            output_name = f"{Path(target_basename).stem}.zh-Hans.ass"
-            folded = output_name.casefold()
-            if folded in seen_outputs:
-                raise ValueError(f"target video stems produce a duplicate release filename: {output_name}")
-            seen_episodes.add(episode)
-            seen_outputs.add(folded)
-            rows.append({
-                "episode": episode,
-                "video": video,
-                "subtitle": baseline_files[subtitle_path],
-                "subtitle_path": subtitle_path,
-                "audio_stream": audio_index,
-                "audio_language": audio_language,
-                "audio_codec": streams[0].get("codec") if streams else None,
-                "target_basename": target_basename,
-                "timing_authority": timing_authority,
-                "output_name": output_name,
-            })
-    if not rows:
-        raise ValueError("approved episode map is empty")
+    for raw in intake["episode_map"]:
+        episode = str(raw.get("episode") or "").strip()
+        if not valid_episode(episode, work_type) or episode in seen_episodes:
+            raise ValueError(f"unsafe, missing, or duplicate {work_type} episode ID: {episode!r}")
+        raw_video = str(raw.get("video") or "").strip()
+        video_path = str(Path(raw_video).expanduser().resolve()) if raw_video else ""
+        subtitle_path = str(Path(str(raw.get("subtitle") or "")).expanduser().resolve())
+        if video_path and video_path not in videos_by_path:
+            raise ValueError(f"episode map video is absent from intake: {video_path}")
+        if subtitle_path not in baseline_files:
+            raise ValueError(f"episode map baseline is absent from intake: {subtitle_path}")
+        video_file = Path(video_path) if video_path else None
+        subtitle_file = Path(subtitle_path)
+        if video_file and (not video_file.is_file() or video_file.stat().st_size != int(videos_by_path[video_path]["size"]) or first_mib_sha256(video_file) != videos_by_path[video_path]["sha256_first_mib"]):
+            raise ValueError(f"target video changed or is unreadable after intake: {video_file}")
+        if not subtitle_file.is_file() or file_sha256(subtitle_file) != baseline_files[subtitle_path]["sha256"]:
+            raise ValueError(f"candidate baseline changed or is unreadable after intake: {subtitle_file}")
+        validate_baseline_source(subtitle_file)
+        video = videos_by_path.get(video_path)
+        audio_index = raw.get("audio_stream")
+        audio_language = str(raw.get("audio_language") or "").strip()
+        if video and not isinstance(audio_index, int):
+            raise ValueError(f"audio_stream must be an integer for {episode}")
+        if not video and (audio_index is not None or audio_language):
+            raise ValueError(f"audio fields must be null for text-only episode {episode}")
+        if video and (not LANGUAGE_RE.fullmatch(audio_language) or audio_language.split("-", 1)[0] != source_language.split("-", 1)[0]):
+            raise ValueError(f"audio_language {audio_language!r} does not match {source_language!r}")
+        streams = [stream for stream in video.get("streams", []) if stream.get("type") == "audio" and stream.get("index") == audio_index] if video else []
+        if video and len(streams) != 1:
+            raise ValueError(f"selected audio stream {audio_index} is absent from {video['basename']}")
+        target_basename = str(raw.get("target_basename") or (video["basename"] if video else "")).strip()
+        timing_authority = str(raw.get("timing_authority") or "").strip()
+        if not target_basename or Path(target_basename).name != target_basename:
+            raise ValueError(f"safe target_basename is required for {episode}")
+        if not timing_authority:
+            raise ValueError(f"timing_authority is required for {episode}")
+        output_name = f"{Path(target_basename).stem}.zh-Hans.ass"
+        if output_name.casefold() in seen_outputs:
+            raise ValueError(f"duplicate release filename: {output_name}")
+        seen_episodes.add(episode)
+        seen_outputs.add(output_name.casefold())
+        rows.append({
+            "episode": episode, "video": video, "subtitle": baseline_files[subtitle_path],
+            "subtitle_path": subtitle_path, "audio_stream": audio_index,
+            "audio_language": audio_language, "audio_codec": streams[0].get("codec") if streams else None,
+            "target_basename": target_basename, "timing_authority": timing_authority, "output_name": output_name,
+        })
     if work_type == "movie" and (len(rows) != 1 or rows[0]["episode"] != "MOVIE"):
         raise ValueError("a movie project must map exactly one MOVIE entry")
     return rows
-
-
-def validate_scope(snapshot: dict[str, object], rows: list[dict[str, object]], work_type: str, scope_approved_by: str) -> str:
-    platform = str(snapshot["platform"])
-    expected_tokens = {
-        "tv": ("tv",), "movie": ("movie", "剧场", "劇場"), "ova": ("ova",),
-        "ona": ("web", "ona"), "special": ("special", "sp", "特别", "特別"),
-    }[work_type]
-    platform_match = any(token.casefold() in platform.casefold() for token in expected_tokens)
-    count_match = len(rows) == int(snapshot["_total_episodes"])
-    if not scope_approved_by.strip():
-        raise ValueError("--scope-approved-by is required after identity/type/episode-scope review")
-    if platform_match and count_match:
-        return "api-fields-and-user-confirmed"
-    return f"user-confirmed-exception: platform={platform!r}, api_total={snapshot['_total_episodes']}, mapped={len(rows)}"
 
 
 def ass_time(raw: str) -> str:
@@ -312,7 +279,7 @@ def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]]) -> 
         "PlayResX: 1920", "PlayResY: 1080", "YCbCr Matrix: TV.709", "",
         "[V4+ Styles]",
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-        f"Style: CN-Main,{SC_WORK_FONT},62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
+        f"Style: CN-Main,{SC_FONT},62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
         "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
     lines.extend(f"Dialogue: 0,{start},{end},CN-Main,,0,0,0,,{text}" for start, end, text in cues)
@@ -360,7 +327,7 @@ def normalize_ass_master(text: str) -> str:
         if len(fields) < 2:
             raise ValueError("malformed ASS style definition")
         name = fields[0]
-        target = JP_WORK_FONT if name in japanese_styles or JAPANESE_STYLE.search(name) else SC_WORK_FONT
+        target = JP_FONT if name in japanese_styles or JAPANESE_STYLE.search(name) else SC_FONT
         targets[name] = target
         fields[1] = target
         style_output.append("Style: " + ",".join(fields) + ("\n" if line.endswith("\n") else ""))
@@ -374,8 +341,8 @@ def normalize_ass_master(text: str) -> str:
         parts = bare.split(",", 9)
         if len(parts) != 10:
             raise ValueError("malformed ASS event")
-        target = targets.get(parts[3].strip() or "Default", SC_WORK_FONT)
-        parts[9] = INLINE_FONT.sub(lambda match: f"\\fn{JP_WORK_FONT if JAPANESE_KANA.search(parts[9]) else target}" if match.group(1).strip() else match.group(0), parts[9])
+        target = targets.get(parts[3].strip() or "Default", SC_FONT)
+        parts[9] = INLINE_FONT.sub(lambda match: f"\\fn{JP_FONT if JAPANESE_KANA.search(parts[9]) else target}" if match.group(1).strip() else match.group(0), parts[9])
         event_output.append(",".join(parts) + ("\n" if line.endswith("\n") else ""))
     result = head + "".join(style_output) + "".join(event_output)
     return result if result.endswith("\n") else result + "\n"
@@ -407,7 +374,7 @@ def source_scope(group: dict[str, object], rows: list[dict[str, object]]) -> str
     return ",".join(hinted) if hinted else "ALL"
 
 
-def source_block(groups: list[dict[str, object]], embedded: list[dict[str, object]], rows: list[dict[str, object]], approved_by: str, verified_at: str) -> str:
+def source_block(groups: list[dict[str, object]], embedded: list[dict[str, object]], rows: list[dict[str, object]]) -> str:
     lines = ["subtitle_sources:"]
     for group in groups:
         language = group.get("language")
@@ -420,10 +387,7 @@ def source_block(groups: list[dict[str, object]], embedded: list[dict[str, objec
             f"    path: {path}", f"    file_count: {len(group['files'])}", f"    scope: {quote(source_scope(group, rows))}", "    roles:",
         ])
         lines.extend(f"      - {role}" for role in roles)
-        lines.extend([
-            "    classification:", "      status: user-confirmed", f"      confirmed_by: {quote(approved_by)}",
-            f"      confirmed_at: {verified_at}", f"      evidence: {quote(group.get('language_basis', 'approved intake'))}",
-        ])
+        lines.append(f"    evidence: {quote(group.get('language_basis', 'approved intake'))}")
     for track in embedded:
         if not track.get("language") or not track.get("roles"):
             continue
@@ -436,10 +400,7 @@ def source_block(groups: list[dict[str, object]], embedded: list[dict[str, objec
             f"    codec: {quote(track.get('codec'))}", f"    scope: {quote(embedded_scope)}", "    roles:",
         ])
         lines.extend(f"      - {role}" for role in track["roles"])
-        lines.extend([
-            "    classification:", "      status: verified", f"      confirmed_by: {quote(approved_by)}",
-            f"      confirmed_at: {verified_at}", f"      evidence: {quote(track.get('language_basis', 'container probe and approved intake'))}",
-        ])
+        lines.append(f"    evidence: {quote(track.get('language_basis', 'container probe and approved intake'))}")
     return "\n".join(lines)
 
 
@@ -486,18 +447,14 @@ def main() -> int:
     parser.add_argument("--series-dir", required=True, type=Path)
     parser.add_argument("--create-series", action="store_true")
     parser.add_argument("--series-title")
-    parser.add_argument("--series-name-approved-by")
     parser.add_argument("--project-name", required=True, help="User-approved short lowercase developer-facing name")
-    parser.add_argument("--project-name-approved-by", required=True)
+    parser.add_argument("--approved-by", required=True, help="Approver for identity, scope, mappings, roles, languages, and names")
     parser.add_argument("--work-id", help="Optional explicit ID; otherwise allocate the next repository SH number")
     parser.add_argument("--repository-root", type=Path)
     parser.add_argument("--type", required=True, choices=("tv", "movie", "ova", "ona", "special"))
     parser.add_argument("--bangumi-id", required=True)
     parser.add_argument("--bangumi-snapshot", required=True, type=Path)
-    parser.add_argument("--scope-approved-by", required=True)
     parser.add_argument("--intake", required=True, type=Path)
-    parser.add_argument("--intake-approved-by", required=True)
-    parser.add_argument("--episode-map", required=True, type=Path)
     parser.add_argument("--secondary-language", help="Optional release secondary language")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
@@ -505,8 +462,8 @@ def main() -> int:
     project_name = args.project_name.strip()
     if not PROJECT_NAME_RE.fullmatch(project_name) or not 3 <= len(project_name) <= 48:
         parser.error("--project-name must be 3-48 lowercase ASCII letters/digits/hyphens")
-    if not args.project_name_approved_by.strip() or not args.intake_approved_by.strip():
-        parser.error("project name and intake require an identified approver")
+    if not args.approved_by.strip():
+        parser.error("--approved-by requires an identified approver")
     if args.secondary_language and not LANGUAGE_RE.fullmatch(args.secondary_language):
         parser.error("--secondary-language must be a BCP 47 language tag")
     try:
@@ -515,8 +472,7 @@ def main() -> int:
         if intake.get("project_type") and intake["project_type"] != args.type:
             raise ValueError(f"intake project_type {intake['project_type']!r} conflicts with --type {args.type!r}")
         source_language = str(intake["source_language"])
-        rows = load_episode_map(args.episode_map, intake, args.type, source_language)
-        scope_basis = validate_scope(snapshot, rows, args.type, args.scope_approved_by)
+        rows = load_episode_map(intake, args.type, source_language)
         group_ids: set[str] = set()
         for group in intake["external_source_groups"]:
             group_id = str(group.get("id", ""))
@@ -544,8 +500,8 @@ def main() -> int:
     if args.bangumi_id in subject_ids:
         parser.error(f"Bangumi subject already exists at {subject_ids[args.bangumi_id]}")
     if not series_dir.exists():
-        if not args.create_series or not args.series_title or not args.series_name_approved_by:
-            parser.error("a new series directory requires --create-series, --series-title, and --series-name-approved-by")
+        if not args.create_series or not args.series_title:
+            parser.error("a new series directory requires --create-series and --series-title")
         if not PROJECT_NAME_RE.fullmatch(series_dir.name):
             parser.error("new series directory name must be lowercase ASCII letters/digits/hyphens")
     elif not series_dir.is_dir():
@@ -561,36 +517,38 @@ def main() -> int:
     scope = "MOVIE" if args.type == "movie" else f"{len(rows)} mapped episodes"
     values = {
         "WORK_ID": work_id, "PROJECT_NAME": project_name, "WORK_TYPE": args.type, "EPISODE_COUNT": str(len(rows)),
-        "BANGUMI_ID": args.bangumi_id, "TITLE_JA": str(snapshot["name"]), "TITLE_ZH_HANS": str(snapshot["name_cn"]),
+        "BANGUMI_ID": args.bangumi_id,
         "TITLE_JA_YAML": quote(str(snapshot["name"])), "TITLE_ZH_HANS_YAML": quote(str(snapshot["name_cn"])),
         "BANGUMI_DATE_YAML": quote(str(snapshot["date"])), "BANGUMI_PLATFORM_YAML": quote(str(snapshot["platform"])),
-        "BANGUMI_TOTAL_EPISODES": str(snapshot["_total_episodes"]), "IDENTITY_SCOPE_BASIS_YAML": quote(scope_basis),
-        "SCOPE_APPROVED_BY_YAML": quote(args.scope_approved_by), "PROJECT_NAME_APPROVED_BY_YAML": quote(args.project_name_approved_by),
+        "BANGUMI_TOTAL_EPISODES": str(snapshot["_total_episodes"]),
+        "APPROVED_BY_YAML": quote(args.approved_by),
         "VERIFIED_AT": verified_at, "SOURCE_LANGUAGE": source_language,
         "SECONDARY_LANGUAGE_YAML": quote(args.secondary_language) if args.secondary_language else "null",
         "SUBTITLE_PROFILE": "zh-bilingual" if args.secondary_language else "zh-mono",
         "SECONDARY_STYLES_YAML": "\n      - JP-Main" if args.secondary_language else "[]",
-        "SECONDARY_LANGUAGE_DISPLAY": args.secondary_language or "无（单语中文字幕）", "SCOPE": scope, "UPDATED_AT": verified_at,
+        "SCOPE": scope, "UPDATED_AT": verified_at,
         "EPISODES_YAML": "\n".join(f"  {row['episode']}: {{ status: not-started }}" for row in rows),
         "MACHINE_COVERAGE": ("ffprobe media/track inventory; " if any(row["video"] for row in rows) else "text-only inventory; ") + "source hashes; project structure and master parsing",
-        "HUMAN_COVERAGE": f"project name, identity scope, episode map and material roles approved by {args.intake_approved_by}",
+        "HUMAN_COVERAGE": f"project name, identity scope, episode map, timing authority, languages, and material roles approved by {args.approved_by}",
         "INITIALIZATION_SUMMARY": f"Prepared {len(rows)} writable master(s) from immutable Chinese baseline sources.",
-        "INTAKE_APPROVED_BY_YAML": quote(args.intake_approved_by),
         "EVIDENCE_TIER": str(intake.get("evidence_tier") or "D"),
         "TIMING_AUTHORITY_YAML": quote("; ".join(f"{row['episode']}={row['timing_authority']}" for row in rows)),
     }
     project_text = render(template_root / "project.yaml", values)
-    project_text = project_text.replace("subtitle_sources: []", source_block(intake["external_source_groups"], intake.get("embedded_subtitle_tracks", []), rows, args.intake_approved_by, verified_at))
+    project_text = project_text.replace("subtitle_sources: []", source_block(intake["external_source_groups"], intake.get("embedded_subtitle_tracks", []), rows))
     project_text = project_text.replace("video_sources: {}", video_block(rows))
+    limitations = list(dict.fromkeys(str(value) for value in intake.get("limitations", []) if str(value).strip()))
+    if limitations:
+        project_text = project_text.replace("limitations: []", "limitations:\n" + "\n".join(f"  - {quote(value)}" for value in limitations))
     planned = {
         "skill_version": SKILL_VERSION, "target": str(target), "work_id": work_id, "project_name": project_name,
-        "project_name_approved_by": args.project_name_approved_by, "episodes": [row["episode"] for row in rows],
+        "approved_by": args.approved_by, "episodes": [row["episode"] for row in rows],
         "release_filenames": [row["output_name"] for row in rows],
         "videos_recorded_by_basename_only": [row["video"]["basename"] for row in rows if row["video"]],
         "evidence_tier": intake.get("evidence_tier"),
         "timing_authorities": {row["episode"]: row["timing_authority"] for row in rows},
         "masters_to_prepare": [{"episode": row["episode"], "source": row["subtitle_path"]} for row in rows],
-        "optional_limitations": [question for question in intake.get("questions", []) if question.startswith("Optional:")],
+        "limitations": limitations,
     }
     if args.dry_run:
         print(json.dumps(planned, ensure_ascii=False, indent=2))
@@ -640,7 +598,7 @@ def main() -> int:
             capture_output=True, text=True, encoding="utf-8",
         )
         if validation.returncode != 0:
-            raise ValueError(f"initialized project failed readiness validation: {validation.stdout or validation.stderr}")
+            raise ValueError(f"initialized project failed proofreading gate: {validation.stdout or validation.stderr}")
         planned["validation"] = "ready-for-proofreading"
     except Exception:
         if staging.exists():

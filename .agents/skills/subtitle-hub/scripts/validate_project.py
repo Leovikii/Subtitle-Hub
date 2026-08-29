@@ -81,7 +81,7 @@ def subtitle_entries(text: str) -> list[dict[str, object]]:
                 "classification": scalar(classification, "status", 6),
                 "confirmed_by": scalar(classification, "confirmed_by", 6),
                 "confirmed_at": scalar(classification, "confirmed_at", 6),
-                "evidence": scalar(classification, "evidence", 6),
+                "evidence": scalar(chunk, "evidence", 4) or scalar(classification, "evidence", 6),
             }
         )
     return entries
@@ -97,7 +97,16 @@ def video_file_map(metadata: str) -> dict[str, str]:
     }
 
 
-def validate_working_masters(project_root: Path, videos: dict[str, str], errors: list[str], warnings: list[str], strict_12: bool) -> None:
+def project_languages(metadata: str) -> tuple[str, str | None]:
+    schema = scalar(metadata, "schema_version")
+    release = section(metadata, "release_languages") if schema == "9" else section(section(metadata, "languages"), "release", 2)
+    indent = 2 if schema == "9" else 4
+    primary = scalar(release, "primary", indent) or "zh-Hans"
+    secondary = scalar(release, "secondary", indent)
+    return primary, None if secondary in {None, "null"} else secondary
+
+
+def validate_working_masters(project_root: Path, videos: dict[str, str], errors: list[str], warnings: list[str], noto_required: bool) -> None:
     for episode in sorted(videos):
         master = project_root / "project" / "workspace" / "episodes" / episode / "master.ass"
         if not master.is_file():
@@ -112,17 +121,14 @@ def validate_working_masters(project_root: Path, videos: dict[str, str], errors:
             errors.append(f"{master}: missing a parseable ASS/SSA Events section")
         if not re.search(r"(?m)^Dialogue:", text):
             warnings.append(f"{master}: contains no Dialogue events")
-        if strict_12:
+        if noto_required:
             for field in ("ScriptType", "WrapStyle", "ScaledBorderAndShadow", "PlayResX", "PlayResY", "YCbCr Matrix"):
                 if not re.search(rf"(?m)^{re.escape(field)}:\s*\S", text):
                     errors.append(f"{master}: missing required Script Info field {field}")
             fonts = set(re.findall(r"(?m)^Style:\s*[^,]+,([^,]+)", text)) | {font.strip() for font in re.findall(r"\\fn([^\\}]*)", text) if font.strip()}
-            release_fonts = sorted(fonts & {"Noto Sans CJK SC", "Noto Sans CJK JP"})
-            unsupported = sorted(fonts - {"Microsoft YaHei UI", "Yu Gothic UI"})
-            if release_fonts:
-                errors.append(f"{master}: release Noto fonts are forbidden in a working master: {', '.join(release_fonts)}")
+            unsupported = sorted(fonts - {"Noto Sans CJK SC", "Noto Sans CJK JP"})
             if unsupported:
-                errors.append(f"{master}: unsupported working fonts: {', '.join(unsupported)}")
+                errors.append(f"{master}: schema 9 master has non-Noto fonts: {', '.join(unsupported)}")
     local_paths = project_root / "project" / "local.paths.yaml"
     if local_paths.is_file():
         mapping = local_paths.read_text(encoding="utf-8-sig")
@@ -145,10 +151,7 @@ def validate_working_masters(project_root: Path, videos: dict[str, str], errors:
 
 
 def validate_release(project_root: Path, metadata: str, errors: list[str], warnings: list[str]) -> None:
-    release_language = scalar(section(section(metadata, "languages"), "release", 2), "primary", 4) or "zh-Hans"
-    secondary = scalar(section(section(metadata, "languages"), "release", 2), "secondary", 4)
-    if secondary == "null":
-        secondary = None
+    release_language, secondary = project_languages(metadata)
     for directory_name in ("current", "previous"):
         directory = project_root / "subtitles" / directory_name
         if not directory.exists():
@@ -201,17 +204,20 @@ def validate_release(project_root: Path, metadata: str, errors: list[str], warni
             errors.append(f"{project_root}: current and previous versions are identical")
 
 
-def validate_review_coverage(project_root: Path, review_path: Path, review: str, metadata: str, errors: list[str]) -> None:
+def validate_review_coverage(project_root: Path, review_path: Path, review: str, metadata: str, errors: list[str], schema: str) -> None:
     coverage = section(review, "coverage")
     tier = scalar(coverage, "evidence_tier", 2)
     if tier not in {"A", "B", "C", "D"}:
         errors.append(f"{review_path}: release coverage requires evidence_tier A-D")
     values: dict[str, int] = {}
-    for field in (
+    source_done = "source_aligned" if schema == "9" else "source_resolved"
+    fields = [
         "chinese_in_scope", "chinese_reviewed", "chinese_excluded", "source_in_scope",
-        "source_resolved", "source_unresolved", "static_layout_checked", "media_candidates",
-        "media_checked", "unresolved_p0", "unresolved_p1",
-    ):
+        source_done, "source_unresolved", "static_layout_checked", "unresolved_p0", "unresolved_p1",
+    ]
+    if schema == "8":
+        fields.extend(("media_candidates", "media_checked"))
+    for field in fields:
         raw = scalar(coverage, field, 2)
         if raw is None or not raw.isdigit():
             errors.append(f"{review_path}: coverage.{field} must be a non-negative integer")
@@ -227,14 +233,15 @@ def validate_review_coverage(project_root: Path, review_path: Path, review: str,
     if values.get("unresolved_p0") != 0 or values.get("unresolved_p1") != 0:
         errors.append(f"{review_path}: unresolved P0/P1 blocks release")
     if tier in {"A", "B"}:
-        if values.get("source_in_scope", 0) <= 0 or values.get("source_in_scope") != values.get("source_resolved", 0) + values.get("source_unresolved", 0):
+        if values.get("source_in_scope", 0) <= 0 or values.get("source_in_scope") != values.get(source_done, 0) + values.get("source_unresolved", 0):
             errors.append(f"{review_path}: A/B source-direction coverage is incomplete")
         if values.get("source_unresolved") != 0:
             errors.append(f"{review_path}: unresolved source units block A/B fidelity completion")
     elif tier in {"C", "D"} and scalar(coverage, "human_source_fidelity_review", 2) != "verified":
         errors.append(f"{review_path}: C/D release requires verified human full-source-fidelity review")
-    if scalar(coverage, "human_final_playback", 2) != "verified":
-        errors.append(f"{review_path}: release requires verified human final playback")
+    final_review = "human_release_review" if schema == "9" else "human_final_playback"
+    if scalar(coverage, final_review, 2) != "verified":
+        errors.append(f"{review_path}: release requires verified {final_review}")
     fingerprints = section(coverage, "master_sha256", 2)
     if not fingerprints.strip():
         errors.append(f"{review_path}: release coverage requires master_sha256 fingerprints")
@@ -267,8 +274,12 @@ def main() -> int:
         parser.error(str(error))
 
     project_schema = scalar(metadata, "schema_version")
-    if project_schema not in {"7", "8"}:
-        errors.append(f"{metadata_path}: schema_version must be 8 (7 is accepted only as a legacy release)")
+    if project_schema not in {"7", "8", "9"}:
+        errors.append(f"{metadata_path}: schema_version must be 9 (7/8 are read-only legacy inputs)")
+    if project_schema == "9":
+        for obsolete in ("naming", "languages", "workspace", "release", "documentation"):
+            if section(metadata, obsolete):
+                errors.append(f"{metadata_path}: schema 9 must not repeat fixed {obsolete} configuration")
     work_id = scalar(metadata, "id")
     if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
         errors.append(f"{metadata_path}: invalid work id")
@@ -277,9 +288,10 @@ def main() -> int:
         errors.append(f"{metadata_path}: invalid project_name")
     elif root.name != f"{work_id}--{project_name}":
         errors.append(f"{root}: directory must be {work_id}--{project_name}")
-    naming = section(metadata, "naming")
-    if scalar(naming, "directory", 2) != root.name or not scalar(naming, "approved_by", 2) or not scalar(naming, "approved_at", 2):
-        errors.append(f"{metadata_path}: naming approval block is missing or inconsistent")
+    if project_schema in {"7", "8"}:
+        naming = section(metadata, "naming")
+        if scalar(naming, "directory", 2) != root.name or not scalar(naming, "approved_by", 2) or not scalar(naming, "approved_at", 2):
+            errors.append(f"{metadata_path}: legacy naming approval block is missing or inconsistent")
     identity = section(metadata, "identity")
     if scalar(identity, "provider", 2) != "bangumi":
         errors.append(f"{metadata_path}: identity.provider must be bangumi")
@@ -305,9 +317,10 @@ def main() -> int:
     total_episodes = scalar(identity, "total_episodes", 2)
     if total_episodes not in {None, "null"} and (not total_episodes.isdigit() or int(total_episodes) <= 0):
         errors.append(f"{metadata_path}: identity.total_episodes must be positive")
-    scope_verification = section(identity, "scope_verification", 2)
-    if scalar(scope_verification, "status", 4) != "user-confirmed" or not scalar(scope_verification, "approved_by", 4):
-        errors.append(f"{metadata_path}: identity scope requires recorded user confirmation")
+    if project_schema in {"7", "8"}:
+        scope_verification = section(identity, "scope_verification", 2)
+        if scalar(scope_verification, "status", 4) != "user-confirmed" or not scalar(scope_verification, "approved_by", 4):
+            errors.append(f"{metadata_path}: identity scope requires recorded user confirmation")
     task = section(metadata, "task")
     if scalar(task, "mode", 2) != "proofreading":
         errors.append(f"{metadata_path}: task.mode must be proofreading")
@@ -326,12 +339,14 @@ def main() -> int:
             errors.append(f"{metadata_path}: source {entry['id']} has unresolved language")
         if not roles or roles - ALLOWED_ROLES:
             errors.append(f"{metadata_path}: source {entry['id']} has invalid roles {sorted(roles)}")
-        if entry["classification"] not in {"declared", "verified", "user-confirmed"}:
+        if project_schema in {"7", "8"} and entry["classification"] not in {"declared", "verified", "user-confirmed"}:
             errors.append(f"{metadata_path}: source {entry['id']} lacks a valid classification status")
         if not entry["scope"]:
             errors.append(f"{metadata_path}: source {entry['id']} lacks an episode scope")
-        if not entry["confirmed_by"] or not entry["confirmed_at"] or not entry["evidence"]:
+        if project_schema in {"7", "8"} and (not entry["confirmed_by"] or not entry["confirmed_at"] or not entry["evidence"]):
             errors.append(f"{metadata_path}: source {entry['id']} classification lacks confirmer/date/evidence")
+        if project_schema == "9" and not entry["evidence"]:
+            errors.append(f"{metadata_path}: source {entry['id']} lacks evidence")
         source_path = str(entry["path"] or "")
         if entry["kind"] == "embedded-subtitle-track":
             if not entry["container"] or entry["stream_index"] is None:
@@ -377,22 +392,22 @@ def main() -> int:
     for name in forbidden_sidecars:
         for path in root.rglob(name):
             errors.append(f"{path}: project audit/control sidecar is forbidden")
-    documentation = section(metadata, "documentation")
-    if scalar(documentation, "review", 2) != "review.md":
-        errors.append(f"{metadata_path}: documentation.review must be review.md")
-    for obsolete in ("entry", "guide", "ledger", "progress", "change_log", "issues"):
-        if scalar(documentation, obsolete, 2) is not None:
-            errors.append(f"{metadata_path}: documentation.{obsolete} is obsolete")
+    if project_schema in {"7", "8"}:
+        documentation = section(metadata, "documentation")
+        if scalar(documentation, "review", 2) != "review.md":
+            errors.append(f"{metadata_path}: documentation.review must be review.md")
     if review_path.is_file():
         review = review_path.read_text(encoding="utf-8-sig")
         if not review.startswith("---\n") or "\n---\n" not in review[4:]:
             errors.append(f"{review_path}: YAML front matter is required")
         review_schema = scalar(review, "schema_version")
-        expected_review = "2" if project_schema == "8" else "1"
+        expected_review = {"7": "1", "8": "2", "9": "3"}.get(project_schema)
         if review_schema != expected_review:
             errors.append(f"{review_path}: schema_version must be {expected_review} for project schema {project_schema}")
-        if project_schema == "8" and not section(review, "coverage"):
-            errors.append(f"{review_path}: schema 2 requires a coverage block")
+        if project_schema in {"8", "9"} and not section(review, "coverage"):
+            errors.append(f"{review_path}: review schema {expected_review} requires a coverage block")
+        if project_schema == "9" and scalar(review, "status") not in {"planning", "awaiting-approval", "implementing", "final-review", "released", "blocked"}:
+            errors.append(f"{review_path}: schema 3 status is invalid")
         if work_id and scalar(review, "work_id") != work_id:
             errors.append(f"{review_path}: work_id does not match project.yaml")
         for heading in ("# 当前校对轮次", "## 检查覆盖", "## 决策与实施", "## 验证与剩余风险"):
@@ -408,32 +423,38 @@ def main() -> int:
     ordinary = section(design, "ordinary_styles", 2)
     if not scalar(ordinary, "primary", 4):
         errors.append(f"{metadata_path}: subtitle_design.ordinary_styles.primary is required")
-    secondary_language = scalar(section(section(metadata, "languages"), "release", 2), "secondary", 4)
+    _, secondary_language = project_languages(metadata)
     if (profile == "zh-mono") != (secondary_language in {None, "null"}):
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
     if project_schema == "8" and section(section(metadata, "release"), "review_coverage", 2):
         errors.append(f"{metadata_path}: release.review_coverage is obsolete; review.md coverage is authoritative")
 
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version not in {"1.0.0", "1.1.0", "1.1.1", "1.1.2", "1.2.0"}:
+    if initialization_version not in {"1.0.0", "1.1.0", "1.1.1", "1.1.2", "1.2.0", "1.3.0"}:
         errors.append(
             f"{metadata_path}: initialization.skill_version is unsupported"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
-    if initialization_state == "proofreading-ready":
+    if initialization_state == "proofreading-ready" and project_schema in {"7", "8"}:
         for field in ("intake_approved_by", "episode_map_approved_by", "approved_at"):
+            if not scalar(initialization, field, 2):
+                errors.append(f"{metadata_path}: initialization.{field} is required")
+    if initialization_state == "proofreading-ready" and project_schema == "9":
+        for field in ("approved_by", "approved_at"):
             if not scalar(initialization, field, 2):
                 errors.append(f"{metadata_path}: initialization.{field} is required")
     if args.ready_for_proofreading:
         if initialization_state not in {"proofreading-ready", "released-existing"}:
             errors.append(f"{metadata_path}: initialization state is not proofreading-ready")
-        validate_working_masters(root, videos, errors, warnings, project_schema == "8")
+        validate_working_masters(root, videos, errors, warnings, project_schema == "9")
 
     if args.release:
         validate_release(root, metadata, errors, warnings)
-        if project_schema == "8" and review:
-            validate_review_coverage(root, review_path, review, metadata, errors)
+        if project_schema == "9" and review and scalar(review, "status") != "released":
+            errors.append(f"{review_path}: release validation requires status released")
+        if project_schema in {"8", "9"} and review:
+            validate_review_coverage(root, review_path, review, metadata, errors, project_schema)
     result = {"project": str(root), "errors": errors, "warnings": warnings, "valid": not errors}
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))

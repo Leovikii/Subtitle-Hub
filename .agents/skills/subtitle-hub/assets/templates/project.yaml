@@ -1,16 +1,9 @@
-schema_version: 8
+schema_version: 9
 
 id: "{{WORK_ID}}"
 project_name: "{{PROJECT_NAME}}"
 type: "{{WORK_TYPE}}"
 episode_count: {{EPISODE_COUNT}}
-status: active
-
-naming:
-  directory: "{{WORK_ID}}--{{PROJECT_NAME}}"
-  approved_by: {{PROJECT_NAME_APPROVED_BY_YAML}}
-  approved_at: "{{VERIFIED_AT}}"
-  basis: user-approved-developer-facing-name
 
 identity:
   provider: bangumi
@@ -25,23 +18,15 @@ identity:
   total_episodes: {{BANGUMI_TOTAL_EPISODES}}
   verification: api-verified
   verified_at: "{{VERIFIED_AT}}"
-  scope_verification:
-    status: user-confirmed
-    approved_by: {{SCOPE_APPROVED_BY_YAML}}
-    basis: {{IDENTITY_SCOPE_BASIS_YAML}}
-
 task:
   mode: proofreading
   source_language: "{{SOURCE_LANGUAGE}}"
   target_language: zh-Hans
   scope: "{{SCOPE}}"
 
-languages:
-  release:
-    primary: zh-Hans
-    secondary: {{SECONDARY_LANGUAGE_YAML}}
-    filename_suffix: zh-Hans
-  references: []
+release_languages:
+  primary: zh-Hans
+  secondary: {{SECONDARY_LANGUAGE_YAML}}
 
 subtitle_design:
   profile: {{SUBTITLE_PROFILE}}
@@ -50,40 +35,13 @@ subtitle_design:
       - CN-Main
     secondary: {{SECONDARY_STYLES_YAML}}
 
+subtitle_sources: []
+video_sources: {}
 project_overrides: []
 limitations: []
 
-subtitle_sources: []
-video_sources: {}
-
-workspace:
-  baseline: project/workspace/episodes
-  episodes: project/workspace/episodes
-  temporary: project/workspace/temp
-  build: project/workspace/build
-
 initialization:
-  skill_version: "1.2.0"
+  skill_version: "1.3.0"
   state: proofreading-ready
-  intake: probe-confirmed-and-user-approved
-  intake_approved_by: {{INTAKE_APPROVED_BY_YAML}}
-  episode_map_approved_by: {{INTAKE_APPROVED_BY_YAML}}
+  approved_by: {{APPROVED_BY_YAML}}
   approved_at: "{{VERIFIED_AT}}"
-  initialized_at: "{{VERIFIED_AT}}"
-
-release:
-  version_file: subtitles/current/VERSION
-  current_path: subtitles/current
-  previous_path: subtitles/previous
-  previous_retention: 1
-  previous_rotation: rename-current-directory
-  previous_required_after_first_release: true
-  format: ass
-  filename_pattern: "<video-stem>.zh-Hans.ass"
-  embedded_version_field: Subtitle-Hub-Version
-  package:
-    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
-    generated_by: .github/scripts/build_subtitle_packages.py
-
-documentation:
-  review: review.md

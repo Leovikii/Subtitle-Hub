@@ -11,16 +11,15 @@ Durable masters are `project/workspace/episodes/<episode>/master.ass`. Initializ
 
 Do not create `archive/`, screenshot/evidence trees, `intermediate/`, or `logs/`. Prefer system temporary storage for disposable generated data. Delete obsolete temporary files after durable conclusions are in `review.md` or `project.yaml`.
 
-Intake JSON, approved episode-map TSV, raw audit details, frames, waveforms and renders stay in system temporary storage. Do not create project audit/coverage/manifest files, per-episode reports, copied shared tools, or placeholders. `project/local.paths.yaml` exists only when external local media paths must be reused; no-video projects omit it. A new series omits `series-guide.md` until the first real cross-project term is recorded.
+Intake JSON (including the approved episode map), raw audit details, frames, waveforms and renders stay in system temporary storage. Do not create project audit/coverage/manifest files, per-episode reports, copied shared tools, or placeholders. `project/local.paths.yaml` exists only when external media paths must be reused; no-video projects omit it. Create `series-guide.md` only with the first real cross-project term.
 
-## SH-REL-008 — Four-stage ASS contract
+## SH-REL-008 — Three-state ASS contract
 
-1. `project/sources/` is an immutable source snapshot and may contain arbitrary source fonts, missing fields, editor data or non-runtime content.
-2. Each workspace `master.ass` is the editable truth. It has complete Script Info/Styles/Events fields and approved non-release working fonts. It must not already use `Noto Sans CJK SC/JP`; all substantive text, timing and layout edits occur here under the review gate.
-3. A complete release candidate is derived once from masters. Only global working-font-to-Noto mapping (including inline `\fn`), canonical Header, non-rendering Comment/metadata cleanup, and unused-style pruning are allowed.
-4. Promotion rotates the checked candidate transactionally. Local work validates package plans but never writes ZIPs.
+1. `project/sources/` is an immutable snapshot and may contain arbitrary fonts, missing fields, editor data, or non-runtime content.
+2. Each workspace `master.ass` is the editable truth with complete Script Info/Styles/Events and global Noto SC/JP fonts. All substantive text, timing, and layout edits occur here under the review gate.
+3. A complete candidate is derived once. Only the canonical header, version, high-confidence credit harvest, non-rendering Comment/metadata cleanup, and unused-style pruning may differ. Promotion rotates the checked candidate transactionally; local work validates package plans but never writes ZIPs.
 
-The candidate validator independently reconstructs the allowed transformation from each master. It verifies header fields and retained source credits, removed Comments, referenced-style pruning, style/inline font mapping, and byte-identical rendered Events apart from inline font names. A master already using a release Noto font is a stage error, not proof of a conversion.
+The builder asserts the master–candidate invariant immediately after construction; the independent release/package validator checks the final format. New schema 9 masters permit no rendered font difference. Legacy schema 7/8 masters remain readable and may map fonts to Noto during build, but this compatibility is not an active authoring standard; a new content round first migrates its master and invalidates old coverage.
 
 ## SH-REL-002 — Release layout and versioning
 
@@ -36,7 +35,7 @@ Prefer omission to invention: do not infer a credit from filenames, websites, re
 
 ## SH-REL-004 — ASS release boundary
 
-Preserve valid Script Info geometry/matrix and rendered special styles/effects while enforcing the global font-family invariant in `SH-LAYOUT-004`. A release contains only runtime subtitle content and canonical metadata: remove editor/project sections, embedded attachments, local paths, empty or duplicate metadata, automation/template code, disabled/comment-only events, disclaimers, websites, workflow notes, and rendered provenance. Harvest `SH-REL-003` credits first.
+Preserve valid Script Info geometry/matrix and rendered special styles/effects while enforcing `SH-LAYOUT-004`. A release contains only runtime subtitle content and canonical metadata: remove editor/project sections, attachments, local paths, duplicate metadata, automation/template code, disabled/comment-only events, disclaimers, websites, workflow notes, and provenance. Harvest `SH-REL-003` credits first.
 
 After non-rendering Events are removed, delete every style not referenced by a remaining rendered Event, `\rStyle`, or implicit `Default`; fail on undefined references. Preserve referenced special styles without merging or standardizing them. Ordinary dialogue normalization follows `SH-LAYOUT-005`. Do not delete a visible Event merely because it resembles a credit or note; content deletion still follows the approval gate.
 

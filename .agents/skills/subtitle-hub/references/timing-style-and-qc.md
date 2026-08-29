@@ -39,7 +39,7 @@ Split at semantic pauses, clause boundaries, breath, or speaker changes. Do not 
 
 ## SH-LAYOUT-002 — Bilingual ordinary dialogue
 
-Chinese is above and visually primary; the source language is below at about 70–77% of Chinese size. At 1920×1080 use Chinese `62`, `MarginV=130` (allowed 125–135), and secondary `46`, `MarginV=68` (allowed 65–70), with about 12–20 px visible separation using the actual fonts/renderer. Paired events have identical boundaries and one-to-one mapping.
+Chinese is above and visually primary; the source language is below at about 70–77% of Chinese size. At 1920×1080 use Chinese `62`, `MarginV=130` (allowed 125–135), and secondary `46`, `MarginV=68` (allowed 65–70), with about 12–20 px visible separation. Prefer matching boundaries. Evidence-backed one-to-many, many-to-one, or cross-event pairing is allowed when meaning/order are complete, timing remains readable, and no duplicate, omission, or collision is introduced.
 
 This differs intentionally from mono Chinese. If Chinese needs two lines, prefer meaningful resplitting or accurate condensation; ASS has no portable style-level line-spacing control, and `\fsp` is character spacing, not line spacing.
 
@@ -49,7 +49,7 @@ Normalize size, margins, alignment, colors, outline, shadow, scale, spacing, pos
 
 ## SH-LAYOUT-004 — Fonts
 
-Replace the font family globally in every retained style and every nonempty inline `\fn`: use static `Noto Sans CJK SC` for Simplified Chinese and English and `Noto Sans CJK JP` for Japanese. This mandatory font-only normalization includes ordinary and special subtitles; it has no decorative-font exception and does not authorize changing any other style or Event property. Resolve Japanese from the confirmed style/event role, a Japanese style label, or visible kana governed by that style/inline override; use the Chinese-primary SC fallback otherwise. Do not use ASS `[Fonts]`. Font replacement is display-preserving by project definition and requires no width, line-break, position, visual, or screenshot review of its own.
+Every master and release uses static `Noto Sans CJK SC` for Simplified Chinese/English and `Noto Sans CJK JP` for Japanese in every retained style and nonempty inline `\fn`. This global font-only rule includes special subtitles and changes no other property. Resolve Japanese from the confirmed role, style label, or visible kana; use SC otherwise. Do not use ASS `[Fonts]`. Font normalization needs no separate screenshot gate.
 
 ## SH-LAYOUT-005 — Mono ordinary Chinese baseline
 
@@ -82,10 +82,10 @@ Audit every rendered ASS event without video before selecting media points. Repo
 
 Check explicit and predicted wrapping, ordinary-dialogue line count, bilingual vertical stacking, simultaneous time-and-space collisions, off-screen or fully hidden text, zero/abnormal alpha/scale/size, undefined `\rStyle`, and malformed or suspicious `\pos`, `\move`, `\clip`, `\fad`, `\fade`, and `\t`. Account for PlayRes, alignment, margins, style fields, event overrides, and intentional special positioning. A time overlap alone is not a spatial collision.
 
-Run the same audit against working masters and complete release candidates. Candidate construction must not add or alter events, timing, line breaks, positions, margins, alignment, size, scale, Layer, Effect or transformation tags; only the release transformations authorized by `SH-REL-008` may differ.
+Run the full audit once against the final master. Candidate construction then proves that rendered Events and referenced style properties did not change; it does not repeat the same geometry audit. Only non-rendering release cleanup authorized by `SH-REL-008` may differ.
 
 Use actual media for speech, timing, early reveals, pairing, positioned/animated text, obstruction, multiple speakers, songs, and special layout. Record candidate-point coverage honestly. Keep visual evidence local; do not batch-upload screenshots, frames, contact sheets, or Base64 images. Only at explicit user request may one message show at most two compressed screenshots for one point.
 
 ## SH-QC-006 — Release gate
 
-Before final review require complete scope; P0 zero; P1 zero or explicit waiver; correction-floor and early-disappearance disposition; equal bilingual boundaries; structure pass; every substantive row approved and verified; truthful machine/human coverage; correct version/header/font/credit/cleanup/previous-release contract; a successful local package-plan check with no ZIP writes; and `review.md` updated from proposals to actual results. Then request one final review and release only after it passes. GitHub Actions performs final package construction, CRC/checksum verification, stale-package removal, and index regeneration after the release push.
+Before final review require complete scope; P0 zero; P1 zero or waiver; correction-floor disposition; valid bilingual pairing; structure pass; every substantive row approved and verified; truthful coverage; correct version/header/font/credit/cleanup/previous contract; a local package-plan check with no ZIP writes; and updated `review.md`. `human_release_review` includes playback only when video is available and the round claims timing/visual completion; otherwise it explicitly accepts the recorded media limitations. Release only after it passes. GitHub Actions builds packages, verifies checksums, removes stale packages, and regenerates indexes after the release push.

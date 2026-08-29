@@ -338,7 +338,7 @@ def external_group(
         if len(known) == 1 and all(value in known for value in detected):
             resolved_language = known.pop()
             language_basis = "; ".join(sorted(set(bases)))
-    resolved_roles = ["candidate-baseline", "timing-reference", "style-layout-reference"] if baseline else roles
+    resolved_roles = ["candidate-baseline"] if baseline else roles
     if resolved_roles is None:
         resolved_roles = roles_for(resolved_language, source_language, files[0].suffix)
     return {
@@ -363,7 +363,7 @@ def external_group(
     }
 
 
-def propose_relationships(videos: list[dict[str, object]], baselines: list[dict[str, object]], project_type: str) -> list[dict[str, object]]:
+def propose_relationships(videos: list[dict[str, object]], baselines: list[dict[str, object]], project_type: str, source_language: str) -> list[dict[str, object]]:
     baseline_files = [file for group in baselines for file in group["files"]]
     if len(videos) == len(baseline_files) == 1:
         episode = "MOVIE" if project_type == "movie" else episode_hint(Path(videos[0]["basename"]), project_type) or episode_hint(Path(baseline_files[0]["basename"]), project_type) or "S01E01"
@@ -371,9 +371,12 @@ def propose_relationships(videos: list[dict[str, object]], baselines: list[dict[
             "episode": episode,
             "video_id": videos[0]["id"],
             "video": videos[0]["path"],
+            "target_basename": videos[0]["basename"],
             "baseline_file_id": baseline_files[0]["id"],
             "subtitle": baseline_files[0]["path"],
             "audio_stream": videos[0]["suggested_audio_stream"],
+            "audio_language": source_language if videos[0]["suggested_audio_stream"] is not None else None,
+            "timing_authority": None,
             "confidence": "high" if videos[0]["suggested_audio_stream"] is not None else "limited",
             "basis": "single video and single baseline",
         }]
@@ -390,9 +393,12 @@ def propose_relationships(videos: list[dict[str, object]], baselines: list[dict[
             "episode": hint,
             "video_id": video["id"],
             "video": video["path"],
+            "target_basename": video["basename"],
             "baseline_file_id": matches[0]["id"] if len(matches) == 1 else None,
             "subtitle": matches[0]["path"] if len(matches) == 1 else None,
             "audio_stream": video["suggested_audio_stream"],
+            "audio_language": source_language if video["suggested_audio_stream"] is not None else None,
+            "timing_authority": None,
             "confidence": "high" if hint and len(matches) == 1 and video["suggested_audio_stream"] is not None else "unresolved",
             "basis": "matching episode token" if hint and len(matches) == 1 else "episode pairing requires confirmation",
         })
@@ -410,8 +416,6 @@ def main() -> int:
     parser.add_argument("--audio-stream", action="append", default=[], metavar="VIDEO|INDEX", help="Select the intended source-language dialogue stream when probing finds multiple candidates")
     parser.add_argument("--ffprobe", help="Explicit ffprobe executable")
     parser.add_argument("--probe-cache", type=Path, help="Optional JSON cache of raw ffprobe responses")
-    parser.add_argument("--renderer-ready", action="store_true")
-    parser.add_argument("--fonts-ready", action="store_true")
     parser.add_argument("--output", type=Path, help="Write intake JSON; stdout is used otherwise")
     args = parser.parse_args()
 
@@ -455,8 +459,6 @@ def main() -> int:
             if stream["type"] != "subtitle":
                 continue
             language = stream["language"]
-            if not language:
-                blocking_questions.append(f"Confirm language for embedded subtitle {video['basename']} stream {stream['index']} ({stream['codec']}, {stream['title']})")
             embedded.append({
                 "id": f"embedded-{video['id']}-s{stream['index']}",
                 "video_id": video["id"],
@@ -466,46 +468,37 @@ def main() -> int:
                 "language": language,
                 "language_basis": stream["language_basis"],
                 "roles": roles_for(language, source_language, "", str(stream["codec"] or "")) if language else [],
+                "ignored": language is None,
             })
     for group in optional_groups:
         if not group["language"]:
             blocking_questions.append(f"Confirm language and roles for optional source {group['declared_path']}")
 
-    relationships = propose_relationships(video_items, baseline_groups, args.project_type or "tv")
+    relationships = propose_relationships(video_items, baseline_groups, args.project_type or "tv", source_language)
     if not video_items:
         baseline_files = [file for group in baseline_groups for file in group["files"]]
         relationships = [
             {
+                "episode": file.get("episode_hint"),
                 "video_id": None,
                 "video": None,
-                "baseline": file["path"],
-                "episode_hint": file.get("episode_hint"),
-                "suggested_audio_stream": None,
+                "target_basename": None,
+                "baseline_file_id": file["id"],
+                "subtitle": file["path"],
+                "audio_stream": None,
+                "audio_language": None,
+                "timing_authority": None,
                 "confidence": "high" if file.get("episode_hint") else "unresolved",
                 "basis": "text-only episode token" if file.get("episode_hint") else "text-only episode mapping requires confirmation",
             }
             for file in baseline_files
         ]
-    required_confirmations = [
-        "Approve the final episode/baseline map, target basenames, timing authority, and any available video/audio mapping; resolve every low-confidence proposal there",
-        "Choose and approve a short lowercase project name before any project directory is created",
-    ]
-    optional_requests = [
-        "Provide a source-language subtitle/script for stronger language review"
-        if not any(group["language"] == source_language for group in optional_groups)
-        and not any(track["language"] == source_language for track in embedded)
-        else ""
-    ]
-    optional_requests = [request for request in optional_requests if request]
-    has_video = bool(video_items)
-    probe_ready = has_video and all(video["probe_status"] == "ok" for video in video_items)
-    audio_ready = has_video and all(video["suggested_audio_stream"] is not None for video in video_items)
     source_text_ready = any(group["language"] == source_language and "source-text-reference" in group["roles"] for group in optional_groups) or any(track["language"] == source_language and "source-text-reference" in track["roles"] for track in embedded)
     auxiliary_ready = any(group["language"] not in {None, "zh-Hans", source_language} and "translation-reference" in group["roles"] for group in optional_groups) or any(track["language"] not in {None, "zh-Hans", source_language} and "translation-reference" in track["roles"] for track in embedded)
     evidence_tier = "A" if source_text_ready and auxiliary_ready else "B" if source_text_ready else "C" if auxiliary_ready else "D"
     report = {
-        "schema_version": 3,
-        "skill_version": "1.2.0",
+        "schema_version": 4,
+        "skill_version": "1.3.0",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,
@@ -513,21 +506,12 @@ def main() -> int:
         "target_videos": video_items,
         "external_source_groups": baseline_groups + optional_groups,
         "embedded_subtitle_tracks": embedded,
-        "proposed_episode_map": relationships,
+        "episode_map": relationships,
         "blocking_questions": blocking_questions,
-        "required_confirmations": required_confirmations,
-        "optional_requests": optional_requests,
-        "readiness": {
-            "structure": "ready" if baseline_groups else "blocked",
-            "language": "ready" if source_text_ready else "limited",
-            "timing": "ready" if probe_ready and audio_ready else "limited",
-            "visual": "ready" if probe_ready and args.renderer_ready and args.fonts_ready else "limited" if probe_ready else "blocked",
-            "release": "blocked",
-        },
-        "questions": blocking_questions + required_confirmations + [f"Optional: {request}" for request in optional_requests],
+        "limitations": (["target video not provided; timing and visual playback remain unverified"] if not video_items else []) + (["source-language text not provided; source fidelity requires human review"] if not source_text_ready else []),
         "notes": [
             "This intake manifest is disposable and may contain local absolute paths; init_project.py folds durable facts into project.yaml and writes ignored project/local.paths.yaml only when local video paths exist.",
-            "Proposed relationships and detected languages are not user approval. Create an approved episode map after resolving the questions.",
+            "Detected relationships, languages, and roles are proposals. Confirm them in this same JSON before initialization.",
             "Embedded non-source-language subtitles are timing and auxiliary translation evidence, never source-text authority.",
         ],
     }

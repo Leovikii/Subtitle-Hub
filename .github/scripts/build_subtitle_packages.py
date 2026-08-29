@@ -137,8 +137,8 @@ def yaml_block(text: str, field: str, indent: int) -> str:
 def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
-    if yaml_scalar(metadata, "schema_version", 0) not in {"7", "8"}:
-        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7 or 8")
+    if yaml_scalar(metadata, "schema_version", 0) not in {"7", "8", "9"}:
+        raise PackageError(f"{metadata_path}: identity packaging requires schema_version 7, 8, or 9")
     identity = yaml_block(metadata, "identity", 0)
     titles = yaml_block(identity, "titles", 2)
     provider = yaml_scalar(identity, "provider", 2)
@@ -165,10 +165,15 @@ def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
 
 def project_languages(project_root: Path) -> tuple[str, str | None]:
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
-    languages = yaml_block(metadata, "languages", 0)
-    release = yaml_block(languages, "release", 2)
-    primary = yaml_scalar(release, "primary", 4)
-    secondary = yaml_scalar(release, "secondary", 4)
+    if yaml_scalar(metadata, "schema_version", 0) == "9":
+        release = yaml_block(metadata, "release_languages", 0)
+        primary = yaml_scalar(release, "primary", 2)
+        secondary = yaml_scalar(release, "secondary", 2)
+    else:
+        languages = yaml_block(metadata, "languages", 0)
+        release = yaml_block(languages, "release", 2)
+        primary = yaml_scalar(release, "primary", 4)
+        secondary = yaml_scalar(release, "secondary", 4)
     return primary, None if secondary == "null" else secondary
 
 

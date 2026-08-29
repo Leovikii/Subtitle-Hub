@@ -1,4 +1,4 @@
-# Project initialization and material readiness
+# Project initialization and material intake
 
 ## Identity gate
 
@@ -66,47 +66,39 @@ Each `subtitle_sources` entry uses a `roles` list drawn from:
 - `style-layout-reference`
 - `secondary-language-release-source`
 
-Record actual language separately from roles. Track language classification uses, in order: standard language tags and titles; work/audio source language; sampled text compared with actual speech. If tags are missing/`und`, conflict with content, multiple tracks are plausible, or the agent cannot decide reliably, pause and ask the user. Write the confirmed language, roles, scope, confirmer, date, and evidence into `project.yaml`; do not leave it only in chat.
+Record actual language separately from roles. The Chinese baseline starts only as `candidate-baseline`; assign timing or style authority only when the user confirms it. Track language classification uses standard tags/titles, the known source language, then sampled text if needed. If a selected track remains ambiguous, pause and ask. An explicitly ignored optional track is nonblocking. Write confirmed language, roles, scope, and evidence into `project.yaml`.
 
-## Readiness model
+## Initialization gate
 
-### SH-INIT-004 — Compute per dimension
+### SH-INIT-004 — Persist facts, not parallel status models
 
-Report each dimension as `ready`, `limited`, or `blocked` without adding these values to review-stage enums:
+Initialization is ready when the baseline parses, the episode map and selected source roles are confirmed, `blocking_questions` is empty, and `--ready-for-proofreading` passes. Persist only the A–D evidence tier, timing authority, material limitations, and one project/review status; do not maintain separate structure/language/timing/visual/release readiness states.
 
-- `structure`: baseline parses and episode/language/style/event structure is inspectable.
-- `language`: actual source-language audio is accessible and can be reviewed; matching text/script strengthens this dimension.
-- `timing`: exact target video is accessible for speech, waveform, shots, and neighboring events.
-- `visual`: target video, correct fonts, ASS renderer, and local evidence path are available.
-- `release`: required dimensions for this round are covered, release checks pass, and P0/P1 disposition is valid.
-
-Readiness is derived from `project.yaml`, current local availability, and recorded review coverage. Do not persist a second overall readiness truth. Put durable source limitations in `project.yaml`; reflect their current impact in `review.md` as `in-progress` or `blocked`.
-
-The ordinary minimum `video + Chinese baseline` permits structure, Chinese expression, punctuation, internal terminology consistency, numeric candidates, and audio/video timing/visual work when tools permit. It does not justify claiming full source-text search, exact name spelling, low-clarity speech coverage, or visual approval without those capabilities.
+Video plus a Chinese baseline permits Chinese, structure, timing, and local visual work when tools permit; it does not prove source-text fidelity or full listening/viewing. Missing capabilities are limitations, not invented completion states.
 
 ## Initialization sequence
 
 ### SH-INIT-005 — Safe creation order
 
 1. Run identity discovery/check without creating the work directory.
-2. Inventory the Chinese baseline and optional text/media in a system temporary directory. Probe tracks only when video is supplied; classify languages and roles, asking only for unresolved material decisions.
+2. Inventory the Chinese baseline and optional text/media in one system-temp JSON. Probe tracks only when video is supplied; classify only materials intended for use.
 3. Present identity/scope, episode map, material roles, release languages, and proposed short name as one user decision.
 4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
-6. Create `project.yaml`, root-level `review.md`, copied sources, and episode masters only. Create ignored `project/local.paths.yaml` only when external local media paths must survive the current run. Other directories are created with their first output. Do not create an empty series guide; create it only with the first real series term.
+6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters only. Create ignored `project/local.paths.yaml` only when external media paths must survive the run. Create other paths with their first file and a series guide only with its first real term.
 7. Run `scripts/validate_project.py`; do not begin content work until structural errors are resolved.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.2.0 intake contract
+## Skill 1.3.0 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
 Start from the user-provided target video path(s) and Chinese baseline rather than asking the user to enumerate container tracks. Run `scripts/inventory_sources.py`; it uses `ffprobe` to record container format, duration, resolution, audio/subtitle stream index, codec, language tag/title, default/forced disposition, and a suggested source-language audio stream. It also inventories external subtitle/script files, hashes them, assigns candidate roles, and proposes episode relationships.
 
-Container language tags may use valid BCP 47 forms. Filenames and track titles are weaker signals and may use only known language aliases; never interpret an arbitrary two- or three-letter filename token as a language. If multiple source-language audio streams exist, select the intended one with `--audio-stream VIDEO|INDEX`. Resolve missing or conflicting track language with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language is blocking because its source/timing/translation role cannot otherwise be assigned safely.
+Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The emitted intake JSON uses `schema_version: 3` and `skill_version: 1.2.0`. It may contain local absolute paths and is disposable. Relevant fields are `evidence_tier`, `target_videos`, `external_source_groups`, `embedded_subtitle_tracks`, `proposed_episode_map`, per-dimension `readiness`, `blocking_questions`, `required_confirmations`, and `optional_requests`. Do not initialize while `blocking_questions` is non-empty. Timing may be `limited` in a no-video project when a user-approved text timing authority and target basenames are present.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.3.0`. It may contain local absolute paths. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 Example:
 
@@ -121,11 +113,7 @@ python scripts/inventory_sources.py \
 
 ### SH-INIT-007 — Approved episode map and IDs
 
-Convert the proposal into a disposable user/developer-approved UTF-8 TSV with this exact header:
-
-```text
-episode<TAB>video<TAB>target_basename<TAB>subtitle<TAB>audio_stream<TAB>audio_language<TAB>timing_authority
-```
+Keep the approved map in intake JSON. Each entry contains `episode`, optional video ID/path, `target_basename`, Chinese baseline file ID/path, optional audio stream/language, and `timing_authority`.
 
 Use stable internal episode IDs:
 
@@ -134,11 +122,11 @@ Use stable internal episode IDs:
 - Special: `SP01`.
 - One film: `MOVIE`, with exactly one row.
 
-Every row must refer to a Chinese baseline already present in the intake. `video` and audio fields are empty when video is absent; `target_basename` and `timing_authority` remain required. With video, the initializer rechecks fingerprints and audio-stream presence/language. It always checks episode safety and unique `<target-basename-stem>.zh-Hans.ass` filenames. Similar filenames or durations alone never prove a mapping. Keep the TSV outside the project and delete it after initialization.
+Every entry refers to an inventoried Chinese baseline. Video/audio may be null; `target_basename` and `timing_authority` remain required. With video, recheck fingerprints and selected audio. Always check safe episode IDs and unique `<target-basename-stem>.zh-Hans.ass` names. Similar filenames or durations never prove a mapping. Delete intake after durable conclusions are written.
 
 ### SH-INIT-008 — Approve the developer-facing name before creation
 
-The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`; it need not repeat the complete official title. Suggest one or more names from the verified identity/type, but ask the user to choose or approve one before running the initializer. Record the approver and date in `project.yaml`; never silently rename a work from a title guess.
+The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`; it need not repeat the complete official title. Suggest one or more names from the verified identity/type, but ask the user to choose or approve one before running the initializer. Record the one initialization approver and date in `project.yaml`; never silently rename a work from a title guess.
 
 The series directory is also a short developer-facing name. Reuse an established series directory when appropriate. Creating a new one requires an explicit series title and name approval; initialization rolls it back if the project transaction fails.
 
@@ -151,17 +139,14 @@ python scripts/init_project.py \
   --repository-root <repository> \
   --series-dir <works/series-name> \
   --project-name <approved-short-name> \
-  --project-name-approved-by <approver> \
+  --approved-by <approver> \
   --type <tv|movie|ova|ona|special> \
   --bangumi-id <id> \
   --bangumi-snapshot <verified-api-json> \
-  --scope-approved-by <approver> \
   --intake <temporary-intake.json> \
-  --intake-approved-by <approver> \
-  --episode-map <approved-map.tsv> \
   --dry-run
 ```
 
-Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ... --series-name-approved-by ...` only for an approved new series directory. The initializer copies external subtitle evidence into immutable `project/sources/`, never copies video, conditionally writes an ignored local video mapping, and prepares one `master.ass` per episode. It normalizes working masters to a complete ASS contract while preserving rendered content: required Script Info fields are filled when absent and all style/inline fonts are mapped to approved non-release working fonts. Working masters must not contain release Noto fonts. SRT/VTT baselines use the same working-font contract.
+Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ...` only for an approved new series directory. The initializer copies subtitle evidence into immutable `project/sources/`, never copies video, conditionally writes an ignored local video map, and prepares one `master.ass` per episode. It fills required ASS fields and maps every retained style and nonempty inline font directly to Noto SC/JP while preserving all other rendered properties. SRT/VTT baselines produce the same Noto contract.
 
 Initialization does not create a project README, `docs/`, or `subtitles/current/`. It promotes the staged work only if `scripts/validate_project.py --ready-for-proofreading` passes and rolls back a failed new-project/new-series transaction.

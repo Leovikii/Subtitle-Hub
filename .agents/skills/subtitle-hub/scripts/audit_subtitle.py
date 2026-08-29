@@ -262,7 +262,7 @@ def audit(path: Path) -> dict[str, object]:
         "alignment": {
             "chinese_resolved_by_time": sum(bool(value) for value in chinese_matches.values()),
             "chinese_unresolved_by_time": sum(not value for value in chinese_matches.values()),
-            "source_resolved_by_time": sum(bool(value) for value in source_matches.values()),
+            "source_aligned_by_time": sum(bool(value) for value in source_matches.values()),
             "source_unresolved_by_time": sum(not value for value in source_matches.values()),
             "many_to_many_groups": sum(len(value) > 1 for value in chinese_matches.values()) + sum(len(value) > 1 for value in source_matches.values()),
         },

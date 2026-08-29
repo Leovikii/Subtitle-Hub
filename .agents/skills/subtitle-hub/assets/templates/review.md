@@ -1,24 +1,11 @@
 ---
-schema_version: 2
+schema_version: 3
 work_id: "{{WORK_ID}}"
 updated_at: "{{UPDATED_AT}}"
 baseline_release: null
 target_release: null
-overall_status: in-progress
-
-active_round:
-  id: initialization
-  scope: "{{SCOPE}}"
-  status: completed
-
-stages:
-  source_inventory: verified
-  baseline_setup: verified
-  translation_review: not-started
-  timing_review: not-started
-  typography_review: not-started
-  visual_review: not-started
-  release_qc: not-started
+status: planning
+scope: "{{SCOPE}}"
 
 coverage:
   evidence_tier: {{EVIDENCE_TIER}}
@@ -28,13 +15,11 @@ coverage:
   chinese_reviewed: 0
   chinese_excluded: 0
   source_in_scope: 0
-  source_resolved: 0
+  source_aligned: 0
   source_unresolved: 0
   static_layout_checked: 0
-  media_candidates: 0
-  media_checked: 0
   human_source_fidelity_review: not-required
-  human_final_playback: pending
+  human_release_review: pending
   unresolved_p0: 0
   unresolved_p1: 0
 
@@ -46,7 +31,7 @@ episodes:
 
 ## 目标与范围
 
-完成 Skill 1.2.0 素材盘点、身份/命名确认、素材导入和可写主稿准备。
+完成 Skill 1.3.0 素材盘点、身份/命名确认、素材导入和 Noto 母本准备。
 
 ## 检查覆盖
 
@@ -56,12 +41,12 @@ episodes:
 
 ## 校对方案
 
-尚未生成字幕修改候选。{{INITIALIZATION_SUMMARY}} 后续方案须在同一张表中列出条目、范围、类别、修改前、建议修改、证据、风险、决定、状态、实际结果和验证；重译、删减、增译及对白改正逐条列出，只有同类且同规则的机械修改可以合并。
+尚未生成修改候选。{{INITIALIZATION_SUMMARY}} 后续在同一张表记录条目、范围、类别、修改前、建议结果、证据、风险、决定、状态、实际结果和验证。重译、删减、增译和对白改正逐条列出；只有同规则同类别的机械修改可以合并。
 
 ## 决策与实施
 
-已实施用户批准的建项与基线准备，没有修改用户原始视频或字幕。下一次人工停顿只在完整校对方案提交审批时发生。
+已实施用户批准的建项与母本准备，没有修改用户原始素材。下一次人工停顿只在完整校对方案提交审批时发生。
 
 ## 验证与剩余风险
 
-项目结构、素材登记、主稿存在性和解析性已验证；发布仍处于未开始状态。
+项目结构、素材登记、母本存在性和解析性已验证；内容校对与发布尚未开始。

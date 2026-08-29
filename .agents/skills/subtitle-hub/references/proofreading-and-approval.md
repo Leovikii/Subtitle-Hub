@@ -4,9 +4,9 @@
 
 An active work keeps exactly `project.yaml` and root-level `review.md` as control files.
 
-`project.yaml` records durable identity, scope, languages, sources/roles, video map, initialization, release configuration, ordinary-style profile, limitations, and confirmed project overrides. An override cites a stable Skill rule ID, scope, rationale/evidence, confirmer, and date; a terminology deviation also cites the series `term_id`. Do not add a second source catalog, project guide, ledger, progress file, issue file, per-round report, or project README.
+`project.yaml` records durable identity, scope, languages, sources/roles, video map and timing authority, ordinary-style profile, limitations, initialization approval, and confirmed overrides. Fixed paths, release mechanics, and Action configuration belong to this Skill, not each project. An override cites a stable rule ID, scope, rationale/evidence, confirmer, and date; a terminology deviation also cites the series `term_id`.
 
-`review.md` combines machine-readable current state with the readable active plan and result. Schema 2 front matter keeps `schema_version work_id updated_at baseline_release target_release overall_status active_round stages episodes coverage`. Coverage records evidence tier, timing authority, master fingerprints, Chinese/source denominators, static-layout coverage, media candidates/checks, human responsibilities, and unresolved P0/P1. Git history preserves closed rounds; replace completed current-round detail when a new round begins instead of accumulating an archive.
+`review.md` schema 3 keeps one `status` (`planning`, `awaiting-approval`, `implementing`, `final-review`, `released`, or `blocked`), current scope, releases, episodes, and coverage. Coverage records evidence tier, timing authority, master fingerprints, Chinese/source denominators, static-layout coverage, applicable human reviews, and unresolved P0/P1. Media questions live in proposal rows, not duplicate counters. Git preserves closed rounds; replace closed detail when a new round begins instead of accumulating an archive.
 
 ## SH-CTRL-007 — Proposal and approval gate
 
@@ -20,7 +20,7 @@ After approval, implement and verify the approved scope continuously through a c
 
 Count every visible Chinese Dialogue event in the release scope, excluding only documented non-content automation/templates or exact duplicates that will not render. Record `chinese_in_scope = chinese_reviewed + chinese_excluded`; every exclusion needs a bounded rule and count. A changed master fingerprint invalidates prior coverage.
 
-For A/B evidence, also account for every source-text unit in both directions. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when the entire meaning is accounted for. Record unresolved source units explicitly; zero issue rows never substitutes for coverage counts.
+For A/B evidence, also account for every source-text unit in both directions. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when meaning, order, timing, and layout remain complete. Time alignment raises candidates but never proves semantic resolution. Record unresolved units explicitly; zero issue rows never substitutes for coverage counts.
 
 For C/D evidence, the Agent still reviews every Chinese event for grammar, wording, consistency, punctuation, segmentation, timing code, and static layout, but cannot mark source fidelity complete. A source-language-capable human must perform full-meaning review before that claim or release gate can pass.
 

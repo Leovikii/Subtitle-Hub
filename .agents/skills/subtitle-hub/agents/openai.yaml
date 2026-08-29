@@ -1,7 +1,7 @@
 interface:
   display_name: "Subtitle Hub"
-  short_description: "以精简审批流初始化、校对并发布中文字幕"
-  default_prompt: "Use $subtitle-hub 1.2.0 to inventory my available text and optional video, initialize the smallest useful project, complete full-text and static-layout auditing, produce one detailed proofreading plan for approval, then implement and prepare the release candidate."
+  short_description: "以精简审批流初始化、全文校对并发布中文字幕"
+  default_prompt: "Use $subtitle-hub 1.3.0 to inventory my text and optional video, initialize the smallest useful Noto-master project, audit the complete subtitle scope, produce one detailed proposal for approval, then implement and prepare the release candidate."
 
 policy:
   allow_implicit_invocation: true

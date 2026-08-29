@@ -33,8 +33,6 @@ REQUIRED_SCRIPT_INFO = (
     "PlayResY",
     "YCbCr Matrix",
 )
-STANDARD_FONTS = {"Noto Sans CJK SC", "Noto Sans CJK JP"}
-WORKING_FONTS = {"Microsoft YaHei UI", "Yu Gothic UI"}
 SC_FONT = "Noto Sans CJK SC"
 JP_FONT = "Noto Sans CJK JP"
 JAPANESE_KANA = re.compile(r"[\u3040-\u30ff]")
@@ -61,10 +59,15 @@ class NormalizeError(RuntimeError):
 
 def project_languages(project_root: Path) -> tuple[str, str | None]:
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
-    languages = yaml_block(metadata, "languages", 0)
-    release = yaml_block(languages, "release", 2)
-    primary = yaml_scalar(release, "primary", 4)
-    secondary = yaml_scalar(release, "secondary", 4)
+    if yaml_scalar(metadata, "schema_version", 0) == "9":
+        release = yaml_block(metadata, "release_languages", 0)
+        primary = yaml_scalar(release, "primary", 2)
+        secondary = yaml_scalar(release, "secondary", 2)
+    else:
+        languages = yaml_block(metadata, "languages", 0)
+        release = yaml_block(languages, "release", 2)
+        primary = yaml_scalar(release, "primary", 4)
+        secondary = yaml_scalar(release, "secondary", 4)
     return primary, None if secondary == "null" else secondary
 
 
@@ -248,6 +251,44 @@ def normalize_inline_fonts(
     return "".join(output), changes
 
 
+def assert_rendered_regression(
+    source_styles: str,
+    candidate_styles: str,
+    source_events: str,
+    candidate_events: str,
+    references: set[str],
+    *,
+    legacy_fonts: bool,
+) -> None:
+    def styles(text: str) -> dict[str, list[str]]:
+        result: dict[str, list[str]] = {}
+        for line in text.splitlines():
+            match = STYLE_DEFINITION.match(line)
+            if match:
+                fields = match.group(1).split(",")
+                result[fields[0]] = fields
+        return result
+
+    before = styles(source_styles)
+    after = styles(candidate_styles)
+    if set(after) != references:
+        raise NormalizeError("candidate retained-style set differs from rendered references")
+    for name in references:
+        if name not in before:
+            raise NormalizeError(f"source lacks referenced style {name!r}")
+        if legacy_fonts:
+            if before[name][:1] + before[name][2:] != after[name][:1] + after[name][2:]:
+                raise NormalizeError(f"candidate changed non-font properties of style {name!r}")
+        elif before[name] != after[name]:
+            raise NormalizeError(f"candidate changed schema 9 style {name!r}")
+
+    if legacy_fonts:
+        source_events = INLINE_FONT.sub(r"\\fn<FONT>", source_events)
+        candidate_events = INLINE_FONT.sub(r"\\fn<FONT>", candidate_events)
+    if source_events != candidate_events:
+        raise NormalizeError("candidate changed rendered Events beyond allowed legacy inline fonts")
+
+
 def source_credit_from_metadata(text: str) -> str | None:
     value = text.removeprefix(SOURCE_METADATA_PREFIX).strip()
     if any(marker in value for marker in SOURCE_PROVENANCE_MARKERS):
@@ -358,27 +399,26 @@ def normalize_file(
     subject_id: str,
     title_zh_hans: str,
     episode_id: str,
+    legacy_fonts: bool = False,
 ) -> tuple[list[str], int, int, int]:
     source = source_path.read_text(encoding="utf-8-sig")
     if "\r" in source:
         raise NormalizeError(f"{source_path}: expected normalized LF line endings")
-    master_fonts = set(re.findall(r"(?m)^Style:\s*[^,]+,([^,]+)", source)) | {
-        value.strip() for value in INLINE_FONT.findall(source) if value.strip()
-    }
-    release_fonts = sorted(master_fonts & STANDARD_FONTS)
-    unsupported = sorted(master_fonts - WORKING_FONTS)
-    if release_fonts:
-        raise NormalizeError(
-            f"{source_path}: working master already uses release font(s) {', '.join(release_fonts)}"
-        )
-    if unsupported:
-        raise NormalizeError(
-            f"{source_path}: working master uses unsupported font(s) {', '.join(unsupported)}"
-        )
     style_start = source.find(f"{STYLE_SECTION}\n")
     events_start = source.find(f"{EVENTS_SECTION}\n")
     if style_start < 0 or events_start <= style_start:
         raise NormalizeError(f"{source_path}: invalid Styles/Events section order")
+    if not legacy_fonts:
+        master_fonts = {
+            match.group(1).strip()
+            for match in re.finditer(r"(?m)^Style:\s*[^,]+,([^,]+)", source)
+        }
+        master_fonts.update(value.strip() for value in INLINE_FONT.findall(source) if value.strip())
+        unsupported = sorted(master_fonts - {SC_FONT, JP_FONT})
+        if unsupported:
+            raise NormalizeError(
+                f"{source_path}: schema 9 master has non-Noto fonts: {', '.join(unsupported)}"
+            )
 
     fields, comments = script_info(source)
     style_section = ass_section(source, STYLE_SECTION)
@@ -393,6 +433,16 @@ def normalize_file(
     )
     normalized_events, inline_font_changes = normalize_inline_fonts(
         events_without_metadata, font_targets
+    )
+    if not legacy_fonts and (style_font_changes or inline_font_changes):
+        raise NormalizeError(f"{source_path}: schema 9 master is not already Noto-normalized")
+    assert_rendered_regression(
+        style_section,
+        normalized_styles,
+        events_without_metadata,
+        normalized_events,
+        references,
+        legacy_fonts=legacy_fonts,
     )
 
     header = normalized_header(
@@ -424,6 +474,7 @@ def build_candidate(project_root: Path, version: str) -> None:
     subject_id, _, title_zh_hans, _ = bangumi_identity(project_root)
     primary, secondary = project_languages(project_root)
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
+    legacy_fonts = yaml_scalar(metadata, "schema_version", 0) in {"7", "8"}
     project_type = yaml_scalar(metadata, "type", 0)
     video_sources = yaml_block(metadata, "video_sources", 0)
     target_video = yaml_block(video_sources, "target-video", 2)
@@ -455,6 +506,7 @@ def build_candidate(project_root: Path, version: str) -> None:
                 subject_id=subject_id,
                 title_zh_hans=title_zh_hans,
                 episode_id=episode_id,
+                legacy_fonts=legacy_fonts,
             )
             total_removed += len(removed)
             total_style_font_changes += style_font_changes

@@ -58,7 +58,9 @@ def catalog_works(repository: Path, repository_slug: str) -> list[dict[str, obje
         text = metadata_path.read_text(encoding="utf-8-sig")
         identity = section(text, "identity")
         titles = section(identity, "titles", 2)
-        languages = section(section(text, "languages"), "release", 2)
+        schema = scalar(text, "schema_version")
+        languages = section(text, "release_languages") if schema == "9" else section(section(text, "languages"), "release", 2)
+        language_indent = 2 if schema == "9" else 4
         project_path = metadata_path.parent.relative_to(repository).as_posix()
         review_file = metadata_path.parent / "review.md"
         review = review_file.read_text(encoding="utf-8-sig") if review_file.is_file() else ""
@@ -75,9 +77,9 @@ def catalog_works(repository: Path, repository_slug: str) -> list[dict[str, obje
         package_path = package.relative_to(repository).as_posix() if package and package.is_file() else None
         item = {
             "id": scalar(text, "id"), "project_path": project_path,
-            "title": title, "type": scalar(text, "type"), "status": scalar(review, "overall_status") or "untracked",
-            "episode_count": int(scalar(text, "episode_count") or 0), "primary": scalar(languages, "primary", 4),
-            "secondary": scalar(languages, "secondary", 4), "version": version,
+            "title": title, "type": scalar(text, "type"), "status": scalar(review, "status") or scalar(review, "overall_status") or "untracked",
+            "episode_count": int(scalar(text, "episode_count") or 0), "primary": scalar(languages, "primary", language_indent),
+            "secondary": scalar(languages, "secondary", language_indent), "version": version,
             "review_path": f"{project_path}/review.md", "release_path": f"{project_path}/subtitles/current" if version else None,
             "package_path": package_path,
             "package_download_url": direct_download_url(repository_slug, package_path) if package_path else None,

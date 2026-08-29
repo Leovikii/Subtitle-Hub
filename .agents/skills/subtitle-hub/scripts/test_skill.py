@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.2.0 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.0 toolchain."""
 
 from __future__ import annotations
 
@@ -21,7 +21,6 @@ REPOSITORY_ROOT = SKILL_ROOT.parents[2]
 PACKAGE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "build_subtitle_packages.py"
 CATALOG_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "sync_catalog.py"
 NORMALIZE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "normalize_ass_release.py"
-VALIDATE_CANDIDATE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "validate_ass_candidate.py"
 TEST_REPOSITORY_SLUG = "example/repo"
 sys.path.insert(0, str(PACKAGE_SCRIPT.parent))
 from build_subtitle_packages import (  # noqa: E402
@@ -33,6 +32,7 @@ from normalize_ass_release import (  # noqa: E402
     SC_FONT,
     JP_FONT,
     NormalizeError,
+    assert_rendered_regression,
     ass_section,
     font_targets_by_style,
     normalize_inline_fonts,
@@ -152,24 +152,35 @@ def write_snapshot(root: Path, *, subject_id: int = 100, project_type: str = "tv
     return snapshot
 
 
-def write_episode_map(path: Path, rows: list[tuple[str, Path, Path, int, str]]) -> Path:
-    lines = ["episode\tvideo\ttarget_basename\tsubtitle\taudio_stream\taudio_language\ttiming_authority"]
-    lines.extend(f"{episode}\t{video}\t{video.name}\t{subtitle}\t{audio}\t{language}\tChinese baseline" for episode, video, subtitle, audio, language in rows)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+def approve_intake(
+    path: Path, episode: str, subtitle: Path, *, video: Path | None = None,
+    audio: int | None = None, language: str | None = None,
+    target_basename: str | None = None, timing_authority: str = "Chinese baseline",
+) -> Path:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    data["blocking_questions"] = []
+    data["episode_map"] = [{
+        "episode": episode, "video_id": "video-001" if video else None,
+        "video": str(video.resolve()) if video else None,
+        "target_basename": target_basename or (video.name if video else f"{episode}.mkv"),
+        "baseline_file_id": data["external_source_groups"][0]["files"][0]["id"],
+        "subtitle": str(subtitle.resolve()), "audio_stream": audio,
+        "audio_language": language, "timing_authority": timing_authority,
+    }]
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return path
 
 
 def init_arguments(
-    repository: Path, series: Path, snapshot: Path, intake_path: Path, episode_map: Path, *,
+    repository: Path, series: Path, snapshot: Path, intake_path: Path, *,
     project_name: str = "test-tv", project_type: str = "tv", work_id: str | None = None,
     subject_id: str = "100", secondary: str | None = None,
 ) -> list[str]:
     args = [
         "--series-dir", str(series), "--repository-root", str(repository),
-        "--project-name", project_name, "--project-name-approved-by", "test-owner",
+        "--project-name", project_name, "--approved-by", "test-owner",
         "--type", project_type, "--bangumi-id", subject_id, "--bangumi-snapshot", str(snapshot),
-        "--scope-approved-by", "test-owner", "--intake", str(intake_path),
-        "--intake-approved-by", "test-owner", "--episode-map", str(episode_map),
+        "--intake", str(intake_path),
     ]
     if work_id:
         args.extend(["--work-id", work_id])
@@ -187,11 +198,11 @@ def initialize_project(
     video, subtitle, cache = make_materials(root / "materials", movie=movie, ass=ass, video_name=video_name)
     intake_path, _ = inventory(root, video, subtitle, cache, project_type=project_type)
     episode = "MOVIE" if movie else "S01E01"
-    episode_map = write_episode_map(root / "episode-map.tsv", [(episode, video, subtitle, 1, "ja")])
+    approve_intake(intake_path, episode, subtitle, video=video, audio=1, language="ja")
     snapshot = write_snapshot(root, project_type=project_type)
     project_name = "test-movie" if movie else "test-tv"
     args = init_arguments(
-        repository, series, snapshot, intake_path, episode_map, project_name=project_name,
+        repository, series, snapshot, intake_path, project_name=project_name,
         project_type=project_type, secondary=secondary,
     )
     return repository, series, video, subtitle, args
@@ -218,13 +229,14 @@ def mark_review_release_ready(project: Path) -> None:
     path = project / "review.md"
     text = path.read_text(encoding="utf-8")
     replacements = {
+        "status: planning": "status: released",
         "  evidence_tier: null": "  evidence_tier: D",
         "  master_sha256: {}": "  master_sha256:\n    S01E01: " + hashlib.sha256((project / "project/workspace/episodes/S01E01/master.ass").read_bytes()).hexdigest(),
         "  chinese_in_scope: 0": "  chinese_in_scope: 1",
         "  chinese_reviewed: 0": "  chinese_reviewed: 1",
         "  static_layout_checked: 0": "  static_layout_checked: 1",
         "  human_source_fidelity_review: not-required": "  human_source_fidelity_review: verified",
-        "  human_final_playback: pending": "  human_final_playback: verified",
+        "  human_release_review: pending": "  human_release_review: verified",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
@@ -242,7 +254,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.2\.0"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.0"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -331,7 +343,8 @@ class InventoryTests(unittest.TestCase):
             data = json.loads(result.stdout)
             self.assertEqual(data["evidence_tier"], "B")
             self.assertEqual(data["target_videos"], [])
-            self.assertEqual(data["readiness"]["timing"], "limited")
+            self.assertNotIn("readiness", data)
+            self.assertTrue(any("video not provided" in item for item in data["limitations"]))
             self.assertEqual(data["blocking_questions"], [])
 
     def test_binary_subtitle_cannot_be_the_chinese_working_baseline(self) -> None:
@@ -347,24 +360,23 @@ class InventoryTests(unittest.TestCase):
             )
             self.assertIn("no supported", result.stderr)
 
-    def test_probe_cache_reports_tracks_roles_and_layered_readiness(self) -> None:
+    def test_probe_cache_reports_tracks_roles_without_parallel_readiness(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
-            self.assertEqual(data["schema_version"], 3)
-            self.assertEqual(data["skill_version"], "1.2.0")
-            self.assertEqual(data["readiness"]["timing"], "ready")
-            self.assertEqual(data["readiness"]["language"], "limited")
-            self.assertEqual(data["readiness"]["visual"], "limited")
+            self.assertEqual(data["schema_version"], 4)
+            self.assertEqual(data["skill_version"], "1.3.0")
+            self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
+            self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
             track = data["embedded_subtitle_tracks"][0]
             self.assertEqual(track["language"], "en")
             self.assertIn("timing-reference", track["roles"])
             self.assertIn("translation-reference", track["roles"])
             self.assertNotIn("source-text-reference", track["roles"])
 
-    def test_source_text_and_local_rendering_unlock_dimensions(self) -> None:
+    def test_source_text_sets_tier_without_renderer_or_font_flags(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             video, subtitle, cache = make_materials(root)
@@ -372,10 +384,9 @@ class InventoryTests(unittest.TestCase):
             write_srt(source, "テストです")
             _, data = inventory(root, video, subtitle, cache, extra=[
                 "--optional-source", f"{source}|ja|source-text-reference,timing-reference",
-                "--renderer-ready", "--fonts-ready",
             ])
-            self.assertEqual(data["readiness"]["language"], "ready")
-            self.assertEqual(data["readiness"]["visual"], "ready")
+            self.assertEqual(data["evidence_tier"], "B")
+            self.assertNotIn("readiness", data)
 
     def test_unreadable_probe_blocks_timing(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -386,7 +397,6 @@ class InventoryTests(unittest.TestCase):
                 "--source-language", "ja", "--project-type", "tv", "--ffprobe", str(root / "missing-ffprobe"),
             )
             data = json.loads(result.stdout)
-            self.assertEqual(data["readiness"]["timing"], "limited")
             self.assertTrue(data["blocking_questions"])
 
     def test_multiple_source_audio_tracks_require_and_accept_selection(self) -> None:
@@ -394,21 +404,41 @@ class InventoryTests(unittest.TestCase):
             root = Path(raw)
             video, subtitle, cache = make_materials(root, extra_audio=True)
             _, blocked = inventory(root, video, subtitle, cache)
-            self.assertEqual(blocked["readiness"]["timing"], "limited")
             self.assertTrue(any("audio stream" in item for item in blocked["blocking_questions"]))
             _, ready = inventory(root, video, subtitle, cache, extra=["--audio-stream", f"{video}|2"])
-            self.assertEqual(ready["readiness"]["timing"], "ready")
+            self.assertEqual(ready["blocking_questions"], [])
             self.assertEqual(ready["target_videos"][0]["suggested_audio_stream"], 2)
 
-    def test_unknown_embedded_language_is_blocking_until_overridden(self) -> None:
+    def test_unknown_embedded_language_is_ignored_until_selected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             video, subtitle, cache = make_materials(root, embedded="unknown")
-            _, blocked = inventory(root, video, subtitle, cache)
-            self.assertTrue(any("embedded subtitle" in item for item in blocked["blocking_questions"]))
+            _, ignored = inventory(root, video, subtitle, cache)
+            self.assertEqual(ignored["blocking_questions"], [])
+            self.assertTrue(ignored["embedded_subtitle_tracks"][0]["ignored"])
             _, ready = inventory(root, video, subtitle, cache, extra=["--track-language", f"{video}|3|en"])
             self.assertEqual(ready["blocking_questions"], [])
             self.assertEqual(ready["embedded_subtitle_tracks"][0]["language"], "en")
+            self.assertFalse(ready["embedded_subtitle_tracks"][0]["ignored"])
+
+    def test_initializer_rejects_selected_embedded_track_without_language_or_roles(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repository, series = make_repository(root)
+            video, subtitle, cache = make_materials(root / "materials", embedded="unknown")
+            intake_path, data = inventory(root, video, subtitle, cache)
+            approve_intake(intake_path, "S01E01", subtitle, video=video, audio=1, language="ja")
+            data = json.loads(intake_path.read_text(encoding="utf-8"))
+            data["embedded_subtitle_tracks"][0]["ignored"] = False
+            intake_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            snapshot = write_snapshot(root)
+            result = run(
+                "init_project.py",
+                *init_arguments(repository, series, snapshot, intake_path),
+                "--dry-run",
+                expect=2,
+            )
+            self.assertIn("requires confirmed language and roles", result.stderr)
 
     def test_filename_language_detection_rejects_arbitrary_bcp47_like_token(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -452,13 +482,8 @@ class InitializationTests(unittest.TestCase):
                 "--optional-source", f"{source}|ja|source-text-reference",
                 "--source-language", "ja", "--project-type", "tv", "--output", str(intake),
             )
-            episode_map = root / "map.tsv"
-            episode_map.write_text(
-                "episode\tvideo\ttarget_basename\tsubtitle\taudio_stream\taudio_language\ttiming_authority\n"
-                f"S01E01\t\tTarget.S01E01.mkv\t{baseline}\t\t\tChinese baseline\n",
-                encoding="utf-8",
-            )
-            args = init_arguments(repository, series, write_snapshot(root), intake, episode_map)
+            approve_intake(intake, "S01E01", baseline, target_basename="Target.S01E01.mkv")
+            args = init_arguments(repository, series, write_snapshot(root), intake)
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             self.assertFalse((project / "project/local.paths.yaml").exists())
@@ -472,8 +497,8 @@ class InitializationTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root / "materials")
             subtitle.write_text("not a subtitle\n", encoding="utf-8")
             intake_path, _ = inventory(root, video, subtitle, cache)
-            episode_map = write_episode_map(root / "map.tsv", [("S01E01", video, subtitle, 1, "ja")])
-            args = init_arguments(repository, series, write_snapshot(root), intake_path, episode_map)
+            approve_intake(intake_path, "S01E01", subtitle, video=video, audio=1, language="ja")
+            args = init_arguments(repository, series, write_snapshot(root), intake_path)
             self.assertIn("no parseable dialogue cues", run("init_project.py", *args, "--dry-run", expect=2).stderr)
 
     def test_existing_series_does_not_require_empty_series_guide(self) -> None:
@@ -497,7 +522,8 @@ class InitializationTests(unittest.TestCase):
             metadata = (project / "project.yaml").read_text(encoding="utf-8")
             self.assertNotIn(str(root), metadata)
             self.assertIn('project_name: "test-tv"', metadata)
-            self.assertIn('intake_approved_by: "test-owner"', metadata)
+            self.assertIn('approved_by: "test-owner"', metadata)
+            self.assertIn("schema_version: 9", metadata)
             self.assertFalse((project / "subtitles" / "current").exists())
             self.assertTrue((project / "review.md").is_file())
             self.assertFalse((project / "README.md").exists())
@@ -515,14 +541,13 @@ class InitializationTests(unittest.TestCase):
             self.assertIn('MOVIE: "movie-source.mkv"', (project / "project.yaml").read_text(encoding="utf-8"))
             run("validate_project.py", str(project), "--ready-for-proofreading")
 
-    def test_srt_conversion_uses_working_font_and_preserves_markup(self) -> None:
+    def test_srt_conversion_uses_noto_and_preserves_markup(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root)
             run("init_project.py", *args)
             master = (series / "SH0001--test-tv" / "project/workspace/episodes/S01E01/master.ass").read_text(encoding="utf-8")
-            self.assertIn("Microsoft YaHei UI", master)
-            self.assertNotIn("Noto Sans CJK SC", master)
+            self.assertIn("Noto Sans CJK SC", master)
             self.assertIn(",62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000", master)
             self.assertIn(",2,96,96,70,1", master)
             self.assertIn(r"{\i1}测试{\i0}\N下一行", master)
@@ -537,34 +562,36 @@ class InitializationTests(unittest.TestCase):
             self.assertEqual(subtitle.read_bytes(), original)
             prepared = master.read_text(encoding="utf-8")
             self.assertIn("WrapStyle:", prepared)
-            self.assertIn("Microsoft YaHei UI", prepared)
-            self.assertNotIn("Noto Sans CJK SC", prepared)
+            self.assertIn("Noto Sans CJK SC", prepared)
 
     def test_project_name_approval_is_mandatory(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, _, _, _, args = initialize_project(root)
-            position = args.index("--project-name-approved-by")
+            position = args.index("--approved-by")
             del args[position:position + 2]
-            self.assertIn("--project-name-approved-by", run("init_project.py", *args, expect=2).stderr)
+            self.assertIn("--approved-by", run("init_project.py", *args, expect=2).stderr)
 
     def test_unresolved_intake_cannot_initialize(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series = make_repository(root)
-            video, subtitle, cache = make_materials(root / "materials", embedded="unknown")
+            video, subtitle, cache = make_materials(root / "materials", extra_audio=True)
             intake_path, _ = inventory(root, video, subtitle, cache)
-            episode_map = write_episode_map(root / "map.tsv", [("S01E01", video, subtitle, 1, "ja")])
-            args = init_arguments(repository, series, write_snapshot(root), intake_path, episode_map)
+            approve_intake(intake_path, "S01E01", subtitle, video=video, audio=1, language="ja")
+            data = json.loads(intake_path.read_text(encoding="utf-8"))
+            data["blocking_questions"] = ["select source audio"]
+            intake_path.write_text(json.dumps(data), encoding="utf-8")
+            args = init_arguments(repository, series, write_snapshot(root), intake_path)
             self.assertIn("blocking questions", run("init_project.py", *args, expect=2).stderr)
 
     def test_unsafe_episode_id_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, video, subtitle, args = initialize_project(root)
-            episode_map = write_episode_map(root / "unsafe.tsv", [("../../escape", video, subtitle, 1, "ja")])
-            args[args.index("--episode-map") + 1] = str(episode_map)
-            self.assertIn("unsafe or invalid", run("init_project.py", *args, expect=2).stderr)
+            intake_path = Path(args[args.index("--intake") + 1])
+            approve_intake(intake_path, "../../escape", subtitle, video=video, audio=1, language="ja")
+            self.assertIn("unsafe, missing, or duplicate", run("init_project.py", *args, expect=2).stderr)
             self.assertFalse((repository.parent / "escape").exists())
             self.assertFalse((series / "SH0001--test-tv").exists())
 
@@ -586,9 +613,14 @@ class InitializationTests(unittest.TestCase):
             run("inventory_sources.py", "--target-video", str(video1), "--target-video", str(video2),
                 "--candidate-baseline", str(subtitles), "--source-language", "ja", "--project-type", "tv",
                 "--probe-cache", str(cache), "--output", str(intake_path))
-            episode_map = write_episode_map(root / "map.tsv", [
-                ("S01E01", video1, sub1, 1, "ja"), ("S01E02", video2, sub2, 1, "ja")])
-            args = init_arguments(repository, series, write_snapshot(root, total=2), intake_path, episode_map)
+            data = json.loads(intake_path.read_text(encoding="utf-8"))
+            data["blocking_questions"] = []
+            data["episode_map"] = [
+                {"episode": "S01E01", "video": str(video1.resolve()), "target_basename": "same.mkv", "subtitle": str(sub1.resolve()), "audio_stream": 1, "audio_language": "ja", "timing_authority": "Chinese baseline"},
+                {"episode": "S01E02", "video": str(video2.resolve()), "target_basename": "same.mkv", "subtitle": str(sub2.resolve()), "audio_stream": 1, "audio_language": "ja", "timing_authority": "Chinese baseline"},
+            ]
+            intake_path.write_text(json.dumps(data), encoding="utf-8")
+            args = init_arguments(repository, series, write_snapshot(root, total=2), intake_path)
             self.assertIn("duplicate release filename", run("init_project.py", *args, expect=2).stderr)
 
     def test_duplicate_work_and_bangumi_ids_are_rejected(self) -> None:
@@ -618,10 +650,10 @@ class InitializationTests(unittest.TestCase):
             intake_path = root / "intake.json"
             run("inventory_sources.py", "--target-video", str(video), "--candidate-baseline", str(baseline_root),
                 "--source-language", "ja", "--project-type", "tv", "--probe-cache", str(cache), "--output", str(intake_path))
-            episode_map = write_episode_map(root / "map.tsv", [("S01E01", video, sub1, 1, "ja")])
+            approve_intake(intake_path, "S01E01", sub1, video=video, audio=1, language="ja")
             new_series = repository / "works/new-series"
-            args = init_arguments(repository, new_series, write_snapshot(root), intake_path, episode_map)
-            args.extend(["--create-series", "--series-title", "新系列", "--series-name-approved-by", "test-owner"])
+            args = init_arguments(repository, new_series, write_snapshot(root), intake_path)
+            args.extend(["--create-series", "--series-title", "新系列"])
             result = run("init_project.py", *args, expect=1)
             self.assertIn("duplicate source basename", result.stderr)
             self.assertFalse(new_series.exists())
@@ -682,7 +714,7 @@ class CatalogAndPackagingTests(unittest.TestCase):
             review = series / "SH0001--test-tv/review.md"
             review.write_text(
                 review.read_text(encoding="utf-8").replace(
-                    "overall_status: in-progress", "overall_status: final-review"
+                    "status: planning", "status: final-review"
                 ),
                 encoding="utf-8",
             )
@@ -800,6 +832,34 @@ class CatalogAndPackagingTests(unittest.TestCase):
 
 
 class CandidateContractTests(unittest.TestCase):
+    def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
+        styles = (
+            "[V4+ Styles]\n"
+            "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,2,90,90,54\n"
+        )
+        events = (
+            "[Events]\n"
+            "Dialogue: 0,0:00:01.00,0:00:02.00,CN-Main,,0,0,0,,测试\n"
+        )
+        with self.assertRaises(NormalizeError):
+            assert_rendered_regression(
+                styles,
+                styles.replace(",62,", ",60,"),
+                events,
+                events,
+                {"CN-Main"},
+                legacy_fonts=False,
+            )
+        with self.assertRaises(NormalizeError):
+            assert_rendered_regression(
+                styles,
+                styles,
+                events,
+                events.replace("0:00:02.00", "0:00:03.00"),
+                {"CN-Main"},
+                legacy_fonts=False,
+            )
+
     def test_release_coverage_is_invalidated_by_master_change(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -816,7 +876,7 @@ class CandidateContractTests(unittest.TestCase):
             result = run("validate_project.py", str(project), "--release", expect=1)
             self.assertIn("coverage for S01E01 is stale", result.stdout)
 
-    def test_candidate_maps_working_fonts_and_independent_validator_passes(self) -> None:
+    def test_noto_master_builds_candidate_without_font_transition(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="candidate-cut.S01E01.mkv")
@@ -827,18 +887,42 @@ class CandidateContractTests(unittest.TestCase):
             text = candidate.read_text(encoding="utf-8")
             self.assertIn("Noto Sans CJK SC", text)
             self.assertNotIn("Microsoft YaHei UI", text)
-            run_path(VALIDATE_CANDIDATE_SCRIPT, str(project))
 
-    def test_candidate_builder_rejects_master_already_using_release_font(self) -> None:
+    def test_candidate_builder_rejects_non_noto_schema9_master(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="candidate-cut.S01E01.mkv")
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
-            master.write_text(master.read_text(encoding="utf-8").replace("Microsoft YaHei UI", "Noto Sans CJK SC"), encoding="utf-8")
+            master.write_text(master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Arial"), encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("already uses release font", result.stderr)
+            self.assertIn("schema 9 master has non-Noto fonts", result.stderr)
+
+    def test_legacy_master_build_compatibility_changes_only_fonts(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _, series, _, _, args = initialize_project(root, video_name="legacy-cut.S01E01.mkv")
+            run("init_project.py", *args)
+            project = series / "SH0001--test-tv"
+            metadata = project / "project.yaml"
+            text = metadata.read_text(encoding="utf-8")
+            text = text.replace("schema_version: 9", "schema_version: 7", 1)
+            text = text.replace(
+                "release_languages:\n  primary: zh-Hans\n  secondary: null",
+                "languages:\n  release:\n    primary: zh-Hans\n    secondary: null",
+            )
+            metadata.write_text(text, encoding="utf-8")
+            master = project / "project/workspace/episodes/S01E01/master.ass"
+            before = master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Unavailable Legacy Font")
+            master.write_text(before, encoding="utf-8")
+            run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
+            candidate = project / "project/workspace/build/current-candidate/legacy-cut.S01E01.zh-Hans.ass"
+            after = candidate.read_text(encoding="utf-8")
+            self.assertIn("Noto Sans CJK SC", after)
+            before_event = ass_section(before, "[Events]")
+            after_event = ass_section(after, "[Events]")
+            self.assertEqual(before_event, after_event)
 
 
 class StaticAuditTests(unittest.TestCase):
@@ -848,7 +932,7 @@ class StaticAuditTests(unittest.TestCase):
             path.write_text(
                 "[Script Info]\nScriptType: v4.00+\nWrapStyle: 0\nScaledBorderAndShadow: yes\nPlayResX: 1920\nPlayResY: 1080\nYCbCr Matrix: TV.709\n\n"
                 "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-                "Style: CN-Main,Microsoft YaHei UI,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1\n\n"
+                "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1\n\n"
                 "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
                 "Dialogue: 0,0:00:01.00,0:00:00.90,CN-Main,,0,0,0,,测试\n"
                 "Dialogue: 0,0:00:02.00,0:00:04.00,CN-Main,,0,0,0,,第一行\\N第二行\\N第三行\n"
