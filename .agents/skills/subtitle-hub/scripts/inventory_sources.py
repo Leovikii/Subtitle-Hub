@@ -498,7 +498,7 @@ def main() -> int:
     evidence_tier = "A" if source_text_ready and auxiliary_ready else "B" if source_text_ready else "C" if auxiliary_ready else "D"
     report = {
         "schema_version": 4,
-        "skill_version": "1.3.1",
+        "skill_version": "1.3.2",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,

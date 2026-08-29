@@ -68,7 +68,7 @@ Use the mono profile when the actual release has no secondary dialogue track, re
 
 ## SH-QC-003 — Machine and local checks
 
-Check ASS structure/times, filenames/scope, style references, bilingual mapping, overlaps, hidden text, fonts, punctuation/spacing, terminology candidates, width/CPS/duration/gaps, source coverage, version markers, and rollback structure. Machine checks prove structure or raise candidates; they never prove translation, register, sync, obstruction, or full playback.
+Check ASS structure/times, filenames/scope, style references, bilingual mapping, overlaps, hidden text, fonts, punctuation/spacing, terminology candidates, width/CPS/duration/gaps, source coverage, version markers, and rollback structure. Use the terminology audit routed from `proofreading-and-approval.md` when confirmed entity forms exist. Machine checks prove structure or declared-form counts, or raise candidates; they never prove translation, register, sync, obstruction, unknown aliases, or full playback.
 
 ## SH-QC-008 — Text-first evidence escalation
 

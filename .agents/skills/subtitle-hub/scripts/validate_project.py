@@ -405,9 +405,9 @@ def main() -> int:
     if (profile == "zh-mono") != (secondary_language in {None, "null"}):
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.3.1":
+    if initialization_version != "1.3.2":
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.3.1; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be 1.3.2; upgrade before processing"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")

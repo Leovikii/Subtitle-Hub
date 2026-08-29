@@ -454,9 +454,9 @@ def build_candidate(project_root: Path, version: str) -> None:
     initialization = yaml_block(metadata, "initialization", 0)
     if (
         yaml_scalar(metadata, "schema_version", 0) != "9"
-        or yaml_scalar(initialization, "skill_version", 2) != "1.3.1"
+        or yaml_scalar(initialization, "skill_version", 2) != "1.3.2"
     ):
-        raise NormalizeError("upgrade project to the Skill 1.3.1 contract before building a candidate")
+        raise NormalizeError("upgrade project to the Skill 1.3.2 contract before building a candidate")
     workspace_episodes = project_root / "project/workspace/episodes"
     output_dir = project_root / "project/workspace/build/current-candidate"
     if output_dir.exists():

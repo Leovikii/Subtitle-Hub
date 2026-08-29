@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.1 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.2 toolchain."""
 
 from __future__ import annotations
 
@@ -254,7 +254,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.1"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.2"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -372,7 +372,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.3.1")
+            self.assertEqual(data["skill_version"], "1.3.2")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -683,7 +683,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.3.1"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.3.2"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -936,8 +936,67 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.3.1 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.3.2 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
+
+
+class TermAuditTests(unittest.TestCase):
+    def test_audit_counts_declared_forms_and_blocks_short_old_translation(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            subtitle = root / "episode.ass"
+            subtitle.write_bytes(baseline_ass_bytes("乌尔苏拉来了"))
+            with subtitle.open("a", encoding="utf-8") as stream:
+                stream.write(
+                    "Dialogue: 0,0:00:03.00,0:00:04.00,CN-Main,,0,0,0,,乌苏拉也来了\n"
+                    "Dialogue: 0,0:00:05.00,0:00:06.00,CN-Main,,0,0,0,,Úrsula llegó\n"
+                    "Comment: 0,0:00:07.00,0:00:08.00,CN-Main,,0,0,0,,乌苏拉\n"
+                )
+            manifest = root / "terms.json"
+            manifest.write_text(
+                json.dumps({
+                    "schema_version": 1,
+                    "terms": [{
+                        "term_id": "character.ursula",
+                        "approved_forms": ["乌尔苏拉"],
+                        "forbidden_forms": ["乌苏拉"],
+                        "source_forms": ["Úrsula"],
+                    }],
+                }, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            before = subtitle.read_bytes()
+            result = run("audit_terms.py", "--terms", str(manifest), str(subtitle), expect=2)
+            report = json.loads(result.stdout)
+            forms = report["files"][0]["terms"][0]
+            self.assertEqual(forms["approved_forms"][0]["count"], 1)
+            self.assertEqual(forms["forbidden_forms"][0]["count"], 1)
+            self.assertEqual(forms["source_forms"][0]["count"], 1)
+            self.assertEqual(report["summary"], {"forbidden_hits": 1, "passed": False})
+            self.assertEqual(subtitle.read_bytes(), before)
+            clean = root / "clean.ass"
+            clean.write_bytes(before.replace("乌苏拉".encode(), "乌尔苏拉".encode()))
+            passed = json.loads(run("audit_terms.py", "--terms", str(manifest), str(clean)).stdout)
+            self.assertEqual(passed["summary"], {"forbidden_hits": 0, "passed": True})
+
+    def test_audit_rejects_ambiguous_or_conflicting_form_assignment(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            subtitle = root / "episode.ass"
+            subtitle.write_bytes(baseline_ass_bytes())
+            manifest = root / "terms.json"
+            manifest.write_text(
+                json.dumps({
+                    "schema_version": 1,
+                    "terms": [
+                        {"term_id": "a", "approved_forms": ["雷梅黛丝"], "forbidden_forms": []},
+                        {"term_id": "b", "approved_forms": ["蕾梅黛丝"], "forbidden_forms": ["雷梅黛丝"]},
+                    ],
+                }, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            result = run("audit_terms.py", "--terms", str(manifest), str(subtitle), expect=1)
+            self.assertIn("assigned more than once", result.stderr)
 
 
 class StaticAuditTests(unittest.TestCase):

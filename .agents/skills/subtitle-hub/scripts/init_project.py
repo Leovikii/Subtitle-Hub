@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.3.1 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.3.2 proofreading project."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-SKILL_VERSION = "1.3.1"
+SKILL_VERSION = "1.3.2"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
