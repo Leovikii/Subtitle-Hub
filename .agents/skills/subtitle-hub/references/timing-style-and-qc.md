@@ -76,6 +76,12 @@ Resolve each dimension with the cheapest sufficient evidence, then stop: subtitl
 
 Do not run ASR, VAD, OCR generation, full-track extraction, full-video frame processing, scene detection or bulk rendering. Video is optional and may be used only for a flagged short/invalid duration, conflicting timing evidence, suspicious special-subtitle placement/effect, or unresolved scene meaning. `ffprobe` is allowed only when video is supplied. Never imply full listening/viewing from point checks.
 
+### SH-QC-010 — Read-only SSH media points
+
+For a project whose ignored local map contains an SSH video locator, use `scripts/remote_media.py` only after text/timecode/static geometry has identified a concrete media-required point. `frame` returns one JPEG for one timestamp; `audio` returns at most 30 seconds of mono audio for a bounded timing question; `subtitle` returns one selected embedded text track. Keep each output under the system temporary directory, use it locally, record only the time point and conclusion in `review.md`, then delete it. Do not batch points, upload ASS to the server, render on a remote file, extract a full audio track, or persist remote output.
+
+The remote command uses the existing Debian tools through system OpenSSH, user-confirmed then strict host-key checking, password authentication, one connection attempt, concurrency one, one decode thread, and both remote and client timeouts. It resolves the exact approved file and rejects symlink or path changes before reading. All remote media outputs travel over stdout; no command may create files, caches, logs, directories, packages, containers, services, or configuration on the NAS. The server filesystem may update access time under its own mount policy; the Skill never changes that policy. If the connection or required command fails, record the limitation and stop media escalation rather than installing tools or downloading the video.
+
 ## SH-QC-009 — Full static layout audit
 
 Audit every rendered ASS event without video before selecting media points. Report structure-proven defects as `confirmed`, heuristic geometry/wrap findings as `risk`, and points that need media as `media-required`.

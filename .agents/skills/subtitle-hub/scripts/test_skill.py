@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.3.2 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.0 toolchain."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ import tempfile
 import unittest
 from unittest import mock
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.parse import unquote, urlparse
 
 SCRIPT_ROOT = Path(__file__).resolve().parent
@@ -23,6 +24,7 @@ CATALOG_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "sync_catalog.py"
 NORMALIZE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "normalize_ass_release.py"
 TEST_REPOSITORY_SLUG = "example/repo"
 sys.path.insert(0, str(PACKAGE_SCRIPT.parent))
+sys.path.insert(0, str(SCRIPT_ROOT))
 from build_subtitle_packages import (  # noqa: E402
     PackageError,
     is_high_confidence_credit_fragment,
@@ -40,6 +42,7 @@ from normalize_ass_release import (  # noqa: E402
     normalize_styles,
 )
 import sync_bangumi_metadata  # noqa: E402
+import remote_media  # noqa: E402
 
 
 def run_path(path: Path, *args: str, expect: int = 0) -> subprocess.CompletedProcess[str]:
@@ -153,7 +156,7 @@ def write_snapshot(root: Path, *, subject_id: int = 100, project_type: str = "tv
 
 
 def approve_intake(
-    path: Path, episode: str, subtitle: Path, *, video: Path | None = None,
+    path: Path, episode: str, subtitle: Path, *, video: Path | str | None = None,
     audio: int | None = None, language: str | None = None,
     target_basename: str | None = None, timing_authority: str = "Chinese baseline",
 ) -> Path:
@@ -161,8 +164,10 @@ def approve_intake(
     data["blocking_questions"] = []
     data["episode_map"] = [{
         "episode": episode, "video_id": "video-001" if video else None,
-        "video": str(video.resolve()) if video else None,
-        "target_basename": target_basename or (video.name if video else f"{episode}.mkv"),
+        "video": str(video.resolve()) if isinstance(video, Path) else video,
+        "target_basename": target_basename or (
+            video.name if isinstance(video, Path) else Path(unquote(urlparse(video).path)).name if video else f"{episode}.mkv"
+        ),
         "baseline_file_id": data["external_source_groups"][0]["files"][0]["id"],
         "subtitle": str(subtitle.resolve()), "audio_stream": audio,
         "audio_language": language, "timing_authority": timing_authority,
@@ -254,7 +259,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.3\.2"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.0"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -332,6 +337,64 @@ class SkillStructureTests(unittest.TestCase):
         self.assertEqual(missing, [])
 
 
+class RemoteMediaTests(unittest.TestCase):
+    def connection(self, **values: object) -> SimpleNamespace:
+        defaults = {
+            "ssh": "ssh", "host": "10.9.6.2", "port": 22, "user": "media_reader",
+            "connect_timeout": 10, "client_timeout": 75, "action": "probe",
+        }
+        defaults.update(values)
+        return SimpleNamespace(**defaults)
+
+    def test_probe_uses_strict_password_ssh_and_returns_password_free_locators(self) -> None:
+        payload = json.dumps(probe_payload(), ensure_ascii=False)
+        stdout = (
+            f"{remote_media.MARKER.format(1)}\n123456\n{'a' * 64}\n{payload}\n"
+            f"{remote_media.MARKER.format(2)}\n234567\n{'b' * 64}\n{payload}\n"
+        ).encode()
+        args = self.connection(path=["/srv/media/O'Brien 作品 S01E01.mkv", "/srv/media/作品 S01E02.mkv"])
+        with mock.patch.object(remote_media.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, stdout)) as runner:
+            remote_media.validate_connection(args)
+            result = remote_media.probe(args)
+        command = runner.call_args.args[0]
+        self.assertIn("ClearAllForwardings=yes", command)
+        self.assertIn("PermitLocalCommand=no", command)
+        self.assertIn("PreferredAuthentications=password,keyboard-interactive", command)
+        self.assertIn("PubkeyAuthentication=no", command)
+        self.assertIn("StrictHostKeyChecking=ask", command)
+        self.assertNotIn("example-secret", " ".join(command))
+        remote_command = command[-1]
+        for forbidden in ("sudo ", "apt ", "docker ", "mktemp", "touch "):
+            self.assertNotIn(forbidden, remote_command)
+        self.assertIn("'\"'\"'", remote_command)
+        self.assertEqual(runner.call_count, 1)
+        self.assertEqual(len(result["media"]), 2)
+        media = result["media"][0]
+        self.assertEqual(media["size"], 123456)
+        self.assertEqual(media["basename"], "O'Brien 作品 S01E01.mkv")
+        self.assertTrue(media["path"].startswith("ssh://media_reader@10.9.6.2:22/"))
+        self.assertNotIn("password", json.dumps(result).lower())
+
+    def test_remote_paths_and_local_outputs_are_bounded(self) -> None:
+        for unsafe in ("relative.mkv", "/srv/../etc/passwd", "/srv/bad\nname.mkv"):
+            with self.assertRaises(remote_media.RemoteMediaError):
+                remote_media.remote_path(unsafe)
+        with self.assertRaises(remote_media.RemoteMediaError):
+            remote_media.validate_connection(self.connection(host="10.9.6.2;id"))
+        frame_command = remote_media.ssh_command(self.connection(action="frame"), "fixed")
+        self.assertIn("StrictHostKeyChecking=yes", frame_command)
+        with tempfile.TemporaryDirectory() as raw:
+            output = Path(raw) / "frame.jpg"
+            args = self.connection(path="/srv/media/episode.mkv", output=str(output))
+            with mock.patch.object(remote_media, "run_ssh", return_value=b"jpeg"):
+                result = remote_media.write_remote_output(args, "frame", "fixed read-only command", ".jpg")
+            self.assertEqual(output.read_bytes(), b"jpeg")
+            self.assertEqual(result["bytes"], 4)
+        outside = self.connection(path="/srv/media/episode.mkv", output=str(REPOSITORY_ROOT / "frame.jpg"))
+        with self.assertRaises(remote_media.RemoteMediaError):
+            remote_media.write_remote_output(outside, "frame", "fixed read-only command", ".jpg")
+
+
 class InventoryTests(unittest.TestCase):
     def test_text_only_inventory_is_tier_b_with_source_text_and_never_calls_ffprobe(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -372,7 +435,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.3.2")
+            self.assertEqual(data["skill_version"], "1.4.0")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -381,6 +444,53 @@ class InventoryTests(unittest.TestCase):
             self.assertIn("timing-reference", track["roles"])
             self.assertIn("translation-reference", track["roles"])
             self.assertNotIn("source-text-reference", track["roles"])
+
+    def test_ssh_probe_inventory_guides_initialization_without_copying_video(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repository, series = make_repository(root)
+            baseline = root / "Target.S01E01.zh-Hans.srt"
+            write_srt(baseline)
+            locator = "ssh://media_reader@10.9.6.2:22/srv/media/Target.S01E01.mkv"
+            remote_probe = root / "remote-probe.json"
+            remote_probe.write_text(json.dumps({
+                "schema_version": 1,
+                "action": "probe",
+                "connection": {"host": "10.9.6.2", "port": 22, "user": "media_reader"},
+                "media": [{
+                    "access": "ssh", "path": locator, "remote_path": "/srv/media/Target.S01E01.mkv",
+                    "basename": "Target.S01E01.mkv", "size": 123456,
+                    "sha256_first_mib": "a" * 64, "probe": probe_payload(),
+                }],
+            }, ensure_ascii=False), encoding="utf-8")
+            intake = root / "intake.json"
+            run(
+                "inventory_sources.py", "--ssh-video-probe", str(remote_probe),
+                "--candidate-baseline", str(baseline), "--source-language", "ja",
+                "--project-type", "tv", "--output", str(intake),
+            )
+            data = json.loads(intake.read_text(encoding="utf-8"))
+            self.assertEqual(data["target_videos"][0]["access"], "ssh")
+            self.assertEqual(data["target_videos"][0]["path"], locator)
+            self.assertEqual(data["blocking_questions"], [])
+            approve_intake(intake, "S01E01", baseline, video=locator, audio=1, language="ja")
+            run("init_project.py", *init_arguments(repository, series, write_snapshot(root), intake))
+            project = series / "SH0001--test-tv"
+            local_paths = (project / "project/local.paths.yaml").read_text(encoding="utf-8")
+            self.assertIn(locator, local_paths)
+            metadata = (project / "project.yaml").read_text(encoding="utf-8")
+            self.assertIn("medium: user-provided-ssh-video", metadata)
+            self.assertNotIn("/srv/media", metadata)
+            run("validate_project.py", str(project), "--ready-for-proofreading")
+            unsafe = json.loads(remote_probe.read_text(encoding="utf-8"))
+            unsafe["media"][0]["path"] = "ssh://media_reader:secret@10.9.6.2:22/srv/media/Target.S01E01.mkv"
+            remote_probe.write_text(json.dumps(unsafe), encoding="utf-8")
+            result = run(
+                "inventory_sources.py", "--ssh-video-probe", str(remote_probe),
+                "--candidate-baseline", str(baseline), "--source-language", "ja",
+                "--project-type", "tv", expect=2,
+            )
+            self.assertIn("locator and connection metadata conflict", result.stderr)
 
     def test_source_text_sets_tier_without_renderer_or_font_flags(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -683,7 +793,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.3.2"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.0"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -936,7 +1046,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.3.2 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.0 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 

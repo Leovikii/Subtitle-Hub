@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 ALLOWED_ROLES = {
     "candidate-baseline",
@@ -136,11 +137,22 @@ def validate_working_masters(project_root: Path, videos: dict[str, str], errors:
             except json.JSONDecodeError:
                 errors.append(f"{local_paths}: invalid quoted local path for {episode}")
                 continue
-            local_video = Path(local_value)
-            if not local_video.is_file():
-                errors.append(f"{local_paths}: target video for {episode} is not readable: {local_video}")
-            elif local_video.name != expected_basename:
-                errors.append(f"{local_paths}: target video basename for {episode} does not match project.yaml")
+            if not isinstance(local_value, str):
+                errors.append(f"{local_paths}: target-video locator for {episode} must be a string")
+                continue
+            if local_value.startswith("ssh://"):
+                parsed = urlparse(local_value)
+                remote_name = Path(unquote(parsed.path)).name
+                if parsed.password is not None or not parsed.hostname or not parsed.username or not remote_name or parsed.query or parsed.fragment:
+                    errors.append(f"{local_paths}: invalid password-free SSH locator for {episode}")
+                elif remote_name != expected_basename:
+                    errors.append(f"{local_paths}: SSH video basename for {episode} does not match project.yaml")
+            else:
+                local_video = Path(local_value)
+                if not local_video.is_file():
+                    errors.append(f"{local_paths}: target video for {episode} is not readable: {local_video}")
+                elif local_video.name != expected_basename:
+                    errors.append(f"{local_paths}: target video basename for {episode} does not match project.yaml")
 
 
 def validate_release(project_root: Path, metadata: str, errors: list[str], warnings: list[str]) -> None:
@@ -405,9 +417,9 @@ def main() -> int:
     if (profile == "zh-mono") != (secondary_language in {None, "null"}):
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.3.2":
+    if initialization_version != "1.4.0":
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.3.2; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be 1.4.0; upgrade before processing"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")

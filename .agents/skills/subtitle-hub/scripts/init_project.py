@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.3.2 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.4.0 proofreading project."""
 
 from __future__ import annotations
 
@@ -13,8 +13,9 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlparse
 
-SKILL_VERSION = "1.3.2"
+SKILL_VERSION = "1.4.0"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -140,8 +141,18 @@ def valid_episode(episode: str, work_type: str) -> bool:
     return bool(EPISODE_PATTERNS[work_type].fullmatch(episode))
 
 
+def video_locator(raw: str) -> str:
+    value = raw.strip()
+    if value.startswith("ssh://"):
+        parsed = urlparse(value)
+        if parsed.scheme != "ssh" or parsed.password is not None or not parsed.hostname or not parsed.username or not parsed.path or parsed.query or parsed.fragment:
+            raise ValueError("SSH video locator must contain host, user and path but no password")
+        return value
+    return str(Path(value).expanduser().resolve())
+
+
 def load_episode_map(intake: dict[str, object], work_type: str, source_language: str) -> list[dict[str, object]]:
-    videos_by_path = {str(Path(item["path"]).resolve()): item for item in intake["target_videos"]}
+    videos_by_path = {video_locator(str(item["path"])): item for item in intake["target_videos"]}
     baseline_files = {
         str(Path(file["path"]).resolve()): file
         for group in intake["external_source_groups"]
@@ -156,13 +167,13 @@ def load_episode_map(intake: dict[str, object], work_type: str, source_language:
         if not valid_episode(episode, work_type) or episode in seen_episodes:
             raise ValueError(f"unsafe, missing, or duplicate {work_type} episode ID: {episode!r}")
         raw_video = str(raw.get("video") or "").strip()
-        video_path = str(Path(raw_video).expanduser().resolve()) if raw_video else ""
+        video_path = video_locator(raw_video) if raw_video else ""
         subtitle_path = str(Path(str(raw.get("subtitle") or "")).expanduser().resolve())
         if video_path and video_path not in videos_by_path:
             raise ValueError(f"episode map video is absent from intake: {video_path}")
         if subtitle_path not in baseline_files:
             raise ValueError(f"episode map baseline is absent from intake: {subtitle_path}")
-        video_file = Path(video_path) if video_path else None
+        video_file = Path(video_path) if video_path and not video_path.startswith("ssh://") else None
         subtitle_file = Path(subtitle_path)
         if video_file and (not video_file.is_file() or video_file.stat().st_size != int(videos_by_path[video_path]["size"]) or first_mib_sha256(video_file) != videos_by_path[video_path]["sha256_first_mib"]):
             raise ValueError(f"target video changed or is unreadable after intake: {video_file}")
@@ -406,7 +417,9 @@ def source_block(groups: list[dict[str, object]], embedded: list[dict[str, objec
 
 def video_block(rows: list[dict[str, object]]) -> str:
     has_video = any(row["video"] for row in rows)
-    lines = ["video_sources:", "  target-video:", f"    medium: {'user-provided-local-video' if has_video else 'not-provided'}", "    files:"]
+    accesses = {str(row["video"].get("access", "local")) for row in rows if row["video"]}
+    medium = "not-provided" if not has_video else "user-provided-ssh-video" if accesses == {"ssh"} else "user-provided-local-video" if accesses == {"local"} else "user-provided-mixed-video"
+    lines = ["video_sources:", "  target-video:", f"    medium: {medium}", "    files:"]
     for row in rows:
         lines.append(f"      {row['episode']}: {quote(row['target_basename'])}")
     lines.append("    timing_authority:")

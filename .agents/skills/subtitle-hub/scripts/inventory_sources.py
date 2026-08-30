@@ -12,6 +12,7 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 VIDEO_EXTENSIONS = {".mkv", ".mp4", ".m2ts", ".ts", ".webm", ".mov"}
 TEXT_EVIDENCE_EXTENSIONS = {".ass", ".ssa", ".srt", ".vtt", ".txt", ".md"}
@@ -165,7 +166,12 @@ def parse_track_override(spec: str) -> tuple[str, int, str]:
     language = normalize_language(parts[2])
     if not language:
         raise ValueError(f"invalid track language: {parts[2]!r}")
-    return str(Path(parts[0]).expanduser().resolve()), int(parts[1]), language
+    return video_reference(parts[0]), int(parts[1]), language
+
+
+def video_reference(raw: str) -> str:
+    value = raw.strip()
+    return value if value.startswith("ssh://") else str(Path(value).expanduser().resolve())
 
 
 def load_probe_cache(path: Path | None) -> dict[str, object]:
@@ -195,9 +201,9 @@ def raw_probe(path: Path, ffprobe: str | None, cache: dict[str, object]) -> tupl
         return "failed", None, str(error)
 
 
-def stream_language(stream: dict[str, object], video: Path, overrides: dict[tuple[str, int], str]) -> tuple[str | None, str]:
+def stream_language(stream: dict[str, object], reference: str, overrides: dict[tuple[str, int], str]) -> tuple[str | None, str]:
     index = int(stream.get("index", -1))
-    override = overrides.get((str(video.resolve()), index))
+    override = overrides.get((reference, index))
     if override:
         return override, "user/developer track override"
     tags = stream.get("tags") if isinstance(stream.get("tags"), dict) else {}
@@ -212,31 +218,14 @@ def stream_language(stream: dict[str, object], video: Path, overrides: dict[tupl
     return None, "container language metadata unresolved"
 
 
-def probe_video(
-    path: Path,
-    ffprobe: str | None,
-    cache: dict[str, object],
+def normalized_video(
+    item: dict[str, object],
+    payload: dict[str, object] | None,
     overrides: dict[tuple[str, int], str],
     audio_selections: dict[str, int],
     source_language: str,
 ) -> dict[str, object]:
-    status, payload, error = raw_probe(path, ffprobe, cache)
-    item: dict[str, object] = {
-        "id": "",
-        "path": str(path.resolve()),
-        "basename": path.name,
-        "stem": path.stem,
-        "size": path.stat().st_size,
-        "sha256_first_mib": sha256_prefix(path),
-        "probe_status": status,
-        "duration_seconds": None,
-        "format": None,
-        "streams": [],
-        "suggested_audio_stream": None,
-    }
-    if error:
-        item["probe_error"] = error
-    if status != "ok" or not payload:
+    if item["probe_status"] != "ok" or not payload:
         return item
     format_data = payload.get("format") if isinstance(payload.get("format"), dict) else {}
     try:
@@ -249,7 +238,7 @@ def probe_video(
     for raw in payload.get("streams", []):
         if not isinstance(raw, dict):
             continue
-        language, basis = stream_language(raw, path, overrides)
+        language, basis = stream_language(raw, str(item["path"]), overrides)
         stream = {
             "index": int(raw.get("index", -1)),
             "type": raw.get("codec_type"),
@@ -267,17 +256,17 @@ def probe_video(
         if stream["type"] == "audio" and language == source_language:
             source_audio.append(stream["index"])
     item["streams"] = normalized_streams
-    selected = audio_selections.get(str(path.resolve()))
+    selected = audio_selections.get(str(item["path"]))
     if selected is not None:
         matching = [
             stream for stream in normalized_streams
             if stream["type"] == "audio" and stream["index"] == selected
         ]
         if len(matching) != 1:
-            raise ValueError(f"selected audio stream {selected} is absent from {path.name}")
+            raise ValueError(f"selected audio stream {selected} is absent from {item['basename']}")
         if matching[0]["language"] != source_language:
             raise ValueError(
-                f"selected audio stream {selected} for {path.name} is {matching[0]['language']!r}, "
+                f"selected audio stream {selected} for {item['basename']} is {matching[0]['language']!r}, "
                 f"not source language {source_language!r}"
             )
         item["suggested_audio_stream"] = selected
@@ -288,11 +277,76 @@ def probe_video(
     return item
 
 
+def probe_video(
+    path: Path,
+    ffprobe: str | None,
+    cache: dict[str, object],
+    overrides: dict[tuple[str, int], str],
+    audio_selections: dict[str, int],
+    source_language: str,
+) -> dict[str, object]:
+    status, payload, error = raw_probe(path, ffprobe, cache)
+    item: dict[str, object] = {
+        "id": "", "access": "local", "path": str(path.resolve()), "basename": path.name, "stem": path.stem,
+        "size": path.stat().st_size, "sha256_first_mib": sha256_prefix(path), "probe_status": status,
+        "duration_seconds": None, "format": None, "streams": [], "suggested_audio_stream": None,
+    }
+    if error:
+        item["probe_error"] = error
+    return normalized_video(item, payload, overrides, audio_selections, source_language)
+
+
+def ssh_probe_videos(
+    manifest: Path,
+    overrides: dict[tuple[str, int], str],
+    audio_selections: dict[str, int],
+    source_language: str,
+) -> list[dict[str, object]]:
+    data = json.loads(manifest.read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1 or data.get("action") != "probe" or not isinstance(data.get("media"), list):
+        raise ValueError(f"invalid remote-media probe manifest: {manifest}")
+    result = []
+    for raw in data["media"]:
+        if not isinstance(raw, dict) or raw.get("access") != "ssh" or not str(raw.get("path", "")).startswith("ssh://"):
+            raise ValueError(f"invalid SSH media entry in {manifest}")
+        locator = urlparse(str(raw["path"]))
+        connection = data.get("connection") if isinstance(data.get("connection"), dict) else {}
+        try:
+            connection_port = int(connection.get("port", 22))
+        except (TypeError, ValueError) as error:
+            raise ValueError(f"invalid SSH connection port in {manifest}") from error
+        if (
+            locator.scheme != "ssh" or locator.password is not None or not locator.hostname or not locator.username
+            or locator.hostname != connection.get("host") or locator.username != connection.get("user")
+            or (locator.port or 22) != connection_port or locator.query or locator.fragment
+        ):
+            raise ValueError(f"SSH locator and connection metadata conflict in {manifest}")
+        basename = str(raw.get("basename") or "")
+        if (
+            not basename or Path(basename).name != basename or Path(basename).suffix.lower() not in VIDEO_EXTENSIONS
+            or Path(unquote(locator.path)).name != basename
+        ):
+            raise ValueError(f"unsafe or unsupported SSH video basename: {basename!r}")
+        size = raw.get("size")
+        fingerprint = str(raw.get("sha256_first_mib") or "")
+        payload = raw.get("probe")
+        if not isinstance(size, int) or size <= 0 or not re.fullmatch(r"[0-9a-f]{64}", fingerprint) or not isinstance(payload, dict):
+            raise ValueError(f"incomplete SSH media probe for {basename}")
+        item: dict[str, object] = {
+            "id": "", "access": "ssh", "path": str(raw["path"]), "basename": basename,
+            "stem": Path(basename).stem, "size": size, "sha256_first_mib": fingerprint,
+            "probe_status": "ok", "duration_seconds": None, "format": None, "streams": [],
+            "suggested_audio_stream": None,
+        }
+        result.append(normalized_video(item, payload, overrides, audio_selections, source_language))
+    return result
+
+
 def parse_audio_selection(spec: str) -> tuple[str, int]:
     parts = spec.rsplit("|", 1)
     if len(parts) != 2 or not parts[1].isdigit():
         raise ValueError("audio selection must be VIDEO|STREAM_INDEX")
-    return str(Path(parts[0]).expanduser().resolve()), int(parts[1])
+    return video_reference(parts[0]), int(parts[1])
 
 
 def episode_hint(path: Path, project_type: str | None) -> str | None:
@@ -408,6 +462,7 @@ def propose_relationships(videos: list[dict[str, object]], baselines: list[dict[
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--target-video", "--media", action="append", default=[], dest="target_video", help="Target video file or directory")
+    parser.add_argument("--ssh-video-probe", action="append", default=[], type=Path, help="Disposable JSON from remote_media.py probe")
     parser.add_argument("--candidate-baseline", action="append", default=[], required=True, help="Chinese subtitle baseline file or directory")
     parser.add_argument("--optional-source", "--subtitle", action="append", default=[], dest="optional_source", metavar="PATH[|LANGUAGE|ROLES]")
     parser.add_argument("--source-language", required=True, help="Actual dialogue language (BCP 47)")
@@ -433,6 +488,12 @@ def main() -> int:
         cache = load_probe_cache(args.probe_cache)
         ffprobe = args.ffprobe or shutil.which("ffprobe")
         video_items = [probe_video(file, ffprobe, cache, overrides, audio_selections, source_language) for file in videos]
+        for manifest in args.ssh_video_probe:
+            video_items.extend(ssh_probe_videos(manifest, overrides, audio_selections, source_language))
+        references = [str(item["path"]) for item in video_items]
+        if len(references) != len(set(references)):
+            raise ValueError("target videos contain duplicate local or SSH references")
+        video_items.sort(key=lambda item: str(item["path"]))
         for index, item in enumerate(video_items, start=1):
             item["id"] = f"video-{index:03d}"
         baseline_groups = [
@@ -498,7 +559,7 @@ def main() -> int:
     evidence_tier = "A" if source_text_ready and auxiliary_ready else "B" if source_text_ready else "C" if auxiliary_ready else "D"
     report = {
         "schema_version": 4,
-        "skill_version": "1.3.2",
+        "skill_version": "1.4.0",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,
@@ -510,7 +571,7 @@ def main() -> int:
         "blocking_questions": blocking_questions,
         "limitations": (["target video not provided; timing and visual playback remain unverified"] if not video_items else []) + (["source-language text not provided; source fidelity requires human review"] if not source_text_ready else []),
         "notes": [
-            "This intake manifest is disposable and may contain local absolute paths; init_project.py folds durable facts into project.yaml and writes ignored project/local.paths.yaml only when local video paths exist.",
+            "This intake manifest is disposable and may contain local paths or password-free SSH locators; init_project.py folds durable facts into project.yaml and writes ignored project/local.paths.yaml only when video references exist.",
             "Detected relationships, languages, and roles are proposals. Confirm them in this same JSON before initialization.",
             "Embedded non-source-language subtitles are timing and auxiliary translation evidence, never source-text authority.",
         ],

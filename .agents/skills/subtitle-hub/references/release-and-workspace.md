@@ -2,7 +2,7 @@
 
 ## SH-WS-001 — Create paths on demand
 
-Durable masters are `project/workspace/episodes/<episode>/master.ass`. Initialization creates only paths needed for `project.yaml`, root-level `review.md`, immutable copied sources, local video mapping, and these masters.
+Durable masters are `project/workspace/episodes/<episode>/master.ass`. Initialization creates only paths needed for `project.yaml`, root-level `review.md`, immutable copied sources, external video mapping, and these masters.
 
 - `project/workspace/temp/tools/`: project-only scripts, created with the first tool.
 - `project/workspace/temp/notes/`: temporary supplemental instructions or small handoff notes, created with the first note. It is not a control plane or evidence archive.
