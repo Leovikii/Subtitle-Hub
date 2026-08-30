@@ -31,13 +31,13 @@ Video Position: 5703
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -283,20 +283,20 @@ Dialogue: 0,0:22:29.03,0:22:31.68,DefaultCN-2202,,0,0,0,,古代 登上大和号�
 Dialogue: 0,0:22:34.06,0:22:36.15,DefaultCN-2202,,0,0,0,,登上大和号！
 Dialogue: 0,0:22:40.38,0:22:45.13,Title,,0,0,0,,{\fs40\an7\pos(900,40)}第一话
 Dialogue: 0,0:22:40.38,0:22:45.13,Title,,0,0,0,,{\fs60\an7\pos(900,100)}西历2202年·苏醒吧 宇宙战舰大和号
-Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
-Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
-Dialogue: 0,0:23:12.12,0:23:16.04,OPED,,0,0,0,Karaoke,那个人的温柔\N{\kf591\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の優しさが
-Dialogue: 0,0:23:16.76,0:23:20.37,OPED,,0,0,0,Karaoke,如果能胜过百花的话\N{\kf543\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}花に勝るなら
-Dialogue: 0,0:23:21.30,0:23:25.24,OPED,,0,0,0,Karaoke,那个人的美丽\N{\kf593\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の美しさが
-Dialogue: 0,0:23:25.92,0:23:29.56,OPED,,0,0,0,Karaoke,如果能胜过繁星的话\N{\kf548\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}星に勝るなら
-Dialogue: 0,0:23:31.11,0:23:37.52,OPED,,0,0,0,Karaoke,那么你张开双臂保护她就好\N{\kf688\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}君は手を広げて 守るがいい
-Dialogue: 0,0:23:37.91,0:23:44.46,OPED,,0,0,0,Karaoke,她有着让你豁出性命的价值\N{\kf699\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}体を投げ出す 値打ちがある
-Dialogue: 0,0:23:44.94,0:23:51.13,OPED,,0,0,0,Karaoke,每个人的思念\N{\kf652\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}一人一人が想うことは
-Dialogue: 0,0:23:51.39,0:23:57.86,OPED,,0,0,0,Karaoke,只要为了其所爱的人就好\N{\kf681\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}愛する人のためだけでいい
-Dialogue: 0,0:23:58.63,0:24:05.22,OPED,,0,0,0,Karaoke,如果有什么话要对你说的\N{\kf663\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}君に話すことが あるとしたら
-Dialogue: 0,0:24:05.31,0:24:12.51,OPED,,0,0,0,Karaoke,现在恐怕也就只有这些了\N{\kf725\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はそれだけかも 知れない
-Dialogue: 0,0:24:12.51,0:24:18.98,OPED,,0,0,0,Karaoke,“再见”这个词 请不要现在说出来\N{\kf651\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はさらばと 言わせないでくれ
-Dialogue: 0,0:24:19.22,0:24:26.60,OPED,,0,0,0,Karaoke,“再见”这个词 请不要现在说出来\N{\kf768\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はさらばと 言わせないでくれ
+Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
+Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
+Dialogue: 0,0:23:12.12,0:23:16.04,OPED,,0,0,0,Karaoke,那个人的温柔\N{\kf591\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の優しさが
+Dialogue: 0,0:23:16.76,0:23:20.37,OPED,,0,0,0,Karaoke,如果能胜过百花的话\N{\kf543\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}花に勝るなら
+Dialogue: 0,0:23:21.30,0:23:25.24,OPED,,0,0,0,Karaoke,那个人的美丽\N{\kf593\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の美しさが
+Dialogue: 0,0:23:25.92,0:23:29.56,OPED,,0,0,0,Karaoke,如果能胜过繁星的话\N{\kf548\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}星に勝るなら
+Dialogue: 0,0:23:31.11,0:23:37.52,OPED,,0,0,0,Karaoke,那么你张开双臂保护她就好\N{\kf688\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}君は手を広げて 守るがいい
+Dialogue: 0,0:23:37.91,0:23:44.46,OPED,,0,0,0,Karaoke,她有着让你豁出性命的价值\N{\kf699\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}体を投げ出す 値打ちがある
+Dialogue: 0,0:23:44.94,0:23:51.13,OPED,,0,0,0,Karaoke,每个人的思念\N{\kf652\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}一人一人が想うことは
+Dialogue: 0,0:23:51.39,0:23:57.86,OPED,,0,0,0,Karaoke,只要为了其所爱的人就好\N{\kf681\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}愛する人のためだけでいい
+Dialogue: 0,0:23:58.63,0:24:05.22,OPED,,0,0,0,Karaoke,如果有什么话要对你说的\N{\kf663\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}君に話すことが あるとしたら
+Dialogue: 0,0:24:05.31,0:24:12.51,OPED,,0,0,0,Karaoke,现在恐怕也就只有这些了\N{\kf725\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はそれだけかも 知れない
+Dialogue: 0,0:24:12.51,0:24:18.98,OPED,,0,0,0,Karaoke,“再见”这个词 请不要现在说出来\N{\kf651\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はさらばと 言わせないでくれ
+Dialogue: 0,0:24:19.22,0:24:26.60,OPED,,0,0,0,Karaoke,“再见”这个词 请不要现在说出来\N{\kf768\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}今はさらばと 言わせないでくれ
 Dialogue: 0,0:24:42.34,0:24:44.15,DefaultCN-2202,,0,0,0,,我们被呼唤了……
 Dialogue: 0,0:24:44.15,0:24:45.11,DefaultCN-2202,,0,0,0,,我们该去了
 Dialogue: 0,0:24:45.11,0:24:47.22,DefaultCN-2202,,0,0,0,,你现在已经不是一个人了

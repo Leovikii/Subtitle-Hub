@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -632,7 +632,7 @@ Dialogue: 10,0:22:09.24,0:22:13.33,CN-Main,,0,0,0,,改变航路 脱离当前宙�
 Dialogue: 11,0:22:09.24,0:22:13.33,JP-Main,,0,0,0,,針路変更 現宙域を離脱する
 Dialogue: 10,0:22:13.62,0:22:14.54,CN-Main,,0,0,0,,明白
 Dialogue: 11,0:22:13.62,0:22:14.54,JP-Main,,0,0,0,,了解…
-Dialogue: 0,0:22:23.24,0:22:29.45,Title,,0,0,0,,{\pos(1529,824)\fad( 500，500)}[第十一话 曾经见过的世界 ]
+Dialogue: 0,0:22:23.24,0:22:29.45,Title,,0,0,0,,{\pos(1529,824)\fad(500,500)}[第十一话 曾经见过的世界 ]
 Dialogue: 12,0:22:30.70,0:22:37.50,ED-CN,,0,0,0,,{\fad(500,300)}我始终相信
 Dialogue: 13,0:22:30.70,0:22:37.50,ED-JP,,0,0,0,,{\fad(500,300)}信じている
 Dialogue: 12,0:22:39.05,0:22:45.80,ED-CN,,0,0,0,,{\fad(500,300)}唯有未来

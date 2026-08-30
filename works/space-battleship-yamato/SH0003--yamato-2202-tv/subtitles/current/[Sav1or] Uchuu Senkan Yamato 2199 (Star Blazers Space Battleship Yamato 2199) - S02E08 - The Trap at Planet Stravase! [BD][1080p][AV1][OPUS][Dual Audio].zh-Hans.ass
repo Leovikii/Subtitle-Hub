@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -271,8 +271,8 @@ Dialogue: 0,0:22:21.05,0:22:23.35,DefaultCN-2202,,0,0,0,,吾乃知晓爱之人
 Dialogue: 0,0:22:26.13,0:22:31.40,DefaultCN-2202,,0,0,0,,吾比这宇宙间其他任何人都更知晓爱……
 Dialogue: 0,0:22:38.38,0:22:44.30,Title,,0,0,0,,{\bord1\fs50\an7\pos(1200,40)}第八话
 Dialogue: 0,0:22:38.38,0:22:44.30,Title,,0,0,0,,{\bord1\fs70\an7\pos(1200,100)}行星修特拉巴泽的陷阱！
-Dialogue: 0,0:22:47.53,0:22:56.95,OPED,,0,0,0,,{\c&Hffffff&\bord0\fs60\an7\pos(1250,30)}君、ヒトヒラ
-Dialogue: 0,0:22:47.53,0:22:56.95,OPED,,0,0,0,,{\c&Hffffff&\bord0\fs40\an7\pos(1250,100)}作詞 - 有馬詩乃  作曲 - カヮノミチオ\N唄う - ありましの
+Dialogue: 0,0:22:47.53,0:22:56.95,OPED,,0,0,0,,{\fnNoto Sans CJK JP\c&Hffffff&\bord0\fs60\an7\pos(1250,30)}君、ヒトヒラ
+Dialogue: 0,0:22:47.53,0:22:56.95,OPED,,0,0,0,,{\fnNoto Sans CJK JP\c&Hffffff&\bord0\fs40\an7\pos(1250,100)}作詞 - 有馬詩乃  作曲 - カヮノミチオ\N唄う - ありましの
 Dialogue: 0,0:22:47.53,0:22:53.75,OPED,,0,0,0,,苍蓝月色 还请多驻留\N{\K627\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}消えないで蒼い月よ
 Dialogue: 0,0:22:53.75,0:23:01.62,OPED,,0,0,0,,照亮君之一隅\N{\K792\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}照らし出す 君、ヒトヒラ
 Dialogue: 0,0:23:13.75,0:23:18.85,OPED,,0,0,0,,一切虽仍如旧\N{\K553\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}何ひとつ変わらない

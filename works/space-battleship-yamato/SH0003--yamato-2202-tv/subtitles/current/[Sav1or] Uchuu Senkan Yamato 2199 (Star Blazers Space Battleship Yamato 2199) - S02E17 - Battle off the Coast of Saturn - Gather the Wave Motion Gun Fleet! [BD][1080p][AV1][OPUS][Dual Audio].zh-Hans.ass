@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -78,7 +78,7 @@ Dialogue: 0,0:04:39.86,0:04:40.76,DefaultCN-2202,,0,0,0,,基曼他人呢？
 Dialogue: 0,0:04:41.46,0:04:42.75,DefaultCN-2202,,0,0,0,,他又把自己关到单人牢房里了
 Dialogue: 0,0:04:43.50,0:04:45.21,DefaultCN-2202,,0,0,0,,在那之后 他就主动提出来要……
 Dialogue: 0,0:04:56.31,0:04:59.51,DefaultCN-2202,,0,0,0,,对伤员来说 经历连续跃迁很痛苦吧？
-Dialogue: 0,0:05:01.46,0:05:07.54,DefaultCN-2202,,0,0,0,,伤员经历连续跃迁一定很痛苦吧？
+Dialogue: 0,0:05:01.46,0:05:07.54,DefaultCN-2202,,0,0,0,,明明去医务室就好了 却自己跑到这种地方来……像个傻瓜似的
 Dialogue: 0,0:05:10.27,0:05:12.73,DefaultCN-2202,,0,0,0,,因为我是一个背叛者啊
 Dialogue: 0,0:05:14.34,0:05:17.17,DefaultCN-2202,,0,0,0,,你背叛的人 难道不是德斯拉么？
 Dialogue: 0,0:05:18.50,0:05:19.97,DefaultCN-2202,,0,0,0,,为什么你最后没有和他一起走？
@@ -241,8 +241,8 @@ Dialogue: 0,0:21:59.22,0:22:01.53,DefaultCN-2202,,0,0,0,,马上准备发射“�
 Dialogue: 0,0:22:36.44,0:22:40.79,DefaultCN-2202,,0,0,0,,欢迎来到地狱
 Dialogue: 0,0:22:43.18,0:22:45.92,Title,,0,0,0,,{\bord1\fs50\an7\pos(1050,40)}第十七话
 Dialogue: 0,0:22:43.18,0:22:45.92,Title,,0,0,0,,{\bord1\fs70\an7\pos(1050,100)}土星外海战 波动炮舰队集结！
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}ようらんか
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs60\an7\pos(1250,40)}ようらんか
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
 Dialogue: 0,0:22:53.67,0:23:04.80,OPED,,0,0,0,,安静地睡吧 你的吐息宛如幼时\N{\K1171\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そつとやすみなさい 幼子のような吐息
 Dialogue: 0,0:23:06.86,0:23:19.29,OPED,,0,0,0,,我会一直陪伴在旁 合上双眼吧\N{\K1309\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつまでも 傍に居るから瞼閉じて
 Dialogue: 0,0:23:19.32,0:23:31.80,OPED,,0,0,0,,如阳光融化冰雪一般温柔\N{\K1313\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}陽だまりの溶けるような優しさで

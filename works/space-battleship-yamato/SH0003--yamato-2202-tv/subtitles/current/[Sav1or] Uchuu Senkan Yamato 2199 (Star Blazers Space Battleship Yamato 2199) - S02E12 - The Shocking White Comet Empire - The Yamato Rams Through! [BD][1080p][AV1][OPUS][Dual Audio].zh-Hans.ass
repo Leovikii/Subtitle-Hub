@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -64,8 +64,7 @@ Dialogue: 0,0:05:30.66,0:05:33.10,DefaultCN-2202,,0,0,0,,现在还不能确定�
 Dialogue: 0,0:05:34.61,0:05:35.33,DefaultCN-2202,,0,0,0,,证据
 Dialogue: 0,0:05:39.20,0:05:43.80,DefaultCN-2202,,0,0,0,,以当前距离的光学观测分析 结果就是这个
 Dialogue: 0,0:05:47.31,0:05:50.61,DefaultCN-2202,,0,0,0,,这就是……白色彗星
-Dialogue: 0,0:05:51.44,0:05:51.99,DefaultCN-2202,,0,0,0,,啊
-Dialogue: 0,0:05:52.69,0:05:53.24,DefaultCN-2202,,0,0,0,,啊
+Dialogue: 0,0:05:51.44,0:05:51.99,DefaultCN-2202,,0,0,0,,啊……
 Dialogue: 0,0:06:01.11,0:06:05.73,DefaultCN-2202,,0,0,0,,你说德斯拉谋反是大帝早就预料到的么？
 Dialogue: 0,0:06:06.56,0:06:10.22,DefaultCN-2202,,0,0,0,,当然 大帝的耳目早已渗透到了加米拉斯人中
 Dialogue: 0,0:06:10.93,0:06:17.18,DefaultCN-2202,,0,0,0,,他被感情蒙蔽双眼 哪怕牺牲更多本国民众也要击败大和号
@@ -224,7 +223,7 @@ Dialogue: 0,0:22:18.99,0:22:21.73,DefaultCN-2202,,0,0,0,,为了解放特蕾莎�
 Dialogue: 0,0:22:39.49,0:22:44.81,Title,,0,0,0,,{\bord1\fs50\an7\pos(700,40)}第十二话
 Dialogue: 0,0:22:39.49,0:22:44.81,Title,,0,0,0,,{\bord1\fs70\an7\pos(700,100)}令人震惊的白色彗星帝国 大和号强行突破！
 Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1250,40)}CRIMSON RED
-Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
+Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
 Dialogue: 0,0:23:02.76,0:23:06.26,OPED,,0,0,0,,断续间 数目相汇\N{\K431\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}途切れゆく眼差しは
 Dialogue: 0,0:23:06.68,0:23:09.83,OPED,,0,0,0,,炯如司南 其勇可证\N{\K388\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}勇者の確かな羅針盤
 Dialogue: 0,0:23:10.06,0:23:12.87,OPED,,0,0,0,,寸约未定\N{\K346\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}約束はないままに

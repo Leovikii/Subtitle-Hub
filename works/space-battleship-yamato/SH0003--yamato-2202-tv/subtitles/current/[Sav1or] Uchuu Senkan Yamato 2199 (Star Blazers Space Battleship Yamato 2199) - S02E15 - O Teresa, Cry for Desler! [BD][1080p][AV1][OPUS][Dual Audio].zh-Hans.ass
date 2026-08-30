@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -245,8 +245,8 @@ Dialogue: 0,0:22:21.52,0:22:22.19,DefaultCN-2202,,0,0,0,,基曼！
 Dialogue: 0,0:22:31.60,0:22:33.50,DefaultCN-2202,,0,0,0,,抱歉了 古代！
 Dialogue: 0,0:22:41.78,0:22:45.58,Title,,0,0,0,,{\bord1\fs50\an7\pos(1080,40)}第十五话
 Dialogue: 0,0:22:41.78,0:22:45.58,Title,,0,0,0,,{\bord1\fs70\an7\pos(1080,100)}特蕾莎啊 为德斯拉而哭泣吧！
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}ようらんか
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs60\an7\pos(1250,40)}ようらんか
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
 Dialogue: 0,0:22:53.67,0:23:04.80,OPED,,0,0,0,,安静地睡吧 你的吐息宛如幼时\N{\K1171\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そつとやすみなさい 幼子のような吐息
 Dialogue: 0,0:23:06.86,0:23:19.29,OPED,,0,0,0,,我会一直陪伴在旁 合上双眼吧\N{\K1309\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつまでも 傍に居るから瞼閉じて
 Dialogue: 0,0:23:19.32,0:23:31.80,OPED,,0,0,0,,如阳光融化冰雪一般温柔\N{\K1313\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}陽だまりの溶けるような優しさで

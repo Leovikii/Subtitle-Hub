@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Version: 2.0.1
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -30,10 +30,6 @@ Style: CN-Sign-Tsing 1,Noto Sans CJK SC,59,&H00FFFFFF,&H000000FF,&H00000000,&H00
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 回忆通话准备完毕
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 正在通话中
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 与那人 心系一处
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 救 救 我
 Dialogue: 0,0:00:18.54,0:00:22.50,汉鼎繁新艺体_OP CN,,0,0,0,,{\blur4\fad(100,100)}再见了 地球
 Dialogue: 0,0:00:18.54,0:00:22.50,昭和モダン体 _OP,,0,0,0,,{\blur4\fad(100,100)}さらば 地球よ
 Dialogue: 0,0:00:22.50,0:00:26.13,汉鼎繁新艺体_OP CN,,0,0,0,,{\blur4\fad(100,100)}出航的舰船

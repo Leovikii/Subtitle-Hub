@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -189,8 +189,8 @@ Dialogue: 0,0:21:21.33,0:21:24.61,DefaultCN-2202,,0,0,0,,我也是“大之和�
 Dialogue: 0,0:21:25.59,0:21:31.65,DefaultCN-2202,,0,0,0,,为了前往能够延续生命的未来 让我们合而为一吧
 Dialogue: 0,0:22:40.33,0:22:45.68,Title,,0,0,0,,{\bord1\fs50\an7\pos(1150,40)}第二十五话
 Dialogue: 0,0:22:40.33,0:22:45.68,Title,,0,0,0,,{\bord1\fs70\an7\pos(1150,100)}再见了 宇宙战舰大和号
-Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}大いなる和
-Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 山寺宏一
+Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs60\an7\pos(1250,40)}大いなる和
+Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 山寺宏一
 Dialogue: 0,0:22:59.08,0:23:18.63,OPED,,0,0,0,,天空中流淌着的绵绵云朵\N{\K1349\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}空たかく流れる きえゆく綿の雲
 Dialogue: 0,0:23:18.63,0:23:31.39,OPED,,0,0,0,,双手扬起那舒展的落叶\N{\K1375\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}両手をあげ ああ背伸びした落葉
 Dialogue: 0,0:23:38.66,0:23:51.69,OPED,,0,0,0,,窗户微微亮着 我想见到那个微笑的人\N{\K1259\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}あかり灯る窓 笑いあう人に 会いたいと思う

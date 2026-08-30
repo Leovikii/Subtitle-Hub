@@ -24,13 +24,13 @@ YCbCr Matrix: TV.709
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H004BEAE4,&H000E0E59,&H00278837,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H004BEAE4,&H000E0E59,&H00278837,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -313,21 +313,21 @@ Dialogue: 0,0:21:18.98,0:21:20.55,DefaultCN-2202,,0,0,0,,两小时后进行跃�
 Dialogue: 0,0:21:23.74,0:21:26.20,DefaultCN-2202,,0,0,0,,不愧是你的孩子们
 Dialogue: 0,0:21:27.43,0:21:34.73,Title,,0,0,0,,{\bord1\fs50\an7\pos(1200,40)}第十话
 Dialogue: 0,0:21:27.43,0:21:34.73,Title,,0,0,0,,{\bord1\fs70\an7\pos(1200,100)}迷惑 召来危机的宇宙之萤
-Dialogue: 0,0:22:46.32,0:22:54.57,OPED,,0,0,0,,{\c&Hffffff&\bord0\fs60\an7\pos(1250,30)}君、ヒトヒラ
-Dialogue: 0,0:22:46.32,0:22:54.57,OPED,,0,0,0,,{\c&Hffffff&\bord0\fs40\an7\pos(1250,100)}作詞 - 有馬詩乃  作曲 - カヮノミチオ\N唄う - ありましの
-Dialogue: 0,0:21:37.08,0:21:43.30,OPED,,0,0,0,,苍蓝月色 还请多驻留\N{\K627\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}消えないで蒼い月よ
-Dialogue: 0,0:21:43.30,0:21:51.17,OPED,,0,0,0,,照亮君之一隅\N{\K792\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}照らし出す 君、ヒトヒラ
-Dialogue: 0,0:22:03.30,0:22:08.40,OPED,,0,0,0,,一切虽仍如旧\N{\K553\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}何ひとつ変わらない
-Dialogue: 0,0:22:09.38,0:22:14.69,OPED,,0,0,0,,单调的每一天\N{\K525\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}モノトーン色の日々
-Dialogue: 0,0:22:15.62,0:22:20.69,OPED,,0,0,0,,命运间 邂逅终至\N{\K479\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}運命が連れてきた
-Dialogue: 0,0:22:21.69,0:22:27.06,OPED,,0,0,0,,君之瞳 拨动妾心\N{\K511\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}君の瞳に恋をした
-Dialogue: 0,0:22:28.63,0:22:33.02,OPED,,0,0,0,,只想感觉你就在身边\N{\K484\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}近くに感じたいよ
-Dialogue: 0,0:22:34.45,0:22:39.99,OPED,,0,0,0,,温润中五指相扣\N{\K549\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}温かい手にふれて
-Dialogue: 0,0:22:40.23,0:22:45.60,OPED,,0,0,0,,胸臆若直抒\N{\K498\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}まっすぐに言葉にできたら
-Dialogue: 0,0:22:46.32,0:22:51.67,OPED,,0,0,0,,才觉爱之深\N{\K484\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}こんなに愛してる
-Dialogue: 0,0:22:52.13,0:22:57.87,OPED,,0,0,0,,爱慕之心 切莫隐抑\N{\K663\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}隠れないで 恋心よ
-Dialogue: 0,0:22:58.27,0:23:03.65,OPED,,0,0,0,,月色只为照亮君\N{\K565\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}君だけ照らしてるよ
-Dialogue: 0,0:23:04.43,0:23:10.61,OPED,,0,0,0,,恰逢今夜所以说\N{\K628\fn Yu Gothic UI\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}今夜ならそう言える
+Dialogue: 0,0:22:46.32,0:22:54.57,OPED,,0,0,0,,{\fnNoto Sans CJK JP\c&Hffffff&\bord0\fs60\an7\pos(1250,30)}君、ヒトヒラ
+Dialogue: 0,0:22:46.32,0:22:54.57,OPED,,0,0,0,,{\fnNoto Sans CJK JP\c&Hffffff&\bord0\fs40\an7\pos(1250,100)}作詞 - 有馬詩乃  作曲 - カヮノミチオ\N唄う - ありましの
+Dialogue: 0,0:21:37.08,0:21:43.30,OPED,,0,0,0,,苍蓝月色 还请多驻留\N{\K627\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}消えないで蒼い月よ
+Dialogue: 0,0:21:43.30,0:21:51.17,OPED,,0,0,0,,照亮君之一隅\N{\K792\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}照らし出す 君、ヒトヒラ
+Dialogue: 0,0:22:03.30,0:22:08.40,OPED,,0,0,0,,一切虽仍如旧\N{\K553\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}何ひとつ変わらない
+Dialogue: 0,0:22:09.38,0:22:14.69,OPED,,0,0,0,,单调的每一天\N{\K525\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}モノトーン色の日々
+Dialogue: 0,0:22:15.62,0:22:20.69,OPED,,0,0,0,,命运间 邂逅终至\N{\K479\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}運命が連れてきた
+Dialogue: 0,0:22:21.69,0:22:27.06,OPED,,0,0,0,,君之瞳 拨动妾心\N{\K511\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}君の瞳に恋をした
+Dialogue: 0,0:22:28.63,0:22:33.02,OPED,,0,0,0,,只想感觉你就在身边\N{\K484\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}近くに感じたいよ
+Dialogue: 0,0:22:34.45,0:22:39.99,OPED,,0,0,0,,温润中五指相扣\N{\K549\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}温かい手にふれて
+Dialogue: 0,0:22:40.23,0:22:45.60,OPED,,0,0,0,,胸臆若直抒\N{\K498\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}まっすぐに言葉にできたら
+Dialogue: 0,0:22:46.32,0:22:51.67,OPED,,0,0,0,,才觉爱之深\N{\K484\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}こんなに愛してる
+Dialogue: 0,0:22:52.13,0:22:57.87,OPED,,0,0,0,,爱慕之心 切莫隐抑\N{\K663\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}隠れないで 恋心よ
+Dialogue: 0,0:22:58.27,0:23:03.65,OPED,,0,0,0,,月色只为照亮君\N{\K565\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}君だけ照らしてるよ
+Dialogue: 0,0:23:04.43,0:23:10.61,OPED,,0,0,0,,恰逢今夜所以说\N{\K628\fnNoto Sans CJK JP\fs39\pos(460,1050)\c&H0001cd&\3c&Hffffff&}今夜ならそう言える
 Dialogue: 0,0:23:33.72,0:23:36.03,DefaultCN-2202,,0,0,0,,把舰队交给那个男人？
 Dialogue: 0,0:23:36.34,0:23:38.91,DefaultCN-2202,,0,0,0,,是……这是大帝亲自下达的敕令
 Dialogue: 0,0:23:39.69,0:23:40.48,DefaultCN-2202,,0,0,0,,这又是为何？

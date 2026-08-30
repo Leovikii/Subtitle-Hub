@@ -24,13 +24,13 @@ YCbCr Matrix: TV.709
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -76,7 +76,7 @@ Dialogue: 0,0:06:55.38,0:06:58.48,DefaultCN-2202,,0,0,0,,从地狱外面把救�
 Dialogue: 0,0:07:00.04,0:07:01.60,DefaultCN-2202,,0,0,0,,这个任务只有你能完成
 Dialogue: 0,0:07:11.26,0:07:12.74,DefaultCN-2202,,0,0,0,,这算是你欠我的了 队长
 Dialogue: 0,0:07:35.44,0:07:36.02,DefaultCN-2202,,0,0,0,,我……
-Dialogue: 0,0:07:47.64,0:07:48.24,DefaultCN-2202,,0,0,0,,我……
+Dialogue: 0,0:07:47.64,0:07:48.24,DefaultCN-2202,,0,0,0,,啊啊啊！我……
 Dialogue: 0,0:07:57.06,0:08:01.02,DefaultCN-2202,,0,0,0,,去吧！永仓！
 Dialogue: 0,0:08:12.98,0:08:15.78,DefaultCN-2202,,0,0,0,,我……不是在逃避！
 Dialogue: 0,0:08:18.82,0:08:24.06,DefaultCN-2202,,0,0,0,,我会带着救援的飞船……一定会……
@@ -225,16 +225,16 @@ Dialogue: 0,0:22:06.54,0:22:07.44,DefaultCN-2202,,0,0,0,,什么？
 Dialogue: 0,0:22:20.80,0:22:22.48,DefaultCN-2202,,0,0,0,,大……大和号被！
 Dialogue: 0,0:22:34.19,0:22:44.66,DefaultCN-2202,,0,0,0,,{\fs50\an7\pos(1265,30)}第六话
 Dialogue: 0,0:22:34.19,0:22:44.66,DefaultCN-2202,,0,0,0,,{\fs70\an7\pos(1265,90)}死斗！第十一行星
-Dialogue: 0,0:22:53.40,0:22:57.82,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1400,40)}月の鏡
-Dialogue: 0,0:22:53.40,0:22:57.82,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
-Dialogue: 0,0:22:53.40,0:23:05.00,OPED,,0,0,0,,酣嬉间 荡漾粼粼月之镜\N{\K1150\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}戯れる 揺らぐ 月の鏡
-Dialogue: 0,0:23:05.58,0:23:17.00,OPED,,0,0,0,,心溶醉 天意灵怪仍优美\N{\K1162\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}心溶かす 優美な 神の悪戯
-Dialogue: 0,0:23:17.00,0:23:28.46,OPED,,0,0,0,,云烟思忆 深藏若虚\N{\K1135\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}内に秘めた 淡い思い出に
-Dialogue: 0,0:23:28.46,0:23:40.94,OPED,,0,0,0,,吐息徐入 满萦于腔\N{\K1243\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}息を吹き込むの 満ちてゆくまで
-Dialogue: 0,0:23:40.94,0:23:52.72,OPED,,0,0,0,,顿挫不竭 原是君心怦然\N{\K1173\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}響く あなたの胸の鼓動を
-Dialogue: 0,0:23:52.72,0:24:02.88,OPED,,0,0,0,,比翼齐飞者 今亦终有妾\N{\K1029\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}私ひとりじゃない
-Dialogue: 0,0:24:03.14,0:24:14.78,OPED,,0,0,0,,月朗星稀 望天默祈\N{\K1188\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}冴え渡る 空に祈り
-Dialogue: 0,0:24:15.54,0:24:38.80,OPED,,0,0,0,,日月复荏苒 万物还更新\N{\K2374\fn Yu Gothic UI\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}新しい一日の 幕が開けてゆく
+Dialogue: 0,0:22:53.40,0:22:57.82,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs60\an7\pos(1400,40)}月の鏡
+Dialogue: 0,0:22:53.40,0:22:57.82,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
+Dialogue: 0,0:22:53.40,0:23:05.00,OPED,,0,0,0,,酣嬉间 荡漾粼粼月之镜\N{\K1150\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}戯れる 揺らぐ 月の鏡
+Dialogue: 0,0:23:05.58,0:23:17.00,OPED,,0,0,0,,心溶醉 天意灵怪仍优美\N{\K1162\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}心溶かす 優美な 神の悪戯
+Dialogue: 0,0:23:17.00,0:23:28.46,OPED,,0,0,0,,云烟思忆 深藏若虚\N{\K1135\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}内に秘めた 淡い思い出に
+Dialogue: 0,0:23:28.46,0:23:40.94,OPED,,0,0,0,,吐息徐入 满萦于腔\N{\K1243\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}息を吹き込むの 満ちてゆくまで
+Dialogue: 0,0:23:40.94,0:23:52.72,OPED,,0,0,0,,顿挫不竭 原是君心怦然\N{\K1173\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}響く あなたの胸の鼓動を
+Dialogue: 0,0:23:52.72,0:24:02.88,OPED,,0,0,0,,比翼齐飞者 今亦终有妾\N{\K1029\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}私ひとりじゃない
+Dialogue: 0,0:24:03.14,0:24:14.78,OPED,,0,0,0,,月朗星稀 望天默祈\N{\K1188\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}冴え渡る 空に祈り
+Dialogue: 0,0:24:15.54,0:24:38.80,OPED,,0,0,0,,日月复荏苒 万物还更新\N{\K2374\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}新しい一日の 幕が開けてゆく
 Dialogue: 0,0:24:55.70,0:24:56.74,DefaultCN-2202,,0,0,0,,这个数量是怎么回事？
 Dialogue: 0,0:24:56.74,0:24:58.74,DefaultCN-2202,,0,0,0,,敌舰总数 突破一万五千！
 Dialogue: 0,0:24:58.74,0:25:00.38,DefaultCN-2202,,0,0,0,,那个形状……难道是？

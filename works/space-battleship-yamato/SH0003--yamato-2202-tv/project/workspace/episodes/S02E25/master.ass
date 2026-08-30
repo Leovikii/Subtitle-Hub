@@ -25,25 +25,25 @@ Active Line: 9
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:22.61,0:00:25.88,OPED,,0,0,0,,再见了 地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
-Dialogue: 0,0:00:26.23,0:00:29.33,OPED,,0,0,0,,告别了心爱之人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
-Dialogue: 0,0:00:29.33,0:00:37.93,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
-Dialogue: 0,0:00:38.23,0:00:41.53,OPED,,0,0,0,,肩负使命 拯救地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
-Dialogue: 0,0:00:41.62,0:00:45.88,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
-Dialogue: 0,0:00:46.22,0:00:52.53,OPED,,0,0,0,,挺身而出需有人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
-Dialogue: 0,0:00:52.88,0:01:00.98,OPED,,0,0,0,,期待之人若吾辈\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
-Dialogue: 0,0:01:01.72,0:01:08.32,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
-Dialogue: 0,0:01:08.32,0:01:15.34,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:22.61,0:00:25.88,OPED,,0,0,0,,再见了 地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
+Dialogue: 0,0:00:26.23,0:00:29.33,OPED,,0,0,0,,告别了心爱之人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
+Dialogue: 0,0:00:29.33,0:00:37.93,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:38.23,0:00:41.53,OPED,,0,0,0,,肩负使命 拯救地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
+Dialogue: 0,0:00:41.62,0:00:45.88,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
+Dialogue: 0,0:00:46.22,0:00:52.53,OPED,,0,0,0,,挺身而出需有人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
+Dialogue: 0,0:00:52.88,0:01:00.98,OPED,,0,0,0,,期待之人若吾辈\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
+Dialogue: 0,0:01:01.72,0:01:08.32,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
+Dialogue: 0,0:01:08.32,0:01:15.34,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
 Dialogue: 0,0:01:41.31,0:01:44.88,DefaultCN-2202,,0,0,0,,一旦遭到破坏 哥雷姆就将启动
 Dialogue: 0,0:01:46.75,0:01:51.41,DefaultCN-2202,,0,0,0,,令所有人造细胞死亡之物
 Dialogue: 0,0:01:53.36,0:01:55.14,DefaultCN-2202,,0,0,0,,不论身处宇宙何处……
@@ -202,15 +202,15 @@ Dialogue: 0,0:21:21.33,0:21:24.61,DefaultCN-2202,,0,0,0,,我也是“大之和�
 Dialogue: 0,0:21:25.59,0:21:31.65,DefaultCN-2202,,0,0,0,,为了前往能够延续生命的未来 让我们合而为一吧
 Dialogue: 0,0:22:40.33,0:22:45.68,Title,,0,0,0,,{\bord1\fs50\an7\pos(1150,40)}第二十五话
 Dialogue: 0,0:22:40.33,0:22:45.68,Title,,0,0,0,,{\bord1\fs70\an7\pos(1150,100)}再见了 宇宙战舰大和号
-Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}大いなる和
-Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 山寺宏一
-Dialogue: 0,0:22:59.08,0:23:18.63,OPED,,0,0,0,,天空中流淌着的绵绵云朵\N{\K1349\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}空たかく流れる きえゆく綿の雲
-Dialogue: 0,0:23:18.63,0:23:31.39,OPED,,0,0,0,,双手扬起那舒展的落叶\N{\K1375\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}両手をあげ ああ背伸びした落葉
-Dialogue: 0,0:23:38.66,0:23:51.69,OPED,,0,0,0,,窗户微微亮着 我想见到那个微笑的人\N{\K1259\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}あかり灯る窓 笑いあう人に 会いたいと思う
-Dialogue: 0,0:23:51.69,0:24:05.82,OPED,,0,0,0,,应该会如此实现 为奇迹邂逅呐喊的爱\N{\K1349\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そう叶うはずさ 奇跡の出会いに 愛叫んだ
-Dialogue: 0,0:24:09.80,0:24:25.78,OPED,,0,0,0,,交织着辉煌的人生旅程\N{\K1560\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}輝く人生の巡り合わせ 紡いでゆく
-Dialogue: 0,0:24:25.78,0:24:41.81,OPED,,0,0,0,,在我们的人生中坚持不懈地继续前进吧\N{\K1530\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}僕らの人生を たゆまずに進み続けよう
-Dialogue: 0,0:24:41.81,0:25:02.43,OPED,,0,0,0,,起笔我们的人生之书吧\N{\K2150\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}僕らの人生の物語を さあ始めよう
+Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs60\an7\pos(1250,40)}大いなる和
+Dialogue: 0,0:22:53.38,0:22:59.08,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 山寺宏一
+Dialogue: 0,0:22:59.08,0:23:18.63,OPED,,0,0,0,,天空中流淌着的绵绵云朵\N{\K1349\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}空たかく流れる きえゆく綿の雲
+Dialogue: 0,0:23:18.63,0:23:31.39,OPED,,0,0,0,,双手扬起那舒展的落叶\N{\K1375\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}両手をあげ ああ背伸びした落葉
+Dialogue: 0,0:23:38.66,0:23:51.69,OPED,,0,0,0,,窗户微微亮着 我想见到那个微笑的人\N{\K1259\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}あかり灯る窓 笑いあう人に 会いたいと思う
+Dialogue: 0,0:23:51.69,0:24:05.82,OPED,,0,0,0,,应该会如此实现 为奇迹邂逅呐喊的爱\N{\K1349\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そう叶うはずさ 奇跡の出会いに 愛叫んだ
+Dialogue: 0,0:24:09.80,0:24:25.78,OPED,,0,0,0,,交织着辉煌的人生旅程\N{\K1560\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}輝く人生の巡り合わせ 紡いでゆく
+Dialogue: 0,0:24:25.78,0:24:41.81,OPED,,0,0,0,,在我们的人生中坚持不懈地继续前进吧\N{\K1530\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}僕らの人生を たゆまずに進み続けよう
+Dialogue: 0,0:24:41.81,0:25:02.43,OPED,,0,0,0,,起笔我们的人生之书吧\N{\K2150\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}僕らの人生の物語を さあ始めよう
 Dialogue: 0,0:25:33.53,0:25:35.29,DefaultCN-2202,,0,0,0,,我还是扣下了扳机
 Dialogue: 0,0:25:35.29,0:25:36.02,DefaultCN-2202,,0,0,0,,古代君！
 Dialogue: 0,0:25:36.03,0:25:37.14,DefaultCN-2202,,0,0,0,,这可真是乱七八糟

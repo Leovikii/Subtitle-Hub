@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -214,8 +214,8 @@ Dialogue: 0,0:18:55.74,0:18:57.55,DefaultCN-2202,,0,0,0,,我们回去吧 雪
 Dialogue: 0,0:19:09.26,0:19:12.44,DefaultCN-2202,,0,0,0,,行星 只是存在于那里
 Dialogue: 0,0:19:13.51,0:19:18.15,DefaultCN-2202,,0,0,0,,只有人类 才能赋予其存在以意义
 Dialogue: 0,0:19:19.62,0:19:22.58,DefaultCN-2202,,0,0,0,,怀着一颗能感受美的心灵
-Dialogue: 0,0:19:50.53,0:20:03.36,OPED,,0,0,0,,{\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
-Dialogue: 0,0:19:50.53,0:20:03.36,OPED,,0,0,0,,{\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
+Dialogue: 0,0:19:50.53,0:20:03.36,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
+Dialogue: 0,0:19:50.53,0:20:03.36,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
 Dialogue: 0,0:20:17.36,0:20:23.27,OPED,,0,0,0,,那个人的温柔\N{\K591\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(1450,1050)}その人の優しさが
 Dialogue: 0,0:20:24.36,0:20:29.79,OPED,,0,0,0,,如果能胜过百花的话\N{\K543\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(1450,1050)}花に勝るなら
 Dialogue: 0,0:20:31.20,0:20:37.13,OPED,,0,0,0,,那个人的美丽\N{\K593\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(1450,1050)}その人の美しさが

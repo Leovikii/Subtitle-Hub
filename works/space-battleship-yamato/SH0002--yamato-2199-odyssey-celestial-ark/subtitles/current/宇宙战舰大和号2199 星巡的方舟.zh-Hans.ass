@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -1738,7 +1738,7 @@ Dialogue: 10,1:03:37.97,1:03:39.17,CN-Top,,0,0,0,,立即撤离！
 Dialogue: 11,1:03:37.97,1:03:39.17,JP-Top,,0,0,0,,退避 急げ！
 Dialogue: 10,1:03:39.21,1:03:41.07,CN-Top,,0,0,0,,即将封锁第五区！
 Dialogue: 11,1:03:39.21,1:03:41.07,JP-Top,,0,0,0,,これより 第５区画を封鎖する
-Dialogue: 10,1:03:43.71,1:03:44.58,CN-Main,,0,0,0,,梅里亚！
+Dialogue: 10,1:03:43.71,1:03:44.58,CN-Main,,0,0,0,,呃……梅里亚！
 Dialogue: 11,1:03:43.71,1:03:44.58,JP-Main,,0,0,0,,うっ… メリア！
 Dialogue: 10,1:03:52.12,1:03:52.94,CN-Main,,0,0,0,,梅里亚！
 Dialogue: 11,1:03:52.12,1:03:52.94,JP-Main,,0,0,0,,メリア！

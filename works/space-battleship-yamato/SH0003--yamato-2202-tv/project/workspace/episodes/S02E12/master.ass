@@ -25,25 +25,25 @@ Active Line: 9
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H0038C0CC,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:22.74,0:00:26.01,OPED,,0,0,0,,再见了 地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
-Dialogue: 0,0:00:26.36,0:00:29.46,OPED,,0,0,0,,告别了心爱之人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
-Dialogue: 0,0:00:29.46,0:00:38.01,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
-Dialogue: 0,0:00:38.36,0:00:41.66,OPED,,0,0,0,,肩负使命 拯救地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
-Dialogue: 0,0:00:41.75,0:00:46.01,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
-Dialogue: 0,0:00:46.35,0:00:52.66,OPED,,0,0,0,,挺身而出需有人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
-Dialogue: 0,0:00:53.01,0:01:01.11,OPED,,0,0,0,,期待之人若吾辈\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
-Dialogue: 0,0:01:01.85,0:01:08.45,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
-Dialogue: 0,0:01:08.45,0:01:15.47,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:22.74,0:00:26.01,OPED,,0,0,0,,再见了 地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
+Dialogue: 0,0:00:26.36,0:00:29.46,OPED,,0,0,0,,告别了心爱之人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
+Dialogue: 0,0:00:29.46,0:00:38.01,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:38.36,0:00:41.66,OPED,,0,0,0,,肩负使命 拯救地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
+Dialogue: 0,0:00:41.75,0:00:46.01,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
+Dialogue: 0,0:00:46.35,0:00:52.66,OPED,,0,0,0,,挺身而出需有人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
+Dialogue: 0,0:00:53.01,0:01:01.11,OPED,,0,0,0,,期待之人若吾辈\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
+Dialogue: 0,0:01:01.85,0:01:08.45,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
+Dialogue: 0,0:01:08.45,0:01:15.47,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
 Dialogue: 0,0:01:58.53,0:01:59.74,DefaultCN-2202,,0,0,0,,萨贝拉
 Dialogue: 0,0:02:00.57,0:02:02.15,DefaultCN-2202,,0,0,0,,白银巫女
 Dialogue: 0,0:02:18.19,0:02:22.51,DefaultCN-2202,,0,0,0,,与吾等加特兰蒂斯人截然不同的独一无二的存在
@@ -77,8 +77,7 @@ Dialogue: 0,0:05:30.66,0:05:33.10,DefaultCN-2202,,0,0,0,,现在还不能确定�
 Dialogue: 0,0:05:34.61,0:05:35.33,DefaultCN-2202,,0,0,0,,证据
 Dialogue: 0,0:05:39.20,0:05:43.80,DefaultCN-2202,,0,0,0,,以当前距离的光学观测分析 结果就是这个
 Dialogue: 0,0:05:47.31,0:05:50.61,DefaultCN-2202,,0,0,0,,这就是……白色彗星
-Dialogue: 0,0:05:51.44,0:05:51.99,DefaultCN-2202,,0,0,0,,啊
-Dialogue: 0,0:05:52.69,0:05:53.24,DefaultCN-2202,,0,0,0,,啊
+Dialogue: 0,0:05:51.44,0:05:51.99,DefaultCN-2202,,0,0,0,,啊……
 Dialogue: 0,0:06:01.11,0:06:05.73,DefaultCN-2202,,0,0,0,,你说德斯拉谋反是大帝早就预料到的么？
 Dialogue: 0,0:06:06.56,0:06:10.22,DefaultCN-2202,,0,0,0,,当然 大帝的耳目早已渗透到了加米拉斯人中
 Dialogue: 0,0:06:10.93,0:06:17.18,DefaultCN-2202,,0,0,0,,他被感情蒙蔽双眼 哪怕牺牲更多本国民众也要击败大和号
@@ -237,29 +236,29 @@ Dialogue: 0,0:22:18.99,0:22:21.73,DefaultCN-2202,,0,0,0,,为了解放特蕾莎�
 Dialogue: 0,0:22:39.49,0:22:44.81,Title,,0,0,0,,{\bord1\fs50\an7\pos(700,40)}第十二话
 Dialogue: 0,0:22:39.49,0:22:44.81,Title,,0,0,0,,{\bord1\fs70\an7\pos(700,100)}令人震惊的白色彗星帝国 大和号强行突破！
 Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1250,40)}CRIMSON RED
-Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
-Dialogue: 0,0:23:02.76,0:23:06.26,OPED,,0,0,0,,断续间 数目相汇\N{\K431\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}途切れゆく眼差しは
-Dialogue: 0,0:23:06.68,0:23:09.83,OPED,,0,0,0,,炯如司南 其勇可证\N{\K388\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}勇者の確かな羅針盤
-Dialogue: 0,0:23:10.06,0:23:12.87,OPED,,0,0,0,,寸约未定\N{\K346\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}約束はないままに
-Dialogue: 0,0:23:12.87,0:23:16.78,OPED,,0,0,0,,尔已开拔\N{\K344\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}奴らも錨を上げ出す
-Dialogue: 0,0:23:16.78,0:23:21.18,OPED,,0,0,0,,天地崩摧之际\N{\K426\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}壊れかけたこの世界は
-Dialogue: 0,0:23:21.18,0:23:25.54,OPED,,0,0,0,,方询助者遵名\N{\K408\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}手を差し伸べる人の名を
-Dialogue: 0,0:23:25.54,0:23:29.85,OPED,,0,0,0,,如灰漠应\N{\K404\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}鉛色の答えが
-Dialogue: 0,0:23:29.95,0:23:33.86,OPED,,0,0,0,,仍静绽于溟溟\N{\K366\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}暗闇こ冷たく突き放す
-Dialogue: 0,0:23:33.86,0:23:39.58,OPED,,0,0,0,,造化生灵 亘古远行\N{\K545\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}命を紡いで永久の旅
-Dialogue: 0,0:23:39.58,0:23:42.26,OPED,,0,0,0,,为抵希翼之邦\N{\K264\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}希望の国へ
-Dialogue: 0,0:23:42.30,0:23:48.78,OPED,,0,0,0,,男儿宿命 唯贯彻正义\N{\K638\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}男の定めに 正義貫き
-Dialogue: 0,0:23:48.78,0:23:54.33,OPED,,0,0,0,,济救未来于囹圄\N{\K545\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}囚われた明日を救うのさ
-Dialogue: 0,0:23:54.33,0:23:58.21,OPED,,0,0,0,,既迎止结\N{\K345\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}終焉に向かえば
-Dialogue: 0,0:23:58.87,0:24:03.25,OPED,,0,0,0,,终止荒诞之境\N{\K391\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつか理不尽な世界が
-Dialogue: 0,0:24:03.25,0:24:07.02,OPED,,0,0,0,,斟绛于杯\N{\K394\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}紅の杯で
-Dialogue: 0,0:24:07.30,0:24:11.01,OPED,,0,0,0,,互识彼此勇\N{\K388\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}果お互いの勇気称えよう
-Dialogue: 0,0:24:13.41,0:24:18.69,OPED,,0,0,0,,豪赌抉择 兴废两途\N{\K521\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}破壊と創造 伝説の賭け
-Dialogue: 0,0:24:19.19,0:24:22.27,OPED,,0,0,0,,尔亦然也\N{\K304\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}奴らも同じさ
-Dialogue: 0,0:24:22.27,0:24:27.44,OPED,,0,0,0,,战端从此 永无止息\N{\K508\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}戦いの火蓋　永久に切られて
-Dialogue: 0,0:24:27.85,0:24:30.69,OPED,,0,0,0,,金石不渝\N{\K280\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}炎の掟
-Dialogue: 0,0:24:30.99,0:24:36.14,OPED,,0,0,0,,辗转间 终登高处独品寒\N{\K507\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}孤独と勝利が　転がり落ちる
-Dialogue: 0,0:24:36.14,0:24:42.91,OPED,,0,0,0,,目醉眩 尽琼宇之际\N{\K666\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}目眩めく 宇宙の果てまで
+Dialogue: 0,0:22:52.41,0:22:58.16,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
+Dialogue: 0,0:23:02.76,0:23:06.26,OPED,,0,0,0,,断续间 数目相汇\N{\K431\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}途切れゆく眼差しは
+Dialogue: 0,0:23:06.68,0:23:09.83,OPED,,0,0,0,,炯如司南 其勇可证\N{\K388\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}勇者の確かな羅針盤
+Dialogue: 0,0:23:10.06,0:23:12.87,OPED,,0,0,0,,寸约未定\N{\K346\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}約束はないままに
+Dialogue: 0,0:23:12.87,0:23:16.78,OPED,,0,0,0,,尔已开拔\N{\K344\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}奴らも錨を上げ出す
+Dialogue: 0,0:23:16.78,0:23:21.18,OPED,,0,0,0,,天地崩摧之际\N{\K426\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}壊れかけたこの世界は
+Dialogue: 0,0:23:21.18,0:23:25.54,OPED,,0,0,0,,方询助者遵名\N{\K408\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}手を差し伸べる人の名を
+Dialogue: 0,0:23:25.54,0:23:29.85,OPED,,0,0,0,,如灰漠应\N{\K404\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}鉛色の答えが
+Dialogue: 0,0:23:29.95,0:23:33.86,OPED,,0,0,0,,仍静绽于溟溟\N{\K366\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}暗闇こ冷たく突き放す
+Dialogue: 0,0:23:33.86,0:23:39.58,OPED,,0,0,0,,造化生灵 亘古远行\N{\K545\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}命を紡いで永久の旅
+Dialogue: 0,0:23:39.58,0:23:42.26,OPED,,0,0,0,,为抵希翼之邦\N{\K264\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}希望の国へ
+Dialogue: 0,0:23:42.30,0:23:48.78,OPED,,0,0,0,,男儿宿命 唯贯彻正义\N{\K638\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}男の定めに 正義貫き
+Dialogue: 0,0:23:48.78,0:23:54.33,OPED,,0,0,0,,济救未来于囹圄\N{\K545\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}囚われた明日を救うのさ
+Dialogue: 0,0:23:54.33,0:23:58.21,OPED,,0,0,0,,既迎止结\N{\K345\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}終焉に向かえば
+Dialogue: 0,0:23:58.87,0:24:03.25,OPED,,0,0,0,,终止荒诞之境\N{\K391\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつか理不尽な世界が
+Dialogue: 0,0:24:03.25,0:24:07.02,OPED,,0,0,0,,斟绛于杯\N{\K394\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}紅の杯で
+Dialogue: 0,0:24:07.30,0:24:11.01,OPED,,0,0,0,,互识彼此勇\N{\K388\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}果お互いの勇気称えよう
+Dialogue: 0,0:24:13.41,0:24:18.69,OPED,,0,0,0,,豪赌抉择 兴废两途\N{\K521\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}破壊と創造 伝説の賭け
+Dialogue: 0,0:24:19.19,0:24:22.27,OPED,,0,0,0,,尔亦然也\N{\K304\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}奴らも同じさ
+Dialogue: 0,0:24:22.27,0:24:27.44,OPED,,0,0,0,,战端从此 永无止息\N{\K508\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}戦いの火蓋　永久に切られて
+Dialogue: 0,0:24:27.85,0:24:30.69,OPED,,0,0,0,,金石不渝\N{\K280\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}炎の掟
+Dialogue: 0,0:24:30.99,0:24:36.14,OPED,,0,0,0,,辗转间 终登高处独品寒\N{\K507\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}孤独と勝利が　転がり落ちる
+Dialogue: 0,0:24:36.14,0:24:42.91,OPED,,0,0,0,,目醉眩 尽琼宇之际\N{\K666\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}目眩めく 宇宙の果てまで
 Dialogue: 0,0:24:57.49,0:25:00.34,DefaultCN-2202,,0,0,0,,你也会走到背叛大和号的哪一天的
 Dialogue: 0,0:25:00.34,0:25:02.39,DefaultCN-2202,,0,0,0,,你们的社会中 难道就没有理想么？
 Dialogue: 0,0:25:02.39,0:25:04.02,DefaultCN-2202,,0,0,0,,狠狠地咬他们一口吧！

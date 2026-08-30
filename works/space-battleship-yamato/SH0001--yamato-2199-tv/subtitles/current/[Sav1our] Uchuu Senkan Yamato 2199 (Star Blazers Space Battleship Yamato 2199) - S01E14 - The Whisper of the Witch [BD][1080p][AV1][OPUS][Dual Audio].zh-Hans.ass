@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -405,9 +405,9 @@ Dialogue: 10,0:14:49.72,0:14:50.18,CN-Main,,0,0,0,,嗯
 Dialogue: 11,0:14:49.72,0:14:50.18,JP-Main,,0,0,0,,うん
 Dialogue: 10,0:14:52.76,0:14:54.40,CN-Main,,0,0,0,,这是以前爸爸给我的
 Dialogue: 11,0:14:52.76,0:14:54.40,JP-Main,,0,0,0,,昔 父さんにもらったものだ
-Dialogue: 10,0:14:58.06,0:14:59.73,CN-Main,,0,0,0,,现在就交给你了
+Dialogue: 10,0:14:58.06,0:14:59.73,CN-Main,,0,0,0,,这个你拿着
 Dialogue: 11,0:14:58.06,0:14:59.73,JP-Main,,0,0,0,,これは お前が持っていろ
-Dialogue: 10,0:15:04.02,0:15:06.85,CN-Main,,0,0,0,,现在就交给你了
+Dialogue: 10,0:15:04.02,0:15:06.85,CN-Main,,0,0,0,,那个你拿着吧
 Dialogue: 11,0:15:04.02,0:15:06.85,JP-Main,,0,0,0,,それは あなたが持っていて
 Dialogue: 10,0:15:09.82,0:15:12.32,CN-Main,,0,0,0,,不可能 怎么会……
 Dialogue: 11,0:15:09.82,0:15:12.32,JP-Main,,0,0,0,,バカな… そんな…

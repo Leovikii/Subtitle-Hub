@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -178,8 +178,7 @@ Dialogue: 0,0:12:42.27,0:12:43.32,DefaultCN-2202,,0,0,0,,开火！
 Dialogue: 0,0:12:56.10,0:13:00.15,DefaultCN-2202,,0,0,0,,引擎内压加速上升中 lasko 级也处于同样状态
 Dialogue: 0,0:13:00.15,0:13:02.48,DefaultCN-2202,,0,0,0,,继续进行射击将非常危险
 Dialogue: 0,0:13:02.48,0:13:03.78,DefaultCN-2202,,0,0,0,,让他们继续射击
-Dialogue: 0,0:13:04.35,0:13:04.90,DefaultCN-2202,,0,0,0,,啊？
-Dialogue: 0,0:13:06.06,0:13:06.61,DefaultCN-2202,,0,0,0,,啊？
+Dialogue: 0,0:13:04.35,0:13:04.90,DefaultCN-2202,,0,0,0,,呃……
 Dialogue: 0,0:13:07.13,0:13:08.26,DefaultCN-2202,,0,0,0,,这可真是了不起啊
 Dialogue: 0,0:13:09.43,0:13:15.26,DefaultCN-2202,,0,0,0,,看来你们的魔法不受距离和空间限制
 Dialogue: 0,0:13:16.58,0:13:18.65,DefaultCN-2202,,0,0,0,,“Cosmo Wave”就是这样的东西
@@ -289,7 +288,7 @@ Dialogue: 0,0:22:27.71,0:22:28.80,DefaultCN-2202,,0,0,0,,德斯拉炮……
 Dialogue: 0,0:22:39.46,0:22:44.78,Title,,0,0,0,,{\bord1\fs50\an7\pos(1330,40)}第十一话
 Dialogue: 0,0:22:39.46,0:22:44.78,Title,,0,0,0,,{\bord1\fs70\an7\pos(1330,100)}德斯拉的挑战！
 Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1250,40)}CRIMSON RED
-Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
+Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
 Dialogue: 0,0:23:02.73,0:23:06.23,OPED,,0,0,0,,断续间 数目相汇\N{\K431\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}途切れゆく眼差しは
 Dialogue: 0,0:23:06.65,0:23:09.80,OPED,,0,0,0,,炯如司南 其勇可证\N{\K388\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}勇者の確かな羅針盤
 Dialogue: 0,0:23:10.03,0:23:12.84,OPED,,0,0,0,,寸约未定\N{\K346\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}約束はないままに

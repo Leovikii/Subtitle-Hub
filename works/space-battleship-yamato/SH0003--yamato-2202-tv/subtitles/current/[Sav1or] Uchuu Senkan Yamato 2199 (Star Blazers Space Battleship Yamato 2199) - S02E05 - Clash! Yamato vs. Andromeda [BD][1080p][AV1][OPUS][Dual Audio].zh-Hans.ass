@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -241,8 +241,8 @@ Dialogue: 0,0:21:50.48,0:21:55.12,DefaultCN-2202,,0,0,0,,翼 这就是大和号�
 Dialogue: 0,0:21:56.66,0:21:59.46,DefaultCN-2202,,0,0,0,,真想让你也见识一下啊
 Dialogue: 0,0:22:38.48,0:22:44.63,Title,,0,0,0,,{\fs50\an7\pos(1265,20)}第五话
 Dialogue: 0,0:22:38.48,0:22:44.63,Title,,0,0,0,,{\fs70\an7\pos(1265,80)}激战！大和对仙女座
-Dialogue: 0,0:22:53.60,0:22:58.02,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1400,40)}月の鏡
-Dialogue: 0,0:22:53.60,0:22:58.02,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
+Dialogue: 0,0:22:53.60,0:22:58.02,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs60\an7\pos(1400,40)}月の鏡
+Dialogue: 0,0:22:53.60,0:22:58.02,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
 Dialogue: 0,0:22:53.60,0:23:05.20,OPED,,0,0,0,,酣嬉间 荡漾粼粼月之镜\N{\K1150\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}戯れる 揺らぐ 月の鏡
 Dialogue: 0,0:23:05.78,0:23:17.20,OPED,,0,0,0,,心溶醉 天意灵怪仍优美\N{\K1162\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}心溶かす 優美な 神の悪戯
 Dialogue: 0,0:23:17.20,0:23:28.66,OPED,,0,0,0,,云烟思忆 深藏若虚\N{\K1135\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}内に秘めた 淡い思い出に

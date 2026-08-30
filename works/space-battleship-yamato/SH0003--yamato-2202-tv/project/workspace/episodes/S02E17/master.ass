@@ -25,25 +25,25 @@ Active Line: 9
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: DefaultJP,Yu Gothic UI,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
-Style: Title,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
-Style: OPED,Microsoft YaHei UI,50,&H00FFFFFF,&H000E0E59,&H00558505,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
-Style: DefaultCN-2202,Microsoft YaHei UI,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
-Style: JapaneseAux,Yu Gothic UI,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
-Style: ScreenTextCN,Microsoft YaHei UI,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
-Style: TranslatorNote,Microsoft YaHei UI,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
+Style: DefaultJP,Noto Sans CJK JP,18,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,5,5,10,1
+Style: Title,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,25,1
+Style: OPED,Noto Sans CJK SC,50,&H00FFFFFF,&H000E0E59,&H00558505,&H00000000,-1,0,0,0,100,100,0,0,1,1,0,2,15,15,20,1
+Style: DefaultCN-2202,Noto Sans CJK SC,54,&H00E3EBF3,&H0095B5CA,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.4,0.8,2,80,80,76,1
+Style: JapaneseAux,Noto Sans CJK JP,33,&H00AEBCCA,&H0095B5CA,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.8,0.6,2,80,80,22,1
+Style: ScreenTextCN,Noto Sans CJK SC,40,&H00FFFFFF,&H000000FF,&H001B1D1F,&H391B1D1F,-1,0,0,0,100,100,0,0,1,2.2,0.6,2,40,40,20,1
+Style: TranslatorNote,Noto Sans CJK SC,28,&H00E3EBF3,&H000000FF,&H001B1D1F,&H391B1D1F,0,0,0,0,100,100,0,0,1,1.6,0.4,7,48,48,32,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:22.71,0:00:25.98,OPED,,0,0,0,,再见了 地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
-Dialogue: 0,0:00:26.33,0:00:29.43,OPED,,0,0,0,,告别了心爱之人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
-Dialogue: 0,0:00:29.43,0:00:37.98,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
-Dialogue: 0,0:00:38.33,0:00:41.63,OPED,,0,0,0,,肩负使命 拯救地球\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
-Dialogue: 0,0:00:41.72,0:00:45.98,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
-Dialogue: 0,0:00:46.32,0:00:52.63,OPED,,0,0,0,,挺身而出需有人\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
-Dialogue: 0,0:00:52.98,0:01:01.08,OPED,,0,0,0,,期待之人若吾辈\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
-Dialogue: 0,0:01:01.82,0:01:08.42,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
-Dialogue: 0,0:01:08.42,0:01:15.44,OPED,,0,0,0,,宇宙战舰大和号\N{\fn Yu Gothic UI\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:22.71,0:00:25.98,OPED,,0,0,0,,再见了 地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}さらば　地球よ
+Dialogue: 0,0:00:26.33,0:00:29.43,OPED,,0,0,0,,告别了心爱之人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}愛する　人よ
+Dialogue: 0,0:00:29.43,0:00:37.98,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
+Dialogue: 0,0:00:38.33,0:00:41.63,OPED,,0,0,0,,肩负使命 拯救地球\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}地球を救う　使命を帯びて
+Dialogue: 0,0:00:41.72,0:00:45.98,OPED,,0,0,0,,奋战男儿 浪漫燃烧\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}戦う男　もえるロマン
+Dialogue: 0,0:00:46.32,0:00:52.63,OPED,,0,0,0,,挺身而出需有人\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}誰かがこれを　やらねばならぬ
+Dialogue: 0,0:00:52.98,0:01:01.08,OPED,,0,0,0,,期待之人若吾辈\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}期待の人が　俺達ならば
+Dialogue: 0,0:01:01.82,0:01:08.42,OPED,,0,0,0,,离开银河 航向伊斯坎达尔 远道而望\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}銀河をはなれ　イスカンダルへ　はるばるのぞむ
+Dialogue: 0,0:01:08.42,0:01:15.44,OPED,,0,0,0,,宇宙战舰大和号\N{\fnNoto Sans CJK JP\fs50\bord1\c&H0001cd&\3c&Hffffff&}宇宙戦艦ヤマト
 Dialogue: 0,0:01:35.18,0:01:39.88,OPED,,0,0,0,,{\3c&H000000&\fs50\an2\pos(960,120)}地球防卫军总司令部
 Dialogue: 0,0:01:38.87,0:01:42.78,DefaultCN-2202,,0,0,0,,最近这几天 加特兰蒂斯的军事挑衅越来越活跃
 Dialogue: 0,0:01:43.83,0:01:47.53,DefaultCN-2202,,0,0,0,,冥王星 海王星 小行星带……
@@ -91,7 +91,7 @@ Dialogue: 0,0:04:39.86,0:04:40.76,DefaultCN-2202,,0,0,0,,基曼他人呢？
 Dialogue: 0,0:04:41.46,0:04:42.75,DefaultCN-2202,,0,0,0,,他又把自己关到单人牢房里了
 Dialogue: 0,0:04:43.50,0:04:45.21,DefaultCN-2202,,0,0,0,,在那之后 他就主动提出来要……
 Dialogue: 0,0:04:56.31,0:04:59.51,DefaultCN-2202,,0,0,0,,对伤员来说 经历连续跃迁很痛苦吧？
-Dialogue: 0,0:05:01.46,0:05:07.54,DefaultCN-2202,,0,0,0,,伤员经历连续跃迁一定很痛苦吧？
+Dialogue: 0,0:05:01.46,0:05:07.54,DefaultCN-2202,,0,0,0,,明明去医务室就好了 却自己跑到这种地方来……像个傻瓜似的
 Dialogue: 0,0:05:10.27,0:05:12.73,DefaultCN-2202,,0,0,0,,因为我是一个背叛者啊
 Dialogue: 0,0:05:14.34,0:05:17.17,DefaultCN-2202,,0,0,0,,你背叛的人 难道不是德斯拉么？
 Dialogue: 0,0:05:18.50,0:05:19.97,DefaultCN-2202,,0,0,0,,为什么你最后没有和他一起走？
@@ -254,17 +254,17 @@ Dialogue: 0,0:21:59.22,0:22:01.53,DefaultCN-2202,,0,0,0,,马上准备发射“�
 Dialogue: 0,0:22:36.44,0:22:40.79,DefaultCN-2202,,0,0,0,,欢迎来到地狱
 Dialogue: 0,0:22:43.18,0:22:45.92,Title,,0,0,0,,{\bord1\fs50\an7\pos(1050,40)}第十七话
 Dialogue: 0,0:22:43.18,0:22:45.92,Title,,0,0,0,,{\bord1\fs70\an7\pos(1050,100)}土星外海战 波动炮舰队集结！
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs60\an7\pos(1250,40)}ようらんか
-Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
-Dialogue: 0,0:22:53.67,0:23:04.80,OPED,,0,0,0,,安静地睡吧 你的吐息宛如幼时\N{\K1171\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そつとやすみなさい 幼子のような吐息
-Dialogue: 0,0:23:06.86,0:23:19.29,OPED,,0,0,0,,我会一直陪伴在旁 合上双眼吧\N{\K1309\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつまでも 傍に居るから瞼閉じて
-Dialogue: 0,0:23:19.32,0:23:31.80,OPED,,0,0,0,,如阳光融化冰雪一般温柔\N{\K1313\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}陽だまりの溶けるような優しさで
-Dialogue: 0,0:23:31.80,0:23:45.40,OPED,,0,0,0,,包围着你 这就是产生幸福的力量\N{\K1368\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}包み込むよ 幸せ生み出す力
-Dialogue: 0,0:23:45.96,0:23:59.27,OPED,,0,0,0,,在轻盈飘荡的睡梦中\N{\K1288\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ゆらり ふらりふわふわ夢の中
-Dialogue: 0,0:23:59.27,0:24:11.96,OPED,,0,0,0,,彼此依靠 思绪奔驰\N{\K1303\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}思い馳せる寄り添いながら
-Dialogue: 0,0:24:13.38,0:24:26.79,OPED,,0,0,0,,暗自祈祷 愿你永葆微笑\N{\K1288\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつでも 笑っていてほしと願う
-Dialogue: 0,0:24:26.78,0:24:39.87,OPED,,0,0,0,,那纯洁的笑颜永不消逝\N{\K1293\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}無垢な笑顔 絶やさぬように
-Dialogue: 0,0:24:40.92,0:24:52.25,OPED,,0,0,0,,唯一臻爱的你哟\N{\K1088\fn Yu Gothic UI\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ひとっしい人よ
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs60\an7\pos(1250,40)}ようらんか
+Dialogue: 0,0:22:50.90,0:22:57.63,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord1\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - ありましの
+Dialogue: 0,0:22:53.67,0:23:04.80,OPED,,0,0,0,,安静地睡吧 你的吐息宛如幼时\N{\K1171\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}そつとやすみなさい 幼子のような吐息
+Dialogue: 0,0:23:06.86,0:23:19.29,OPED,,0,0,0,,我会一直陪伴在旁 合上双眼吧\N{\K1309\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつまでも 傍に居るから瞼閉じて
+Dialogue: 0,0:23:19.32,0:23:31.80,OPED,,0,0,0,,如阳光融化冰雪一般温柔\N{\K1313\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}陽だまりの溶けるような優しさで
+Dialogue: 0,0:23:31.80,0:23:45.40,OPED,,0,0,0,,包围着你 这就是产生幸福的力量\N{\K1368\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}包み込むよ 幸せ生み出す力
+Dialogue: 0,0:23:45.96,0:23:59.27,OPED,,0,0,0,,在轻盈飘荡的睡梦中\N{\K1288\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ゆらり ふらりふわふわ夢の中
+Dialogue: 0,0:23:59.27,0:24:11.96,OPED,,0,0,0,,彼此依靠 思绪奔驰\N{\K1303\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}思い馳せる寄り添いながら
+Dialogue: 0,0:24:13.38,0:24:26.79,OPED,,0,0,0,,暗自祈祷 愿你永葆微笑\N{\K1288\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}いつでも 笑っていてほしと願う
+Dialogue: 0,0:24:26.78,0:24:39.87,OPED,,0,0,0,,那纯洁的笑颜永不消逝\N{\K1293\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}無垢な笑顔 絶やさぬように
+Dialogue: 0,0:24:40.92,0:24:52.25,OPED,,0,0,0,,唯一臻爱的你哟\N{\K1088\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}ひとっしい人よ
 Dialogue: 0,0:25:20.46,0:25:21.69,DefaultCN-2202,,0,0,0,,碾碎他们！
 Dialogue: 0,0:25:22.10,0:25:24.44,DefaultCN-2202,,0,0,0,,歼灭敌加特兰蒂斯据点！
 Dialogue: 0,0:25:24.44,0:25:25.27,DefaultCN-2202,,0,0,0,,那是什么？

@@ -9,18 +9,18 @@ YCbCr Matrix: TV.709
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: CN-Main,Microsoft YaHei UI,62,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.2,0.8,2,70,70,100,1
-Style: JP-Main,Yu Gothic UI,40,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.8,0.6,2,110,110,45,128
-Style: CN-Top,Microsoft YaHei UI,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,8,85,85,65,1
-Style: JP-Top,Yu Gothic UI,39,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,8,110,110,135,128
-Style: CN-Alien,Microsoft YaHei UI,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,2,90,90,170,1
-Style: CN-Science-Note,Microsoft YaHei UI,34,&H00DEE6EA,&H000000FF,&H00151B24,&H78000000,0,0,0,0,100,100,0,0,1,2.0,0.4,7,58,120,58,1
-Style: ED-CN,Microsoft YaHei UI,60,&H00E8EBEA,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.6,1,70,70,110,1
-Style: ED-JP,Yu Gothic UI,42,&H00D9E1EA,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,1,70,70,48,128
-Style: Title,Microsoft YaHei UI,60,&H00FFFFFF,&H000000FF,&H64000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,1,10,10,10,1
-Style: OP-JP,Yu Gothic UI,50,&H00FFFFFF,&H000000FF,&H000A0A0B,&H1E0A0A0B,-1,0,0,0,95,100,0,0,1,0,4,1,50,30,7,1
-Style: OP-CN,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,1,9,10,50,5,1
-Style: CN-zs,Microsoft YaHei UI,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,-3,0,3,0,1,8,10,10,20,134
+Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.2,0.8,2,70,70,100,1
+Style: JP-Main,Noto Sans CJK JP,40,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.8,0.6,2,110,110,45,128
+Style: CN-Top,Noto Sans CJK SC,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,8,85,85,65,1
+Style: JP-Top,Noto Sans CJK JP,39,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,8,110,110,135,128
+Style: CN-Alien,Noto Sans CJK SC,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,2,90,90,170,1
+Style: CN-Science-Note,Noto Sans CJK SC,34,&H00DEE6EA,&H000000FF,&H00151B24,&H78000000,0,0,0,0,100,100,0,0,1,2.0,0.4,7,58,120,58,1
+Style: ED-CN,Noto Sans CJK SC,60,&H00E8EBEA,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.6,1,70,70,110,1
+Style: ED-JP,Noto Sans CJK JP,42,&H00D9E1EA,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,1,70,70,48,128
+Style: Title,Noto Sans CJK SC,60,&H00FFFFFF,&H000000FF,&H64000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,1,10,10,10,1
+Style: OP-JP,Noto Sans CJK JP,50,&H00FFFFFF,&H000000FF,&H000A0A0B,&H1E0A0A0B,-1,0,0,0,95,100,0,0,1,0,4,1,50,30,7,1
+Style: OP-CN,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,1,9,10,50,5,1
+Style: CN-zs,Noto Sans CJK SC,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,-3,0,3,0,1,8,10,10,20,134
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -461,8 +461,8 @@ Dialogue: 10,0:15:32.64,0:15:34.30,CN-Main,,0,0,0,,虽然不想这么想啊
 Dialogue: 11,0:15:32.64,0:15:34.30,JP-Main,,0,0,0,,考えたくないけどな
 Dialogue: 10,0:15:34.30,0:15:35.77,CN-Main,,0,0,0,,喂 快看
 Dialogue: 11,0:15:34.30,0:15:35.77,JP-Main,,0,0,0,,なあ おい… 見ろよ
-Dialogue: 0,0:15:36.60,0:15:38.52,CN-zs,,0,0,0,,{\fnMicrosoft YaHei UI\fs55\c&H000000&\4c&H1E150E&\pos(752,661)}-{\pos(701,666)\c&HFFFFFF&}到达大麦哲伦云纪念{\c&HC99AC2&}\h\h❤{\c&H000000&}.
-Dialogue: 0,0:15:36.60,0:15:38.52,CN-zs,,0,0,0,,{\fnMicrosoft YaHei UI\fs70\c&HB891AA&\4c&H4D4234&\pos(778,152)\b1}麦泽伦{\c&H75ADAD&}芭菲
+Dialogue: 0,0:15:36.60,0:15:38.52,CN-zs,,0,0,0,,{\fnNoto Sans CJK SC\fs55\c&H000000&\4c&H1E150E&\pos(752,661)}-{\pos(701,666)\c&HFFFFFF&}到达大麦哲伦云纪念{\c&HC99AC2&}\h\h❤{\c&H000000&}.
+Dialogue: 0,0:15:36.60,0:15:38.52,CN-zs,,0,0,0,,{\fnNoto Sans CJK SC\fs70\c&HB891AA&\4c&H4D4234&\pos(778,152)\b1}麦泽伦{\c&H75ADAD&}芭菲
 Dialogue: 10,0:15:37.28,0:15:41.44,CN-Main,,0,0,0,,是吗……老头子的情况这么糟糕吗
 Dialogue: 11,0:15:37.28,0:15:41.44,JP-Main,,0,0,0,,そうか… オヤジの具合 そんなに悪いのか
 Dialogue: 10,0:15:42.15,0:15:44.89,CN-Main,,0,0,0,,不行不行不行！我有保密义务
@@ -629,9 +629,9 @@ Dialogue: 10,0:20:21.88,0:20:23.65,CN-Main,,0,0,0,,重复一遍：全员进入�
 Dialogue: 11,0:20:21.88,0:20:23.65,JP-Main,,0,0,0,,繰り返す 総員 第一種戦闘配置
 Dialogue: 10,0:20:37.94,0:20:39.08,CN-Main,,0,0,0,,引擎全开
 Dialogue: 11,0:20:37.94,0:20:39.08,JP-Main,,0,0,0,,機関最大
-Dialogue: 10,0:20:48.95,0:20:49.99,CN-Main,,0,0,0,,开始跃迁！
+Dialogue: 10,0:20:48.95,0:20:49.99,CN-Main,,0,0,0,,进入跃迁！
 Dialogue: 11,0:20:48.95,0:20:49.99,JP-Main,,0,0,0,,ワープに入れ！
-Dialogue: 10,0:20:50.87,0:20:52.00,CN-Main,,0,0,0,,开始跃迁！
+Dialogue: 10,0:20:50.87,0:20:52.00,CN-Main,,0,0,0,,进入跃迁
 Dialogue: 11,0:20:50.87,0:20:52.00,JP-Main,,0,0,0,,ワープに入る！
 Dialogue: 10,0:21:12.73,0:21:15.20,CN-Main,,0,0,0,,这是萨勒扎星系第五行星艾琵多拉
 Dialogue: 11,0:21:12.73,0:21:15.20,JP-Main,,0,0,0,,サレザー系第５惑星のエピドラだ

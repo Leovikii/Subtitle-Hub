@@ -9,17 +9,17 @@ YCbCr Matrix: TV.709
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: CN-Main,Microsoft YaHei UI,62,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.2,0.8,2,70,70,100,1
-Style: JP-Main,Yu Gothic UI,40,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.8,0.6,2,110,110,45,128
-Style: CN-Top,Microsoft YaHei UI,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,8,85,85,65,1
-Style: JP-Top,Yu Gothic UI,39,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,8,110,110,135,128
-Style: CN-Alien,Microsoft YaHei UI,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,2,90,90,170,1
-Style: CN-Science-Note,Microsoft YaHei UI,34,&H00DEE6EA,&H000000FF,&H00151B24,&H78000000,0,0,0,0,100,100,0,0,1,2.0,0.4,7,58,120,58,1
-Style: ED-CN,Microsoft YaHei UI,60,&H00E8EBEA,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.6,1,70,70,110,1
-Style: ED-JP,Yu Gothic UI,42,&H00D9E1EA,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,1,70,70,48,128
-Style: Default,Microsoft YaHei UI,20,&H00FFFFFF,&H000000FF,&HFF000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
-Style: op-jp,Yu Gothic UI,50,&H00FFFFFF,&H000000FF,&H14050404,&HFFFFFFFF,0,0,0,0,100,100,0,0,1,2,2,1,30,30,15,1
-Style: op-cn,Microsoft YaHei UI,50,&H00FFFFFF,&H000000FF,&H14000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,9,30,30,20,1
+Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.2,0.8,2,70,70,100,1
+Style: JP-Main,Noto Sans CJK JP,40,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.8,0.6,2,110,110,45,128
+Style: CN-Top,Noto Sans CJK SC,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,8,85,85,65,1
+Style: JP-Top,Noto Sans CJK JP,39,&H00E8EEF5,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,8,110,110,135,128
+Style: CN-Alien,Noto Sans CJK SC,56,&H00FFFFFF,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.7,2,90,90,170,1
+Style: CN-Science-Note,Noto Sans CJK SC,34,&H00DEE6EA,&H000000FF,&H00151B24,&H78000000,0,0,0,0,100,100,0,0,1,2.0,0.4,7,58,120,58,1
+Style: ED-CN,Noto Sans CJK SC,60,&H00E8EBEA,&H000000FF,&H00151B24,&H64000000,-1,0,0,0,100,100,0,0,1,3.0,0.6,1,70,70,110,1
+Style: ED-JP,Noto Sans CJK JP,42,&H00D9E1EA,&H000000FF,&H00151B24,&H64000000,0,0,0,0,100,100,0,0,1,2.6,0.5,1,70,70,48,128
+Style: Default,Noto Sans CJK SC,20,&H00FFFFFF,&H000000FF,&HFF000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+Style: op-jp,Noto Sans CJK JP,50,&H00FFFFFF,&H000000FF,&H14050404,&HFFFFFFFF,0,0,0,0,100,100,0,0,1,2,2,1,30,30,15,1
+Style: op-cn,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H14000000,&HFF000000,0,0,0,0,100,100,0,0,1,2,2,9,30,30,20,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -646,7 +646,7 @@ Dialogue: 12,0:21:33.22,0:21:40.38,ED-CN,,0,0,0,,{\fad(500,300)}无论到何时 
 Dialogue: 13,0:21:33.22,0:21:40.38,ED-JP,,0,0,0,,{\fad(500,300)}ロマンをいつでも うつしたい
 Dialogue: 12,0:21:40.38,0:21:48.66,ED-CN,,0,0,0,,{\fad(500,300)}啦啦啦…
 Dialogue: 13,0:21:40.38,0:21:48.66,ED-JP,,0,0,0,,{\fad(500,300)}ラララ…
-Dialogue: 0,0:21:42.27,0:21:43.52,Default,,0,0,0,,{\fs50\fnMicrosoft YaHei UI\b1\c&HB17746&\frz-12\fry3\frx\pos(1157.34,336.667)}通{\alphaFF}{\t(24,66,\alpha00)\bord0\shad 0}过{\alphaFF}{\t(66,108,\alpha&00)\bord0}日{\alphaFF}{\t(108,150,\alpha&00)\bord0}球{\alphaFF\bord0}{\t(150,191,\alpha&00)\bord0}层{\alphaFF\bord0}{\t(191,233,\alpha&00)}顶
+Dialogue: 0,0:21:42.27,0:21:43.52,Default,,0,0,0,,{\fs50\fnNoto Sans CJK SC\b1\c&HB17746&\frz-12\fry3\frx\pos(1157.34,336.667)}通{\alphaFF}{\t(24,66,\alpha00)\bord0\shad 0}过{\alphaFF}{\t(66,108,\alpha&00)\bord0}日{\alphaFF}{\t(108,150,\alpha&00)\bord0}球{\alphaFF\bord0}{\t(150,191,\alpha&00)\bord0}层{\alphaFF\bord0}{\t(191,233,\alpha&00)}顶
 Dialogue: 12,0:21:48.66,0:21:59.05,ED-CN,,0,0,0,,{\fad(500,300)}啦啦啦 鲜红的围巾
 Dialogue: 13,0:21:48.66,0:21:59.05,ED-JP,,0,0,0,,{\fad(500,300)}ラララ 真赤なスカーフ
 Dialogue: 10,0:21:59.44,0:22:00.90,CN-Main,,0,0,0,,再见了 地球

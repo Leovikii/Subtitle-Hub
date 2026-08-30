@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -631,9 +631,9 @@ Dialogue: 10,0:20:21.88,0:20:23.65,CN-Main,,0,0,0,,重复一遍：全员进入�
 Dialogue: 11,0:20:21.88,0:20:23.65,JP-Main,,0,0,0,,繰り返す 総員 第一種戦闘配置
 Dialogue: 10,0:20:37.94,0:20:39.08,CN-Main,,0,0,0,,引擎全开
 Dialogue: 11,0:20:37.94,0:20:39.08,JP-Main,,0,0,0,,機関最大
-Dialogue: 10,0:20:48.95,0:20:49.99,CN-Main,,0,0,0,,开始跃迁！
+Dialogue: 10,0:20:48.95,0:20:49.99,CN-Main,,0,0,0,,进入跃迁！
 Dialogue: 11,0:20:48.95,0:20:49.99,JP-Main,,0,0,0,,ワープに入れ！
-Dialogue: 10,0:20:50.87,0:20:52.00,CN-Main,,0,0,0,,开始跃迁！
+Dialogue: 10,0:20:50.87,0:20:52.00,CN-Main,,0,0,0,,进入跃迁
 Dialogue: 11,0:20:50.87,0:20:52.00,JP-Main,,0,0,0,,ワープに入る！
 Dialogue: 10,0:21:12.73,0:21:15.20,CN-Main,,0,0,0,,这是萨勒扎星系第五行星艾琵多拉
 Dialogue: 11,0:21:12.73,0:21:15.20,JP-Main,,0,0,0,,サレザー系第５惑星のエピドラだ

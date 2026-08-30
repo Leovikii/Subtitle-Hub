@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -237,7 +237,7 @@ Dialogue: 0,0:22:30.49,0:22:31.40,DefaultCN-2202,,0,0,0,,是！
 Dialogue: 0,0:22:38.58,0:22:44.78,Title,,0,0,0,,{\bord1\fs50\an7\pos(800,40)}第十三话
 Dialogue: 0,0:22:38.58,0:22:44.78,Title,,0,0,0,,{\bord1\fs70\an7\pos(800,100)}特蕾莎特星登陆作战 打击敌导弹舰队！
 Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1250,40)}CRIMSON RED
-Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
+Dialogue: 0,0:22:52.38,0:22:58.13,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1200,100)}作詞·作曲·プロデュース - S.E.N.S. Project\N唄う - 星野裕矢
 Dialogue: 0,0:23:02.73,0:23:06.23,OPED,,0,0,0,,断续间 数目相汇\N{\K431\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}途切れゆく眼差しは
 Dialogue: 0,0:23:06.65,0:23:09.80,OPED,,0,0,0,,炯如司南 其勇可证\N{\K388\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}勇者の確かな羅針盤
 Dialogue: 0,0:23:10.03,0:23:12.84,OPED,,0,0,0,,寸约未定\N{\K346\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(500,1050)}約束はないままに

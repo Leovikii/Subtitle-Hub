@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -276,7 +276,7 @@ Dialogue: 0,0:19:11.26,0:19:14.26,DefaultCN-2202,,0,0,0,,距离波动引擎点�
 Dialogue: 0,0:19:17.34,0:19:18.74,DefaultCN-2202,,0,0,0,,干得漂亮 古代
 Dialogue: 0,0:19:19.58,0:19:20.30,DefaultCN-2202,,0,0,0,,岛！
 Dialogue: 0,0:19:20.58,0:19:21.46,DefaultCN-2202,,0,0,0,,抱歉 我迟到了
-Dialogue: 0,0:19:22.18,0:19:23.26,DefaultCN-2202,,0,0,0,,岛先生！
+Dialogue: 0,0:19:22.18,0:19:23.26,DefaultCN-2202,,0,0,0,,岛先生……
 Dialogue: 0,0:19:23.36,0:19:24.20,DefaultCN-2202,,0,0,0,,岛先生！
 Dialogue: 0,0:19:25.24,0:19:26.60,DefaultCN-2202,,0,0,0,,之后再说
 Dialogue: 0,0:19:30.42,0:19:32.98,DefaultCN-2202,,0,0,0,,10 秒后即将启动飞轮
@@ -305,8 +305,8 @@ Dialogue: 0,0:22:02.61,0:22:04.08,DefaultCN-2202,,0,0,0,,他们已经越过底�
 Dialogue: 0,0:22:04.56,0:22:08.86,DefaultCN-2202,,0,0,0,,即使赌上地球防卫军的威信 我们也要坚决阻止大和号！
 Dialogue: 0,0:22:37.58,0:22:44.87,Title,,0,0,0,,{\fs40\an7\pos(1300,30)}第四话
 Dialogue: 0,0:22:37.58,0:22:44.87,Title,,0,0,0,,{\fs60\an7\pos(1300,90)}朝向未知的启航！
-Dialogue: 0,0:22:53.78,0:23:00.28,OPED,,0,0,0,,{\bord0\fs60\an7\pos(1400,40)}月の鏡
-Dialogue: 0,0:22:53.78,0:23:00.28,OPED,,0,0,0,,{\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
+Dialogue: 0,0:22:53.78,0:23:00.28,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs60\an7\pos(1400,40)}月の鏡
+Dialogue: 0,0:22:53.78,0:23:00.28,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\fs40\an7\pos(1400,100)}作詞&作曲 - S.E.N.S. Project\N唄う - 神田沙也加
 Dialogue: 0,0:22:53.78,0:23:05.80,OPED,,0,0,0,,酣嬉间 荡漾粼粼月之镜\N{\K1150\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}戯れる 揺らぐ 月の鏡
 Dialogue: 0,0:23:05.80,0:23:17.20,OPED,,0,0,0,,心溶醉 天意灵怪仍优美\N{\K1162\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}心溶かす 優美な 神の悪戯
 Dialogue: 0,0:23:17.20,0:23:28.48,OPED,,0,0,0,,云烟思忆 深藏若虚\N{\K1135\fnNoto Sans CJK JP\fs39\pos(1500,1020)\c&H0001cd&\3c&Hffffff&}内に秘めた 淡い思い出に

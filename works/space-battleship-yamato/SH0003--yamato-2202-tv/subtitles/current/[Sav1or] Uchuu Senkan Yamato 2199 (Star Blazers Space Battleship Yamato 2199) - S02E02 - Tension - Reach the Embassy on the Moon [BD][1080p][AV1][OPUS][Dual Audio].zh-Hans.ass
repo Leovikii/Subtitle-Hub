@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.1
+; Subtitle-Hub-Version: 2.0.2
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
@@ -310,8 +310,8 @@ Dialogue: 0,0:22:19.78,0:22:21.91,DefaultCN-2202,,0,0,0,,大帝已经下令！
 Dialogue: 0,0:22:22.51,0:22:25.04,DefaultCN-2202,,0,0,0,,帝星·加特兰蒂斯 全速前进！
 Dialogue: 0,0:22:40.38,0:22:45.13,Title,,0,0,0,,{\fs40\an7\pos(1260,40)}第二话
 Dialogue: 0,0:22:40.38,0:22:45.13,Title,,0,0,0,,{\fs60\an7\pos(1260,100)}紧急！潜入月面大使馆
-Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
-Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
+Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs60\pos(1050,40)}ヤマトより爱をこめて
+Dialogue: 0,0:23:03.60,0:23:12.12,OPED,,0,0,0,,{\fnNoto Sans CJK JP\bord0\an7\fs40\pos(1050,100)}作詞 - 阿久悠 / 作曲 - 大野克夫 / 編曲 - 宮川泰\N唄う - 沢田研二
 Dialogue: 0,0:23:12.12,0:23:16.04,OPED,,0,0,0,Karaoke,那个人的温柔\N{\kf591\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の優しさが
 Dialogue: 0,0:23:16.76,0:23:20.37,OPED,,0,0,0,Karaoke,如果能胜过百花的话\N{\kf543\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}花に勝るなら
 Dialogue: 0,0:23:21.30,0:23:25.24,OPED,,0,0,0,Karaoke,那个人的美丽\N{\kf593\fnNoto Sans CJK JP\fs39\bord1\c&H0001cd&\3c&Hffffff&\pos(450,1050)}その人の美しさが

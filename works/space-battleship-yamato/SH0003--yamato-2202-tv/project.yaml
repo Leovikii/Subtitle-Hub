@@ -1,16 +1,8 @@
-schema_version: 7
+schema_version: 9
 id: SH0003
 project_name: yamato-2202-tv
 type: tv
 episode_count: 26
-status: active
-
-naming:
-  directory: SH0003--yamato-2202-tv
-  approved_by: repository-owner-approved-skill-1.0-migration
-  approved_at: 2026-08-27
-  basis: established-developer-facing-project-name
-
 identity:
   provider: bangumi
   id: "246898"
@@ -35,13 +27,9 @@ task:
   target_language: zh-Hans
   scope: S02E01-S02E26
 
-languages:
-  release:
-    primary: zh-Hans
-    secondary: ja
-    filename_suffix: zh-Hans
-  references:
-    - en
+release_languages:
+  primary: zh-Hans
+  secondary: ja
 
 subtitle_design:
   profile: zh-bilingual
@@ -68,6 +56,7 @@ subtitle_sources:
     path: project/sources/subtitles/ja/official-webrip
     file_count: 26
     scope: S02E01-S02E26
+    evidence: Japanese official CC text and established project source mapping
     roles:
       - source-text-reference
       - secondary-language-release-source
@@ -82,6 +71,7 @@ subtitle_sources:
     path: project/sources/subtitles/en/sav1or-embedded
     file_count: 26
     scope: S02E01-S02E26
+    evidence: English embedded ASS extracted from the declared target release
     roles:
       - timing-reference
       - translation-reference
@@ -97,6 +87,7 @@ subtitle_sources:
     path: project/sources/subtitles/zh-Hans/fansub-baseline
     file_count: 26
     scope: S02E01-S02E26
+    evidence: Simplified Chinese fansub baseline designated by project history
     roles:
       - candidate-baseline
       - style-layout-reference
@@ -142,38 +133,8 @@ video_sources:
       S02E25: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E25 - Farewell, Space Battleship Yamato [BD][1080p][AV1][OPUS][Dual Audio].mkv"
       S02E26: "[Sav1or] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S02E26 - Earth, Yamato Is… [BD][1080p][AV1][OPUS][Dual Audio].mkv"
 
-workspace:
-  baseline: subtitles/current
-  episodes: project/workspace/episodes
-  temporary: project/workspace/temp
-  build: project/workspace/build
-
 initialization:
-  skill_version: "1.0.0"
+  skill_version: "1.4.1"
   state: released-existing
-  intake: migrated-existing-project
-  intake_approved_by: repository-owner-approved-skill-1.0-migration
-  episode_map_approved_by: repository-owner-approved-skill-1.0-migration
-  approved_at: 2026-08-27
-  initialized_at: 2026-08-27
-
-release:
-  version_file: subtitles/current/VERSION
-  current_path: subtitles/current
-  previous_path: subtitles/previous
-  previous_retention: 1
-  previous_rotation: rename-current-directory
-  previous_required_after_first_release: true
-  format: ass
-  filename_pattern: "<video-stem>.zh-Hans.ass"
-  embedded_version_field: Subtitle-Hub-Version
-  review_coverage:
-    machine: v2.0.1-source-metadata-differential-verified
-    human: not-applicable-nonrendering-cleanup
-    basis: 2026-08-26-explicit-metadata-cleanup-instruction
-  package:
-    naming: "bgm<subject-id> - <name_cn> [v<version>].zip"
-    generated_by: .github/scripts/build_subtitle_packages.py
-
-documentation:
-  review: review.md
+  approved_by: user
+  approved_at: "2026-08-30"

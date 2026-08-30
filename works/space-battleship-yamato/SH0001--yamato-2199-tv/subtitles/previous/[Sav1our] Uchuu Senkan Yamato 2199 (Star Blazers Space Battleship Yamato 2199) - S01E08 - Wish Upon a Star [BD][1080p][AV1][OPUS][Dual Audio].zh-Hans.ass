@@ -1,8 +1,9 @@
 [Script Info]
-; Subtitle-Hub-Version: 2.0.0
+; Subtitle-Hub-Version: 2.0.1
 ; Subtitle-Hub-Languages: zh-Hans, ja
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: ja
+; Subtitle-Hub-Source-Credit: 诸神字幕组；日听 电车男 翻译 葉隐；日校 散仙 中校 mam；时间 臭屁匠 压制 娜夏；片源 jsum
 Title: bgm54552 - 宇宙战舰大和号2199 - S01E08
 ScriptType: v4.00+
 WrapStyle: 0
@@ -26,23 +27,6 @@ Style: op-cn,Noto Sans CJK SC,50,&H00FFFFFF,&H000000FF,&H14000000,&HFF000000,0,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 诸神字幕组
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日听 电车男 翻译 葉隐
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 本字幕仅供学习交流，不得用于商业用途，若发生违法等行为，诸神恕不承担一切责任,欢迎访问kamigami.org
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 日校 散仙 中校 mam
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 时间 臭屁匠 压制 娜夏
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 片源 jsum
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 大伽米拉斯帝星
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 宣传情报大臣 米洁拉·赛列史黛拉
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 总统 阿贝鲁特·迪斯拉
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 副总统 雷德夫·希斯
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 军需国防大臣 贝尔提·塔朗
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 中央军总监 海尔姆·泽里克
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 环宇舰队总司令 加尔·迪茨
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 参谋次官 加德尔·塔朗
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 亲卫队长官 海德姆·基姆雷
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 银河方面军司令 格雷姆特·盖尔
-Comment: 0,0:00:00.00,0:00:00.01,CN-Main,Source-Metadata,0,0,0,,[源字幕信息] 对星祈愿
 Dialogue: 0,0:00:14.24,0:00:21.71,op-cn,,0,0,0,,再见了 地球
 Dialogue: 0,0:00:14.24,0:00:21.71,op-jp,,0,0,0,,さらば 地球よ
 Dialogue: 0,0:00:21.71,0:00:28.97,op-cn,,0,0,0,,出航的舰船
