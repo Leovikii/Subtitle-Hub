@@ -43,14 +43,15 @@ project_overrides:
   - id: SH0004-RULE-001
     global_ref: SH-SRC-004
     scope: full project
-    rule: "Japanese audio was the primary meaning authority for the approved baseline; English is an auxiliary translation and Japanese PGS/OCR only image evidence. The current 1.0.2 workset has no local video or audio, so the approved timing is retained without claiming new media review."
-    rationale: "No reliable searchable Japanese script is available, and the previously supplied target video is no longer available."
+    rule: "Japanese audio stream #1 is the primary meaning authority; the embedded English ASS is an auxiliary translation and timing reference; Japanese PGS/OCR is image evidence only. SSH media is read-only and may be used only for concrete candidate points."
+    rationale: "No reliable searchable Japanese source text is available; Japanese PGS/OCR contains transcription risks. The user supplied a password-free SSH video mapping for point verification."
     confirmed_by: user
     confirmed_at: "2026-08-27"
 limitations:
   - "Japanese PGS timing is unreliable and OCR contains character, spacing, line-break, and name errors."
   - "Low-clarity speech, homophones, negation, numbers, names, simultaneous dialogue, screen text, and songs require manual judgment."
-  - "Target video and audio are not currently provided; visual, listening, and media-timing verification are not claimed."
+  - "No reliable searchable Japanese source text is available; English remains auxiliary and cannot prove source fidelity."
+  - "Target video and audio are available read-only through the approved SSH mapping for concrete point checks; no full listening/viewing coverage is claimed."
 
 subtitle_sources:
   - id: zh-Hans-candidate-baseline-01
@@ -307,23 +308,60 @@ subtitle_sources:
       evidence: "container language tag"
 video_sources:
   target-video:
-    medium: not-provided
+    release_group: Sav1our
+    medium: BD
+    timing_reference: true
+    inventory_status: remote-probed
+    access: ssh-read-only
+    host: "10.9.6.2"
+    port: 22
+    user: "Viki"
+    host_key_fingerprint: "SHA256:/2UaP4O8ZNJD+DbiaxNTSKqRey/5u1WfcYbbzHPXrKU"
+    video_codec: av1
+    resolution: "1920x1080"
+    audio:
+      source_language: ja
+      selection_basis: "user-confirmed primary dialogue track; Commentary track excluded"
+      stream_index: 1
+      codec: opus
+    embedded_subtitles:
+      - "English ASS dialogue track: timing and translation reference; stream index varies by episode"
+      - "Japanese PGS dialogue track: image/forced-signs reference only; OCR is not source text"
     files:
       S03E01: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E01 - Galactic War on the Verge of Breaking Out! The Yamato Fleet is Assembled! [BD][1080p][AV1][OPUS].mkv"
       S03E02: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E02 - Yamato, a New Departure! [BD][1080p][AV1][OPUS].mkv"
       S03E03: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E03 - The Last Day of Garmillas [BD][1080p][AV1][OPUS].mkv"
       S03E04: "[Sav1our] Uchuu Senkan Yamato 2199 (Star Blazers Space Battleship Yamato 2199) - S03E04 - Save Iscandar! Rebellion of the Young Heroes! [BD][1080p][AV1][OPUS].mkv"
     timing_authority:
-      S03E01: "approved 1.0.1 timing retained; no local video/audio available"
-      S03E02: "approved 1.0.1 timing retained; no local video/audio available"
-      S03E03: "approved 1.0.1 timing retained; no local video/audio available"
-      S03E04: "approved 1.0.1 timing retained; no local video/audio available"
-    inventory_status: not-provided
-    fingerprints: {}
-    selected_audio: {}
+      S03E01: "embedded English ASS timing reference; 1.1.0 candidate timing retained after approved point review"
+      S03E02: "embedded English ASS timing reference; 1.1.0 candidate timing retained after approved point review"
+      S03E03: "embedded English ASS timing reference; 1.1.0 candidate timing retained after approved point review"
+      S03E04: "embedded English ASS timing reference; 1.1.0 candidate timing retained after approved point review"
+    fingerprints:
+      S03E01:
+        size: 285037217
+        sha256_first_mib: 8ac4cc534fb1faac49d3ae181a17106dac2434087bcd5955b403c1b59120f7d5
+        duration_seconds: 1457.133
+      S03E02:
+        size: 323618711
+        sha256_first_mib: 0497e8888faa5098e8bb1208935631f70a297d5982f7b68916004d614aa7c7b8
+        duration_seconds: 1457.633
+      S03E03:
+        size: 337883529
+        sha256_first_mib: f1585bc34bce70b84a8377ddbf1819546b8b0b2b4df48a558277a3b03e2debed
+        duration_seconds: 1457.133
+      S03E04:
+        size: 262785060
+        sha256_first_mib: 3ba2e464a1626b3818422d85e5edd942a93afb7334e3bb39f9581adeaf772231
+        duration_seconds: 1457.128
+    selected_audio:
+      S03E01: { stream_index: 1, language: ja, codec: opus, title: "primary dialogue" }
+      S03E02: { stream_index: 1, language: ja, codec: opus, title: "primary dialogue" }
+      S03E03: { stream_index: 1, language: ja, codec: opus, title: "primary dialogue" }
+      S03E04: { stream_index: 1, language: ja, codec: opus, title: "primary dialogue" }
 
 initialization:
-  skill_version: "1.3.1"
+  skill_version: "1.4.1"
   state: proofreading-ready
   approved_by: user
   approved_at: "2026-08-27"

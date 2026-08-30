@@ -15,6 +15,7 @@
 | `YAMATO-SRC-SH0002-JA` | 原语字幕 | SH0002 日语正文与 BDSUP OCR | SH0002--yamato-2199-odyssey-celestial-ark/project/sources/subtitles/ja | 2026-08-26 | 核对电影实际出现的日文专名；OCR 只作交叉验证。 |
 | `YAMATO-SRC-SH0003-JA` | 原语字幕 | SH0003 日语官方 WEBrip CC | SH0003--yamato-2202-tv/project/sources/subtitles/ja/official-webrip | 2026-08-26 | 核对 2202 实际出现的日文专名；具体语境仍需结合音轨。 |
 | `YAMATO-SRC-SH0003-BASELINE` | 仓库基线 | SH0003 迁入成品 | SH0003--yamato-2202-tv/subtitles/current | 2026-08-26 | 继承旧工程已经逐项审查并统一的系列译名；迁入发现的冲突仍须在项目统一台账逐事件核对。 |
+| `YAMATO-SRC-SH0004-0005-EN` | 同版辅助英文字幕与用户设定确认 | SH0004/SH0005 2205 英文 ASS | SH0004--yamato-2205-part1/project/sources/subtitles/en；SH0005--yamato-2205-part2/project/sources/subtitles/en | 2026-08-31 | 四处同版英文均写作 `Geshtam`；用户进一步确认日文原词为 `ゲシュタム`，并确认规范简中音译“格什塔姆”。英文只作专名拼写与语境辅助，不提升项目源语证据等级。 |
 
 ## 规范术语
 
@@ -41,6 +42,7 @@
 | `YAMATO-TERM-0019` | 人名 | `ズォーダー` | 佐达 | 兹沃达、佐尔达 | 2202 及同角色 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | 身份称谓可以写作“佐达大帝”。 |
 | `YAMATO-TERM-0020` | 星球 | `テレザート` | 特蕾莎特 | 特雷萨特、特雷莎特 | 2202 及同地点 | `YAMATO-SRC-SH0003-JA` | `confirmed` | 不简化为角色名“特蕾莎”。 |
 | `YAMATO-TERM-0021` | 角色/机器人 | `アナライザー` | 分析士 | 分析器 | 2199 重制系列 | `YAMATO-SRC-SH0003-BASELINE` | `confirmed` | 作为角色名使用，不按普通名词直译。 |
+| `YAMATO-TERM-0022` | 加米拉斯技术体系 | `ゲシュタム` | 格什塔姆 | Geas Tam、盖修塔姆（简中成品） | 2199 重制系列 | `YAMATO-SRC-SH0004-0005-EN` | `confirmed` | 英文规范拼写为 `Geshtam`，`Gesh Tam` 可作检索变体；保留加米拉斯文明专名，不无差别意译为地球侧“波动”术语。可组合为“格什塔姆跃迁”“格什塔姆防御壁”等。 |
 
 ## 待用户确认
 
