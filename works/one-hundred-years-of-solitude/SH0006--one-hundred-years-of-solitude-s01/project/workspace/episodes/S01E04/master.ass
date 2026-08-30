@@ -77,7 +77,7 @@ Dialogue: 10,0:05:30.29,0:05:31.58,CN-Main,,0,0,0,,他不是一个人来的
 Dialogue: 0,0:05:30.29,0:05:31.58,ES-Main,,0,0,0,,No vino solo.
 Dialogue: 10,0:05:32.54,0:05:35.33,CN-Main,,0,0,0,,我们知道他带来了武装士兵
 Dialogue: 0,0:05:32.54,0:05:35.33,ES-Main,,0,0,0,,Sabemos que vino con unos soldados armados.
-Dialogue: 10,0:05:36.79,0:05:38.62,CN-Main,,0,0,0,,还有他的妻子和女儿
+Dialogue: 10,0:05:36.79,0:05:38.62,CN-Main,,0,0,0,,还有他的妻子和女儿们
 Dialogue: 0,0:05:36.79,0:05:38.62,ES-Main,,0,0,0,,Y con su esposa y con sus hijas.
 Dialogue: 10,0:05:40.21,0:05:41.79,CN-Main,,0,0,0,,摩斯科特！
 Dialogue: 0,0:05:40.21,0:05:41.79,ES-Main,,0,0,0,,¡Moscote!
@@ -100,7 +100,7 @@ Dialogue: 10,0:06:11.04,0:06:14.67,CN-Main,,0,0,0,,我们可以让你留在这�
 Dialogue: 0,0:06:11.04,0:06:14.67,ES-Main,,0,0,0,,Pero decidimos dejar que usted se quede en el pueblo si es lo que quiere.
 Dialogue: 10,0:06:15.67,0:06:19.25,CN-Main,,0,0,0,,不是因为怕了这些持枪保护你的无赖
 Dialogue: 0,0:06:15.67,0:06:19.25,ES-Main,,0,0,0,,Y no porque tiene a estos bandoleros con trabuco en la puerta, no.
-Dialogue: 10,0:06:20.62,0:06:23.92,CN-Main,,0,0,0,,而是考虑到你的妻子和女儿
+Dialogue: 10,0:06:20.62,0:06:23.92,CN-Main,,0,0,0,,而是考虑到你的妻子和女儿们
 Dialogue: 0,0:06:20.62,0:06:23.92,ES-Main,,0,0,0,,Sino por consideración con su señora esposa y sus hijas.
 Dialogue: 10,0:06:30.54,0:06:32.50,CN-Main,,0,0,0,,我们只有两个条件
 Dialogue: 0,0:06:30.54,0:06:32.50,ES-Main,,0,0,0,,Solamente tenemos dos condiciones.
@@ -184,7 +184,7 @@ Dialogue: 10,0:10:02.42,0:10:05.17,CN-Main,,0,0,0,,把饼干和面包拿来招�
 Dialogue: 0,0:10:02.42,0:10:05.17,ES-Main,,0,0,0,,Trae por favor mantecadas y galletas para las señoritas.
 Dialogue: 10,0:10:06.00,0:10:06.92,CN-Main,,0,0,0,,谁来了？
 Dialogue: 0,0:10:06.00,0:10:06.92,ES-Main,,0,0,0,,¿Quién es?
-Dialogue: 10,0:10:09.88,0:10:11.62,CN-Main,,0,0,0,,摩斯科特夫人和她的女儿
+Dialogue: 10,0:10:09.88,0:10:11.62,CN-Main,,0,0,0,,摩斯科特夫人和她的女儿们
 Dialogue: 0,0:10:09.88,0:10:11.62,ES-Main,,0,0,0,,La señora Moscote y sus hijas.
 Dialogue: 10,0:10:18.54,0:10:19.71,CN-Main,,0,0,0,,这里是起居室
 Dialogue: 0,0:10:18.54,0:10:19.71,ES-Main,,0,0,0,,Este es el salón.
@@ -204,7 +204,7 @@ Dialogue: 10,0:10:35.00,0:10:37.00,CN-Main,,0,0,0,,带丽奥诺和她的女儿�
 Dialogue: 0,0:10:35.00,0:10:37.00,ES-Main,,0,0,0,,Vamos a mostrarle la casa a doña Leonor y sus hijas.
 Dialogue: 10,0:10:37.08,0:10:37.92,CN-Main,,0,0,0,,-欢迎-谢谢
 Dialogue: 0,0:10:37.08,0:10:37.92,ES-Main,,0,0,0,,Bienvenidas.
-Dialogue: 10,0:10:40.42,0:10:41.50,CN-Main,,0,0,0,,钢琴！
+Dialogue: 10,0:10:40.42,0:10:41.50,CN-Main,,0,0,0,,自动钢琴！
 Dialogue: 0,0:10:40.42,0:10:41.50,ES-Main,,0,0,0,,¡Ay, una pianola!
 Dialogue: 10,0:10:42.00,0:10:43.71,CN-Main,,0,0,0,,对 但已经走音了
 Dialogue: 0,0:10:42.00,0:10:43.71,ES-Main,,0,0,0,,Sí, pero está desafinada.
@@ -228,8 +228,9 @@ Dialogue: 0,0:11:23.21,0:11:24.21,ES-Main,,0,0,0,,Gracias.
 Dialogue: 10,0:11:35.17,0:11:36.92,CN-Main,,0,0,0,,我们的粮仓在那边
 Dialogue: 0,0:11:35.17,0:11:36.92,ES-Main,,0,0,0,,Acá atrás está el granero.
 Dialogue: 10,0:11:40.00,0:11:40.88,CN-Main,,0,0,0,,这个真不错
-Dialogue: 0,0:11:40.00,0:11:40.88,ES-Main,,0,0,0,,Qué lindo. ¿Lo hizo usted?
-Dialogue: 10,0:11:42.17,0:11:42.25,CN-Main,,0,0,0,,是你做的吗？
+Dialogue: 0,0:11:40.00,0:11:40.88,ES-Main,,0,0,0,,Qué lindo.
+Dialogue: 0,0:11:41.38,0:11:42.30,ES-Main,,0,0,0,,¿Lo hizo usted?
+Dialogue: 10,0:11:41.38,0:11:42.30,CN-Main,,0,0,0,,是你做的吗？
 Dialogue: 10,0:11:44.83,0:11:46.71,CN-Main,,0,0,0,,-还有这里…-你喜欢吗？
 Dialogue: 0,0:11:44.83,0:11:46.71,ES-Main,,0,0,0,,¿Te gusta?
 Dialogue: 10,0:11:50.67,0:11:52.71,CN-Main,,0,0,0,,那是何塞·阿尔卡蒂奥的实验室
@@ -370,7 +371,7 @@ Dialogue: 10,0:21:50.75,0:21:52.54,CN-Main,,0,0,0,,是她给他写了信
 Dialogue: 0,0:21:50.75,0:21:52.54,ES-Main,,0,0,0,,Ella se las escribió a él.
 Dialogue: 10,0:21:54.21,0:21:55.62,CN-Main,,0,0,0,,但从来没有寄出去
 Dialogue: 0,0:21:54.21,0:21:55.62,ES-Main,,0,0,0,,Y nunca se las mandó.
-Dialogue: 10,0:21:57.96,0:22:00.96,CN-Main,,0,0,0,,我真后悔当初买了那该死的钢琴
+Dialogue: 10,0:21:57.96,0:22:00.96,CN-Main,,0,0,0,,我真后悔当初买了那该死的自动钢琴
 Dialogue: 0,0:21:57.96,0:22:00.96,ES-Main,,0,0,0,,Maldita sea la hora en que se me ocurrió comprar esa pianola.
 Dialogue: 10,0:22:18.96,0:22:19.88,CN-Main,,0,0,0,,又一家
 Dialogue: 0,0:22:18.96,0:22:19.88,ES-Main,,0,0,0,,Otra más.
@@ -408,7 +409,7 @@ Dialogue: 10,0:23:07.08,0:23:08.17,CN-Main,,0,0,0,,我只是把东西送到
 Dialogue: 0,0:23:07.08,0:23:08.17,ES-Main,,0,0,0,,Yo la entrego.
 Dialogue: 10,0:23:08.71,0:23:10.00,CN-Main,,0,0,0,,用不用是他们的选择
 Dialogue: 0,0:23:08.71,0:23:10.00,ES-Main,,0,0,0,,A nadie obligo.
-Dialogue: 10,0:23:11.21,0:23:12.08,CN-Main,,0,0,0,,晚安
+Dialogue: 10,0:23:11.21,0:23:12.08,CN-Main,,0,0,0,,失陪了
 Dialogue: 0,0:23:11.21,0:23:12.08,ES-Main,,0,0,0,,Con permiso.
 Dialogue: 10,0:23:17.58,0:23:19.42,CN-Main,,0,0,0,,真是倒霉透顶
 Dialogue: 0,0:23:17.58,0:23:19.42,ES-Main,,0,0,0,,Qué desgracia la mía.
@@ -481,8 +482,9 @@ Dialogue: 0,0:25:46.92,0:25:49.42,ES-Main,,0,0,0,,entonces que Rebeca se case co
 Dialogue: 10,0:26:04.33,0:26:08.04,CN-Main,,0,0,0,,在得知那项约定的一瞬间丽贝卡便恢复了活力
 Dialogue: 0,0:26:04.33,0:26:08.04,ES-Main,,0,0,0,,tan pronto se enteró del acuerdo
 Dialogue: 10,0:26:09.50,0:26:11.92,CN-Main,,0,0,0,,她欢欣雀跃地给未婚夫写信
-Dialogue: 0,0:26:09.50,0:26:11.92,ES-Main,,0,0,0,,y escribió a su novio una carta jubilosa que sometió a la aprobación de sus padres.
-Dialogue: 10,0:26:12.00,0:26:13.62,CN-Main,,0,0,0,,说她的婚事但凭父母做主
+Dialogue: 0,0:26:09.50,0:26:11.92,ES-Main,,0,0,0,,y escribió a su novio una carta jubilosa
+Dialogue: 0,0:26:12.00,0:26:13.62,ES-Main,,0,0,0,,que sometió a la aprobación de sus padres.
+Dialogue: 10,0:26:12.00,0:26:13.62,CN-Main,,0,0,0,,并交由父母批准
 Dialogue: 10,0:26:15.92,0:26:19.88,CN-Main,,0,0,0,,阿玛兰妲表面上接受了这个决定
 Dialogue: 0,0:26:15.92,0:26:19.88,ES-Main,,0,0,0,,Amaranta fingió aceptar la decisión.
 Dialogue: 10,0:27:43.08,0:27:46.50,CN-Main,,0,0,0,,奥雷里亚诺你想求娶我的哪一个女儿？
@@ -893,7 +895,7 @@ Dialogue: 0,0:53:46.88,0:53:50.25,ES-Main,,0,0,0,,¡…para ser materia orgánic
 Dialogue: 10,0:53:50.33,0:53:51.62,CN-Main,,0,0,0,,布恩迪亚先生！
 Dialogue: 10,0:53:54.12,0:53:55.12,CN-Main,,0,0,0,,够了！
 Dialogue: 0,0:53:54.12,0:53:55.12,ES-Main,,0,0,0,,¡No más!
-Dialogue: 10,0:54:37.21,0:54:40.54,CN-Main,,0,0,0,,别乱动！
+Dialogue: 10,0:54:37.21,0:54:40.54,CN-Main,,0,0,0,,够了！
 Dialogue: 0,0:54:37.21,0:54:40.54,ES-Main,,0,0,0,,Ya no más. Ya no más. ¡Ya no más!
 Dialogue: 10,0:54:43.04,0:54:45.29,CN-Main,,0,0,0,,勇气
 Dialogue: 0,0:54:43.04,0:54:45.29,ES-Main,,0,0,0,,Valor.

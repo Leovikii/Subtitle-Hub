@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.2
+; Subtitle-Hub-Version: 1.1.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -79,7 +79,7 @@ Dialogue: 0,0:03:19.12,0:03:20.50,ES-Main,,0,0,0,,¿Qué va a pensar? Nada.
 Dialogue: 10,0:03:21.71,0:03:23.08,CN-Main,,0,0,0,,阿尔卡蒂奥还是个孩子
 Dialogue: 10,0:03:23.17,0:03:26.08,CN-Main,,0,0,0,,他那只是在作秀罢了
 Dialogue: 0,0:03:23.17,0:03:26.08,ES-Main,,0,0,0,,Arcadio todavía es un niño, lo que está haciendo es… un espectáculo, nomás.
-Dialogue: 10,0:03:31.88,0:03:34.46,CN-Main,,0,0,0,,不好说呀 神父这可不是让孩子肆意任性的世界
+Dialogue: 10,0:03:31.88,0:03:34.46,CN-Main,,0,0,0,,不好说 神父 他们已经不再是孩子了
 Dialogue: 0,0:03:31.88,0:03:34.46,ES-Main,,0,0,0,,Yo no sé, padre. Ya están dejando de ser niños.
 Dialogue: 10,0:03:34.54,0:03:38.29,CN-Main,,0,0,0,,别听他们的 再说了 他们只是口号喊得响 不会干什么出格的事
 Dialogue: 0,0:03:34.54,0:03:38.29,ES-Main,,0,0,0,,No les hagas caso. Además, perro que ladra no muerde.
@@ -180,7 +180,7 @@ Dialogue: 10,0:08:55.50,0:08:57.54,CN-Main,,0,0,0,,我会带着更多人手回�
 Dialogue: 0,0:08:55.50,0:08:57.54,ES-Main,,0,0,0,,Volveré por usted cuando tenga más hombres.
 Dialogue: 10,0:08:58.25,0:08:59.29,CN-Main,,0,0,0,,我保证！
 Dialogue: 0,0:08:58.25,0:08:59.29,ES-Main,,0,0,0,,¡Le doy mi palabra!
-Dialogue: 10,0:08:59.88,0:09:01.83,CN-Main,,0,0,0,,-奥雷里亚诺！-你等着！
+Dialogue: 10,0:08:59.88,0:09:01.83,CN-Main,,0,0,0,,-奥雷里亚诺！-撑住！
 Dialogue: 0,0:08:59.88,0:09:01.83,ES-Main,,0,0,0,,¡Aureliano! ¡Aguante!
 Dialogue: 10,0:09:09.42,0:09:11.08,CN-Main,,0,0,0,,撤退！
 Dialogue: 0,0:09:09.42,0:09:11.08,ES-Main,,0,0,0,,¡Retirada!
@@ -548,7 +548,7 @@ Dialogue: 10,0:27:16.08,0:27:18.42,CN-Main,,0,0,0,,但我们有支持自己战�
 Dialogue: 0,0:27:16.08,0:27:18.42,ES-Main,,0,0,0,,pero tenemos algo que nos va a ayudar a pelear.
 Dialogue: 10,0:27:19.79,0:27:21.75,CN-Main,,0,0,0,,我们有斗志
 Dialogue: 0,0:27:19.79,0:27:21.75,ES-Main,,0,0,0,,Tenemos espíritu de lucha,
-Dialogue: 10,0:27:22.62,0:27:25.38,CN-Main,,0,0,0,,还有要替他们讨还的滔天血债！
+Dialogue: 10,0:27:22.62,0:27:25.38,CN-Main,,0,0,0,,还欠他们一笔巨大的荣誉债！
 Dialogue: 0,0:27:22.62,0:27:25.38,ES-Main,,0,0,0,,¡y una deuda de honor bien grande con ellos!
 Dialogue: 10,0:27:27.29,0:27:29.79,CN-Main,,0,0,0,,但更重要的是我们要拯救自己的同胞
 Dialogue: 0,0:27:27.29,0:27:29.79,ES-Main,,0,0,0,,Pero es más importante rescatar al pueblo.
@@ -765,8 +765,8 @@ Dialogue: 10,0:39:27.08,0:39:29.42,CN-Main,,0,0,0,,（卡塔利诺酒吧）
 Dialogue: 10,0:39:29.46,0:39:30.38,CN-Main,,0,0,0,,瞄准！
 Dialogue: 10,0:39:30.46,0:39:31.46,CN-Main,,0,0,0,,开火！
 Dialogue: 0,0:39:30.46,0:39:31.46,ES-Main,,0,0,0,,¡Apunten! ¡Fuego!
-Dialogue: 10,0:39:34.00,0:39:34.42,CN-Main,,0,0,0,,预备！
-Dialogue: 0,0:39:34.00,0:39:34.42,ES-Main,,0,0,0,,¡Carguen!
+Dialogue: 10,0:39:33.50,0:39:34.42,CN-Main,,0,0,0,,预备！
+Dialogue: 0,0:39:33.50,0:39:34.42,ES-Main,,0,0,0,,¡Carguen!
 Dialogue: 10,0:39:37.29,0:39:38.12,CN-Main,,0,0,0,,瞄准！
 Dialogue: 0,0:39:37.29,0:39:38.12,ES-Main,,0,0,0,,¡Apunten!
 Dialogue: 10,0:39:38.71,0:39:40.25,CN-Main,,0,0,0,,开火！
@@ -872,7 +872,7 @@ Dialogue: 10,0:43:38.92,0:43:40.04,CN-Main,,0,0,0,,听好了
 Dialogue: 0,0:43:38.92,0:43:40.04,ES-Main,,0,0,0,,Escúchame bien.
 Dialogue: 10,0:43:41.25,0:43:44.38,CN-Main,,0,0,0,,让所有人按自己的意愿粉刷房子
 Dialogue: 0,0:43:41.25,0:43:44.38,ES-Main,,0,0,0,,Todos van a pintar la casa del color que se les dé la gana.
-Dialogue: 10,0:43:48.50,0:43:51.50,CN-Main,,0,0,0,,下回你再想折磨或者杀害任何人…
+Dialogue: 10,0:43:48.50,0:43:51.50,CN-Main,,0,0,0,,下回你再想勒索或者杀害任何人……
 Dialogue: 0,0:43:48.50,0:43:51.50,ES-Main,,0,0,0,,Y la próxima vez que intentes extorsionar o matar a alguien…
 Dialogue: 10,0:43:55.92,0:43:56.92,CN-Main,,0,0,0,,我一定会阻止你
 Dialogue: 0,0:43:55.92,0:43:56.92,ES-Main,,0,0,0,,me vas a encontrar.
@@ -893,7 +893,7 @@ Dialogue: 10,0:46:22.08,0:46:22.96,CN-Main,,0,0,0,,没有 首领
 Dialogue: 0,0:46:22.08,0:46:22.96,ES-Main,,0,0,0,,No, jefe.
 Dialogue: 10,0:46:32.00,0:46:33.04,CN-Main,,0,0,0,,打扰一下 首领
 Dialogue: 0,0:46:32.00,0:46:33.04,ES-Main,,0,0,0,,Permiso, jefe.
-Dialogue: 10,0:46:33.54,0:46:36.12,CN-Main,,0,0,0,,-有一个女人找你-弗兰柯 我没空
+Dialogue: 10,0:46:33.54,0:46:36.12,CN-Main,,0,0,0,,-有一个女人找你-弗兰柯 我谁也不见
 Dialogue: 0,0:46:33.54,0:46:36.12,ES-Main,,0,0,0,,Lo busca una mujer. - Franco, no estoy para nadie.
 Dialogue: 10,0:46:36.62,0:46:37.46,CN-Main,,0,0,0,,好的 首领
 Dialogue: 0,0:46:36.62,0:46:37.46,ES-Main,,0,0,0,,Sí, señor.

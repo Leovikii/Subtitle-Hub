@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.2
+; Subtitle-Hub-Version: 1.1.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -466,7 +466,7 @@ Dialogue: 10,0:27:00.42,0:27:03.58,CN-Main,,0,0,0,,对于我们在战场上的�
 Dialogue: 0,0:27:00.42,0:27:03.58,ES-Main,,0,0,0,,Así nos agradecen por dejar el cuero en el campo de batalla.
 Dialogue: 10,0:27:10.17,0:27:13.62,CN-Main,,0,0,0,,如果自由党要对那些保守党的混蛋卑躬屈膝…
 Dialogue: 0,0:27:10.17,0:27:13.62,ES-Main,,0,0,0,,Si los liberales se le van a arrodillar a los godos hijos de puta…
-Dialogue: 10,0:27:17.67,0:27:19.67,CN-Main,,0,0,0,,那我们就也去声讨他们
+Dialogue: 10,0:27:17.67,0:27:19.67,CN-Main,,0,0,0,,那我们也去对付他们
 Dialogue: 0,0:27:17.67,0:27:19.67,ES-Main,,0,0,0,,pues vamos a ir por ellos también.
 Dialogue: 10,0:27:30.79,0:27:31.79,CN-Main,,0,0,0,,-抱歉打扰了 上校-进来
 Dialogue: 0,0:27:30.79,0:27:31.79,ES-Main,,0,0,0,,Permiso, coronel.
@@ -519,7 +519,7 @@ Dialogue: 10,0:31:03.96,0:31:06.67,CN-Main,,0,0,0,,我们受够了让他人为�
 Dialogue: 0,0:31:03.96,0:31:06.67,ES-Main,,0,0,0,,Estamos mamados de que decidan por nosotros.
 Dialogue: 10,0:31:06.75,0:31:08.67,CN-Main,,0,0,0,,你我都心知肚明 你坚持战斗
 Dialogue: 0,0:31:06.75,0:31:08.67,ES-Main,,0,0,0,,Los dos sabemos que estás peleando
-Dialogue: 10,0:31:08.75,0:31:11.38,CN-Main,,0,0,0,,是为了证明你们党派对你的不公
+Dialogue: 10,0:31:08.75,0:31:11.38,CN-Main,,0,0,0,,是为了让你为你们党派对你做的事讨回公道
 Dialogue: 0,0:31:08.75,0:31:11.38,ES-Main,,0,0,0,,para quitarte el clavo por lo que te hizo tu partido.
 Dialogue: 10,0:31:15.46,0:31:16.46,CN-Main,,0,0,0,,那也是原因之一
 Dialogue: 0,0:31:15.46,0:31:16.46,ES-Main,,0,0,0,,También.
@@ -549,7 +549,7 @@ Dialogue: 10,0:31:59.12,0:32:00.38,CN-Main,,0,0,0,,我保证
 Dialogue: 0,0:31:59.12,0:32:00.38,ES-Main,,0,0,0,,Eso te lo prometo.
 Dialogue: 10,0:32:01.71,0:32:05.00,CN-Main,,0,0,0,,你是我认识的人里最正派的之一 何塞·拉克尔
 Dialogue: 0,0:32:01.71,0:32:05.00,ES-Main,,0,0,0,,Eres una de las personas más decentes que conozco, José Raquel.
-Dialogue: 10,0:32:07.33,0:32:08.71,CN-Main,,0,0,0,,话虽如此…
+Dialogue: 10,0:32:07.33,0:32:08.71,CN-Main,,0,0,0,,但在那之前……
 Dialogue: 0,0:32:07.33,0:32:08.71,ES-Main,,0,0,0,,Pero antes de eso…
 Dialogue: 10,0:32:11.96,0:32:13.46,CN-Main,,0,0,0,,你依然是保守党
 Dialogue: 0,0:32:11.96,0:32:13.46,ES-Main,,0,0,0,,eres un conservador.
@@ -586,7 +586,7 @@ Dialogue: 10,0:33:35.12,0:33:38.21,CN-Main,,0,0,0,,一寸一寸地探索这奇�
 Dialogue: 0,0:33:35.12,0:33:38.21,ES-Main,,0,0,0,,descubriendo palmo a palmo el milagro de su intimidad,
 Dialogue: 10,0:33:39.58,0:33:42.29,CN-Main,,0,0,0,,他感到自己的皮肤在这样的观感下泛起了鸡皮疙瘩
 Dialogue: 0,0:33:39.58,0:33:42.29,ES-Main,,0,0,0,,y sintió que su piel se erizaba en la contemplación.
-Dialogue: 10,0:34:53.00,0:34:54.00,CN-Main,,0,0,0,,晚上好
+Dialogue: 10,0:34:53.00,0:34:54.00,CN-Main,,0,0,0,,下午好
 Dialogue: 0,0:34:53.00,0:34:54.00,ES-Main,,0,0,0,,Buenas tardes.
 Dialogue: 10,0:34:55.33,0:34:57.62,CN-Main,,0,0,0,,乌尔苏拉·伊瓜兰·布恩迪亚夫人？
 Dialogue: 0,0:34:55.33,0:34:57.62,ES-Main,,0,0,0,,¿La señora Úrsula Iguarán de Buendía?

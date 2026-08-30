@@ -40,16 +40,16 @@ subtitle_design:
 project_overrides:
   - id: SH0006-EXCEPTION-001
     scope: target media availability
-    rule: "The screenshot-confirmed MKV basenames are the matched target-video identity and episode map; the video binaries are not copied or locally probed."
-    rationale: "User-approved exception for an oversized source video; the provided official bilingual subtitles are the complete working material."
+    rule: "The screenshot-confirmed MKV basenames are the matched target-video identity and episode map; the video binaries are not copied into the repository and may be read-only probed through the user-approved SSH media source."
+    rationale: "The source videos are oversized for repository inclusion; the user approved bounded read-only SSH access while the official bilingual subtitles remain the working text material."
     confirmed_by: user
     confirmed_at: "2026-08-28"
   - id: SH0006-RULE-001
-    scope: all retained Spanish dialogue
-    rule: "Use the Chinese event start and end times as the sole timing authority; synchronize retained Spanish dialogue to the Chinese event structure."
-    rationale: "User manually confirmed the Chinese subtitle timing."
+    scope: all retained Spanish dialogue after the 1.1.0 Chinese timing audit
+    rule: "Synchronize retained Spanish dialogue to the corrected Chinese event structure; for confirmed Chinese timing anomalies, the same-cut embedded English subtitle timing is the correction standard."
+    rationale: "The user confirmed that the embedded English subtitle timing should be used to correct obvious Chinese timing abnormalities, while the corrected Chinese structure controls the Spanish release track."
     confirmed_by: user
-    confirmed_at: "2026-08-28"
+    confirmed_at: "2026-08-30"
   - id: SH0006-RULE-002
     scope: Spanish accessibility text
     rule: "Remove Spanish hearing-impaired or descriptive text that has no matching Chinese event/content; strip unmatched bracketed SDH fragments from retained Spanish dialogue events."
@@ -81,11 +81,23 @@ project_overrides:
     evidence: "范晔译《百年孤独》，南海出版公司，2024-12 publication record, ISBN 978-7-5735-1092-1; source record https://weread.qq.com/web/bookDetail/8bc329705e46708bcb0c164"
     confirmed_by: user
     confirmed_at: "2026-08-29"
+  - id: SH0006-RULE-007
+    scope: SH0006-1.1.0-019 and its four on-screen safety notices in S01E04 and S01E07
+    rule: "Retain the notices because they are on-screen prompts present in the target video; they are not treated as removable subtitle boilerplate for this project."
+    rationale: "The user confirmed that this item is a visual prompt in the picture and should remain unchanged."
+    confirmed_by: user
+    confirmed_at: "2026-08-30"
+  - id: SH0006-RULE-008
+    scope: Chinese timing in S01E01-S01E08 for release 1.1.0
+    rule: "Use matching same-cut embedded English subtitle stream 3 boundaries as the timing standard for correcting a Chinese event; propagate the corrected Chinese timing to retained Spanish dialogue. English omissions, SDH-only events, or unmatched visual prompts do not authorize automatic retiming."
+    rationale: "The user explicitly requested that the embedded English subtitle be treated as the timing standard and that Chinese timing abnormalities be repaired."
+    confirmed_by: user
+    confirmed_at: "2026-08-30"
 
 limitations:
-  - "No video binary is present in the repository; the eight target-video basenames and their episode relationships are user-confirmed from the supplied screenshot."
-  - "No audio-stream, shot-boundary, visual-layout, forced-sign, or playback verification is claimed in this round."
-  - "Spanish source text is used for translation comparison; this round does not claim a full human linguistic review of every event."
+  - "Video binaries remain on the approved NAS and are not copied into the repository; the eight exact target files were read-only probed through the pinned SSH identity."
+  - "Remote media access enables bounded point checks only; full playback, full listening, shot-boundary, obstruction, and whole-season visual verification are not claimed unless individually performed and recorded."
+  - "Spanish source text is supplied by the complete bilingual subtitle set; source fidelity still requires the declared full text audit and does not imply human listening of every event."
 
 subtitle_sources:
   - id: official-netflix-bilingual
@@ -96,7 +108,7 @@ subtitle_sources:
     path: project/sources/subtitles/zh-Hans/official-netflix-bilingual
     file_count: 8
     scope: S01E01-S01E08
-    evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and Chinese event timing is the project timing authority."
+    evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and the Chinese event structure is corrected against matching embedded English timing when a clear anomaly is confirmed."
     roles:
       - candidate-baseline
       - source-text-reference
@@ -107,15 +119,45 @@ subtitle_sources:
       status: user-confirmed
       confirmed_by: user
       confirmed_at: "2026-08-28"
-      evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and Chinese event timing is the project timing authority."
+      evidence: "Complete supplied Netflix bilingual ASS set; Spanish text is the source reference and the Chinese event structure is corrected against matching embedded English timing when a clear anomaly is confirmed."
+  - id: embedded-netflix-english
+    language:
+      - en
+    kind: embedded-netflix-subrip-extracted
+    path: project/sources/subtitles/en/embedded-netflix
+    file_count: 8
+    scope: S01E01-S01E08
+    evidence: "English subtitle stream 3 extracted read-only from the eight exact target videos through the approved SSH media source; retained as an auxiliary translation and timing reference."
+    roles:
+      - translation-reference
+      - timing-reference
+    classification:
+      status: user-confirmed
+      confirmed_by: user
+      confirmed_at: "2026-08-30"
+      evidence: "Embedded English subtitles are project proofreading material, not a replacement for the Spanish source text or the user-confirmed Chinese release timing."
 
 video_sources:
   target-video:
     release_group: Netflix
     medium: WEB-DL
     timing_reference: true
-    inventory_status: basename-confirmed-not-local
-    audio: not-probed
+    inventory_status: remote-probed
+    access: ssh-read-only
+    host: "10.9.6.2"
+    port: 22
+    user: "Viki"
+    host_key_fingerprint: "SHA256:/2UaP4O8ZNJD+DbiaxNTSKqRey/5u1WfcYbbzHPXrKU"
+    video_codec: hevc
+    resolution: "3840x2160"
+    audio:
+      source_language: es
+      selection_basis: "only source-language audio stream"
+      stream_index: 1
+      codec: eac3
+    embedded_subtitles:
+      - "stream 3: subrip, en, extracted to project/sources/subtitles/en/embedded-netflix as translation/timing reference"
+      - "stream 4: subrip, it, translation/timing/layout reference"
     files:
       S01E01: "One.Hundred.Years.of.Solitude.S01E01.mkv"
       S01E02: "One.Hundred.Years.of.Solitude.S01E02.mkv"
@@ -125,9 +167,51 @@ video_sources:
       S01E06: "One.Hundred.Years.of.Solitude.S01E06.mkv"
       S01E07: "One.Hundred.Years.of.Solitude.S01E07.mkv"
       S01E08: "One.Hundred.Years.of.Solitude.S01E08.mkv"
+    timing_authority:
+      S01E01: "user-confirmed Chinese subtitle timing"
+      S01E02: "user-confirmed Chinese subtitle timing"
+      S01E03: "user-confirmed Chinese subtitle timing"
+      S01E04: "user-confirmed Chinese subtitle timing"
+      S01E05: "user-confirmed Chinese subtitle timing"
+      S01E06: "user-confirmed Chinese subtitle timing"
+      S01E07: "user-confirmed Chinese subtitle timing"
+      S01E08: "user-confirmed Chinese subtitle timing"
+    fingerprints:
+      S01E01:
+        size: 9513161564
+        sha256_first_mib: 784b19c48cb776d325ad510dab0a7d1e74e3dfa7af82f32e53b5f409b963e9f9
+        duration_seconds: 3879.872
+      S01E02:
+        size: 8960589439
+        sha256_first_mib: 3e73b27575bfc0c7147f942f2494e2e07ba7a8efa9df5bc1a1bb34328692194e
+        duration_seconds: 3598.4
+      S01E03:
+        size: 10086067127
+        sha256_first_mib: 9ab04662d407a44c66453d0779584758d903b18452727ca3c853107f16d82a50
+        duration_seconds: 4096.16
+      S01E04:
+        size: 9874585763
+        sha256_first_mib: d729f0b5aff4fd3ce32ebcaecc23cd3824edcf759d8a01a27ada41ebc1f94360
+        duration_seconds: 3988.928
+      S01E05:
+        size: 9050256987
+        sha256_first_mib: ef2eb8d7a6254069524a31799f0394b73efddf98109a7d0d01fc3b362604e4d9
+        duration_seconds: 3754.304
+      S01E06:
+        size: 9783508202
+        sha256_first_mib: 104aee9e8ef7edec491efd7d5f57d8a168bcc98bcd6607ef55a497a4df99bd97
+        duration_seconds: 3829.952
+      S01E07:
+        size: 9548085130
+        sha256_first_mib: a455843f1b711de8636755034ecfcf26d97ed7dadfd169d9329b3e44c07ab329
+        duration_seconds: 3945.92
+      S01E08:
+        size: 9925989731
+        sha256_first_mib: 6abbce966ba443322e25b9d5eef4c0ebaafe5865a2a1b9c01c31a6dcf6e1773c
+        duration_seconds: 3863.36
 
 initialization:
-  skill_version: "1.3.2"
+  skill_version: "1.4.1"
   state: proofreading-ready
   approved_by: user
   approved_at: "2026-08-28"

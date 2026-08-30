@@ -54,13 +54,13 @@
 
 | term_id | 原文 | 后备译本规范简体中文 | SH0006 当前形式 | 状态 | 证据 |
 | --- | --- | --- | --- | --- | --- |
-| `SOLITUDE-TERM-026` | `Apolinar Moscote` | `阿波利纳尔·摩斯科特` | `阿波利纳·摩斯科特` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-027` | `Prudencio Aguilar` | `普鲁邓希奥·阿基拉尔` | `普鲁丹修·阿圭拉`、`普鲁丹修` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-028` | `Visitación` | `比西塔西翁` | `比希塔森` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-029` | `Cataure` | `卡塔乌雷` | `卡陶雷` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-030` | `Catarino` | `卡塔利诺` | `卡塔里诺` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-031` | `José Raquel Moncada` | `何塞·拉克尔·蒙卡达` | `何塞·拉奎·蒙卡达` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
-| `SOLITUDE-TERM-032` | `Victoriano Medina` | `维多利奥·梅迪纳` | `维托里亚诺·梅迪纳` | confirmed | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-026` | `Apolinar Moscote` | `阿波利纳尔·摩斯科特` | `阿波利纳尔·摩斯科特` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-027` | `Prudencio Aguilar` | `普鲁邓希奥·阿基拉尔` | `普鲁邓希奥·阿基拉尔`、`普鲁邓希奥` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-028` | `Visitación` | `比西塔西翁` | `比西塔西翁` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-029` | `Cataure` | `卡塔乌雷` | `卡塔乌雷` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-030` | `Catarino` | `卡塔利诺` | `卡塔利诺` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-031` | `José Raquel Moncada` | `何塞·拉克尔·蒙卡达` | `何塞·拉克尔·蒙卡达`、`何塞·拉克尔` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
+| `SOLITUDE-TERM-032` | `Victoriano Medina` | `维多利奥·梅迪纳` | `维多利奥·梅迪纳` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
 | `SOLITUDE-TERM-033` | `Rebeca Montiel` | `丽贝卡·蒙铁尔` | `丽贝卡·蒙铁尔` | confirmed-consistent | `SOLITUDE-SRC-NOVEL-LATEST-CN` |
 | `SOLITUDE-TERM-034` | `Coronel Carmona` | 无对应小说人物 | `卡莫纳` | no-novel-correspondence | `SOLITUDE-SRC-NOVEL-LATEST-CN`；剧集专名保留现行形式 |
 
@@ -68,14 +68,14 @@
 
 ## SH0006 全季实际表面形式闭合清单
 
-以下清单来自 S01E01–S01E08 工作母本的完整双向文本扫描（2026-08-29）。只登记实际出现的源文或中文字幕表面形式；同一事件中出现全名和简称时分别记录。数量是中文字幕 `CN-Main` 可见事件数，源文数量以对应扫描结果为准。未列入本节的已确认形式，均按上表中的规范全名或已登记变体处理。
+以下清单来自 S01E01–S01E08 工作母本的完整双向文本扫描（2026-08-30）。只登记实际出现的源文或中文字幕表面形式；同一事件中出现全名和简称时分别记录。数量是中文字幕 `CN-Main` 可见事件数，源文数量以对应扫描结果为准。未列入本节的已确认形式，均按上表中的规范全名或已登记变体处理。
 
 | term_id | 已确认实体 | 实际出现的源文形式 | 实际出现的中文形式 | 中文字幕事件数 | 处理状态与边界 |
 | --- | --- | --- | --- | ---: | --- |
-| `SOLITUDE-TERM-005` | Úrsula Iguarán | `Úrsula`、`Úrsula Iguarán` | `乌苏拉`、`乌尔苏拉·伊瓜兰`、`乌尔苏拉·伊瓜兰·布恩迪亚` | `乌苏拉` 69；规范形式 7 | `乌苏拉` 均指同一人物，作为待替换表面形式；完整姓名及扩展称谓保留实体映射。 |
-| `SOLITUDE-TERM-017` | Pilar Ternera | `Pilar`、`Pilar Ternera` | `皮拉`、`庇拉尔·特尔内拉` | `皮拉` 11；规范全名 5 | 11 个 `皮拉` 均与源文 `Pilar` 对齐，拟统一为短称 `庇拉尔`；短称不得与其他实体混用。 |
-| `SOLITUDE-TERM-021` | Gerineldo Márquez | `Gerineldo`、`Gerineldo Márquez` | `格林列尔多·马尔克`、`格林列尔多·马尔克斯` | 缺字形式 1；规范形式 2 | `格林列尔多·马尔克` 仅登记为一个完整事件的错字，不按字符串前缀扫描规范形式。 |
-| `SOLITUDE-TERM-025` | Aureliano Babilonia | `Aureliano Babilonia` | `奥雷里亚诺·巴比罗尼亚` | 1 | 与源文同一事件对齐，拟改为 `奥雷里亚诺·巴比伦`。 |
+| `SOLITUDE-TERM-005` | Úrsula Iguarán | `Úrsula`、`Úrsula Iguarán` | `乌尔苏拉`、`乌尔苏拉·伊瓜兰`、`乌尔苏拉·伊瓜兰·布恩迪亚` | `乌尔苏拉` 短称 69；规范全名及扩展称谓保留实体映射 | 旧形式 `乌苏拉` 已清零；完整姓名及扩展称谓保留实体映射。 |
+| `SOLITUDE-TERM-017` | Pilar Ternera | `Pilar`、`Pilar Ternera` | `庇拉尔`、`庇拉尔·特尔内拉` | `庇拉尔` 短称 11；规范全名 5 | 旧形式 `皮拉` 已清零；11 个短称均与源文 `Pilar` 对齐。 |
+| `SOLITUDE-TERM-021` | Gerineldo Márquez | `Gerineldo`、`Gerineldo Márquez` | `格林列尔多·马尔克斯` | 规范形式 3；旧缺字形式 0 | 全季完整事件边界检查未发现独立的 `格林列尔多·马尔克` 错字；不按字符串前缀扫描规范形式。 |
+| `SOLITUDE-TERM-025` | Aureliano Babilonia | `Aureliano Babilonia` | `奥雷里亚诺·巴比伦` | 1 | 旧形式 `奥雷里亚诺·巴比罗尼亚` 已清零；与源文同一事件对齐。 |
 | `SOLITUDE-TERM-012` | Santa Sofía de la Piedad | `Santa Sofía de la Piedad` | `桑塔索菲亚·德拉·皮埃达` | 2 | 这是已确认人物的扩展全名；小说词条/后备译本的细分写法尚未形成变更决定，暂保留并标记为 `provisional`。 |
 | `SOLITUDE-TERM-020` | Nicanor / Nicanor Reyna | `Nicanor`、`Nicanor Reyna` | `尼卡诺尔`、`尼卡诺尔·雷纳` | `尼卡诺尔·雷纳` 1 | 全名与神父称谓的简称属于同一人物；`尼卡诺`只作为独立称谓候选检查，不能把`尼卡诺尔`的前缀误判为禁用形式。 |
 | `SOLITUDE-TERM-009` | Rebeca / Rebeca Montiel | `Rebeca`、`Rebeca Montiel` | `丽贝卡`、`丽贝卡·蒙铁尔`、`丽贝卡·布恩迪亚` | `丽贝卡·布恩迪亚` 3 | `丽贝卡·布恩迪亚`是剧情中的婚后家族名组合，登记为实体变体，不因与娘家名不同而改写。 |

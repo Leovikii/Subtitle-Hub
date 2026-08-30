@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.2
+; Subtitle-Hub-Version: 1.1.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -199,7 +199,7 @@ Dialogue: 10,0:09:15.71,0:09:18.33,CN-Main,,0,0,0,,不用了 真的 谢谢 但�
 Dialogue: 0,0:09:15.71,0:09:18.33,ES-Main,,0,0,0,,No se preocupe, de verdad. Gracias. Me tengo que marchar.
 Dialogue: 10,0:09:18.75,0:09:20.33,CN-Main,,0,0,0,,族人还在营地等我
 Dialogue: 0,0:09:18.75,0:09:20.33,ES-Main,,0,0,0,,Me esperan en el campamento.
-Dialogue: 10,0:09:20.83,0:09:21.71,CN-Main,,0,0,0,,再见
+Dialogue: 10,0:09:20.83,0:09:21.71,CN-Main,,0,0,0,,夫人
 Dialogue: 0,0:09:20.83,0:09:21.71,ES-Main,,0,0,0,,Señora.
 Dialogue: 10,0:09:23.38,0:09:25.92,CN-Main,,0,0,0,,梅尔基亚德斯 今晚我就开始…
 Dialogue: 0,0:09:23.38,0:09:25.92,ES-Main,,0,0,0,,Melquíades, esta misma noche me voy a poner…
@@ -338,7 +338,6 @@ Dialogue: 10,0:16:25.17,0:16:27.29,CN-Main,,0,0,0,,男孩们就这样得知
 Dialogue: 0,0:16:25.17,0:16:27.29,ES-Main,,0,0,0,,Fue así cómo los niños terminaron por aprender que era posible
 Dialogue: 10,0:16:27.38,0:16:29.92,CN-Main,,0,0,0,,其实人可以徒步穿越爱琴海…
 Dialogue: 0,0:16:27.38,0:16:29.92,ES-Main,,0,0,0,,atravesar a pie el mar Egeo,
-Dialogue: 10,0:16:30.00,0:16:30.96,CN-Main,,0,0,0,,…在非洲的南部…
 Dialogue: 10,0:16:31.04,0:16:34.17,CN-Main,,0,0,0,,…只需从一个岛屿跳上另一个直至抵达塞萨洛尼基港
 Dialogue: 0,0:16:31.04,0:16:34.17,ES-Main,,0,0,0,,saltando de isla en isla hasta el puerto de Salónica.
 Dialogue: 10,0:16:34.50,0:16:37.21,CN-Main,,0,0,0,,…静坐沉思是他们唯一的消遣
@@ -480,7 +479,7 @@ Dialogue: 10,0:25:12.00,0:25:13.08,CN-Main,,0,0,0,,那是什么样的感觉？
 Dialogue: 0,0:25:12.00,0:25:13.08,ES-Main,,0,0,0,,¿Qué se siente?
 Dialogue: 10,0:25:15.54,0:25:17.38,CN-Main,,0,0,0,,就像地震一样
 Dialogue: 0,0:25:15.54,0:25:17.38,ES-Main,,0,0,0,,Es como un temblor de tierra.
-Dialogue: 10,0:25:24.04,0:25:26.88,CN-Main,,0,0,0,,阳光汇聚在玻璃片上
+Dialogue: 10,0:25:24.04,0:25:26.88,CN-Main,,0,0,0,,阳光汇聚在透镜上
 Dialogue: 0,0:25:24.04,0:25:26.88,ES-Main,,0,0,0,,Los rayos solares convergen en el lente
 Dialogue: 10,0:25:28.29,0:25:30.50,CN-Main,,0,0,0,,被照射的目标就会开始燃烧
 Dialogue: 0,0:25:28.29,0:25:30.50,ES-Main,,0,0,0,,y los proyecta para poder quemar el objeto.
@@ -552,7 +551,7 @@ Dialogue: 10,0:29:58.67,0:30:02.08,CN-Main,,0,0,0,,不好意思 先生你认识�
 Dialogue: 0,0:29:58.67,0:30:02.08,ES-Main,,0,0,0,,Permiso, señor. ¿Conoce a Melquíades, el alquimista?
 Dialogue: 10,0:30:02.17,0:30:03.67,CN-Main,,0,0,0,,梅尔基亚德斯死了
 Dialogue: 0,0:30:02.17,0:30:03.67,ES-Main,,0,0,0,,Melquíades murió
-Dialogue: 10,0:30:04.62,0:30:06.50,CN-Main,,0,0,0,,葬身在新加坡的沙洲上
+Dialogue: 10,0:30:04.62,0:30:06.50,CN-Main,,0,0,0,,葬身在新加坡的沙丘上
 Dialogue: 0,0:30:04.62,0:30:06.50,ES-Main,,0,0,0,,en los médanos de Singapur.
 Dialogue: 10,0:30:10.58,0:30:13.12,CN-Main,,0,0,0,,这不可能 梅尔基亚德斯一定…
 Dialogue: 0,0:30:10.58,0:30:13.12,ES-Main,,0,0,0,,No puede ser. Melquíades tiene que estar…
@@ -605,7 +604,7 @@ Dialogue: 10,0:34:07.58,0:34:10.21,CN-Main,,0,0,0,,这位朋友 马尼费科、�
 Dialogue: 0,0:34:07.58,0:34:10.21,ES-Main,,0,0,0,,Comadre, Magnífico, Gerineldo.
 Dialogue: 10,0:34:11.17,0:34:12.75,CN-Main,,0,0,0,,你们看 这是金币
 Dialogue: 0,0:34:11.17,0:34:12.75,ES-Main,,0,0,0,,Están viendo monedas de oro.
-Dialogue: 10,0:34:13.88,0:34:16.04,CN-Main,,0,0,0,,从合金里提炼出来的简直是不可能的任务
+Dialogue: 10,0:34:13.88,0:34:16.04,CN-Main,,0,0,0,,是从不可能的合金中提炼出来的
 Dialogue: 0,0:34:13.88,0:34:16.04,ES-Main,,0,0,0,,Rescatadas de una aleación imposible.
 Dialogue: 10,0:34:17.00,0:34:18.00,CN-Main,,0,0,0,,是真的吗？
 Dialogue: 0,0:34:17.00,0:34:18.00,ES-Main,,0,0,0,,¿Es en serio?
@@ -825,7 +824,7 @@ Dialogue: 10,0:49:45.88,0:49:47.08,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥
 Dialogue: 0,0:49:45.88,0:49:47.08,ES-Main,,0,0,0,,Es José Arcadio.
 Dialogue: 10,0:49:48.79,0:49:50.29,CN-Main,,0,0,0,,我来把他交给你们
 Dialogue: 0,0:49:48.79,0:49:50.29,ES-Main,,0,0,0,,Por eso vine a entregártelo.
-Dialogue: 10,0:49:51.29,0:49:52.92,CN-Main,,0,0,0,,你是在开玩笑吧？
+Dialogue: 10,0:49:51.29,0:49:52.92,CN-Main,,0,0,0,,你在胡说什么？
 Dialogue: 0,0:49:51.29,0:49:52.92,ES-Main,,0,0,0,,¿Qué barbaridad estás diciendo?
 Dialogue: 10,0:49:56.83,0:49:58.42,CN-Main,,0,0,0,,我们相爱了 乌尔苏拉
 Dialogue: 0,0:49:56.83,0:49:58.42,ES-Main,,0,0,0,,Nos enamoramos, Úrsula.
