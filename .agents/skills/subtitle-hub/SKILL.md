@@ -20,6 +20,8 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 ## Lifecycle
 
+Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, request installation approval and run `scripts/setup_runtime.py`; continue only with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
+
 0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.1"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
 1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Resolve identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one confirmation.
 2. Dry-run internally, initialize transactionally, and pass `--ready-for-proofreading`. Ask again only if the result materially differs from the approval.
@@ -37,7 +39,8 @@ Priority: current user instruction; confirmed `project.yaml` overrides; confirme
 - Keep `project/sources/` immutable. Edit only workspace masters, never `subtitles/current/`.
 - Review every visible Chinese event. Evidence shortage lowers the tier; sampling never proves completion. Automated findings remain candidates unless structure proves the defect.
 - Use text first and media only for a concrete unresolved timing, special-subtitle, local-layout, or scene-context point. Never imply unperformed listening, viewing, or human review.
-- For user-declared SSH video, use only `scripts/remote_media.py` with its isolated Paramiko 5.0.0 backend and pinned ED25519 host key. Accept the password only through its local graphical prompt; it may exist only in that Python process, never in chat, arguments, environment variables, files, or project records. Never install remote tools, upload media, write remote outputs, or broaden approved paths.
+- Use only the shared `~/.codex/subtitle-hub/` runtime and state root; never create per-project environments or dependency copies.
+- For user-declared SSH video, use only `scripts/remote_media.py` with its pinned ED25519 host key and dedicated identity. During SSH initialization accept the password once through its local graphical prompt, use it only in that Python process to enroll the public key, and never request it during later media actions. Never put it in chat, arguments, environment variables, files, or project records. Never install remote tools, upload media, write remote outputs, or broaden approved paths.
 - Create paths with their first file. `temp/` permits only on-demand `tools/` and `notes/`; never create archives, logs, intermediates, screenshot trees, audit sidecars, copied shared tools, or project reports.
 - Keep only `project.yaml` and root `review.md` as project control files. Intake, mappings, raw audits, frames, waveforms, and renders are disposable system-temp data.
 - Keep visual evidence local. Only at explicit user request show at most two compressed screenshots for one point.

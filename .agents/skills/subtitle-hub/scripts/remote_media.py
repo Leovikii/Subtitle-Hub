@@ -10,6 +10,7 @@ import html
 import importlib
 import json
 import math
+import os
 import re
 import secrets
 import shlex
@@ -24,6 +25,9 @@ from pathlib import Path, PurePosixPath
 from urllib.parse import quote
 
 PARAMIKO_VERSION = "5.0.0"
+RUNTIME_ROOT = Path.home() / ".codex" / "subtitle-hub"
+VENV_ROOT = RUNTIME_ROOT / "venv"
+STATE_ROOT = RUNTIME_ROOT / "state"
 HOST_RE = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9.-]{0,251}[A-Za-z0-9])?")
 USER_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_.-]{0,63}")
 MARKER = "__SUBTITLE_HUB_MEDIA_{}__"
@@ -35,21 +39,15 @@ class RemoteMediaError(RuntimeError):
     pass
 
 
-def dependency_root() -> Path:
-    return (Path.home() / ".codex" / "dependencies" / "subtitle-hub" / f"paramiko-{PARAMIKO_VERSION}").resolve()
-
-
 def load_paramiko():
-    root = dependency_root()
-    sys.path.insert(0, str(root))
+    if Path(sys.prefix).resolve() != VENV_ROOT.resolve():
+        setup = Path(__file__).with_name("setup_runtime.py")
+        python = VENV_ROOT / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+        raise RemoteMediaError(f"run {sys.executable} {setup} once, then use {python} for Subtitle Hub scripts")
     try:
         module = importlib.import_module("paramiko")
     except ModuleNotFoundError as error:
-        command = f'{sys.executable} -m pip install --target "{root}" "paramiko=={PARAMIKO_VERSION}"'
-        raise RemoteMediaError(f"missing Paramiko {PARAMIKO_VERSION}; install the isolated dependency with: {command}") from error
-    module_file = Path(module.__file__).resolve()
-    if root not in module_file.parents:
-        raise RemoteMediaError(f"Paramiko must load from the isolated dependency directory {root}")
+        raise RemoteMediaError("the Subtitle Hub runtime is incomplete; rerun setup_runtime.py") from error
     if getattr(module, "__version__", None) != PARAMIKO_VERSION:
         raise RemoteMediaError(f"Paramiko {PARAMIKO_VERSION} is required, found {getattr(module, '__version__', 'unknown')}")
     return module
@@ -72,7 +70,44 @@ def host_key_file(args: argparse.Namespace) -> Path:
     override = getattr(args, "host_key_file", None)
     if override:
         return Path(override).expanduser().resolve()
-    return (dependency_root().parent / "hosts" / f"{args.host}-{args.port}.json").resolve()
+    return (STATE_ROOT / "hosts" / f"{args.host}-{args.port}.json").resolve()
+
+
+def identity_file(args: argparse.Namespace) -> Path:
+    override = getattr(args, "identity_file", None)
+    if override:
+        return Path(override).expanduser().resolve()
+    return (STATE_ROOT / "ssh" / f"{args.host}-{args.port}-{args.user}.ed25519").resolve()
+
+
+def ensure_identity(args: argparse.Namespace) -> tuple[Path, str]:
+    target = identity_file(args)
+    public = target.with_suffix(target.suffix + ".pub")
+    if target.is_file() and public.is_file():
+        return target, public.read_text(encoding="utf-8").strip()
+    if target.exists() or public.exists():
+        raise RemoteMediaError("incomplete Subtitle Hub SSH identity; remove both identity files before enrollment")
+    from cryptography.hazmat.primitives import serialization
+    from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+    key = Ed25519PrivateKey.generate()
+    private_bytes = key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.OpenSSH, serialization.NoEncryption())
+    public_text = key.public_key().public_bytes(serialization.Encoding.OpenSSH, serialization.PublicFormat.OpenSSH).decode("ascii")
+    comment = f"subtitle-hub {args.user}@{args.host}:{args.port}"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    private_part = target.with_name(target.name + ".part")
+    public_part = public.with_name(public.name + ".part")
+    try:
+        private_part.write_bytes(private_bytes)
+        os.chmod(private_part, 0o600)
+        public_part.write_text(f"{public_text} {comment}\n", encoding="utf-8")
+        private_part.replace(target)
+        public_part.replace(public)
+    finally:
+        if private_part.exists():
+            private_part.unlink()
+        if public_part.exists():
+            public_part.unlink()
+    return target, f"{public_text} {comment}"
 
 
 def fingerprint(key: object) -> str:
@@ -115,7 +150,35 @@ def bootstrap(args: argparse.Namespace, paramiko: object) -> dict[str, object]:
             if part.exists():
                 part.unlink()
         trusted = True
-    return {"schema_version": 1, "action": "bootstrap", "connection": {"host": args.host, "port": args.port, "user": args.user}, "host_key_file": str(target), "host_fingerprint": actual, "trusted": trusted}
+        identity = identity_file(args)
+        key_ready = False
+        if identity.is_file():
+            try:
+                verification = open_client(args, paramiko)
+                verification.close()
+                key_ready = True
+            except RemoteMediaError:
+                key_ready = False
+        if not key_ready:
+            password = prompt_password(args)
+            try:
+                client = open_client(args, paramiko, password=password)
+                try:
+                    identity, public_key = ensure_identity(args)
+                    enroll_identity(args, client, password, public_key)
+                finally:
+                    client.close()
+            finally:
+                password = ""
+        verification = open_client(args, paramiko)
+        verification.close()
+    return {
+        "schema_version": 1, "action": "bootstrap",
+        "connection": {"host": args.host, "port": args.port, "user": args.user},
+        "host_key_file": str(target), "host_fingerprint": actual, "trusted": trusted,
+        "identity_file": str(identity_file(args)) if trusted else None,
+        "key_authentication": trusted,
+    }
 
 
 def load_pinned_key(args: argparse.Namespace, paramiko: object):
@@ -231,15 +294,18 @@ class PinnedHostPolicy:
             raise RemoteMediaError("NAS host key changed or does not match the approved key")
 
 
-def open_client(args: argparse.Namespace, paramiko: object, password: str):
+def open_client(args: argparse.Namespace, paramiko: object, password: str | None = None):
     expected = load_pinned_key(args, paramiko)
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(PinnedHostPolicy(expected))
     try:
-        client.connect(hostname=args.host, port=args.port, username=args.user, password=password,
+        options = {"password": password} if password is not None else {
+            "pkey": paramiko.Ed25519Key.from_private_key_file(str(identity_file(args)))
+        }
+        client.connect(hostname=args.host, port=args.port, username=args.user,
                        look_for_keys=False, allow_agent=False, timeout=args.connect_timeout,
                        banner_timeout=args.connect_timeout, auth_timeout=args.connect_timeout,
-                       channel_timeout=args.client_timeout)
+                       channel_timeout=args.client_timeout, **options)
     except paramiko.AuthenticationException as error:
         client.close()
         raise RemoteMediaError("SSH authentication failed") from error
@@ -247,6 +313,53 @@ def open_client(args: argparse.Namespace, paramiko: object, password: str):
         client.close()
         raise RemoteMediaError("SSH connection failed") from error
     return client
+
+
+def enroll_identity(args: argparse.Namespace, client: object, password: str, public_key: str) -> None:
+    user = shlex.quote(args.user)
+    entry = shlex.quote(public_key)
+    privileged = (
+        "set -eu; user=" + user + "; entry=" + entry + "; "
+        "record=$(getent passwd -- \"$user\") || { printf 'remote account not found\\n' >&2; exit 67; }; "
+        "home=$(printf '%s' \"$record\" | cut -d: -f6); group=$(id -gn \"$user\"); "
+        "case \"$home\" in /*) ;; *) printf 'unsafe remote home\\n' >&2; exit 67;; esac; "
+        "test \"$home\" != / || { printf 'unsafe remote home\\n' >&2; exit 67; }; "
+        "install -d -m 0750 -o \"$user\" -g \"$group\" -- \"$home\"; "
+        "install -d -m 0700 -o \"$user\" -g \"$group\" -- \"$home/.ssh\"; "
+        "auth=\"$home/.ssh/authorized_keys\"; "
+        "test -e \"$auth\" || install -m 0600 -o \"$user\" -g \"$group\" /dev/null \"$auth\"; "
+        "chown \"$user:$group\" \"$auth\"; chmod 0600 \"$auth\"; "
+        "grep -qxF -- \"$entry\" \"$auth\" || printf '%s\\n' \"$entry\" >> \"$auth\""
+    )
+    stdin, stdout, stderr = client.exec_command(f"sudo -S -p '' -- /bin/sh -c {shlex.quote(privileged)}", timeout=args.client_timeout)
+    stdin.write(password + "\n")
+    stdin.flush()
+    stdin.channel.shutdown_write()
+    detail = stderr.read(8192).decode("utf-8", errors="replace").strip()
+    status = stdout.channel.recv_exit_status()
+    if status != 0:
+        raise RemoteMediaError(f"could not enroll the Subtitle Hub SSH key: {detail or 'sudo failed'}")
+
+
+def revoke_identity(args: argparse.Namespace, client: object) -> dict[str, object]:
+    identity = identity_file(args)
+    public = identity.with_suffix(identity.suffix + ".pub")
+    if not public.is_file():
+        raise RemoteMediaError("Subtitle Hub SSH public key is missing")
+    entry = public.read_text(encoding="utf-8").strip()
+    command = (
+        "set -eu; record=$(getent passwd -- " + shlex.quote(args.user) + "); "
+        "home=$(printf '%s' \"$record\" | cut -d: -f6); auth=\"$home/.ssh/authorized_keys\"; "
+        "test -f \"$auth\" || exit 0; tmp=\"$auth.subtitle-hub.$$\"; "
+        "trap 'rm -f \"$tmp\"' EXIT HUP INT TERM; "
+        "grep -vxF -- " + shlex.quote(entry) + " \"$auth\" > \"$tmp\" || true; "
+        "chmod 0600 \"$tmp\"; mv -f \"$tmp\" \"$auth\"; trap - EXIT HUP INT TERM"
+    )
+    run_remote(client, command, limit=1024, timeout=args.client_timeout)
+    identity.unlink(missing_ok=True)
+    public.unlink(missing_ok=True)
+    host_key_file(args).unlink(missing_ok=True)
+    return {"schema_version": 1, "action": "revoke", "connection": {"host": args.host, "port": args.port, "user": args.user}, "revoked": True}
 
 
 def run_remote(client: object, remote: str, *, limit: int, timeout: int) -> bytes:
@@ -373,6 +486,7 @@ def add_connection(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--port", type=int, default=22)
     parser.add_argument("--user", required=True)
     parser.add_argument("--host-key-file")
+    parser.add_argument("--identity-file")
     parser.add_argument("--connect-timeout", type=int, default=10)
     parser.add_argument("--client-timeout", type=int, default=120)
 
@@ -381,6 +495,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="action", required=True)
     bootstrap_parser = subparsers.add_parser("bootstrap"); add_connection(bootstrap_parser); bootstrap_parser.add_argument("--accept-fingerprint")
+    revoke_parser = subparsers.add_parser("revoke"); add_connection(revoke_parser)
     discover_parser = subparsers.add_parser("discover"); add_connection(discover_parser); discover_parser.add_argument("--directory", required=True)
     probe_parser = subparsers.add_parser("probe"); add_connection(probe_parser); probe_parser.add_argument("--path", action="append", required=True); probe_parser.add_argument("--output")
     frame_parser = subparsers.add_parser("frame"); add_connection(frame_parser); frame_parser.add_argument("--path", required=True); frame_parser.add_argument("--time", required=True, type=float); frame_parser.add_argument("--output", required=True)
@@ -393,13 +508,11 @@ def main() -> int:
         if args.action == "bootstrap":
             result = bootstrap(args, paramiko)
         else:
-            password = prompt_password(args)
+            client = open_client(args, paramiko)
             try:
-                client = open_client(args, paramiko, password)
-            finally:
-                password = ""
-            try:
-                if args.action == "discover":
+                if args.action == "revoke":
+                    result = revoke_identity(args, client)
+                elif args.action == "discover":
                     result = discover(args, client)
                 elif args.action == "probe":
                     result = probe(args, client)
@@ -414,7 +527,7 @@ def main() -> int:
                 else:
                     if args.stream < 0:
                         raise RemoteMediaError("subtitle stream index must be nonnegative")
-                    result = write_remote_output(args, client, "subtitle", f"exec timeout 45s ffmpeg -nostdin -v error -i \"$file\" -threads 1 -map 0:{args.stream} -f ass pipe:1", ".ass")
+                    result = write_remote_output(args, client, "subtitle", f"exec timeout 110s ffmpeg -nostdin -v error -i \"$file\" -threads 1 -map 0:{args.stream} -f ass pipe:1", ".ass")
             finally:
                 client.close()
         rendered = json.dumps(result, ensure_ascii=False, indent=2) + "\n"

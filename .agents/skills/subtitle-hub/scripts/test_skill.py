@@ -44,6 +44,7 @@ from normalize_ass_release import (  # noqa: E402
 )
 import sync_bangumi_metadata  # noqa: E402
 import remote_media  # noqa: E402
+import setup_runtime  # noqa: E402
 
 
 def run_path(path: Path, *args: str, expect: int = 0) -> subprocess.CompletedProcess[str]:
@@ -360,6 +361,10 @@ class RemoteMediaTests(unittest.TestCase):
         def get_base64(self) -> str:
             return base64.b64encode(self.data).decode("ascii")
 
+        @classmethod
+        def from_private_key_file(cls, _path: str) -> "RemoteMediaTests.FakeKey":
+            return cls(b"private-identity")
+
     def fake_paramiko(self, client: object | None = None) -> SimpleNamespace:
         class SSHException(Exception):
             pass
@@ -378,22 +383,27 @@ class RemoteMediaTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw).resolve()
             module = SimpleNamespace(__version__="5.0.0", __file__=str(root / "paramiko/__init__.py"))
-            with mock.patch.object(remote_media, "dependency_root", return_value=root), \
+            with mock.patch.object(remote_media, "VENV_ROOT", root), mock.patch.object(remote_media.sys, "prefix", str(root)), \
                  mock.patch.object(remote_media.importlib, "import_module", return_value=module):
                 self.assertIs(remote_media.load_paramiko(), module)
-            with mock.patch.object(remote_media, "dependency_root", return_value=root), \
+            with mock.patch.object(remote_media, "VENV_ROOT", root), mock.patch.object(remote_media.sys, "prefix", str(root)), \
                  mock.patch.object(remote_media.importlib, "import_module", side_effect=ModuleNotFoundError):
-                with self.assertRaisesRegex(remote_media.RemoteMediaError, "pip install --target"):
+                with self.assertRaisesRegex(remote_media.RemoteMediaError, "runtime is incomplete"):
                     remote_media.load_paramiko()
 
     def test_bootstrap_pins_only_the_approved_ed25519_key(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             target = Path(raw) / "host.json"
-            args = self.connection(action="bootstrap", host_key_file=str(target))
+            identity = Path(raw) / "identity"
+            identity.write_text("private", encoding="utf-8")
+            identity.with_suffix(".pub").write_text("ssh-ed25519 test subtitle-hub", encoding="utf-8")
+            args = self.connection(action="bootstrap", host_key_file=str(target), identity_file=str(identity))
             key = self.FakeKey()
             approved = remote_media.fingerprint(key)
             args.accept_fingerprint = approved
-            with mock.patch.object(remote_media, "capture_host_key", return_value=key):
+            connection = SimpleNamespace(close=lambda: None)
+            with mock.patch.object(remote_media, "capture_host_key", return_value=key), \
+                 mock.patch.object(remote_media, "open_client", return_value=connection):
                 result = remote_media.bootstrap(args, self.fake_paramiko())
             self.assertTrue(result["trusted"])
             self.assertEqual(remote_media.load_pinned_key(args, self.fake_paramiko()).asbytes(), key.asbytes())
@@ -404,7 +414,29 @@ class RemoteMediaTests(unittest.TestCase):
                  self.assertRaises(remote_media.RemoteMediaError):
                 remote_media.bootstrap(args, self.fake_paramiko())
 
-    def test_client_disables_keys_and_agent_and_pins_host(self) -> None:
+    def test_bootstrap_prompts_once_then_proves_key_authentication(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            target = Path(raw) / "host.json"
+            identity = Path(raw) / "identity"
+            args = self.connection(action="bootstrap", host_key_file=str(target), identity_file=str(identity))
+            key = self.FakeKey()
+            args.accept_fingerprint = remote_media.fingerprint(key)
+            password_client = SimpleNamespace(close=mock.Mock())
+            key_client = SimpleNamespace(close=mock.Mock())
+            with mock.patch.object(remote_media, "capture_host_key", return_value=key), \
+                 mock.patch.object(remote_media, "prompt_password", return_value="one-time-secret") as prompt, \
+                 mock.patch.object(remote_media, "ensure_identity", return_value=(identity, "ssh-ed25519 AAAA subtitle-hub")), \
+                 mock.patch.object(remote_media, "enroll_identity") as enroll, \
+                 mock.patch.object(remote_media, "open_client", side_effect=[password_client, key_client]) as connect:
+                result = remote_media.bootstrap(args, self.fake_paramiko())
+            prompt.assert_called_once_with(args)
+            enroll.assert_called_once_with(args, password_client, "one-time-secret", "ssh-ed25519 AAAA subtitle-hub")
+            self.assertEqual(connect.call_args_list[0].kwargs, {"password": "one-time-secret"})
+            self.assertIs(connect.call_args_list[1].args[0], args)
+            self.assertNotIn("password", connect.call_args_list[1].kwargs)
+            self.assertTrue(result["key_authentication"])
+
+    def test_client_uses_dedicated_key_without_password_or_agent(self) -> None:
         class Client:
             def __init__(self) -> None:
                 self.policy = None
@@ -421,7 +453,9 @@ class RemoteMediaTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as raw:
             target = Path(raw) / "host.json"
-            args = self.connection(host_key_file=str(target))
+            identity = Path(raw) / "identity"
+            identity.write_text("private", encoding="utf-8")
+            args = self.connection(host_key_file=str(target), identity_file=str(identity))
             key = self.FakeKey()
             target.write_text(json.dumps({
                 "schema_version": 1, "host": args.host, "port": args.port,
@@ -429,14 +463,39 @@ class RemoteMediaTests(unittest.TestCase):
                 "fingerprint": remote_media.fingerprint(key),
             }), encoding="utf-8")
             client = Client()
-            result = remote_media.open_client(args, self.fake_paramiko(client), "memory-only-secret")
+            result = remote_media.open_client(args, self.fake_paramiko(client))
             self.assertIs(result, client)
             self.assertFalse(client.options["look_for_keys"])
             self.assertFalse(client.options["allow_agent"])
-            self.assertEqual(client.options["password"], "memory-only-secret")
+            self.assertNotIn("password", client.options)
+            self.assertIsInstance(client.options["pkey"], self.FakeKey)
             client.policy.missing_host_key(None, args.host, key)
             with self.assertRaises(remote_media.RemoteMediaError):
                 client.policy.missing_host_key(None, args.host, self.FakeKey(b"changed"))
+
+    def test_enrollment_sends_password_only_to_sudo_stdin(self) -> None:
+        class Input:
+            def __init__(self) -> None:
+                self.value = ""
+                self.channel = SimpleNamespace(shutdown_write=lambda: None)
+
+            def write(self, value: str) -> None:
+                self.value += value
+
+            def flush(self) -> None:
+                pass
+
+        stdin = Input()
+        channel = SimpleNamespace(recv_exit_status=lambda: 0)
+        stdout = SimpleNamespace(channel=channel)
+        stderr = SimpleNamespace(read=lambda _limit: b"")
+        client = SimpleNamespace(exec_command=mock.Mock(return_value=(stdin, stdout, stderr)))
+        args = self.connection()
+        remote_media.enroll_identity(args, client, "one-time-secret", "ssh-ed25519 AAAA subtitle-hub")
+        command = client.exec_command.call_args.args[0]
+        self.assertIn("sudo -S", command)
+        self.assertNotIn("one-time-secret", command)
+        self.assertEqual(stdin.value, "one-time-secret\n")
 
     def test_probe_returns_password_free_locators_in_one_remote_call(self) -> None:
         payload = json.dumps(probe_payload(), ensure_ascii=False)
@@ -496,6 +555,34 @@ class RemoteMediaTests(unittest.TestCase):
         for forbidden in ("ssh-keyscan", "ssh-keygen", "SSH_ASKPASS", "ControlMaster", "subprocess."):
             self.assertNotIn(forbidden, source)
         self.assertIn('PARAMIKO_VERSION = "5.0.0"', source)
+        self.assertEqual(source.count("prompt_password(args)"), 1)
+        self.assertIn('timeout 110s ffmpeg', source)
+
+
+class RuntimeTests(unittest.TestCase):
+    def test_locked_shared_runtime_contains_required_packages(self) -> None:
+        requirements = (SKILL_ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines()
+        self.assertIn("paramiko==5.0.0", requirements)
+        self.assertIn("PyYAML==6.0.3", requirements)
+        self.assertTrue(all("==" in item for item in requirements if item))
+
+    def test_runtime_marker_invalidates_dependency_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            requirements = root / "requirements.txt"
+            requirements.write_text("example==1\n", encoding="utf-8")
+            venv_root = root / "venv"
+            python = venv_root / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+            python.parent.mkdir(parents=True)
+            python.write_bytes(b"")
+            marker = root / "runtime.json"
+            marker.write_text(json.dumps({"schema_version": 1, "requirements_sha256": hashlib.sha256(requirements.read_bytes()).hexdigest()}), encoding="utf-8")
+            with mock.patch.object(setup_runtime, "REQUIREMENTS", requirements), \
+                 mock.patch.object(setup_runtime, "VENV_ROOT", venv_root), \
+                 mock.patch.object(setup_runtime, "MARKER", marker):
+                self.assertTrue(setup_runtime.valid_runtime())
+                requirements.write_text("example==2\n", encoding="utf-8")
+                self.assertFalse(setup_runtime.valid_runtime())
 
 
 class InventoryTests(unittest.TestCase):

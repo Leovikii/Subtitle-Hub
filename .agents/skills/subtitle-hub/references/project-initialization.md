@@ -92,6 +92,12 @@ Initialization never modifies the user's original media or subtitle files.
 
 ## Skill 1.4.1 intake contract
 
+### SH-INIT-012 — Shared runtime gate
+
+Before any repository script or project initialization, locate a usable Python 3 from the Codex workspace dependencies first, then ordinary `python`, `python3`, or the Windows `py` launcher. Run `scripts/setup_runtime.py --check`. If it reports a missing or outdated environment, request approval for the dependency download and run the same script without `--check`. It creates or atomically replaces one environment at `~/.codex/subtitle-hub/venv`, keeps non-package state under the sibling `state/`, and returns the interpreter path. Run all subsequent Skill scripts with that interpreter.
+
+The exact packages are locked in `requirements.txt`, including Paramiko and PyYAML. Never install them globally, create a project-local virtual environment, copy dependencies into a project, or maintain an alternate package path. A requirements change invalidates and rebuilds only the shared `venv`; it preserves `state`. For complete cleanup, run `remote_media.py revoke` for every registered host before base Python runs `setup_runtime.py --remove`; the remover refuses to orphan registered keys. If no compatible base Python can execute `setup_runtime.py`, stop and report the missing prerequisite rather than partially initializing a project or attempting an operating-system Python installation.
+
 ### SH-INIT-006 — Probe before asking for manual inventory
 
 Start from the user-provided target video path(s) and Chinese baseline rather than asking the user to enumerate container tracks. Run `scripts/inventory_sources.py`; it uses `ffprobe` to record container format, duration, resolution, audio/subtitle stream index, codec, language tag/title, default/forced disposition, and a suggested source-language audio stream. It also inventories external subtitle/script files, hashes them, assigns candidate roles, and proposes episode relationships.
@@ -104,11 +110,13 @@ The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.1`. 
 
 When the user declares that a project reads video from a Debian NAS over SSH, collect the host, port, username, exact absolute video paths or one containing directory, Chinese baseline mapping, intended source audio, and timing authority. For a directory, `remote_media.py discover` lists only top-level files with supported video suffixes; never recurse or search outside that approved directory. Never request or accept the password in chat, arguments, files, URLs, or project records.
 
-`remote_media.py` has one cross-platform backend: Paramiko 5.0.0 in `~/.codex/dependencies/subtitle-hub/paramiko-5.0.0`. It does not use or configure system OpenSSH, AskPass, SSH agents, user keys, or general known-hosts files. If that exact isolated dependency is absent, request approval and run the install command reported by the script; do not modify global Python or add another SSH backend.
+`remote_media.py` has one cross-platform backend: Paramiko 5.0.0 in the shared Skill environment. It does not use or configure system OpenSSH, AskPass, SSH agents, user keys, or general known-hosts files.
 
-Run `remote_media.py bootstrap` first. Its unauthenticated Python handshake retrieves the ED25519 host key and computes the SHA-256 fingerprint. Ask the user once to verify that fingerprint against a trusted NAS surface, then rerun with `--accept-fingerprint <SHA256:...>` to pin it under the same Codex dependency area. A changed or non-ED25519 key stops the connection.
+Run `remote_media.py bootstrap` first. Its unauthenticated Python handshake retrieves the ED25519 host key and computes the SHA-256 fingerprint. Ask the user once to verify that fingerprint against a trusted NAS surface, then rerun with `--accept-fingerprint <SHA256:...>` to pin it under the shared `state/` root. A changed or non-ED25519 key stops the connection.
 
-After pinning, each bounded action opens a local Tk password dialog; when Tk is unavailable, it opens a one-use tokenized form bound only to `127.0.0.1`. The password exists only in that Python process for the current connection and never enters chat, arguments, environment variables, files, project records, SSH agents, or key stores. Combine directory discovery and multi-file probing when practical to reduce prompts. The NAS remains unchanged. A probe must succeed from the Codex process itself before initialization may claim SSH capability.
+After pinning, SSH initialization opens one local Tk password dialog; when Tk is unavailable, it opens a one-use tokenized form bound only to `127.0.0.1`. The same connection generates a dedicated local ED25519 identity under `state/`, uses `sudo` to create the account home/`.ssh` when absent, and appends exactly one tagged public-key line to `authorized_keys`. It then proves a fresh key-authenticated connection before succeeding. The password exists only in the initialization process and never enters chat, arguments, environment variables, files, project records, SSH agents, or key stores. Later `discover`, `probe`, `frame`, `audio`, and `subtitle` actions use only that identity and never prompt for a password.
+
+This one home/SSH-key enrollment is the only permitted remote setup. Do not install packages, change `sshd`, upload tools or media, or create remote work/cache directories. If enrollment or later key authentication fails, stop and report the exact limitation; never fall back to repeated password prompts. A probe must succeed from the Codex process itself before initialization may claim SSH capability.
 
 Use only existing remote programs. One `probe` connection checks Debian and the required existing tools, probes all approved exact files, and writes the password-free result to a system-temporary JSON. It stops if a required tool is absent; never install, upgrade, configure, upload, or retry with a broader account:
 
