@@ -19,7 +19,13 @@ from urllib.parse import unquote, urlparse
 
 SCRIPT_ROOT = Path(__file__).resolve().parent
 SKILL_ROOT = SCRIPT_ROOT.parent
-REPOSITORY_ROOT = SKILL_ROOT.parents[2]
+PACKAGED_REPOSITORY_ROOT = SKILL_ROOT.parents[2]
+WORKING_REPOSITORY_ROOT = Path.cwd().resolve()
+REPOSITORY_ROOT = (
+    PACKAGED_REPOSITORY_ROOT
+    if (PACKAGED_REPOSITORY_ROOT / ".github/scripts/build_subtitle_packages.py").is_file()
+    else WORKING_REPOSITORY_ROOT
+)
 PACKAGE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "build_subtitle_packages.py"
 CATALOG_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "sync_catalog.py"
 NORMALIZE_SCRIPT = REPOSITORY_ROOT / ".github" / "scripts" / "normalize_ass_release.py"
