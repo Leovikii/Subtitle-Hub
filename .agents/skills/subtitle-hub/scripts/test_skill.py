@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.0 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.1 toolchain."""
 
 from __future__ import annotations
 
 import json
 import hashlib
+import base64
 import os
 import re
 import subprocess
@@ -259,7 +260,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.0"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.1"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -340,30 +341,114 @@ class SkillStructureTests(unittest.TestCase):
 class RemoteMediaTests(unittest.TestCase):
     def connection(self, **values: object) -> SimpleNamespace:
         defaults = {
-            "ssh": "ssh", "host": "10.9.6.2", "port": 22, "user": "media_reader",
-            "connect_timeout": 10, "client_timeout": 75, "action": "probe",
+            "host": "10.9.6.2", "port": 22, "user": "media_reader", "host_key_file": None,
+            "connect_timeout": 10, "client_timeout": 75, "action": "probe", "accept_fingerprint": None,
         }
         defaults.update(values)
         return SimpleNamespace(**defaults)
 
-    def test_probe_uses_strict_password_ssh_and_returns_password_free_locators(self) -> None:
+    class FakeKey:
+        def __init__(self, data: bytes = b"test-ed25519-host-key") -> None:
+            self.data = data
+
+        def get_name(self) -> str:
+            return "ssh-ed25519"
+
+        def asbytes(self) -> bytes:
+            return self.data
+
+        def get_base64(self) -> str:
+            return base64.b64encode(self.data).decode("ascii")
+
+    def fake_paramiko(self, client: object | None = None) -> SimpleNamespace:
+        class SSHException(Exception):
+            pass
+
+        class AuthenticationException(SSHException):
+            pass
+
+        return SimpleNamespace(
+            Ed25519Key=self.FakeKey,
+            SSHClient=(lambda: client),
+            SSHException=SSHException,
+            AuthenticationException=AuthenticationException,
+        )
+
+    def test_isolated_paramiko_contract_and_missing_dependency_message(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw).resolve()
+            module = SimpleNamespace(__version__="5.0.0", __file__=str(root / "paramiko/__init__.py"))
+            with mock.patch.object(remote_media, "dependency_root", return_value=root), \
+                 mock.patch.object(remote_media.importlib, "import_module", return_value=module):
+                self.assertIs(remote_media.load_paramiko(), module)
+            with mock.patch.object(remote_media, "dependency_root", return_value=root), \
+                 mock.patch.object(remote_media.importlib, "import_module", side_effect=ModuleNotFoundError):
+                with self.assertRaisesRegex(remote_media.RemoteMediaError, "pip install --target"):
+                    remote_media.load_paramiko()
+
+    def test_bootstrap_pins_only_the_approved_ed25519_key(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            target = Path(raw) / "host.json"
+            args = self.connection(action="bootstrap", host_key_file=str(target))
+            key = self.FakeKey()
+            approved = remote_media.fingerprint(key)
+            args.accept_fingerprint = approved
+            with mock.patch.object(remote_media, "capture_host_key", return_value=key):
+                result = remote_media.bootstrap(args, self.fake_paramiko())
+            self.assertTrue(result["trusted"])
+            self.assertEqual(remote_media.load_pinned_key(args, self.fake_paramiko()).asbytes(), key.asbytes())
+            record = target.read_text(encoding="utf-8")
+            self.assertNotIn("password", record.lower())
+            args.accept_fingerprint = "SHA256:not-the-key"
+            with mock.patch.object(remote_media, "capture_host_key", return_value=key), \
+                 self.assertRaises(remote_media.RemoteMediaError):
+                remote_media.bootstrap(args, self.fake_paramiko())
+
+    def test_client_disables_keys_and_agent_and_pins_host(self) -> None:
+        class Client:
+            def __init__(self) -> None:
+                self.policy = None
+                self.options: dict[str, object] = {}
+
+            def set_missing_host_key_policy(self, policy: object) -> None:
+                self.policy = policy
+
+            def connect(self, **options: object) -> None:
+                self.options = options
+
+            def close(self) -> None:
+                pass
+
+        with tempfile.TemporaryDirectory() as raw:
+            target = Path(raw) / "host.json"
+            args = self.connection(host_key_file=str(target))
+            key = self.FakeKey()
+            target.write_text(json.dumps({
+                "schema_version": 1, "host": args.host, "port": args.port,
+                "key_type": key.get_name(), "key_base64": key.get_base64(),
+                "fingerprint": remote_media.fingerprint(key),
+            }), encoding="utf-8")
+            client = Client()
+            result = remote_media.open_client(args, self.fake_paramiko(client), "memory-only-secret")
+            self.assertIs(result, client)
+            self.assertFalse(client.options["look_for_keys"])
+            self.assertFalse(client.options["allow_agent"])
+            self.assertEqual(client.options["password"], "memory-only-secret")
+            client.policy.missing_host_key(None, args.host, key)
+            with self.assertRaises(remote_media.RemoteMediaError):
+                client.policy.missing_host_key(None, args.host, self.FakeKey(b"changed"))
+
+    def test_probe_returns_password_free_locators_in_one_remote_call(self) -> None:
         payload = json.dumps(probe_payload(), ensure_ascii=False)
         stdout = (
             f"{remote_media.MARKER.format(1)}\n123456\n{'a' * 64}\n{payload}\n"
             f"{remote_media.MARKER.format(2)}\n234567\n{'b' * 64}\n{payload}\n"
         ).encode()
         args = self.connection(path=["/srv/media/O'Brien 作品 S01E01.mkv", "/srv/media/作品 S01E02.mkv"])
-        with mock.patch.object(remote_media.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, stdout)) as runner:
+        with mock.patch.object(remote_media, "run_remote", return_value=stdout) as runner:
             remote_media.validate_connection(args)
-            result = remote_media.probe(args)
-        command = runner.call_args.args[0]
-        self.assertIn("ClearAllForwardings=yes", command)
-        self.assertIn("PermitLocalCommand=no", command)
-        self.assertIn("PreferredAuthentications=password,keyboard-interactive", command)
-        self.assertIn("PubkeyAuthentication=no", command)
-        self.assertIn("StrictHostKeyChecking=ask", command)
-        self.assertNotIn("example-secret", " ".join(command))
-        remote_command = command[-1]
+            result = remote_media.probe(args, object())
+        remote_command = runner.call_args.args[1]
         for forbidden in ("sudo ", "apt ", "docker ", "mktemp", "touch "):
             self.assertNotIn(forbidden, remote_command)
         self.assertIn("'\"'\"'", remote_command)
@@ -381,18 +466,36 @@ class RemoteMediaTests(unittest.TestCase):
                 remote_media.remote_path(unsafe)
         with self.assertRaises(remote_media.RemoteMediaError):
             remote_media.validate_connection(self.connection(host="10.9.6.2;id"))
-        frame_command = remote_media.ssh_command(self.connection(action="frame"), "fixed")
-        self.assertIn("StrictHostKeyChecking=yes", frame_command)
         with tempfile.TemporaryDirectory() as raw:
             output = Path(raw) / "frame.jpg"
             args = self.connection(path="/srv/media/episode.mkv", output=str(output))
-            with mock.patch.object(remote_media, "run_ssh", return_value=b"jpeg"):
-                result = remote_media.write_remote_output(args, "frame", "fixed read-only command", ".jpg")
+            with mock.patch.object(remote_media, "run_remote", return_value=b"jpeg"):
+                result = remote_media.write_remote_output(args, object(), "frame", "fixed read-only command", ".jpg")
             self.assertEqual(output.read_bytes(), b"jpeg")
             self.assertEqual(result["bytes"], 4)
         outside = self.connection(path="/srv/media/episode.mkv", output=str(REPOSITORY_ROOT / "frame.jpg"))
         with self.assertRaises(remote_media.RemoteMediaError):
-            remote_media.write_remote_output(outside, "frame", "fixed read-only command", ".jpg")
+            remote_media.write_remote_output(outside, object(), "frame", "fixed read-only command", ".jpg")
+
+    def test_discover_lists_only_top_level_video_files(self) -> None:
+        directory = "/srv/media/TV Show/Season 1"
+        args = self.connection(action="discover", directory=directory)
+        output = (
+            f"{directory}/Episode 02.mp4\0{directory}/notes.txt\0"
+            f"{directory}/Episode 01.mkv\0"
+        ).encode("utf-8")
+        with mock.patch.object(remote_media, "run_remote", return_value=output) as runner:
+            result = remote_media.discover(args, object())
+        self.assertEqual([item["basename"] for item in result["media"]], ["Episode 01.mkv", "Episode 02.mp4"])
+        command = runner.call_args.args[1]
+        self.assertIn("-maxdepth 1", command)
+        self.assertNotIn("-L", command)
+
+    def test_remote_helper_has_no_system_ssh_compatibility_backend(self) -> None:
+        source = Path(remote_media.__file__).read_text(encoding="utf-8")
+        for forbidden in ("ssh-keyscan", "ssh-keygen", "SSH_ASKPASS", "ControlMaster", "subprocess."):
+            self.assertNotIn(forbidden, source)
+        self.assertIn('PARAMIKO_VERSION = "5.0.0"', source)
 
 
 class InventoryTests(unittest.TestCase):
@@ -435,7 +538,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.0")
+            self.assertEqual(data["skill_version"], "1.4.1")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -793,7 +896,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.0"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.1"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -1046,7 +1149,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.0 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.1 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 

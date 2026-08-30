@@ -1,7 +1,7 @@
 interface:
   display_name: "Subtitle Hub"
   short_description: "以精简审批流初始化、全文校对并发布中文字幕"
-  default_prompt: "Use $subtitle-hub 1.4.0 to inventory my text and optional local or SSH-hosted video, upgrade the selected project when required, audit the complete subtitle scope, produce one detailed proposal for approval, then implement and prepare the release candidate."
+  default_prompt: "Use $subtitle-hub 1.4.1 to inventory my text and optional local or SSH-hosted video, upgrade the selected project when required, audit the complete subtitle scope, produce one detailed proposal for approval, then implement and prepare the release candidate."
 
 policy:
   allow_implicit_invocation: true

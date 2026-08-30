@@ -90,7 +90,7 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.4.0 intake contract
+## Skill 1.4.1 intake contract
 
 ### SH-INIT-006 — Probe before asking for manual inventory
 
@@ -98,11 +98,17 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.0`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.1`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
-When the user declares that a project reads video from a Debian NAS over SSH, guide the initialization as one material decision. Collect the host, port, username, exact absolute video paths, Chinese baseline mapping, intended source audio, timing authority, and user confirmation of the SSH host-key fingerprint when first shown. Do not request the password in chat or accept it through a flag, file, intake JSON, URL, or project record. Run the command in an interactive Codex terminal so the user confirms a new host key when necessary and enters the password only at the native hidden SSH prompt.
+When the user declares that a project reads video from a Debian NAS over SSH, collect the host, port, username, exact absolute video paths or one containing directory, Chinese baseline mapping, intended source audio, and timing authority. For a directory, `remote_media.py discover` lists only top-level files with supported video suffixes; never recurse or search outside that approved directory. Never request or accept the password in chat, arguments, files, URLs, or project records.
+
+`remote_media.py` has one cross-platform backend: Paramiko 5.0.0 in `~/.codex/dependencies/subtitle-hub/paramiko-5.0.0`. It does not use or configure system OpenSSH, AskPass, SSH agents, user keys, or general known-hosts files. If that exact isolated dependency is absent, request approval and run the install command reported by the script; do not modify global Python or add another SSH backend.
+
+Run `remote_media.py bootstrap` first. Its unauthenticated Python handshake retrieves the ED25519 host key and computes the SHA-256 fingerprint. Ask the user once to verify that fingerprint against a trusted NAS surface, then rerun with `--accept-fingerprint <SHA256:...>` to pin it under the same Codex dependency area. A changed or non-ED25519 key stops the connection.
+
+After pinning, each bounded action opens a local Tk password dialog; when Tk is unavailable, it opens a one-use tokenized form bound only to `127.0.0.1`. The password exists only in that Python process for the current connection and never enters chat, arguments, environment variables, files, project records, SSH agents, or key stores. Combine directory discovery and multi-file probing when practical to reduce prompts. The NAS remains unchanged. A probe must succeed from the Codex process itself before initialization may claim SSH capability.
 
 Use only existing remote programs. One `probe` connection checks Debian and the required existing tools, probes all approved exact files, and writes the password-free result to a system-temporary JSON. It stops if a required tool is absent; never install, upgrade, configure, upload, or retry with a broader account:
 
@@ -114,7 +120,7 @@ python scripts/remote_media.py probe --host <host> --port <port> --user <user> \
 
 Pass that result to the ordinary intake command with `--ssh-video-probe <system-temp/ssh-video-probe.json>`. Present the proposed episode map, detected tracks/languages, chosen audio, timing authority, and password-free SSH video references in the same initialization confirmation as identity and project name. Initialization writes only those password-free locators to the existing ignored `project/local.paths.yaml`; durable `project.yaml` keeps basenames and media facts. Delete the probe JSON after its conclusions are folded into the project.
 
-Unknown host keys, authentication failure, missing remote tools, unreadable or symlink-resolved paths, malformed probe output, or changed scope stop SSH intake. They never trigger environment setup, SFTP transfer, whole-file download, WebDAV fallback, or a second protocol implementation. The user may instead proceed text-only with the resulting media limitation.
+Unapproved or changed host keys, authentication failure, missing remote tools, unreadable or symlink-resolved paths, malformed probe output, or changed scope stop SSH intake. They never trigger credential persistence, remote environment setup, SFTP transfer, whole-file download, WebDAV fallback, or a second protocol implementation. The user may instead proceed text-only with the resulting media limitation.
 
 ### SH-INIT-010 — Upgrade before reopening an older project
 
