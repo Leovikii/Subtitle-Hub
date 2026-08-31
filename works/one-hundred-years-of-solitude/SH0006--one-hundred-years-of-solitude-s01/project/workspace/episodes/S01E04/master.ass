@@ -30,8 +30,9 @@ Dialogue: 0,0:01:11.33,0:01:13.33,ES-Main,,0,0,0,,Y he sido nombrado corregidor.
 Dialogue: 10,0:01:15.75,0:01:18.00,CN-Main,,0,0,0,,我们这里不用纸片发布命令
 Dialogue: 0,0:01:15.75,0:01:18.00,ES-Main,,0,0,0,,En este pueblo no mandamos con papeles.
 Dialogue: 10,0:01:18.67,0:01:20.96,CN-Main,,0,0,0,,我们也不需要管理者
-Dialogue: 0,0:01:18.67,0:01:20.96,ES-Main,,0,0,0,,Y para que sepa no necesitamos corregidor, porque aquí no hay nada que corregir.
+Dialogue: 0,0:01:18.67,0:01:20.96,ES-Main,,0,0,0,,Y para que sepa no necesitamos corregidor,
 Dialogue: 10,0:01:21.04,0:01:22.62,CN-Main,,0,0,0,,因为没什么可管理的！
+Dialogue: 0,0:01:21.04,0:01:22.62,ES-Main,,0,0,0,,porque aquí no hay nada que corregir.
 Dialogue: 10,0:01:23.21,0:01:25.12,CN-Main,,0,0,0,,我必须警告你 我有武器
 Dialogue: 0,0:01:23.21,0:01:25.12,ES-Main,,0,0,0,,Tengo que advertirle: estoy armado.
 Dialogue: 10,0:01:58.12,0:02:03.04,CN-Main,,0,0,0,,我宁愿今天把你活着扛出来 也不想余生扛着你的尸体
@@ -90,8 +91,9 @@ Dialogue: 0,0:05:53.58,0:05:54.67,ES-Main,,0,0,0,,Escúcheme bien.
 Dialogue: 10,0:05:55.42,0:05:58.33,CN-Main,,0,0,0,,差不多30年前这些人和我共同创建了这个小镇
 Dialogue: 0,0:05:55.42,0:05:58.33,ES-Main,,0,0,0,,Hace casi 30 años estos hombres y yo fundamos este pueblo.
 Dialogue: 10,0:05:59.29,0:06:01.71,CN-Main,,0,0,0,,我们兴修道路、铺设街道
-Dialogue: 0,0:05:59.29,0:06:01.71,ES-Main,,0,0,0,,Abrimos caminos, trazamos las calles, construimos las casas,
+Dialogue: 0,0:05:59.29,0:06:01.71,ES-Main,,0,0,0,,Abrimos caminos, trazamos las calles,
 Dialogue: 10,0:06:01.79,0:06:03.21,CN-Main,,0,0,0,,建造房屋
+Dialogue: 0,0:06:01.79,0:06:03.21,ES-Main,,0,0,0,,construimos las casas,
 Dialogue: 10,0:06:04.25,0:06:07.00,CN-Main,,0,0,0,,从头到尾没受到政府的任何帮助
 Dialogue: 0,0:06:04.25,0:06:07.00,ES-Main,,0,0,0,,y todo lo hicimos sin la ayuda del gobierno.
 Dialogue: 10,0:06:07.79,0:06:09.62,CN-Main,,0,0,0,,我们希望今后也能维持原状
@@ -529,8 +531,9 @@ Dialogue: 0,0:29:06.25,0:29:07.42,ES-Main,,0,0,0,,Sí. - Pero Remedios es impúb
 Dialogue: 10,0:29:07.75,0:29:09.00,CN-Main,,0,0,0,,对 显然没到
 Dialogue: 0,0:29:07.75,0:29:09.00,ES-Main,,0,0,0,,Pues eso es evidente.
 Dialogue: 10,0:29:09.88,0:29:12.46,CN-Main,,0,0,0,,相信我 如果我们知道他看上的是她
-Dialogue: 0,0:29:09.88,0:29:12.46,ES-Main,,0,0,0,,Y créame que, si hubiéramos sabido cuál de sus hijas era, no estaríamos aquí.
+Dialogue: 0,0:29:09.88,0:29:12.46,ES-Main,,0,0,0,,Y créame que, si hubiéramos sabido cuál de sus hijas era,
 Dialogue: 10,0:29:12.54,0:29:13.62,CN-Main,,0,0,0,,肯定不会来这一趟
+Dialogue: 0,0:29:12.54,0:29:13.62,ES-Main,,0,0,0,,no estaríamos aquí.
 Dialogue: 10,0:29:26.75,0:29:29.33,CN-Main,,0,0,0,,我们同意将蕾梅黛丝许配给奥雷里亚诺
 Dialogue: 0,0:29:26.75,0:29:29.33,ES-Main,,0,0,0,,Dejaremos que Remedios se case con Aureliano, pero…
 Dialogue: 10,0:29:29.42,0:29:33.17,CN-Main,,0,0,0,,但必须等她到了生育年龄再完婚
@@ -554,8 +557,9 @@ Dialogue: 0,0:30:14.92,0:30:17.83,ES-Main,,0,0,0,,Melquíades, necesito un conse
 Dialogue: 10,0:30:19.46,0:30:25.25,CN-Main,,0,0,0,,那个白痴里正想把教堂带到马孔多
 Dialogue: 0,0:30:19.46,0:30:25.25,ES-Main,,0,0,0,,Imagínate que el pendejo del corregidor pretende traer la iglesia a Macondo.
 Dialogue: 10,0:30:32.71,0:30:34.46,CN-Main,,0,0,0,,我们何时需要神父了？
-Dialogue: 0,0:30:32.71,0:30:34.46,ES-Main,,0,0,0,,¿Cuándo hemos necesitado un cura? ¿Cuándo?
+Dialogue: 0,0:30:32.71,0:30:34.46,ES-Main,,0,0,0,,¿Cuándo hemos necesitado un cura?
 Dialogue: 10,0:30:35.25,0:30:36.12,CN-Main,,0,0,0,,何时？
+Dialogue: 0,0:30:35.25,0:30:36.12,ES-Main,,0,0,0,,¿Cuándo?
 Dialogue: 10,0:30:41.17,0:30:42.08,CN-Main,,0,0,0,,梅尔基亚德斯？
 Dialogue: 0,0:30:41.17,0:30:42.08,ES-Main,,0,0,0,,¿Melquíades?
 Dialogue: 10,0:31:04.21,0:31:05.12,CN-Main,,0,0,0,,吉普赛人？
@@ -619,8 +623,9 @@ Dialogue: 0,0:34:29.88,0:34:32.29,ES-Main,,0,0,0,,Pero ¡rápido! ¡Vamos, ya! �
 Dialogue: 10,0:34:58.67,0:35:02.21,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥先生身为本镇的管理者
 Dialogue: 0,0:34:58.67,0:35:02.21,ES-Main,,0,0,0,,Don José Arcadio, como autoridad civil de este pueblo,
 Dialogue: 10,0:35:02.58,0:35:05.88,CN-Main,,0,0,0,,我有义务通知你溺水者的尸体若不下葬
-Dialogue: 0,0:35:02.58,0:35:05.88,ES-Main,,0,0,0,,es mi deber informarle, el cadáver insepulto de un ahogado es un peligro para la salud pública.
+Dialogue: 0,0:35:02.58,0:35:05.88,ES-Main,,0,0,0,,es mi deber informarle, el cadáver insepulto de un ahogado
 Dialogue: 10,0:35:05.96,0:35:07.25,CN-Main,,0,0,0,,会对公众健康构成威胁
+Dialogue: 0,0:35:05.96,0:35:07.25,ES-Main,,0,0,0,,es un peligro para la salud pública.
 Dialogue: 10,0:35:07.33,0:35:09.29,CN-Main,,0,0,0,,梅尔基亚德斯没有死！
 Dialogue: 0,0:35:07.33,0:35:09.29,ES-Main,,0,0,0,,¡Melquíades no está muerto!
 Dialogue: 10,0:35:10.17,0:35:11.21,CN-Main,,0,0,0,,他是不死之身
@@ -648,8 +653,9 @@ Dialogue: 0,0:37:04.83,0:37:06.71,ES-Main,,0,0,0,,Venimos del agua.
 Dialogue: 10,0:37:07.71,0:37:12.83,CN-Main,,0,0,0,,时间停止 永恒开启
 Dialogue: 0,0:37:07.71,0:37:12.83,ES-Main,,0,0,0,,El tiempo se ha detenido, y la eternidad ha comenzado.
 Dialogue: 10,0:37:32.42,0:37:33.92,CN-Main,,0,0,0,,时间停止
+Dialogue: 0,0:37:32.42,0:37:33.92,ES-Main,,0,0,0,,El tiempo se ha detenido,
 Dialogue: 10,0:37:34.96,0:37:36.67,CN-Main,,0,0,0,,永恒开启了 梅尔基亚德斯
-Dialogue: 0,0:37:34.96,0:37:36.67,ES-Main,,0,0,0,,El tiempo se ha detenido, y la eternidad ha comenzado, Melquíades.
+Dialogue: 0,0:37:34.96,0:37:36.67,ES-Main,,0,0,0,,y la eternidad ha comenzado, Melquíades.
 Dialogue: 10,0:39:04.17,0:39:06.58,CN-Main,,0,0,0,,阿尔卡蒂奥永远不会知道
 Dialogue: 10,0:39:07.46,0:39:10.62,CN-Main,,0,0,0,,这个忽然出现 为他抚慰悲伤的女人
 Dialogue: 0,0:39:07.46,0:39:10.62,ES-Main,,0,0,0,,que aquella mujer que parecía entender su tristeza
@@ -738,6 +744,7 @@ Dialogue: 0,0:46:10.54,0:46:11.92,ES-Main,,0,0,0,,Rebeca, estamos en tu casa. No
 Dialogue: 10,0:46:12.62,0:46:14.25,CN-Main,,0,0,0,,不 丽贝卡 请不要这样
 Dialogue: 0,0:46:12.62,0:46:14.25,ES-Main,,0,0,0,,Rebeca, por favor. Hija.
 Dialogue: 10,0:46:14.33,0:46:15.42,CN-Main,,0,0,0,,丽贝卡 亲爱的
+Dialogue: 0,0:46:14.33,0:46:15.42,ES-Main,,0,0,0,,Rebeca, hija.
 Dialogue: 10,0:46:16.79,0:46:17.83,CN-Main,,0,0,0,,爸爸
 Dialogue: 0,0:46:16.79,0:46:17.83,ES-Main,,0,0,0,,Papá.
 Dialogue: 10,0:46:18.00,0:46:20.08,CN-Main,,0,0,0,,下午好 布恩迪亚先生
@@ -764,8 +771,9 @@ Dialogue: 0,0:47:21.17,0:47:24.33,ES-Main,,0,0,0,,Aunque mi hijo grande cumple l
 Dialogue: 10,0:47:24.46,0:47:25.62,CN-Main,,0,0,0,,他们全是你的孩子？
 Dialogue: 0,0:47:24.46,0:47:25.62,ES-Main,,0,0,0,,¿Hijos naturales?
 Dialogue: 10,0:47:25.71,0:47:27.42,CN-Main,,0,0,0,,拜托！全是合法婚生子
-Dialogue: 0,0:47:25.71,0:47:27.42,ES-Main,,0,0,0,,¿Cómo se le ocurre? ¡Todos legítimos! - ¿Filiación política?
+Dialogue: 0,0:47:25.71,0:47:27.42,ES-Main,,0,0,0,,¿Cómo se le ocurre? ¡Todos legítimos!
 Dialogue: 10,0:47:27.50,0:47:28.83,CN-Main,,0,0,0,,政治派别呢？
+Dialogue: 0,0:47:27.50,0:47:28.83,ES-Main,,0,0,0,,¿Filiación política?
 Dialogue: 10,0:47:30.21,0:47:33.67,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚将装有发条的芭蕾舞者
 Dialogue: 0,0:47:30.21,0:47:33.67,ES-Main,,0,0,0,,consiguió conectar
 Dialogue: 10,0:47:33.75,0:47:35.62,CN-Main,,0,0,0,,连接上了钟表的机械装置
@@ -800,8 +808,9 @@ Dialogue: 0,0:48:13.75,0:48:16.17,ES-Main,,0,0,0,,que a partir de ese momento, e
 Dialogue: 10,0:48:17.62,0:48:18.79,CN-Main,,0,0,0,,听着 摩斯科特
 Dialogue: 0,0:48:17.62,0:48:18.79,ES-Main,,0,0,0,,Mire, Moscote.
 Dialogue: 10,0:48:19.38,0:48:23.58,CN-Main,,0,0,0,,我们镇上没有政治派别我也不认为有做人口普查的必要
-Dialogue: 0,0:48:19.38,0:48:23.58,ES-Main,,0,0,0,,Aquí en Macondo no tenemos filiaciones políticas. No veo la necesidad de un censo, todos nos conocemos.
+Dialogue: 0,0:48:19.38,0:48:23.58,ES-Main,,0,0,0,,Aquí en Macondo no tenemos filiaciones políticas. No veo la necesidad de un censo,
 Dialogue: 10,0:48:23.67,0:48:24.75,CN-Main,,0,0,0,,大家都互相认识
+Dialogue: 0,0:48:23.67,0:48:24.75,ES-Main,,0,0,0,,todos nos conocemos.
 Dialogue: 10,0:48:25.25,0:48:26.67,CN-Main,,0,0,0,,这是政府的命令
 Dialogue: 0,0:48:25.25,0:48:26.67,ES-Main,,0,0,0,,Es una orden del gobierno.
 Dialogue: 10,0:48:31.33,0:48:32.67,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥？
@@ -881,18 +890,21 @@ Dialogue: 0,0:52:42.88,0:52:45.29,ES-Main,,0,0,0,,Y Úrsula y Amaranta, tan lejo
 Dialogue: 10,0:53:17.25,0:53:18.25,CN-Main,,0,0,0,,冷静！
 Dialogue: 0,0:53:17.25,0:53:18.25,ES-Main,,0,0,0,,¡Cálmate!
 Dialogue: 10,0:53:19.00,0:53:20.38,CN-Main,,0,0,0,,时间停止
+Dialogue: 0,0:53:19.00,0:53:20.38,ES-Main,,0,0,0,,¡El tiempo se ha detenido,
 Dialogue: 10,0:53:20.46,0:53:22.25,CN-Main,,0,0,0,,永恒开启！
-Dialogue: 0,0:53:20.46,0:53:22.25,ES-Main,,0,0,0,,¡El tiempo se ha detenido, y la eternidad ha comenzado!
+Dialogue: 0,0:53:20.46,0:53:22.25,ES-Main,,0,0,0,,y la eternidad ha comenzado!
 Dialogue: 10,0:53:23.58,0:53:26.67,CN-Main,,0,0,0,,-快来帮忙！-但人非生而…
 Dialogue: 0,0:53:23.58,0:53:26.67,ES-Main,,0,0,0,,¡Ayuda! ¡Los hombres no nacimos…!
 Dialogue: 10,0:53:36.88,0:53:39.58,CN-Main,,0,0,0,,我们生来就是为了死去！
 Dialogue: 0,0:53:36.88,0:53:39.58,ES-Main,,0,0,0,,¡Nacimos para morir! ¿Qué pasa?
 Dialogue: 10,0:53:40.25,0:53:41.42,CN-Main,,0,0,0,,-出什么事了？-快去叫邻居们！
+Dialogue: 0,0:53:40.25,0:53:41.42,ES-Main,,0,0,0,,¡Llama a los vecinos!
 Dialogue: 10,0:53:41.50,0:53:44.46,CN-Main,,0,0,0,,-为了成为…-来帮忙！帮帮我们！
-Dialogue: 0,0:53:41.50,0:53:44.46,ES-Main,,0,0,0,,¡Llama a los vecinos! Ser… ¡Ayuda!
+Dialogue: 0,0:53:41.50,0:53:44.46,ES-Main,,0,0,0,,Ser… ¡Ayuda!
 Dialogue: 10,0:53:46.88,0:53:50.25,CN-Main,,0,0,0,,…有机物！
-Dialogue: 0,0:53:46.88,0:53:50.25,ES-Main,,0,0,0,,¡…para ser materia orgánica! ¡Don José Arcadio…!
+Dialogue: 0,0:53:46.88,0:53:50.25,ES-Main,,0,0,0,,¡…para ser materia orgánica!
 Dialogue: 10,0:53:50.33,0:53:51.62,CN-Main,,0,0,0,,布恩迪亚先生！
+Dialogue: 0,0:53:50.33,0:53:51.62,ES-Main,,0,0,0,,¡Don José Arcadio…!
 Dialogue: 10,0:53:54.12,0:53:55.12,CN-Main,,0,0,0,,够了！
 Dialogue: 0,0:53:54.12,0:53:55.12,ES-Main,,0,0,0,,¡No más!
 Dialogue: 10,0:54:37.21,0:54:40.54,CN-Main,,0,0,0,,够了！

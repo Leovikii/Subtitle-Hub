@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.1.0
+; Subtitle-Hub-Version: 1.1.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -123,8 +123,9 @@ Dialogue: 0,0:09:25.29,0:09:29.62,ES-Main,,0,0,0,,Tanto tiempo queriendo tú pel
 Dialogue: 10,0:09:30.33,0:09:31.33,CN-Main,,0,0,0,,简直难以置信！
 Dialogue: 0,0:09:30.33,0:09:31.33,ES-Main,,0,0,0,,¡No jodas!
 Dialogue: 10,0:09:32.58,0:09:35.21,CN-Main,,0,0,0,,希望你喜欢鸡汤 因为它死定了
-Dialogue: 0,0:09:32.58,0:09:35.21,ES-Main,,0,0,0,,Ve alistando ese sancocho, que te voy a matar ese gallo. ¿Me oíste?
+Dialogue: 0,0:09:32.58,0:09:35.21,ES-Main,,0,0,0,,Ve alistando ese sancocho, que te voy a matar ese gallo.
 Dialogue: 10,0:09:35.29,0:09:36.29,CN-Main,,0,0,0,,听见了吗？
+Dialogue: 0,0:09:35.29,0:09:36.29,ES-Main,,0,0,0,,¿Me oíste?
 Dialogue: 10,0:09:55.33,0:09:56.21,CN-Main,,0,0,0,,上啊！
 Dialogue: 0,0:09:55.33,0:09:56.21,ES-Main,,0,0,0,,¡Vamos!
 Dialogue: 10,0:09:57.21,0:09:58.79,CN-Main,,0,0,0,,加油！
@@ -148,8 +149,9 @@ Dialogue: 0,0:10:18.29,0:10:22.88,ES-Main,,0,0,0,,¡Vamos, carajo! ¡Pica, gallo
 Dialogue: 10,0:10:22.96,0:10:26.58,CN-Main,,0,0,0,,就是这样！弄死它！
 Dialogue: 0,0:10:22.96,0:10:26.58,ES-Main,,0,0,0,,¡Cuidado! ¡Ahí! ¡Mátalo!
 Dialogue: 10,0:10:28.38,0:10:29.38,CN-Main,,0,0,0,,起来！
+Dialogue: 0,0:10:28.38,0:10:29.38,ES-Main,,0,0,0,,¡Vamos!
 Dialogue: 10,0:10:29.46,0:10:31.17,CN-Main,,0,0,0,,拜托！快起来！
-Dialogue: 0,0:10:29.46,0:10:31.17,ES-Main,,0,0,0,,¡Vamos! ¡Vamos, carajo! - ¡Eso, compadre!
+Dialogue: 0,0:10:29.46,0:10:31.17,ES-Main,,0,0,0,,¡Vamos, carajo! - ¡Eso, compadre!
 Dialogue: 10,0:10:31.25,0:10:32.17,CN-Main,,0,0,0,,上啊 公鸡！上啊！
 Dialogue: 0,0:10:31.25,0:10:32.17,ES-Main,,0,0,0,,¡Échale, gallo! ¡Échale!
 Dialogue: 10,0:10:32.92,0:10:35.00,CN-Main,,0,0,0,,我的公鸡啊！
@@ -158,8 +160,9 @@ Dialogue: 10,0:10:37.96,0:10:39.08,CN-Main,,0,0,0,,厉害啊
 Dialogue: 10,0:10:46.46,0:10:49.58,CN-Main,,0,0,0,,听着 朋友 这就是生活
 Dialogue: 0,0:10:46.46,0:10:49.58,ES-Main,,0,0,0,,Mira, compadre. Así es esto.
 Dialogue: 10,0:10:50.83,0:10:51.88,CN-Main,,0,0,0,,你养了只好鸡
+Dialogue: 0,0:10:50.83,0:10:51.88,ES-Main,,0,0,0,,Tienes un buen animal.
 Dialogue: 10,0:10:51.96,0:10:53.04,CN-Main,,0,0,0,,恭喜你
-Dialogue: 0,0:10:51.96,0:10:53.04,ES-Main,,0,0,0,,Tienes un buen animal. Te felicito.
+Dialogue: 0,0:10:51.96,0:10:53.04,ES-Main,,0,0,0,,Te felicito.
 Dialogue: 10,0:10:57.71,0:10:59.08,CN-Main,,0,0,0,,过来 小可爱 你中毒了
 Dialogue: 0,0:10:57.71,0:10:59.08,ES-Main,,0,0,0,,Venga acá. Está envenenado.
 Dialogue: 10,0:11:00.50,0:11:01.75,CN-Main,,0,0,0,,嘿 布恩迪亚！
@@ -297,8 +300,9 @@ Dialogue: 0,0:23:41.46,0:23:42.75,ES-Main,,0,0,0,,Claro, como hacía tiempo.
 Dialogue: 10,0:23:44.29,0:23:45.21,CN-Main,,0,0,0,,谢谢
 Dialogue: 0,0:23:44.29,0:23:45.21,ES-Main,,0,0,0,,Gracias.
 Dialogue: 10,0:25:45.12,0:25:46.25,CN-Main,,0,0,0,,用力！
-Dialogue: 0,0:25:45.12,0:25:46.25,ES-Main,,0,0,0,,¡Empuja profundo! ¡Un último, empuja!
+Dialogue: 0,0:25:45.12,0:25:46.25,ES-Main,,0,0,0,,¡Empuja profundo!
 Dialogue: 10,0:25:46.96,0:25:47.96,CN-Main,,0,0,0,,再来一次！用力！
+Dialogue: 0,0:25:46.96,0:25:47.96,ES-Main,,0,0,0,,¡Un último, empuja!
 Dialogue: 10,0:25:48.96,0:25:51.83,CN-Main,,0,0,0,,加把劲！出来了！
 Dialogue: 0,0:25:48.96,0:25:51.83,ES-Main,,0,0,0,,¡Duro! ¡Ahí viene, viene, viene!
 Dialogue: 10,0:26:13.29,0:26:17.12,CN-Main,,0,0,0,,虽然吃了猴肉 喝了蛇汤……
@@ -431,8 +435,9 @@ Dialogue: 0,0:35:26.96,0:35:28.12,ES-Main,,0,0,0,,Gracias.
 Dialogue: 10,0:35:30.33,0:35:33.83,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚精心设计了房屋的位置
 Dialogue: 0,0:35:30.33,0:35:33.83,ES-Main,,0,0,0,,había dispuesto de tal modo las casas,
 Dialogue: 10,0:35:34.79,0:35:36.62,CN-Main,,0,0,0,,确保从任意一间屋子
+Dialogue: 0,0:35:34.79,0:35:36.62,ES-Main,,0,0,0,,que desde todas podía llegarse al río
 Dialogue: 10,0:35:36.71,0:35:39.08,CN-Main,,0,0,0,,到河边取水都同样省力
-Dialogue: 0,0:35:36.71,0:35:39.08,ES-Main,,0,0,0,,que desde todas podía llegarse al río y abastecerse de agua con igual esfuerzo,
+Dialogue: 0,0:35:36.71,0:35:39.08,ES-Main,,0,0,0,,y abastecerse de agua con igual esfuerzo,
 Dialogue: 10,0:35:40.79,0:35:42.75,CN-Main,,0,0,0,,他对街道的规划亦彰显出卓越的判断力
 Dialogue: 0,0:35:40.79,0:35:42.75,ES-Main,,0,0,0,,y trazó las calles con tan buen sentido
 Dialogue: 10,0:35:43.04,0:35:45.67,CN-Main,,0,0,0,,哪怕在最炎热的午后也不会有房屋承受过多的暴晒
@@ -444,8 +449,9 @@ Dialogue: 0,0:35:56.33,0:35:58.71,ES-Main,,0,0,0,,¿Otra vez en cueros? ¿Es que
 Dialogue: 10,0:35:59.42,0:36:00.62,CN-Main,,0,0,0,,这是象牙果？
 Dialogue: 0,0:35:59.42,0:36:00.62,ES-Main,,0,0,0,,¿Y estos corozos?
 Dialogue: 10,0:36:01.29,0:36:02.38,CN-Main,,0,0,0,,你想喝果汁吗？
-Dialogue: 0,0:36:01.29,0:36:02.38,ES-Main,,0,0,0,,¿Quieres que te haga un juguito? Vamos, pues.
+Dialogue: 0,0:36:01.29,0:36:02.38,ES-Main,,0,0,0,,¿Quieres que te haga un juguito?
 Dialogue: 10,0:36:02.88,0:36:03.83,CN-Main,,0,0,0,,好吧 过来
+Dialogue: 0,0:36:02.88,0:36:03.83,ES-Main,,0,0,0,,Vamos, pues.
 Dialogue: 10,0:36:14.25,0:36:15.12,CN-Main,,0,0,0,,看！
 Dialogue: 0,0:36:14.25,0:36:15.12,ES-Main,,0,0,0,,¡Mira!
 Dialogue: 10,0:36:17.25,0:36:18.33,CN-Main,,0,0,0,,真漂亮
@@ -537,8 +543,9 @@ Dialogue: 0,0:42:10.04,0:42:13.17,ES-Main,,0,0,0,,pensó que era posible servirs
 Dialogue: 10,0:42:13.25,0:42:15.33,CN-Main,,0,0,0,,能帮他从地下开采黄金
 Dialogue: 0,0:42:13.25,0:42:15.33,ES-Main,,0,0,0,,para desentrañar el oro de la tierra.
 Dialogue: 10,0:42:20.29,0:42:21.50,CN-Main,,0,0,0,,你不能把羊牵走
+Dialogue: 0,0:42:20.29,0:42:21.50,ES-Main,,0,0,0,,No te las vas a llevar.
 Dialogue: 10,0:42:21.58,0:42:23.58,CN-Main,,0,0,0,,可那些东西能吸引金属！
-Dialogue: 0,0:42:21.58,0:42:23.58,ES-Main,,0,0,0,,No te las vas a llevar. - Lo viste. Esas cosas arrastran metales.
+Dialogue: 0,0:42:21.58,0:42:23.58,ES-Main,,0,0,0,,Lo viste. Esas cosas arrastran metales.
 Dialogue: 10,0:42:23.67,0:42:25.29,CN-Main,,0,0,0,,我们需要山羊来养家糊口
 Dialogue: 0,0:42:23.67,0:42:25.29,ES-Main,,0,0,0,,Y estas cabras nos dan de comer.
 Dialogue: 10,0:42:25.83,0:42:27.79,CN-Main,,0,0,0,,我们能淘出一屋子黄金 明白吗？
@@ -558,8 +565,9 @@ Dialogue: 0,0:43:55.00,0:43:58.50,ES-Main,,0,0,0,,pero paradójicamente, no atra
 Dialogue: 10,0:44:11.67,0:44:14.17,CN-Main,,0,0,0,,少量的或许不行
 Dialogue: 0,0:44:11.67,0:44:14.17,ES-Main,,0,0,0,,Puede ser que no funcione para pequeñas cantidades.
 Dialogue: 10,0:44:16.71,0:44:19.50,CN-Main,,0,0,0,,但肯定能帮我们挖出大块岩石或大堆宝藏
-Dialogue: 0,0:44:16.71,0:44:19.50,ES-Main,,0,0,0,,Pero de seguro servirá para desenterrar grandes rocas o tesoros completos.
+Dialogue: 0,0:44:16.71,0:44:19.50,ES-Main,,0,0,0,,para desenterrar grandes rocas o tesoros completos.
 Dialogue: 10,0:44:20.17,0:44:21.38,CN-Main,,0,0,0,,一定行得通
+Dialogue: 0,0:44:20.17,0:44:21.38,ES-Main,,0,0,0,,Pero de seguro servirá
 Dialogue: 10,0:44:22.62,0:44:24.12,CN-Main,,0,0,0,,我买得起
 Dialogue: 0,0:44:22.62,0:44:24.12,ES-Main,,0,0,0,,Yo le puedo pagar por ellos.
 Dialogue: 10,0:44:25.17,0:44:27.33,CN-Main,,0,0,0,,凭良心讲 我不能卖给你 相信我
@@ -575,15 +583,17 @@ Dialogue: 0,0:44:47.25,0:44:48.08,ES-Main,,0,0,0,,Está bien.
 Dialogue: 10,0:44:49.92,0:44:51.29,CN-Main,,0,0,0,,我喜欢你的激情
 Dialogue: 0,0:44:49.92,0:44:51.29,ES-Main,,0,0,0,,Me gusta su entusiasmo.
 Dialogue: 10,0:45:00.29,0:45:02.12,CN-Main,,0,0,0,,格林列尔多 你在干什么？
+Dialogue: 0,0:45:00.29,0:45:02.12,ES-Main,,0,0,0,,Gerineldo, ¿qué haces viniendo para acá?
 Dialogue: 10,0:45:02.21,0:45:04.12,CN-Main,,0,0,0,,这里已经试过了 去看看那边
-Dialogue: 0,0:45:02.21,0:45:04.12,ES-Main,,0,0,0,,Gerineldo, ¿qué haces viniendo para acá? Aquí ya buscamos, toca ir hacia allá.
+Dialogue: 0,0:45:02.21,0:45:04.12,ES-Main,,0,0,0,,Aquí ya buscamos, toca ir hacia allá.
 Dialogue: 10,0:45:04.29,0:45:06.00,CN-Main,,0,0,0,,你怎么不早说？
 Dialogue: 0,0:45:04.29,0:45:06.00,ES-Main,,0,0,0,,¿Por qué no me dijiste antes?
 Dialogue: 10,0:45:06.54,0:45:08.71,CN-Main,,0,0,0,,很显然 你是个白痴
 Dialogue: 0,0:45:06.54,0:45:08.71,ES-Main,,0,0,0,,Es lógico. Si eres bruto.
 Dialogue: 10,0:45:09.21,0:45:10.21,CN-Main,,0,0,0,,你留下 我去看
+Dialogue: 0,0:45:09.21,0:45:10.21,ES-Main,,0,0,0,,Voy para allá.
 Dialogue: 10,0:45:10.29,0:45:11.62,CN-Main,,0,0,0,,好 继续干你的活去吧
-Dialogue: 0,0:45:10.29,0:45:11.62,ES-Main,,0,0,0,,Voy para allá. Ponte a trabajar.
+Dialogue: 0,0:45:10.29,0:45:11.62,ES-Main,,0,0,0,,Ponte a trabajar.
 Dialogue: 10,0:45:14.88,0:45:16.67,CN-Main,,0,0,0,,嘿！过来！
 Dialogue: 0,0:45:14.88,0:45:16.67,ES-Main,,0,0,0,,¡Ey! ¡Vengan!
 Dialogue: 10,0:45:24.38,0:45:25.71,CN-Main,,0,0,0,,一定是个大家伙
@@ -711,8 +721,9 @@ Dialogue: 0,0:53:19.17,0:53:20.75,ES-Main,,0,0,0,,¡El mar!
 Dialogue: 10,0:53:38.96,0:53:42.33,CN-Main,,0,0,0,,这个发现令何塞·阿尔卡蒂奥·布恩迪亚近乎崩溃
 Dialogue: 0,0:53:38.96,0:53:42.33,ES-Main,,0,0,0,,de José Arcadio Buendía.
 Dialogue: 10,0:53:44.29,0:53:46.25,CN-Main,,0,0,0,,他将其视为命运的捉弄
+Dialogue: 0,0:53:44.29,0:53:46.25,ES-Main,,0,0,0,,Consideró como una burla del destino
 Dialogue: 10,0:53:46.33,0:53:48.42,CN-Main,,0,0,0,,曾经苦苦寻觅而未果
-Dialogue: 0,0:53:46.33,0:53:48.42,ES-Main,,0,0,0,,Consideró como una burla del destino haber buscado el mar sin encontrarlo,
+Dialogue: 0,0:53:46.33,0:53:48.42,ES-Main,,0,0,0,,haber buscado el mar sin encontrarlo,
 Dialogue: 10,0:53:49.21,0:53:50.88,CN-Main,,0,0,0,,为之牺牲良多的大海
 Dialogue: 0,0:53:49.21,0:53:50.88,ES-Main,,0,0,0,,al precio de sacrificios,
 Dialogue: 10,0:53:51.38,0:53:53.75,CN-Main,,0,0,0,,如今却无心插柳地找到了
@@ -760,10 +771,10 @@ Dialogue: 0,0:56:14.88,0:56:18.12,ES-Main,,0,0,0,,Y rogó a Dios que le dejara m
 Dialogue: 10,0:56:20.54,0:56:21.88,CN-Main,,0,0,0,,就快好了
 Dialogue: 0,0:56:20.54,0:56:21.88,ES-Main,,0,0,0,,Ya lo siento, va a venir.
 Dialogue: 10,0:56:22.50,0:56:23.79,CN-Main,,0,0,0,,来了！
-Dialogue: 0,0:56:22.50,0:56:23.79,ES-Main,,0,0,0,,¡Úrsula, ahí viene!
 Dialogue: 10,0:56:24.38,0:56:25.38,CN-Main,,0,0,0,,出来了！
+Dialogue: 0,0:56:24.38,0:56:25.38,ES-Main,,0,0,0,,¡Úrsula, ahí viene!
 Dialogue: 10,0:56:25.46,0:56:28.79,CN-Main,,0,0,0,,加把劲！再来一次！对！
-Dialogue: 0,0:56:25.46,0:56:28.79,ES-Main,,0,0,0,,¡Úrsula, ahí viene! ¡Vamos, uno más! ¡Uno más! ¡Eso!
+Dialogue: 0,0:56:25.46,0:56:28.79,ES-Main,,0,0,0,,¡Vamos, uno más! ¡Uno más! ¡Eso!
 Dialogue: 10,0:56:50.25,0:56:53.75,CN-Main,,0,0,0,,奥雷里亚诺是在马孔多诞生的第一个新生儿
 Dialogue: 0,0:56:50.25,0:56:53.75,ES-Main,,0,0,0,,el primer ser humano que nació en Macondo.
 Dialogue: 10,0:56:56.58,0:56:58.83,CN-Main,,0,0,0,,他出生时便睁着双眼

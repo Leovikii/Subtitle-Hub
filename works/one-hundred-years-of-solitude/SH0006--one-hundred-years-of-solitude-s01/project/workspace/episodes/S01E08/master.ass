@@ -43,8 +43,9 @@ Dialogue: 0,0:01:01.04,0:01:04.54,ES-Main,,0,0,0,,Pídale permiso a las autorida
 Dialogue: 10,0:01:05.00,0:01:06.17,CN-Main,,0,0,0,,奥雷里亚诺！
 Dialogue: 0,0:01:05.00,0:01:06.17,ES-Main,,0,0,0,,¡Aureliano!
 Dialogue: 10,0:01:11.33,0:01:12.75,CN-Main,,0,0,0,,布恩迪亚上校万岁！
+Dialogue: 0,0:01:11.33,0:01:12.75,ES-Main,,0,0,0,,¡Que viva el coronel Buendía!
 Dialogue: 10,0:01:12.83,0:01:14.54,CN-Main,,0,0,0,,布恩迪亚上校万岁！
-Dialogue: 0,0:01:12.83,0:01:14.54,ES-Main,,0,0,0,,¡Que viva el coronel Buendía! - ¡Que viva!
+Dialogue: 0,0:01:12.83,0:01:14.54,ES-Main,,0,0,0,,¡Que viva!
 Dialogue: 10,0:01:16.96,0:01:18.46,CN-Main,,0,0,0,,奥雷里亚诺！
 Dialogue: 0,0:01:16.96,0:01:18.46,ES-Main,,0,0,0,,¡Aureliano!
 Dialogue: 10,0:01:18.54,0:01:20.17,CN-Main,,0,0,0,,别再胡言乱语了！
@@ -147,8 +148,9 @@ Dialogue: 0,0:06:33.08,0:06:34.17,ES-Main,,0,0,0,,Buenas noches.
 Dialogue: 10,0:06:37.54,0:06:38.96,CN-Main,,0,0,0,,晚上好
 Dialogue: 0,0:06:37.54,0:06:38.96,ES-Main,,0,0,0,,Buenas noches.
 Dialogue: 10,0:06:54.42,0:06:55.38,CN-Main,,0,0,0,,先生
+Dialogue: 0,0:06:54.42,0:06:55.38,ES-Main,,0,0,0,,Caballero,
 Dialogue: 10,0:06:55.46,0:06:57.25,CN-Main,,0,0,0,,我们不是来找人的
-Dialogue: 0,0:06:55.46,0:06:57.25,ES-Main,,0,0,0,,Caballero, no venimos persiguiendo a nadie.
+Dialogue: 0,0:06:55.46,0:06:57.25,ES-Main,,0,0,0,,no venimos persiguiendo a nadie.
 Dialogue: 10,0:06:58.46,0:07:01.04,CN-Main,,0,0,0,,我和我的军官们只想来喝一杯
 Dialogue: 0,0:06:58.46,0:07:01.04,ES-Main,,0,0,0,,Mis oficiales y yo solo queremos un trago
 Dialogue: 10,0:07:02.00,0:07:03.54,CN-Main,,0,0,0,,找找乐子
@@ -393,8 +395,9 @@ Dialogue: 0,0:23:44.96,0:23:48.17,ES-Main,,0,0,0,,Entiendan que la única forma 
 Dialogue: 10,0:23:49.12,0:23:51.75,CN-Main,,0,0,0,,-那就是达成协议-什么协议？
 Dialogue: 0,0:23:49.12,0:23:51.75,ES-Main,,0,0,0,,es llegando a acuerdos. ¿Y qué acuerdos son esos?
 Dialogue: 10,0:23:52.38,0:23:54.21,CN-Main,,0,0,0,,任何有必要的协议
-Dialogue: 0,0:23:52.38,0:23:54.21,ES-Main,,0,0,0,,Los acuerdos que sean necesarios. Lo primero es ir a la capital y poder…
+Dialogue: 0,0:23:52.38,0:23:54.21,ES-Main,,0,0,0,,Los acuerdos que sean necesarios.
 Dialogue: 10,0:23:54.29,0:23:56.12,CN-Main,,0,0,0,,我们应先前往首都…
+Dialogue: 0,0:23:54.29,0:23:56.12,ES-Main,,0,0,0,,Lo primero es ir a la capital y poder…
 Dialogue: 10,0:23:56.21,0:23:57.54,CN-Main,,0,0,0,,举个例子 首先
 Dialogue: 0,0:23:56.21,0:23:57.54,ES-Main,,0,0,0,,Por ejemplo, para empezar,
 Dialogue: 10,0:23:57.79,0:24:00.83,CN-Main,,0,0,0,,在共和国国民议会里和其他政府职位上
@@ -572,8 +575,9 @@ Dialogue: 0,0:32:50.12,0:32:54.21,ES-Main,,0,0,0,,largo como su padre, ya era to
 Dialogue: 10,0:32:58.71,0:32:59.58,CN-Main,,0,0,0,,什么事 奶奶？
 Dialogue: 0,0:32:58.71,0:32:59.58,ES-Main,,0,0,0,,¿Sí, abuela?
 Dialogue: 10,0:33:00.33,0:33:02.21,CN-Main,,0,0,0,,去叫蕾梅黛丝和你阿玛兰妲姑姑
-Dialogue: 0,0:33:00.33,0:33:02.21,ES-Main,,0,0,0,,Ve y llama a Remedios y a tu tía Amaranta. El desayuno se les va a enfriar.
+Dialogue: 0,0:33:00.33,0:33:02.21,ES-Main,,0,0,0,,Ve y llama a Remedios y a tu tía Amaranta.
 Dialogue: 10,0:33:02.29,0:33:03.83,CN-Main,,0,0,0,,早餐要凉了
+Dialogue: 0,0:33:02.29,0:33:03.83,ES-Main,,0,0,0,,El desayuno se les va a enfriar.
 Dialogue: 10,0:33:23.46,0:33:26.83,CN-Main,,0,0,0,,当视线触及那丰满的胸脯和紫色的乳头时
 Dialogue: 0,0:33:23.46,0:33:26.83,ES-Main,,0,0,0,,un estremecimiento desconocido
 Dialogue: 10,0:33:26.92,0:33:30.38,CN-Main,,0,0,0,,奥雷里亚诺·何塞感到一阵奇异的颤栗
@@ -635,8 +639,9 @@ Dialogue: 0,0:36:17.62,0:36:19.71,ES-Main,,0,0,0,,Las palabras están ahora tan 
 Dialogue: 10,0:36:19.96,0:36:22.42,CN-Main,,0,0,0,,失眠症肆虐那阵子一样空洞无力
 Dialogue: 0,0:36:19.96,0:36:22.42,ES-Main,,0,0,0,,como en los tiempos de la peste del insomnio.
 Dialogue: 10,0:36:23.21,0:36:24.29,CN-Main,,0,0,0,,乌尔苏拉夫人
+Dialogue: 0,0:36:23.21,0:36:24.29,ES-Main,,0,0,0,,Doña Úrsula,
 Dialogue: 10,0:36:24.38,0:36:26.04,CN-Main,,0,0,0,,我敬佩您的儿子
-Dialogue: 0,0:36:24.38,0:36:26.04,ES-Main,,0,0,0,,Doña Úrsula, yo a su hijo lo respeto,
+Dialogue: 0,0:36:24.38,0:36:26.04,ES-Main,,0,0,0,,yo a su hijo lo respeto,
 Dialogue: 10,0:36:26.88,0:36:29.29,CN-Main,,0,0,0,,我也会怀着同样的敬意治理马孔多
 Dialogue: 0,0:36:26.88,0:36:29.29,ES-Main,,0,0,0,,y a Macondo lo voy a tratar con ese mismo respeto.
 Dialogue: 10,0:36:29.46,0:36:30.96,CN-Main,,0,0,0,,我向您保证
@@ -720,8 +725,9 @@ Dialogue: 0,0:40:22.29,0:40:24.54,ES-Main,,0,0,0,,Luego ya no saben cómo salir 
 Dialogue: 10,0:41:23.75,0:41:24.88,CN-Main,,0,0,0,,我是你的姑姑
 Dialogue: 0,0:41:23.75,0:41:24.88,ES-Main,,0,0,0,,Soy tu tía.
 Dialogue: 10,0:41:24.96,0:41:26.71,CN-Main,,0,0,0,,我们在做可怕的事
+Dialogue: 0,0:41:24.96,0:41:26.71,ES-Main,,0,0,0,,Lo que estamos haciendo es horrible.
 Dialogue: 10,0:41:26.79,0:41:28.71,CN-Main,,0,0,0,,不 一点也不可怕 它非常美好
-Dialogue: 0,0:41:26.79,0:41:28.71,ES-Main,,0,0,0,,Lo que estamos haciendo es horrible. - No es cierto. Es hermoso.
+Dialogue: 0,0:41:26.79,0:41:28.71,ES-Main,,0,0,0,,No es cierto. Es hermoso.
 Dialogue: 10,0:41:39.38,0:41:40.21,CN-Main,,0,0,0,,出去
 Dialogue: 0,0:41:39.38,0:41:40.21,ES-Main,,0,0,0,,Vete.
 Dialogue: 10,0:41:48.75,0:41:50.88,CN-Main,,0,0,0,,你难道不明白我们在做什么吗？
@@ -901,12 +907,14 @@ Dialogue: 10,0:55:53.21,0:55:56.71,CN-Main,,0,0,0,,（全副武装 我们必胜�
 Dialogue: 10,0:55:58.75,0:55:59.88,CN-Main,,0,0,0,,…亡者
 Dialogue: 0,0:55:58.75,0:55:59.88,ES-Main,,0,0,0,,…difuntos.
 Dialogue: 10,0:56:00.62,0:56:02.33,CN-Main,,0,0,0,,赎世的天主圣子
+Dialogue: 0,0:56:00.62,0:56:02.33,ES-Main,,0,0,0,,Dios, Hijo, redentor del mundo,
 Dialogue: 10,0:56:02.42,0:56:04.25,CN-Main,,0,0,0,,求你垂怜亡者
-Dialogue: 0,0:56:02.42,0:56:04.25,ES-Main,,0,0,0,,Dios, Hijo, redentor del mundo, ten piedad de todos tus fieles.
+Dialogue: 0,0:56:02.42,0:56:04.25,ES-Main,,0,0,0,,ten piedad de todos tus fieles.
 Dialogue: 10,0:56:05.83,0:56:07.08,CN-Main,,0,0,0,,（何塞·阿尔卡蒂奥·布恩迪亚）
 Dialogue: 10,0:56:07.17,0:56:08.83,CN-Main,,0,0,0,,赎世的天主圣子
+Dialogue: 0,0:56:07.17,0:56:08.83,ES-Main,,0,0,0,,Dios, Espíritu Santo,
 Dialogue: 10,0:56:08.92,0:56:10.62,CN-Main,,0,0,0,,求你垂怜亡者
-Dialogue: 0,0:56:08.92,0:56:10.62,ES-Main,,0,0,0,,Dios, Espíritu Santo, ten piedad de todos tus fieles difuntos.
+Dialogue: 0,0:56:08.92,0:56:10.62,ES-Main,,0,0,0,,ten piedad de todos tus fieles difuntos.
 Dialogue: 10,0:56:12.67,0:56:15.88,CN-Main,,0,0,0,,掌握死亡和阴间之钥匙的圣神
 Dialogue: 0,0:56:12.67,0:56:15.88,ES-Main,,0,0,0,,Tú que tienes las llaves de la muerte y del infierno,
 Dialogue: 10,0:56:16.71,0:56:18.17,CN-Main,,0,0,0,,吾等向你祈求…

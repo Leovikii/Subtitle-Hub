@@ -34,10 +34,11 @@ Dialogue: 10,0:02:00.79,0:02:02.71,CN-Main,,0,0,0,,通晓人情世故
 Dialogue: 0,0:02:00.79,0:02:02.71,ES-Main,,0,0,0,,como cualquiera de sus hermanas.
 Dialogue: 10,0:02:11.83,0:02:13.46,CN-Main,,0,0,0,,另一方面 奥雷里亚诺
 Dialogue: 10,0:02:14.12,0:02:15.83,CN-Main,,0,0,0,,正穿着几年以后
-Dialogue: 0,0:02:14.12,0:02:15.83,ES-Main,,0,0,0,,vestido con los mismos botines
+Dialogue: 0,0:02:14.12,0:02:15.83,ES-Main,,0,0,0,,vestido con
 Dialogue: 10,0:02:16.00,0:02:18.21,CN-Main,,0,0,0,,在面临行刑队时
 Dialogue: 0,0:02:16.00,0:02:18.21,ES-Main,,0,0,0,,que había de llevar pocos años después frente al pelotón de fusilamiento,
 Dialogue: 10,0:02:18.29,0:02:19.88,CN-Main,,0,0,0,,穿的同一双靴子
+Dialogue: 0,0:02:18.29,0:02:19.88,ES-Main,,0,0,0,,los mismos botines
 Dialogue: 10,0:02:20.83,0:02:22.46,CN-Main,,0,0,0,,紧张得说不出话来
 Dialogue: 0,0:02:20.83,0:02:22.46,ES-Main,,0,0,0,,tenía una bola en la garganta.
 Dialogue: 10,0:02:23.50,0:02:24.88,CN-Main,,0,0,0,,你还是一如既往地帅气
@@ -242,8 +243,9 @@ Dialogue: 0,0:12:42.58,0:12:46.21,ES-Main,,0,0,0,,Señorita Rebeca Buendía, ¿m
 Dialogue: 10,0:13:04.08,0:13:06.46,CN-Main,,0,0,0,,一、二、三
 Dialogue: 0,0:13:04.08,0:13:06.46,ES-Main,,0,0,0,,Un, dos, tres. Un, dos, tres.
 Dialogue: 10,0:13:06.54,0:13:07.75,CN-Main,,0,0,0,,很好
-Dialogue: 0,0:13:06.54,0:13:07.75,ES-Main,,0,0,0,,¡Muy bien! ¡Y… vuelta!
+Dialogue: 0,0:13:06.54,0:13:07.75,ES-Main,,0,0,0,,¡Muy bien!
 Dialogue: 10,0:13:07.83,0:13:09.04,CN-Main,,0,0,0,,现在转圈！
+Dialogue: 0,0:13:07.83,0:13:09.04,ES-Main,,0,0,0,,¡Y… vuelta!
 Dialogue: 10,0:13:09.71,0:13:11.29,CN-Main,,0,0,0,,非常好！
 Dialogue: 0,0:13:09.71,0:13:11.29,ES-Main,,0,0,0,,¡Muy bien!
 Dialogue: 10,0:13:14.04,0:13:15.67,CN-Main,,0,0,0,,早上好 美丽的世界
@@ -253,8 +255,9 @@ Dialogue: 0,0:13:15.96,0:13:19.29,ES-Main,,0,0,0,,de buena salud por los corredo
 Dialogue: 10,0:13:19.46,0:13:22.83,CN-Main,,0,0,0,,-早上好 何塞·阿尔卡蒂奥-早上好 蕾梅黛丝
 Dialogue: 0,0:13:19.46,0:13:22.83,ES-Main,,0,0,0,,Buen día, don José Arcadio. ¡Buen día, Remedios!
 Dialogue: 10,0:13:33.42,0:13:34.83,CN-Main,,0,0,0,,早上好 比西塔西翁
-Dialogue: 0,0:13:33.42,0:13:34.83,ES-Main,,0,0,0,,Buenos días, Visitación. Buenos días.
+Dialogue: 0,0:13:33.42,0:13:34.83,ES-Main,,0,0,0,,Buenos días, Visitación.
 Dialogue: 10,0:13:34.92,0:13:35.75,CN-Main,,0,0,0,,早上好
+Dialogue: 0,0:13:34.92,0:13:35.75,ES-Main,,0,0,0,,Buenos días.
 Dialogue: 10,0:13:48.38,0:13:50.04,CN-Main,,0,0,0,,早上好 乌尔苏拉女士
 Dialogue: 0,0:13:48.38,0:13:50.04,ES-Main,,0,0,0,,Buenos días, doña Úrsula.
 Dialogue: 10,0:13:51.21,0:13:52.50,CN-Main,,0,0,0,,早上好 孩子
@@ -433,8 +436,9 @@ Dialogue: 0,0:21:36.21,0:21:37.71,ES-Main,,0,0,0,,Los Moscote somos curiosos.
 Dialogue: 10,0:21:42.12,0:21:43.00,CN-Main,,0,0,0,,你想怎样？
 Dialogue: 0,0:21:42.12,0:21:43.00,ES-Main,,0,0,0,,¿Qué quiere?
 Dialogue: 10,0:21:43.71,0:21:44.67,CN-Main,,0,0,0,,阿尔卡蒂奥
+Dialogue: 0,0:21:43.71,0:21:44.67,ES-Main,,0,0,0,,Arcadio,
 Dialogue: 10,0:21:45.29,0:21:48.75,CN-Main,,0,0,0,,我向政府争取到了在马孔多兴办学校的资源
-Dialogue: 0,0:21:45.29,0:21:48.75,ES-Main,,0,0,0,,Arcadio, logré que el gobierno me diera los recursos para abrir una escuela en Macondo.
+Dialogue: 0,0:21:45.29,0:21:48.75,ES-Main,,0,0,0,,logré que el gobierno me diera los recursos para abrir una escuela en Macondo.
 Dialogue: 10,0:21:49.71,0:21:51.38,CN-Main,,0,0,0,,但尚未找到
 Dialogue: 0,0:21:49.71,0:21:51.38,ES-Main,,0,0,0,,Pero no encuentro al maestro que quiera quedarse ahí
 Dialogue: 10,0:21:51.46,0:21:55.00,CN-Main,,0,0,0,,愿意留在这里全职照看学校的老师
@@ -458,13 +462,15 @@ Dialogue: 0,0:23:12.62,0:23:14.21,ES-Main,,0,0,0,,Tuve que haberme ido hace rato
 Dialogue: 10,0:24:00.67,0:24:02.25,CN-Main,,0,0,0,,-不好意思-请你配合 医生
 Dialogue: 0,0:24:00.67,0:24:02.25,ES-Main,,0,0,0,,Permiso. Colabore.
 Dialogue: 10,0:24:02.46,0:24:04.33,CN-Main,,0,0,0,,我不知道你说的是什么文件
-Dialogue: 0,0:24:02.46,0:24:04.33,ES-Main,,0,0,0,,Colaboro, pero no sé… - Cualquiera se puede proclamar doctor.
+Dialogue: 0,0:24:02.46,0:24:04.33,ES-Main,,0,0,0,,Colaboro, pero no sé…
 Dialogue: 10,0:24:04.42,0:24:06.00,CN-Main,,0,0,0,,任何人都可以自称是医生
+Dialogue: 0,0:24:04.42,0:24:06.00,ES-Main,,0,0,0,,Cualquiera se puede proclamar doctor.
 Dialogue: 10,0:24:06.08,0:24:08.08,CN-Main,,0,0,0,,放尊重点 我不知道你究竟想要什么
 Dialogue: 0,0:24:06.08,0:24:08.08,ES-Main,,0,0,0,,Me respeta. No sé qué papel quiere. - Los papeles que necesita…
 Dialogue: 10,0:24:08.17,0:24:10.88,CN-Main,,0,0,0,,-开店所需的文件-我什么也不会给你！
-Dialogue: 0,0:24:08.17,0:24:10.88,ES-Main,,0,0,0,,¡Yo no les voy a dar ningún papel! En toda la ciénaga, nadie me había pedido
+Dialogue: 0,0:24:08.17,0:24:10.88,ES-Main,,0,0,0,,¡Yo no les voy a dar ningún papel! nadie me había pedido
 Dialogue: 10,0:24:10.96,0:24:12.08,CN-Main,,0,0,0,,在大沼泽地一带
+Dialogue: 0,0:24:10.96,0:24:12.08,ES-Main,,0,0,0,,En toda la ciénaga,
 Dialogue: 10,0:24:12.58,0:24:16.04,CN-Main,,0,0,0,,从来没有人问我要过什么政府签发的经营许可
 Dialogue: 0,0:24:12.58,0:24:16.04,ES-Main,,0,0,0,,un permiso del gobierno para ejercer mi oficio.
 Dialogue: 10,0:24:16.12,0:24:22.12,CN-Main,,0,0,0,,除非你们带一本民法典过来指出哪条相关法律规定了
@@ -512,8 +518,9 @@ Dialogue: 0,0:26:11.33,0:26:13.92,ES-Main,,0,0,0,,"La piedra filosofal".
 Dialogue: 10,0:26:16.54,0:26:19.50,CN-Main,,0,0,0,,听你这语气 大概不知道那是什么吧
 Dialogue: 0,0:26:16.54,0:26:19.50,ES-Main,,0,0,0,,Me imagino que, por su voz, no tiene ni idea de qué es eso.
 Dialogue: 10,0:26:20.58,0:26:22.83,CN-Main,,0,0,0,,老师 冈萨雷斯本来就什么都不知道
-Dialogue: 0,0:26:20.58,0:26:22.83,ES-Main,,0,0,0,,Profe, es que González nunca sabe nada. Nunca sabe nada.
+Dialogue: 0,0:26:20.58,0:26:22.83,ES-Main,,0,0,0,,Profe, es que Nunca sabe nada.
 Dialogue: 10,0:26:23.33,0:26:24.54,CN-Main,,0,0,0,,他从来都一问三不知
+Dialogue: 0,0:26:23.33,0:26:24.54,ES-Main,,0,0,0,,González nunca sabe nada.
 Dialogue: 10,0:26:25.88,0:26:28.50,CN-Main,,0,0,0,,那就请你来黑板前为大家讲解一番吧 罗哈斯
 Dialogue: 0,0:26:25.88,0:26:28.50,ES-Main,,0,0,0,,Entonces, venga. Pase y explique el tablero, Rojas.
 Dialogue: 10,0:26:28.58,0:26:30.50,CN-Main,,0,0,0,,不 其实我也很无知
@@ -521,8 +528,9 @@ Dialogue: 0,0:26:28.58,0:26:30.50,ES-Main,,0,0,0,,No, pero yo tampoco, tampoco.
 Dialogue: 10,0:26:33.88,0:26:37.21,CN-Main,,0,0,0,,最重要的是别迷失了自己的道路
 Dialogue: 0,0:26:33.88,0:26:37.21,ES-Main,,0,0,0,,Es necesario no perder el rumbo.
 Dialogue: 10,0:26:37.62,0:26:38.79,CN-Main,,0,0,0,,别说了 何塞·阿尔卡蒂奥
+Dialogue: 0,0:26:37.62,0:26:38.79,ES-Main,,0,0,0,,No más, José Arcadio.
 Dialogue: 10,0:26:39.62,0:26:41.58,CN-Main,,0,0,0,,非要说的话 说点我能听懂的
-Dialogue: 0,0:26:39.62,0:26:41.58,ES-Main,,0,0,0,,No más, José Arcadio. Si vas a hablar, dime algo que me sirva.
+Dialogue: 0,0:26:39.62,0:26:41.58,ES-Main,,0,0,0,,Si vas a hablar, dime algo que me sirva.
 Dialogue: 10,0:26:47.38,0:26:48.38,CN-Main,,0,0,0,,谢谢你 孩子
 Dialogue: 0,0:26:47.38,0:26:48.38,ES-Main,,0,0,0,,Gracias, mija.
 Dialogue: 10,0:26:49.79,0:26:51.21,CN-Main,,0,0,0,,谢谢你们
@@ -708,8 +716,9 @@ Dialogue: 0,0:36:43.96,0:36:46.75,ES-Main,,0,0,0,,Imagínate que el otro día se
 Dialogue: 10,0:36:47.54,0:36:50.75,CN-Main,,0,0,0,,托了那神父的福我们才能听明白他在说什么
 Dialogue: 0,0:36:47.54,0:36:50.75,ES-Main,,0,0,0,,De no ser por él, no nos hubiéramos dado cuenta de lo que dice.
 Dialogue: 10,0:36:52.71,0:36:54.62,CN-Main,,0,0,0,,他们俩现在能聊上一整天
-Dialogue: 0,0:36:52.71,0:36:54.62,ES-Main,,0,0,0,,Se la pasa todo el día conversando, como lo hacía contigo.
+Dialogue: 0,0:36:52.71,0:36:54.62,ES-Main,,0,0,0,,Se la pasa todo el día conversando,
 Dialogue: 10,0:36:55.21,0:36:56.46,CN-Main,,0,0,0,,就像你们俩当年一样
+Dialogue: 0,0:36:55.21,0:36:56.46,ES-Main,,0,0,0,,como lo hacía contigo.
 Dialogue: 10,0:36:59.12,0:37:00.54,CN-Main,,0,0,0,,尼卡诺尔是个好人
 Dialogue: 0,0:36:59.12,0:37:00.54,ES-Main,,0,0,0,,Es un buen hombre, Nicanor.
 Dialogue: 10,0:37:01.04,0:37:02.79,CN-Main,,0,0,0,,乌尔苏拉 你到底想说什么？
@@ -818,6 +827,7 @@ Dialogue: 0,0:43:44.75,0:43:47.42,ES-Main,,0,0,0,,¡No! ¡No, no, no! ¡Arcadio!
 Dialogue: 10,0:43:47.50,0:43:49.29,CN-Main,,0,0,0,,-不 阿尔卡蒂奥 不要！-不要？
 Dialogue: 0,0:43:47.50,0:43:49.29,ES-Main,,0,0,0,,¡No! ¡Arcadio, no, no! - ¿No? ¿No?
 Dialogue: 10,0:43:49.38,0:43:50.71,CN-Main,,0,0,0,,-不要！-不要？
+Dialogue: 0,0:43:49.38,0:43:50.71,ES-Main,,0,0,0,,¡No! ¿No?
 Dialogue: 10,0:43:51.62,0:43:52.96,CN-Main,,0,0,0,,不要
 Dialogue: 0,0:43:51.62,0:43:52.96,ES-Main,,0,0,0,,Arcadio, no.
 Dialogue: 10,0:43:55.46,0:43:58.71,CN-Main,,0,0,0,,别装出一副圣洁的模样大家都知道你是个娼妇
@@ -894,10 +904,11 @@ Dialogue: 0,0:48:28.58,0:48:30.17,ES-Main,,0,0,0,,¡Mi amor! ¡Mi amor!
 Dialogue: 10,0:48:31.54,0:48:33.46,CN-Main,,0,0,0,,看着我 别睡！
 Dialogue: 0,0:48:31.54,0:48:33.46,ES-Main,,0,0,0,,Mírame. No te duermas.
 Dialogue: 10,0:48:33.67,0:48:35.50,CN-Main,,0,0,0,,别睡过去呀！
-Dialogue: 0,0:48:33.67,0:48:35.50,ES-Main,,0,0,0,,No te duermas. ¡No te duermas! ¡Mi amor!
+Dialogue: 0,0:48:33.67,0:48:35.50,ES-Main,,0,0,0,,No te duermas. ¡Mi amor!
 Dialogue: 10,0:48:36.71,0:48:38.12,CN-Main,,0,0,0,,亲爱的 别睡！
-Dialogue: 0,0:48:36.71,0:48:38.12,ES-Main,,0,0,0,,¡Mi niña, no te duermas! ¡No te duermas!
+Dialogue: 0,0:48:36.71,0:48:38.12,ES-Main,,0,0,0,,¡Mi niña, no te duermas!
 Dialogue: 10,0:48:38.21,0:48:39.38,CN-Main,,0,0,0,,别睡啊！
+Dialogue: 0,0:48:38.21,0:48:39.38,ES-Main,,0,0,0,,¡No te duermas!
 Dialogue: 10,0:48:46.67,0:48:51.88,CN-Main,,0,0,0,,蕾梅黛丝因自己的血液中毒而死
 Dialogue: 0,0:48:46.67,0:48:51.88,ES-Main,,0,0,0,,murió envenenada por su propia sangre,
 Dialogue: 10,0:48:52.83,0:48:56.00,CN-Main,,0,0,0,,连同一对双胞胎也横死腹中

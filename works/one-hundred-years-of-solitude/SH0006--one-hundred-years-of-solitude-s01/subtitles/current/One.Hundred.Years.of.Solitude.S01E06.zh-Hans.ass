@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.1.0
+; Subtitle-Hub-Version: 1.1.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -125,8 +125,9 @@ Dialogue: 0,0:05:13.83,0:05:14.79,ES-Main,,0,0,0,,¿Todavía existe?
 Dialogue: 10,0:05:23.21,0:05:24.38,CN-Main,,0,0,0,,再给我倒杯酒！
 Dialogue: 0,0:05:23.21,0:05:24.38,ES-Main,,0,0,0,,¡Ponme ahí! ¡Ponme ahí!
 Dialogue: 10,0:05:26.54,0:05:29.50,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥要求奏乐并请所有人喝甘蔗酒
-Dialogue: 0,0:05:26.54,0:05:29.50,ES-Main,,0,0,0,,y aguardiente para todos por su cuenta.
+Dialogue: 0,0:05:26.54,0:05:29.50,ES-Main,,0,0,0,,y aguardiente para todos
 Dialogue: 10,0:05:29.58,0:05:30.71,CN-Main,,0,0,0,,全记在他的账上
+Dialogue: 0,0:05:29.58,0:05:30.71,ES-Main,,0,0,0,,por su cuenta.
 Dialogue: 10,0:05:37.96,0:05:43.12,CN-Main,,0,0,0,,他壮硕的体型在好奇的女人之间掀起了惊涛骇浪
 Dialogue: 0,0:05:37.96,0:05:43.12,ES-Main,,0,0,0,,provocó un pánico de curiosidad entre las mujeres.
 Dialogue: 10,0:06:01.75,0:06:05.46,CN-Main,,0,0,0,,他把自己作为奖品提议所有女人抽签 十比索一个签号
@@ -168,8 +169,9 @@ Dialogue: 0,0:07:35.75,0:07:38.88,ES-Main,,0,0,0,,que había anticipado los abus
 Dialogue: 10,0:07:40.38,0:07:43.29,CN-Main,,0,0,0,,-谁？-阿尔卡蒂奥 那个校长
 Dialogue: 0,0:07:40.38,0:07:43.29,ES-Main,,0,0,0,,¿Quién es? Arcadio, el director de la escuela.
 Dialogue: 10,0:07:45.17,0:07:46.04,CN-Main,,0,0,0,,嘿
+Dialogue: 0,0:07:45.17,0:07:46.04,ES-Main,,0,0,0,,Oiga,
 Dialogue: 10,0:07:46.58,0:07:48.42,CN-Main,,0,0,0,,你先前说的话应验了
-Dialogue: 0,0:07:46.58,0:07:48.42,ES-Main,,0,0,0,,Oiga, ya está ocurriendo lo que usted dijo que iba a pasar.
+Dialogue: 0,0:07:46.58,0:07:48.42,ES-Main,,0,0,0,,ya está ocurriendo lo que usted dijo que iba a pasar.
 Dialogue: 10,0:07:49.17,0:07:50.25,CN-Main,,0,0,0,,我们得采取行动
 Dialogue: 0,0:07:49.17,0:07:50.25,ES-Main,,0,0,0,,Hay que hacer algo.
 Dialogue: 10,0:07:56.38,0:08:00.50,CN-Main,,0,0,0,,艾利洛·诺盖拉医生前不久才来到马孔多
@@ -332,8 +334,9 @@ Dialogue: 10,0:15:08.21,0:15:10.50,CN-Main,,0,0,0,,现在要我怎么做饭？
 Dialogue: 0,0:15:08.21,0:15:10.50,ES-Main,,0,0,0,,¿Con qué se supone que voy a terminar de cocinar?
 Dialogue: 10,0:15:11.25,0:15:12.38,CN-Main,,0,0,0,,谁让你这么干的？
 Dialogue: 10,0:15:12.71,0:15:13.71,CN-Main,,0,0,0,,谁派他来的？
+Dialogue: 0,0:15:12.71,0:15:13.71,ES-Main,,0,0,0,,¿Quién lo mandó a hacer esto?
 Dialogue: 10,0:15:13.79,0:15:15.71,CN-Main,,0,0,0,,没有刀我要怎么做饭？
-Dialogue: 0,0:15:13.79,0:15:15.71,ES-Main,,0,0,0,,¿Quién lo mandó a hacer esto? ¡Óyeme!
+Dialogue: 0,0:15:13.79,0:15:15.71,ES-Main,,0,0,0,,¡Óyeme!
 Dialogue: 10,0:15:15.79,0:15:17.12,CN-Main,,0,0,0,,是谁要拿我的刀？
 Dialogue: 0,0:15:15.79,0:15:17.12,ES-Main,,0,0,0,,¡No se lleve mis cuchillos!
 Dialogue: 10,0:15:18.08,0:15:20.79,CN-Main,,0,0,0,,嘿 小子 我在跟你说话 过来！
@@ -543,8 +546,9 @@ Dialogue: 0,0:29:54.21,0:29:55.67,ES-Main,,0,0,0,,¡Deberíamos hacer lo mismo!
 Dialogue: 10,0:29:56.17,0:29:58.71,CN-Main,,0,0,0,,要拿起武器首先得有武器才行 阿尔卡蒂奥
 Dialogue: 0,0:29:56.17,0:29:58.71,ES-Main,,0,0,0,,Para alzarse en armas hay que tener armas, Arcadio.
 Dialogue: 10,0:29:59.08,0:30:00.33,CN-Main,,0,0,0,,当心
+Dialogue: 0,0:29:59.08,0:30:00.33,ES-Main,,0,0,0,,Tengan cuidado.
 Dialogue: 10,0:30:00.42,0:30:04.88,CN-Main,,0,0,0,,在里奥阿查 所有站出来反抗政府的自由党人士都被处决了
-Dialogue: 0,0:30:00.42,0:30:04.88,ES-Main,,0,0,0,,Tengan cuidado. En Riohacha fusilaron a todos los liberales que se levantaron en contra del gobierno.
+Dialogue: 0,0:30:00.42,0:30:04.88,ES-Main,,0,0,0,,En Riohacha fusilaron a todos los liberales que se levantaron en contra del gobierno.
 Dialogue: 10,0:30:10.83,0:30:14.79,CN-Main,,0,0,0,,今天我们共聚在此庆祝二位新人的结合
 Dialogue: 0,0:30:10.83,0:30:14.79,ES-Main,,0,0,0,,Quiero anunciarles que hoy vamos a celebrar el matrimonio
 Dialogue: 10,0:30:15.42,0:30:19.67,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚之子和丽贝卡·布恩迪亚
@@ -574,8 +578,9 @@ Dialogue: 0,0:32:23.96,0:32:27.54,ES-Main,,0,0,0,,rogaban que una pasión tan de
 Dialogue: 10,0:32:27.71,0:32:30.04,CN-Main,,0,0,0,,不会搅扰死人的安眠
 Dialogue: 0,0:32:27.71,0:32:30.04,ES-Main,,0,0,0,,no fuera a perturbar la paz de los muertos.
 Dialogue: 10,0:32:30.54,0:32:33.29,CN-Main,,0,0,0,,-你有刀吗 卡塔利诺？-连切柠檬的刀都没有
-Dialogue: 0,0:32:30.54,0:32:33.29,ES-Main,,0,0,0,,¿Tienes cuchillo, Catarino? No hay cuchillos ni para cortar limón. - ¿Qué pasó?
+Dialogue: 0,0:32:30.54,0:32:33.29,ES-Main,,0,0,0,,¿Tienes cuchillo, Catarino? No hay cuchillos ni para cortar limón.
 Dialogue: 10,0:32:33.38,0:32:34.21,CN-Main,,0,0,0,,好啊
+Dialogue: 0,0:32:33.38,0:32:34.21,ES-Main,,0,0,0,,¿Qué pasó?
 Dialogue: 10,0:32:37.00,0:32:38.08,CN-Main,,0,0,0,,你好 卡塔利诺
 Dialogue: 0,0:32:37.00,0:32:38.08,ES-Main,,0,0,0,,Ajá, Catarino.
 Dialogue: 10,0:32:39.08,0:32:40.58,CN-Main,,0,0,0,,劳驾 请给我来杯酒
@@ -673,8 +678,9 @@ Dialogue: 0,0:37:46.96,0:37:49.42,ES-Main,,0,0,0,,Mandamos tipos a seguirte, per
 Dialogue: 10,0:37:50.33,0:37:52.96,CN-Main,,0,0,0,,我们只是想知道你会不会去告密
 Dialogue: 0,0:37:50.33,0:37:52.96,ES-Main,,0,0,0,,Solo queremos saber en qué momento nos vas a delatar.
 Dialogue: 10,0:37:53.79,0:37:54.79,CN-Main,,0,0,0,,放开他 伙计
-Dialogue: 0,0:37:53.79,0:37:54.79,ES-Main,,0,0,0,,Suéltelo, compadre. Suéltelo.
+Dialogue: 0,0:37:53.79,0:37:54.79,ES-Main,,0,0,0,,Suéltelo, compadre.
 Dialogue: 10,0:37:55.79,0:37:56.62,CN-Main,,0,0,0,,放开他
+Dialogue: 0,0:37:55.79,0:37:56.62,ES-Main,,0,0,0,,Suéltelo.
 Dialogue: 10,0:38:01.54,0:38:02.38,CN-Main,,0,0,0,,拜托
 Dialogue: 0,0:38:01.54,0:38:02.38,ES-Main,,0,0,0,,No, hombre.
 Dialogue: 10,0:38:03.88,0:38:05.50,CN-Main,,0,0,0,,我若想出卖你们

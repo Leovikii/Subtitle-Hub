@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.2
+; Subtitle-Hub-Version: 1.1.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -202,7 +202,7 @@ Dialogue: 10,0:15:33.71,0:15:34.62,CN-Main,,0,0,0,,太离谱了！
 Dialogue: 0,0:15:33.71,0:15:34.62,ES-Main,,0,0,0,,¡Injusto!
 Dialogue: 10,0:15:35.42,0:15:37.79,CN-Main,,0,0,0,,够了！放尊重点！
 Dialogue: 0,0:15:35.42,0:15:37.79,ES-Main,,0,0,0,,¡Bueno, ya! ¡Más respeto ante la ley!
-Dialogue: 10,0:15:52.71,0:15:54.38,CN-Main,,0,0,0,,很公正的裁决 谢谢
+Dialogue: 10,0:15:52.71,0:15:54.38,CN-Main,,0,0,0,,干得好
 Dialogue: 0,0:15:52.71,0:15:54.38,ES-Main,,0,0,0,,Buen trabajo.
 Dialogue: 10,0:15:55.83,0:15:59.42,CN-Main,,0,0,0,,去喝几杯吧 忘了这些不愉快的事
 Dialogue: 0,0:15:55.83,0:15:59.42,ES-Main,,0,0,0,,Necesita unos buenos tragos para que se le quite esa amargura.
@@ -228,7 +228,7 @@ Dialogue: 10,0:18:27.42,0:18:30.29,CN-Main,,0,0,0,,那幽怨的眼神中流露�
 Dialogue: 0,0:18:27.42,0:18:30.29,ES-Main,,0,0,0,,con que añoraba a los vivos.
 Dialogue: 10,0:18:39.04,0:18:41.08,CN-Main,,0,0,0,,他在屋里急切地找寻
 Dialogue: 0,0:18:39.04,0:18:41.08,ES-Main,,0,0,0,,La ansiedad con que registraba la casa
-Dialogue: 10,0:18:41.17,0:18:43.92,CN-Main,,0,0,0,,想找清水浸湿手中的芦苇团
+Dialogue: 10,0:18:41.17,0:18:43.92,CN-Main,,0,0,0,,想找清水浸湿他的草塞
 Dialogue: 0,0:18:41.17,0:18:43.92,ES-Main,,0,0,0,,buscando agua para mojar su tapón de esparto.
 Dialogue: 10,0:18:48.83,0:18:51.62,CN-Main,,0,0,0,,看到死人掀开锅碗瓢盆翻找的样子
 Dialogue: 0,0:18:48.83,0:18:51.62,ES-Main,,0,0,0,,Úrsula estaba tan conmovida que, después de ver al muerto
@@ -284,7 +284,7 @@ Dialogue: 10,0:22:45.67,0:22:47.46,CN-Main,,0,0,0,,也兴奋地加入了冒险
 Dialogue: 0,0:22:45.67,0:22:47.46,ES-Main,,0,0,0,,embullados con la aventura,
 Dialogue: 10,0:22:48.62,0:22:51.96,CN-Main,,0,0,0,,他们拆掉房子收拾好行囊 带上妻子和孩子
 Dialogue: 0,0:22:48.62,0:22:51.96,ES-Main,,0,0,0,,desmantelaron sus casas y cargaron con sus mujeres y sus hijos
-Dialogue: 10,0:22:52.04,0:22:54.50,CN-Main,,0,0,0,,前往想象中那渺茫未知的应许之地
+Dialogue: 10,0:22:52.04,0:22:54.50,CN-Main,,0,0,0,,前往那片没人许诺给他们的土地
 Dialogue: 0,0:22:52.04,0:22:54.50,ES-Main,,0,0,0,,hacia la tierra que nadie les había prometido.
 Dialogue: 10,0:23:29.50,0:23:30.58,CN-Main,,0,0,0,,危险
 Dialogue: 0,0:23:29.50,0:23:30.58,ES-Main,,0,0,0,,Peligro.
@@ -304,8 +304,7 @@ Dialogue: 0,0:25:48.96,0:25:51.83,ES-Main,,0,0,0,,¡Duro! ¡Ahí viene, viene, v
 Dialogue: 10,0:26:13.29,0:26:17.12,CN-Main,,0,0,0,,虽然吃了猴肉 喝了蛇汤……
 Dialogue: 0,0:26:13.29,0:26:17.12,ES-Main,,0,0,0,,por carne de mico y caldo de culebra…
 Dialogue: 10,0:26:18.75,0:26:23.75,CN-Main,,0,0,0,,乌尔苏拉在庇拉尔·特尔内拉的帮助下生下了一名完全正常的男婴
-Dialogue: 0,0:26:18.75,0:26:21.67,ES-Main,,0,0,0,,…Úrsula dio a luz un hijo con todas sus partes humanas,
-Dialogue: 0,0:26:21.88,0:26:23.75,ES-Main,,0,0,0,,con la ayuda de Pilar Ternera.
+Dialogue: 0,0:26:18.75,0:26:23.75,ES-Main,,0,0,0,,…Úrsula dio a luz un hijo con todas sus partes humanas, con la ayuda de Pilar Ternera.
 Dialogue: 10,0:27:05.08,0:27:06.71,CN-Main,,0,0,0,,快跟上！
 Dialogue: 0,0:27:05.08,0:27:06.71,ES-Main,,0,0,0,,¡Vamos!
 Dialogue: 10,0:27:13.25,0:27:15.17,CN-Main,,0,0,0,,哇哦！冷静！
@@ -558,7 +557,7 @@ Dialogue: 10,0:43:55.00,0:43:58.50,CN-Main,,0,0,0,,但矛盾的是贵重金属�
 Dialogue: 0,0:43:55.00,0:43:58.50,ES-Main,,0,0,0,,pero paradójicamente, no atrae los metales preciosos.
 Dialogue: 10,0:44:11.67,0:44:14.17,CN-Main,,0,0,0,,少量的或许不行
 Dialogue: 0,0:44:11.67,0:44:14.17,ES-Main,,0,0,0,,Puede ser que no funcione para pequeñas cantidades.
-Dialogue: 10,0:44:16.71,0:44:19.50,CN-Main,,0,0,0,,但遇上大块的宝石或者一整座金矿
+Dialogue: 10,0:44:16.71,0:44:19.50,CN-Main,,0,0,0,,但肯定能帮我们挖出大块岩石或大堆宝藏
 Dialogue: 0,0:44:16.71,0:44:19.50,ES-Main,,0,0,0,,Pero de seguro servirá para desenterrar grandes rocas o tesoros completos.
 Dialogue: 10,0:44:20.17,0:44:21.38,CN-Main,,0,0,0,,一定行得通
 Dialogue: 10,0:44:22.62,0:44:24.12,CN-Main,,0,0,0,,我买得起
@@ -593,7 +592,7 @@ Dialogue: 10,0:45:38.54,0:45:39.67,CN-Main,,0,0,0,,一个死人
 Dialogue: 0,0:45:38.54,0:45:39.67,ES-Main,,0,0,0,,Un muerto.
 Dialogue: 10,0:45:41.29,0:45:45.92,CN-Main,,0,0,0,,我们找了一个星期 就挖出一个死人
 Dialogue: 0,0:45:41.29,0:45:45.92,ES-Main,,0,0,0,,Después de una semana, lo único que logramos es encontrar un puto muerto.
-Dialogue: 10,0:46:59.54,0:47:01.83,CN-Main,,0,0,0,,你要挖的那座金矿在哪儿呢？
+Dialogue: 10,0:46:59.54,0:47:01.83,CN-Main,,0,0,0,,你说要挖出来的那些金子呢？
 Dialogue: 0,0:46:59.54,0:47:01.83,ES-Main,,0,0,0,,¿Y los costales de oro que ibas a desenterrar?
 Dialogue: 10,0:47:11.29,0:47:13.42,CN-Main,,0,0,0,,你得把山羊要回来
 Dialogue: 0,0:47:11.29,0:47:13.42,ES-Main,,0,0,0,,Vas a tener que traer los chivos de vuelta.
@@ -752,7 +751,7 @@ Dialogue: 10,0:56:01.17,0:56:03.04,CN-Main,,0,0,0,,呼吸！深呼吸！
 Dialogue: 0,0:56:01.17,0:56:03.04,ES-Main,,0,0,0,,Profundo, profundo. Respira profundo.
 Dialogue: 10,0:56:03.54,0:56:05.88,CN-Main,,0,0,0,,先别用力 稳住呼吸
 Dialogue: 0,0:56:03.54,0:56:05.88,ES-Main,,0,0,0,,No pujes, no pujes. Respira, respira.
-Dialogue: 10,0:56:06.38,0:56:10.21,CN-Main,,0,0,0,,乌尔苏拉因某种猜想而浑身战栗那深沉的嚎叫
+Dialogue: 10,0:56:06.38,0:56:10.21,CN-Main,,0,0,0,,乌尔苏拉浑身战栗 她确信那深沉的嚎叫
 Dialogue: 0,0:56:06.38,0:56:10.21,ES-Main,,0,0,0,,con la certidumbre de que aquel bramido profundo
 Dialogue: 10,0:56:10.33,0:56:12.92,CN-Main,,0,0,0,,无疑暗示了孩子生有可怕的猪尾巴
 Dialogue: 0,0:56:10.33,0:56:12.92,ES-Main,,0,0,0,,era un primer indicio de la temible cola de cerdo.

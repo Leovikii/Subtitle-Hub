@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.1.0
+; Subtitle-Hub-Version: 1.1.1
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -28,8 +28,9 @@ Dialogue: 0,0:02:01.92,0:02:04.42,ES-Main,,0,0,0,,No sé en qué invento andas a
 Dialogue: 10,0:02:04.50,0:02:06.71,CN-Main,,0,0,0,,我在设计一个太阳能武器
 Dialogue: 0,0:02:04.50,0:02:06.71,ES-Main,,0,0,0,,Estoy desarrollando un arma solar.
 Dialogue: 10,0:02:09.17,0:02:12.42,CN-Main,,0,0,0,,-一个什么？-一种利用阳光来攻击的武器
-Dialogue: 0,0:02:09.17,0:02:12.42,ES-Main,,0,0,0,,¿Una qué? Un arma solar que funciona con la luz. Mira el diseño.
+Dialogue: 0,0:02:09.17,0:02:12.42,ES-Main,,0,0,0,,¿Una qué? Un arma solar que funciona con la luz.
 Dialogue: 10,0:02:12.50,0:02:13.62,CN-Main,,0,0,0,,你看这个设计
+Dialogue: 0,0:02:12.50,0:02:13.62,ES-Main,,0,0,0,,Mira el diseño.
 Dialogue: 10,0:02:14.79,0:02:16.62,CN-Main,,0,0,0,,它不需要火药 乌尔苏拉
 Dialogue: 0,0:02:14.79,0:02:16.62,ES-Main,,0,0,0,,No necesita pólvora, Úrsula.
 Dialogue: 10,0:02:17.17,0:02:18.75,CN-Main,,0,0,0,,真是天才般的设想
@@ -67,8 +68,9 @@ Dialogue: 0,0:03:08.54,0:03:10.79,ES-Main,,0,0,0,,No, hombre. No te preocupes.
 Dialogue: 10,0:03:12.71,0:03:13.62,CN-Main,,0,0,0,,谢谢你
 Dialogue: 0,0:03:12.71,0:03:13.62,ES-Main,,0,0,0,,Gracias.
 Dialogue: 10,0:03:14.50,0:03:16.50,CN-Main,,0,0,0,,我给你和孩子们带了糖果
-Dialogue: 0,0:03:14.50,0:03:16.50,ES-Main,,0,0,0,,Te traje más dulces para ti y los niños. - Ay, gracias. Déjamelos ahí.
+Dialogue: 0,0:03:14.50,0:03:16.50,ES-Main,,0,0,0,,Te traje más dulces para ti y los niños.
 Dialogue: 10,0:03:16.58,0:03:18.29,CN-Main,,0,0,0,,谢谢！放去那边吧
+Dialogue: 0,0:03:16.58,0:03:18.29,ES-Main,,0,0,0,,Ay, gracias. Déjamelos ahí.
 Dialogue: 10,0:03:20.38,0:03:22.38,CN-Main,,0,0,0,,嘿 你做的糖果很好吃
 Dialogue: 0,0:03:20.38,0:03:22.38,ES-Main,,0,0,0,,Mmm… Oye, es que te quedan sabrosos.
 Dialogue: 10,0:03:23.00,0:03:25.25,CN-Main,,0,0,0,,真的 乌尔苏拉 你该拿去卖
@@ -274,8 +276,9 @@ Dialogue: 0,0:13:37.96,0:13:40.17,ES-Main,,0,0,0,,sino viviría zampado en la ti
 Dialogue: 10,0:13:42.38,0:13:45.71,CN-Main,,0,0,0,,看我怎么骂他们我们回头再聊 谢啦 庇拉尔
 Dialogue: 0,0:13:42.38,0:13:45.71,ES-Main,,0,0,0,,Estos muchachitos me van a oír. Terminamos después. Gracias, Pilar.
 Dialogue: 10,0:13:47.92,0:13:48.88,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥！
-Dialogue: 0,0:13:47.92,0:13:48.88,ES-Main,,0,0,0,,¡José Arcadio! ¡Aureliano!
+Dialogue: 0,0:13:47.92,0:13:48.88,ES-Main,,0,0,0,,¡José Arcadio!
 Dialogue: 10,0:13:49.38,0:13:50.21,CN-Main,,0,0,0,,奥雷里亚诺！
+Dialogue: 0,0:13:49.38,0:13:50.21,ES-Main,,0,0,0,,¡Aureliano!
 Dialogue: 10,0:13:59.79,0:14:01.54,CN-Main,,0,0,0,,（转化金属 复制黄金）
 Dialogue: 10,0:14:14.04,0:14:16.75,CN-Main,,0,0,0,,两个小兔崽子回来了你肯定猜不到他们带回了什么
 Dialogue: 0,0:14:14.04,0:14:16.75,ES-Main,,0,0,0,,Aparecieron los niños y no te imaginas lo que trajeron.
@@ -326,8 +329,9 @@ Dialogue: 0,0:15:39.42,0:15:40.25,ES-Main,,0,0,0,,Vengan.
 Dialogue: 10,0:15:49.88,0:15:50.83,CN-Main,,0,0,0,,进来
 Dialogue: 0,0:15:49.88,0:15:50.83,ES-Main,,0,0,0,,Entren.
 Dialogue: 10,0:16:08.08,0:16:09.17,CN-Main,,0,0,0,,自那晚以后
+Dialogue: 0,0:16:08.08,0:16:09.17,ES-Main,,0,0,0,,José Arcadio Buendía
 Dialogue: 10,0:16:09.25,0:16:12.29,CN-Main,,0,0,0,,何塞·阿尔卡蒂奥·布恩迪亚把宝贵的时间都留给了孩子们
-Dialogue: 0,0:16:09.25,0:16:12.29,ES-Main,,0,0,0,,José Arcadio Buendía les dedicó sus horas mejores.
+Dialogue: 0,0:16:09.25,0:16:12.29,ES-Main,,0,0,0,,les dedicó sus horas mejores.
 Dialogue: 10,0:16:13.42,0:16:16.08,CN-Main,,0,0,0,,-他教他们读书写字-耐心点
 Dialogue: 0,0:16:13.42,0:16:16.08,ES-Main,,0,0,0,,Les enseñó a leer y a escribir… - ¡Paciencia, amigo!
 Dialogue: 10,0:16:16.75,0:16:19.75,CN-Main,,0,0,0,,-向他们讲解这世上的诸多奇迹…-我抓到了！
@@ -371,8 +375,9 @@ Dialogue: 0,0:17:44.38,0:17:46.50,ES-Main,,0,0,0,,Lo acabo de ver desnudo. - ¿Y
 Dialogue: 10,0:17:48.58,0:17:50.12,CN-Main,,0,0,0,,他的阴茎大得出奇
 Dialogue: 0,0:17:48.58,0:17:50.12,ES-Main,,0,0,0,,Tiene un miembro descomunal.
 Dialogue: 10,0:17:53.29,0:17:54.71,CN-Main,,0,0,0,,乌尔苏拉 这很正常
+Dialogue: 0,0:17:53.29,0:17:54.71,ES-Main,,0,0,0,,Es normal, Úrsula.
 Dialogue: 10,0:17:54.79,0:17:57.08,CN-Main,,0,0,0,,他在长身体呀全身上下都会一起长大
-Dialogue: 0,0:17:54.79,0:17:57.08,ES-Main,,0,0,0,,Es normal, Úrsula. Está creciendo. Todo se le desarrolla al mismo tiempo.
+Dialogue: 0,0:17:54.79,0:17:57.08,ES-Main,,0,0,0,,Está creciendo. Todo se le desarrolla al mismo tiempo.
 Dialogue: 10,0:17:57.58,0:17:59.08,CN-Main,,0,0,0,,一点也不正常 庇拉尔
 Dialogue: 0,0:17:57.58,0:17:59.08,ES-Main,,0,0,0,,No es normal, Pilar.
 Dialogue: 10,0:18:00.00,0:18:01.67,CN-Main,,0,0,0,,那东西都大得畸形了
@@ -484,8 +489,9 @@ Dialogue: 0,0:25:24.04,0:25:26.88,ES-Main,,0,0,0,,Los rayos solares convergen en
 Dialogue: 10,0:25:28.29,0:25:30.50,CN-Main,,0,0,0,,被照射的目标就会开始燃烧
 Dialogue: 0,0:25:28.29,0:25:30.50,ES-Main,,0,0,0,,y los proyecta para poder quemar el objeto.
 Dialogue: 10,0:25:42.08,0:25:44.88,CN-Main,,0,0,0,,只要把阳光聚焦于一点
-Dialogue: 0,0:25:42.08,0:25:44.88,ES-Main,,0,0,0,,Al estar concentrados en un solo punto, los rayos podrían quemar el objeto.
+Dialogue: 0,0:25:42.08,0:25:44.88,ES-Main,,0,0,0,,Al estar concentrados en un solo punto,
 Dialogue: 10,0:25:45.46,0:25:47.62,CN-Main,,0,0,0,,就能让目标燃烧
+Dialogue: 0,0:25:45.46,0:25:47.62,ES-Main,,0,0,0,,los rayos podrían quemar el objeto.
 Dialogue: 10,0:26:10.42,0:26:12.04,CN-Main,,0,0,0,,-成功了！-妈妈！
 Dialogue: 0,0:26:10.42,0:26:12.04,ES-Main,,0,0,0,,¡Eso! - ¡Mamá!
 Dialogue: 10,0:26:16.96,0:26:18.04,CN-Main,,0,0,0,,你看见了吗 乌尔苏拉？
@@ -582,8 +588,9 @@ Dialogue: 0,0:33:41.25,0:33:43.79,ES-Main,,0,0,0,,Felicitaciones. Esta galleta e
 Dialogue: 10,0:33:43.88,0:33:45.00,CN-Main,,0,0,0,,是在卡门那儿买的
 Dialogue: 0,0:33:43.88,0:33:45.00,ES-Main,,0,0,0,,De la tienda de Carmen.
 Dialogue: 10,0:33:45.08,0:33:45.96,CN-Main,,0,0,0,,来尝尝面包吧
+Dialogue: 0,0:33:45.08,0:33:45.96,ES-Main,,0,0,0,,Pero prueba el pan.
 Dialogue: 10,0:33:46.62,0:33:48.29,CN-Main,,0,0,0,,这个蜂蜜面包是我自己做的
-Dialogue: 0,0:33:46.62,0:33:48.29,ES-Main,,0,0,0,,Pero prueba el pan. Mira, este pan lo hice yo y es de miel.
+Dialogue: 0,0:33:46.62,0:33:48.29,ES-Main,,0,0,0,,Mira, este pan lo hice yo y es de miel.
 Dialogue: 10,0:33:49.17,0:33:50.67,CN-Main,,0,0,0,,嘿 孩子她爸呢？
 Dialogue: 0,0:33:49.17,0:33:50.67,ES-Main,,0,0,0,,Oye, ¿y el compadre?
 Dialogue: 10,0:33:51.79,0:33:53.38,CN-Main,,0,0,0,,一定是在作坊吧
@@ -645,8 +652,9 @@ Dialogue: 0,0:35:17.29,0:35:18.12,ES-Main,,0,0,0,,Tranquilo.
 Dialogue: 10,0:35:25.25,0:35:28.17,CN-Main,,0,0,0,,你何不直接把想做的事情告诉你爸爸？
 Dialogue: 0,0:35:25.25,0:35:28.17,ES-Main,,0,0,0,,Entonces, ¿por qué no le dices a tu papá qué quieres hacer?
 Dialogue: 10,0:35:35.54,0:35:36.42,CN-Main,,0,0,0,,我想要的
+Dialogue: 0,0:35:35.54,0:35:36.42,ES-Main,,0,0,0,,Yo lo que quiero
 Dialogue: 10,0:35:37.42,0:35:38.50,CN-Main,,0,0,0,,就是和你在一起
-Dialogue: 0,0:35:37.42,0:35:38.50,ES-Main,,0,0,0,,Yo lo que quiero es estar contigo.
+Dialogue: 0,0:35:37.42,0:35:38.50,ES-Main,,0,0,0,,es estar contigo.
 Dialogue: 10,0:35:56.33,0:35:57.21,CN-Main,,0,0,0,,我也是
 Dialogue: 0,0:35:56.33,0:35:57.21,ES-Main,,0,0,0,,Yo también.
 Dialogue: 10,0:36:22.79,0:36:25.75,CN-Main,,0,0,0,,（美洲大陆首次惊艳亮相 魔毯）
@@ -800,8 +808,9 @@ Dialogue: 0,0:47:51.29,0:47:52.25,ES-Main,,0,0,0,,Bienvenido.
 Dialogue: 10,0:47:52.33,0:47:53.67,CN-Main,,0,0,0,,先生 您好
 Dialogue: 0,0:47:52.33,0:47:53.67,ES-Main,,0,0,0,,Señor, ¿qué tal?
 Dialogue: 10,0:47:57.62,0:47:58.92,CN-Main,,0,0,0,,您好 先生
-Dialogue: 0,0:47:57.62,0:47:58.92,ES-Main,,0,0,0,,¿Cómo está, señor? Bienvenida.
+Dialogue: 0,0:47:57.62,0:47:58.92,ES-Main,,0,0,0,,¿Cómo está, señor?
 Dialogue: 10,0:47:59.00,0:47:59.96,CN-Main,,0,0,0,,欢迎
+Dialogue: 0,0:47:59.00,0:47:59.96,ES-Main,,0,0,0,,Bienvenida.
 Dialogue: 10,0:48:12.00,0:48:13.04,CN-Main,,0,0,0,,当心
 Dialogue: 0,0:48:12.00,0:48:13.04,ES-Main,,0,0,0,,Con cuidado.
 Dialogue: 10,0:49:06.92,0:49:08.21,CN-Main,,0,0,0,,别再离开了
@@ -907,8 +916,9 @@ Dialogue: 0,0:53:15.08,0:53:15.96,ES-Main,,0,0,0,,¡Vamos!
 Dialogue: 10,0:53:16.50,0:53:17.67,CN-Main,,0,0,0,,到底是什么嘛？
 Dialogue: 0,0:53:16.50,0:53:17.67,ES-Main,,0,0,0,,¿Qué es eso?
 Dialogue: 10,0:53:21.58,0:53:22.79,CN-Main,,0,0,0,,阿尔卡蒂奥、阿玛兰妲！
+Dialogue: 0,0:53:21.58,0:53:22.79,ES-Main,,0,0,0,,¡Arcadio, Amaranta!
 Dialogue: 10,0:53:23.29,0:53:24.92,CN-Main,,0,0,0,,别再说瓦尤语了
-Dialogue: 0,0:53:23.29,0:53:24.92,ES-Main,,0,0,0,,¡Arcadio, Amaranta! Dejen de estar hablando en wayuunaiki.
+Dialogue: 0,0:53:23.29,0:53:24.92,ES-Main,,0,0,0,,Dejen de estar hablando en wayuunaiki.
 Dialogue: 10,0:53:25.42,0:53:27.38,CN-Main,,0,0,0,,我不是让你们说西班牙语吗？
 Dialogue: 0,0:53:25.42,0:53:27.38,ES-Main,,0,0,0,,Les he dicho que hablen en español.
 Dialogue: 10,0:53:29.92,0:53:30.96,CN-Main,,0,0,0,,你怎么了？

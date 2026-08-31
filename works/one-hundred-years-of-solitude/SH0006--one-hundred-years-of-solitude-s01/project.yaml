@@ -93,6 +93,12 @@ project_overrides:
     rationale: "The user explicitly requested that the embedded English subtitle be treated as the timing standard and that Chinese timing abnormalities be repaired."
     confirmed_by: user
     confirmed_at: "2026-08-30"
+  - id: SH0006-RULE-009
+    scope: S01E01-S01E08 missing-Spanish-dialogue repair beginning with planned release 1.1.1
+    rule: "For a semantically matched dialogue event, use the same-cut embedded English subtitle stream 3 as the authoritative timing reference, then apply exactly the same Start/End and event segmentation to Chinese and retained Spanish. Spanish text remains sourced from the official bilingual subtitle, and unmatched English omissions or SDH events do not create release text."
+    rationale: "The user confirmed that the embedded English timing is the most accurate reference for this repair while Chinese and Spanish must remain strictly co-timed."
+    confirmed_by: user
+    confirmed_at: "2026-08-31"
 
 limitations:
   - "Video binaries remain on the approved NAS and are not copied into the repository; the eight exact target files were read-only probed through the pinned SSH identity."
@@ -168,14 +174,14 @@ video_sources:
       S01E07: "One.Hundred.Years.of.Solitude.S01E07.mkv"
       S01E08: "One.Hundred.Years.of.Solitude.S01E08.mkv"
     timing_authority:
-      S01E01: "user-confirmed Chinese subtitle timing"
-      S01E02: "user-confirmed Chinese subtitle timing"
-      S01E03: "user-confirmed Chinese subtitle timing"
-      S01E04: "user-confirmed Chinese subtitle timing"
-      S01E05: "user-confirmed Chinese subtitle timing"
-      S01E06: "user-confirmed Chinese subtitle timing"
-      S01E07: "user-confirmed Chinese subtitle timing"
-      S01E08: "user-confirmed Chinese subtitle timing"
+      S01E01: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E02: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E03: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E04: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E05: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E06: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E07: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
+      S01E08: "same-cut embedded English stream 3 for semantically matched dialogue timing; Chinese and Spanish share the resulting boundaries"
     fingerprints:
       S01E01:
         size: 9513161564
