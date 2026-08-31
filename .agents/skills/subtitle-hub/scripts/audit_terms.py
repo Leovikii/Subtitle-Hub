@@ -5,10 +5,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
-from audit_subtitle import AuditError, HAN, parse_events, visible
+from audit_subtitle import AuditError, parse_events, visible
+
+HAN = re.compile(r"[\u3400-\u9fff]")
 
 
 class TermAuditError(RuntimeError):

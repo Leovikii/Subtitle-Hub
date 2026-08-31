@@ -10,12 +10,16 @@ scope: "{{SCOPE}}"
 coverage:
   evidence_tier: {{EVIDENCE_TIER}}
   timing_authority: {{TIMING_AUTHORITY_YAML}}
+  alignment_source_id: null
+  alignment_verified: pending
   master_sha256: {}
+  source_sha256: {}
   chinese_in_scope: 0
   chinese_reviewed: 0
   chinese_excluded: 0
   source_in_scope: 0
   source_aligned: 0
+  source_excluded: 0
   source_unresolved: 0
   static_layout_checked: 0
   human_source_fidelity_review: not-required
@@ -31,7 +35,7 @@ episodes:
 
 ## 目标与范围
 
-完成 Skill 1.4.1 素材盘点、身份/命名确认、素材导入和 Noto 母本准备。
+完成 Skill 1.4.2 素材盘点、身份/命名确认、素材导入和 Noto 母本准备。
 
 ## 检查覆盖
 

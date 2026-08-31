@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Subtitle Hub project and release invariants with no external packages."""
+"""Validate current Subtitle Hub project, coverage, and release invariants."""
 
 from __future__ import annotations
 
@@ -9,6 +9,10 @@ import json
 import re
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+
+import yaml
+
+from align_bilingual import AlignmentError, ordinary_master_counts, source_file_fingerprints
 
 ALLOWED_ROLES = {
     "candidate-baseline",
@@ -217,7 +221,8 @@ def validate_review_coverage(project_root: Path, review_path: Path, review: str,
     values: dict[str, int] = {}
     fields = [
         "chinese_in_scope", "chinese_reviewed", "chinese_excluded", "source_in_scope",
-        "source_aligned", "source_unresolved", "static_layout_checked", "unresolved_p0", "unresolved_p1",
+        "source_aligned", "source_excluded", "source_unresolved", "static_layout_checked",
+        "unresolved_p0", "unresolved_p1",
     ]
     for field in fields:
         raw = scalar(coverage, field, 2)
@@ -235,10 +240,42 @@ def validate_review_coverage(project_root: Path, review_path: Path, review: str,
     if values.get("unresolved_p0") != 0 or values.get("unresolved_p1") != 0:
         errors.append(f"{review_path}: unresolved P0/P1 blocks release")
     if tier in {"A", "B"}:
-        if values.get("source_in_scope", 0) <= 0 or values.get("source_in_scope") != values.get("source_aligned", 0) + values.get("source_unresolved", 0):
+        source_language = scalar(section(metadata, "task"), "source_language", 2) or ""
+        eligible_source = any(
+            "source-text-reference" in entry["roles"]
+            and any(
+                isinstance(language, str)
+                and language.split("-", 1)[0].casefold() == source_language.split("-", 1)[0].casefold()
+                for language in entry["languages"]
+            )
+            for entry in subtitle_entries(metadata)
+        )
+        if not eligible_source:
+            errors.append(f"{review_path}: A/B coverage requires a matching source-text-reference")
+        if values.get("source_in_scope", 0) <= 0 or values.get("source_in_scope") != (
+            values.get("source_aligned", 0) + values.get("source_excluded", 0) + values.get("source_unresolved", 0)
+        ):
             errors.append(f"{review_path}: A/B source-direction coverage is incomplete")
         if values.get("source_unresolved") != 0:
             errors.append(f"{review_path}: unresolved source units block A/B fidelity completion")
+        alignment_source_id = scalar(coverage, "alignment_source_id", 2)
+        if not alignment_source_id or alignment_source_id == "null":
+            errors.append(f"{review_path}: A/B coverage requires alignment_source_id")
+        if scalar(coverage, "alignment_verified", 2) != "verified":
+            errors.append(f"{review_path}: A/B coverage requires alignment_verified: verified")
+        source_fingerprints = section(coverage, "source_sha256", 2)
+        if alignment_source_id and alignment_source_id != "null":
+            try:
+                actual_sources = source_file_fingerprints(project_root, alignment_source_id)
+            except (AlignmentError, OSError, UnicodeError, ValueError) as error:
+                errors.append(f"{review_path}: cannot verify selected alignment source: {error}")
+            else:
+                for episode, actual_hash in actual_sources.items():
+                    match = re.search(rf"(?m)^    {re.escape(episode)}:\s*([0-9a-f]{{64}})\s*$", source_fingerprints)
+                    if not match:
+                        errors.append(f"{review_path}: coverage lacks a valid source SHA-256 for {episode}")
+                    elif match.group(1) != actual_hash:
+                        errors.append(f"{review_path}: source coverage for {episode} is stale after source change")
     elif tier in {"C", "D"} and scalar(coverage, "human_source_fidelity_review", 2) != "verified":
         errors.append(f"{review_path}: C/D release requires verified human full-source-fidelity review")
     if scalar(coverage, "human_release_review", 2) != "verified":
@@ -256,6 +293,28 @@ def validate_review_coverage(project_root: Path, review_path: Path, review: str,
                 errors.append(f"{master}: release coverage master is missing")
             elif hashlib.sha256(master.read_bytes()).hexdigest() != match.group(1):
                 errors.append(f"{review_path}: coverage for {episode} is stale after master change")
+    try:
+        counts = ordinary_master_counts(project_root)
+    except (AlignmentError, OSError, UnicodeError, ValueError) as error:
+        errors.append(f"{project_root}: cannot recompute final master coverage: {error}")
+        return
+    primary_count = sum(item["primary"] for item in counts.values())
+    secondary_count = sum(item["secondary"] for item in counts.values())
+    rendered_count = sum(item["rendered_dialogue"] for item in counts.values())
+    if primary_count <= 0:
+        errors.append(f"{project_root}: final masters contain no declared ordinary Chinese dialogue")
+    if values.get("chinese_reviewed", -1) < primary_count:
+        errors.append(f"{review_path}: reviewed Chinese count is below the final ordinary-dialogue denominator")
+    if values.get("static_layout_checked", -1) < rendered_count:
+        errors.append(f"{review_path}: static layout coverage is below the final rendered Dialogue denominator")
+    _, secondary_language = project_languages(metadata)
+    if secondary_language is not None and secondary_count != values.get("source_aligned"):
+        errors.append(
+            f"{review_path}: source_aligned={values.get('source_aligned')} but final masters contain "
+            f"{secondary_count} declared ordinary secondary events"
+        )
+    if secondary_language is None and secondary_count:
+        errors.append(f"{project_root}: monolingual masters contain declared ordinary secondary events")
 
 
 def main() -> int:
@@ -273,6 +332,12 @@ def main() -> int:
         metadata = metadata_path.read_text(encoding="utf-8-sig")
     except OSError as error:
         parser.error(str(error))
+    try:
+        metadata_data = yaml.safe_load(metadata)
+    except yaml.YAMLError as error:
+        parser.error(f"invalid project YAML: {error}")
+    if not isinstance(metadata_data, dict):
+        parser.error("project.yaml must contain a mapping")
 
     project_schema = scalar(metadata, "schema_version")
     if project_schema != "9":
@@ -406,20 +471,30 @@ def main() -> int:
         if "## 校对方案" not in review and "## 候选修改摘要" not in review:
             errors.append(f"{review_path}: required section is missing: ## 校对方案")
 
-    design = section(metadata, "subtitle_design")
-    profile = scalar(design, "profile", 2)
+    design = metadata_data.get("subtitle_design")
+    design = design if isinstance(design, dict) else {}
+    profile = design.get("profile")
     if profile not in {"zh-mono", "zh-bilingual"}:
         errors.append(f"{metadata_path}: subtitle_design.profile must be zh-mono or zh-bilingual")
-    ordinary = section(design, "ordinary_styles", 2)
-    if not scalar(ordinary, "primary", 4):
+    ordinary = design.get("ordinary_styles")
+    ordinary = ordinary if isinstance(ordinary, dict) else {}
+    primary_styles = ordinary.get("primary")
+    secondary_styles = ordinary.get("secondary")
+    if not isinstance(primary_styles, list) or not primary_styles or not all(isinstance(value, str) and value for value in primary_styles):
         errors.append(f"{metadata_path}: subtitle_design.ordinary_styles.primary is required")
+    if not isinstance(secondary_styles, list) or not all(isinstance(value, str) and value for value in secondary_styles):
+        errors.append(f"{metadata_path}: subtitle_design.ordinary_styles.secondary must be a list")
     _, secondary_language = project_languages(metadata)
     if (profile == "zh-mono") != (secondary_language in {None, "null"}):
         errors.append(f"{metadata_path}: subtitle_design.profile must match release secondary language")
+    if profile == "zh-bilingual" and not secondary_styles:
+        errors.append(f"{metadata_path}: bilingual profile requires an ordinary secondary style")
+    if profile == "zh-mono" and secondary_styles:
+        errors.append(f"{metadata_path}: monolingual profile must not declare ordinary secondary styles")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.4.1":
+    if initialization_version != "1.4.2":
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.4.1; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be 1.4.2; upgrade before processing"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")

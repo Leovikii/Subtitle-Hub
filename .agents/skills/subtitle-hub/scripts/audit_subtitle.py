@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit ASS text, timing, coverage, and static layout without media processing."""
+"""Audit ASS structure, timing code, and static layout without media processing."""
 
 from __future__ import annotations
 
@@ -12,8 +12,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 TAG_BLOCK = re.compile(r"\{[^}]*\}")
-HAN = re.compile(r"[\u3400-\u9fff]")
-KANA = re.compile(r"[\u3040-\u30ff]")
 POS = re.compile(r"\\pos\(([-\d.]+),([-\d.]+)\)")
 MOVE = re.compile(r"\\move\(([^)]*)\)")
 RESET = re.compile(r"\\r([^\\}]*)")
@@ -167,20 +165,9 @@ def audit(path: Path) -> dict[str, object]:
     styles = parse_styles(text)
     events = parse_events(text)
     findings: list[dict[str, object]] = []
-    chinese = source = 0
-    chinese_events: list[Event] = []
-    source_events: list[Event] = []
     boxes = {}
     for event in events:
         clean = visible(event.text)
-        is_chinese = bool(HAN.search(clean))
-        is_source = bool(KANA.search(clean) or (re.search(r"[A-Za-zÁ-ž]", clean) and not HAN.search(clean)))
-        chinese += is_chinese
-        source += is_source
-        if is_chinese:
-            chinese_events.append(event)
-        if is_source:
-            source_events.append(event)
         if event.style not in styles:
             findings.append(finding("undefined-style", "confirmed", event, "event references an undefined style"))
             continue
@@ -226,20 +213,6 @@ def audit(path: Path) -> dict[str, object]:
                 except ValueError:
                     pass
 
-    chinese_matches = {event.index: [] for event in chinese_events}
-    source_matches = {event.index: [] for event in source_events}
-    for chinese_event in chinese_events:
-        for source_event in source_events:
-            if chinese_event.start < source_event.end and source_event.start < chinese_event.end:
-                chinese_matches[chinese_event.index].append(source_event.index)
-                source_matches[source_event.index].append(chinese_event.index)
-    for event in chinese_events:
-        if source_events and not chinese_matches[event.index]:
-            findings.append(finding("chinese-without-source", "risk", event, "Chinese event has no overlapping source-text event"))
-    for event in source_events:
-        if chinese_events and not source_matches[event.index]:
-            findings.append(finding("source-without-chinese", "risk", event, "source-text event has no overlapping Chinese event"))
-
     for i, left in enumerate(events):
         if left.index not in boxes:
             continue
@@ -251,21 +224,13 @@ def audit(path: Path) -> dict[str, object]:
 
     counts = {name: sum(item["classification"] == name for item in findings) for name in ("confirmed", "risk", "media-required")}
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "file": str(path),
         "sha256": hashlib.sha256(data).hexdigest(),
         "play_res": [width, height],
         "wrap_style": wrap_style,
         "events": len(events),
-        "chinese_in_scope": chinese,
-        "source_text_events": source,
-        "alignment": {
-            "chinese_resolved_by_time": sum(bool(value) for value in chinese_matches.values()),
-            "chinese_unresolved_by_time": sum(not value for value in chinese_matches.values()),
-            "source_aligned_by_time": sum(bool(value) for value in source_matches.values()),
-            "source_unresolved_by_time": sum(not value for value in source_matches.values()),
-            "many_to_many_groups": sum(len(value) > 1 for value in chinese_matches.values()) + sum(len(value) > 1 for value in source_matches.values()),
-        },
+        "rendered_dialogue_events": sum(bool(visible(event.text)) for event in events),
         "static_layout_checked": len(events),
         "finding_counts": counts,
         "findings": findings,
@@ -278,7 +243,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, help="Optional disposable JSON output path; stdout is the default")
     args = parser.parse_args()
     try:
-        report = {"schema_version": 1, "files": [audit(path.resolve()) for path in args.files]}
+        report = {"schema_version": 2, "files": [audit(path.resolve()) for path in args.files]}
     except (AuditError, OSError, UnicodeError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1

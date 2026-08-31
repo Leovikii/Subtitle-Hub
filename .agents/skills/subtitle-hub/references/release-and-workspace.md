@@ -11,7 +11,7 @@ Durable masters are `project/workspace/episodes/<episode>/master.ass`. Initializ
 
 Do not create `archive/`, screenshot/evidence trees, `intermediate/`, or `logs/`. Prefer system temporary storage for disposable generated data. Delete obsolete temporary files after durable conclusions are in `review.md` or `project.yaml`.
 
-Intake JSON (including the approved episode map), raw audit details, frames, waveforms and renders stay in system temporary storage. Do not create project audit/coverage/manifest files, per-episode reports, copied shared tools, or placeholders. `project/local.paths.yaml` exists only when external media paths must be reused; no-video projects omit it. Create `series-guide.md` only with the first real cross-project term.
+Intake JSON (including the approved episode map), reviewed alignment manifests/packets, raw audit details, frames, waveforms and renders stay in system temporary storage. Keep an alignment session only through its candidate verification so a bounded run can resume without rereading completed evidence; after its counts, findings, and master fingerprints are written to `review.md`, remove it. Do not create project audit/coverage/manifest files, per-episode reports, copied shared tools, or placeholders. `project/local.paths.yaml` exists only when external media paths must be reused; no-video projects omit it. Create `series-guide.md` only with the first real cross-project term.
 
 ## SH-REL-008 — Three-state ASS contract
 

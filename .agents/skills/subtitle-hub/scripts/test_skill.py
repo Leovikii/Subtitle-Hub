@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.1 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.2 toolchain."""
 
 from __future__ import annotations
 
@@ -89,6 +89,131 @@ def baseline_ass_bytes(text: str = "测试") -> bytes:
         "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
         f"Dialogue: 0,0:00:01.00,0:00:02.00,CN-Main,,0,0,0,,{text}\n"
     ).encode("utf-8")
+
+
+def alignment_ass(rows: list[tuple[int, int, str, str, str]]) -> str:
+    def timestamp(value: int) -> str:
+        seconds, centiseconds = divmod(value, 100)
+        hours, seconds = divmod(seconds, 3600)
+        minutes, seconds = divmod(seconds, 60)
+        return f"{hours}:{minutes:02d}:{seconds:02d}.{centiseconds:02d}"
+
+    header = (
+        "[Script Info]\nScriptType: v4.00+\nWrapStyle: 0\nScaledBorderAndShadow: yes\n"
+        "PlayResX: 1920\nPlayResY: 1080\nYCbCr Matrix: TV.709\n\n[V4+ Styles]\n"
+        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, "
+        "Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
+        "Alignment, MarginL, MarginR, MarginV, Encoding\n"
+        "Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,130,1\n"
+        "Style: JP-Main,Noto Sans CJK JP,46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1\n"
+        "Style: Source,Noto Sans CJK JP,46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1\n\n"
+        "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+    )
+    events = "".join(
+        f"Dialogue: 0,{timestamp(start)},{timestamp(end)},{style},{name},0,0,0,,{text}\n"
+        for start, end, style, name, text in rows
+    )
+    return header + events
+
+
+def make_alignment_project(
+    root: Path,
+    chinese_rows: list[tuple[int, int, str]],
+    source_rows: list[tuple[int, int, str]],
+    *,
+    bilingual: bool = True,
+    auxiliary_rows: list[tuple[int, int, str]] | None = None,
+) -> tuple[Path, Path, Path]:
+    project = root / "SH9000--alignment-test"
+    master = project / "project/workspace/episodes/S01E01/master.ass"
+    source_dir = project / "project/sources/subtitles/ja/source"
+    source = source_dir / "S01E01.ja.ass"
+    master.parent.mkdir(parents=True)
+    source_dir.mkdir(parents=True)
+    master.write_text(
+        alignment_ass([(start, end, "CN-Main", "", text) for start, end, text in chinese_rows]),
+        encoding="utf-8",
+    )
+    source.write_text(
+        alignment_ass([(start, end, "Source", "", text) for start, end, text in source_rows]),
+        encoding="utf-8",
+    )
+    sources = (
+        "  - id: ja-source\n"
+        "    language: ja\n"
+        "    kind: official-ass\n"
+        "    path: project/sources/subtitles/ja/source\n"
+        "    file_count: 1\n"
+        "    scope: S01E01\n"
+        "    evidence: test source\n"
+        "    roles:\n"
+        "      - source-text-reference\n"
+        "      - secondary-language-release-source\n"
+    )
+    if auxiliary_rows is not None:
+        auxiliary_dir = project / "project/sources/subtitles/en/aux"
+        auxiliary_dir.mkdir(parents=True)
+        (auxiliary_dir / "S01E01.en.ass").write_text(
+            alignment_ass([(start, end, "Source", "", text) for start, end, text in auxiliary_rows]),
+            encoding="utf-8",
+        )
+        sources += (
+            "  - id: en-aux\n"
+            "    language: en\n"
+            "    kind: auxiliary-ass\n"
+            "    path: project/sources/subtitles/en/aux\n"
+            "    file_count: 1\n"
+            "    scope: S01E01\n"
+            "    evidence: test auxiliary\n"
+            "    roles:\n"
+            "      - translation-reference\n"
+        )
+    project_yaml = (
+        "schema_version: 9\n"
+        "id: SH9000\nproject_name: alignment-test\ntype: tv\nepisode_count: 1\n"
+        "task:\n  mode: proofreading\n  source_language: ja\n  target_language: zh-Hans\n  scope: S01E01\n"
+        "release_languages:\n  primary: zh-Hans\n"
+        f"  secondary: {'ja' if bilingual else 'null'}\n"
+        "subtitle_design:\n"
+        f"  profile: {'zh-bilingual' if bilingual else 'zh-mono'}\n"
+        "  ordinary_styles:\n    primary: [CN-Main]\n"
+        f"    secondary: {'[JP-Main]' if bilingual else '[]'}\n"
+        f"subtitle_sources:\n{sources}"
+        "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
+        "project_overrides: []\nlimitations: []\n"
+        "initialization:\n  skill_version: \"1.4.2\"\n  state: proofreading-ready\n"
+    )
+    (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
+    return project, master, source
+
+
+def plan_alignment(project: Path, session: Path, *, batch_size: int = 16) -> dict[str, object]:
+    result = run(
+        "align_bilingual.py", "plan", str(project), "--output-dir", str(session),
+        "--source-id", "ja-source", "--batch-size", str(batch_size),
+    )
+    return json.loads(result.stdout)
+
+
+def review_alignment_session(session: Path, *, clear_risks: bool = True) -> None:
+    manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+    for entry in manifest["batches"]:
+        path = session / entry["file"]
+        packet = json.loads(path.read_text(encoding="utf-8"))
+        for group in packet["groups"]:
+            chinese, source = group["chinese_units"], group["source_units"]
+            if chinese and source:
+                group["status"] = "confirmed"
+                if (len(chinese), len(source)) != (1, 1):
+                    group["rationale"] = "reviewed split/merge preserves complete meaning"
+            elif source:
+                group["status"] = "excluded-special"
+                group["rationale"] = "confirmed source-only special text"
+        if clear_risks:
+            for risk in packet["risks"]:
+                risk["status"] = "cleared"
+                risk["rationale"] = "compared both source groups; intentional or corrected before this mapping"
+        path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def probe_payload(*, extra_audio: bool = False, embedded: str | None = None) -> dict[str, object]:
@@ -267,7 +392,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.1"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.2"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -631,7 +756,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.1")
+            self.assertEqual(data["skill_version"], "1.4.2")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -989,7 +1114,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.1"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.2"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -1208,6 +1333,33 @@ class CandidateContractTests(unittest.TestCase):
             result = run("validate_project.py", str(project), "--release", expect=1)
             self.assertIn("coverage for S01E01 is stale", result.stdout)
 
+    def test_bilingual_release_recomputes_final_secondary_denominator(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _, series, _, _, args = initialize_project(
+                root, video_name="coverage.S01E01.mkv", secondary="ja"
+            )
+            run("init_project.py", *args)
+            project = series / "SH0001--test-tv"
+            current = project / "subtitles/current"
+            current.mkdir(parents=True)
+            (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")
+            release = release_ass(100, "测试作品", "S01E01")
+            release = release.replace(
+                "; Subtitle-Hub-Languages: zh-Hans\n",
+                "; Subtitle-Hub-Languages: zh-Hans, ja\n; Subtitle-Hub-Secondary-Language: ja\n",
+            )
+            (current / "coverage.S01E01.zh-Hans.ass").write_text(release, encoding="utf-8")
+            mark_review_release_ready(project)
+            review = project / "review.md"
+            text = review.read_text(encoding="utf-8")
+            text = text.replace("  evidence_tier: D", "  evidence_tier: A")
+            text = text.replace("  source_in_scope: 0", "  source_in_scope: 1")
+            text = text.replace("  source_aligned: 0", "  source_aligned: 1")
+            review.write_text(text, encoding="utf-8")
+            result = run("validate_project.py", str(project), "--release", "--json", expect=1)
+            self.assertIn("source_aligned=1 but final masters contain 0", result.stdout)
+
     def test_noto_master_builds_candidate_without_font_transition(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -1242,7 +1394,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.1 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.2 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1305,6 +1457,320 @@ class TermAuditTests(unittest.TestCase):
             self.assertIn("assigned more than once", result.stderr)
 
 
+class BilingualAlignmentTests(unittest.TestCase):
+    def test_time_overlap_creates_pending_candidate_not_semantic_completion(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root, [(100, 200, "去医务室吧")], [(100, 200, "医療室に行けばいい")]
+            )
+            session = root / "session"
+            summary = plan_alignment(project, session)
+            self.assertEqual(summary["groups"], 1)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            self.assertEqual(packet["groups"][0]["status"], "pending")
+            blocked = run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session), expect=1
+            )
+            self.assertIn("unresolved status 'pending'", blocked.stderr)
+
+    def test_missing_ordinary_dialogue_is_not_hidden_by_other_overlaps(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "一行目"), (500, 600, "訳文がない原文")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            shapes = {(len(group["chinese_units"]), len(group["source_units"])) for group in packet["groups"]}
+            self.assertIn((1, 0), shapes)
+            self.assertIn((0, 1), shapes)
+            review_alignment_session(session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            for group in packet["groups"]:
+                if group["chinese_units"] and not group["source_units"]:
+                    group["status"] = "confirmed"
+            packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            blocked = run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session), expect=1
+            )
+            self.assertIn("missing ordinary dialogue cannot be confirmed", blocked.stderr)
+
+    def test_yamato_near_copy_regression_is_a_required_disposition(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [
+                    (29631, 30145, "对伤员来说 经历连续跃迁很痛苦吧？"),
+                    (30146, 30600, "伤员经历连续跃迁一定很痛苦吧？"),
+                ],
+                [
+                    (29631, 30145, "ハア… ケガ人には酷ね ワープの連続は"),
+                    (30146, 30600, "医療室に行けばいいのに 自分から こんな所に… バカみたい"),
+                ],
+            )
+            session = root / "session"
+            summary = plan_alignment(project, session)
+            self.assertGreaterEqual(summary["risk_candidates"], 1)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            self.assertIn("near-duplicate-chinese", {risk["category"] for risk in packet["risks"]})
+            review_alignment_session(session, clear_risks=False)
+            blocked = run(
+                "align_bilingual.py", "apply", str(project), "--session", str(session), expect=1
+            )
+            self.assertIn("requires an explicit disposition", blocked.stderr)
+
+    def test_reviewed_apply_preserves_chinese_and_is_idempotent(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, master, _ = make_alignment_project(
+                root,
+                [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "一行目"), (300, 400, "二行目")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            chinese_before = [
+                line for line in master.read_text(encoding="utf-8").splitlines() if ",CN-Main," in line
+            ]
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            first = master.read_bytes()
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            self.assertEqual(master.read_bytes(), first)
+            chinese_after = [
+                line for line in master.read_text(encoding="utf-8").splitlines() if ",CN-Main," in line
+            ]
+            self.assertEqual(chinese_after, chinese_before)
+            verified = json.loads(run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session)
+            ).stdout)
+            self.assertTrue(verified["valid"])
+            self.assertEqual(verified["alignment_source_id"], "ja-source")
+            self.assertRegex(verified["episodes"]["S01E01"]["source_sha256"], r"^[0-9a-f]{64}$")
+            self.assertEqual(verified["summary"]["source_aligned"], 2)
+            self.assertEqual(verified["summary"]["source_unresolved"], 0)
+
+    def test_reviewed_one_to_many_mapping_is_supported(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 300, "两句合并成一句中文")],
+                [(100, 200, "一行目"), (200, 300, "二行目")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            verified = json.loads(run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session)
+            ).stdout)
+            self.assertEqual(verified["summary"]["chinese_units"], 1)
+            self.assertEqual(verified["summary"]["source_aligned"], 2)
+
+    def test_reviewed_many_to_one_mapping_is_supported(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "第一句中文"), (200, 300, "第二句中文")],
+                [(100, 300, "二つの文を一つにまとめた原文")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            verified = json.loads(run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session)
+            ).stdout)
+            self.assertEqual(verified["summary"]["chinese_units"], 2)
+            self.assertEqual(verified["summary"]["source_aligned"], 1)
+
+    def test_cross_group_unit_reuse_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "一行目"), (300, 400, "二行目")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            packet["groups"][1]["source_units"].append(packet["groups"][0]["source_units"][0])
+            packet["groups"][1]["rationale"] = "invalid reuse"
+            packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            blocked = run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session), expect=1
+            )
+            self.assertIn("assigned to more than one mapping group", blocked.stderr)
+
+    def test_source_only_special_can_be_excluded_without_becoming_aligned(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "对白")],
+                [(100, 200, "台詞"), (500, 600, "画面注記")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            verified = json.loads(run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session)
+            ).stdout)
+            self.assertEqual(verified["summary"]["source_units"], 2)
+            self.assertEqual(verified["summary"]["source_aligned"], 1)
+            self.assertEqual(verified["summary"]["source_excluded_special"], 1)
+
+    def test_overlapping_special_can_be_split_from_a_candidate_group(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "对白")],
+                [(100, 200, "台詞"), (100, 200, "画面注記")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            combined = packet["groups"][0]
+            special = combined["source_units"].pop()
+            combined["status"] = "confirmed"
+            combined["rationale"] = "ordinary line separated from overlapping on-screen note"
+            packet["groups"].append({
+                "group_id": "G-SPECIAL-0001",
+                "status": "excluded-special",
+                "rationale": "confirmed on-screen note, not ordinary dialogue",
+                "chinese_units": [],
+                "source_units": [special],
+            })
+            packet_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            verified = json.loads(run(
+                "align_bilingual.py", "verify", str(project), "--session", str(session)
+            ).stdout)
+            self.assertEqual(verified["summary"]["source_aligned"], 1)
+            self.assertEqual(verified["summary"]["source_excluded_special"], 1)
+
+    def test_source_hash_change_invalidates_only_the_session(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, source = make_alignment_project(
+                root,
+                [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "一行目"), (300, 400, "二行目")],
+            )
+            session = root / "session"
+            plan_alignment(project, session, batch_size=1)
+            review_alignment_session(session)
+            source.write_text(
+                source.read_text(encoding="utf-8").replace("二行目", "変更された二行目"), encoding="utf-8"
+            )
+            blocked = run(
+                "align_bilingual.py", "apply", str(project), "--session", str(session), expect=1
+            )
+            self.assertIn("alignment input changed after planning", blocked.stderr)
+            manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual([entry["status"] for entry in manifest["batches"]], ["complete", "invalidated"])
+
+    def test_source_role_beats_script_guess_and_auxiliary_is_lazy(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "去医务室")],
+                [(100, 200, "医療室")],
+                auxiliary_rows=[(100, 200, "Go to the medical room")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            source_texts = [
+                unit["text"] for group in packet["groups"] for unit in group["source_units"]
+            ]
+            self.assertEqual(source_texts, ["医療室"])
+            self.assertNotIn("Go to the medical room", json.dumps(packet, ensure_ascii=False))
+            self.assertIn("load only", packet["auxiliary_translation"])
+
+    def test_proven_name_order_reversal_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, master, source = make_alignment_project(
+                root,
+                [(100, 200, "甲说话"), (300, 400, "乙说话")],
+                [(100, 200, "甲の台詞"), (300, 400, "乙の台詞")],
+            )
+            master_text = master.read_text(encoding="utf-8")
+            master_text = master_text.replace(",CN-Main,,0,0,0,,甲说话", ",CN-Main,B,0,0,0,,甲说话")
+            master_text = master_text.replace(",CN-Main,,0,0,0,,乙说话", ",CN-Main,A,0,0,0,,乙说话")
+            master.write_text(master_text, encoding="utf-8")
+            source_text = source.read_text(encoding="utf-8")
+            source_text = source_text.replace(",Source,,0,0,0,,甲の台詞", ",Source,A,0,0,0,,甲の台詞")
+            source_text = source_text.replace(",Source,,0,0,0,,乙の台詞", ",Source,B,0,0,0,,乙の台詞")
+            source.write_text(source_text, encoding="utf-8")
+            session = root / "session"
+            plan_alignment(project, session)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            self.assertIn("speaker-order-reversal", {risk["category"] for risk in packet["risks"]})
+
+    def test_large_scope_is_bounded_without_expanding_auxiliary_windows(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            chinese = [(index * 200, index * 200 + 100, f"第{index}句中文") for index in range(1, 139)]
+            source = [(index * 200, index * 200 + 100, f"原文{index}") for index in range(1, 139)]
+            project, _, _ = make_alignment_project(root, chinese, source)
+            session = root / "session"
+            summary = plan_alignment(project, session, batch_size=16)
+            self.assertEqual(summary["groups"], 138)
+            self.assertEqual(summary["batches"], 9)
+            manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+            seen = []
+            for entry in manifest["batches"]:
+                packet = json.loads((session / entry["file"]).read_text(encoding="utf-8"))
+                self.assertLessEqual(len(packet["groups"]), 16)
+                self.assertNotIn("auxiliary_units", packet)
+                seen.extend(group["group_id"] for group in packet["groups"])
+            self.assertEqual(len(seen), len(set(seen)))
+            self.assertEqual(len(seen), 138)
+
+    def test_incomplete_session_records_completed_batch_and_resumes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root,
+                [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "一行目"), (300, 400, "二行目")],
+            )
+            session = root / "session"
+            plan_alignment(project, session, batch_size=1)
+            first = session / "batch-0001.json"
+            packet = json.loads(first.read_text(encoding="utf-8"))
+            packet["groups"][0]["status"] = "confirmed"
+            first.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            run("align_bilingual.py", "verify", str(project), "--session", str(session), expect=1)
+            manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual([entry["status"] for entry in manifest["batches"]], ["complete", "pending"])
+            second = session / "batch-0002.json"
+            packet = json.loads(second.read_text(encoding="utf-8"))
+            packet["groups"][0]["status"] = "confirmed"
+            second.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            run("align_bilingual.py", "verify", str(project), "--session", str(session))
+            manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual([entry["status"] for entry in manifest["batches"]], ["complete", "complete"])
+
+
 class StaticAuditTests(unittest.TestCase):
     def test_audit_reports_full_counts_and_code_proven_layout_candidates(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1321,7 +1787,9 @@ class StaticAuditTests(unittest.TestCase):
             )
             data = json.loads(run("audit_subtitle.py", str(path)).stdout)["files"][0]
             self.assertEqual(data["events"], 3)
-            self.assertEqual(data["chinese_in_scope"], 3)
+            self.assertEqual(data["schema_version"], 2)
+            self.assertEqual(data["rendered_dialogue_events"], 3)
+            self.assertNotIn("alignment", data)
             self.assertEqual(data["static_layout_checked"], 3)
             categories = {item["category"] for item in data["findings"]}
             self.assertIn("invalid-duration", categories)

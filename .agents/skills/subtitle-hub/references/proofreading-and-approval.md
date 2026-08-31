@@ -6,7 +6,7 @@ An active work keeps exactly `project.yaml` and root-level `review.md` as contro
 
 `project.yaml` records durable identity, scope, languages, sources/roles, video map and timing authority, ordinary-style profile, limitations, initialization approval, and confirmed overrides. Fixed paths, release mechanics, and Action configuration belong to this Skill, not each project. An override cites a stable rule ID, scope, rationale/evidence, confirmer, and date; a terminology deviation also cites the series `term_id`.
 
-`review.md` schema 3 keeps one `status` (`planning`, `awaiting-approval`, `implementing`, `final-review`, `released`, or `blocked`), current scope, releases, episodes, and coverage. Coverage records evidence tier, timing authority, master fingerprints, Chinese/source denominators, static-layout coverage, applicable human reviews, and unresolved P0/P1. Media questions live in proposal rows, not duplicate counters. Git preserves closed rounds; replace closed detail when a new round begins instead of accumulating an archive.
+`review.md` schema 3 keeps one `status` (`planning`, `awaiting-approval`, `implementing`, `final-review`, `released`, or `blocked`), current scope, releases, episodes, and coverage. Coverage records evidence tier, timing authority, the selected alignment source, master/source fingerprints, Chinese/source denominators, static-layout coverage, applicable human reviews, and unresolved P0/P1. Media questions live in proposal rows, not duplicate counters. Git preserves closed rounds; replace closed detail when a new round begins instead of accumulating an archive.
 
 ## SH-CTRL-007 — Proposal and approval gate
 
@@ -20,7 +20,11 @@ After approval, implement and verify the approved scope continuously through a c
 
 Count every visible Chinese Dialogue event in the release scope, excluding only documented non-content automation/templates or exact duplicates that will not render. Record `chinese_in_scope = chinese_reviewed + chinese_excluded`; every exclusion needs a bounded rule and count. A changed master fingerprint invalidates prior coverage.
 
-For A/B evidence, also account for every source-text unit in both directions. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when meaning, order, timing, and layout remain complete. Time alignment raises candidates but never proves semantic resolution. Record unresolved units explicitly; zero issue rows never substitutes for coverage counts.
+For A/B evidence, also account for every source-text unit in both directions. Record `source_in_scope = source_aligned + source_excluded + source_unresolved`; source exclusions are bounded special text, never ordinary dialogue. Chinese-to-source review catches unsupported additions and meaning changes; source-to-Chinese review catches omissions and excessive compression. One-to-many, many-to-one, and cross-event alignment are valid when meaning, order, timing, and layout remain complete. Time alignment raises candidates but never proves semantic resolution. Record unresolved units explicitly; zero issue rows never substitutes for coverage counts.
+
+Use `scripts/align_bilingual.py plan` for A/B ordinary-dialogue coverage. It creates a disposable system-temp manifest and bounded packets; every ordinary Chinese and source unit must belong to exactly one monotonic reviewed group. Candidate groups start pending and may be split or joined inside the reviewed packets when time overlap grouped unrelated speakers or special text; unit uniqueness and order remain mandatory. Confirm each group only after checking speaker, action, object, reference, polarity, number, causality, information gain/loss, register, terms, and necessary context. A source-only special item may use `excluded-special` with a reason; ordinary Chinese without source or ordinary source without Chinese remains unresolved. A 1:N, N:1, or N:N confirmation needs a short split/merge rationale.
+
+Never use time overlap, nearest time, the prior translation, or an auxiliary translation to auto-confirm or fill Chinese. `align_bilingual.py apply` may project only source units from a fully reviewed mapping and must leave every Chinese event unchanged. After approved Chinese corrections, regenerate the mapping before apply/verify. Run `verify` against the final master; write its selected `alignment_source_id`, `alignment_verified: verified`, denominators, exclusions, unresolved count, master/source fingerprints, and material findings to `review.md`, then remove the disposable session after the candidate is verified. A changed master or selected source fingerprint invalidates the claim.
 
 For C/D evidence, the Agent still reviews every Chinese event for grammar, wording, consistency, punctuation, segmentation, timing code, and static layout, but cannot mark source fidelity complete. A source-language-capable human must perform full-meaning review before that claim or release gate can pass.
 
@@ -34,6 +38,14 @@ Terminology coverage is part of these same denominators, not a separate report. 
 - **Continuity:** keep names, terms, honorifics, quantities, time references and recurring phrasing consistent across the complete scope.
 
 An auxiliary translation is a disambiguation witness only. Use it when source wording remains ambiguous, record material conflicts, and never decide by majority vote.
+
+## SH-TRANS-011 — Bounded full-scope batches
+
+For a large scope, partition the complete chronological range into non-overlapping coverage batches before review; do not batch only discovered problems. Start around 12–20 mapping groups or semantic candidates and shrink complex batches until their source, Chinese, and necessary context fit in one complete read. Each packet contains stable IDs, time/style/speaker fields, and only one or two neighboring groups. Do not expand every auxiliary translation: load a matching auxiliary window only for a concrete unresolved ambiguity.
+
+Finish a batch by writing its material proposal rows to `review.md` and marking only its input hash, denominator, completion, and row IDs in the disposable manifest. Do not reread a completed batch after context compaction or truncated output unless its input changed, a cross-boundary conflict appears, or verification fails. A truncated batch remains incomplete and resumes at its first unfinished unit.
+
+After all batches, run one global denominator, ordering, duplicate-risk, and terminology-continuity check before setting `awaiting-approval`. Give the user a categorized summary and the `review.md` path instead of pasting hundreds of evidence windows into chat. Approval remains one complete proposal decision. Implement approved rows in the same bounded batches without additional routine pauses, then run global validation and request the single release-candidate final review.
 
 ## SH-TRANS-001 — Review meaning before polish
 

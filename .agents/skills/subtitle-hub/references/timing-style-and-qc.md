@@ -68,7 +68,9 @@ Use the mono profile when the actual release has no secondary dialogue track, re
 
 ## SH-QC-003 — Machine and local checks
 
-Check ASS structure/times, filenames/scope, style references, bilingual mapping, overlaps, hidden text, fonts, punctuation/spacing, terminology candidates, width/CPS/duration/gaps, source coverage, version markers, and rollback structure. Use the terminology audit routed from `proofreading-and-approval.md` when confirmed entity forms exist. Machine checks prove structure or declared-form counts, or raise candidates; they never prove translation, register, sync, obstruction, unknown aliases, or full playback.
+Check ASS structure/times, filenames/scope, style references, reviewed bilingual mapping, overlaps, hidden text, fonts, punctuation/spacing, terminology candidates, width/CPS/duration/gaps, source coverage, version markers, and rollback structure. Use `align_bilingual.py` for ordinary source/Chinese coverage and the terminology audit routed from `proofreading-and-approval.md` when confirmed entity forms exist. Time overlap is only a grouping candidate and never an aligned count. Machine checks prove structure or declared-form counts, or raise candidates; they never prove translation, register, sync, obstruction, unknown aliases, or full playback.
+
+Adjacent or nearby Chinese that is identical or highly similar while its reviewed source groups differ is a P1 review candidate. Cross-group unit reuse, missing ordinary units, an undisposed many-to-many group, or an input hash change blocks alignment verification. These guards supplement the mandatory group-by-group meaning review; clearing a duplicate heuristic never proves fidelity.
 
 ## SH-QC-008 — Text-first evidence escalation
 
