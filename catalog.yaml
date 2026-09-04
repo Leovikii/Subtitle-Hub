@@ -80,3 +80,16 @@ works:
     package_path: "packages/bgm276863 - 百年孤独 [v1.1.1].zip"
     package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/bgm276863%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%5Bv1.1.1%5D.zip"
     package_cdn_url: "https://cdn.jsdelivr.net/gh/Leovikii/Subtitle-Hub@main/packages/bgm276863%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%5Bv1.1.1%5D.zip"
+  - id: SH0007
+    title: "百年孤独 第二季"
+    type: tv
+    episode_count: 8
+    languages: ["zh-Hans", "es"]
+    status: released
+    version: "1.0.0"
+    project_path: works/one-hundred-years-of-solitude/SH0007--one-hundred-years-of-solitude-s02
+    review_path: works/one-hundred-years-of-solitude/SH0007--one-hundred-years-of-solitude-s02/review.md
+    release_path: works/one-hundred-years-of-solitude/SH0007--one-hundred-years-of-solitude-s02/subtitles/current
+    package_path: "packages/bgm534091 - 百年孤独 第二季 [v1.0.0].zip"
+    package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/bgm534091%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%E7%AC%AC%E4%BA%8C%E5%AD%A3%20%5Bv1.0.0%5D.zip"
+    package_cdn_url: "https://cdn.jsdelivr.net/gh/Leovikii/Subtitle-Hub@main/packages/bgm534091%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%E7%AC%AC%E4%BA%8C%E5%AD%A3%20%5Bv1.0.0%5D.zip"
