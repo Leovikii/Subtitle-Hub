@@ -36,6 +36,8 @@ subtitle_design:
     secondary: 
       - ES-Main
       - ES-Main-2L
+      - ES-Main-2L-Compact
+      - ES-Main-2L-Narrow
 
 subtitle_sources:
   - id: zh-Hans-candidate-baseline

@@ -12,19 +12,20 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Default,Noto Sans CJK SC,16,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,19,19,35,1
 Style: ES-Main,Noto Sans CJK SC,12,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,19,19,18,1
 Style: ES-Main-2L,Noto Sans CJK SC,12,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,19,19,5,1
+Style: ES-Main-2L-Compact,Noto Sans CJK SC,8,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,19,19,5,1
 Style: CN-Special,Noto Sans CJK SC,16,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,10,10,10,1
 Style: ES-Special,Noto Sans CJK SC,12,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,10,10,10,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:44.29,0:00:47.58,Default,,0,0,0,,谁也没法说服他们这不是奇迹
-Dialogue: 0,0:00:44.29,0:00:47.58,ES-Main-2L,,0,0,0,,Ya nadie va a quitarle la idea a la gente de que esto fue un milagro.
+Dialogue: 0,0:00:44.29,0:00:47.58,ES-Main-2L,,0,0,0,,Ya nadie va a quitarle la idea a la\Ngente de que esto fue un milagro.
 Dialogue: 0,0:01:05.96,0:01:07.04,Default,,0,0,0,,医生
 Dialogue: 0,0:01:05.96,0:01:07.04,ES-Main,,0,0,0,,Doctor.
 Dialogue: 0,0:01:39.04,0:01:40.92,Default,,0,0,0,,这是我的杰作
 Dialogue: 0,0:01:39.04,0:01:40.92,ES-Main,,0,0,0,,Es mi obra maestra.
 Dialogue: 0,0:01:41.88,0:01:46.42,Default,,0,0,0,,我标出了唯一能让子弹穿过\N而不伤及重要器官的地方
-Dialogue: 0,0:01:41.88,0:01:46.42,ES-Main-2L,,0,0,0,,Era el único sitio por donde podía pasar la bala sin que lastimara ningún centro vital.
+Dialogue: 0,0:01:41.88,0:01:46.42,ES-Main-2L,,0,0,0,,Era el único sitio por donde podía pasar la\Nbala sin que lastimara ningún centro vital.
 Dialogue: 0,0:01:46.92,0:01:48.80,Default,,0,0,0,,他说什么？
 Dialogue: 0,0:01:46.92,0:01:48.80,ES-Main,,0,0,0,,¿Qué está diciendo?
 Dialogue: 0,0:01:52.17,0:01:54.50,Default,,0,0,0,,若我还在掌权
@@ -53,7 +54,7 @@ Dialogue: 0,0:02:46.58,0:02:48.66,ES-Main,,0,0,0,,¡Bueno, señores y señoras!
 Dialogue: 0,0:02:49.17,0:02:51.34,Default,,0,0,0,,让我们来看看
 Dialogue: 0,0:02:49.17,0:02:51.34,ES-Main,,0,0,0,,Ahora sí vamos a ver que…
 Dialogue: 0,0:02:51.83,0:02:54.37,Default,,0,0,0,,谁会赢取今晚的大奖吧
-Dialogue: 0,0:02:51.83,0:02:54.37,ES-Main,,0,0,0,,Quién se va a llevar el premio gordo de esta noche.
+Dialogue: 0,0:02:51.83,0:02:54.37,ES-Main-2L,,0,0,0,,Quién se va a llevar el\Npremio gordo de esta noche.
 Dialogue: 0,0:02:55.29,0:02:57.42,Default,,0,0,0,,赢得手风琴的是…
 Dialogue: 0,0:02:55.29,0:02:57.42,ES-Main,,0,0,0,,Y el ganador del acordeón es…
 Dialogue: 0,0:02:58.13,0:03:00.71,CN-Special,,0,0,0,,（马里奥·雷耶斯）
@@ -72,9 +73,9 @@ Dialogue: 0,0:03:14.42,0:03:15.75,ES-Main,,0,0,0,,¡Gané! Al cabo
 Dialogue: 0,0:03:15.83,0:03:17.50,Default,,0,0,0,,两周过去了
 Dialogue: 0,0:03:15.83,0:03:17.50,ES-Main,,0,0,0,,de dos semanas,
 Dialogue: 0,0:03:17.58,0:03:20.37,Default,,0,0,0,,奥雷里亚诺第二一直没告诉佩特拉
-Dialogue: 0,0:03:17.58,0:03:20.37,ES-Main-2L,,0,0,0,,Aureliano Segundo no había sido capaz de decirle a Petra
+Dialogue: 0,0:03:17.58,0:03:20.37,ES-Main-2L,,0,0,0,,Aureliano Segundo no había\Nsido capaz de decirle a Petra
 Dialogue: 0,0:03:20.46,0:03:24.59,Default,,0,0,0,,她在交替跟他和他的兄弟睡觉
-Dialogue: 0,0:03:20.46,0:03:24.59,ES-Main-2L,,0,0,0,,que se había estado acostando alternativamente con él y
+Dialogue: 0,0:03:20.46,0:03:24.59,ES-Main-2L,,0,0,0,,que se había estado acostando\Nalternativamente con él y
 Dialogue: 0,0:03:24.67,0:03:26.13,Default,,0,0,0,,浑然不知他们是两个人
 Dialogue: 0,0:03:24.67,0:03:26.13,ES-Main,,0,0,0,,con su hermano, creyendo que eran el
 Dialogue: 0,0:03:26.21,0:03:27.34,Default,,0,0,0,,你喜欢它吗？
@@ -88,9 +89,9 @@ Dialogue: 0,0:03:32.33,0:03:35.12,ES-Main,,0,0,0,,Aureliano se las arregló para
 Dialogue: 0,0:03:50.79,0:03:53.42,Default,,0,0,0,,与此同时 何塞·阿尔卡蒂奥第二
 Dialogue: 0,0:03:50.79,0:03:53.42,ES-Main,,0,0,0,,Mientras tanto, José Arcadio Segundo,
 Dialogue: 0,0:03:53.96,0:03:57.59,Default,,0,0,0,,表现出前所未有的想象力
-Dialogue: 0,0:03:53.96,0:03:57.59,ES-Main-2L,,0,0,0,,que hasta entonces no había dado ninguna muestra de imaginación,
+Dialogue: 0,0:03:53.96,0:03:57.59,ES-Main-2L,,0,0,0,,que hasta entonces no había dado\Nninguna muestra de imaginación,
 Dialogue: 0,0:03:58.21,0:04:01.79,Default,,0,0,0,,仿佛被曾祖父灵魂附体了一般
-Dialogue: 0,0:03:58.21,0:04:01.79,ES-Main-2L,,0,0,0,,parecía haber sido abducido por el espíritu de su bisabuelo.
+Dialogue: 0,0:03:58.21,0:04:01.79,ES-Main-2L,,0,0,0,,parecía haber sido abducido por\Nel espíritu de su bisabuelo.
 Dialogue: 0,0:04:05.25,0:04:06.46,Default,,0,0,0,,何塞·阿尔卡蒂奥
 Dialogue: 0,0:04:05.25,0:04:06.46,ES-Main,,0,0,0,,José Arcadio.
 Dialogue: 0,0:04:06.54,0:04:07.75,Default,,0,0,0,,我在忙
@@ -168,7 +169,7 @@ Dialogue: 0,0:06:15.54,0:06:16.96,ES-Main,,0,0,0,,Camine y me cuenta.
 Dialogue: 0,0:06:21.21,0:06:23.13,Default,,0,0,0,,他想为马孔多开辟通往大海的航道
 Dialogue: 0,0:06:21.21,0:06:23.13,ES-Main,,0,0,0,,El bisabuelo quería conectar Macondo.
 Dialogue: 0,0:06:23.21,0:06:26.00,Default,,0,0,0,,看吧？我就说那些书值得一看
-Dialogue: 0,0:06:23.21,0:06:26.00,ES-Main,,0,0,0,,Ah, ¿viste? Te dije que valían la pena esos libros.
+Dialogue: 0,0:06:23.21,0:06:26.00,ES-Main-2L,,0,0,0,,Ah, ¿viste? Te dije que\Nvalían la pena esos libros.
 Dialogue: 0,0:06:30.75,0:06:31.92,Default,,0,0,0,,要打一局吗？
 Dialogue: 0,0:06:30.75,0:06:31.92,ES-Main,,0,0,0,,¿Nos echamos un juego?
 Dialogue: 0,0:06:32.83,0:06:35.46,Default,,0,0,0,,-你在听我说话吗？\N-在听啊 但还是先喝酒吧
@@ -176,11 +177,11 @@ Dialogue: 0,0:06:32.83,0:06:35.46,ES-Main,,0,0,0,,-¿No estás oyendo? -Sí, per
 Dialogue: 0,0:06:37.58,0:06:39.50,Default,,0,0,0,,朋友 两杯朗姆酒
 Dialogue: 0,0:06:37.58,0:06:39.50,ES-Main,,0,0,0,,Amigo, dos rones ahí.
 Dialogue: 0,0:06:44.63,0:06:47.84,Default,,0,0,0,,-为什么没人疏通河道？\N-谁知道呢
-Dialogue: 0,0:06:44.63,0:06:47.84,ES-Main-2L,,0,0,0,,¿Por qué nadie ha hecho el río navegable? ¿Yo qué voy a saber?
+Dialogue: 0,0:06:44.63,0:06:47.84,ES-Main-2L,,0,0,0,,¿Por qué nadie ha hecho el río\Nnavegable? ¿Yo qué voy a saber?
 Dialogue: 0,0:06:47.92,0:06:49.34,Default,,0,0,0,,河流就在那里
 Dialogue: 0,0:06:47.92,0:06:49.34,ES-Main,,0,0,0,,Pero el río está ahí nomás.
 Dialogue: 0,0:06:49.42,0:06:52.34,Default,,0,0,0,,真搞不懂\N为什么没人实践曾祖父的想法
-Dialogue: 0,0:06:49.42,0:06:52.34,ES-Main-2L,,0,0,0,,Yo no entiendo por qué nadie siguió las ideas del bisabuelo.
+Dialogue: 0,0:06:49.42,0:06:52.34,ES-Main-2L,,0,0,0,,Yo no entiendo por qué nadie\Nsiguió las ideas del bisabuelo.
 Dialogue: 0,0:06:55.08,0:06:57.46,Default,,0,0,0,,-我们去卡塔里诺那儿吧\N-你没事吧？
 Dialogue: 0,0:06:55.08,0:06:57.46,ES-Main,,0,0,0,,-Vamos donde Catarino. -¿Tú estás bien?
 Dialogue: 0,0:07:01.75,0:07:03.38,Default,,0,0,0,,想象一下马孔多会迎来什么吧
@@ -190,7 +191,7 @@ Dialogue: 0,0:07:05.25,0:07:06.38,ES-Main,,0,0,0,,¿Tú me estás oyendo?
 Dialogue: 0,0:07:07.04,0:07:08.42,Default,,0,0,0,,有啊 何塞·阿尔卡蒂奥 说吧
 Dialogue: 0,0:07:07.04,0:07:08.42,ES-Main,,0,0,0,,Sí, José Arcadio, habla.
 Dialogue: 0,0:07:08.50,0:07:10.96,Default,,0,0,0,,想象一下 如果有更快捷的路去首都
-Dialogue: 0,0:07:08.50,0:07:10.96,ES-Main-2L,,0,0,0,,Imagínate si la conexión con la capital fuera más rápida.
+Dialogue: 0,0:07:08.50,0:07:10.96,ES-Main-2L,,0,0,0,,Imagínate si la conexión con\Nla capital fuera más rápida.
 Dialogue: 0,0:07:12.04,0:07:13.92,Default,,0,0,0,,就能迎来发展和进步
 Dialogue: 0,0:07:12.04,0:07:13.92,ES-Main,,0,0,0,,Te estoy hablando de traer el progreso.
 Dialogue: 0,0:07:17.42,0:07:18.55,Default,,0,0,0,,只要有了港口
@@ -214,17 +215,17 @@ Dialogue: 0,0:07:37.33,0:07:39.50,ES-Main,,0,0,0,,Si nos toca picar piedra por p
 Dialogue: 0,0:07:40.00,0:07:41.17,Default,,0,0,0,,也不在话下
 Dialogue: 0,0:07:40.00,0:07:41.17,ES-Main,,0,0,0,,así va a ser.
 Dialogue: 0,0:08:22.13,0:08:26.96,Default,,0,0,0,,-布恩迪亚上校万岁！\N-万岁！
-Dialogue: 0,0:08:22.13,0:08:26.96,ES-Main,,0,0,0,,¡Que viva el coronel Aureliano Buendía! ¡Que viva!
+Dialogue: 0,0:08:22.13,0:08:26.96,ES-Main-2L,,0,0,0,,¡Que viva el coronel\NAureliano Buendía! ¡Que viva!
 Dialogue: 0,0:08:28.96,0:08:30.29,Default,,0,0,0,,好了 各位…
 Dialogue: 0,0:08:28.96,0:08:30.29,ES-Main,,0,0,0,,Bueno, muchachos…
 Dialogue: 0,0:08:30.79,0:08:34.71,Default,,0,0,0,,加把劲 都这会儿了\N你们还连杯象牙果汁都没挣到呢
-Dialogue: 0,0:08:30.79,0:08:34.71,ES-Main-2L,,0,0,0,,vamos a meterle ganas, porque hasta ahora no nos hemos ganado el juguito de corozo.
+Dialogue: 0,0:08:30.79,0:08:34.71,ES-Main-2L,,0,0,0,,vamos a meterle ganas, porque hasta ahora\Nno nos hemos ganado el juguito de corozo.
 Dialogue: 0,0:08:34.79,0:08:35.92,Default,,0,0,0,,您说哪里来着？
 Dialogue: 0,0:08:34.79,0:08:35.92,ES-Main,,0,0,0,,-¿Aquí, donde dijo? -Y
 Dialogue: 0,0:08:36.00,0:08:38.25,Default,,0,0,0,,我们这里不喜欢懒人
 Dialogue: 0,0:08:36.00,0:08:38.25,ES-Main,,0,0,0,,no nos gusta la gente
 Dialogue: 0,0:08:38.33,0:08:41.04,Default,,0,0,0,,把那个搬去后面 就那里 好了
-Dialogue: 0,0:08:38.33,0:08:41.04,ES-Main,,0,0,0,,floja. Lléveme eso para allá. Allá atrás. Allá, eso.
+Dialogue: 0,0:08:38.33,0:08:41.04,ES-Main-2L,,0,0,0,,floja. Lléveme eso para\Nallá. Allá atrás. Allá, eso.
 Dialogue: 0,0:08:41.13,0:08:43.55,Default,,0,0,0,,把叶子全捡起来 孩子 现在这样…
 Dialogue: 0,0:08:41.13,0:08:43.55,ES-Main,,0,0,0,,Recójame toda esa hojarasca, mijo, que esto está…
 Dialogue: 0,0:08:43.63,0:08:46.01,Default,,0,0,0,,到处都是落叶
@@ -237,7 +238,7 @@ Dialogue: 0,0:08:49.79,0:08:51.46,ES-Main,,0,0,0,,-Deténgase, señor Buendía. 
 Dialogue: 0,0:08:52.13,0:08:55.05,Default,,0,0,0,,-你是谁？为什么在我家？\N-请听我解释 先生
 Dialogue: 0,0:08:52.13,0:08:55.05,ES-Main,,0,0,0,,usted y qué hace en mi casa? Le explico, señor.
 Dialogue: 0,0:08:55.13,0:08:57.63,Default,,0,0,0,,我们是共和国总统派来保护您的
-Dialogue: 0,0:08:55.13,0:08:57.63,ES-Main-2L,,0,0,0,,El presidente de la República nos envió a protegerlo.
+Dialogue: 0,0:08:55.13,0:08:57.63,ES-Main-2L,,0,0,0,,El presidente de la República\Nnos envió a protegerlo.
 Dialogue: 0,0:08:57.71,0:09:00.17,Default,,0,0,0,,-您最好不要抛头露面\N-什么？
 Dialogue: 0,0:08:57.71,0:09:00.17,ES-Main,,0,0,0,,-Y no es prudente que se exhiba. -¿Qué dice?
 Dialogue: 0,0:09:00.25,0:09:01.67,Default,,0,0,0,,您还不能出门
@@ -245,21 +246,21 @@ Dialogue: 0,0:09:00.25,0:09:01.67,ES-Main,,0,0,0,,Todavía no puede salir.
 Dialogue: 0,0:09:02.17,0:09:04.59,Default,,0,0,0,,把这些全清理干净
 Dialogue: 0,0:09:02.17,0:09:04.59,ES-Main,,0,0,0,,Ahí, a todo esto. A todo eso hay que echarle.
 Dialogue: 0,0:09:08.29,0:09:11.46,Default,,0,0,0,,你还没康复呢\N去躺下 儿子 一切有我
-Dialogue: 0,0:09:08.29,0:09:11.46,ES-Main-2L,,0,0,0,,Todavía no te has recuperado. Ve y acuéstate, mijo, hazme caso.
+Dialogue: 0,0:09:08.29,0:09:11.46,ES-Main-2L,,0,0,0,,Todavía no te has recuperado. Ve\Ny acuéstate, mijo, hazme caso.
 Dialogue: 0,0:09:12.00,0:09:13.54,Default,,0,0,0,,让他们走 不然我把他们赶走
 Dialogue: 0,0:09:12.00,0:09:13.54,ES-Main,,0,0,0,,O los sacas tú o los saco yo.
 Dialogue: 0,0:09:14.21,0:09:17.09,Default,,0,0,0,,-怎么了 儿子？\N-让他们滚出去！
-Dialogue: 0,0:09:14.21,0:09:17.09,ES-Main,,0,0,0,,-¿Qué está pasando, mijo? -¡Que se larguen, carajo!
+Dialogue: 0,0:09:14.21,0:09:17.09,ES-Main-2L,,0,0,0,,-¿Qué está pasando, mijo?\N-¡Que se larguen, carajo!
 Dialogue: 0,0:09:17.96,0:09:20.04,Default,,0,0,0,,你怎么了 奥雷里亚诺？
 Dialogue: 0,0:09:17.96,0:09:20.04,ES-Main,,0,0,0,,Pero ¿qué es lo que te pasa, Aureliano?
 Dialogue: 0,0:09:20.13,0:09:22.42,Default,,0,0,0,,我让他们干活 怎么就影响到你了？
 Dialogue: 0,0:09:20.13,0:09:22.42,ES-Main,,0,0,0,,¿En qué te afecta que los ponga a trabajar?
 Dialogue: 0,0:09:22.92,0:09:26.34,Default,,0,0,0,,政府就这么一次派人来帮忙\N你觉得我会浪费吗？
-Dialogue: 0,0:09:22.92,0:09:26.34,ES-Main-2L,,0,0,0,,¿Voy a desaprovechar la única ayuda que envió el gobierno a esta casa?
+Dialogue: 0,0:09:22.92,0:09:26.34,ES-Main-2L,,0,0,0,,¿Voy a desaprovechar la única ayuda\Nque envió el gobierno a esta casa?
 Dialogue: 0,0:09:27.21,0:09:28.50,Default,,0,0,0,,帮忙？
 Dialogue: 0,0:09:27.21,0:09:28.50,ES-Main,,0,0,0,,¿Ayuda?
 Dialogue: 0,0:09:29.13,0:09:32.34,Default,,0,0,0,,你这把年纪怎么还相信那种鬼话？
-Dialogue: 0,0:09:29.13,0:09:32.34,ES-Main-2L,,0,0,0,,Eres demasiado vieja pa andar creyendo en esos cuentos.
+Dialogue: 0,0:09:29.13,0:09:32.34,ES-Main-2L,,0,0,0,,Eres demasiado vieja pa andar\Ncreyendo en esos cuentos.
 Dialogue: 0,0:09:33.79,0:09:35.04,Default,,0,0,0,,马汀内斯
 Dialogue: 0,0:09:33.79,0:09:35.04,ES-Main,,0,0,0,,Martínez,
 Dialogue: 0,0:09:35.67,0:09:38.25,Default,,0,0,0,,请把晾衣绳上的衣服取下来
@@ -277,7 +278,7 @@ Dialogue: 0,0:09:50.83,0:09:52.21,ES-Main,,0,0,0,,-Me estás provocando.
 Dialogue: 0,0:09:52.71,0:09:55.34,Default,,0,0,0,,奥雷里亚诺 别犯傻了 像点样子
 Dialogue: 0,0:09:52.71,0:09:55.34,ES-Main,,0,0,0,,Aureliano, deja la bobada y compórtate, que
 Dialogue: 0,0:09:55.42,0:09:58.42,Default,,0,0,0,,-你也一把年纪了 别胡闹\N-你在挑衅我
-Dialogue: 0,0:09:55.42,0:09:58.42,ES-Main-2L,,0,0,0,,estás muy viejo pa tanta pendejada. Me estás provocando.
+Dialogue: 0,0:09:55.42,0:09:58.42,ES-Main-2L,,0,0,0,,estás muy viejo pa tanta\Npendejada. Me estás provocando.
 Dialogue: 0,0:09:58.50,0:10:01.00,Default,,0,0,0,,振作起来 踏实过日子吧
 Dialogue: 0,0:09:58.50,0:10:01.00,ES-Main,,0,0,0,,Coge juicio. Coge juicio.
 Dialogue: 0,0:10:02.83,0:10:04.91,Default,,0,0,0,,再那样跟她说话 我就杀了你
@@ -285,13 +286,13 @@ Dialogue: 0,0:10:02.83,0:10:04.91,ES-Main,,0,0,0,,Le hablas así a la bisabuela 
 Dialogue: 0,0:10:05.00,0:10:06.50,Default,,0,0,0,,闭嘴 何塞·阿尔卡蒂奥
 Dialogue: 0,0:10:05.00,0:10:06.50,ES-Main,,0,0,0,,Cállate la boca, José Arcadio,
 Dialogue: 0,0:10:06.58,0:10:09.83,Default,,0,0,0,,你连只苍蝇都杀不了 废物
-Dialogue: 0,0:10:06.58,0:10:09.83,ES-Main-2L,,0,0,0,,que tú no eres capaz ni de matar a una mosca, pedazo de marica.
+Dialogue: 0,0:10:06.58,0:10:09.83,ES-Main-2L,,0,0,0,,que tú no eres capaz ni de matar\Na una mosca, pedazo de marica.
 Dialogue: 0,0:10:23.17,0:10:24.25,Default,,0,0,0,,你是谁？
 Dialogue: 0,0:10:23.17,0:10:24.25,ES-Main,,0,0,0,,¿Y tú quién eres?
 Dialogue: 0,0:10:24.83,0:10:26.00,Default,,0,0,0,,马汀内斯
 Dialogue: 0,0:10:24.83,0:10:26.00,ES-Main,,0,0,0,,Martínez.
 Dialogue: 0,0:10:27.71,0:10:30.25,Default,,0,0,0,,要是把弄脏的床单拿给她\N她会杀了你的
-Dialogue: 0,0:10:27.71,0:10:30.25,ES-Main-2L,,0,0,0,,Si se la llevas percudida a mamá Úrsula, te va a matar.
+Dialogue: 0,0:10:27.71,0:10:30.25,ES-Main-2L,,0,0,0,,Si se la llevas percudida a\Nmamá Úrsula, te va a matar.
 Dialogue: 0,0:10:32.42,0:10:34.13,Default,,0,0,0,,把它提起来 我帮你拍干净
 Dialogue: 0,0:10:32.42,0:10:34.13,ES-Main,,0,0,0,,Levántala y te ayudo a sacudirla.
 Dialogue: 0,0:10:37.71,0:10:39.29,Default,,0,0,0,,像这样 看 抓好了
@@ -315,7 +316,7 @@ Dialogue: 0,0:11:00.71,0:11:02.84,ES-Main,,0,0,0,,-¡Vamos, vamos, todos! -¡Viv
 Dialogue: 0,0:11:02.92,0:11:04.55,Default,,0,0,0,,这才像话
 Dialogue: 0,0:11:02.92,0:11:04.55,ES-Main,,0,0,0,,Así me gusta.
 Dialogue: 0,0:11:05.67,0:11:09.34,Default,,0,0,0,,把那群在我家外面\N大喊大叫的疯子也带走
-Dialogue: 0,0:11:05.67,0:11:09.34,ES-Main-2L,,0,0,0,,¡Y llévense a esa horda de dementes que está gritando afuera de mi casa!
+Dialogue: 0,0:11:05.67,0:11:09.34,ES-Main-2L,,0,0,0,,¡Y llévense a esa horda de dementes\Nque está gritando afuera de mi casa!
 Dialogue: 0,0:11:12.42,0:11:14.09,Default,,0,0,0,,我们要砸烂那石头
 Dialogue: 0,0:11:12.42,0:11:14.09,ES-Main,,0,0,0,,Eso es lo que vamos a romper.
 Dialogue: 0,0:11:14.67,0:11:16.38,Default,,0,0,0,,准备好创造不可能了吗？
@@ -329,9 +330,9 @@ Dialogue: 0,0:11:22.46,0:11:24.34,ES-Main,,0,0,0,,Arcadio Buendía. -Como tu abu
 Dialogue: 0,0:11:24.42,0:11:26.96,Default,,0,0,0,,在一股出乎意料的心血来潮中
 Dialogue: 0,0:11:24.42,0:11:26.96,ES-Main,,0,0,0,,un imprevisto arranque de temeridad,
 Dialogue: 0,0:11:27.46,0:11:31.21,Default,,0,0,0,,何塞·阿尔卡蒂奥第二招募人手、购买工具
-Dialogue: 0,0:11:27.46,0:11:31.21,ES-Main-2L,,0,0,0,,José Arcadio Segundo reclutó hombres y consiguió herramientas,
+Dialogue: 0,0:11:27.46,0:11:31.21,ES-Main-2L,,0,0,0,,José Arcadio Segundo reclutó\Nhombres y consiguió herramientas,
 Dialogue: 0,0:11:31.29,0:11:35.62,Default,,0,0,0,,展开了一系列砸碎石块、挖掘河道
-Dialogue: 0,0:11:31.29,0:11:35.62,ES-Main-2L,,0,0,0,,y se empeñó en la descomunal empresa de romper piedras y excavar canales,
+Dialogue: 0,0:11:31.29,0:11:35.62,ES-Main-2L,,0,0,0,,y se empeñó en la descomunal empresa\Nde romper piedras y excavar canales,
 Dialogue: 0,0:11:35.71,0:11:38.50,Default,,0,0,0,,清除障碍甚至填平瀑布的宏伟工程
 Dialogue: 0,0:11:35.71,0:11:38.50,ES-Main,,0,0,0,,despejar escollos y hasta emparejar cataratas.
 Dialogue: 0,0:11:38.58,0:11:39.83,Default,,0,0,0,,用力！
@@ -347,13 +348,13 @@ Dialogue: 0,0:11:48.83,0:11:50.66,ES-Main,,0,0,0,,Compadre, esa cosa no sale.
 Dialogue: 0,0:11:51.25,0:11:53.04,Default,,0,0,0,,马里托 接住
 Dialogue: 0,0:11:51.25,0:11:53.04,ES-Main,,0,0,0,,Marito, agarra ahí.
 Dialogue: 0,0:11:55.67,0:11:58.46,Default,,0,0,0,,好 再加把劲 快搬上车\N来 准备好了吗？
-Dialogue: 0,0:11:55.67,0:11:58.46,ES-Main-2L,,0,0,0,,Listo, más fuerte, muchachos. Rápido para la carreta. Listo.
+Dialogue: 0,0:11:55.67,0:11:58.46,ES-Main-2L,,0,0,0,,Listo, más fuerte, muchachos.\NRápido para la carreta. Listo.
 Dialogue: 0,0:12:05.17,0:12:08.00,Default,,0,0,0,,在兄弟不知疲倦地埋头苦干时
 Dialogue: 0,0:12:05.17,0:12:08.00,ES-Main,,0,0,0,,Y mientras su hermano trabajaba sin descanso,
 Dialogue: 0,0:12:08.63,0:12:12.30,Default,,0,0,0,,奥雷里亚诺第二\N正陷入精心培育的慵懒
-Dialogue: 0,0:12:08.63,0:12:12.30,ES-Main-2L,,0,0,0,,Aureliano Segundo cultivaba con esmero la holgazanería,
+Dialogue: 0,0:12:08.63,0:12:12.30,ES-Main-2L,,0,0,0,,Aureliano Segundo cultivaba\Ncon esmero la holgazanería,
 Dialogue: 0,0:12:12.38,0:12:16.42,Default,,0,0,0,,全身心沉溺于\N佩特拉·科特斯家无休止的派对中
-Dialogue: 0,0:12:12.38,0:12:16.42,ES-Main-2L,,0,0,0,,entregado a las fiestas interminables en la casa de Petra Cotes.
+Dialogue: 0,0:12:12.38,0:12:16.42,ES-Main-2L,,0,0,0,,entregado a las fiestas interminables\Nen la casa de Petra Cotes.
 Dialogue: 0,0:12:17.42,0:12:18.71,Default,,0,0,0,,佩特拉！
 Dialogue: 0,0:12:17.42,0:12:18.71,ES-Main,,0,0,0,,¡Petra!
 Dialogue: 0,0:12:27.71,0:12:31.21,Default,,0,0,0,,欢迎 请进 不要拘束 先生们
@@ -361,13 +362,13 @@ Dialogue: 0,0:12:27.71,0:12:31.21,ES-Main,,0,0,0,,Bienvenidos, sigan. Esta es su
 Dialogue: 0,0:12:31.83,0:12:33.16,Default,,0,0,0,,你好吗 朋友？
 Dialogue: 0,0:12:31.83,0:12:33.16,ES-Main,,0,0,0,,¿Qué tal, compadre?
 Dialogue: 0,0:12:50.04,0:12:53.83,Default,,0,0,0,,一天夜晚\N奥雷里亚诺第二发现自己得病了
-Dialogue: 0,0:12:50.04,0:12:53.83,ES-Main-2L,,0,0,0,,Una noche, Aureliano Segundo descubrió que estaba enfermo.
+Dialogue: 0,0:12:50.04,0:12:53.83,ES-Main-2L,,0,0,0,,Una noche, Aureliano Segundo\Ndescubrió que estaba enfermo.
 Dialogue: 0,0:12:57.79,0:13:02.04,Default,,0,0,0,,两天后 他发现他的兄弟满身大汗
-Dialogue: 0,0:12:57.79,0:13:02.04,ES-Main-2L,,0,0,0,,Dos días después, encontró a José Arcadio Segundo también empapado en sudor
+Dialogue: 0,0:12:57.79,0:13:02.04,ES-Main-2L,,0,0,0,,Dos días después, encontró a José\NArcadio Segundo también empapado en sudor
 Dialogue: 0,0:13:02.13,0:13:04.01,Default,,0,0,0,,正痛哭流涕
 Dialogue: 0,0:13:02.13,0:13:04.01,ES-Main,,0,0,0,,y llorando a lágrima viva.
 Dialogue: 0,0:13:06.67,0:13:10.21,Default,,0,0,0,,何塞·阿尔卡蒂奥告诉兄弟\N佩特拉把他赶了出来
-Dialogue: 0,0:13:06.67,0:13:10.21,ES-Main-2L,,0,0,0,,José Arcadio le contó a su hermano que Petra lo había repudiado
+Dialogue: 0,0:13:06.67,0:13:10.21,ES-Main-2L,,0,0,0,,José Arcadio le contó a su hermano\Nque Petra lo había repudiado
 Dialogue: 0,0:13:10.29,0:13:12.83,Default,,0,0,0,,说他生活不检点 害她得了花柳病
 Dialogue: 0,0:13:10.29,0:13:12.83,ES-Main,,0,0,0,,por llevarle una enfermedad de la mala vida.
 Dialogue: 0,0:13:15.67,0:13:17.38,Default,,0,0,0,,混蛋！滚出去！
@@ -385,7 +386,7 @@ Dialogue: 0,0:13:43.08,0:13:44.62,ES-Main,,0,0,0,,¿Ves ese acordeón de ahí?
 Dialogue: 0,0:13:45.33,0:13:47.71,Default,,0,0,0,,是我以你的名义在佩特拉家赢来的
 Dialogue: 0,0:13:45.33,0:13:47.71,ES-Main,,0,0,0,,Me lo gané en la casa de Petra con tu nombre.
 Dialogue: 0,0:13:47.79,0:13:51.04,Default,,0,0,0,,你在卡塔里诺店里喝酒的时候\N你以为我在哪儿？
-Dialogue: 0,0:13:47.79,0:13:51.04,ES-Main-2L,,0,0,0,,O cuando estabas emborrachándote. ¿Dónde crees que estaba yo?
+Dialogue: 0,0:13:47.79,0:13:51.04,ES-Main-2L,,0,0,0,,O cuando estabas emborrachándote.\N¿Dónde crees que estaba yo?
 Dialogue: 0,0:13:51.13,0:13:52.51,Default,,0,0,0,,你个混蛋 奥雷里亚诺
 Dialogue: 0,0:13:51.13,0:13:52.51,ES-Main,,0,0,0,,Eres un desgraciado, Aureliano.
 Dialogue: 0,0:13:57.50,0:13:59.38,Default,,0,0,0,,有你做兄弟 谁还需要敌人啊？
@@ -439,7 +440,7 @@ Dialogue: 0,0:15:35.04,0:15:36.33,ES-Main,,0,0,0,,¿Y tú qué haces aquí?
 Dialogue: 0,0:15:38.17,0:15:40.21,Default,,0,0,0,,被上校看见会杀了你的
 Dialogue: 0,0:15:38.17,0:15:40.21,ES-Main,,0,0,0,,Si el coronel te ve, te va a matar.
 Dialogue: 0,0:15:40.29,0:15:43.08,Default,,0,0,0,,乌尔苏拉夫人让您带我去找盐
-Dialogue: 0,0:15:40.29,0:15:43.08,ES-Main-2L,,0,0,0,,Doña Úrsula me pidió que me muestre dónde está la sal.
+Dialogue: 0,0:15:40.29,0:15:43.08,ES-Main-2L,,0,0,0,,Doña Úrsula me pidió que me\Nmuestre dónde está la sal.
 Dialogue: 0,0:16:02.71,0:16:04.00,Default,,0,0,0,,盐在这里
 Dialogue: 0,0:16:02.71,0:16:04.00,ES-Main,,0,0,0,,Aquí está la sal.
 Dialogue: 0,0:16:04.79,0:16:06.42,Default,,0,0,0,,蕾梅黛丝 我…
@@ -469,7 +470,7 @@ Dialogue: 0,0:17:15.33,0:17:17.37,ES-Main,,0,0,0,,Estás hablando de un ser huma
 Dialogue: 0,0:17:18.75,0:17:20.54,Default,,0,0,0,,一个傻子的命 乌尔苏拉妈妈
 Dialogue: 0,0:17:18.75,0:17:20.54,ES-Main,,0,0,0,,De uno muy simple, mamá Ursula.
 Dialogue: 0,0:17:20.63,0:17:23.30,Default,,0,0,0,,他说被我折磨得要死\N好像我是绞肠痧一样
-Dialogue: 0,0:17:20.63,0:17:23.30,ES-Main-2L,,0,0,0,,Dijo que se moría por mí como si yo fuera un cólico miserere.
+Dialogue: 0,0:17:20.63,0:17:23.30,ES-Main-2L,,0,0,0,,Dijo que se moría por mí como\Nsi yo fuera un cólico miserere.
 Dialogue: 0,0:17:23.79,0:17:24.92,Default,,0,0,0,,看吧？
 Dialogue: 0,0:17:23.79,0:17:24.92,ES-Main,,0,0,0,,¿Viste?
 Dialogue: 0,0:17:26.13,0:17:28.63,Default,,0,0,0,,别让任何人改变你的想法 姑娘
@@ -481,15 +482,15 @@ Dialogue: 0,0:17:35.58,0:17:37.50,ES-Main,,0,0,0,,¡Qué cosa con esta niña!
 Dialogue: 0,0:17:44.00,0:17:46.50,Default,,0,0,0,,你大概还没听说吧 我收到消息
 Dialogue: 0,0:17:44.00,0:17:46.50,ES-Main,,0,0,0,,Como no te enteras, te traigo noticias.
 Dialogue: 0,0:17:48.25,0:17:51.00,Default,,0,0,0,,总统违背了你签署的协定
-Dialogue: 0,0:17:48.25,0:17:51.00,ES-Main,,0,0,0,,El presidente está violando el tratado que firmaste.
+Dialogue: 0,0:17:48.25,0:17:51.00,ES-Main-2L,,0,0,0,,El presidente está violando\Nel tratado que firmaste.
 Dialogue: 0,0:17:54.79,0:17:55.96,Default,,0,0,0,,上面说了什么？
 Dialogue: 0,0:17:54.79,0:17:55.96,ES-Main,,0,0,0,,¿Qué es lo que dice?
 Dialogue: 0,0:17:56.50,0:17:58.79,Default,,0,0,0,,一堆废话 还有
 Dialogue: 0,0:17:56.50,0:17:58.79,ES-Main,,0,0,0,,Entre otras pendejadas, dice que
 Dialogue: 0,0:17:58.88,0:18:02.84,Default,,0,0,0,,共和国总统\N拒绝给自由派和保守派的老兵
-Dialogue: 0,0:17:58.88,0:18:02.84,ES-Main-2L,,0,0,0,,el presidente de la república se niega a asignar las pensiones de guerra
+Dialogue: 0,0:17:58.88,0:18:02.84,ES-Main-2L,,0,0,0,,el presidente de la república se niega\Na asignar las pensiones de guerra
 Dialogue: 0,0:18:02.92,0:18:06.34,Default,,0,0,0,,拨付军人养老金
-Dialogue: 0,0:18:02.92,0:18:06.34,ES-Main-2L,,0,0,0,,a los antiguos combatientes. Liberales o conservadores.
+Dialogue: 0,0:18:02.92,0:18:06.34,ES-Main-2L,,0,0,0,,a los antiguos combatientes.\NLiberales o conservadores.
 Dialogue: 0,0:18:06.83,0:18:08.58,Default,,0,0,0,,这是在践踏协定
 Dialogue: 0,0:18:06.83,0:18:08.58,ES-Main,,0,0,0,,Pero eso es un atropello.
 Dialogue: 0,0:18:09.88,0:18:12.30,Default,,0,0,0,,他们会一直等邮件等到死
@@ -509,9 +510,9 @@ Dialogue: 0,0:18:29.54,0:18:30.75,ES-Main,,0,0,0,,El mes que viene,
 Dialogue: 0,0:18:31.29,0:18:34.04,Default,,0,0,0,,总统会亲临马孔多
 Dialogue: 0,0:18:31.29,0:18:34.04,ES-Main,,0,0,0,,el mismísimo presidente va a venir a Macondo
 Dialogue: 0,0:18:34.54,0:18:37.71,Default,,0,0,0,,为签署和平协定一事给你颁发勋章
-Dialogue: 0,0:18:34.54,0:18:37.71,ES-Main-2L,,0,0,0,,a entregarte una medalla por tu firma del tratado de paz.
+Dialogue: 0,0:18:34.54,0:18:37.71,ES-Main-2L,,0,0,0,,a entregarte una medalla por\Ntu firma del tratado de paz.
 Dialogue: 0,0:18:38.21,0:18:41.13,Default,,0,0,0,,他们要在教堂为你举办公开纪念会
-Dialogue: 0,0:18:38.21,0:18:41.13,ES-Main-2L,,0,0,0,,Te van a hacer una conmemoración pública en la iglesia.
+Dialogue: 0,0:18:38.21,0:18:41.13,ES-Main-2L,,0,0,0,,Te van a hacer una conmemoración\Npública en la iglesia.
 Dialogue: 0,0:19:23.58,0:19:25.71,Default,,0,0,0,,你以为凭羞愧就能求得原谅吗？
 Dialogue: 0,0:19:23.58,0:19:25.71,ES-Main,,0,0,0,,¿Crees que humillándote así te voy a perdonar?
 Dialogue: 0,0:19:26.96,0:19:28.84,Default,,0,0,0,,要怎么做你才肯原谅我？
@@ -541,7 +542,7 @@ Dialogue: 0,0:20:11.29,0:20:12.62,ES-Main,,0,0,0,,¿Esto nunca te había pasado?
 Dialogue: 0,0:20:14.13,0:20:16.30,Default,,0,0,0,,从来没有
 Dialogue: 0,0:20:14.13,0:20:16.30,ES-Main,,0,0,0,,No, ¿qué va?
 Dialogue: 0,0:20:17.21,0:20:20.46,Default,,0,0,0,,不然的话\N我家屋顶还会全是窟窿吗？
-Dialogue: 0,0:20:17.21,0:20:20.46,ES-Main,,0,0,0,,¿Tú crees que yo tendría el techo lleno de huecos?
+Dialogue: 0,0:20:17.21,0:20:20.46,ES-Main-2L,,0,0,0,,¿Tú crees que yo tendría\Nel techo lleno de huecos?
 Dialogue: 0,0:20:29.00,0:20:30.58,Default,,0,0,0,,我们试试养牛吧？
 Dialogue: 0,0:20:29.00,0:20:30.58,ES-Main,,0,0,0,,¿Y si probamos con vacas?
 Dialogue: 0,0:21:18.67,0:21:21.50,Default,,0,0,0,,奥雷里亚诺开始相信佩特拉的爱
@@ -555,7 +556,7 @@ Dialogue: 0,0:21:52.58,0:21:53.91,ES-Main,,0,0,0,,Te quedó bueno este trabajo.
 Dialogue: 0,0:21:54.75,0:21:56.42,Default,,0,0,0,,他没费多少力气
 Dialogue: 0,0:21:54.75,0:21:56.42,ES-Main,,0,0,0,,Y sin mayor esfuerzo,
 Dialogue: 0,0:21:57.29,0:22:00.75,Default,,0,0,0,,就积累了在大沼泽地一带\N数一数二的财富
-Dialogue: 0,0:21:57.29,0:22:00.75,ES-Main-2L,,0,0,0,,acumuló una de las más grandes fortunas de la ciénaga.
+Dialogue: 0,0:21:57.29,0:22:00.75,ES-Main-2L,,0,0,0,,acumuló una de las más grandes\Nfortunas de la ciénaga.
 Dialogue: 0,0:22:04.63,0:22:06.09,Default,,0,0,0,,要让马孔多连通世界
 Dialogue: 0,0:22:04.63,0:22:06.09,ES-Main,,0,0,0,,Para conectar a Macondo con
 Dialogue: 0,0:22:06.17,0:22:08.75,Default,,0,0,0,,就必须疏浚河道 奥雷里亚诺
@@ -563,7 +564,7 @@ Dialogue: 0,0:22:06.17,0:22:08.75,ES-Main,,0,0,0,,el mundo, necesitamos dragar e
 Dialogue: 0,0:22:09.42,0:22:10.67,Default,,0,0,0,,你需要什么？
 Dialogue: 0,0:22:09.42,0:22:10.67,ES-Main,,0,0,0,,¿Y qué necesitas para eso?
 Dialogue: 0,0:22:10.75,0:22:14.38,Default,,0,0,0,,至少50个人、炸药、一些牲畜
-Dialogue: 0,0:22:10.75,0:22:14.38,ES-Main-2L,,0,0,0,,Mínimo 50 hombres, dinamita, unas bestias y, bueno, plata
+Dialogue: 0,0:22:10.75,0:22:14.38,ES-Main-2L,,0,0,0,,Mínimo 50 hombres, dinamita,\Nunas bestias y, bueno, plata
 Dialogue: 0,0:22:14.46,0:22:16.79,Default,,0,0,0,,还有钱来让人干活儿
 Dialogue: 0,0:22:14.46,0:22:16.79,ES-Main,,0,0,0,,para montear a los muchachos.
 Dialogue: 0,0:22:28.17,0:22:29.92,Default,,0,0,0,,我们成功了 奥雷里亚诺！
@@ -581,9 +582,9 @@ Dialogue: 0,0:22:40.08,0:22:42.21,ES-Main,,0,0,0,,Aureliano Segundo le dio a su 
 Dialogue: 0,0:22:42.29,0:22:44.54,Default,,0,0,0,,支持他的宏伟事业
 Dialogue: 0,0:22:42.29,0:22:44.54,ES-Main,,0,0,0,,el dinero para su
 Dialogue: 0,0:22:44.63,0:22:47.13,Default,,0,0,0,,-还缺钱就给我发电报\N-好
-Dialogue: 0,0:22:44.63,0:22:47.13,ES-Main,,0,0,0,,colosal empresa. Mándame un telegrama si necesitas
+Dialogue: 0,0:22:44.63,0:22:47.13,ES-Main-2L,,0,0,0,,colosal empresa. Mándame\Nun telegrama si necesitas
 Dialogue: 0,0:22:47.21,0:22:49.79,Default,,0,0,0,,何塞·阿尔卡蒂奥消失了很长一段时间
-Dialogue: 0,0:22:47.21,0:22:49.79,ES-Main-2L,,0,0,0,,plata. Listo. Y José Arcadio desapareció por mucho tiempo.
+Dialogue: 0,0:22:47.21,0:22:49.79,ES-Main-2L,,0,0,0,,plata. Listo. Y José Arcadio\Ndesapareció por mucho tiempo.
 Dialogue: 0,0:22:58.25,0:22:59.83,Default,,0,0,0,,奥雷里亚诺·森特诺
 Dialogue: 0,0:22:58.25,0:22:59.83,ES-Main,,0,0,0,,Aureliano Centeno.
 Dialogue: 0,0:23:00.42,0:23:01.59,Default,,0,0,0,,很高兴见到您
@@ -603,7 +604,7 @@ Dialogue: 0,0:23:09.63,0:23:11.46,ES-Main,,0,0,0,,Sin ponerse de acuerdo,
 Dialogue: 0,0:23:12.00,0:23:13.96,Default,,0,0,0,,彼此互不相识
 Dialogue: 0,0:23:12.00,0:23:13.96,ES-Main,,0,0,0,,sin conocerse entre sí,
 Dialogue: 0,0:23:14.04,0:23:19.08,Default,,0,0,0,,17位奥雷里亚诺\N被纪念活动的喧闹所吸引
-Dialogue: 0,0:23:14.04,0:23:19.08,ES-Main-2L,,0,0,0,,los 17 Aurelianos habían llegado desde los más apartados rincones del litoral,
+Dialogue: 0,0:23:14.04,0:23:19.08,ES-Main-2L,,0,0,0,,los 17 Aurelianos habían llegado desde\Nlos más apartados rincones del litoral,
 Dialogue: 0,0:23:19.75,0:23:22.50,Default,,0,0,0,,从各个最偏远的海岸角落奔赴而来
 Dialogue: 0,0:23:19.75,0:23:22.50,ES-Main,,0,0,0,,cautivados por el ruido de la conmemoración.
 Dialogue: 0,0:23:38.38,0:23:39.55,Default,,0,0,0,,他们是谁？
@@ -611,41 +612,41 @@ Dialogue: 0,0:23:38.38,0:23:39.55,ES-Main,,0,0,0,,¿Y estos?
 Dialogue: 0,0:24:02.38,0:24:03.76,Default,,0,0,0,,布恩迪亚先生
 Dialogue: 0,0:24:02.38,0:24:03.76,ES-Main,,0,0,0,,Señor Buendía.
 Dialogue: 0,0:24:04.75,0:24:08.79,Default,,0,0,0,,感谢您加入\N这场在纪念会前主持的弥撒
-Dialogue: 0,0:24:04.75,0:24:08.79,ES-Main-2L,,0,0,0,,Le agradezco enormemente acompañarnos y unirse antes de su festejo a esta misa.
+Dialogue: 0,0:24:04.75,0:24:08.79,ES-Main-2L,,0,0,0,,Le agradezco enormemente acompañarnos y\Nunirse antes de su festejo a esta misa.
 Dialogue: 0,0:24:08.88,0:24:13.38,Default,,0,0,0,,要知道 今天是圣灰星期三\N对我们来说是非常重要的日子
-Dialogue: 0,0:24:08.88,0:24:13.38,ES-Main-2L,,0,0,0,,Entenderá que es Miércoles de Ceniza y para nosotros es muy importante.
+Dialogue: 0,0:24:08.88,0:24:13.38,ES-Main-2L,,0,0,0,,Entenderá que es Miércoles de Ceniza\Ny para nosotros es muy importante.
 Dialogue: 0,0:24:14.21,0:24:15.79,Default,,0,0,0,,总统在哪里？
 Dialogue: 0,0:24:14.21,0:24:15.79,ES-Main,,0,0,0,,¿Dónde está el presidente?
 Dialogue: 0,0:24:15.88,0:24:18.38,Default,,0,0,0,,总统阁下深表歉意
 Dialogue: 0,0:24:15.88,0:24:18.38,ES-Main,,0,0,0,,El presidente le envía unas sentidas disculpas.
 Dialogue: 0,0:24:18.46,0:24:23.09,Default,,0,0,0,,他因突发状况未能成行\N特命我们作为代表前来
-Dialogue: 0,0:24:18.46,0:24:23.09,ES-Main-2L,,0,0,0,,Una cuestión urgente le impidió venir, pero nos envió a nosotros en su nombre.
+Dialogue: 0,0:24:18.46,0:24:23.09,ES-Main-2L,,0,0,0,,Una cuestión urgente le impidió venir,\Npero nos envió a nosotros en su nombre.
 Dialogue: 0,0:24:34.75,0:24:37.46,Default,,0,0,0,,记住 奥雷里亚诺 你本是尘土
 Dialogue: 0,0:24:34.75,0:24:37.46,ES-Main,,0,0,0,,Recuerda, Aureliano, que polvo eres,
 Dialogue: 0,0:24:38.29,0:24:40.42,Default,,0,0,0,,仍要归于尘土
 Dialogue: 0,0:24:38.29,0:24:40.42,ES-Main,,0,0,0,,y en polvo te has de convertir.
 Dialogue: 0,0:24:43.33,0:24:48.04,Default,,0,0,0,,怀着戏谑而非虔诚\N他们被领到圣体栏杆前
-Dialogue: 0,0:24:43.33,0:24:48.04,ES-Main-2L,,0,0,0,,Más divertidos que piadosos, se dejaron conducir hasta el comulgatorio
+Dialogue: 0,0:24:43.33,0:24:48.04,ES-Main-2L,,0,0,0,,Más divertidos que piadosos, se\Ndejaron conducir hasta el comulgatorio
 Dialogue: 0,0:24:49.13,0:24:52.76,Default,,0,0,0,,让安东尼·伊萨贝尔神父\N在额前画上圣灰十字
-Dialogue: 0,0:24:49.13,0:24:52.76,ES-Main-2L,,0,0,0,,donde el padre Antonio Isabel les puso en la frente la cruz de ceniza.
+Dialogue: 0,0:24:49.13,0:24:52.76,ES-Main-2L,,0,0,0,,donde el padre Antonio Isabel les\Npuso en la frente la cruz de ceniza.
 Dialogue: 0,0:24:53.50,0:24:54.75,Default,,0,0,0,,上校隐忍不发
 Dialogue: 0,0:24:53.50,0:24:54.75,ES-Main,,0,0,0,,Y el coronel
 Dialogue: 0,0:24:54.83,0:24:58.04,Default,,0,0,0,,在心中默念着\N他对这个下午的真切盼望
-Dialogue: 0,0:24:54.83,0:24:58.04,ES-Main-2L,,0,0,0,,aguantaba pensando que realmente había estado anhelando aquella tarde.
+Dialogue: 0,0:24:54.83,0:24:58.04,ES-Main-2L,,0,0,0,,aguantaba pensando que realmente\Nhabía estado anhelando aquella tarde.
 Dialogue: 0,0:25:05.58,0:25:06.62,Default,,0,0,0,,我不否认
 Dialogue: 0,0:25:05.58,0:25:06.62,ES-Main,,0,0,0,,No lo voy a negar.
 Dialogue: 0,0:25:07.33,0:25:12.00,Default,,0,0,0,,我热切期盼着国家元首的到访
-Dialogue: 0,0:25:07.33,0:25:12.00,ES-Main-2L,,0,0,0,,Esperaba con verdadera ansiedad la visita de nuestro jefe de estado.
+Dialogue: 0,0:25:07.33,0:25:12.00,ES-Main-2L,,0,0,0,,Esperaba con verdadera ansiedad la\Nvisita de nuestro jefe de estado.
 Dialogue: 0,0:25:16.29,0:25:18.33,Default,,0,0,0,,好给他的额头来上一枪
 Dialogue: 0,0:25:16.29,0:25:18.33,ES-Main,,0,0,0,,Pa pegarle un tiro en la frente.
 Dialogue: 0,0:25:20.38,0:25:24.34,Default,,0,0,0,,让他为其政权的\N肆意妄为和倒行逆施负责
-Dialogue: 0,0:25:20.38,0:25:24.34,ES-Main-2L,,0,0,0,,Para cobrarle las arbitrariedades y anacronismos de su régimen.
+Dialogue: 0,0:25:20.38,0:25:24.34,ES-Main-2L,,0,0,0,,Para cobrarle las arbitrariedades\Ny anacronismos de su régimen.
 Dialogue: 0,0:25:26.17,0:25:28.21,Default,,0,0,0,,既然有突发状况
 Dialogue: 0,0:25:26.17,0:25:28.21,ES-Main,,0,0,0,,Y ya que tuvo un
 Dialogue: 0,0:25:28.79,0:25:32.50,Default,,0,0,0,,那就告诉他\N最好发放承诺给老兵的养老金
-Dialogue: 0,0:25:28.79,0:25:32.50,ES-Main-2L,,0,0,0,,inconveniente, díganle que más le vale cumplir con las pensiones que prometió a los veteranos.
+Dialogue: 0,0:25:28.79,0:25:32.50,ES-Main-2L,,0,0,0,,inconveniente, díganle que más le vale cumplir\Ncon las pensiones que prometió a los veteranos.
 Dialogue: 0,0:25:33.50,0:25:37.25,Default,,0,0,0,,否则我就再把手下的人武装起来
-Dialogue: 0,0:25:33.50,0:25:37.25,ES-Main-2L,,0,0,0,,A menos de que quiera que yo vuelva a armar a mis muchachos
+Dialogue: 0,0:25:33.50,0:25:37.25,ES-Main-2L,,0,0,0,,A menos de que quiera que yo\Nvuelva a armar a mis muchachos
 Dialogue: 0,0:25:37.75,0:25:41.50,Default,,0,0,0,,和他们一起 向他宣战！
 Dialogue: 0,0:25:37.75,0:25:41.50,ES-Main,,0,0,0,,y, con ellos, ¡declaremos la guerra!
 Dialogue: 0,0:25:50.42,0:25:52.09,Default,,0,0,0,,带着你的废铁滚出这里
@@ -657,7 +658,7 @@ Dialogue: 0,0:26:08.79,0:26:11.04,ES-Main,,0,0,0,,Los Aurelianos se fueron en tr
 Dialogue: 0,0:26:11.54,0:26:13.04,Default,,0,0,0,,给小镇留下了
 Dialogue: 0,0:26:11.54,0:26:13.04,ES-Main,,0,0,0,,y dejaron en el
 Dialogue: 0,0:26:13.13,0:26:16.84,Default,,0,0,0,,布恩迪亚的血脉\N还将延续很多个世纪的印象
-Dialogue: 0,0:26:13.13,0:26:16.84,ES-Main-2L,,0,0,0,,pueblo la impresión de que la estirpe de los Buendía tenía semillas para muchos siglos.
+Dialogue: 0,0:26:13.13,0:26:16.84,ES-Main-2L,,0,0,0,,pueblo la impresión de que la estirpe de los\NBuendía tenía semillas para muchos siglos.
 Dialogue: 0,0:26:21.25,0:26:22.50,Default,,0,0,0,,再见 特里斯特
 Dialogue: 0,0:26:21.25,0:26:22.50,ES-Main,,0,0,0,,Nos vemos, Triste.
 Dialogue: 0,0:26:28.58,0:26:31.16,Default,,0,0,0,,只有奥雷里亚诺·特里斯特留了下来
@@ -696,7 +697,7 @@ Dialogue: 0,0:29:46.58,0:29:50.04,ES-Main,,0,0,0,,Algún día serás reina.
 Dialogue: 0,0:30:26.17,0:30:27.96,Default,,0,0,0,,加把劲 伙计们！
 Dialogue: 0,0:30:26.17,0:30:27.96,ES-Main,,0,0,0,,¡Vamos, muchachos!
 Dialogue: 0,0:30:33.33,0:30:37.16,Default,,0,0,0,,有消息传开\N一艘奇怪的船正向小镇而来
-Dialogue: 0,0:30:33.33,0:30:37.16,ES-Main-2L,,0,0,0,,Se divulgó la noticia de que una extraña nave se aproximaba al pueblo.
+Dialogue: 0,0:30:33.33,0:30:37.16,ES-Main-2L,,0,0,0,,Se divulgó la noticia de que una\Nextraña nave se aproximaba al pueblo.
 Dialogue: 0,0:30:46.38,0:30:47.80,Default,,0,0,0,,我们成功了！
 Dialogue: 0,0:30:46.38,0:30:47.80,ES-Main,,0,0,0,,¡Se pudo!
 Dialogue: 0,0:30:49.08,0:30:50.87,Default,,0,0,0,,你好 马孔多！
@@ -706,7 +707,7 @@ Dialogue: 0,0:30:53.00,0:30:55.92,ES-Main,,0,0,0,,-Jala con fuerza la cuerda ah�
 Dialogue: 0,0:30:56.00,0:30:58.17,Default,,0,0,0,,那不过是一艘圆木扎成的木筏
 Dialogue: 0,0:30:56.00,0:30:58.17,ES-Main,,0,0,0,,era más que una balsa de troncos,
 Dialogue: 0,0:30:58.67,0:31:02.88,Default,,0,0,0,,由20个男人用粗绳索牵引着\N沿河岸前行
-Dialogue: 0,0:30:58.67,0:31:02.88,ES-Main-2L,,0,0,0,,arrastrada mediante gruesos cables por 20 hombres que caminaban por la ribera.
+Dialogue: 0,0:30:58.67,0:31:02.88,ES-Main-2L,,0,0,0,,arrastrada mediante gruesos cables por\N20 hombres que caminaban por la ribera.
 Dialogue: 0,0:31:08.67,0:31:10.38,Default,,0,0,0,,大伙儿一起！用力拉！
 Dialogue: 0,0:31:08.67,0:31:10.38,ES-Main,,0,0,0,,¡Con fuerza, muchachos! ¡Fuerza!
 Dialogue: 0,0:31:13.54,0:31:14.79,Default,,0,0,0,,我就知道他们会来
@@ -746,17 +747,17 @@ Dialogue: 0,0:32:12.17,0:32:13.34,ES-Main,,0,0,0,,¡Que viva!
 Dialogue: 0,0:32:16.17,0:32:17.88,Default,,0,0,0,,你看 佩特拉 我就说吧？
 Dialogue: 0,0:32:16.17,0:32:17.88,ES-Main,,0,0,0,,¿Viste, Petra? Te lo dije.
 Dialogue: 0,0:32:31.83,0:32:36.04,Default,,0,0,0,,那是第一艘\N也是最后一艘在马孔多停靠的船
-Dialogue: 0,0:32:31.83,0:32:36.04,ES-Main-2L,,0,0,0,,Era el primer y último barco que atracó jamás en Macondo.
+Dialogue: 0,0:32:31.83,0:32:36.04,ES-Main-2L,,0,0,0,,Era el primer y último barco\Nque atracó jamás en Macondo.
 Dialogue: 0,0:32:47.71,0:32:48.88,Default,,0,0,0,,好了
 Dialogue: 0,0:32:47.71,0:32:48.88,ES-Main,,0,0,0,,Y listo.
 Dialogue: 0,0:33:04.25,0:33:07.67,Default,,0,0,0,,这场不走运的冒险留下的唯一遗泽
 Dialogue: 0,0:33:04.25,0:33:07.67,ES-Main,,0,0,0,,Lo único que quedó de la desventurada iniciativa
 Dialogue: 0,0:33:08.46,0:33:11.84,Default,,0,0,0,,就是法国女郎们带来的新潮流
-Dialogue: 0,0:33:08.46,0:33:11.84,ES-Main-2L,,0,0,0,,fue el soplo de renovación que llevaron las matronas de Francia.
+Dialogue: 0,0:33:08.46,0:33:11.84,ES-Main-2L,,0,0,0,,fue el soplo de renovación que\Nllevaron las matronas de Francia.
 Dialogue: 0,0:33:15.00,0:33:20.50,Default,,0,0,0,,起初 好奇心令禁忌之街的来客暴增
-Dialogue: 0,0:33:15.00,0:33:20.50,ES-Main-2L,,0,0,0,,Al principio, la curiosidad multiplicó la clientela de la calle prohibida,
+Dialogue: 0,0:33:15.00,0:33:20.50,ES-Main-2L,,0,0,0,,Al principio, la curiosidad multiplicó\Nla clientela de la calle prohibida,
 Dialogue: 0,0:33:21.63,0:33:25.26,Default,,0,0,0,,甚至传言有体面的女士\N装扮成粗鲁的男子
-Dialogue: 0,0:33:21.63,0:33:25.26,ES-Main-2L,,0,0,0,,y hasta se supo de señoras respetables que se disfrazaron de villanos
+Dialogue: 0,0:33:21.63,0:33:25.26,ES-Main-2L,,0,0,0,,y hasta se supo de señoras respetables\Nque se disfrazaron de villanos
 Dialogue: 0,0:33:25.33,0:33:28.16,Default,,0,0,0,,只为近距离观赏留声机的新奇
 Dialogue: 0,0:33:25.33,0:33:28.16,ES-Main,,0,0,0,,para observar de cerca la novedad del gramófono.
 Dialogue: 0,0:33:33.00,0:33:35.50,Default,,0,0,0,,但经过反复细致的观察
@@ -768,21 +769,21 @@ Dialogue: 0,0:33:38.00,0:33:40.04,ES-Main,,0,0,0,,que no era un molino de sortil
 Dialogue: 0,0:33:41.75,0:33:44.21,Default,,0,0,0,,而是一个机械的小花招
 Dialogue: 0,0:33:41.75,0:33:44.21,ES-Main,,0,0,0,,sino un truco mecánico que no
 Dialogue: 0,0:33:44.29,0:33:47.71,Default,,0,0,0,,无法与动人心弦、富有人情味
-Dialogue: 0,0:33:44.29,0:33:47.71,ES-Main,,0,0,0,,podía compararse con algo tan conmovedor, tan humano
+Dialogue: 0,0:33:44.29,0:33:47.71,ES-Main-2L,,0,0,0,,podía compararse con algo\Ntan conmovedor, tan humano
 Dialogue: 0,0:33:48.21,0:33:52.79,Default,,0,0,0,,充满日常真理的乐队相媲美
-Dialogue: 0,0:33:48.21,0:33:52.79,ES-Main-2L,,0,0,0,,y tan lleno de verdad cotidiana como una banda de músicos.
+Dialogue: 0,0:33:48.21,0:33:52.79,ES-Main-2L,,0,0,0,,y tan lleno de verdad cotidiana\Ncomo una banda de músicos.
 Dialogue: 0,0:34:37.17,0:34:39.09,Default,,0,0,0,,万福玛利亚！
 Dialogue: 0,0:34:37.17,0:34:39.09,ES-Main,,0,0,0,,¡Ave María!
 Dialogue: 0,0:34:40.25,0:34:41.79,Default,,0,0,0,,好像魔法一样
 Dialogue: 0,0:34:40.25,0:34:41.79,ES-Main,,0,0,0,,-Parece magia. -Parece magia.
 Dialogue: 0,0:35:07.67,0:35:11.13,Default,,0,0,0,,面对令人眼花缭乱的奇妙发明
-Dialogue: 0,0:35:07.67,0:35:11.13,ES-Main-2L,,0,0,0,,Deslumbrada por tantas y tan maravillosas invenciones,
+Dialogue: 0,0:35:07.67,0:35:11.13,ES-Main-2L,,0,0,0,,Deslumbrada por tantas y tan\Nmaravillosas invenciones,
 Dialogue: 0,0:35:11.63,0:35:15.26,Default,,0,0,0,,马孔多的人们不知该从何开始惊叹
-Dialogue: 0,0:35:11.63,0:35:15.26,ES-Main-2L,,0,0,0,,la gente de Macondo no sabía por dónde empezar a asombrarse.
+Dialogue: 0,0:35:11.63,0:35:15.26,ES-Main-2L,,0,0,0,,la gente de Macondo no sabía\Npor dónde empezar a asombrarse.
 Dialogue: 0,0:35:18.38,0:35:19.42,Default,,0,0,0,,蕾梅黛丝
 Dialogue: 0,0:35:18.38,0:35:19.42,ES-Main,,0,0,0,,Remedios.
 Dialogue: 0,0:35:24.08,0:35:28.04,Default,,0,0,0,,他们甚至彻夜不眠地\N凝望那些苍白的电灯泡
-Dialogue: 0,0:35:24.08,0:35:28.04,ES-Main-2L,,0,0,0,,Hasta se trasnochaban contemplando las pálidas bombillas eléctricas.
+Dialogue: 0,0:35:24.08,0:35:28.04,ES-Main-2L,,0,0,0,,Hasta se trasnochaban contemplando\Nlas pálidas bombillas eléctricas.
 Dialogue: 0,0:35:48.75,0:35:52.25,Default,,0,0,0,,-你们好 二位是来买花圈的吗？\N-不
 Dialogue: 0,0:35:48.75,0:35:52.25,ES-Main,,0,0,0,,Buenas. ¿Vienen por unas coronas fúnebres? No.
 Dialogue: 0,0:35:52.96,0:35:54.17,Default,,0,0,0,,小姐 下午好
@@ -794,17 +795,17 @@ Dialogue: 0,0:35:57.46,0:35:58.96,ES-Main,,0,0,0,,Ella es mi hija, Fernanda.
 Dialogue: 0,0:35:59.46,0:36:01.13,Default,,0,0,0,,请进
 Dialogue: 0,0:35:59.46,0:36:01.13,ES-Main,,0,0,0,,Adelante, por favor.
 Dialogue: 0,0:36:02.38,0:36:06.88,Default,,0,0,0,,上校威胁共和国总统的消息
-Dialogue: 0,0:36:02.38,0:36:06.88,ES-Main-2L,,0,0,0,,La noticia de la amenaza de muerte del coronel al presidente de la república
+Dialogue: 0,0:36:02.38,0:36:06.88,ES-Main-2L,,0,0,0,,La noticia de la amenaza de muerte del\Ncoronel al presidente de la república
 Dialogue: 0,0:36:06.96,0:36:08.63,Default,,0,0,0,,传到了遥远的领域
 Dialogue: 0,0:36:06.96,0:36:08.63,ES-Main,,0,0,0,,llegó hasta lejanos territorios,
 Dialogue: 0,0:36:08.71,0:36:11.21,Default,,0,0,0,,在那些仍将布恩迪亚这一姓氏
-Dialogue: 0,0:36:08.71,0:36:11.21,ES-Main-2L,,0,0,0,,y suscitó la inquietud de quienes todavía consideraban
+Dialogue: 0,0:36:08.71,0:36:11.21,ES-Main-2L,,0,0,0,,y suscitó la inquietud de\Nquienes todavía consideraban
 Dialogue: 0,0:36:11.29,0:36:13.96,Default,,0,0,0,,视为颠覆象征的人中激起了忧虑
-Dialogue: 0,0:36:11.29,0:36:13.96,ES-Main,,0,0,0,,el apellido Buendía como un símbolo de subversión.
+Dialogue: 0,0:36:11.29,0:36:13.96,ES-Main-2L,,0,0,0,,el apellido Buendía como\Nun símbolo de subversión.
 Dialogue: 0,0:36:14.04,0:36:14.87,Default,,0,0,0,,请讲
 Dialogue: 0,0:36:14.04,0:36:14.87,ES-Main,,0,0,0,,Los
 Dialogue: 0,0:36:14.96,0:36:18.71,Default,,0,0,0,,现在是挺身而出\N向保守党最高领袖展现价值的时候了
-Dialogue: 0,0:36:14.96,0:36:18.71,ES-Main-2L,,0,0,0,,escucho. Es momento de volverse valioso para el Partido Conservador. Estoy a
+Dialogue: 0,0:36:14.96,0:36:18.71,ES-Main-2L,,0,0,0,,escucho. Es momento de volverse valioso\Npara el Partido Conservador. Estoy a
 Dialogue: 0,0:36:18.79,0:36:19.83,Default,,0,0,0,,乐意效劳
 Dialogue: 0,0:36:18.79,0:36:19.83,ES-Main,,0,0,0,,sus órdenes.
 Dialogue: 0,0:36:36.83,0:36:38.50,Default,,0,0,0,,收拾行装
@@ -812,7 +813,7 @@ Dialogue: 0,0:36:36.83,0:36:38.50,ES-Main,,0,0,0,,Prepare sus cosas.
 Dialogue: 0,0:36:39.92,0:36:41.92,Default,,0,0,0,,你要出远门了
 Dialogue: 0,0:36:39.92,0:36:41.92,ES-Main,,0,0,0,,Tiene que hacer un largo viaje.
 Dialogue: 0,0:36:55.08,0:36:59.08,Default,,0,0,0,,她相信了父亲的话\N认为加冕之日终于到来
-Dialogue: 0,0:36:55.08,0:36:59.08,ES-Main-2L,,0,0,0,,Convencida por su padre de que había llegado el día de su coronación,
+Dialogue: 0,0:36:55.08,0:36:59.08,ES-Main-2L,,0,0,0,,Convencida por su padre de que había\Nllegado el día de su coronación,
 Dialogue: 0,0:36:59.71,0:37:02.79,Default,,0,0,0,,费尔南达踏上了前往遥远国度的旅程
 Dialogue: 0,0:36:59.71,0:37:02.79,ES-Main,,0,0,0,,Fernanda emprendió el viaje hacia el reino remoto
 Dialogue: 0,0:37:02.88,0:37:04.51,Default,,0,0,0,,她将成为那里的女王
@@ -820,7 +821,7 @@ Dialogue: 0,0:37:02.88,0:37:04.51,ES-Main,,0,0,0,,del cual sería reina.
 Dialogue: 0,0:37:16.50,0:37:18.63,Default,,0,0,0,,这不是上帝造的生物
 Dialogue: 0,0:37:16.50,0:37:18.63,ES-Main,,0,0,0,,Esta criatura no es de Dios.
 Dialogue: 0,0:37:22.88,0:37:27.38,Default,,0,0,0,,家人不厌其烦地\N叫美人蕾梅黛丝剪掉瀑布般的长发
-Dialogue: 0,0:37:22.88,0:37:27.38,ES-Main-2L,,0,0,0,,A Remedios, la bella, la molestaron tanto para que se cortara el cabello de lluvia,
+Dialogue: 0,0:37:22.88,0:37:27.38,ES-Main-2L,,0,0,0,,A Remedios, la bella, la molestaron tanto\Npara que se cortara el cabello de lluvia,
 Dialogue: 0,0:37:27.88,0:37:30.01,Default,,0,0,0,,她索性剃了光头
 Dialogue: 0,0:37:27.88,0:37:30.01,ES-Main,,0,0,0,,que simplemente se rapó la cabeza.
 Dialogue: 0,0:37:30.50,0:37:32.63,Default,,0,0,0,,这样她终于能凉快下来了
@@ -832,7 +833,7 @@ Dialogue: 0,0:37:35.33,0:37:36.50,ES-Main,,0,0,0,,No creo.
 Dialogue: 0,0:37:44.96,0:37:45.88,Default,,0,0,0,,剃刀给我
 Dialogue: 0,0:37:44.96,0:37:45.88,ES-Main,,0,0,0,,Préstame.
 Dialogue: 0,0:37:52.75,0:37:55.71,Default,,0,0,0,,乌尔苏拉妈妈说\N你的妻子是这家里唯一的圣人
-Dialogue: 0,0:37:52.75,0:37:55.71,ES-Main-2L,,0,0,0,,Mamá Ursula dijo que la única santa de la familia era tu mujer,
+Dialogue: 0,0:37:52.75,0:37:55.71,ES-Main-2L,,0,0,0,,Mamá Ursula dijo que la única\Nsanta de la familia era tu mujer,
 Dialogue: 0,0:37:56.79,0:37:58.50,Default,,0,0,0,,所以给了我她的名字
 Dialogue: 0,0:37:56.79,0:37:58.50,ES-Main,,0,0,0,,y que por eso me puso el nombre.
 Dialogue: 0,0:38:02.79,0:38:03.96,Default,,0,0,0,,我长得像她吗？
@@ -864,7 +865,7 @@ Dialogue: 0,0:41:19.63,0:41:21.26,ES-Main,,0,0,0,,la reina de Madagascar.
 Dialogue: 0,0:41:25.13,0:41:28.21,Default,,0,0,0,,-女王万岁！\N-万岁！
 Dialogue: 0,0:41:25.13,0:41:28.21,ES-Main,,0,0,0,,¡Que viva la reina! ¡Que viva!
 Dialogue: 0,0:41:30.50,0:41:34.42,Default,,0,0,0,,也为我们马孔多的女王\N美人蕾梅黛丝鼓掌！
-Dialogue: 0,0:41:30.50,0:41:34.42,ES-Main-2L,,0,0,0,,Y para Remedios, la bella, nuestra reina de Macondo. ¡Bravo!
+Dialogue: 0,0:41:30.50,0:41:34.42,ES-Main-2L,,0,0,0,,Y para Remedios, la bella,\Nnuestra reina de Macondo. ¡Bravo!
 Dialogue: 0,0:41:39.33,0:41:40.54,Default,,0,0,0,,狂欢节万岁！
 Dialogue: 0,0:41:39.33,0:41:40.54,ES-Main,,0,0,0,,-¡Que viva el carnaval!
 Dialogue: 0,0:41:40.63,0:41:43.34,Default,,0,0,0,,万岁！
@@ -880,7 +881,7 @@ Dialogue: 0,0:43:36.42,0:43:37.75,ES-Main,,0,0,0,,¡Vamos! ¡Vamos!
 Dialogue: 0,0:44:03.46,0:44:05.96,Default,,0,0,0,,-快跑！\N-快来！
 Dialogue: 0,0:44:03.46,0:44:05.96,ES-Main,,0,0,0,,-¡Corran! -¡Vamos, vamos, vamos!
 Dialogue: 0,0:44:12.25,0:44:15.04,Default,,0,0,0,,-天啊！\N-我们差点被杀 但还好没事
-Dialogue: 0,0:44:12.25,0:44:15.04,ES-Main-2L,,0,0,0,,-¡Remedios, por Dios! -Casi nos matan, pero estamos bien.
+Dialogue: 0,0:44:12.25,0:44:15.04,ES-Main-2L,,0,0,0,,-¡Remedios, por Dios! -Casi\Nnos matan, pero estamos bien.
 Dialogue: 0,0:44:15.13,0:44:16.96,Default,,0,0,0,,-怎么会这样 女儿？\N-我们没事
 Dialogue: 0,0:44:15.13,0:44:16.96,ES-Main,,0,0,0,,-Pero ¿cómo? ¡Ay, hija! -No pasó nada. ¿Qué
 Dialogue: 0,0:44:17.04,0:44:18.54,Default,,0,0,0,,你怎么了？
@@ -918,13 +919,13 @@ Dialogue: 0,0:46:02.42,0:46:04.38,ES-Main,,0,0,0,,Me calmo cuando sepa quién in
 Dialogue: 0,0:46:04.46,0:46:07.38,Default,,0,0,0,,-她知道是谁！\N-你在胡说些什么啊？
 Dialogue: 0,0:46:04.46,0:46:07.38,ES-Main,,0,0,0,,ella lo sabe! -¿De qué carajo estás hablando tú?
 Dialogue: 0,0:46:07.46,0:46:10.34,Default,,0,0,0,,她是和那些贝都因人一起来的\N就是那些人开的枪
-Dialogue: 0,0:46:07.46,0:46:10.34,ES-Main-2L,,0,0,0,,Llegó con los beduinos y fueron ellos los que dispararon.
+Dialogue: 0,0:46:07.46,0:46:10.34,ES-Main-2L,,0,0,0,,Llegó con los beduinos y fueron\Nellos los que dispararon.
 Dialogue: 0,0:46:10.42,0:46:12.34,Default,,0,0,0,,你是政府派来的 对吧？
 Dialogue: 0,0:46:10.42,0:46:12.34,ES-Main,,0,0,0,,¿A usted la mandó el gobierno, verdad?
 Dialogue: 0,0:46:12.42,0:46:13.80,Default,,0,0,0,,你疯了吗？
 Dialogue: 0,0:46:12.42,0:46:13.80,ES-Main,,0,0,0,,Pero ¿tú estás loco o qué?
 Dialogue: 0,0:46:14.29,0:46:16.67,Default,,0,0,0,,我兄弟说得对 你总是以自我为中心
-Dialogue: 0,0:46:14.29,0:46:16.67,ES-Main-2L,,0,0,0,,Mi hermano tiene razón. Crees que todo gira alrededor tuyo.
+Dialogue: 0,0:46:14.29,0:46:16.67,ES-Main-2L,,0,0,0,,Mi hermano tiene razón. Crees\Nque todo gira alrededor tuyo.
 Dialogue: 0,0:46:17.54,0:46:19.37,Default,,0,0,0,,-你很有种是吧？\N-奥雷里亚诺 够了
 Dialogue: 0,0:46:17.54,0:46:19.37,ES-Main,,0,0,0,,-¿Está muy macho? -¡Aureliano, no más!
 Dialogue: 0,0:46:19.46,0:46:20.71,Default,,0,0,0,,有种就来啊！
@@ -934,9 +935,9 @@ Dialogue: 0,0:46:21.83,0:46:23.62,ES-Main,,0,0,0,,-Viejo loco. -¡Aquí estoy!
 Dialogue: 0,0:46:33.92,0:46:35.96,Default,,0,0,0,,当一切恢复平静
 Dialogue: 0,0:46:33.92,0:46:35.96,ES-Main,,0,0,0,,Cuando se restableció la calma,
 Dialogue: 0,0:46:36.92,0:46:40.21,Default,,0,0,0,,所有假贝都因人走得一个不剩
-Dialogue: 0,0:46:36.92,0:46:40.21,ES-Main-2L,,0,0,0,,no quedaba en el pueblo uno solo de los falsos beduinos.
+Dialogue: 0,0:46:36.92,0:46:40.21,ES-Main-2L,,0,0,0,,no quedaba en el pueblo uno\Nsolo de los falsos beduinos.
 Dialogue: 0,0:46:40.88,0:46:44.09,Default,,0,0,0,,广场上或死或伤 横七竖八地躺着
-Dialogue: 0,0:46:40.88,0:46:44.09,ES-Main-2L,,0,0,0,,Y quedaron tendidos en la plaza entre muertos y heridos
+Dialogue: 0,0:46:40.88,0:46:44.09,ES-Main-2L,,0,0,0,,Y quedaron tendidos en la\Nplaza entre muertos y heridos
 Dialogue: 0,0:46:45.46,0:46:48.88,Default,,0,0,0,,九个小丑、四个科隆比纳
 Dialogue: 0,0:46:45.46,0:46:48.88,ES-Main,,0,0,0,,nueve payasos, cuatro colombinas,
 Dialogue: 0,0:46:49.38,0:46:50.96,Default,,0,0,0,,17个纸牌国王
@@ -976,7 +977,7 @@ Dialogue: 0,0:48:41.50,0:48:42.58,ES-Main,,0,0,0,,Vaya, mijo.
 Dialogue: 0,0:48:44.08,0:48:45.08,Default,,0,0,0,,去找她
 Dialogue: 0,0:48:44.08,0:48:45.08,ES-Main,,0,0,0,,Vaya.
 Dialogue: 0,0:48:48.17,0:48:53.09,Default,,0,0,0,,奥雷里亚诺第二\N出门寻找她时所掌握的真实线索
-Dialogue: 0,0:48:48.17,0:48:53.09,ES-Main-2L,,0,0,0,,Las únicas pistas reales de que disponía Aureliano Segundo cuando salió a buscarla
+Dialogue: 0,0:48:48.17,0:48:53.09,ES-Main-2L,,0,0,0,,Las únicas pistas reales de que disponía\NAureliano Segundo cuando salió a buscarla
 Dialogue: 0,0:48:53.83,0:48:56.16,Default,,0,0,0,,就只有她毋庸置疑的高原人口音
 Dialogue: 0,0:48:53.83,0:48:56.16,ES-Main,,0,0,0,,eran su inconfundible dicción del páramo y
 Dialogue: 0,0:48:56.25,0:48:58.96,Default,,0,0,0,,和她为葬礼编制棕榈花圈的职业
@@ -988,17 +989,17 @@ Dialogue: 0,0:49:04.54,0:49:07.12,ES-Main,,0,0,0,,Con la temeridad atroz con que
 Dialogue: 0,0:49:07.21,0:49:08.50,Default,,0,0,0,,翻越山脉那样的蛮勇
 Dialogue: 0,0:49:07.21,0:49:08.50,ES-Main,,0,0,0,,Buendía atravesó la sierra,
 Dialogue: 0,0:49:11.67,0:49:15.75,Default,,0,0,0,,凭着上校一次次推动徒劳的战争时\N那样的盲目骄傲
-Dialogue: 0,0:49:11.67,0:49:15.75,ES-Main-2L,,0,0,0,,con el orgullo ciego con que el coronel promovió sus guerras inútiles…
+Dialogue: 0,0:49:11.67,0:49:15.75,ES-Main-2L,,0,0,0,,con el orgullo ciego con que el\Ncoronel promovió sus guerras inútiles…
 Dialogue: 0,0:49:19.38,0:49:23.80,Default,,0,0,0,,凭着乌尔苏拉\N一心延续家族血脉那样的疯狂执拗
-Dialogue: 0,0:49:19.38,0:49:23.80,ES-Main-2L,,0,0,0,,con la tenacidad insensata con la que Úrsula aseguró la supervivencia de la estirpe.
+Dialogue: 0,0:49:19.38,0:49:23.80,ES-Main-2L,,0,0,0,,con la tenacidad insensata con la que Úrsula\Naseguró la supervivencia de la estirpe.
 Dialogue: 0,0:49:26.13,0:49:28.71,Default,,0,0,0,,奥雷里亚诺第二\N不懈地寻找着费尔南达
 Dialogue: 0,0:49:26.13,0:49:28.71,ES-Main,,0,0,0,,Así buscó Aureliano Segundo a Fernanda.
 Dialogue: 0,0:49:30.58,0:49:32.91,Default,,0,0,0,,未曾有片刻气馁
 Dialogue: 0,0:49:30.58,0:49:32.91,ES-Main,,0,0,0,,Sin un solo instante de desaliento.
 Dialogue: 0,0:49:36.58,0:49:40.00,Default,,0,0,0,,虽然从未见过 也从未听人描述过
-Dialogue: 0,0:49:36.58,0:49:40.00,ES-Main-2L,,0,0,0,,Y aunque nunca los había visto ni nadie se los había descrito,
+Dialogue: 0,0:49:36.58,0:49:40.00,ES-Main-2L,,0,0,0,,Y aunque nunca los había visto\Nni nadie se los había descrito,
 Dialogue: 0,0:49:41.38,0:49:45.01,Default,,0,0,0,,他还是一眼就认出了那被骨盐侵蚀
-Dialogue: 0,0:49:41.38,0:49:45.01,ES-Main-2L,,0,0,0,,reconoció de inmediato los muros carcomidos por la sal de los huesos
+Dialogue: 0,0:49:41.38,0:49:45.01,ES-Main-2L,,0,0,0,,reconoció de inmediato los muros\Ncarcomidos por la sal de los huesos
 Dialogue: 0,0:49:47.21,0:49:49.25,Default,,0,0,0,,几乎被雨水冲刷殆尽的斑驳外墙
 Dialogue: 0,0:49:47.21,0:49:49.25,ES-Main,,0,0,0,,y casi borrado por la lluvia
 Dialogue: 0,0:49:50.38,0:49:52.76,Default,,0,0,0,,和那张世上最悲凉的纸板标牌
