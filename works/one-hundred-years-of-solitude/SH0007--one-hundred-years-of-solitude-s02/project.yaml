@@ -1,0 +1,347 @@
+schema_version: 9
+
+id: "SH0007"
+project_name: "one-hundred-years-of-solitude-s02"
+type: "tv"
+episode_count: 8
+
+identity:
+  provider: bangumi
+  id: "534091"
+  url: "https://bgm.tv/subject/534091"
+  api_url: "https://api.bgm.tv/v0/subjects/534091"
+  titles:
+    ja: "Cien años de soledad Season 2"
+    zh-Hans: "百年孤独 第二季"
+  date: "2026-08-05"
+  platform: "欧美剧"
+  total_episodes: 8
+  verification: api-verified
+  verified_at: "2026-09-04"
+task:
+  mode: proofreading
+  source_language: "es"
+  target_language: zh-Hans
+  scope: "S02E01-S02E08"
+
+release_languages:
+  primary: zh-Hans
+  secondary: "es"
+
+subtitle_design:
+  profile: zh-bilingual
+  ordinary_styles:
+    primary:
+      - Default
+    secondary: 
+      - ES-Main
+      - ES-Main-2L
+
+subtitle_sources:
+  - id: zh-Hans-candidate-baseline
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline
+    file_count: 8
+    scope: "S02E01,S02E02,S02E03,S02E04,S02E05,S02E06,S02E07,S02E08"
+    roles:
+      - candidate-baseline
+    evidence: "candidate baseline declaration"
+  - id: optional-source-001
+    language: es
+    kind: external-evidence
+    path: project/sources/subtitles/es/optional-source-001
+    file_count: 8
+    scope: "S02E01,S02E02,S02E03,S02E04,S02E05,S02E06,S02E07,S02E08"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "explicit declaration"
+  - id: embedded-video-001-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E01.The.Armistice.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E01"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-001-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E01.The.Armistice.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E01"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-002-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E02.The.Queen.of.Madagascar.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E02"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-002-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E02.The.Queen.of.Madagascar.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E02"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-003-s3
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E03.Fernanda.Del.Carpio.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 3
+    codec: "subrip"
+    scope: "S02E03"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-003-s4
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E03.Fernanda.Del.Carpio.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E03"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-004-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E04.The.Innocent.Train.Had.Arrived.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E04"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-004-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E04.The.Innocent.Train.Had.Arrived.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E04"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-005-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E05.It.Was.October.11.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E05"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-005-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E05.It.Was.October.11.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E05"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-006-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E06.More.Than.Three.Thousand.of.Them.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E06"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-006-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E06.More.Than.Three.Thousand.of.Them.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E06"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-007-s3
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E07.It.Rained.For.Four.Years.Eleven.Months.and.Two.Days.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 3
+    codec: "subrip"
+    scope: "S02E07"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-007-s4
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E07.It.Rained.For.Four.Years.Eleven.Months.and.Two.Days.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E07"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+  - id: embedded-video-008-s4
+    language: es
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E08.One.Hundred.Years.of.Solitude.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 4
+    codec: "subrip"
+    scope: "S02E08"
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: "container language tag"
+  - id: embedded-video-008-s5
+    language: zh-Hans
+    kind: embedded-subtitle-track
+    container: "One.Hundred.Years.of.Solitude.S02E08.One.Hundred.Years.of.Solitude.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    stream_index: 5
+    codec: "subrip"
+    scope: "S02E08"
+    roles:
+      - translation-reference
+      - timing-reference
+      - style-layout-reference
+    evidence: "container language tag"
+video_sources:
+  target-video:
+    medium: user-provided-ssh-video
+    files:
+      S02E01: "One.Hundred.Years.of.Solitude.S02E01.The.Armistice.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E02: "One.Hundred.Years.of.Solitude.S02E02.The.Queen.of.Madagascar.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E03: "One.Hundred.Years.of.Solitude.S02E03.Fernanda.Del.Carpio.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E04: "One.Hundred.Years.of.Solitude.S02E04.The.Innocent.Train.Had.Arrived.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E05: "One.Hundred.Years.of.Solitude.S02E05.It.Was.October.11.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E06: "One.Hundred.Years.of.Solitude.S02E06.More.Than.Three.Thousand.of.Them.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E07: "One.Hundred.Years.of.Solitude.S02E07.It.Rained.For.Four.Years.Eleven.Months.and.Two.Days.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+      S02E08: "One.Hundred.Years.of.Solitude.S02E08.One.Hundred.Years.of.Solitude.2160p.NF.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV.mkv"
+    timing_authority:
+      S02E01: "embedded Simplified Chinese subtitle track"
+      S02E02: "embedded Simplified Chinese subtitle track"
+      S02E03: "embedded Simplified Chinese subtitle track"
+      S02E04: "embedded Simplified Chinese subtitle track"
+      S02E05: "embedded Simplified Chinese subtitle track"
+      S02E06: "embedded Simplified Chinese subtitle track"
+      S02E07: "embedded Simplified Chinese subtitle track"
+      S02E08: "embedded Simplified Chinese subtitle track"
+    fingerprints:
+      S02E01:
+        size: 8871847113
+        sha256_first_mib: 27005fce25df0d388a828dc7ca04d3caeceba793eb1b068fd27e95128d519d6f
+        duration_seconds: 3760.736
+      S02E02:
+        size: 7421208985
+        sha256_first_mib: 24ef5f97cf414aad31c332631f9dd6f305acbc837c8238dbf655d2f2f3777de7
+        duration_seconds: 3575.072
+      S02E03:
+        size: 9010115322
+        sha256_first_mib: ccb9e79400b0efd61ffc42e3ea6b41e175e707f90f9ffeaf446130d1e5297d1a
+        duration_seconds: 3711.648
+      S02E04:
+        size: 7015630856
+        sha256_first_mib: 19fb0e912d1fae0a67ec7d5cbda5f4b0a8628b1c8441f9a637495c7962e80e47
+        duration_seconds: 3441.024
+      S02E05:
+        size: 9480319269
+        sha256_first_mib: 2157dc87395eddfbe553d2bf317f479c993596b5f5da123d1268c4100a26afdb
+        duration_seconds: 4480.768
+      S02E06:
+        size: 10748845837
+        sha256_first_mib: 93e064135cab133e7f0e7ea091934daa9bf9b9befb5da8176de8462113812da2
+        duration_seconds: 4644.064
+      S02E07:
+        size: 8243013949
+        sha256_first_mib: ce759f511a19295002b1dcf168eb4f15906ce5c69cd3514a6991fb03c0e534a3
+        duration_seconds: 3961.12
+      S02E08:
+        size: 13598688571
+        sha256_first_mib: 4ef8a9e5242a62c1f2844ae65a836b888a0254cc70c08e09b3aaa3fab8e9b9b1
+        duration_seconds: 6213.6
+    selected_audio:
+      S02E01:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E02:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E03:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E04:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E05:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E06:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E07:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+      S02E08:
+        stream_index: 1
+        language: es
+        codec: "eac3"
+project_overrides: []
+limitations: []
+
+initialization:
+  skill_version: "1.4.2"
+  state: proofreading-ready
+  approved_by: "user"
+  approved_at: "2026-09-04"
