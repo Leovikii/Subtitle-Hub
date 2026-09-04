@@ -1,5 +1,5 @@
 [Script Info]
-; Subtitle-Hub-Version: 1.0.1
+; Subtitle-Hub-Version: 1.0.0
 ; Subtitle-Hub-Languages: zh-Hans, es
 ; Subtitle-Hub-Primary-Language: zh-Hans
 ; Subtitle-Hub-Secondary-Language: es
@@ -22,1026 +22,1054 @@ Style: ES-Special,Noto Sans CJK SC,12,&H00FFFFFF,&H00FFFFFF,&H00000000,&H0000000
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:57.29,0:00:59.50,Default,,0,0,0,,它来了！朝这边来了！
-Dialogue: 0,0:00:57.29,0:00:59.50,ES-Main,,0,0,0,,-¡Ahí viene! ¡Está llegando!
+Dialogue: 0,0:00:57.54,0:01:00.71,ES-Main,,0,0,0,,-¡Ahí viene! ¡Está llegando! -¡Está temblando!
 Dialogue: 0,0:00:59.58,0:01:00.71,Default,,0,0,0,,就快到了！
-Dialogue: 0,0:00:59.58,0:01:00.71,ES-Main,,0,0,0,,-¡Está temblando!
+Dialogue: 0,0:01:02.25,0:01:03.38,ES-Main,,0,0,0,,¡Ahí viene!
 Dialogue: 0,0:01:02.33,0:01:03.37,Default,,0,0,0,,它来了！
-Dialogue: 0,0:01:02.33,0:01:03.37,ES-Main,,0,0,0,,¡Ahí viene!
+Dialogue: 0,0:01:05.08,0:01:06.12,ES-Main,,0,0,0,,¡Cálmate, mujer!
 Dialogue: 0,0:01:05.25,0:01:06.38,Default,,0,0,0,,冷静点 女士！
-Dialogue: 0,0:01:05.25,0:01:06.38,ES-Main,,0,0,0,,¡Cálmate, mujer! -¡La tierra
+Dialogue: 0,0:01:06.21,0:01:08.04,ES-Main,,0,0,0,,-¡La tierra se mueve! -¿Qué se acerca?
 Dialogue: 0,0:01:06.96,0:01:07.88,Default,,0,0,0,,什么来了？
-Dialogue: 0,0:01:06.96,0:01:07.88,ES-Main,,0,0,0,,se mueve! -¿Qué
 Dialogue: 0,0:01:07.96,0:01:11.04,Default,,0,0,0,,一头巨兽！像一间厨房拖着一个镇子
-Dialogue: 0,0:01:07.96,0:01:11.04,ES-Main-2L,,0,0,0,,se acerca? ¡Una bestia! Como una cocina arrastrando a un pueblo.
+Dialogue: 0,0:01:08.13,0:01:11.05,ES-Main-2L,,0,0,0,,¡Una bestia! Como una cocina arrastrando a un pueblo.
+Dialogue: 0,0:01:12.96,0:01:14.00,ES-Main,,0,0,0,,Llegó.
 Dialogue: 0,0:01:13.00,0:01:13.96,Default,,0,0,0,,它来了
-Dialogue: 0,0:01:13.00,0:01:13.96,ES-Main,,0,0,0,,Llegó.
+Dialogue: 0,0:01:22.67,0:01:25.55,ES-Main,,0,0,0,,Niño, vamos, que te lo vas a perder.
 Dialogue: 0,0:01:23.33,0:01:25.25,Default,,0,0,0,,快来 孩子 别错过了
-Dialogue: 0,0:01:23.33,0:01:25.25,ES-Main,,0,0,0,,Niño, vamos, que te lo vas a perder.
+Dialogue: 0,0:01:25.63,0:01:26.63,ES-Main,,0,0,0,,Mamá Úrsula.
 Dialogue: 0,0:01:25.75,0:01:29.29,Default,,0,0,0,,-乌尔苏拉妈妈 它来了\N-什么来了？
-Dialogue: 0,0:01:25.75,0:01:29.29,ES-Main,,0,0,0,,Mamá Úrsula. Ya llegó. ¿Qué cosa?
+Dialogue: 0,0:01:26.71,0:01:28.09,ES-Main,,0,0,0,,Ya llegó.
+Dialogue: 0,0:01:28.17,0:01:29.30,ES-Main,,0,0,0,,¿Qué cosa?
 Dialogue: 0,0:01:35.67,0:01:37.80,Default,,0,0,0,,它来了！
-Dialogue: 0,0:01:35.67,0:01:37.80,ES-Main,,0,0,0,,¡Ya llegó! ¡Llegó!
+Dialogue: 0,0:01:35.71,0:01:37.63,ES-Main,,0,0,0,,¡Ya llegó! ¡Llegó!
 Dialogue: 0,0:01:38.63,0:01:40.96,Default,,0,0,0,,-梅梅 别弹了 快来\N-去哪儿？
-Dialogue: 0,0:01:38.63,0:01:40.96,ES-Main,,0,0,0,,Meme, deja eso. Vamos. -¿Para dónde? -Ya va
+Dialogue: 0,0:01:38.63,0:01:39.92,ES-Main,,0,0,0,,Meme, deja eso. Vamos.
+Dialogue: 0,0:01:40.00,0:01:42.25,ES-Main,,0,0,0,,-¿Para dónde? -Ya va a llegar.
 Dialogue: 0,0:01:41.04,0:01:42.12,Default,,0,0,0,,它就快到了
-Dialogue: 0,0:01:41.04,0:01:42.12,ES-Main,,0,0,0,,a llegar.
+Dialogue: 0,0:01:43.04,0:01:44.37,ES-Main,,0,0,0,,¿Podemos ir, mamá?
 Dialogue: 0,0:01:43.08,0:01:44.08,Default,,0,0,0,,我们能去吗 妈妈？
-Dialogue: 0,0:01:43.08,0:01:44.08,ES-Main,,0,0,0,,¿Podemos ir, mamá?
+Dialogue: 0,0:01:44.46,0:01:46.67,ES-Main,,0,0,0,,Después de la lección, Renata.
 Dialogue: 0,0:01:44.58,0:01:46.66,Default,,0,0,0,,上完课再去 雷纳塔
-Dialogue: 0,0:01:44.58,0:01:46.66,ES-Main,,0,0,0,,Después de la lección, Renata.
 Dialogue: 0,0:01:46.75,0:01:48.79,Default,,0,0,0,,费尔南达 让她去吧
 Dialogue: 0,0:01:46.75,0:01:48.79,ES-Main,,0,0,0,,Fernanda, déjala ir.
+Dialogue: 0,0:01:49.50,0:01:50.50,ES-Main,,0,0,0,,Por favor, mamá.
 Dialogue: 0,0:01:49.54,0:01:50.50,Default,,0,0,0,,求你了 妈妈
-Dialogue: 0,0:01:49.54,0:01:50.50,ES-Main,,0,0,0,,Por favor, mamá.
 Dialogue: 0,0:01:53.75,0:01:55.13,Default,,0,0,0,,走吧
-Dialogue: 0,0:01:53.75,0:01:55.13,ES-Main,,0,0,0,,Vamos, vamos, vamos.
+Dialogue: 0,0:01:53.75,0:01:55.21,ES-Main,,0,0,0,,Vamos, vamos, vamos.
+Dialogue: 0,0:01:56.88,0:01:59.38,ES-Main,,0,0,0,,-Ordenado, Meme. -¡Ay, no!
 Dialogue: 0,0:01:57.04,0:01:58.08,Default,,0,0,0,,规矩点 梅梅
-Dialogue: 0,0:01:57.04,0:01:58.08,ES-Main,,0,0,0,,-Ordenado, Meme.
 Dialogue: 0,0:01:58.17,0:01:59.42,Default,,0,0,0,,别啰嗦！
-Dialogue: 0,0:01:58.17,0:01:59.42,ES-Main,,0,0,0,,-¡Ay, no!
+Dialogue: 0,0:01:59.46,0:02:01.25,ES-Main,,0,0,0,,-¡Vamos! -Agárrame el brazo.
 Dialogue: 0,0:01:59.50,0:02:01.29,Default,,0,0,0,,-快来！\N-扶住我的胳膊
-Dialogue: 0,0:01:59.50,0:02:01.29,ES-Main,,0,0,0,,-¡Vamos! -Agárrame el brazo.
+Dialogue: 0,0:02:01.33,0:02:02.79,ES-Main,,0,0,0,,-No estoy bien. -¡Menos charla!
 Dialogue: 0,0:02:01.38,0:02:02.80,Default,,0,0,0,,-可要是…\N-少说话
-Dialogue: 0,0:02:01.38,0:02:02.80,ES-Main,,0,0,0,,-No estoy bien. -¡Menos charla!
 Dialogue: 0,0:02:02.88,0:02:04.88,Default,,0,0,0,,-扶着我的胳膊\N-你得照应我
-Dialogue: 0,0:02:02.88,0:02:04.88,ES-Main,,0,0,0,,-Agárrame. -Niña, por Dios.
+Dialogue: 0,0:02:02.88,0:02:04.92,ES-Main,,0,0,0,,-Agárrame. -Niña, por Dios.
 Dialogue: 0,0:02:04.96,0:02:07.42,Default,,0,0,0,,-少说话\N-别摘披巾！
-Dialogue: 0,0:02:04.96,0:02:07.42,ES-Main,,0,0,0,,-Menos charla. -¡No te quites la
+Dialogue: 0,0:02:05.00,0:02:07.29,ES-Main,,0,0,0,,-Menos charla. -¡No te quites la mantilla!
+Dialogue: 0,0:02:07.38,0:02:09.21,ES-Main,,0,0,0,,¡Remedios!
 Dialogue: 0,0:02:07.92,0:02:09.25,Default,,0,0,0,,蕾梅黛丝！
-Dialogue: 0,0:02:07.92,0:02:09.25,ES-Main,,0,0,0,,mantilla! ¡Remedios!
 Dialogue: 0,0:02:10.46,0:02:11.79,Default,,0,0,0,,蕾梅黛丝！
-Dialogue: 0,0:02:10.46,0:02:11.79,ES-Main,,0,0,0,,¡Remedios!
+Dialogue: 0,0:02:10.46,0:02:11.59,ES-Main,,0,0,0,,¡Remedios!
 Dialogue: 0,0:02:20.96,0:02:22.63,Default,,0,0,0,,快来 孩子们！跑快点！
-Dialogue: 0,0:02:20.96,0:02:22.63,ES-Main,,0,0,0,,¡Vamos, niños! ¡Vamos, rápido!
+Dialogue: 0,0:02:20.96,0:02:22.59,ES-Main,,0,0,0,,¡Vamos, niños! ¡Vamos, rápido!
+Dialogue: 0,0:02:22.67,0:02:27.05,ES-Main-2L,,0,0,0,,Había llegado el inocente tren que tantas incertidumbres y evidencias,
 Dialogue: 0,0:02:22.71,0:02:26.71,Default,,0,0,0,,那列无辜的火车终于抵达\N它给马孔多带来了
-Dialogue: 0,0:02:22.71,0:02:26.71,ES-Main-2L,,0,0,0,,Había llegado el inocente tren que tantas incertidumbres y evidencias,
+Dialogue: 0,0:02:27.13,0:02:30.42,ES-Main-2L,,0,0,0,,tantos halagos y desventuras, y tantos cambios,
 Dialogue: 0,0:02:27.21,0:02:30.17,Default,,0,0,0,,诸多疑窦与明证 赞美与不幸
-Dialogue: 0,0:02:27.21,0:02:30.17,ES-Main,,0,0,0,,tantos halagos y desventuras, y tantos cambios,
+Dialogue: 0,0:02:30.50,0:02:33.50,ES-Main-2L,,0,0,0,,calamidades y nostalgias había de llevar a Macondo.
 Dialogue: 0,0:02:30.67,0:02:33.71,Default,,0,0,0,,以及无数变化、灾难与怀念
-Dialogue: 0,0:02:30.67,0:02:33.71,ES-Main,,0,0,0,,calamidades y nostalgias había de llevar a Macondo.
 Dialogue: 0,0:02:40.42,0:02:44.75,Default,,0,0,0,,欢迎来到马孔多！
-Dialogue: 0,0:02:40.42,0:02:44.75,ES-Main,,0,0,0,,¡Bienvenidos a Macondo!
+Dialogue: 0,0:02:40.46,0:02:44.71,ES-Main,,0,0,0,,¡Bienvenidos a Macondo!
+Dialogue: 0,0:02:44.79,0:02:46.67,ES-Main,,0,0,0,,¡Lo hicimos, primo!
 Dialogue: 0,0:02:44.83,0:02:46.62,Default,,0,0,0,,我们成功了 堂兄！
-Dialogue: 0,0:02:44.83,0:02:46.62,ES-Main,,0,0,0,,¡Lo hicimos, primo!
 Dialogue: 0,0:02:46.71,0:02:48.00,Default,,0,0,0,,小镇居民们看见
-Dialogue: 0,0:02:46.71,0:02:48.00,ES-Main,,0,0,0,,Y sus habitantes
+Dialogue: 0,0:02:46.75,0:02:50.42,ES-Main-2L,,0,0,0,,Y sus habitantes vieron a José Arcadio II y Aureliano Triste
 Dialogue: 0,0:02:48.08,0:02:50.79,Default,,0,0,0,,何塞·阿尔卡蒂奥第二\N和奥雷里亚诺·特里斯特
-Dialogue: 0,0:02:48.08,0:02:50.79,ES-Main-2L,,0,0,0,,vieron a José Arcadio II y Aureliano Triste -saludando desde
+Dialogue: 0,0:02:50.50,0:02:53.54,ES-Main-2L,,0,0,0,,-saludando desde la locomotora. -¡José Arcadio!
 Dialogue: 0,0:02:50.88,0:02:53.17,Default,,0,0,0,,在火车头上向他们招手
-Dialogue: 0,0:02:50.88,0:02:53.17,ES-Main,,0,0,0,,la locomotora. -¡José Arcadio!
 Dialogue: 0,0:02:57.54,0:02:59.83,Default,,0,0,0,,就是他 你没听见吗？
 Dialogue: 0,0:02:57.54,0:02:59.83,ES-Main,,0,0,0,,¡Así es él, no me oyes!
 Dialogue: 0,0:02:59.92,0:03:00.80,Default,,0,0,0,,你看那个
 Dialogue: 0,0:02:59.92,0:03:00.80,ES-Main,,0,0,0,,¿Viste eso?
+Dialogue: 0,0:03:03.75,0:03:05.46,ES-Main,,0,0,0,,¡Bienvenidos a Macondo!
 Dialogue: 0,0:03:03.92,0:03:05.46,Default,,0,0,0,,欢迎来到马孔多！
-Dialogue: 0,0:03:03.92,0:03:05.46,ES-Main,,0,0,0,,¡Bienvenidos a Macondo!
 Dialogue: 0,0:03:10.33,0:03:13.41,Default,,0,0,0,,你曾祖父会为你骄傲的\N何塞·阿尔卡蒂奥
 Dialogue: 0,0:03:10.33,0:03:13.41,ES-Main,,0,0,0,,Tu bisabuelo estaría orgulloso, José Arcadio.
+Dialogue: 0,0:03:14.58,0:03:16.91,ES-Main,,0,0,0,,Lograste lo que él siempre soñó.
 Dialogue: 0,0:03:14.67,0:03:16.75,Default,,0,0,0,,你达成了他一直以来的梦想
-Dialogue: 0,0:03:14.67,0:03:16.75,ES-Main,,0,0,0,,Lograste lo que él siempre soñó.
 Dialogue: 0,0:03:18.13,0:03:20.30,Default,,0,0,0,,让马孔多联系外面的世界
 Dialogue: 0,0:03:18.13,0:03:20.30,ES-Main,,0,0,0,,Conectar Macondo con el mundo.
 Dialogue: 0,0:03:21.13,0:03:22.13,Default,,0,0,0,,很好
-Dialogue: 0,0:03:21.13,0:03:22.13,ES-Main,,0,0,0,,Muy bien.
+Dialogue: 0,0:03:21.17,0:03:22.30,ES-Main,,0,0,0,,Muy bien.
+Dialogue: 0,0:03:25.04,0:03:28.21,ES-Main-2L,,0,0,0,,Ahora sí le dejaste la boca callada a medio pueblo.
 Dialogue: 0,0:03:25.17,0:03:28.21,Default,,0,0,0,,这下你让半个镇子的人都闭嘴了
-Dialogue: 0,0:03:25.17,0:03:28.21,ES-Main,,0,0,0,,Ahora sí le dejaste la boca callada a medio pueblo.
 Dialogue: 0,0:03:28.29,0:03:30.25,Default,,0,0,0,,所有等待都是值得的
-Dialogue: 0,0:03:28.29,0:03:30.25,ES-Main,,0,0,0,,Valió la pena tanta espera.
+Dialogue: 0,0:03:28.29,0:03:30.42,ES-Main,,0,0,0,,Valió la pena tanta espera.
+Dialogue: 0,0:03:30.50,0:03:33.33,ES-Main-2L,,0,0,0,,-¿Adónde vamos, Meme? ¿Adónde me llevas? -Para el tren.
 Dialogue: 0,0:03:30.75,0:03:33.33,Default,,0,0,0,,-你要带我去哪儿？\N-去火车上
-Dialogue: 0,0:03:30.75,0:03:33.33,ES-Main-2L,,0,0,0,,-¿Adónde vamos, Meme? ¿Adónde me llevas? -Para el tren.
 Dialogue: 0,0:03:33.42,0:03:35.13,Default,,0,0,0,,不行 梅梅
-Dialogue: 0,0:03:33.42,0:03:35.13,ES-Main,,0,0,0,,¡No, Meme! -Vamos
+Dialogue: 0,0:03:33.42,0:03:35.30,ES-Main,,0,0,0,,¡No, Meme!
 Dialogue: 0,0:03:35.21,0:03:38.34,Default,,0,0,0,,-我们上火车吧\N-不行 妈妈会骂我们的
-Dialogue: 0,0:03:35.21,0:03:38.34,ES-Main,,0,0,0,,a montarnos al tren. -No, mi mamá nos va a regañar.
+Dialogue: 0,0:03:35.38,0:03:38.38,ES-Main-2L,,0,0,0,,-Vamos a montarnos al tren. -No, mi mamá nos va a regañar.
 Dialogue: 0,0:03:38.42,0:03:40.84,Default,,0,0,0,,-那又怎样？你个笨蛋\N-梅梅！
-Dialogue: 0,0:03:38.42,0:03:40.84,ES-Main,,0,0,0,,-¿Qué? Tú sí eres bobo. -¡Meme!
+Dialogue: 0,0:03:38.46,0:03:41.00,ES-Main-2L,,0,0,0,,-¿Qué? Tú sí eres bobo. -¡Meme!
+Dialogue: 0,0:03:41.75,0:03:44.08,ES-Main,,0,0,0,,¡Bienvenidos a Macondo! ¡Bienvenidos!
 Dialogue: 0,0:03:41.83,0:03:44.25,Default,,0,0,0,,欢迎来到马孔多！欢迎！
-Dialogue: 0,0:03:41.83,0:03:44.25,ES-Main,,0,0,0,,¡Bienvenidos a Macondo! ¡Bienvenidos! -¡Hola!
+Dialogue: 0,0:03:44.17,0:03:46.50,ES-Main,,0,0,0,,-¡Hola! -¡Hola!
 Dialogue: 0,0:03:44.33,0:03:45.33,Default,,0,0,0,,你好！
-Dialogue: 0,0:03:44.33,0:03:45.33,ES-Main,,0,0,0,,-¡Hola!
 Dialogue: 0,0:03:46.33,0:03:47.96,Default,,0,0,0,,抱歉 我只是…
-Dialogue: 0,0:03:46.33,0:03:47.96,ES-Main,,0,0,0,,Lo siento, estoy…
+Dialogue: 0,0:03:46.58,0:03:48.66,ES-Main,,0,0,0,,Lo siento, estoy…
 Dialogue: 0,0:03:50.63,0:03:54.42,Default,,0,0,0,,别紧张 女士们先生们 不用害怕！
 Dialogue: 0,0:03:50.63,0:03:54.42,ES-Main-2L,,0,0,0,,Tranquilos, caballeros, tranquilas, damas. ¡No se me asusten!
 Dialogue: 0,0:03:54.50,0:03:57.29,Default,,0,0,0,,请放心靠近一点！
-Dialogue: 0,0:03:54.50,0:03:57.29,ES-Main,,0,0,0,,¡Acérquense! ¡Acérquense con confianza!
+Dialogue: 0,0:03:54.50,0:03:57.29,ES-Main-2L,,0,0,0,,¡Acérquense! ¡Acérquense con confianza!
+Dialogue: 0,0:03:57.96,0:04:00.75,ES-Main,,0,0,0,,Del tren bajó un forastero tan hermoso,
 Dialogue: 0,0:03:58.04,0:04:00.58,Default,,0,0,0,,一名英俊的外乡人走下火车
-Dialogue: 0,0:03:58.04,0:04:00.58,ES-Main,,0,0,0,,Del tren bajó un forastero tan hermoso,
+Dialogue: 0,0:04:01.54,0:04:03.71,ES-Main,,0,0,0,,tan gallardo y reposado,
 Dialogue: 0,0:04:01.63,0:04:03.38,Default,,0,0,0,,他优雅沉静 风度翩翩
-Dialogue: 0,0:04:01.63,0:04:03.38,ES-Main,,0,0,0,,tan gallardo y reposado,
+Dialogue: 0,0:04:03.79,0:04:06.58,ES-Main-2L,,0,0,0,,de una prestancia tan bien llevada que, junto a él,
 Dialogue: 0,0:04:03.88,0:04:09.05,Default,,0,0,0,,相比之下 皮耶特·克雷斯皮\N不过是个毛头小子
-Dialogue: 0,0:04:03.88,0:04:09.05,ES-Main-2L,,0,0,0,,de una prestancia tan bien llevada que, junto a él, Pietro Crespi habría parecido un sietemesino.
+Dialogue: 0,0:04:06.67,0:04:09.05,ES-Main-2L,,0,0,0,,Pietro Crespi habría parecido un sietemesino.
+Dialogue: 0,0:04:20.88,0:04:22.05,ES-Main,,0,0,0,,Disculpe.
 Dialogue: 0,0:04:21.13,0:04:22.26,Default,,0,0,0,,不好意思
-Dialogue: 0,0:04:21.13,0:04:22.26,ES-Main,,0,0,0,,Disculpe.
+Dialogue: 0,0:04:22.67,0:04:24.67,ES-Main,,0,0,0,,¿Me… me podría decir
 Dialogue: 0,0:04:22.75,0:04:26.58,Default,,0,0,0,,能告诉我哪里有餐馆吗？
-Dialogue: 0,0:04:22.75,0:04:26.58,ES-Main,,0,0,0,,¿Me… me podría decir dónde está un
+Dialogue: 0,0:04:24.75,0:04:28.92,ES-Main-2L,,0,0,0,,dónde está un restaurante, un buen restaurante típico?
 Dialogue: 0,0:04:26.67,0:04:29.09,Default,,0,0,0,,地道的传统餐馆
-Dialogue: 0,0:04:26.67,0:04:29.09,ES-Main,,0,0,0,,restaurante, un buen restaurante típico?
+Dialogue: 0,0:04:29.83,0:04:31.62,ES-Main-2L,,0,0,0,,Le tengo el lugar, señor…
 Dialogue: 0,0:04:29.92,0:04:31.63,Default,,0,0,0,,我知道一个好地方 这位…
-Dialogue: 0,0:04:29.92,0:04:31.63,ES-Main,,0,0,0,,Le tengo el lugar, señor…
 Dialogue: 0,0:04:31.71,0:04:33.09,Default,,0,0,0,,赫伯特
-Dialogue: 0,0:04:31.71,0:04:33.09,ES-Main,,0,0,0,,Herbert.
+Dialogue: 0,0:04:31.71,0:04:33.04,ES-Main,,0,0,0,,Herbert.
+Dialogue: 0,0:04:33.13,0:04:35.96,ES-Main-2L,,0,0,0,,Señor Herbert, lo quiero invitar a almorzar a mi casa
 Dialogue: 0,0:04:33.17,0:04:35.92,Default,,0,0,0,,赫伯特先生 欢迎来我家做客
-Dialogue: 0,0:04:33.17,0:04:35.92,ES-Main-2L,,0,0,0,,Señor Herbert, lo quiero invitar a almorzar a mi casa
 Dialogue: 0,0:04:36.00,0:04:39.88,Default,,0,0,0,,那儿有马孔多最美味的食物\N对吧 乌尔苏拉妈妈？
-Dialogue: 0,0:04:36.00,0:04:39.88,ES-Main-2L,,0,0,0,,donde se prepara la comida más sabrosa de todo Macondo. ¿Verdad, Úrsula?
+Dialogue: 0,0:04:36.04,0:04:38.87,ES-Main-2L,,0,0,0,,donde se prepara la comida más sabrosa de todo Macondo.
+Dialogue: 0,0:04:38.96,0:04:39.88,ES-Main,,0,0,0,,¿Verdad, Úrsula?
 Dialogue: 0,0:04:40.46,0:04:43.96,Default,,0,0,0,,如此特殊的场合\N布恩迪亚家当然会敞开大门
-Dialogue: 0,0:04:40.46,0:04:43.96,ES-Main-2L,,0,0,0,,La casa Buendía abre sus puertas en esta ocasión tan especial.
+Dialogue: 0,0:04:40.50,0:04:43.92,ES-Main-2L,,0,0,0,,La casa Buendía abre sus puertas en esta ocasión tan especial.
+Dialogue: 0,0:04:44.00,0:04:45.08,ES-Main,,0,0,0,,Maravilloso.
 Dialogue: 0,0:04:44.04,0:04:45.08,Default,,0,0,0,,太好了！
-Dialogue: 0,0:04:44.04,0:04:45.08,ES-Main,,0,0,0,,Maravilloso.
 Dialogue: 0,0:04:45.17,0:04:46.46,Default,,0,0,0,,欢迎都来做客
-Dialogue: 0,0:04:45.17,0:04:46.46,ES-Main,,0,0,0,,El que quiera ir,
+Dialogue: 0,0:04:45.17,0:04:48.46,ES-Main-2L,,0,0,0,,El que quiera ir, que vaya. Las puertas están abiertas.
 Dialogue: 0,0:04:47.00,0:04:48.79,Default,,0,0,0,,我们家大门为所有人敞开
-Dialogue: 0,0:04:47.00,0:04:48.79,ES-Main,,0,0,0,,que vaya. Las puertas están abiertas.
 Dialogue: 0,0:04:49.46,0:04:51.59,Default,,0,0,0,,下一站是…
-Dialogue: 0,0:04:49.46,0:04:51.59,ES-Main,,0,0,0,,Siguiente parada, estación…
+Dialogue: 0,0:04:49.46,0:04:51.54,ES-Main,,0,0,0,,Siguiente parada, estación…
 Dialogue: 0,0:04:57.21,0:04:59.21,Default,,0,0,0,,我发现他们坐在最后一节车厢里
-Dialogue: 0,0:04:57.21,0:04:59.21,ES-Main,,0,0,0,,Me los encontré sentados en el vagón de atrás.
+Dialogue: 0,0:04:57.21,0:04:59.84,ES-Main,,0,0,0,,Me los encontré sentados en el vagón de atrás.
+Dialogue: 0,0:04:59.92,0:05:02.00,ES-Main,,0,0,0,,Muchas gracias, señorita…
 Dialogue: 0,0:05:00.04,0:05:02.25,Default,,0,0,0,,非常感谢你 这位小姐…
-Dialogue: 0,0:05:00.04,0:05:02.25,ES-Main,,0,0,0,,Muchas gracias, señorita…
+Dialogue: 0,0:05:02.67,0:05:03.75,ES-Main,,0,0,0,,Cotes.
 Dialogue: 0,0:05:02.75,0:05:03.58,Default,,0,0,0,,我叫科特斯
-Dialogue: 0,0:05:02.75,0:05:03.58,ES-Main,,0,0,0,,Cotes.
 Dialogue: 0,0:05:04.33,0:05:05.50,Default,,0,0,0,,科特斯
 Dialogue: 0,0:05:04.33,0:05:05.50,ES-Main,,0,0,0,,Cotes.
 Dialogue: 0,0:05:10.75,0:05:11.92,Default,,0,0,0,,她是谁啊 爸爸？
-Dialogue: 0,0:05:10.75,0:05:11.92,ES-Main,,0,0,0,,¿Quién es ella, papá?
+Dialogue: 0,0:05:10.75,0:05:12.33,ES-Main,,0,0,0,,¿Quién es ella, papá?
 Dialogue: 0,0:05:12.42,0:05:15.38,Default,,0,0,0,,-为什么认识我们？\N-这里所有人都认识我们
-Dialogue: 0,0:05:12.42,0:05:15.38,ES-Main,,0,0,0,,¿Por qué nos conoce? Aquí todo el mundo nos conoce.
+Dialogue: 0,0:05:12.42,0:05:13.59,ES-Main,,0,0,0,,¿Por qué nos conoce?
+Dialogue: 0,0:05:13.67,0:05:15.71,ES-Main,,0,0,0,,Aquí todo el mundo nos conoce.
+Dialogue: 0,0:05:15.79,0:05:17.04,ES-Main,,0,0,0,,Somos Buendía.
 Dialogue: 0,0:05:15.88,0:05:17.13,Default,,0,0,0,,我们是布恩迪亚家的人
-Dialogue: 0,0:05:15.88,0:05:17.13,ES-Main,,0,0,0,,Somos Buendía.
+Dialogue: 0,0:05:17.13,0:05:18.30,ES-Main,,0,0,0,,José Arcadio.
 Dialogue: 0,0:05:17.21,0:05:18.42,Default,,0,0,0,,何塞·阿尔卡蒂奥
-Dialogue: 0,0:05:17.21,0:05:18.42,ES-Main,,0,0,0,,José Arcadio.
 Dialogue: 0,0:05:18.92,0:05:21.21,Default,,0,0,0,,-怎么没跟紧我？\N-你跑哪儿去了？
-Dialogue: 0,0:05:18.92,0:05:21.21,ES-Main-2L,,0,0,0,,¿Por qué me dejaste sola? ¿Dónde estabas solita? Fue Meme.
+Dialogue: 0,0:05:18.92,0:05:20.17,ES-Main,,0,0,0,,¿Por qué me dejaste sola?
+Dialogue: 0,0:05:20.25,0:05:21.38,ES-Main,,0,0,0,,¿Dónde estabas solita?
 Dialogue: 0,0:05:21.29,0:05:23.92,Default,,0,0,0,,梅梅非要拉我去最后一节车厢
-Dialogue: 0,0:05:21.29,0:05:23.92,ES-Main,,0,0,0,,Me llevó corriendo a la última estación.
+Dialogue: 0,0:05:21.46,0:05:23.92,ES-Main-2L,,0,0,0,,Fue Meme. Me llevó corriendo a la última estación.
 Dialogue: 0,0:05:24.50,0:05:27.08,Default,,0,0,0,,欢迎来到布恩迪亚家
-Dialogue: 0,0:05:24.50,0:05:27.08,ES-Main,,0,0,0,,Bienvenidos a la casa Buendía.
+Dialogue: 0,0:05:24.50,0:05:26.96,ES-Main-2L,,0,0,0,,Bienvenidos a la casa Buendía.
+Dialogue: 0,0:05:27.54,0:05:30.37,ES-Main,,0,0,0,,Santa Sofía, trae dos gallinas del patio, mija.
 Dialogue: 0,0:05:27.58,0:05:30.37,Default,,0,0,0,,桑塔索菲亚 从院子里抓两只鸡来
-Dialogue: 0,0:05:27.58,0:05:30.37,ES-Main,,0,0,0,,Santa Sofía, trae dos gallinas del patio, mija.
 Dialogue: 0,0:05:30.46,0:05:31.92,Default,,0,0,0,,什么都得准备一点
-Dialogue: 0,0:05:30.46,0:05:31.92,ES-Main,,0,0,0,,Hay que hacer de todo porque
+Dialogue: 0,0:05:30.46,0:05:34.79,ES-Main-2L,,0,0,0,,Hay que hacer de todo porque nunca se sabe qué quieren comer los forasteros.
 Dialogue: 0,0:05:32.00,0:05:34.79,Default,,0,0,0,,谁知道外乡人爱吃什么呢
-Dialogue: 0,0:05:32.00,0:05:34.79,ES-Main,,0,0,0,,nunca se sabe qué quieren comer los forasteros.
 Dialogue: 0,0:05:34.88,0:05:37.30,Default,,0,0,0,,哇 这地方美得像梦一样
-Dialogue: 0,0:05:34.88,0:05:37.30,ES-Main,,0,0,0,,Guau, este lugar es como un sueño.
+Dialogue: 0,0:05:34.88,0:05:37.55,ES-Main,,0,0,0,,Guau, este lugar es como un sueño.
 Dialogue: 0,0:05:46.83,0:05:47.91,Default,,0,0,0,,朗姆酒
-Dialogue: 0,0:05:46.83,0:05:47.91,ES-Main,,0,0,0,,Ron.
+Dialogue: 0,0:05:46.83,0:05:48.00,ES-Main,,0,0,0,,Ron.
 Dialogue: 0,0:05:48.00,0:05:50.17,Default,,0,0,0,,欢迎 欢迎来到布恩迪亚家
-Dialogue: 0,0:05:48.00,0:05:50.17,ES-Main,,0,0,0,,Bienvenido. Bienvenido a la casa Buendía.
+Dialogue: 0,0:05:48.08,0:05:50.29,ES-Main,,0,0,0,,Bienvenido. Bienvenido a la casa Buendía.
+Dialogue: 0,0:05:52.29,0:05:53.29,ES-Main,,0,0,0,,Un ron.
 Dialogue: 0,0:05:52.38,0:05:53.42,Default,,0,0,0,,来杯朗姆酒
-Dialogue: 0,0:05:52.38,0:05:53.42,ES-Main,,0,0,0,,Un ron.
 Dialogue: 0,0:05:55.96,0:05:57.59,Default,,0,0,0,,欢迎来到布恩迪亚家
-Dialogue: 0,0:05:55.96,0:05:57.59,ES-Main,,0,0,0,,Bienvenido a la casa Buendía.
+Dialogue: 0,0:05:55.96,0:05:57.50,ES-Main,,0,0,0,,Bienvenido a la casa Buendía.
+Dialogue: 0,0:05:58.29,0:05:59.79,ES-Main,,0,0,0,,Gracias.
 Dialogue: 0,0:05:58.46,0:05:59.63,Default,,0,0,0,,谢谢
-Dialogue: 0,0:05:58.46,0:05:59.63,ES-Main,,0,0,0,,Gracias.
+Dialogue: 0,0:05:59.88,0:06:01.17,ES-Main,,0,0,0,,¿Aureliano?
 Dialogue: 0,0:06:00.13,0:06:01.26,Default,,0,0,0,,奥雷里亚诺？
-Dialogue: 0,0:06:00.13,0:06:01.26,ES-Main,,0,0,0,,¿Aureliano?
+Dialogue: 0,0:06:04.04,0:06:05.25,ES-Main,,0,0,0,,¿Aureliano?
 Dialogue: 0,0:06:04.08,0:06:05.37,Default,,0,0,0,,奥雷里亚诺？
-Dialogue: 0,0:06:04.08,0:06:05.37,ES-Main,,0,0,0,,¿Aureliano?
 Dialogue: 0,0:06:06.92,0:06:10.84,Default,,0,0,0,,-她弹得真好 哇\N-雷纳塔 回房间去
-Dialogue: 0,0:06:06.92,0:06:10.84,ES-Main,,0,0,0,,-Toca muy bien. -Renata. -Vete para tu cuarto.
+Dialogue: 0,0:06:06.92,0:06:09.59,ES-Main,,0,0,0,,-Toca muy bien. -Renata.
+Dialogue: 0,0:06:09.67,0:06:12.55,ES-Main,,0,0,0,,-Vete para tu cuarto. -¿Por qué paró?
 Dialogue: 0,0:06:10.92,0:06:12.50,Default,,0,0,0,,她怎么不弹了？
-Dialogue: 0,0:06:10.92,0:06:12.50,ES-Main,,0,0,0,,-¿Por qué paró?
 Dialogue: 0,0:06:12.58,0:06:13.91,Default,,0,0,0,,奥雷里亚诺！
-Dialogue: 0,0:06:12.58,0:06:13.91,ES-Main,,0,0,0,,¡Aureliano!
+Dialogue: 0,0:06:12.63,0:06:13.92,ES-Main,,0,0,0,,¡Aureliano!
+Dialogue: 0,0:06:16.88,0:06:18.17,ES-Main,,0,0,0,,José Arcadio.
 Dialogue: 0,0:06:16.92,0:06:18.25,Default,,0,0,0,,何塞·阿尔卡蒂奥
-Dialogue: 0,0:06:16.92,0:06:18.25,ES-Main,,0,0,0,,José Arcadio.
+Dialogue: 0,0:06:19.50,0:06:22.96,ES-Main-2L,,0,0,0,,Por supuesto que fuiste tú el que trajo toda esta locura a la casa.
 Dialogue: 0,0:06:19.63,0:06:22.76,Default,,0,0,0,,瞧你给家里带来了多少混乱
-Dialogue: 0,0:06:19.63,0:06:22.76,ES-Main-2L,,0,0,0,,Por supuesto que fuiste tú el que trajo toda esta locura a la casa.
+Dialogue: 0,0:06:24.17,0:06:25.88,ES-Main-2L,,0,0,0,,Esta locura es el futuro.
 Dialogue: 0,0:06:24.25,0:06:26.00,Default,,0,0,0,,这混乱就是未来
-Dialogue: 0,0:06:24.25,0:06:26.00,ES-Main,,0,0,0,,Esta locura es el futuro.
+Dialogue: 0,0:06:26.46,0:06:29.42,ES-Main-2L,,0,0,0,,Te vas acostumbrando, porque esto es apenas el comienzo.
 Dialogue: 0,0:06:26.50,0:06:29.46,Default,,0,0,0,,你会习惯的 因为这才刚刚开始
-Dialogue: 0,0:06:26.50,0:06:29.46,ES-Main-2L,,0,0,0,,Te vas acostumbrando, porque esto es apenas el comienzo.
+Dialogue: 0,0:06:30.67,0:06:32.38,ES-Main-2L,,0,0,0,,Y yo no soy mi hermano.
 Dialogue: 0,0:06:30.75,0:06:32.38,Default,,0,0,0,,我可不是我兄弟
-Dialogue: 0,0:06:30.75,0:06:32.38,ES-Main,,0,0,0,,Y yo no soy mi hermano.
+Dialogue: 0,0:06:35.33,0:06:36.83,ES-Main,,0,0,0,,Bienvenidas.
 Dialogue: 0,0:06:35.42,0:06:36.55,Default,,0,0,0,,欢迎
-Dialogue: 0,0:06:35.42,0:06:36.55,ES-Main,,0,0,0,,Bienvenidas.
 Dialogue: 0,0:06:38.21,0:06:42.63,Default,,0,0,0,,-把其他盘子也拿来 来了很多人\N-何塞·阿尔卡蒂奥 放下 过来
-Dialogue: 0,0:06:38.21,0:06:42.63,ES-Main-2L,,0,0,0,,Trae la otra vajilla, que hay mucha gente. José Arcadio, deja eso. Ven.
+Dialogue: 0,0:06:38.21,0:06:40.29,ES-Main,,0,0,0,,Trae la otra vajilla, que hay mucha gente.
+Dialogue: 0,0:06:40.38,0:06:42.59,ES-Main,,0,0,0,,José Arcadio, deja eso. Ven.
+Dialogue: 0,0:06:43.83,0:06:45.04,ES-Main,,0,0,0,,Eso, trae la roja, mija.
 Dialogue: 0,0:06:43.88,0:06:47.26,Default,,0,0,0,,-那个 把红色的拿给我\N-告诉你妈妈 她的统治结束了
-Dialogue: 0,0:06:43.88,0:06:47.26,ES-Main-2L,,0,0,0,,Eso, trae la roja, mija. Dile a tu mamá que se le acabó el reinado.
+Dialogue: 0,0:06:45.13,0:06:47.26,ES-Main,,0,0,0,,Dile a tu mamá que se le acabó el reinado.
 Dialogue: 0,0:06:47.33,0:06:49.66,Default,,0,0,0,,布恩迪亚家又成了疯人院
-Dialogue: 0,0:06:47.33,0:06:49.66,ES-Main,,0,0,0,,La casa Buendía vuelve a ser una casa de locos.
+Dialogue: 0,0:06:47.33,0:06:49.87,ES-Main,,0,0,0,,La casa Buendía vuelve a ser una casa de locos.
+Dialogue: 0,0:06:49.96,0:06:53.29,ES-Main-2L,,0,0,0,,Mamá, mi tía manda a decir que se te acabó el reinado.
 Dialogue: 0,0:06:50.17,0:06:53.21,Default,,0,0,0,,妈妈 姑奶奶说你的统治结束了
-Dialogue: 0,0:06:50.17,0:06:53.21,ES-Main-2L,,0,0,0,,Mamá, mi tía manda a decir que se te acabó el reinado.
 Dialogue: 0,0:06:53.29,0:06:54.62,Default,,0,0,0,,何塞·阿尔卡蒂奥
-Dialogue: 0,0:06:53.29,0:06:54.62,ES-Main,,0,0,0,,José Arcadio.
+Dialogue: 0,0:06:53.38,0:06:54.34,ES-Main,,0,0,0,,José Arcadio.
+Dialogue: 0,0:06:55.25,0:06:57.21,ES-Main,,0,0,0,,-Ve donde tu mamá. -¡Aureliano!
 Dialogue: 0,0:06:55.42,0:06:57.21,Default,,0,0,0,,-去找你妈妈\N-奥雷里亚诺！
-Dialogue: 0,0:06:55.42,0:06:57.21,ES-Main,,0,0,0,,-Ve donde tu mamá. -¡Aureliano!
+Dialogue: 0,0:07:03.21,0:07:04.92,ES-Main,,0,0,0,,Me asustó.
 Dialogue: 0,0:07:03.67,0:07:04.92,Default,,0,0,0,,吓我一跳
-Dialogue: 0,0:07:03.67,0:07:04.92,ES-Main,,0,0,0,,Me asustó.
 Dialogue: 0,0:07:17.42,0:07:19.88,Default,,0,0,0,,求你接受我做你的丈夫吧
-Dialogue: 0,0:07:17.42,0:07:19.88,ES-Main,,0,0,0,,Te ruego me aceptes como tu esposo.
+Dialogue: 0,0:07:17.42,0:07:19.63,ES-Main,,0,0,0,,Te ruego me aceptes como tu esposo.
+Dialogue: 0,0:07:22.17,0:07:23.50,ES-Main,,0,0,0,,Pero qué insensatez.
 Dialogue: 0,0:07:22.21,0:07:23.50,Default,,0,0,0,,这也太荒谬了
-Dialogue: 0,0:07:22.21,0:07:23.50,ES-Main,,0,0,0,,Pero qué insensatez.
 Dialogue: 0,0:07:23.58,0:07:29.37,Default,,0,0,0,,我保证穷极一生\N让你成为世界上最幸福的女人
-Dialogue: 0,0:07:23.58,0:07:29.37,ES-Main-2L,,0,0,0,,Prometo que dedicaré mi vida entera a hacerte la mujer más feliz del mundo.
+Dialogue: 0,0:07:23.58,0:07:26.75,ES-Main,,0,0,0,,Prometo que dedicaré mi vida entera
+Dialogue: 0,0:07:26.83,0:07:29.37,ES-Main,,0,0,0,,a hacerte la mujer más feliz del mundo.
 Dialogue: 0,0:07:30.75,0:07:33.75,Default,,0,0,0,,你都不了解我 怎么让我幸福？
-Dialogue: 0,0:07:30.75,0:07:33.75,ES-Main-2L,,0,0,0,,Pero ¿cómo me vas a hacer feliz si ni siquiera me conoces?
+Dialogue: 0,0:07:30.79,0:07:33.87,ES-Main-2L,,0,0,0,,Pero ¿cómo me vas a hacer feliz si ni siquiera me conoces?
 Dialogue: 0,0:07:35.88,0:07:37.17,Default,,0,0,0,,蕾梅黛丝
-Dialogue: 0,0:07:35.88,0:07:37.17,ES-Main,,0,0,0,,Remedios.
+Dialogue: 0,0:07:35.92,0:07:37.05,ES-Main-2L,,0,0,0,,Remedios.
+Dialogue: 0,0:07:38.25,0:07:39.42,ES-Main,,0,0,0,,Ve a la cocina.
 Dialogue: 0,0:07:38.38,0:07:39.63,Default,,0,0,0,,去厨房
-Dialogue: 0,0:07:38.38,0:07:39.63,ES-Main,,0,0,0,,Ve a la cocina.
 Dialogue: 0,0:07:43.38,0:07:45.17,Default,,0,0,0,,您不用餐吗？
-Dialogue: 0,0:07:43.38,0:07:45.17,ES-Main,,0,0,0,,¿Y usted no va a comer?
+Dialogue: 0,0:07:43.46,0:07:45.00,ES-Main,,0,0,0,,¿Y usted no va a comer?
+Dialogue: 0,0:07:45.67,0:07:47.00,ES-Main,,0,0,0,,Se le va a enfriar.
 Dialogue: 0,0:07:45.75,0:07:47.13,Default,,0,0,0,,饭菜要凉了
-Dialogue: 0,0:07:45.75,0:07:47.13,ES-Main,,0,0,0,,Se le va a enfriar.
+Dialogue: 0,0:07:48.92,0:07:50.55,ES-Main,,0,0,0,,Bueno, señores.
 Dialogue: 0,0:07:49.00,0:07:53.25,Default,,0,0,0,,好了 先生们 别让食物久等了
-Dialogue: 0,0:07:49.00,0:07:53.25,ES-Main,,0,0,0,,Bueno, señores. A comer y a misa una vez se avisa.
+Dialogue: 0,0:07:50.63,0:07:53.21,ES-Main,,0,0,0,,A comer y a misa una vez se avisa.
+Dialogue: 0,0:07:53.29,0:07:54.46,ES-Main,,0,0,0,,Gracias.
 Dialogue: 0,0:07:53.33,0:07:55.96,Default,,0,0,0,,-谢谢\N-请慢用！
-Dialogue: 0,0:07:53.33,0:07:55.96,ES-Main,,0,0,0,,Gracias. Que la disfruten. Que lo
+Dialogue: 0,0:07:54.54,0:07:58.00,ES-Main,,0,0,0,,Que la disfruten. Que lo que está es sabrosa.
 Dialogue: 0,0:07:56.04,0:07:58.08,Default,,0,0,0,,享用美食吧
-Dialogue: 0,0:07:56.04,0:07:58.08,ES-Main,,0,0,0,,que está es sabrosa.
 Dialogue: 0,0:08:02.92,0:08:04.13,Default,,0,0,0,,非常美味 先生
-Dialogue: 0,0:08:02.92,0:08:04.13,ES-Main,,0,0,0,,-Más rico, señor.
+Dialogue: 0,0:08:02.92,0:08:06.63,ES-Main,,0,0,0,,-Más rico, señor. -Guau, qué rico.
 Dialogue: 0,0:08:04.63,0:08:06.42,Default,,0,0,0,,哇 太好吃了
-Dialogue: 0,0:08:04.63,0:08:06.42,ES-Main,,0,0,0,,-Guau, qué rico.
+Dialogue: 0,0:08:06.71,0:08:09.34,ES-Main,,0,0,0,,-¿Salsa? -Gracias.
 Dialogue: 0,0:08:08.42,0:08:09.34,Default,,0,0,0,,谢谢
-Dialogue: 0,0:08:08.42,0:08:09.34,ES-Main,,0,0,0,,-¿Salsa? -Gracias.
+Dialogue: 0,0:08:09.42,0:08:12.88,ES-Main,,0,0,0,,-¿Es pollo? -Juli, ¿me pasas el pollo?
 Dialogue: 0,0:08:10.58,0:08:12.83,Default,,0,0,0,,朱莉 麻烦把鸡肉递给我好吗？
-Dialogue: 0,0:08:10.58,0:08:12.83,ES-Main,,0,0,0,,-¿Es pollo? -Juli, ¿me pasas el pollo?
+Dialogue: 0,0:08:24.13,0:08:25.21,ES-Main,,0,0,0,,¿Qué es esto?
 Dialogue: 0,0:08:24.29,0:08:25.42,Default,,0,0,0,,这是什么？
-Dialogue: 0,0:08:24.29,0:08:25.42,ES-Main,,0,0,0,,¿Qué es esto?
+Dialogue: 0,0:08:25.96,0:08:28.00,ES-Main,,0,0,0,,Guineo. Para comer.
 Dialogue: 0,0:08:26.04,0:08:27.04,Default,,0,0,0,,香蕉
-Dialogue: 0,0:08:26.04,0:08:27.04,ES-Main,,0,0,0,,Guineo.
 Dialogue: 0,0:08:27.50,0:08:29.13,Default,,0,0,0,,-吃的\N-能吃？
-Dialogue: 0,0:08:27.50,0:08:29.13,ES-Main,,0,0,0,,Para comer. -¿Para comer? -Ajá.
+Dialogue: 0,0:08:28.08,0:08:29.71,ES-Main,,0,0,0,,-¿Para comer? -Ajá.
+Dialogue: 0,0:08:34.67,0:08:35.96,ES-Main,,0,0,0,,Amigo, ¿quiere guineo?
 Dialogue: 0,0:08:34.75,0:08:36.21,Default,,0,0,0,,吃香蕉吗 朋友？
-Dialogue: 0,0:08:34.75,0:08:36.21,ES-Main,,0,0,0,,Amigo, ¿quiere guineo?
 Dialogue: 0,0:08:36.79,0:08:38.37,Default,,0,0,0,,很甜的
-Dialogue: 0,0:08:36.79,0:08:38.37,ES-Main,,0,0,0,,Está dulcecito.
+Dialogue: 0,0:08:36.92,0:08:38.34,ES-Main,,0,0,0,,Está dulcecito.
 Dialogue: 0,0:09:19.21,0:09:24.63,CN-Special,,0,0,0,,《百年孤独》
 Dialogue: 0,0:09:25.29,0:09:28.96,Default,,0,0,0,,这种杂草到处都是 长得也快
-Dialogue: 0,0:09:25.29,0:09:28.96,ES-Main-2L,,0,0,0,,Estas malezas se dan en todos lados y crecen rapidísimo.
+Dialogue: 0,0:09:25.33,0:09:29.04,ES-Main-2L,,0,0,0,,Estas malezas se dan en todos lados y crecen rapidísimo.
 Dialogue: 0,0:09:29.50,0:09:31.00,Default,,0,0,0,,太不可思议了
-Dialogue: 0,0:09:29.50,0:09:31.00,ES-Main,,0,0,0,,Increíble.
+Dialogue: 0,0:09:29.58,0:09:30.71,ES-Main-2L,,0,0,0,,Increíble.
+Dialogue: 0,0:09:31.42,0:09:34.71,ES-Main,,0,0,0,,¿Dónde encuentro más?
 Dialogue: 0,0:09:32.71,0:09:34.92,Default,,0,0,0,,哪里还能找到更多？
-Dialogue: 0,0:09:32.71,0:09:34.92,ES-Main,,0,0,0,,¿Dónde encuentro más? Si
+Dialogue: 0,0:09:34.79,0:09:37.62,ES-Main-2L,,0,0,0,,Si quiere, lo llevo a conocer los alrededores de Macondo.
 Dialogue: 0,0:09:35.00,0:09:37.63,Default,,0,0,0,,有兴趣的话\N我可以带您在马孔多四处转转
-Dialogue: 0,0:09:35.00,0:09:37.63,ES-Main-2L,,0,0,0,,quiere, lo llevo a conocer los alrededores de Macondo.
 Dialogue: 0,0:09:37.71,0:09:38.88,Default,,0,0,0,,香蕉遍地都是
-Dialogue: 0,0:09:37.71,0:09:38.88,ES-Main,,0,0,0,,Está lleno de guineo.
+Dialogue: 0,0:09:37.71,0:09:39.17,ES-Main,,0,0,0,,Está lleno de guineo.
+Dialogue: 0,0:09:39.25,0:09:42.17,ES-Main,,0,0,0,,-Muchas gracias, joven. -Con mucho gusto.
 Dialogue: 0,0:09:39.54,0:09:41.08,Default,,0,0,0,,那就多谢了 小伙子
-Dialogue: 0,0:09:39.54,0:09:41.08,ES-Main,,0,0,0,,-Muchas gracias, joven. -Con mucho
 Dialogue: 0,0:09:41.17,0:09:42.42,Default,,0,0,0,,不客气
-Dialogue: 0,0:09:41.17,0:09:42.42,ES-Main,,0,0,0,,gusto. ¿Quién
+Dialogue: 0,0:09:42.25,0:09:44.25,ES-Main,,0,0,0,,¿Quién trajo un gringo a la casa?
 Dialogue: 0,0:09:42.50,0:09:44.25,Default,,0,0,0,,这美国佬是谁带来的？
-Dialogue: 0,0:09:42.50,0:09:44.25,ES-Main,,0,0,0,,trajo un gringo a la casa?
+Dialogue: 0,0:09:46.75,0:09:49.17,ES-Main,,0,0,0,,-¡Fuera de aquí! -Cálmese, señor.
 Dialogue: 0,0:09:46.79,0:09:49.46,Default,,0,0,0,,-滚出去！\N-冷静点 先生
-Dialogue: 0,0:09:46.79,0:09:49.46,ES-Main,,0,0,0,,-¡Fuera de aquí! -Cálmese, señor.
 Dialogue: 0,0:09:50.92,0:09:56.71,Default,,0,0,0,,是这样的 这些女士和先生\N是曾祖母的客人
-Dialogue: 0,0:09:50.92,0:09:56.71,ES-Main-2L,,0,0,0,,La cuestión es que los señores y las señoras son invitados de la bisabuela.
+Dialogue: 0,0:09:50.92,0:09:52.55,ES-Main,,0,0,0,,La cuestión
+Dialogue: 0,0:09:52.63,0:09:56.51,ES-Main-2L,,0,0,0,,es que los señores y las señoras son invitados de la bisabuela.
+Dialogue: 0,0:09:57.33,0:09:58.50,ES-Main,,0,0,0,,Vaya, hable con ella.
 Dialogue: 0,0:09:57.42,0:09:58.46,Default,,0,0,0,,去找她说吧
-Dialogue: 0,0:09:57.42,0:09:58.46,ES-Main,,0,0,0,,Vaya, hable con ella.
 Dialogue: 0,0:09:58.54,0:10:01.21,Default,,0,0,0,,这是我最不想看到的一幕
-Dialogue: 0,0:09:58.54,0:10:01.21,ES-Main,,0,0,0,,Esto es lo último que faltaba, carajo.
+Dialogue: 0,0:09:58.58,0:10:01.12,ES-Main,,0,0,0,,Esto es lo último que faltaba, carajo.
+Dialogue: 0,0:10:03.00,0:10:07.46,ES-Main-2L,,0,0,0,,Que a mi casa la invadieran los hijos de puta que se robaron Panamá.
 Dialogue: 0,0:10:03.04,0:10:07.79,Default,,0,0,0,,我的家被掠夺了巴拿马的\N同一群混蛋入侵
-Dialogue: 0,0:10:03.04,0:10:07.79,ES-Main,,0,0,0,,Que a mi casa la invadieran los hijos de puta
+Dialogue: 0,0:10:07.54,0:10:09.50,ES-Main-2L,,0,0,0,,¿Acaso dijo "Panamá"?
 Dialogue: 0,0:10:07.88,0:10:09.51,Default,,0,0,0,,他刚才是说“巴拿马”吗？
-Dialogue: 0,0:10:07.88,0:10:09.51,ES-Main,,0,0,0,,que se robaron Panamá. ¿Acaso dijo "Panamá"?
 Dialogue: 0,0:10:09.58,0:10:11.33,Default,,0,0,0,,畜牲
-Dialogue: 0,0:10:09.58,0:10:11.33,ES-Main,,0,0,0,,Malnacidos.
+Dialogue: 0,0:10:09.58,0:10:11.12,ES-Main,,0,0,0,,Malnacidos.
 Dialogue: 0,0:10:11.83,0:10:15.12,Default,,0,0,0,,-乌尔苏拉！\N-请原谅这位老人
-Dialogue: 0,0:10:11.83,0:10:15.12,ES-Main,,0,0,0,,-¡Úrsula! -Por favor, disculpen al anciano. Perdió
+Dialogue: 0,0:10:11.83,0:10:15.00,ES-Main,,0,0,0,,-¡Úrsula! -Por favor, disculpen al anciano.
+Dialogue: 0,0:10:15.08,0:10:16.33,ES-Main,,0,0,0,,Perdió el juicio.
 Dialogue: 0,0:10:15.21,0:10:16.50,Default,,0,0,0,,他失心疯了
-Dialogue: 0,0:10:15.21,0:10:16.50,ES-Main,,0,0,0,,el juicio.
+Dialogue: 0,0:10:17.42,0:10:19.67,ES-Main,,0,0,0,,Intentó matarse y no fue capaz.
 Dialogue: 0,0:10:17.54,0:10:19.87,Default,,0,0,0,,先前还连寻死都失败了
-Dialogue: 0,0:10:17.54,0:10:19.87,ES-Main,,0,0,0,,Intentó matarse y no fue capaz.
+Dialogue: 0,0:10:23.92,0:10:26.42,ES-Main,,0,0,0,,No, no es un problema.
 Dialogue: 0,0:10:24.00,0:10:26.38,Default,,0,0,0,,不 没关系
-Dialogue: 0,0:10:24.00,0:10:26.38,ES-Main,,0,0,0,,No, no es un problema.
 Dialogue: 0,0:10:26.46,0:10:28.34,Default,,0,0,0,,我喜欢马孔多
-Dialogue: 0,0:10:26.46,0:10:28.34,ES-Main,,0,0,0,,Me gusta Macondo. Eh…
+Dialogue: 0,0:10:26.50,0:10:27.96,ES-Main,,0,0,0,,Me gusta Macondo.
+Dialogue: 0,0:10:28.04,0:10:31.17,ES-Main,,0,0,0,,Eh… Todos son eh… very passionate.
 Dialogue: 0,0:10:28.42,0:10:31.17,Default,,0,0,0,,这里的人都很热情
-Dialogue: 0,0:10:28.42,0:10:31.17,ES-Main,,0,0,0,,Todos son eh… very passionate.
 Dialogue: 0,0:10:32.71,0:10:34.67,Default,,0,0,0,,-真漂亮啊\N-我没骗您吧？
-Dialogue: 0,0:10:32.71,0:10:34.67,ES-Main,,0,0,0,,Es muy bonita. Le dije, esto
+Dialogue: 0,0:10:32.71,0:10:33.96,ES-Main,,0,0,0,,Es muy bonita.
+Dialogue: 0,0:10:34.04,0:10:36.12,ES-Main,,0,0,0,,Le dije, esto crece en todos lados.
 Dialogue: 0,0:10:34.75,0:10:36.13,Default,,0,0,0,,这东西到处都是
-Dialogue: 0,0:10:34.75,0:10:36.13,ES-Main,,0,0,0,,crece en todos lados.
 Dialogue: 0,0:10:36.75,0:10:38.29,Default,,0,0,0,,天哪
-Dialogue: 0,0:10:36.75,0:10:38.29,ES-Main,,0,0,0,,Dios mío.
+Dialogue: 0,0:10:36.75,0:10:38.08,ES-Main,,0,0,0,,Dios mío.
+Dialogue: 0,0:10:39.00,0:10:40.38,ES-Main,,0,0,0,,¡Dios mío!
 Dialogue: 0,0:10:39.04,0:10:40.37,Default,,0,0,0,,我的天哪
-Dialogue: 0,0:10:39.04,0:10:40.37,ES-Main,,0,0,0,,¡Dios mío!
 Dialogue: 0,0:10:40.88,0:10:41.92,Default,,0,0,0,,好多
-Dialogue: 0,0:10:40.88,0:10:41.92,ES-Main,,0,0,0,,-Muchos. -Ajá.
+Dialogue: 0,0:10:40.88,0:10:42.30,ES-Main,,0,0,0,,-Muchos. -Ajá.
+Dialogue: 0,0:10:42.38,0:10:43.46,ES-Main,,0,0,0,,Muchos.
 Dialogue: 0,0:10:42.42,0:10:43.71,Default,,0,0,0,,太多了
-Dialogue: 0,0:10:42.42,0:10:43.71,ES-Main,,0,0,0,,Muchos.
+Dialogue: 0,0:10:46.25,0:10:48.00,ES-Main,,0,0,0,,¿Quién es el dueño?
 Dialogue: 0,0:10:46.38,0:10:48.13,Default,,0,0,0,,它们归谁所有？
-Dialogue: 0,0:10:46.38,0:10:48.13,ES-Main,,0,0,0,,¿Quién es el dueño? Ah,
+Dialogue: 0,0:10:48.08,0:10:50.00,ES-Main,,0,0,0,,Ah, esto es de toditos.
 Dialogue: 0,0:10:48.21,0:10:49.75,Default,,0,0,0,,是大家共有的
-Dialogue: 0,0:10:48.21,0:10:49.75,ES-Main,,0,0,0,,esto es de toditos.
+Dialogue: 0,0:10:50.08,0:10:52.00,ES-Main,,0,0,0,,-¿Todos? -Ajá. Del pueblo.
 Dialogue: 0,0:10:50.29,0:10:52.00,Default,,0,0,0,,-大家？\N-镇上的所有人
-Dialogue: 0,0:10:50.29,0:10:52.00,ES-Main,,0,0,0,,-¿Todos? -Ajá. Del pueblo.
+Dialogue: 0,0:10:58.58,0:11:00.33,ES-Main,,0,0,0,,La llegada del tren
 Dialogue: 0,0:10:58.67,0:11:02.96,Default,,0,0,0,,火车的到来\N点燃了势不可挡的奇妙狂潮
-Dialogue: 0,0:10:58.67,0:11:02.96,ES-Main-2L,,0,0,0,,La llegada del tren despertó una fiebre de asombro que nadie supo contener.
+Dialogue: 0,0:11:00.42,0:11:02.96,ES-Main-2L,,0,0,0,,despertó una fiebre de asombro que nadie supo contener.
+Dialogue: 0,0:11:14.08,0:11:15.21,ES-Main,,0,0,0,,¡Renata!
 Dialogue: 0,0:11:14.17,0:11:15.13,Default,,0,0,0,,雷纳塔！
-Dialogue: 0,0:11:14.17,0:11:15.13,ES-Main,,0,0,0,,¡Renata!
+Dialogue: 0,0:11:15.79,0:11:18.75,ES-Main-2L,,0,0,0,,A tu cuarto. Tienes prohibido salir cuando viene esta gente.
 Dialogue: 0,0:11:15.83,0:11:18.54,Default,,0,0,0,,回房间去 那些人在时不许出来
-Dialogue: 0,0:11:15.83,0:11:18.54,ES-Main-2L,,0,0,0,,A tu cuarto. Tienes prohibido salir cuando viene esta gente.
+Dialogue: 0,0:11:21.67,0:11:23.34,ES-Main-2L,,0,0,0,,A ese le decimos "popoche".
 Dialogue: 0,0:11:21.71,0:11:23.50,Default,,0,0,0,,我们管它叫“波波切”
-Dialogue: 0,0:11:21.71,0:11:23.50,ES-Main,,0,0,0,,A ese le decimos "popoche". Cuando sobra,
+Dialogue: 0,0:11:23.42,0:11:26.63,ES-Main-2L,,0,0,0,,Cuando sobra, se lo damos a los animales. Este es el sabroso.
 Dialogue: 0,0:11:23.58,0:11:26.58,Default,,0,0,0,,吃不完的就拿去喂牲口 很好吃
-Dialogue: 0,0:11:23.58,0:11:26.58,ES-Main,,0,0,0,,se lo damos a los animales. Este es el sabroso.
 Dialogue: 0,0:11:26.67,0:11:27.88,Default,,0,0,0,,甜甜的
-Dialogue: 0,0:11:26.67,0:11:27.88,ES-Main,,0,0,0,,-Pura azúcar. -Oh.
+Dialogue: 0,0:11:26.71,0:11:28.29,ES-Main,,0,0,0,,-Pura azúcar. -Oh.
 Dialogue: 0,0:11:28.38,0:11:32.01,Default,,0,0,0,,小镇居民\N为火车带来的诸般神奇所折服
-Dialogue: 0,0:11:28.38,0:11:32.01,ES-Main-2L,,0,0,0,,El pueblo se rindió ante la abundancia que llegaba en los vagones…
+Dialogue: 0,0:11:28.38,0:11:30.67,ES-Main,,0,0,0,,El pueblo se rindió ante la abundancia
+Dialogue: 0,0:11:30.75,0:11:32.00,ES-Main,,0,0,0,,que llegaba en los vagones…
 Dialogue: 0,0:11:32.08,0:11:34.25,Default,,0,0,0,,-奥雷里亚诺 你好吗？\N-欢迎！
 Dialogue: 0,0:11:32.08,0:11:34.25,ES-Main,,0,0,0,,-Don Aureliano. -¡Macondo!
 Dialogue: 0,0:11:34.33,0:11:36.08,Default,,0,0,0,,我们都跟不上趟儿了
-Dialogue: 0,0:11:34.33,0:11:36.08,ES-Main,,0,0,0,,Aquí ya no damos abasto.
+Dialogue: 0,0:11:34.33,0:11:36.12,ES-Main,,0,0,0,,Aquí ya no damos abasto.
 Dialogue: 0,0:11:36.17,0:11:38.30,Default,,0,0,0,,看我让他们给孩子们带了什么
-Dialogue: 0,0:11:36.17,0:11:38.30,ES-Main,,0,0,0,,Mire lo que le mandé a traer a los niños.
+Dialogue: 0,0:11:36.21,0:11:38.29,ES-Main,,0,0,0,,Mire lo que le mandé a traer a los niños.
 Dialogue: 0,0:11:38.38,0:11:41.92,Default,,0,0,0,,外乡人则沉醉在这片欣欣向荣的土地
-Dialogue: 0,0:11:38.38,0:11:41.92,ES-Main-2L,,0,0,0,,…y los forasteros, ante una tierra donde todo parecía florecer.
+Dialogue: 0,0:11:38.38,0:11:41.88,ES-Main-2L,,0,0,0,,…y los forasteros, ante una tierra donde todo parecía florecer.
 Dialogue: 0,0:11:49.83,0:11:51.41,Default,,0,0,0,,把这藏起来
-Dialogue: 0,0:11:49.83,0:11:51.41,ES-Main,,0,0,0,,Esconde esto.
+Dialogue: 0,0:11:49.83,0:11:51.29,ES-Main-2L,,0,0,0,,Esconde esto.
+Dialogue: 0,0:11:53.25,0:11:55.96,ES-Main,,0,0,0,,Fernanda tiene a los niños allá encerrados.
 Dialogue: 0,0:11:53.33,0:11:55.96,Default,,0,0,0,,费尔南达把孩子们锁在房里了
-Dialogue: 0,0:11:53.33,0:11:55.96,ES-Main,,0,0,0,,Fernanda tiene a los niños allá encerrados.
+Dialogue: 0,0:12:00.33,0:12:01.54,ES-Main,,0,0,0,,Es bonita.
 Dialogue: 0,0:12:00.38,0:12:01.34,Default,,0,0,0,,它很美
-Dialogue: 0,0:12:00.38,0:12:01.34,ES-Main,,0,0,0,,Es bonita.
 Dialogue: 0,0:12:02.00,0:12:03.79,Default,,0,0,0,,-是啊\N-但泛滥成灾了
-Dialogue: 0,0:12:02.00,0:12:03.79,ES-Main,,0,0,0,,-Sí. -Pero es una plaga.
+Dialogue: 0,0:12:02.04,0:12:03.83,ES-Main,,0,0,0,,-Sí. -Pero es una plaga.
 Dialogue: 0,0:12:09.00,0:12:09.92,Default,,0,0,0,,好吧
 Dialogue: 0,0:12:09.00,0:12:09.92,ES-Main,,0,0,0,,Okey.
 Dialogue: 0,0:12:22.00,0:12:23.46,Default,,0,0,0,,太美了
 Dialogue: 0,0:12:22.00,0:12:23.46,ES-Main,,0,0,0,,Es hermoso.
 Dialogue: 0,0:12:23.54,0:12:25.87,Default,,0,0,0,,这是天堂 人间天堂
-Dialogue: 0,0:12:23.54,0:12:25.87,ES-Main,,0,0,0,,Es un paraíso. Un paraíso.
+Dialogue: 0,0:12:23.54,0:12:24.67,ES-Main,,0,0,0,,Es un paraíso.
+Dialogue: 0,0:12:24.75,0:12:25.88,ES-Main,,0,0,0,,Un paraíso.
+Dialogue: 0,0:12:36.50,0:12:37.58,ES-Main,,0,0,0,,¡Coronel!
 Dialogue: 0,0:12:36.54,0:12:37.62,Default,,0,0,0,,上校！
-Dialogue: 0,0:12:36.54,0:12:37.62,ES-Main,,0,0,0,,¡Coronel!
+Dialogue: 0,0:12:42.17,0:12:44.30,ES-Main,,0,0,0,,¿Sabía que además de la comida,
 Dialogue: 0,0:12:42.21,0:12:44.00,Default,,0,0,0,,知道吗？
-Dialogue: 0,0:12:42.21,0:12:44.00,ES-Main,,0,0,0,,¿Sabía que además de la comida,
+Dialogue: 0,0:12:44.38,0:12:47.80,ES-Main-2L,,0,0,0,,los forasteros vienen a esta casa a conocer al loquito de la familia?
 Dialogue: 0,0:12:44.58,0:12:47.87,Default,,0,0,0,,外乡人来这里不光是为了吃饭\N也是为了看这个家里的疯子
-Dialogue: 0,0:12:44.58,0:12:47.87,ES-Main-2L,,0,0,0,,los forasteros vienen a esta casa a conocer al loquito de la familia?
+Dialogue: 0,0:12:47.88,0:12:50.09,ES-Main-2L,,0,0,0,,Usted ya es toda una institución turística.
 Dialogue: 0,0:12:47.96,0:12:50.29,Default,,0,0,0,,你可真成旅游热点了
-Dialogue: 0,0:12:47.96,0:12:50.29,ES-Main,,0,0,0,,Usted ya es toda una institución turística.
+Dialogue: 0,0:12:51.83,0:12:56.66,ES-Main-2L,,0,0,0,,A ti todo lo que está pasando en Macondo te parece muy bueno, José Arcadio,
 Dialogue: 0,0:12:52.00,0:12:56.79,Default,,0,0,0,,你似乎认为在马孔多发生的这一切\N都是好事 何塞·阿尔卡蒂奥
-Dialogue: 0,0:12:52.00,0:12:56.79,ES-Main-2L,,0,0,0,,A ti todo lo que está pasando en Macondo te parece muy bueno, José Arcadio,
+Dialogue: 0,0:12:58.54,0:13:00.33,ES-Main-2L,,0,0,0,,porque eres un ignorante.
 Dialogue: 0,0:12:58.63,0:13:00.55,Default,,0,0,0,,你太无知了
-Dialogue: 0,0:12:58.63,0:13:00.55,ES-Main,,0,0,0,,porque eres un ignorante.
+Dialogue: 0,0:13:01.25,0:13:02.71,ES-Main,,0,0,0,,No sabes que los gringos son…
 Dialogue: 0,0:13:01.33,0:13:04.41,Default,,0,0,0,,-不知道那些美国佬…\N-最好换个称谓
-Dialogue: 0,0:13:01.33,0:13:04.41,ES-Main-2L,,0,0,0,,No sabes que los gringos son… Hay que cambiar el discurso
+Dialogue: 0,0:13:02.79,0:13:06.42,ES-Main-2L,,0,0,0,,Hay que cambiar el discurso porque los gringos llegaron para quedarse.
 Dialogue: 0,0:13:04.50,0:13:06.04,Default,,0,0,0,,那些美国佬要来定居了
-Dialogue: 0,0:13:04.50,0:13:06.04,ES-Main,,0,0,0,,porque los gringos llegaron para quedarse.
+Dialogue: 0,0:13:06.50,0:13:10.04,ES-Main-2L,,0,0,0,,Mr. Herbert me dijo que venían unos comerciantes de Ohio
 Dialogue: 0,0:13:06.54,0:13:10.21,Default,,0,0,0,,赫伯特先生告诉我\N有俄亥俄州的商人要来
-Dialogue: 0,0:13:06.54,0:13:10.21,ES-Main-2L,,0,0,0,,Mr. Herbert me dijo que venían unos comerciantes de Ohio y que querían comprar
+Dialogue: 0,0:13:10.13,0:13:13.59,ES-Main-2L,,0,0,0,,y que querían comprar todos los terrenos baldíos alrededor de Macondo.
 Dialogue: 0,0:13:10.29,0:13:13.58,Default,,0,0,0,,买下马孔多的所有空地
-Dialogue: 0,0:13:10.29,0:13:13.58,ES-Main,,0,0,0,,todos los terrenos baldíos alrededor de Macondo.
+Dialogue: 0,0:13:17.04,0:13:20.12,ES-Main-2L,,0,0,0,,Pues ya van a ver si esas tierras no tienen dueño.
 Dialogue: 0,0:13:17.08,0:13:20.04,Default,,0,0,0,,那得看它们是不是无主之地
-Dialogue: 0,0:13:17.08,0:13:20.04,ES-Main,,0,0,0,,Pues ya van a ver si esas tierras no tienen dueño.
 Dialogue: 0,0:13:20.79,0:13:21.67,Default,,0,0,0,,蠢货
 Dialogue: 0,0:13:20.79,0:13:21.67,ES-Main,,0,0,0,,Badulaque.
 Dialogue: 0,0:13:24.92,0:13:26.50,Default,,0,0,0,,混蛋
-Dialogue: 0,0:13:24.92,0:13:26.50,ES-Main,,0,0,0,,Viejo marica.
+Dialogue: 0,0:13:24.92,0:13:26.38,ES-Main,,0,0,0,,Viejo marica.
 Dialogue: 0,0:14:41.67,0:14:43.25,Default,,0,0,0,,你来干什么？
-Dialogue: 0,0:14:41.67,0:14:43.25,ES-Main,,0,0,0,,¿Qué quieres?
+Dialogue: 0,0:14:41.67,0:14:43.17,ES-Main,,0,0,0,,¿Qué quieres?
 Dialogue: 0,0:14:44.08,0:14:45.50,Default,,0,0,0,,出去！
-Dialogue: 0,0:14:44.08,0:14:45.50,ES-Main,,0,0,0,,Vete de aquí.
+Dialogue: 0,0:14:44.21,0:14:45.50,ES-Main,,0,0,0,,Vete de aquí.
 Dialogue: 0,0:14:53.54,0:14:54.79,Default,,0,0,0,,丽贝卡
-Dialogue: 0,0:14:53.54,0:14:54.79,ES-Main,,0,0,0,,Rebeca.
+Dialogue: 0,0:14:53.67,0:14:54.80,ES-Main,,0,0,0,,Rebeca.
 Dialogue: 0,0:14:55.29,0:14:58.71,Default,,0,0,0,,上校一眼便认出了他的妹妹
-Dialogue: 0,0:14:55.29,0:14:58.71,ES-Main-2L,,0,0,0,,El coronel reconoció de inmediato a su hermana Rebeca,
+Dialogue: 0,0:14:55.38,0:14:58.92,ES-Main-2L,,0,0,0,,El coronel reconoció de inmediato a su hermana Rebeca,
+Dialogue: 0,0:15:00.38,0:15:03.76,ES-Main-2L,,0,0,0,,la del corazón impaciente y el vientre desaforado.
 Dialogue: 0,0:15:00.58,0:15:03.71,Default,,0,0,0,,那个拥有冲动心性\N和炽热情欲的丽贝卡
-Dialogue: 0,0:15:00.58,0:15:03.71,ES-Main,,0,0,0,,la del corazón impaciente y el vientre desaforado.
+Dialogue: 0,0:15:04.71,0:15:06.84,ES-Main-2L,,0,0,0,,La única que tuvo la valentía sin frenos
 Dialogue: 0,0:15:04.83,0:15:06.87,Default,,0,0,0,,唯有她才具备无畏的勇气
-Dialogue: 0,0:15:04.83,0:15:06.87,ES-Main,,0,0,0,,La única que tuvo la valentía sin frenos
+Dialogue: 0,0:15:06.92,0:15:09.80,ES-Main,,0,0,0,,que Úrsula había deseado para su estirpe.
 Dialogue: 0,0:15:06.96,0:15:09.50,Default,,0,0,0,,那正是乌尔苏拉\N希望自己后代拥有的品质
-Dialogue: 0,0:15:06.96,0:15:09.50,ES-Main,,0,0,0,,que Úrsula había deseado para su estirpe.
+Dialogue: 0,0:15:09.88,0:15:11.80,ES-Main,,0,0,0,,Te dábamos por muerta.
 Dialogue: 0,0:15:10.00,0:15:11.83,Default,,0,0,0,,我们以为你死了
-Dialogue: 0,0:15:10.00,0:15:11.83,ES-Main,,0,0,0,,Te dábamos por muerta.
 Dialogue: 0,0:15:12.42,0:15:14.59,Default,,0,0,0,,-要是早知道…\N-奥雷里亚诺
-Dialogue: 0,0:15:12.42,0:15:14.59,ES-Main,,0,0,0,,-De haber sabido que estabas… -Aureliano.
+Dialogue: 0,0:15:12.42,0:15:14.55,ES-Main,,0,0,0,,-De haber sabido que estabas… -Aureliano.
+Dialogue: 0,0:15:15.50,0:15:18.79,ES-Main-2L,,0,0,0,,Me importa un carajo lo que pasa del otro lado de esta casa.
 Dialogue: 0,0:15:15.67,0:15:18.80,Default,,0,0,0,,我不在乎这所房子外面发生的一切
-Dialogue: 0,0:15:15.67,0:15:18.80,ES-Main-2L,,0,0,0,,Me importa un carajo lo que pasa del otro lado de esta casa.
+Dialogue: 0,0:15:20.00,0:15:22.88,ES-Main-2L,,0,0,0,,Mucho menos me importa lo que le pasa a los Buendía.
 Dialogue: 0,0:15:20.13,0:15:22.80,Default,,0,0,0,,更不关心布恩迪亚家族的事
-Dialogue: 0,0:15:20.13,0:15:22.80,ES-Main,,0,0,0,,Mucho menos me importa lo que le pasa a los Buendía.
+Dialogue: 0,0:15:24.58,0:15:27.62,ES-Main-2L,,0,0,0,,Para mí todos ustedes se murieron con José Arcadio.
 Dialogue: 0,0:15:24.63,0:15:27.63,Default,,0,0,0,,在我心里 你们都随着\N何塞·阿尔卡蒂奥一同死去了
-Dialogue: 0,0:15:24.63,0:15:27.63,ES-Main,,0,0,0,,Para mí todos ustedes se murieron con José Arcadio.
 Dialogue: 0,0:15:48.17,0:15:50.55,Default,,0,0,0,,你来做什么？一次把话说清楚
-Dialogue: 0,0:15:48.17,0:15:50.55,ES-Main,,0,0,0,,Dime de una buena vez a qué viniste.
+Dialogue: 0,0:15:48.17,0:15:50.50,ES-Main,,0,0,0,,Dime de una buena vez a qué viniste.
+Dialogue: 0,0:15:51.42,0:15:53.21,ES-Main,,0,0,0,,O si no, te saco a tiros.
 Dialogue: 0,0:15:51.46,0:15:53.25,Default,,0,0,0,,否则我开枪了
-Dialogue: 0,0:15:51.46,0:15:53.25,ES-Main,,0,0,0,,O si no, te saco a tiros.
 Dialogue: 0,0:16:00.71,0:16:03.00,Default,,0,0,0,,马孔多周围的土地…
-Dialogue: 0,0:16:00.71,0:16:03.00,ES-Main,,0,0,0,,Los terrenos que rodean Macondo.
+Dialogue: 0,0:16:00.71,0:16:02.96,ES-Main,,0,0,0,,Los terrenos que rodean Macondo.
+Dialogue: 0,0:16:08.21,0:16:11.63,ES-Main-2L,,0,0,0,,Arcadio le dio los títulos de propiedad a mi hermano.
 Dialogue: 0,0:16:08.25,0:16:11.54,Default,,0,0,0,,阿尔卡蒂奥把地契给了我哥哥
-Dialogue: 0,0:16:08.25,0:16:11.54,ES-Main-2L,,0,0,0,,Arcadio le dio los títulos de propiedad a mi hermano.
 Dialogue: 0,0:16:14.04,0:16:16.29,Default,,0,0,0,,只要那些土地有主人
-Dialogue: 0,0:16:14.04,0:16:16.29,ES-Main,,0,0,0,,Y si esas tierras tienen dueño,
+Dialogue: 0,0:16:14.13,0:16:16.38,ES-Main,,0,0,0,,Y si esas tierras tienen dueño,
+Dialogue: 0,0:16:17.08,0:16:19.29,ES-Main,,0,0,0,,es decir, José Arcadio y tú,
 Dialogue: 0,0:16:17.17,0:16:19.46,Default,,0,0,0,,也就是何塞·阿尔卡蒂奥和你
-Dialogue: 0,0:16:17.17,0:16:19.46,ES-Main,,0,0,0,,es decir, José Arcadio y tú,
+Dialogue: 0,0:16:20.04,0:16:22.00,ES-Main,,0,0,0,,los gringos no las pueden tocar.
 Dialogue: 0,0:16:20.13,0:16:22.13,Default,,0,0,0,,美国佬就不能染指
-Dialogue: 0,0:16:20.13,0:16:22.13,ES-Main,,0,0,0,,los gringos no las pueden tocar.
 Dialogue: 0,0:16:25.21,0:16:29.21,Default,,0,0,0,,-如果你还保留着…\N-你哥哥死时 我把它们全陪葬了
-Dialogue: 0,0:16:25.21,0:16:29.21,ES-Main-2L,,0,0,0,,Así que si todavía guardas eso… Cuando se murió tu hermano, quemé todo.
+Dialogue: 0,0:16:25.21,0:16:26.88,ES-Main,,0,0,0,,Así que si todavía guardas eso…
+Dialogue: 0,0:16:26.96,0:16:29.17,ES-Main,,0,0,0,,Cuando se murió tu hermano, quemé todo.
 Dialogue: 0,0:16:30.88,0:16:32.71,Default,,0,0,0,,唯一保留的…
-Dialogue: 0,0:16:30.88,0:16:32.71,ES-Main,,0,0,0,,Lo único que me quedé…
+Dialogue: 0,0:16:30.88,0:16:32.59,ES-Main,,0,0,0,,Lo único que me quedé…
+Dialogue: 0,0:16:35.63,0:16:37.21,ES-Main,,0,0,0,,fue con esta casa.
 Dialogue: 0,0:16:35.75,0:16:37.21,Default,,0,0,0,,只有这所宅子
-Dialogue: 0,0:16:35.75,0:16:37.21,ES-Main,,0,0,0,,fue con esta casa.
+Dialogue: 0,0:16:38.71,0:16:40.63,ES-Main,,0,0,0,,Y con esta escopeta.
 Dialogue: 0,0:16:39.00,0:16:40.63,Default,,0,0,0,,和这杆猎枪
-Dialogue: 0,0:16:39.00,0:16:40.63,ES-Main,,0,0,0,,Y con esta escopeta.
 Dialogue: 0,0:16:55.63,0:16:57.76,Default,,0,0,0,,很高兴见到你 丽贝卡
-Dialogue: 0,0:16:55.63,0:16:57.76,ES-Main,,0,0,0,,Me dio gusto verte, Rebeca.
+Dialogue: 0,0:16:55.67,0:16:57.75,ES-Main,,0,0,0,,Me dio gusto verte, Rebeca.
 Dialogue: 0,0:17:16.33,0:17:20.08,Default,,0,0,0,,…使我内在重新有正直的灵
-Dialogue: 0,0:17:16.33,0:17:20.08,ES-Main,,0,0,0,,"Y renueva un espíritu recto dentro de mis entrañas,
+Dialogue: 0,0:17:16.54,0:17:20.50,ES-Main-2L,,0,0,0,,"Y renueva un espíritu recto dentro de mis entrañas,
 Dialogue: 0,0:17:20.58,0:17:22.87,Default,,0,0,0,,不要丢弃我 使我离开你的面
-Dialogue: 0,0:17:20.58,0:17:22.87,ES-Main,,0,0,0,,no me eches de tu rostro,
+Dialogue: 0,0:17:20.58,0:17:22.79,ES-Main-2L,,0,0,0,,no me eches de tu rostro,
+Dialogue: 0,0:17:22.88,0:17:26.59,ES-Main,,0,0,0,,y no quites de mí tu santo Espíritu".
 Dialogue: 0,0:17:22.96,0:17:26.67,Default,,0,0,0,,不要从我收回你的圣灵
-Dialogue: 0,0:17:22.96,0:17:26.67,ES-Main,,0,0,0,,y no quites de mí tu santo Espíritu".
 Dialogue: 0,0:17:27.17,0:17:30.96,Default,,0,0,0,,大卫在犯下罪行后\N求神赐予他一颗纯洁无暇的心
-Dialogue: 0,0:17:27.17,0:17:30.96,ES-Main-2L,,0,0,0,,Después de pecar, David le pide a Dios que le dé un corazón puro.
+Dialogue: 0,0:17:27.21,0:17:31.00,ES-Main-2L,,0,0,0,,Después de pecar, David le pide a Dios que le dé un corazón puro.
 Dialogue: 0,0:17:31.92,0:17:34.42,Default,,0,0,0,,上帝洞悉世人所犯的一切罪孽
-Dialogue: 0,0:17:31.92,0:17:34.42,ES-Main,,0,0,0,,Porque Dios siempre sabe cuando hemos pecado.
+Dialogue: 0,0:17:31.92,0:17:34.38,ES-Main-2L,,0,0,0,,Porque Dios siempre sabe cuando hemos pecado.
 Dialogue: 0,0:17:35.71,0:17:39.00,Default,,0,0,0,,求你使我仍得救恩之乐
-Dialogue: 0,0:17:35.71,0:17:39.00,ES-Main,,0,0,0,,"Devuélveme el gozo de tu salvación…
+Dialogue: 0,0:17:35.71,0:17:38.88,ES-Main,,0,0,0,,"Devuélveme el gozo de tu salvación…
+Dialogue: 0,0:17:43.75,0:17:46.13,ES-Main,,0,0,0,,…y fortaléceme con tu espíritu guía".
 Dialogue: 0,0:17:43.92,0:17:46.13,Default,,0,0,0,,赐我乐意的灵扶持我
-Dialogue: 0,0:17:43.92,0:17:46.13,ES-Main,,0,0,0,,…y fortaléceme con tu espíritu guía".
+Dialogue: 0,0:17:52.88,0:17:54.59,ES-Main,,0,0,0,,Ya se fue el último invitado.
 Dialogue: 0,0:17:52.92,0:17:54.71,Default,,0,0,0,,最后一位客人也走了
-Dialogue: 0,0:17:52.92,0:17:54.71,ES-Main,,0,0,0,,Ya se fue el último invitado.
+Dialogue: 0,0:17:54.67,0:17:55.84,ES-Main,,0,0,0,,¿Puedo ir al baño?
 Dialogue: 0,0:17:54.79,0:17:56.00,Default,,0,0,0,,我能上厕所吗？
-Dialogue: 0,0:17:54.79,0:17:56.00,ES-Main,,0,0,0,,¿Puedo ir al baño?
+Dialogue: 0,0:17:59.67,0:18:01.17,ES-Main,,0,0,0,,Con cuidado, Meme.
 Dialogue: 0,0:17:59.71,0:18:01.34,Default,,0,0,0,,小心点 梅梅
-Dialogue: 0,0:17:59.71,0:18:01.34,ES-Main,,0,0,0,,Con cuidado, Meme.
+Dialogue: 0,0:18:05.25,0:18:07.96,ES-Main,,0,0,0,,¿No quieres descansar un poquito, José Arcadio?
 Dialogue: 0,0:18:05.29,0:18:08.12,Default,,0,0,0,,你不想休息一下吗\N何塞·阿尔卡蒂奥？
-Dialogue: 0,0:18:05.29,0:18:08.12,ES-Main,,0,0,0,,¿No quieres descansar un poquito, José Arcadio?
+Dialogue: 0,0:18:09.29,0:18:13.21,ES-Main-2L,,0,0,0,,Mi hijo sabe que, si quiere ir a Roma, se debe tomar muy en serio su educación.
 Dialogue: 0,0:18:09.42,0:18:13.25,Default,,0,0,0,,我儿子知道 如果想去罗马\N就必须严肃对待学业
-Dialogue: 0,0:18:09.42,0:18:13.25,ES-Main-2L,,0,0,0,,Mi hijo sabe que, si quiere ir a Roma, se debe tomar muy en serio su educación.
+Dialogue: 0,0:18:13.29,0:18:16.67,ES-Main-2L,,0,0,0,,Pero es imposible cuando esta casa está llena de hombres pecaminosos
 Dialogue: 0,0:18:13.33,0:18:16.00,Default,,0,0,0,,但在一个满是罪人的房子里\N他不可能做到
-Dialogue: 0,0:18:13.33,0:18:16.00,ES-Main-2L,,0,0,0,,Pero es imposible cuando esta casa está llena de hombres pecaminosos que lo
 Dialogue: 0,0:18:16.08,0:18:18.54,Default,,0,0,0,,那些人会将他引入歧途
-Dialogue: 0,0:18:16.08,0:18:18.54,ES-Main,,0,0,0,,pueden llevar por el camino del mal.
+Dialogue: 0,0:18:16.75,0:18:18.88,ES-Main,,0,0,0,,que lo pueden llevar por el camino del mal.
+Dialogue: 0,0:18:19.71,0:18:22.84,ES-Main,,0,0,0,,Es de cristianos ayudar a quienes lo necesitan.
 Dialogue: 0,0:18:19.75,0:18:22.96,Default,,0,0,0,,基督教义叫人帮助有需要的人
-Dialogue: 0,0:18:19.75,0:18:22.96,ES-Main,,0,0,0,,Es de cristianos ayudar a quienes lo necesitan.
+Dialogue: 0,0:18:23.58,0:18:26.83,ES-Main,,0,0,0,,-Lo dice la Biblia. -Son unos vagabundos, Úrsula.
 Dialogue: 0,0:18:23.63,0:18:27.01,Default,,0,0,0,,-这是《圣经》上写的\N-那些人都是无赖 乌尔苏拉
-Dialogue: 0,0:18:23.63,0:18:27.01,ES-Main,,0,0,0,,-Lo dice la Biblia. -Son unos vagabundos, Úrsula.
+Dialogue: 0,0:18:27.54,0:18:29.12,ES-Main,,0,0,0,,Se están aprovechando de usted.
 Dialogue: 0,0:18:27.79,0:18:31.21,Default,,0,0,0,,他们在利用您 而您似乎乐在其中
-Dialogue: 0,0:18:27.79,0:18:31.21,ES-Main,,0,0,0,,Se están aprovechando de usted. Parece que le gusta.
+Dialogue: 0,0:18:29.75,0:18:31.13,ES-Main,,0,0,0,,Parece que le gusta.
+Dialogue: 0,0:18:31.79,0:18:34.54,ES-Main,,0,0,0,,No te olvides que esta es mi casa, Fernanda.
 Dialogue: 0,0:18:31.83,0:18:34.71,Default,,0,0,0,,别忘了这是我的家 费尔南达
-Dialogue: 0,0:18:31.83,0:18:34.71,ES-Main,,0,0,0,,No te olvides que esta es mi casa, Fernanda.
+Dialogue: 0,0:18:35.25,0:18:36.96,ES-Main,,0,0,0,,Le abrí la puerta a los forasteros
 Dialogue: 0,0:18:35.38,0:18:37.01,Default,,0,0,0,,我对他们敞开大门
-Dialogue: 0,0:18:35.38,0:18:37.01,ES-Main,,0,0,0,,Le abrí la puerta a los forasteros
+Dialogue: 0,0:18:37.04,0:18:39.42,ES-Main,,0,0,0,,con la misma generosidad que te la abrí a ti.
 Dialogue: 0,0:18:37.08,0:18:41.71,Default,,0,0,0,,同我当初慷慨接纳\N你和你的那些圣人是一样的
-Dialogue: 0,0:18:37.08,0:18:41.71,ES-Main-2L,,0,0,0,,con la misma generosidad que te la abrí a ti. Y a todos tus santos.
+Dialogue: 0,0:18:40.21,0:18:41.71,ES-Main,,0,0,0,,Y a todos tus santos.
+Dialogue: 0,0:18:44.96,0:18:46.29,ES-Main,,0,0,0,,Y qué cosa.
 Dialogue: 0,0:18:45.00,0:18:46.46,Default,,0,0,0,,看呀
-Dialogue: 0,0:18:45.00,0:18:46.46,ES-Main,,0,0,0,,Y qué cosa.
 Dialogue: 0,0:18:47.13,0:18:49.26,Default,,0,0,0,,今天是10月4日
-Dialogue: 0,0:18:47.13,0:18:49.26,ES-Main,,0,0,0,,Hoy es 4 de octubre.
+Dialogue: 0,0:18:47.13,0:18:49.30,ES-Main,,0,0,0,,Hoy es 4 de octubre.
+Dialogue: 0,0:18:51.00,0:18:55.46,ES-Main-2L,,0,0,0,,Nada más y nada menos que el día de San Francisco de Asís.
 Dialogue: 0,0:18:51.13,0:18:55.51,Default,,0,0,0,,不偏不倚 正巧是圣方济各的纪念日
-Dialogue: 0,0:18:51.13,0:18:55.51,ES-Main-2L,,0,0,0,,Nada más y nada menos que el día de San Francisco de Asís.
+Dialogue: 0,0:18:57.04,0:18:58.58,ES-Main-2L,,0,0,0,,Santo de la pobreza.
 Dialogue: 0,0:18:57.08,0:18:58.58,Default,,0,0,0,,穷人的主保圣人
-Dialogue: 0,0:18:57.08,0:18:58.58,ES-Main,,0,0,0,,Santo de la pobreza.
+Dialogue: 0,0:19:02.50,0:19:03.83,ES-Main,,0,0,0,,Y de la humildad.
 Dialogue: 0,0:19:02.54,0:19:04.00,Default,,0,0,0,,谦逊的象征
-Dialogue: 0,0:19:02.54,0:19:04.00,ES-Main,,0,0,0,,Y de la humildad.
+Dialogue: 0,0:19:45.25,0:19:46.92,ES-Main,,0,0,0,,Está viva, mamá.
 Dialogue: 0,0:19:45.29,0:19:47.08,Default,,0,0,0,,她还活着 妈妈
-Dialogue: 0,0:19:45.29,0:19:47.08,ES-Main,,0,0,0,,Está viva, mamá.
 Dialogue: 0,0:19:49.54,0:19:50.87,Default,,0,0,0,,她还活着
 Dialogue: 0,0:19:49.54,0:19:50.87,ES-Main,,0,0,0,,Está viva.
 Dialogue: 0,0:19:52.63,0:19:54.01,Default,,0,0,0,,天啊！
 Dialogue: 0,0:19:52.63,0:19:54.01,ES-Main,,0,0,0,,¡Santo Dios!
+Dialogue: 0,0:19:57.58,0:20:01.66,ES-Main-2L,,0,0,0,,¿Cómo me pude olvidar de ella durante tantos años?
 Dialogue: 0,0:19:57.67,0:20:01.05,Default,,0,0,0,,我怎么能把她遗忘了这么多年呢？
-Dialogue: 0,0:19:57.67,0:20:01.05,ES-Main,,0,0,0,,¿Cómo me pude olvidar de ella durante tantos años?
+Dialogue: 0,0:20:10.00,0:20:12.08,ES-Main-2L,,0,0,0,,¿Tú sabías que estaba viva?
 Dialogue: 0,0:20:10.04,0:20:12.17,Default,,0,0,0,,你早知道她还活着吗？
-Dialogue: 0,0:20:10.04,0:20:12.17,ES-Main,,0,0,0,,¿Tú sabías que estaba viva?
+Dialogue: 0,0:20:14.13,0:20:15.88,ES-Main,,0,0,0,,Tía, te estaba buscando.
 Dialogue: 0,0:20:14.17,0:20:16.17,Default,,0,0,0,,姑奶奶 可算找到你啦
-Dialogue: 0,0:20:14.17,0:20:16.17,ES-Main,,0,0,0,,Tía, te estaba buscando.
+Dialogue: 0,0:20:19.04,0:20:21.87,ES-Main,,0,0,0,,La única que no había perdido un solo instante
 Dialogue: 0,0:20:19.33,0:20:24.33,Default,,0,0,0,,自始至终清楚地知道丽贝卡还活着
-Dialogue: 0,0:20:19.33,0:20:24.33,ES-Main-2L,,0,0,0,,La única que no había perdido un solo instante la conciencia de que Rebeca estaba viva,
+Dialogue: 0,0:20:21.96,0:20:24.67,ES-Main,,0,0,0,,la conciencia de que Rebeca estaba viva,
+Dialogue: 0,0:20:24.75,0:20:27.08,ES-Main,,0,0,0,,pudriéndose en su sopa de larvas,
 Dialogue: 0,0:20:24.83,0:20:27.21,Default,,0,0,0,,并喝着蛆虫汤渐渐腐烂的
-Dialogue: 0,0:20:24.83,0:20:27.21,ES-Main,,0,0,0,,pudriéndose en su sopa de larvas,
+Dialogue: 0,0:20:28.25,0:20:30.92,ES-Main,,0,0,0,,era la implacable y envejecida Amaranta.
 Dialogue: 0,0:20:28.29,0:20:31.00,Default,,0,0,0,,只有年华渐逝但毫不心软的阿玛兰妲
-Dialogue: 0,0:20:28.29,0:20:31.00,ES-Main,,0,0,0,,era la implacable y envejecida Amaranta.
+Dialogue: 0,0:20:32.33,0:20:34.16,ES-Main,,0,0,0,,Pensaba en ella al amanecer,
 Dialogue: 0,0:20:32.42,0:20:34.25,Default,,0,0,0,,她在黎明时分
-Dialogue: 0,0:20:32.42,0:20:34.25,ES-Main,,0,0,0,,Pensaba en ella al amanecer,
+Dialogue: 0,0:20:34.88,0:20:37.21,ES-Main,,0,0,0,,y pensaba en ella cuando se cambiaba en la mano
 Dialogue: 0,0:20:35.04,0:20:38.37,Default,,0,0,0,,和更换手上缠裹赎罪伤痕的黑纱时
-Dialogue: 0,0:20:35.04,0:20:38.37,ES-Main-2L,,0,0,0,,y pensaba en ella cuando se cambiaba en la mano la venda negra
+Dialogue: 0,0:20:37.29,0:20:40.08,ES-Main,,0,0,0,,la venda negra de la terrible expiación.
 Dialogue: 0,0:20:38.46,0:20:40.04,Default,,0,0,0,,都会想起她
-Dialogue: 0,0:20:38.46,0:20:40.04,ES-Main,,0,0,0,,de la terrible expiación.
+Dialogue: 0,0:20:44.58,0:20:47.29,ES-Main,,0,0,0,,Y después de salvar a un pueblo,
 Dialogue: 0,0:20:44.67,0:20:49.38,Default,,0,0,0,,在将整个村庄\N从长达数月的失眠症中解救出来后
-Dialogue: 0,0:20:44.67,0:20:49.38,ES-Main-2L,,0,0,0,,Y después de salvar a un pueblo, que no dormía durante meses,
+Dialogue: 0,0:20:47.38,0:20:49.46,ES-Main,,0,0,0,,que no dormía durante meses,
 Dialogue: 0,0:20:49.46,0:20:52.17,Default,,0,0,0,,我全心投入了这本书的创作
-Dialogue: 0,0:20:49.46,0:20:52.17,ES-Main,,0,0,0,,me he dedicado a escribir ese libro.
+Dialogue: 0,0:20:49.54,0:20:52.17,ES-Main,,0,0,0,,me he dedicado a escribir ese libro.
 Dialogue: 0,0:20:52.92,0:20:54.21,Default,,0,0,0,,是关于什么的？
-Dialogue: 0,0:20:52.92,0:20:54.21,ES-Main,,0,0,0,,¿Y de qué se trata?
+Dialogue: 0,0:20:52.92,0:20:54.25,ES-Main,,0,0,0,,¿Y de qué se trata?
 Dialogue: 0,0:20:54.29,0:20:56.33,Default,,0,0,0,,我不能告诉你 梅梅美人
-Dialogue: 0,0:20:54.29,0:20:56.33,ES-Main,,0,0,0,,No te lo puedo decir.
+Dialogue: 0,0:20:54.33,0:20:56.33,ES-Main,,0,0,0,,No te lo puedo decir.
 Dialogue: 0,0:20:56.42,0:20:59.59,Default,,0,0,0,,得留待一百年后
-Dialogue: 0,0:20:56.42,0:20:59.59,ES-Main,,0,0,0,,Nadie puede conocer su sentido
+Dialogue: 0,0:20:56.42,0:20:59.63,ES-Main,,0,0,0,,Nadie puede conocer su sentido
 Dialogue: 0,0:20:59.67,0:21:02.30,Default,,0,0,0,,才能让人知晓其中的含义
-Dialogue: 0,0:20:59.67,0:21:02.30,ES-Main,,0,0,0,,hasta que se cumplan cien años.
+Dialogue: 0,0:20:59.71,0:21:02.29,ES-Main,,0,0,0,,hasta que se cumplan cien años.
+Dialogue: 0,0:21:13.08,0:21:14.46,ES-Main,,0,0,0,,¿Por qué estás vestido así?
 Dialogue: 0,0:21:13.17,0:21:14.46,Default,,0,0,0,,你怎么穿成这样？
-Dialogue: 0,0:21:13.17,0:21:14.46,ES-Main,,0,0,0,,¿Por qué estás vestido así?
+Dialogue: 0,0:21:15.13,0:21:17.34,ES-Main,,0,0,0,,Nos está contando sobre Melquíades.
 Dialogue: 0,0:21:15.25,0:21:17.33,Default,,0,0,0,,他在跟我们讲梅尔基亚德斯的故事
-Dialogue: 0,0:21:15.25,0:21:17.33,ES-Main,,0,0,0,,Nos está contando sobre Melquíades.
+Dialogue: 0,0:21:18.33,0:21:19.75,ES-Main,,0,0,0,,De ti no me extraña, Renata,
 Dialogue: 0,0:21:18.50,0:21:22.42,Default,,0,0,0,,雷纳塔天性易走歪路 会这样不奇怪
-Dialogue: 0,0:21:18.50,0:21:22.42,ES-Main-2L,,0,0,0,,De ti no me extraña, Renata, pues tienes cierta inclinación al
+Dialogue: 0,0:21:19.83,0:21:22.29,ES-Main,,0,0,0,,pues tienes cierta inclinación al pecado.
+Dialogue: 0,0:21:22.38,0:21:24.59,ES-Main,,0,0,0,,Pero tú, José Arcadio, de ti jamás me había…
 Dialogue: 0,0:21:22.50,0:21:24.46,Default,,0,0,0,,但你 何塞·阿尔卡蒂奥 我从没…
-Dialogue: 0,0:21:22.50,0:21:24.46,ES-Main-2L,,0,0,0,,pecado. Pero tú, José Arcadio, de ti jamás me había… No
 Dialogue: 0,0:21:24.54,0:21:26.96,Default,,0,0,0,,别骂孩子 是我叫醒他们的
-Dialogue: 0,0:21:24.54,0:21:26.96,ES-Main,,0,0,0,,los regañes, que fui yo quien los despertó.
+Dialogue: 0,0:21:24.67,0:21:27.05,ES-Main,,0,0,0,,No los regañes, que fui yo quien los despertó.
+Dialogue: 0,0:21:27.13,0:21:30.05,ES-Main-2L,,0,0,0,,He permitido por años que nos humilles y que nos abandones.
 Dialogue: 0,0:21:27.46,0:21:30.38,Default,,0,0,0,,这些年来我一直容忍\N你对我们的羞辱和弃之不顾
-Dialogue: 0,0:21:27.46,0:21:30.38,ES-Main-2L,,0,0,0,,He permitido por años que nos humilles y que nos abandones. ¿Sabes dónde
+Dialogue: 0,0:21:30.13,0:21:34.01,ES-Main-2L,,0,0,0,,¿Sabes dónde están comiendo tus hijos? En sus cuartos, relegados como perros.
 Dialogue: 0,0:21:30.46,0:21:34.21,Default,,0,0,0,,你的孩子们在哪儿吃饭？\N窝在自己房间 像丧家之犬
-Dialogue: 0,0:21:30.46,0:21:34.21,ES-Main-2L,,0,0,0,,están comiendo tus hijos? En sus cuartos, relegados como perros. Al parecer, los invitados
+Dialogue: 0,0:21:34.08,0:21:37.79,ES-Main-2L,,0,0,0,,Al parecer, los invitados de Úrsula son mucho más importantes que nosotros.
 Dialogue: 0,0:21:34.29,0:21:37.79,Default,,0,0,0,,显然乌尔苏拉的客人比我们更重要
-Dialogue: 0,0:21:34.29,0:21:37.79,ES-Main,,0,0,0,,de Úrsula son mucho más importantes que nosotros.
 Dialogue: 0,0:21:37.88,0:21:39.51,Default,,0,0,0,,没你说的那么严重 费尔南达
-Dialogue: 0,0:21:37.88,0:21:39.51,ES-Main,,0,0,0,,Tampoco es para tanto, Fernanda.
+Dialogue: 0,0:21:37.88,0:21:39.92,ES-Main,,0,0,0,,Tampoco es para tanto, Fernanda.
 Dialogue: 0,0:21:40.00,0:21:41.75,Default,,0,0,0,,你没为我们做过任何事
-Dialogue: 0,0:21:40.00,0:21:41.75,ES-Main,,0,0,0,,Tú no haces nada por nosotros.
+Dialogue: 0,0:21:40.00,0:21:42.17,ES-Main,,0,0,0,,Tú no haces nada por nosotros.
 Dialogue: 0,0:21:42.25,0:21:44.17,Default,,0,0,0,,而我却对你百般容忍
-Dialogue: 0,0:21:42.25,0:21:44.17,ES-Main,,0,0,0,,En cambio, yo te he permitido todo.
+Dialogue: 0,0:21:42.25,0:21:46.17,ES-Main-2L,,0,0,0,,En cambio, yo te he permitido todo. Hasta que tengas una concubina.
 Dialogue: 0,0:21:44.75,0:21:46.17,Default,,0,0,0,,包括豢养情妇
-Dialogue: 0,0:21:44.75,0:21:46.17,ES-Main,,0,0,0,,Hasta que tengas una concubina.
+Dialogue: 0,0:21:46.25,0:21:48.04,ES-Main-2L,,0,0,0,,¿Qué es una concubina?
 Dialogue: 0,0:21:46.75,0:21:48.13,Default,,0,0,0,,什么是情妇？
-Dialogue: 0,0:21:46.75,0:21:48.13,ES-Main,,0,0,0,,¿Qué es una concubina?
+Dialogue: 0,0:21:49.00,0:21:52.13,ES-Main-2L,,0,0,0,,Es la señora que conocimos en la estación del tren.
 Dialogue: 0,0:21:49.08,0:21:52.08,Default,,0,0,0,,就是我们在火车站遇到的那位女士
-Dialogue: 0,0:21:49.08,0:21:52.08,ES-Main,,0,0,0,,Es la señora que conocimos en la estación del tren.
+Dialogue: 0,0:21:59.13,0:22:01.84,ES-Main-2L,,0,0,0,,Ese mismo día, Fernanda le mandó a Aureliano
 Dialogue: 0,0:21:59.54,0:22:01.79,Default,,0,0,0,,就在那天 费尔南达让奥雷里亚诺
-Dialogue: 0,0:21:59.54,0:22:01.79,ES-Main,,0,0,0,,Ese mismo día, Fernanda le mandó a Aureliano
 Dialogue: 0,0:22:01.88,0:22:04.67,Default,,0,0,0,,带着行李箱去了情妇家
-Dialogue: 0,0:22:01.88,0:22:04.67,ES-Main,,0,0,0,,a casa de la concubina sus baúles de ropa.
+Dialogue: 0,0:22:01.92,0:22:04.50,ES-Main,,0,0,0,,a casa de la concubina sus baúles de ropa.
+Dialogue: 0,0:22:05.00,0:22:08.92,ES-Main-2L,,0,0,0,,Los mandó a pleno sol y con instrucciones de llevarlos por la mitad de la calle
 Dialogue: 0,0:22:05.29,0:22:07.08,Default,,0,0,0,,她特意交代
-Dialogue: 0,0:22:05.29,0:22:07.08,ES-Main,,0,0,0,,Los mandó a pleno sol
 Dialogue: 0,0:22:07.17,0:22:10.71,Default,,0,0,0,,让驴车走在大街中央\N好让所有人看见…
-Dialogue: 0,0:22:07.17,0:22:10.71,ES-Main-2L,,0,0,0,,y con instrucciones de llevarlos por la mitad de la calle para que todo el mundo los viera…
+Dialogue: 0,0:22:09.00,0:22:10.71,ES-Main,,0,0,0,,para que todo el mundo los viera…
 Dialogue: 0,0:22:10.79,0:22:11.83,Default,,0,0,0,,你不害臊的吗？
-Dialogue: 0,0:22:10.79,0:22:11.83,ES-Main,,0,0,0,,¡Descarado!
+Dialogue: 0,0:22:10.79,0:22:11.87,ES-Main,,0,0,0,,¡Descarado!
 Dialogue: 0,0:22:11.92,0:22:15.75,Default,,0,0,0,,她以为这样能让丈夫羞愧难当
-Dialogue: 0,0:22:11.92,0:22:15.75,ES-Main-2L,,0,0,0,,…creyendo que el marido descarriado no podría soportar la vergüenza
+Dialogue: 0,0:22:11.96,0:22:15.75,ES-Main-2L,,0,0,0,,…creyendo que el marido descarriado no podría soportar la vergüenza
 Dialogue: 0,0:22:15.83,0:22:18.33,Default,,0,0,0,,低头认错 回归家庭
-Dialogue: 0,0:22:15.83,0:22:18.33,ES-Main,,0,0,0,,y volvería al redil con la cabeza humillada.
+Dialogue: 0,0:22:15.83,0:22:18.21,ES-Main-2L,,0,0,0,,y volvería al redil con la cabeza humillada.
 Dialogue: 0,0:22:23.83,0:22:25.71,Default,,0,0,0,,你会后悔的 狗东西！
-Dialogue: 0,0:22:23.83,0:22:25.71,ES-Main,,0,0,0,,¡Perro arrepentido!
+Dialogue: 0,0:22:23.83,0:22:25.58,ES-Main,,0,0,0,,¡Perro arrepentido!
+Dialogue: 0,0:22:38.42,0:22:39.75,ES-Main,,0,0,0,,Es desagradable.
 Dialogue: 0,0:22:38.58,0:22:39.75,Default,,0,0,0,,他真恶心
-Dialogue: 0,0:22:38.58,0:22:39.75,ES-Main,,0,0,0,,Es desagradable.
+Dialogue: 0,0:22:56.83,0:22:58.50,ES-Main,,0,0,0,,Remedios.
 Dialogue: 0,0:22:57.29,0:22:58.46,Default,,0,0,0,,蕾梅黛丝
-Dialogue: 0,0:22:57.29,0:22:58.46,ES-Main,,0,0,0,,Remedios.
 Dialogue: 0,0:22:59.13,0:23:00.55,Default,,0,0,0,,你怎么会在上面？
-Dialogue: 0,0:22:59.13,0:23:00.55,ES-Main,,0,0,0,,¿Qué haces ahí trepado?
+Dialogue: 0,0:22:59.17,0:23:00.63,ES-Main,,0,0,0,,¿Qué haces ahí trepado?
 Dialogue: 0,0:23:01.50,0:23:03.50,Default,,0,0,0,,我不知道自己这是怎么了
-Dialogue: 0,0:23:01.50,0:23:03.50,ES-Main,,0,0,0,,No sé lo que me pasa.
+Dialogue: 0,0:23:01.50,0:23:02.92,ES-Main,,0,0,0,,No sé lo que me pasa.
+Dialogue: 0,0:23:04.38,0:23:06.42,ES-Main,,0,0,0,,Solo pienso en verte.
 Dialogue: 0,0:23:04.50,0:23:06.42,Default,,0,0,0,,我满脑子都是你
-Dialogue: 0,0:23:04.50,0:23:06.42,ES-Main,,0,0,0,,Solo pienso en verte.
 Dialogue: 0,0:23:06.50,0:23:07.83,Default,,0,0,0,,快下来
-Dialogue: 0,0:23:06.50,0:23:07.83,ES-Main,,0,0,0,,Bájate de ahí.
+Dialogue: 0,0:23:06.50,0:23:07.71,ES-Main,,0,0,0,,Bájate de ahí.
+Dialogue: 0,0:23:07.79,0:23:09.21,ES-Main,,0,0,0,,Ese techo es peligroso.
 Dialogue: 0,0:23:07.92,0:23:09.38,Default,,0,0,0,,屋顶很危险
-Dialogue: 0,0:23:07.92,0:23:09.38,ES-Main,,0,0,0,,Ese techo es peligroso.
+Dialogue: 0,0:23:13.13,0:23:15.05,ES-Main,,0,0,0,,Déjame enjabonarte la espalda.
 Dialogue: 0,0:23:13.21,0:23:15.00,Default,,0,0,0,,让我给你搓背吧
-Dialogue: 0,0:23:13.21,0:23:15.00,ES-Main,,0,0,0,,Déjame enjabonarte la espalda.
+Dialogue: 0,0:23:17.54,0:23:20.29,ES-Main-2L,,0,0,0,,¿Cuándo se ha visto que la gente se enjabone la espalda?
 Dialogue: 0,0:23:17.71,0:23:19.96,Default,,0,0,0,,你见过有人洗后背的吗？
-Dialogue: 0,0:23:17.71,0:23:19.96,ES-Main-2L,,0,0,0,,¿Cuándo se ha visto que la gente se enjabone la espalda?
 Dialogue: 0,0:23:36.08,0:23:37.66,Default,,0,0,0,,天哪！
-Dialogue: 0,0:23:36.08,0:23:37.66,ES-Main,,0,0,0,,¡Santo Dios!
+Dialogue: 0,0:23:36.17,0:23:37.63,ES-Main,,0,0,0,,¡Santo Dios!
+Dialogue: 0,0:23:38.79,0:23:39.87,ES-Main,,0,0,0,,¡Remedios!
 Dialogue: 0,0:23:38.83,0:23:40.04,Default,,0,0,0,,蕾梅黛丝
-Dialogue: 0,0:23:38.83,0:23:40.04,ES-Main,,0,0,0,,¡Remedios!
 Dialogue: 0,0:23:53.92,0:23:55.30,Default,,0,0,0,,他来了
-Dialogue: 0,0:23:53.92,0:23:55.30,ES-Main,,0,0,0,,Aquí
+Dialogue: 0,0:23:54.00,0:23:57.67,ES-Main,,0,0,0,,Aquí está. Bienvenido a Macondo, Sr. Brown.
 Dialogue: 0,0:23:55.38,0:23:57.46,Default,,0,0,0,,欢迎来到马孔多 布朗先生
-Dialogue: 0,0:23:55.38,0:23:57.46,ES-Main,,0,0,0,,está. Bienvenido a Macondo, Sr. Brown.
+Dialogue: 0,0:23:57.75,0:24:02.00,ES-Main-2L,,0,0,0,,-Sr. Herbert, ¿cómo está? -Bien. El nuevo alcalde.
 Dialogue: 0,0:23:57.96,0:24:00.17,Default,,0,0,0,,-赫伯特先生 你好吗？\N-好极了
-Dialogue: 0,0:23:57.96,0:24:00.17,ES-Main,,0,0,0,,-Sr. Herbert, ¿cómo está? -Bien.
 Dialogue: 0,0:24:00.25,0:24:01.92,Default,,0,0,0,,这位是小镇的新镇长
-Dialogue: 0,0:24:00.25,0:24:01.92,ES-Main,,0,0,0,,El nuevo alcalde.
 Dialogue: 0,0:24:02.00,0:24:03.46,Default,,0,0,0,,愿为您效劳 布朗先生
-Dialogue: 0,0:24:02.00,0:24:03.46,ES-Main,,0,0,0,,A sus órdenes, Mr. Brown.
+Dialogue: 0,0:24:02.08,0:24:03.46,ES-Main,,0,0,0,,A sus órdenes, Mr. Brown.
 Dialogue: 0,0:24:03.54,0:24:04.67,Default,,0,0,0,,很高兴见到您 先生
-Dialogue: 0,0:24:03.54,0:24:04.67,ES-Main,,0,0,0,,-Un placer. -Venga por
+Dialogue: 0,0:24:03.54,0:24:06.50,ES-Main,,0,0,0,,-Un placer. -Venga por aquí…
 Dialogue: 0,0:24:04.75,0:24:06.63,Default,,0,0,0,,先生 请这边走 我们…
-Dialogue: 0,0:24:04.75,0:24:06.63,ES-Main,,0,0,0,,aquí… ¿Siempre hace tanto
+Dialogue: 0,0:24:06.58,0:24:09.12,ES-Main,,0,0,0,,¿Siempre hace tanto calor? Es el infierno.
 Dialogue: 0,0:24:06.71,0:24:08.84,Default,,0,0,0,,这里一直这么热吗？像蒸笼一样
-Dialogue: 0,0:24:06.71,0:24:08.84,ES-Main,,0,0,0,,calor? Es el infierno. Así es,
 Dialogue: 0,0:24:08.92,0:24:12.59,Default,,0,0,0,,确实很热 但习惯了就好
-Dialogue: 0,0:24:08.92,0:24:12.59,ES-Main,,0,0,0,,pero uno se acostumbra.
+Dialogue: 0,0:24:09.21,0:24:12.63,ES-Main,,0,0,0,,Así es, pero uno se acostumbra.
 Dialogue: 0,0:24:12.67,0:24:14.38,Default,,0,0,0,,好吧 但愿如此
-Dialogue: 0,0:24:12.67,0:24:14.38,ES-Main,,0,0,0,,De acuerdo, eso
+Dialogue: 0,0:24:12.71,0:24:14.54,ES-Main,,0,0,0,,De acuerdo, eso espero.
 Dialogue: 0,0:24:14.46,0:24:16.63,Default,,0,0,0,,火车是最近才开通的 所以…
-Dialogue: 0,0:24:14.46,0:24:16.63,ES-Main,,0,0,0,,espero. El tren es una novedad.
+Dialogue: 0,0:24:14.63,0:24:16.63,ES-Main,,0,0,0,,El tren es una novedad.
 Dialogue: 0,0:24:16.71,0:24:18.42,Default,,0,0,0,,不要
 Dialogue: 0,0:24:16.71,0:24:18.42,ES-Main,,0,0,0,,-Empanadas… -No.
 Dialogue: 0,0:24:18.50,0:24:22.13,Default,,0,0,0,,一个炎热的星期三\N杰克·布朗先生从阿拉巴马州的
-Dialogue: 0,0:24:18.50,0:24:22.13,ES-Main-2L,,0,0,0,,Un miércoles caluroso llegó a Macondo el Sr. Jack Brown,
+Dialogue: 0,0:24:18.50,0:24:22.00,ES-Main-2L,,0,0,0,,Un miércoles caluroso llegó a Macondo el Sr. Jack Brown,
+Dialogue: 0,0:24:22.08,0:24:23.66,ES-Main,,0,0,0,,directo de Prattville, Alabama.
 Dialogue: 0,0:24:22.21,0:24:23.67,Default,,0,0,0,,普拉特维尔直达马孔多
-Dialogue: 0,0:24:22.21,0:24:23.67,ES-Main,,0,0,0,,directo de Prattville, Alabama.
+Dialogue: 0,0:24:24.54,0:24:26.71,ES-Main,,0,0,0,,Lo seguía un séquito de feroces perros,
 Dialogue: 0,0:24:24.63,0:24:26.88,Default,,0,0,0,,随之而来的还有一群凶猛的狗
-Dialogue: 0,0:24:24.63,0:24:26.88,ES-Main,,0,0,0,,Lo seguía un séquito de
+Dialogue: 0,0:24:26.79,0:24:30.08,ES-Main,,0,0,0,,ingenieros, topógrafos y agrimensores.
 Dialogue: 0,0:24:26.96,0:24:30.04,Default,,0,0,0,,工程师、地形测绘员和土地测量员
-Dialogue: 0,0:24:26.96,0:24:30.04,ES-Main-2L,,0,0,0,,feroces perros, ingenieros, topógrafos y agrimensores.
+Dialogue: 0,0:24:31.54,0:24:34.04,ES-Main,,0,0,0,,Nadie sabía aún qué era lo que buscaba.
 Dialogue: 0,0:24:31.75,0:24:34.04,Default,,0,0,0,,没有人知道他在找什么
-Dialogue: 0,0:24:31.75,0:24:34.04,ES-Main,,0,0,0,,Nadie sabía aún qué era lo que buscaba.
+Dialogue: 0,0:24:35.33,0:24:38.37,ES-Main,,0,0,0,,-Señor, listo. -Toma, gracias.
 Dialogue: 0,0:24:35.46,0:24:38.59,Default,,0,0,0,,-先生 准备好了\N-帮我拿一下手杖 谢谢
-Dialogue: 0,0:24:35.46,0:24:38.59,ES-Main-2L,,0,0,0,,-Señor, listo. -Toma, gracias. Dotados de recursos que
+Dialogue: 0,0:24:38.46,0:24:40.84,ES-Main,,0,0,0,,Dotados de recursos que en otra época
 Dialogue: 0,0:24:38.67,0:24:43.42,Default,,0,0,0,,这些外乡人展现出\N往昔唯有神明才拥有的力量…
-Dialogue: 0,0:24:38.67,0:24:43.42,ES-Main-2L,,0,0,0,,en otra época estuvieron reservados a la divina providencia…
+Dialogue: 0,0:24:40.92,0:24:43.38,ES-Main,,0,0,0,,estuvieron reservados a la divina providencia…
+Dialogue: 0,0:24:43.46,0:24:45.46,ES-Main,,0,0,0,,¡José Arcadio! ¡Mi caballo!
 Dialogue: 0,0:24:43.50,0:24:45.25,Default,,0,0,0,,何塞·阿尔卡蒂奥！我的马！
-Dialogue: 0,0:24:43.50,0:24:45.25,ES-Main-2L,,0,0,0,,¡José Arcadio! ¡Mi caballo! …los forasteros modificaron
 Dialogue: 0,0:24:45.33,0:24:48.00,Default,,0,0,0,,…他们调节降水量
-Dialogue: 0,0:24:45.33,0:24:48.00,ES-Main,,0,0,0,,el régimen de lluvias
+Dialogue: 0,0:24:45.54,0:24:48.42,ES-Main,,0,0,0,,…los forasteros modificaron el régimen de lluvias
 Dialogue: 0,0:24:48.50,0:24:51.08,Default,,0,0,0,,令亘古不变的河流改道
-Dialogue: 0,0:24:48.50,0:24:51.08,ES-Main,,0,0,0,,y quitaron el río donde estuvo siempre y lo
+Dialogue: 0,0:24:48.50,0:24:50.46,ES-Main,,0,0,0,,y quitaron el río donde estuvo siempre
+Dialogue: 0,0:24:50.54,0:24:53.25,ES-Main,,0,0,0,,y lo pusieron en el otro extremo de la población…
 Dialogue: 0,0:24:51.17,0:24:53.34,Default,,0,0,0,,流向小镇的另一端
-Dialogue: 0,0:24:51.17,0:24:53.34,ES-Main,,0,0,0,,pusieron en el otro extremo de la población…
 Dialogue: 0,0:25:01.08,0:25:05.37,Default,,0,0,0,,他们开办了一家香蕉公司\N联合果品公司
-Dialogue: 0,0:25:01.08,0:25:05.37,ES-Main-2L,,0,0,0,,en la recién inaugurada compañía bananera: United Fruit Company.
+Dialogue: 0,0:25:01.17,0:25:03.80,ES-Main,,0,0,0,,en la recién inaugurada compañía bananera:
+Dialogue: 0,0:25:03.88,0:25:05.71,ES-Main,,0,0,0,,United Fruit Company.
+Dialogue: 0,0:25:05.79,0:25:08.42,ES-Main,,0,0,0,,José Arcadio II se empleó de capataz.
 Dialogue: 0,0:25:05.88,0:25:08.46,Default,,0,0,0,,将何塞·阿尔卡蒂奥第二聘为庄园监工
-Dialogue: 0,0:25:05.88,0:25:08.46,ES-Main,,0,0,0,,José Arcadio II se empleó de capataz.
+Dialogue: 0,0:25:08.92,0:25:11.38,ES-Main,,0,0,0,,Señores, bienvenidos.
 Dialogue: 0,0:25:08.96,0:25:11.38,Default,,0,0,0,,先生们 欢迎
-Dialogue: 0,0:25:08.96,0:25:11.38,ES-Main,,0,0,0,,Señores, bienvenidos.
+Dialogue: 0,0:25:12.00,0:25:14.13,ES-Main,,0,0,0,,Como se darán cuenta, en los próximos días
 Dialogue: 0,0:25:12.13,0:25:17.46,Default,,0,0,0,,你们稍后就会知道\N这份工作是全海岸最好的
-Dialogue: 0,0:25:12.13,0:25:17.46,ES-Main-2L,,0,0,0,,Como se darán cuenta, en los próximos días la situación del trabajo es la mejor en todo el litoral.
+Dialogue: 0,0:25:14.21,0:25:17.84,ES-Main-2L,,0,0,0,,la situación del trabajo es la mejor en todo el litoral.
+Dialogue: 0,0:25:17.92,0:25:22.21,ES-Main-2L,,0,0,0,,Porque nuestra compañía es la más grande de toda la zona.
 Dialogue: 0,0:25:17.96,0:25:22.21,Default,,0,0,0,,因为我们是这一带最大的公司
-Dialogue: 0,0:25:17.96,0:25:22.21,ES-Main-2L,,0,0,0,,Porque nuestra compañía es la más grande de toda la zona.
+Dialogue: 0,0:25:23.17,0:25:24.75,ES-Main-2L,,0,0,0,,Hacemos todo el proceso,
 Dialogue: 0,0:25:23.21,0:25:27.79,Default,,0,0,0,,从砍下香蕉到商品出口\N全程都由我们负责
-Dialogue: 0,0:25:23.21,0:25:27.79,ES-Main-2L,,0,0,0,,Hacemos todo el proceso, desde que cortamos el guineo hasta que lo exportamos.
+Dialogue: 0,0:25:24.83,0:25:27.75,ES-Main-2L,,0,0,0,,desde que cortamos el guineo hasta que lo exportamos.
 Dialogue: 0,0:25:34.46,0:25:37.92,Default,,0,0,0,,你们的一部份工资将以票券形式发放
-Dialogue: 0,0:25:34.46,0:25:37.92,ES-Main,,0,0,0,,Parte de su pago será con estos vales
+Dialogue: 0,0:25:34.46,0:25:36.13,ES-Main-2L,,0,0,0,,Parte de su pago
+Dialogue: 0,0:25:36.21,0:25:37.92,ES-Main,,0,0,0,,será con estos vales
 Dialogue: 0,0:25:38.00,0:25:43.29,Default,,0,0,0,,持票即可到镇上的杂货铺\N兑换这类进口产品
 Dialogue: 0,0:25:38.00,0:25:43.29,ES-Main-2L,,0,0,0,,canjeables en el comisariato del pueblo por productos importados como estos.
 Dialogue: 0,0:25:43.38,0:25:46.05,Default,,0,0,0,,这是你们的荣幸
-Dialogue: 0,0:25:43.38,0:25:46.05,ES-Main,,0,0,0,,Y siéntanse privilegiados,
+Dialogue: 0,0:25:43.38,0:25:46.30,ES-Main-2L,,0,0,0,,Y siéntanse privilegiados,
+Dialogue: 0,0:25:46.38,0:25:48.92,ES-Main,,0,0,0,,porque no existe en todo Macondo o el país
 Dialogue: 0,0:25:46.54,0:25:49.37,Default,,0,0,0,,因为在马孔多乃至全国各地
-Dialogue: 0,0:25:46.54,0:25:49.37,ES-Main,,0,0,0,,porque no existe en todo Macondo o el
+Dialogue: 0,0:25:49.00,0:25:53.38,ES-Main-2L,,0,0,0,,un sitio donde se consiga el mejor jamón de Virginia.
 Dialogue: 0,0:25:49.46,0:25:53.50,Default,,0,0,0,,都买不到这种上好的弗吉尼亚火腿
-Dialogue: 0,0:25:49.46,0:25:53.50,ES-Main-2L,,0,0,0,,país un sitio donde se consiga el mejor jamón de Virginia.
+Dialogue: 0,0:25:55.13,0:25:59.05,ES-Main-2L,,0,0,0,,Esto es un regalo de nosotros para ustedes.
 Dialogue: 0,0:25:55.17,0:25:58.80,Default,,0,0,0,,这是公司对你们的馈赠
-Dialogue: 0,0:25:55.17,0:25:58.80,ES-Main,,0,0,0,,Esto es un regalo de nosotros para ustedes.
 Dialogue: 0,0:25:58.88,0:26:01.01,Default,,0,0,0,,太棒了！
-Dialogue: 0,0:25:58.88,0:26:01.01,ES-Main,,0,0,0,,-¡Que viva! -¡Bravo!
+Dialogue: 0,0:25:59.13,0:26:01.01,ES-Main,,0,0,0,,-¡Que viva! -¡Bravo!
 Dialogue: 0,0:26:07.38,0:26:09.46,Default,,0,0,0,,-何塞·阿尔卡蒂奥\N-布朗先生
 Dialogue: 0,0:26:07.38,0:26:09.46,ES-Main,,0,0,0,,-José Arcadio. -Mr. Brown.
 Dialogue: 0,0:26:11.21,0:26:12.54,Default,,0,0,0,,请享用
-Dialogue: 0,0:26:11.21,0:26:12.54,ES-Main,,0,0,0,,Disfrútenlo.
+Dialogue: 0,0:26:11.21,0:26:12.38,ES-Main,,0,0,0,,Disfrútenlo.
 Dialogue: 0,0:26:13.33,0:26:15.96,Default,,0,0,0,,去镇上逛逛 放松一下吧
-Dialogue: 0,0:26:13.33,0:26:15.96,ES-Main,,0,0,0,,Recorran el pueblo y descansen,
+Dialogue: 0,0:26:13.33,0:26:16.46,ES-Main,,0,0,0,,Recorran el pueblo y descansen,
 Dialogue: 0,0:26:16.46,0:26:19.04,Default,,0,0,0,,明早六点见
-Dialogue: 0,0:26:16.46,0:26:19.04,ES-Main,,0,0,0,,porque nos vemos mañana a las seis en punto.
+Dialogue: 0,0:26:16.54,0:26:18.96,ES-Main,,0,0,0,,porque nos vemos mañana a las seis en punto.
 Dialogue: 0,0:26:19.75,0:26:22.88,Default,,0,0,0,,欢迎加入联合果品大家庭！
 Dialogue: 0,0:26:19.75,0:26:22.88,ES-Main,,0,0,0,,¡Bienvenidos a la familia United!
 Dialogue: 0,0:26:24.92,0:26:26.30,Default,,0,0,0,,好棒！
-Dialogue: 0,0:26:24.92,0:26:26.30,ES-Main,,0,0,0,,¡Bravo! Ah, se ve buena.
+Dialogue: 0,0:26:24.92,0:26:25.96,ES-Main,,0,0,0,,¡Bravo!
+Dialogue: 0,0:26:26.04,0:26:27.04,ES-Main,,0,0,0,,Ah, se ve buena.
 Dialogue: 0,0:26:27.13,0:26:28.38,Default,,0,0,0,,-欢迎\N-谢谢
 Dialogue: 0,0:26:27.13,0:26:28.38,ES-Main,,0,0,0,,-Bienvenido. -Gracias.
 Dialogue: 0,0:26:28.46,0:26:30.71,Default,,0,0,0,,去尝尝上好的美式火腿
 Dialogue: 0,0:26:28.46,0:26:30.71,ES-Main,,0,0,0,,Vaya por el jamón, americano, fino.
 Dialogue: 0,0:26:30.79,0:26:32.92,Default,,0,0,0,,欢迎
-Dialogue: 0,0:26:30.79,0:26:32.92,ES-Main,,0,0,0,,Bienvenido. Bienvenido.
+Dialogue: 0,0:26:30.79,0:26:31.79,ES-Main,,0,0,0,,Bienvenido.
+Dialogue: 0,0:26:32.42,0:26:33.55,ES-Main,,0,0,0,,Bienvenido.
 Dialogue: 0,0:26:53.08,0:26:56.12,Default,,0,0,0,,直至羁留尘世的最后一刻
-Dialogue: 0,0:26:53.08,0:26:56.12,ES-Main,,0,0,0,,Hasta el último instante en que estuvo en la tierra,
+Dialogue: 0,0:26:53.13,0:26:56.26,ES-Main-2L,,0,0,0,,Hasta el último instante en que estuvo en la tierra,
+Dialogue: 0,0:26:56.75,0:26:58.13,ES-Main,,0,0,0,,Remedios, la Bella,
 Dialogue: 0,0:26:56.79,0:26:58.25,Default,,0,0,0,,美人蕾梅黛丝
-Dialogue: 0,0:26:56.79,0:26:58.25,ES-Main,,0,0,0,,Remedios, la Bella,
+Dialogue: 0,0:26:59.21,0:27:02.17,ES-Main-2L,,0,0,0,,ignoró que su irreparable destino de hembra perturbadora
 Dialogue: 0,0:26:59.38,0:27:04.05,Default,,0,0,0,,仍未察觉她红颜祸水的宿命\N意味着日常生活中的灾难
-Dialogue: 0,0:26:59.38,0:27:04.05,ES-Main-2L,,0,0,0,,ignoró que su irreparable destino de hembra perturbadora era un desastre cotidiano.
+Dialogue: 0,0:27:02.25,0:27:04.04,ES-Main-2L,,0,0,0,,era un desastre cotidiano.
 Dialogue: 0,0:27:15.21,0:27:18.84,Default,,0,0,0,,香蕉会沿这些轨道送往出口
-Dialogue: 0,0:27:15.21,0:27:18.84,ES-Main-2L,,0,0,0,,El guineo se transporta por estos rieles hasta la salida.
+Dialogue: 0,0:27:15.21,0:27:19.00,ES-Main-2L,,0,0,0,,El guineo se transporta por estos rieles hasta la salida.
 Dialogue: 0,0:27:20.25,0:27:23.83,Default,,0,0,0,,在那里被装上火车 然后运去港口
-Dialogue: 0,0:27:20.25,0:27:23.83,ES-Main,,0,0,0,,De allí se llevan al tren. Y del tren al puerto.
+Dialogue: 0,0:27:20.25,0:27:22.08,ES-Main-2L,,0,0,0,,De allí se llevan al tren.
+Dialogue: 0,0:27:22.17,0:27:23.92,ES-Main,,0,0,0,,Y del tren al puerto.
+Dialogue: 0,0:28:45.83,0:28:47.21,ES-Main,,0,0,0,,Buenas tardes, señores.
 Dialogue: 0,0:28:45.88,0:28:47.30,Default,,0,0,0,,下午好 先生们
-Dialogue: 0,0:28:45.88,0:28:47.30,ES-Main,,0,0,0,,Buenas tardes, señores.
+Dialogue: 0,0:29:08.79,0:29:11.92,ES-Main-2L,,0,0,0,,Desde que Remedios, la Bella, entró a la plantación,
 Dialogue: 0,0:29:09.08,0:29:11.87,Default,,0,0,0,,蕾梅黛丝走进种植园的那一刻
-Dialogue: 0,0:29:09.08,0:29:11.87,ES-Main,,0,0,0,,Desde que Remedios, la Bella, entró a la plantación,
 Dialogue: 0,0:29:11.96,0:29:14.92,Default,,0,0,0,,空气中弥漫起致命的香气
-Dialogue: 0,0:29:11.96,0:29:14.92,ES-Main,,0,0,0,,el aire se impregnó de una fragancia mortal.
+Dialogue: 0,0:29:12.00,0:29:14.75,ES-Main,,0,0,0,,el aire se impregnó de una fragancia mortal.
+Dialogue: 0,0:29:15.71,0:29:17.67,ES-Main,,0,0,0,,Los hombres que trabajaban en la zanja
 Dialogue: 0,0:29:15.79,0:29:20.96,Default,,0,0,0,,沟垄间劳作的男人们\N仿佛被某种奇异的魔力所掌控
-Dialogue: 0,0:29:15.79,0:29:20.96,ES-Main-2L,,0,0,0,,Los hombres que trabajaban en la zanja se sintieron poseídos por una rara fascinación.
+Dialogue: 0,0:29:17.75,0:29:20.96,ES-Main,,0,0,0,,se sintieron poseídos por una rara fascinación.
+Dialogue: 0,0:29:22.04,0:29:24.62,ES-Main,,0,0,0,,Y, amenazados por un peligro invisible,
 Dialogue: 0,0:29:22.21,0:29:24.71,Default,,0,0,0,,面临着无形的危险
-Dialogue: 0,0:29:22.21,0:29:24.71,ES-Main,,0,0,0,,Y, amenazados por un peligro invisible,
 Dialogue: 0,0:29:25.25,0:29:28.29,Default,,0,0,0,,很多人甚至忍不住痛哭一场
-Dialogue: 0,0:29:25.25,0:29:28.29,ES-Main,,0,0,0,,muchos sucumbieron a los terribles deseos de llorar.
+Dialogue: 0,0:29:25.25,0:29:28.33,ES-Main-2L,,0,0,0,,muchos sucumbieron a los terribles deseos de llorar.
+Dialogue: 0,0:29:28.42,0:29:31.59,ES-Main,,0,0,0,,¡No es de nadie!
 Dialogue: 0,0:29:29.38,0:29:30.55,Default,,0,0,0,,谁也别想独占她
-Dialogue: 0,0:29:29.38,0:29:30.55,ES-Main,,0,0,0,,¡No es de nadie!
+Dialogue: 0,0:29:52.29,0:29:55.67,ES-Main,,0,0,0,,…muy importante, porque nosotros debemos
 Dialogue: 0,0:29:52.58,0:29:58.29,Default,,0,0,0,,…非常重要\N因为运送的香蕉必须干净卫生
-Dialogue: 0,0:29:52.58,0:29:58.29,ES-Main-2L,,0,0,0,,…muy importante, porque nosotros debemos entregarlos completamente limpios.
+Dialogue: 0,0:29:55.75,0:29:58.50,ES-Main,,0,0,0,,entregarlos completamente limpios.
+Dialogue: 0,0:29:58.58,0:30:00.29,ES-Main,,0,0,0,,¿Cómo les pareció el recorrido?
 Dialogue: 0,0:29:58.79,0:30:00.29,Default,,0,0,0,,参观得如何？
-Dialogue: 0,0:29:58.79,0:30:00.29,ES-Main,,0,0,0,,¿Cómo les pareció el recorrido?
 Dialogue: 0,0:30:00.38,0:30:03.88,Default,,0,0,0,,我都不知道你这么能干
-Dialogue: 0,0:30:00.38,0:30:03.88,ES-Main,,0,0,0,,Nunca me imaginé que se pudiera
+Dialogue: 0,0:30:00.38,0:30:03.76,ES-Main-2L,,0,0,0,,Nunca me imaginé que se pudiera sembrar tanto guineo.
+Dialogue: 0,0:30:03.83,0:30:04.87,ES-Main,,0,0,0,,Hija.
 Dialogue: 0,0:30:03.96,0:30:08.54,Default,,0,0,0,,-亲爱的 出什么事了？你怎么了？\N-你的头巾呢？
-Dialogue: 0,0:30:03.96,0:30:08.54,ES-Main-2L,,0,0,0,,sembrar tanto guineo. Hija. ¿Qué pasó? ¿Qué fue? ¿Tú por qué no tienes tu sombrero?
+Dialogue: 0,0:30:04.96,0:30:06.75,ES-Main,,0,0,0,,¿Qué pasó? ¿Qué fue?
+Dialogue: 0,0:30:06.83,0:30:08.79,ES-Main,,0,0,0,,¿Tú por qué no tienes tu sombrero?
+Dialogue: 0,0:30:08.88,0:30:10.96,ES-Main,,0,0,0,,¡Santo Dios, Remedios!
 Dialogue: 0,0:30:09.04,0:30:11.08,Default,,0,0,0,,天啊 蕾梅黛丝！
-Dialogue: 0,0:30:09.04,0:30:11.08,ES-Main,,0,0,0,,¡Santo Dios, Remedios!
+Dialogue: 0,0:30:16.54,0:30:17.87,ES-Main,,0,0,0,,Vamos, muchachos.
 Dialogue: 0,0:30:16.63,0:30:17.88,Default,,0,0,0,,跟我来 伙计们
-Dialogue: 0,0:30:16.63,0:30:17.88,ES-Main,,0,0,0,,Vamos, muchachos.
 Dialogue: 0,0:30:17.96,0:30:20.34,Default,,0,0,0,,-快走！\N-拿砍刀的人 过来！
 Dialogue: 0,0:30:17.96,0:30:20.34,ES-Main,,0,0,0,,-¡Vamos, vamos! -¡Traigan los machetes!
+Dialogue: 0,0:30:35.79,0:30:38.79,ES-Main,,0,0,0,,Mi mejor whisky. Directo desde Canadá.
 Dialogue: 0,0:30:35.88,0:30:38.76,Default,,0,0,0,,这是我最好的威士忌 加拿大直送的
-Dialogue: 0,0:30:35.88,0:30:38.76,ES-Main,,0,0,0,,Mi mejor whisky. Directo desde Canadá.
+Dialogue: 0,0:30:45.75,0:30:47.21,ES-Main,,0,0,0,,Suave, ¿no?
 Dialogue: 0,0:30:45.92,0:30:47.38,Default,,0,0,0,,很顺口吧？
-Dialogue: 0,0:30:45.92,0:30:47.38,ES-Main,,0,0,0,,Suave, ¿no?
+Dialogue: 0,0:30:50.79,0:30:53.54,ES-Main,,0,0,0,,¿A tu family le gustó la visita?
 Dialogue: 0,0:30:50.83,0:30:53.50,Default,,0,0,0,,你家人参观得还愉快吗？
-Dialogue: 0,0:30:50.83,0:30:53.50,ES-Main,,0,0,0,,¿A tu family le gustó la visita?
+Dialogue: 0,0:30:55.96,0:30:57.67,ES-Main,,0,0,0,,-Muy bueno. -Sí.
 Dialogue: 0,0:30:56.08,0:30:57.04,Default,,0,0,0,,那就好
-Dialogue: 0,0:30:56.08,0:30:57.04,ES-Main,,0,0,0,,-Muy bueno.
 Dialogue: 0,0:30:57.13,0:31:01.96,Default,,0,0,0,,对 但今天\N我手下有两个劳工死在了种植园
-Dialogue: 0,0:30:57.13,0:31:01.96,ES-Main-2L,,0,0,0,,-Sí. Aunque hoy en las plantaciones, murieron dos de mis hombres.
+Dialogue: 0,0:30:58.38,0:31:00.26,ES-Main,,0,0,0,,Aunque hoy en las plantaciones,
+Dialogue: 0,0:31:00.33,0:31:01.87,ES-Main,,0,0,0,,murieron dos de mis hombres.
 Dialogue: 0,0:31:04.04,0:31:05.50,Default,,0,0,0,,是意外
-Dialogue: 0,0:31:04.04,0:31:05.50,ES-Main,,0,0,0,,Un accidente.
+Dialogue: 0,0:31:04.04,0:31:05.25,ES-Main,,0,0,0,,Un accidente.
+Dialogue: 0,0:31:06.54,0:31:08.46,ES-Main,,0,0,0,,Es una noticia muy triste.
 Dialogue: 0,0:31:06.63,0:31:08.51,Default,,0,0,0,,真是令人遗憾的消息
-Dialogue: 0,0:31:06.63,0:31:08.51,ES-Main,,0,0,0,,Es una noticia muy triste.
+Dialogue: 0,0:31:12.88,0:31:14.76,ES-Main,,0,0,0,,¿Qué más noticias hay?
 Dialogue: 0,0:31:13.00,0:31:14.88,Default,,0,0,0,,还有其他消息吗？
-Dialogue: 0,0:31:13.00,0:31:14.88,ES-Main,,0,0,0,,¿Qué más noticias hay?
+Dialogue: 0,0:31:16.38,0:31:18.17,ES-Main,,0,0,0,,Siguen llegando más hombres.
 Dialogue: 0,0:31:16.42,0:31:18.21,Default,,0,0,0,,不断有新人过来
-Dialogue: 0,0:31:16.42,0:31:18.21,ES-Main,,0,0,0,,Siguen llegando más hombres.
+Dialogue: 0,0:31:21.67,0:31:24.09,ES-Main,,0,0,0,,Mañana arrancamos con dos cuadrillas completas.
 Dialogue: 0,0:31:21.96,0:31:24.09,Default,,0,0,0,,明天开工就有整整两队人了
-Dialogue: 0,0:31:21.96,0:31:24.09,ES-Main,,0,0,0,,Mañana arrancamos con dos cuadrillas completas.
+Dialogue: 0,0:31:25.17,0:31:28.80,ES-Main-2L,,0,0,0,,Y tenemos que ampliar la barraca porque esos muchachos vienen de lejos.
 Dialogue: 0,0:31:25.29,0:31:28.71,Default,,0,0,0,,我们得扩建工棚\N这些小伙子都是大老远过来的
-Dialogue: 0,0:31:25.29,0:31:28.71,ES-Main-2L,,0,0,0,,Y tenemos que ampliar la barraca porque esos muchachos vienen de lejos.
+Dialogue: 0,0:31:30.33,0:31:31.54,ES-Main-2L,,0,0,0,,Me ocupo de eso.
 Dialogue: 0,0:31:30.42,0:31:31.71,Default,,0,0,0,,我会处理的
-Dialogue: 0,0:31:30.42,0:31:31.71,ES-Main,,0,0,0,,Me ocupo de eso.
 Dialogue: 0,0:31:36.08,0:31:37.21,Default,,0,0,0,,还有别的事吗？
 Dialogue: 0,0:31:36.08,0:31:37.21,ES-Main,,0,0,0,,¿Algo más?
+Dialogue: 0,0:31:39.08,0:31:40.33,ES-Main,,0,0,0,,Sí, Mr. Brown.
 Dialogue: 0,0:31:39.17,0:31:40.42,Default,,0,0,0,,有 布朗先生
-Dialogue: 0,0:31:39.17,0:31:40.42,ES-Main,,0,0,0,,Sí, Mr. Brown.
+Dialogue: 0,0:31:43.29,0:31:45.67,ES-Main,,0,0,0,,Deberíamos construir un centro de salud
 Dialogue: 0,0:31:43.33,0:31:45.25,Default,,0,0,0,,我们应该建一个医疗中心
-Dialogue: 0,0:31:43.33,0:31:45.25,ES-Main,,0,0,0,,Deberíamos construir un centro de salud
 Dialogue: 0,0:31:45.75,0:31:47.88,Default,,0,0,0,,应对像今天这样的紧急状况
 Dialogue: 0,0:31:45.75,0:31:47.88,ES-Main,,0,0,0,,para un caso de emergencia como el de hoy.
+Dialogue: 0,0:31:50.75,0:31:51.92,ES-Main,,0,0,0,,Buena idea.
 Dialogue: 0,0:31:50.79,0:31:51.92,Default,,0,0,0,,好主意
-Dialogue: 0,0:31:50.79,0:31:51.92,ES-Main,,0,0,0,,Buena idea.
+Dialogue: 0,0:31:54.08,0:31:55.16,ES-Main,,0,0,0,,Me ocupo de eso.
 Dialogue: 0,0:31:54.17,0:31:55.17,Default,,0,0,0,,我会处理的
-Dialogue: 0,0:31:54.17,0:31:55.17,ES-Main,,0,0,0,,Me ocupo de eso.
 Dialogue: 0,0:32:00.38,0:32:02.42,Default,,0,0,0,,布恩迪亚 等一下
-Dialogue: 0,0:32:00.38,0:32:02.42,ES-Main,,0,0,0,,Buendía. Un momento.
+Dialogue: 0,0:32:00.42,0:32:02.30,ES-Main,,0,0,0,,Buendía. Un momento.
+Dialogue: 0,0:32:03.83,0:32:04.91,ES-Main,,0,0,0,,Para ti.
 Dialogue: 0,0:32:03.88,0:32:04.92,Default,,0,0,0,,给你的
-Dialogue: 0,0:32:03.88,0:32:04.92,ES-Main,,0,0,0,,Para ti.
+Dialogue: 0,0:32:10.63,0:32:13.17,ES-Main,,0,0,0,,Unos lindos cupones para el comisariato.
 Dialogue: 0,0:32:10.67,0:32:13.42,Default,,0,0,0,,杂货铺的票券
-Dialogue: 0,0:32:10.67,0:32:13.42,ES-Main,,0,0,0,,Unos lindos cupones para el comisariato.
 Dialogue: 0,0:32:15.79,0:32:17.37,Default,,0,0,0,,干得好 布恩迪亚
-Dialogue: 0,0:32:15.79,0:32:17.37,ES-Main,,0,0,0,,Buen trabajo, Buendía.
+Dialogue: 0,0:32:15.79,0:32:17.50,ES-Main,,0,0,0,,Buen trabajo, Buendía.
 Dialogue: 0,0:32:19.92,0:32:22.21,Default,,0,0,0,,亲爱的 过来一下好吗？
-Dialogue: 0,0:32:19.92,0:32:22.21,ES-Main,,0,0,0,,Querida, ¿puedes venir un momento?
+Dialogue: 0,0:32:19.92,0:32:22.25,ES-Main,,0,0,0,,Querida, ¿puedes venir un momento?
+Dialogue: 0,0:32:26.42,0:32:27.38,ES-Main,,0,0,0,,¿Señor?
 Dialogue: 0,0:32:26.54,0:32:27.37,Default,,0,0,0,,先生？
-Dialogue: 0,0:32:26.54,0:32:27.37,ES-Main,,0,0,0,,¿Señor?
+Dialogue: 0,0:32:28.83,0:32:30.16,ES-Main,,0,0,0,,¿Te duele, tía?
 Dialogue: 0,0:32:28.92,0:32:30.34,Default,,0,0,0,,疼吗 姑姑？
-Dialogue: 0,0:32:28.92,0:32:30.34,ES-Main,,0,0,0,,¿Te duele, tía?
+Dialogue: 0,0:32:33.21,0:32:35.17,ES-Main,,0,0,0,,¿Y por qué te hicieron eso?
 Dialogue: 0,0:32:33.33,0:32:34.96,Default,,0,0,0,,他们为什么欺负你？
-Dialogue: 0,0:32:33.33,0:32:34.96,ES-Main,,0,0,0,,¿Y por qué te hicieron eso?
+Dialogue: 0,0:32:35.25,0:32:39.50,ES-Main-2L,,0,0,0,,Porque la gente en este pueblo se está volviendo loca.
 Dialogue: 0,0:32:35.46,0:32:39.38,Default,,0,0,0,,因为这镇上的人都疯了
-Dialogue: 0,0:32:35.46,0:32:39.38,ES-Main-2L,,0,0,0,,Porque la gente en este pueblo se está volviendo loca.
+Dialogue: 0,0:32:40.71,0:32:44.88,ES-Main-2L,,0,0,0,,No es solo por eso. Es porque Remedios es una provocadora.
 Dialogue: 0,0:32:40.83,0:32:42.16,Default,,0,0,0,,不仅如此
-Dialogue: 0,0:32:40.83,0:32:42.16,ES-Main,,0,0,0,,No es solo
 Dialogue: 0,0:32:42.67,0:32:45.00,Default,,0,0,0,,也是蕾梅黛丝引火烧身
-Dialogue: 0,0:32:42.67,0:32:45.00,ES-Main,,0,0,0,,por eso. Es porque Remedios es una provocadora.
+Dialogue: 0,0:32:45.63,0:32:48.59,ES-Main,,0,0,0,,Hemos visto cómo va desnuda sin pudor alguno
 Dialogue: 0,0:32:45.75,0:32:48.17,Default,,0,0,0,,我们都见过她光着身子走来走去
-Dialogue: 0,0:32:45.75,0:32:48.17,ES-Main,,0,0,0,,Hemos visto cómo va desnuda sin pudor alguno
 Dialogue: 0,0:32:48.67,0:32:51.17,Default,,0,0,0,,让乌尔苏拉请来做客的男人们肆意窥探
-Dialogue: 0,0:32:48.67,0:32:51.17,ES-Main,,0,0,0,,para que los hombres que invita su bisabuela
+Dialogue: 0,0:32:48.67,0:32:51.30,ES-Main-2L,,0,0,0,,para que los hombres que invita su bisabuela la vean.
 Dialogue: 0,0:32:51.25,0:32:54.75,Default,,0,0,0,,放尊重点！忘恩负义的贱货
-Dialogue: 0,0:32:51.25,0:32:54.75,ES-Main,,0,0,0,,la vean. ¡Respete! Cachaca malagradecida.
+Dialogue: 0,0:32:51.38,0:32:52.71,ES-Main-2L,,0,0,0,,¡Respete!
+Dialogue: 0,0:32:52.79,0:32:54.75,ES-Main,,0,0,0,,Cachaca malagradecida.
+Dialogue: 0,0:32:58.17,0:33:00.55,ES-Main,,0,0,0,,El pudor es para personas como tú, Fernanda,
 Dialogue: 0,0:32:58.42,0:33:00.59,Default,,0,0,0,,费尔南达 像你这种要靠终日祈祷
-Dialogue: 0,0:32:58.42,0:33:00.59,ES-Main,,0,0,0,,El pudor es para personas como tú, Fernanda,
 Dialogue: 0,0:33:01.08,0:33:04.66,Default,,0,0,0,,来摆脱内心恶魔的人才需要衣着端庄
-Dialogue: 0,0:33:01.08,0:33:04.66,ES-Main-2L,,0,0,0,,que tienen que rezar día y noche para sacarse lo malo que llevan dentro.
+Dialogue: 0,0:33:01.13,0:33:04.71,ES-Main-2L,,0,0,0,,que tienen que rezar día y noche para sacarse lo malo que llevan dentro.
+Dialogue: 0,0:33:10.75,0:33:12.17,ES-Main,,0,0,0,,Yo solo digo la verdad.
 Dialogue: 0,0:33:10.79,0:33:12.17,Default,,0,0,0,,我只是实话实说
-Dialogue: 0,0:33:10.79,0:33:12.17,ES-Main,,0,0,0,,Yo solo digo la verdad.
 Dialogue: 0,0:33:12.71,0:33:15.21,Default,,0,0,0,,你们的姑姑不仅疯魔 还很危险
-Dialogue: 0,0:33:12.71,0:33:15.21,ES-Main,,0,0,0,,Su tía no solo está loca, es peligrosa.
+Dialogue: 0,0:33:12.75,0:33:14.83,ES-Main,,0,0,0,,Su tía no solo está loca, es peligrosa.
 Dialogue: 0,0:33:16.00,0:33:17.50,Default,,0,0,0,,收邮件！
-Dialogue: 0,0:33:16.00,0:33:17.50,ES-Main,,0,0,0,,¡Correo!
+Dialogue: 0,0:33:16.00,0:33:17.25,ES-Main,,0,0,0,,¡Correo!
+Dialogue: 0,0:33:20.00,0:33:22.92,ES-Main,,0,0,0,,Encomienda para del Carpio.
 Dialogue: 0,0:33:21.46,0:33:22.92,Default,,0,0,0,,卡皮奥小姐的包裹
-Dialogue: 0,0:33:21.46,0:33:22.92,ES-Main,,0,0,0,,Encomienda para del Carpio.
 Dialogue: 0,0:33:23.00,0:33:25.46,Default,,0,0,0,,是外公的礼物！快来 梅梅！
-Dialogue: 0,0:33:23.00,0:33:25.46,ES-Main,,0,0,0,,¡Los regalos del abuelo! Vamos, Meme.
+Dialogue: 0,0:33:23.00,0:33:25.33,ES-Main,,0,0,0,,¡Los regalos del abuelo! Vamos, Meme.
 Dialogue: 0,0:33:26.71,0:33:27.84,Default,,0,0,0,,请在这里签字
-Dialogue: 0,0:33:26.71,0:33:27.84,ES-Main,,0,0,0,,¿Me firma aquí?
+Dialogue: 0,0:33:26.75,0:33:28.00,ES-Main,,0,0,0,,¿Me firma aquí?
 Dialogue: 0,0:33:29.63,0:33:30.84,Default,,0,0,0,,拿稳了 梅梅
-Dialogue: 0,0:33:29.63,0:33:30.84,ES-Main,,0,0,0,,Meme, aguanta.
+Dialogue: 0,0:33:29.63,0:33:31.09,ES-Main,,0,0,0,,Meme, aguanta.
+Dialogue: 0,0:33:39.71,0:33:41.34,ES-Main,,0,0,0,,Ya quiero ver qué es.
 Dialogue: 0,0:33:39.75,0:33:41.29,Default,,0,0,0,,好想快点看看呀
-Dialogue: 0,0:33:39.75,0:33:41.29,ES-Main,,0,0,0,,Ya quiero ver qué es.
 Dialogue: 0,0:34:01.67,0:34:03.34,Default,,0,0,0,,不！
-Dialogue: 0,0:34:01.67,0:34:03.34,ES-Main,,0,0,0,,¡No!
+Dialogue: 0,0:34:01.71,0:34:03.29,ES-Main,,0,0,0,,¡No!
 Dialogue: 0,0:34:09.79,0:34:11.21,Default,,0,0,0,,爸爸！
-Dialogue: 0,0:34:09.79,0:34:11.21,ES-Main,,0,0,0,,¡Mi papá!
+Dialogue: 0,0:34:09.79,0:34:11.96,ES-Main,,0,0,0,,¡Mi papá!
 Dialogue: 0,0:35:26.58,0:35:28.12,Default,,0,0,0,,出去！
-Dialogue: 0,0:35:26.58,0:35:28.12,ES-Main,,0,0,0,,¡Fuera!
+Dialogue: 0,0:35:26.58,0:35:27.87,ES-Main,,0,0,0,,¡Fuera!
+Dialogue: 0,0:35:33.50,0:35:36.13,ES-Main,,0,0,0,,¿Cómo pudiste mancillar su memoria
 Dialogue: 0,0:35:33.54,0:35:37.96,Default,,0,0,0,,你怎能用如此低劣的行径\N来玷污他的名誉？
-Dialogue: 0,0:35:33.54,0:35:37.96,ES-Main-2L,,0,0,0,,¿Cómo pudiste mancillar su memoria de una manera tan ruin?
+Dialogue: 0,0:35:36.21,0:35:37.92,ES-Main,,0,0,0,,de una manera tan ruin?
+Dialogue: 0,0:35:40.79,0:35:43.12,ES-Main,,0,0,0,,Se murió un cristiano, Aureliano.
 Dialogue: 0,0:35:40.83,0:35:43.25,Default,,0,0,0,,奥雷里亚诺 逝去的是一位基督徒
-Dialogue: 0,0:35:40.83,0:35:43.25,ES-Main,,0,0,0,,Se murió un cristiano, Aureliano.
+Dialogue: 0,0:35:43.96,0:35:45.59,ES-Main,,0,0,0,,¡No un perro!
 Dialogue: 0,0:35:44.00,0:35:45.75,Default,,0,0,0,,不是一条狗！
-Dialogue: 0,0:35:44.00,0:35:45.75,ES-Main,,0,0,0,,¡No un perro!
 Dialogue: 0,0:35:47.08,0:35:48.16,Default,,0,0,0,,抱歉
-Dialogue: 0,0:35:47.08,0:35:48.16,ES-Main,,0,0,0,,Perdón.
+Dialogue: 0,0:35:47.08,0:35:48.04,ES-Main,,0,0,0,,Perdón.
 Dialogue: 0,0:35:49.42,0:35:50.55,Default,,0,0,0,,谢谢
-Dialogue: 0,0:35:49.42,0:35:50.55,ES-Main,,0,0,0,,Gracias.
+Dialogue: 0,0:35:49.42,0:35:50.42,ES-Main,,0,0,0,,Gracias.
+Dialogue: 0,0:35:51.08,0:35:53.16,ES-Main,,0,0,0,,Este es un homenaje para tu papá.
 Dialogue: 0,0:35:51.29,0:35:53.08,Default,,0,0,0,,我是在悼念你父亲啊
-Dialogue: 0,0:35:51.29,0:35:53.08,ES-Main,,0,0,0,,Este es un homenaje para tu papá.
+Dialogue: 0,0:35:55.00,0:35:56.88,ES-Main,,0,0,0,,Ma, yo no hice nada.
 Dialogue: 0,0:35:55.04,0:35:56.92,Default,,0,0,0,,妈妈 我什么也没干
-Dialogue: 0,0:35:55.04,0:35:56.92,ES-Main,,0,0,0,,Ma, yo no hice nada.
+Dialogue: 0,0:35:56.96,0:35:58.79,ES-Main,,0,0,0,,Fue Meme y mi papá.
 Dialogue: 0,0:35:57.00,0:35:58.75,Default,,0,0,0,,都是梅梅和爸爸的主意
-Dialogue: 0,0:35:57.00,0:35:58.75,ES-Main,,0,0,0,,Fue Meme y mi papá.
 Dialogue: 0,0:35:58.83,0:36:00.08,Default,,0,0,0,,闭嘴 告状精！
-Dialogue: 0,0:35:58.83,0:36:00.08,ES-Main,,0,0,0,,¡Cállate, sapo!
+Dialogue: 0,0:35:58.88,0:36:00.09,ES-Main,,0,0,0,,¡Cállate, sapo!
 Dialogue: 0,0:36:00.17,0:36:01.92,Default,,0,0,0,,费尔南达 不光是他
-Dialogue: 0,0:36:00.17,0:36:01.92,ES-Main,,0,0,0,,Fernanda, es que no fue solo él.
+Dialogue: 0,0:36:00.17,0:36:01.96,ES-Main,,0,0,0,,Fernanda, es que no fue solo él.
 Dialogue: 0,0:36:02.00,0:36:03.58,Default,,0,0,0,,-我也…\N-请别插手 乌尔苏拉
-Dialogue: 0,0:36:02.00,0:36:03.58,ES-Main,,0,0,0,,-Yo también… -No se meta.
+Dialogue: 0,0:36:02.04,0:36:03.58,ES-Main,,0,0,0,,-Yo también… -No se meta.
 Dialogue: 0,0:36:03.67,0:36:05.84,Default,,0,0,0,,-乖 来吧\N-这件事与您无关
-Dialogue: 0,0:36:03.67,0:36:05.84,ES-Main,,0,0,0,,-Vete. -No es con usted.
+Dialogue: 0,0:36:03.67,0:36:05.75,ES-Main,,0,0,0,,-Vete. -No es con usted.
+Dialogue: 0,0:36:09.17,0:36:11.59,ES-Main,,0,0,0,,Yo acepté este matrimonio fallido
 Dialogue: 0,0:36:09.21,0:36:11.63,Default,,0,0,0,,当初我接受这桩失败的婚姻
-Dialogue: 0,0:36:09.21,0:36:11.63,ES-Main,,0,0,0,,Yo acepté este matrimonio fallido
+Dialogue: 0,0:36:11.67,0:36:13.59,ES-Main,,0,0,0,,y la grosería de esta gente
 Dialogue: 0,0:36:11.71,0:36:13.50,Default,,0,0,0,,和这些人的粗鲁无礼
-Dialogue: 0,0:36:11.71,0:36:13.50,ES-Main,,0,0,0,,y la grosería de esta gente
+Dialogue: 0,0:36:14.17,0:36:17.17,ES-Main,,0,0,0,,para criar a mis hijos en un hogar cristiano.
 Dialogue: 0,0:36:14.21,0:36:17.29,Default,,0,0,0,,是为了在基督教家庭中抚养我的孩子
-Dialogue: 0,0:36:14.21,0:36:17.29,ES-Main,,0,0,0,,para criar a mis hijos en un hogar cristiano.
+Dialogue: 0,0:36:17.96,0:36:20.79,ES-Main,,0,0,0,,Pero me doy cuenta una y otra vez
 Dialogue: 0,0:36:18.04,0:36:20.67,Default,,0,0,0,,但我一次又一次地意识到
-Dialogue: 0,0:36:18.04,0:36:20.67,ES-Main,,0,0,0,,Pero me doy cuenta una y otra vez
+Dialogue: 0,0:36:21.29,0:36:23.83,ES-Main,,0,0,0,,de que en esta casa de locos es imposible.
 Dialogue: 0,0:36:21.33,0:36:23.91,Default,,0,0,0,,在这所疯人院里 那根本不可能
-Dialogue: 0,0:36:21.33,0:36:23.91,ES-Main,,0,0,0,,de que en esta casa de locos es imposible.
+Dialogue: 0,0:36:27.71,0:36:29.46,ES-Main,,0,0,0,,Los niños se van de Macondo.
 Dialogue: 0,0:36:27.79,0:36:29.46,Default,,0,0,0,,孩子们要离开马孔多
-Dialogue: 0,0:36:27.79,0:36:29.46,ES-Main,,0,0,0,,Los niños se van de Macondo.
 Dialogue: 0,0:36:30.63,0:36:32.38,Default,,0,0,0,,你不能送走我的孩子
 Dialogue: 0,0:36:30.63,0:36:32.38,ES-Main,,0,0,0,,Tú no me puedes quitar a mis hijos.
+Dialogue: 0,0:36:34.88,0:36:35.84,ES-Main,,0,0,0,,Sí, puedo.
 Dialogue: 0,0:36:34.96,0:36:35.92,Default,,0,0,0,,我能
-Dialogue: 0,0:36:34.96,0:36:35.92,ES-Main,,0,0,0,,Sí, puedo.
+Dialogue: 0,0:36:37.08,0:36:38.75,ES-Main,,0,0,0,,Porque yo soy su mamá.
 Dialogue: 0,0:36:37.13,0:36:40.34,Default,,0,0,0,,因为我是他们的母亲\N我为他们付出了一切
-Dialogue: 0,0:36:37.13,0:36:40.34,ES-Main,,0,0,0,,Porque yo soy su mamá. Yo les he dado todo.
+Dialogue: 0,0:36:38.83,0:36:40.33,ES-Main,,0,0,0,,Yo les he dado todo.
 Dialogue: 0,0:36:41.67,0:36:44.67,Default,,0,0,0,,而你一直以来 都选择了她
 Dialogue: 0,0:36:41.67,0:36:44.67,ES-Main,,0,0,0,,Y, en cambio, tú la escogiste a ella.
+Dialogue: 0,0:36:51.92,0:36:54.50,ES-Main,,0,0,0,,Por Dios, Fernanda, ¿qué estás diciendo?
 Dialogue: 0,0:36:52.00,0:36:54.50,Default,,0,0,0,,天哪 费尔南达 你在胡说些什么啊？
-Dialogue: 0,0:36:52.00,0:36:54.50,ES-Main,,0,0,0,,Por Dios, Fernanda, ¿qué estás diciendo?
 Dialogue: 0,0:36:55.50,0:36:57.54,Default,,0,0,0,,我给你装了喜欢的糖果
-Dialogue: 0,0:36:55.50,0:36:57.54,ES-Main,,0,0,0,,Te empaqué los dulces que te gustan.
+Dialogue: 0,0:36:55.50,0:36:57.50,ES-Main,,0,0,0,,Te empaqué los dulces que te gustan.
+Dialogue: 0,0:36:58.42,0:37:00.67,ES-Main,,0,0,0,,Pero no te los vayas a comer todos de una vez.
 Dialogue: 0,0:36:58.54,0:37:00.75,Default,,0,0,0,,但别一次吃完
-Dialogue: 0,0:36:58.54,0:37:00.75,ES-Main,,0,0,0,,Pero no te los vayas a comer todos de una vez.
+Dialogue: 0,0:37:01.17,0:37:02.38,ES-Main,,0,0,0,,¿Me lo prometes?
 Dialogue: 0,0:37:01.25,0:37:02.54,Default,,0,0,0,,答应我 好吗？
-Dialogue: 0,0:37:01.25,0:37:02.54,ES-Main,,0,0,0,,¿Me lo prometes?
+Dialogue: 0,0:37:04.75,0:37:05.71,ES-Main,,0,0,0,,Ven.
 Dialogue: 0,0:37:04.88,0:37:07.30,Default,,0,0,0,,来 我给你换衣服
-Dialogue: 0,0:37:04.88,0:37:07.30,ES-Main,,0,0,0,,Ven. Ven acá, que te voy a cambiar.
+Dialogue: 0,0:37:05.79,0:37:07.29,ES-Main,,0,0,0,,Ven acá, que te voy a cambiar.
+Dialogue: 0,0:37:07.79,0:37:09.21,ES-Main,,0,0,0,,Ven.
 Dialogue: 0,0:37:07.83,0:37:08.66,Default,,0,0,0,,来吧
-Dialogue: 0,0:37:07.83,0:37:08.66,ES-Main,,0,0,0,,Ven.
+Dialogue: 0,0:37:20.33,0:37:22.21,ES-Main,,0,0,0,,Está precioso.
 Dialogue: 0,0:37:20.38,0:37:21.84,Default,,0,0,0,,画得真好
-Dialogue: 0,0:37:20.38,0:37:21.84,ES-Main,,0,0,0,,Está precioso.
+Dialogue: 0,0:37:22.29,0:37:23.58,ES-Main,,0,0,0,,Muchas gracias.
 Dialogue: 0,0:37:22.33,0:37:23.66,Default,,0,0,0,,多谢你了
-Dialogue: 0,0:37:22.33,0:37:23.66,ES-Main,,0,0,0,,Muchas gracias.
+Dialogue: 0,0:37:29.71,0:37:32.63,ES-Main,,0,0,0,,Tía, ¿no vienes a la estación?
 Dialogue: 0,0:37:29.83,0:37:32.79,Default,,0,0,0,,姑姑 你不来火车站吗？
-Dialogue: 0,0:37:29.83,0:37:32.79,ES-Main,,0,0,0,,Tía, ¿no vienes a la estación?
+Dialogue: 0,0:37:38.83,0:37:40.08,ES-Main,,0,0,0,,Los quiero mucho.
 Dialogue: 0,0:37:38.88,0:37:40.21,Default,,0,0,0,,我很爱你们
-Dialogue: 0,0:37:38.88,0:37:40.21,ES-Main,,0,0,0,,Los quiero mucho.
+Dialogue: 0,0:37:41.08,0:37:42.21,ES-Main,,0,0,0,,Diviértanse.
 Dialogue: 0,0:37:41.17,0:37:42.30,Default,,0,0,0,,玩得开心哦
-Dialogue: 0,0:37:41.17,0:37:42.30,ES-Main,,0,0,0,,Diviértanse.
+Dialogue: 0,0:37:46.67,0:37:47.96,ES-Main,,0,0,0,,Te voy a extrañar.
 Dialogue: 0,0:37:46.75,0:37:48.08,Default,,0,0,0,,我会想你的
-Dialogue: 0,0:37:46.75,0:37:48.08,ES-Main,,0,0,0,,Te voy a extrañar.
+Dialogue: 0,0:37:48.58,0:37:49.83,ES-Main,,0,0,0,,Y yo a ustedes.
 Dialogue: 0,0:37:48.67,0:37:49.92,Default,,0,0,0,,我也会想你们
-Dialogue: 0,0:37:48.67,0:37:49.92,ES-Main,,0,0,0,,Y yo a ustedes.
+Dialogue: 0,0:37:51.04,0:37:53.50,ES-Main,,0,0,0,,José Arcadio, vamos, mi amor.
 Dialogue: 0,0:37:51.13,0:37:53.30,Default,,0,0,0,,何塞·阿尔卡蒂奥 走了
-Dialogue: 0,0:37:51.13,0:37:53.30,ES-Main,,0,0,0,,José Arcadio, vamos, mi amor.
+Dialogue: 0,0:38:02.75,0:38:03.75,ES-Main,,0,0,0,,Tía,
 Dialogue: 0,0:38:02.79,0:38:05.92,Default,,0,0,0,,姑姑 你还好吗？
-Dialogue: 0,0:38:02.79,0:38:05.92,ES-Main,,0,0,0,,Tía, ¿te sientes bien?
+Dialogue: 0,0:38:04.63,0:38:05.80,ES-Main,,0,0,0,,¿te sientes bien?
+Dialogue: 0,0:38:07.50,0:38:09.08,ES-Main,,0,0,0,,Nunca me he sentido mejor.
 Dialogue: 0,0:38:07.58,0:38:09.16,Default,,0,0,0,,前所未有地好
-Dialogue: 0,0:38:07.58,0:38:09.16,ES-Main,,0,0,0,,Nunca me he sentido mejor.
 Dialogue: 0,0:38:14.21,0:38:15.88,Default,,0,0,0,,我也经历过这些
-Dialogue: 0,0:38:14.21,0:38:15.88,ES-Main,,0,0,0,,Yo también pasé por esto.
+Dialogue: 0,0:38:14.21,0:38:15.84,ES-Main,,0,0,0,,Yo también pasé por esto.
+Dialogue: 0,0:38:17.00,0:38:19.00,ES-Main,,0,0,0,,Pero tú y yo venimos de la realeza.
 Dialogue: 0,0:38:17.04,0:38:18.96,Default,,0,0,0,,但你我出身王室
-Dialogue: 0,0:38:17.04,0:38:18.96,ES-Main,,0,0,0,,Pero tú y yo venimos de la realeza.
+Dialogue: 0,0:38:20.29,0:38:22.25,ES-Main,,0,0,0,,Y las reinas se educan con monjas.
 Dialogue: 0,0:38:20.42,0:38:22.25,Default,,0,0,0,,女王都要由修女教养
-Dialogue: 0,0:38:20.42,0:38:22.25,ES-Main,,0,0,0,,Y las reinas se educan con monjas.
+Dialogue: 0,0:38:24.54,0:38:25.96,ES-Main,,0,0,0,,Es lo mejor para ti.
 Dialogue: 0,0:38:24.63,0:38:25.96,Default,,0,0,0,,这是为你好
-Dialogue: 0,0:38:24.63,0:38:25.96,ES-Main,,0,0,0,,Es lo mejor para ti.
+Dialogue: 0,0:38:37.83,0:38:40.16,ES-Main,,0,0,0,,-Te voy a extrañar, mi vida. -Yo también.
 Dialogue: 0,0:38:37.92,0:38:40.21,Default,,0,0,0,,-我会想你的 宝贝\N-我也是
-Dialogue: 0,0:38:37.92,0:38:40.21,ES-Main,,0,0,0,,-Te voy a extrañar, mi vida. -Yo también.
+Dialogue: 0,0:38:40.25,0:38:42.00,ES-Main,,0,0,0,,-Pórtate bien. -Sí.
 Dialogue: 0,0:38:40.29,0:38:42.25,Default,,0,0,0,,-要乖哦\N-好
-Dialogue: 0,0:38:40.29,0:38:42.25,ES-Main,,0,0,0,,-Pórtate bien. -Sí.
+Dialogue: 0,0:38:54.88,0:38:56.05,ES-Main,,0,0,0,,Ve con la abuela.
 Dialogue: 0,0:38:54.96,0:38:56.13,Default,,0,0,0,,去跟你祖母道个别
-Dialogue: 0,0:38:54.96,0:38:56.13,ES-Main,,0,0,0,,Ve con la abuela.
+Dialogue: 0,0:38:56.13,0:38:57.59,ES-Main,,0,0,0,,Ven, Meme.
 Dialogue: 0,0:38:56.63,0:38:57.84,Default,,0,0,0,,来 梅梅
-Dialogue: 0,0:38:56.63,0:38:57.84,ES-Main,,0,0,0,,Ven, Meme.
+Dialogue: 0,0:39:21.83,0:39:24.12,ES-Main,,0,0,0,,Dios los proteja, mis niños.
 Dialogue: 0,0:39:21.88,0:39:24.30,Default,,0,0,0,,愿上帝保佑你们 我的孩子
-Dialogue: 0,0:39:21.88,0:39:24.30,ES-Main,,0,0,0,,Dios los proteja, mis niños.
 Dialogue: 0,0:39:29.67,0:39:31.21,Default,,0,0,0,,乖乖听话 宝贝
-Dialogue: 0,0:39:29.67,0:39:31.21,ES-Main,,0,0,0,,Pórtate bien, mi amor.
+Dialogue: 0,0:39:29.67,0:39:31.30,ES-Main,,0,0,0,,Pórtate bien, mi amor.
 Dialogue: 0,0:39:31.71,0:39:33.67,Default,,0,0,0,,记得每个月给爸爸写信
-Dialogue: 0,0:39:31.71,0:39:33.67,ES-Main,,0,0,0,,Escríbele todos los meses a papá.
+Dialogue: 0,0:39:31.83,0:39:33.75,ES-Main,,0,0,0,,Escríbele todos los meses a papá.
 Dialogue: 0,0:39:33.75,0:39:35.88,Default,,0,0,0,,爸爸等着看你的信
-Dialogue: 0,0:39:33.75,0:39:35.88,ES-Main,,0,0,0,,Papá va a estar aquí leyendo tus cartas.
+Dialogue: 0,0:39:33.83,0:39:35.87,ES-Main,,0,0,0,,Papá va a estar aquí leyendo tus cartas.
+Dialogue: 0,0:39:36.92,0:39:38.96,ES-Main,,0,0,0,,Y nunca se te olvide que papá te ama.
 Dialogue: 0,0:39:37.04,0:39:39.08,Default,,0,0,0,,永远别忘了 爸爸爱你
-Dialogue: 0,0:39:37.04,0:39:39.08,ES-Main,,0,0,0,,Y nunca se te olvide que papá te ama.
+Dialogue: 0,0:39:39.04,0:39:40.96,ES-Main,,0,0,0,,¡Que papá te va a estar esperando!
 Dialogue: 0,0:39:39.17,0:39:41.09,Default,,0,0,0,,爸爸等你回来！
-Dialogue: 0,0:39:39.17,0:39:41.09,ES-Main,,0,0,0,,¡Que papá te va a estar esperando!
 Dialogue: 0,0:40:04.25,0:40:07.04,CN-Special,,0,0,0,,（新铁路将促进马孔多的发展）
 Dialogue: 0,0:40:07.13,0:40:10.09,Default,,0,0,0,,我的家人彻底疯了
-Dialogue: 0,0:40:07.13,0:40:10.09,ES-Main,,0,0,0,,Mi familia se terminó de enloquecer.
+Dialogue: 0,0:40:07.13,0:40:09.96,ES-Main,,0,0,0,,Mi familia se terminó de enloquecer.
+Dialogue: 0,0:40:14.25,0:40:17.33,ES-Main,,0,0,0,,Ahora resulta que vamos a tener un papa
 Dialogue: 0,0:40:14.29,0:40:17.33,Default,,0,0,0,,现在看来 我们家要出一位教皇
-Dialogue: 0,0:40:14.29,0:40:17.33,ES-Main,,0,0,0,,Ahora resulta que vamos a tener un papa
+Dialogue: 0,0:40:18.50,0:40:19.96,ES-Main,,0,0,0,,y una beata.
 Dialogue: 0,0:40:18.58,0:40:19.96,Default,,0,0,0,,和一个虔诚的女信徒了
-Dialogue: 0,0:40:18.58,0:40:19.96,ES-Main,,0,0,0,,y una beata.
+Dialogue: 0,0:40:23.17,0:40:24.88,ES-Main,,0,0,0,,Y a un mártir.
 Dialogue: 0,0:40:23.25,0:40:24.75,Default,,0,0,0,,还有一个烈士
-Dialogue: 0,0:40:23.25,0:40:24.75,ES-Main,,0,0,0,,Y a un mártir.
 Dialogue: 0,0:40:27.13,0:40:28.76,Default,,0,0,0,,你还没见过那东西吗？
-Dialogue: 0,0:40:27.13,0:40:28.76,ES-Main,,0,0,0,,¿Aún no has visto?
+Dialogue: 0,0:40:27.13,0:40:28.80,ES-Main,,0,0,0,,¿Aún no has visto?
 Dialogue: 0,0:40:36.46,0:40:40.79,CN-Special,,0,0,0,,（纪念奥雷里亚诺·布恩迪亚上校）
 Dialogue: 0,0:40:40.88,0:40:43.42,CN-Special,,0,0,0,,（自由与正义的坚实捍卫者）
 Dialogue: 0,0:40:43.50,0:40:46.46,CN-Special,,0,0,0,,（人民永远铭记\N他为国家主权而英勇奋战）
+Dialogue: 0,0:40:46.46,0:40:48.63,ES-Main,,0,0,0,,Como no pudieron matarme,
 Dialogue: 0,0:40:46.54,0:40:48.79,Default,,0,0,0,,他们杀不了我
-Dialogue: 0,0:40:46.54,0:40:48.79,ES-Main,,0,0,0,,Como no pudieron matarme,
+Dialogue: 0,0:40:50.67,0:40:53.09,ES-Main,,0,0,0,,ahora ellos me quieren enterrar vivo.
 Dialogue: 0,0:40:50.75,0:40:53.13,Default,,0,0,0,,就想活埋了我
-Dialogue: 0,0:40:50.75,0:40:53.13,ES-Main,,0,0,0,,ahora ellos me quieren enterrar vivo.
 Dialogue: 0,0:41:17.71,0:41:19.17,Default,,0,0,0,,急什么？
-Dialogue: 0,0:41:17.71,0:41:19.17,ES-Main,,0,0,0,,¿Qué es lo que pasa?
+Dialogue: 0,0:41:17.75,0:41:19.38,ES-Main,,0,0,0,,¿Qué es lo que pasa?
+Dialogue: 0,0:41:20.79,0:41:22.08,ES-Main,,0,0,0,,¿Tienes afán?
 Dialogue: 0,0:41:20.92,0:41:22.25,Default,,0,0,0,,赶着去投胎吗？
-Dialogue: 0,0:41:20.92,0:41:22.25,ES-Main,,0,0,0,,¿Tienes afán?
+Dialogue: 0,0:41:34.54,0:41:35.46,ES-Main,,0,0,0,,Mira.
 Dialogue: 0,0:41:34.63,0:41:35.55,Default,,0,0,0,,瞧瞧
-Dialogue: 0,0:41:34.63,0:41:35.55,ES-Main,,0,0,0,,Mira.
+Dialogue: 0,0:41:37.00,0:41:39.29,ES-Main,,0,0,0,,Mira las vainas que nos buscamos.
 Dialogue: 0,0:41:37.04,0:41:39.29,Default,,0,0,0,,瞧我们给自己惹来的麻烦
-Dialogue: 0,0:41:37.04,0:41:39.29,ES-Main,,0,0,0,,Mira las vainas que nos buscamos.
 Dialogue: 0,0:41:40.29,0:41:45.33,Default,,0,0,0,,就因为请了一个该死的美国佬吃香蕉
-Dialogue: 0,0:41:40.29,0:41:45.33,ES-Main-2L,,0,0,0,,Nomás por invitar a uno de esos gringos de mierda a comer guineo.
+Dialogue: 0,0:41:40.29,0:41:45.29,ES-Main-2L,,0,0,0,,Nomás por invitar a uno de esos gringos de mierda a comer guineo.
 Dialogue: 0,0:41:52.92,0:41:55.21,Default,,0,0,0,,-给 这是票券\N-你在这儿工作？
-Dialogue: 0,0:41:52.92,0:41:55.21,ES-Main,,0,0,0,,-Tome, el vale. -¿Trabaja aquí?
+Dialogue: 0,0:41:52.92,0:41:55.17,ES-Main-2L,,0,0,0,,-Tome, el vale. -¿Trabaja aquí?
+Dialogue: 0,0:41:55.25,0:41:57.29,ES-Main,,0,0,0,,Trabaja el papá de mi nieto.
 Dialogue: 0,0:41:55.29,0:41:57.50,Default,,0,0,0,,是我儿子 我孙儿的爸爸在这里工作
-Dialogue: 0,0:41:55.29,0:41:57.50,ES-Main,,0,0,0,,Trabaja el papá de mi nieto. Si no trabaja,
+Dialogue: 0,0:41:57.38,0:42:01.30,ES-Main-2L,,0,0,0,,Si no trabaja, no puede entrar. Es para trabajadores de la compañía.
 Dialogue: 0,0:41:57.58,0:42:01.25,Default,,0,0,0,,非员工不得入内 这里只对雇员开放
-Dialogue: 0,0:41:57.58,0:42:01.25,ES-Main-2L,,0,0,0,,no puede entrar. Es para trabajadores de la compañía.
 Dialogue: 0,0:42:01.33,0:42:04.66,Default,,0,0,0,,但我有票\N而且给我票的人在这里工作啊
-Dialogue: 0,0:42:01.33,0:42:04.66,ES-Main-2L,,0,0,0,,Pero tengo el boleto. Y el que me dio el boleto trabaja aquí.
+Dialogue: 0,0:42:01.38,0:42:04.80,ES-Main-2L,,0,0,0,,Pero tengo el boleto. Y el que me dio el boleto trabaja aquí.
+Dialogue: 0,0:42:04.88,0:42:07.09,ES-Main,,0,0,0,,-Muéstreme el boleto. -No puedes impedirme…
 Dialogue: 0,0:42:05.17,0:42:07.00,Default,,0,0,0,,-让我看看\N-你不能拦我…
-Dialogue: 0,0:42:05.17,0:42:07.00,ES-Main,,0,0,0,,-Muéstreme el boleto. -No puedes impedirme…
 Dialogue: 0,0:42:07.08,0:42:09.87,Default,,0,0,0,,-给我看票 老人家\N-票在这里
-Dialogue: 0,0:42:07.08,0:42:09.87,ES-Main,,0,0,0,,-Muestre el boleto, abuelo. -Aquí está el boleto.
+Dialogue: 0,0:42:07.17,0:42:09.75,ES-Main,,0,0,0,,-Muestre el boleto, abuelo. -Aquí está el boleto.
+Dialogue: 0,0:42:11.88,0:42:13.92,ES-Main,,0,0,0,,Tener esto es ilegal. Esto es un delito.
 Dialogue: 0,0:42:11.92,0:42:13.92,Default,,0,0,0,,持有这个是违法的 这是犯罪
-Dialogue: 0,0:42:11.92,0:42:13.92,ES-Main,,0,0,0,,Tener esto es ilegal. Esto es un delito.
 Dialogue: 0,0:42:14.00,0:42:16.67,Default,,0,0,0,,你这样才是犯罪 你只是个普通人
-Dialogue: 0,0:42:14.00,0:42:16.67,ES-Main,,0,0,0,,Delito estás cometiendo tú. Aquí eres un aparecido.
+Dialogue: 0,0:42:14.00,0:42:16.63,ES-Main-2L,,0,0,0,,Delito estás cometiendo tú. Aquí eres un aparecido.
+Dialogue: 0,0:42:16.71,0:42:18.54,ES-Main,,0,0,0,,-No eres autoridad ni ley. -¡Niño!
 Dialogue: 0,0:42:16.75,0:42:18.08,Default,,0,0,0,,-不能代表法律\N-小子！
-Dialogue: 0,0:42:16.75,0:42:18.08,ES-Main,,0,0,0,,-No eres autoridad
 Dialogue: 0,0:42:18.17,0:42:19.38,Default,,0,0,0,,-放下！\N-听见了没？
-Dialogue: 0,0:42:18.17,0:42:19.38,ES-Main,,0,0,0,,ni ley. -¡Niño!
+Dialogue: 0,0:42:18.63,0:42:19.59,ES-Main,,0,0,0,,-¡Quieto! -¿Oíste?
 Dialogue: 0,0:42:19.46,0:42:21.04,Default,,0,0,0,,-等等 他偷东西！\N-马努尔！
-Dialogue: 0,0:42:19.46,0:42:21.04,ES-Main,,0,0,0,,-¡Quieto! -¿Oíste? -¡Está robando! -¡Manuel!
+Dialogue: 0,0:42:19.67,0:42:21.05,ES-Main,,0,0,0,,-¡Está robando! -¡Manuel!
 Dialogue: 0,0:42:21.13,0:42:22.88,Default,,0,0,0,,嘿 别碰那孩子！马努尔！
-Dialogue: 0,0:42:21.13,0:42:22.88,ES-Main,,0,0,0,,¡Deja al niño! ¡Manuel!
+Dialogue: 0,0:42:21.13,0:42:23.26,ES-Main,,0,0,0,,¡Deja al niño! ¡Manuel!
+Dialogue: 0,0:42:23.33,0:42:25.66,ES-Main,,0,0,0,,-¡Deja al niño! ¡Manuel! -¡Suéltame!
 Dialogue: 0,0:42:24.33,0:42:25.66,Default,,0,0,0,,-马努尔！\N-放开我！
-Dialogue: 0,0:42:24.33,0:42:25.66,ES-Main,,0,0,0,,-¡Deja al niño! ¡Manuel! -¡Suéltame!
 Dialogue: 0,0:42:25.75,0:42:26.71,Default,,0,0,0,,别动
-Dialogue: 0,0:42:25.75,0:42:26.71,ES-Main,,0,0,0,,-Quieto.
+Dialogue: 0,0:42:25.75,0:42:29.75,ES-Main,,0,0,0,,-Quieto. -¡Oye! ¡Policía hijueputa!
 Dialogue: 0,0:42:27.75,0:42:29.92,Default,,0,0,0,,该死的警察！
-Dialogue: 0,0:42:27.75,0:42:29.92,ES-Main,,0,0,0,,-¡Oye! ¡Policía hijueputa!
 Dialogue: 0,0:42:40.13,0:42:41.05,Default,,0,0,0,,人渣！
-Dialogue: 0,0:42:40.13,0:42:41.05,ES-Main,,0,0,0,,¡Bellacos!
+Dialogue: 0,0:42:40.13,0:42:42.05,ES-Main,,0,0,0,,¡Bellacos!
 Dialogue: 0,0:42:41.96,0:42:43.71,Default,,0,0,0,,杀人犯！
-Dialogue: 0,0:42:41.96,0:42:43.71,ES-Main,,0,0,0,,¡Asesinos!
+Dialogue: 0,0:42:42.13,0:42:43.80,ES-Main,,0,0,0,,¡Asesinos!
 Dialogue: 0,0:42:44.67,0:42:46.84,Default,,0,0,0,,混蛋！
-Dialogue: 0,0:42:44.67,0:42:46.84,ES-Main,,0,0,0,,¡Hijos de puta!
+Dialogue: 0,0:42:44.67,0:42:46.63,ES-Main,,0,0,0,,¡Hijos de puta!
+Dialogue: 0,0:43:00.13,0:43:01.05,ES-Main,,0,0,0,,Vámonos.
 Dialogue: 0,0:43:00.21,0:43:01.09,Default,,0,0,0,,走吧
-Dialogue: 0,0:43:00.21,0:43:01.09,ES-Main,,0,0,0,,Vámonos.
+Dialogue: 0,0:43:10.67,0:43:11.96,ES-Main,,0,0,0,,¿Qué les pasa?
 Dialogue: 0,0:43:10.71,0:43:12.13,Default,,0,0,0,,他们有什么毛病？
-Dialogue: 0,0:43:10.71,0:43:12.13,ES-Main,,0,0,0,,¿Qué les pasa?
 Dialogue: 0,0:43:15.42,0:43:16.88,Default,,0,0,0,,这是在干什么？
-Dialogue: 0,0:43:15.42,0:43:16.88,ES-Main,,0,0,0,,¿Qué es esto?
+Dialogue: 0,0:43:15.42,0:43:16.71,ES-Main,,0,0,0,,¿Qué es esto?
+Dialogue: 0,0:43:17.33,0:43:18.33,ES-Main,,0,0,0,,Vamos.
 Dialogue: 0,0:43:17.38,0:43:18.46,Default,,0,0,0,,走吧
-Dialogue: 0,0:43:17.38,0:43:18.46,ES-Main,,0,0,0,,Vamos.
+Dialogue: 0,0:43:21.33,0:43:22.33,ES-Main,,0,0,0,,Vámonos.
 Dialogue: 0,0:43:21.42,0:43:22.46,Default,,0,0,0,,我们走吧
-Dialogue: 0,0:43:21.42,0:43:22.46,ES-Main,,0,0,0,,Vámonos.
+Dialogue: 0,0:43:23.92,0:43:26.21,ES-Main,,0,0,0,,¿Qué está pasando, Gerineldo?
 Dialogue: 0,0:43:24.00,0:43:26.38,Default,,0,0,0,,这是怎么了 格林列尔多？
-Dialogue: 0,0:43:24.00,0:43:26.38,ES-Main,,0,0,0,,¿Qué está pasando, Gerineldo?
 Dialogue: 0,0:43:42.38,0:43:45.05,Default,,0,0,0,,先生 你要去哪儿？先生！
-Dialogue: 0,0:43:42.38,0:43:45.05,ES-Main,,0,0,0,,Oiga, señor. ¿Adónde cree que va? ¡Señor!
+Dialogue: 0,0:43:42.38,0:43:45.34,ES-Main,,0,0,0,,Oiga, señor. ¿Adónde cree que va? ¡Señor!
+Dialogue: 0,0:43:45.42,0:43:46.38,ES-Main,,0,0,0,,¡Oiga!
 Dialogue: 0,0:43:45.54,0:43:46.50,Default,,0,0,0,,嘿！
-Dialogue: 0,0:43:45.54,0:43:46.50,ES-Main,,0,0,0,,¡Oiga!
+Dialogue: 0,0:43:49.42,0:43:51.09,ES-Main,,0,0,0,,¿Usted qué hace acá, coronel?
 Dialogue: 0,0:43:49.54,0:43:51.04,Default,,0,0,0,,你怎么来了 上校？
-Dialogue: 0,0:43:49.54,0:43:51.04,ES-Main,,0,0,0,,¿Usted qué hace acá, coronel?
+Dialogue: 0,0:43:51.75,0:43:54.25,ES-Main,,0,0,0,,Voy a denunciar con el tal Brown
 Dialogue: 0,0:43:51.96,0:43:54.34,Default,,0,0,0,,我要去告诉这个叫布朗的家伙
-Dialogue: 0,0:43:51.96,0:43:54.34,ES-Main,,0,0,0,,Voy a denunciar con el tal Brown
 Dialogue: 0,0:43:54.83,0:43:57.66,Default,,0,0,0,,他的公司犯下了谋杀罪
-Dialogue: 0,0:43:54.83,0:43:57.66,ES-Main,,0,0,0,,un asesinato cometido por su compañía.
+Dialogue: 0,0:43:54.83,0:43:57.91,ES-Main,,0,0,0,,un asesinato cometido por su compañía.
+Dialogue: 0,0:43:58.00,0:43:59.21,ES-Main,,0,0,0,,¿Asesinato?
 Dialogue: 0,0:43:58.17,0:43:59.21,Default,,0,0,0,,谋杀？
-Dialogue: 0,0:43:58.17,0:43:59.21,ES-Main,,0,0,0,,¿Asesinato?
 Dialogue: 0,0:43:59.29,0:44:01.42,Default,,0,0,0,,不想惹麻烦的话 就让我过去
 Dialogue: 0,0:43:59.29,0:44:01.42,ES-Main,,0,0,0,,Déjame pasar si no quieres tener problemas.
 Dialogue: 0,0:44:01.50,0:44:02.63,Default,,0,0,0,,没什么问题吧？
-Dialogue: 0,0:44:01.50,0:44:02.63,ES-Main,,0,0,0,,¿Todo en orden?
+Dialogue: 0,0:44:01.50,0:44:02.50,ES-Main,,0,0,0,,¿Todo en orden?
+Dialogue: 0,0:44:05.67,0:44:07.30,ES-Main,,0,0,0,,Todo en orden.
 Dialogue: 0,0:44:05.88,0:44:07.01,Default,,0,0,0,,没事
-Dialogue: 0,0:44:05.88,0:44:07.01,ES-Main,,0,0,0,,Todo en orden.
+Dialogue: 0,0:44:11.38,0:44:13.84,ES-Main,,0,0,0,,¡Es una traición que el gobierno conservador
 Dialogue: 0,0:44:11.50,0:44:16.08,Default,,0,0,0,,保守党政府背信弃义\N把土地交给了这些人！
-Dialogue: 0,0:44:11.50,0:44:16.08,ES-Main-2L,,0,0,0,,¡Es una traición que el gobierno conservador les haya regalado estas tierras!
+Dialogue: 0,0:44:13.92,0:44:15.92,ES-Main,,0,0,0,,les haya regalado estas tierras!
+Dialogue: 0,0:44:16.79,0:44:18.79,ES-Main,,0,0,0,,-¿Qué pasó? -Y que además
 Dialogue: 0,0:44:16.92,0:44:20.38,Default,,0,0,0,,-出什么事了？\N-而且不加约束
-Dialogue: 0,0:44:16.92,0:44:20.38,ES-Main-2L,,0,0,0,,-¿Qué pasó? -Y que además les haya dado rienda suelta para que hagan
+Dialogue: 0,0:44:18.88,0:44:22.88,ES-Main-2L,,0,0,0,,les haya dado rienda suelta para que hagan lo que se les dé la gana.
 Dialogue: 0,0:44:20.46,0:44:23.00,Default,,0,0,0,,任由他们为所欲为
-Dialogue: 0,0:44:20.46,0:44:23.00,ES-Main,,0,0,0,,lo que se les dé la gana.
 Dialogue: 0,0:44:24.25,0:44:30.21,Default,,0,0,0,,但我告诉你\N在马孔多还有绝不屈服的硬汉
-Dialogue: 0,0:44:24.25,0:44:30.21,ES-Main-2L,,0,0,0,,Pero sepan que aquí en Macondo todavía hay hombres que no se arrodillan ante nadie.
+Dialogue: 0,0:44:24.25,0:44:27.67,ES-Main-2L,,0,0,0,,Pero sepan que aquí en Macondo todavía hay hombres
+Dialogue: 0,0:44:27.75,0:44:30.13,ES-Main,,0,0,0,,que no se arrodillan ante nadie.
+Dialogue: 0,0:44:31.42,0:44:34.25,ES-Main-2L,,0,0,0,,Y que están dispuestos a hacer la revolución.
 Dialogue: 0,0:44:31.58,0:44:34.37,Default,,0,0,0,,他们会奋起反抗
-Dialogue: 0,0:44:31.58,0:44:34.37,ES-Main,,0,0,0,,Y que están dispuestos a hacer la revolución.
+Dialogue: 0,0:44:35.21,0:44:39.21,ES-Main-2L,,0,0,0,,Esta vez contra ustedes y contra su empresa asesina.
 Dialogue: 0,0:44:35.38,0:44:38.80,Default,,0,0,0,,这次的敌人是你们 和你这杀人公司
-Dialogue: 0,0:44:35.38,0:44:38.80,ES-Main,,0,0,0,,Esta vez contra ustedes y contra su empresa asesina.
+Dialogue: 0,0:44:57.54,0:44:59.62,ES-Main-2L,,0,0,0,,Cipayos.
 Dialogue: 0,0:44:58.29,0:44:59.75,Default,,0,0,0,,卖国贼
-Dialogue: 0,0:44:58.29,0:44:59.75,ES-Main,,0,0,0,,Cipayos.
+Dialogue: 0,0:45:03.46,0:45:05.92,ES-Main,,0,0,0,,-¿Qué está pasando? -Todo está bien.
 Dialogue: 0,0:45:03.58,0:45:05.83,Default,,0,0,0,,-这到底怎么回事？\N-不 没事
-Dialogue: 0,0:45:03.58,0:45:05.83,ES-Main,,0,0,0,,-¿Qué está pasando? -Todo está bien.
 Dialogue: 0,0:45:10.83,0:45:13.00,Default,,0,0,0,,太无礼了
-Dialogue: 0,0:45:10.83,0:45:13.00,ES-Main,,0,0,0,,Es un irrespetuoso.
+Dialogue: 0,0:45:10.83,0:45:12.79,ES-Main,,0,0,0,,Es un irrespetuoso.
+Dialogue: 0,0:47:03.67,0:47:06.92,ES-Main-2L,,0,0,0,,Úrsula fue la única que tuvo serenidad para identificar
 Dialogue: 0,0:47:03.79,0:47:06.12,Default,,0,0,0,,唯有乌尔苏拉镇静自若地
-Dialogue: 0,0:47:03.79,0:47:06.12,ES-Main,,0,0,0,,Úrsula fue la única que tuvo serenidad
 Dialogue: 0,0:47:06.21,0:47:09.71,Default,,0,0,0,,看出了那股命运之风的本质
-Dialogue: 0,0:47:06.21,0:47:09.71,ES-Main-2L,,0,0,0,,para identificar la naturaleza de aquel viento irreparable.
+Dialogue: 0,0:47:07.00,0:47:09.71,ES-Main,,0,0,0,,la naturaleza de aquel viento irreparable.
+Dialogue: 0,0:47:10.92,0:47:12.80,ES-Main,,0,0,0,,Mientras veía a Remedios, la Bella,
 Dialogue: 0,0:47:10.96,0:47:12.84,Default,,0,0,0,,她目送着美人蕾梅黛丝
-Dialogue: 0,0:47:10.96,0:47:12.84,ES-Main,,0,0,0,,Mientras veía a Remedios, la Bella,
+Dialogue: 0,0:47:12.88,0:47:15.21,ES-Main,,0,0,0,,entre el deslumbrante aleteo de las sábanas
 Dialogue: 0,0:47:12.92,0:47:15.21,Default,,0,0,0,,在飘舞的床单包裹中徐徐升起
-Dialogue: 0,0:47:12.92,0:47:15.21,ES-Main,,0,0,0,,entre el deslumbrante aleteo de las sábanas
 Dialogue: 0,0:47:16.25,0:47:21.21,Default,,0,0,0,,穿过下午四点结束时的空气
-Dialogue: 0,0:47:16.25,0:47:21.21,ES-Main-2L,,0,0,0,,que subían y pasaban a través del aire donde terminaban las cuatro de la tarde…
+Dialogue: 0,0:47:16.25,0:47:21.25,ES-Main-2L,,0,0,0,,que subían y pasaban a través del aire donde terminaban las cuatro de la tarde…
+Dialogue: 0,0:47:23.46,0:47:26.75,ES-Main-2L,,0,0,0,,y se perdieron con ella para siempre en los altos aires,
 Dialogue: 0,0:47:23.54,0:47:26.75,Default,,0,0,0,,永远消失在
-Dialogue: 0,0:47:23.54,0:47:26.75,ES-Main-2L,,0,0,0,,y se perdieron con ella para siempre en los altos aires,
+Dialogue: 0,0:47:28.33,0:47:32.54,ES-Main-2L,,0,0,0,,donde no podían alcanzarlas ni los más altos pájaros de la memoria.
 Dialogue: 0,0:47:28.38,0:47:32.59,Default,,0,0,0,,连飞得最高的回忆之鸟\N也无法企及的高邈空间
-Dialogue: 0,0:47:28.38,0:47:32.59,ES-Main-2L,,0,0,0,,donde no podían alcanzarlas ni los más altos pájaros de la memoria.
 Dialogue: 0,0:56:12.42,0:56:14.92,CN-Special,,0,0,0,,字幕翻译：覃璇
 Dialogue: 0,0:01:31.46,0:01:33.46,ES-Special,,0,0,0,,¡Corran!
 Dialogue: 0,0:02:35.67,0:02:38.92,ES-Special,,0,0,0,,¡Vamos, vamos, vamos! ¡Rápido!
