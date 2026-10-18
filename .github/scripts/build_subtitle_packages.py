@@ -12,6 +12,7 @@ import sys
 import tempfile
 import unicodedata
 import zipfile
+from collections import Counter
 from pathlib import Path
 
 
@@ -131,7 +132,11 @@ def yaml_block(text: str, field: str, indent: int) -> str:
     return "".join(lines)
 
 
-def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
+def identity_label(subject_id: str) -> str:
+    return f"imdb{subject_id}" if subject_id.startswith("tt") else f"bgm{subject_id}"
+
+
+def project_identity(project_root: Path) -> tuple[str, str, str, str]:
     metadata_path = project_root / "project.yaml"
     metadata = metadata_path.read_text(encoding="utf-8")
     identity = yaml_block(metadata, "identity", 0)
@@ -140,11 +145,26 @@ def bangumi_identity(project_root: Path) -> tuple[str, str, str, str]:
     subject_id = yaml_scalar(identity, "id", 2)
     subject_url = yaml_scalar(identity, "url", 2)
     api_url = yaml_scalar(identity, "api_url", 2)
-    title_ja = yaml_scalar(titles, "ja", 4)
+    title_ja = yaml_scalar(titles, "original" if provider == "imdb" else "ja", 4)
     title_zh_hans = yaml_scalar(titles, "zh-Hans", 4)
     verification = yaml_scalar(identity, "verification", 2)
+    if provider == "imdb":
+        if not re.fullmatch(r"tt\d{7,}", subject_id):
+            raise PackageError(f"{metadata_path}: invalid IMDb title ID")
+        if subject_url != f"https://www.imdb.com/title/{subject_id}/":
+            raise PackageError(f"{metadata_path}: IMDb URL does not match its ID")
+        if api_url not in {"", "null"} or verification != "web-verified":
+            raise PackageError(f"{metadata_path}: IMDb requires web-verified evidence, without an API claim")
+        if yaml_scalar(metadata, "type", 0) != "movie" or yaml_scalar(identity, "total_episodes", 2) != "1":
+            raise PackageError(f"{metadata_path}: IMDb fallback is limited to a single movie")
+        for field in ("verified_by", "evidence", "fallback_reason"):
+            if yaml_scalar(identity, field, 2).strip() in {"", "null"}:
+                raise PackageError(f"{metadata_path}: IMDb identity requires {field}")
+        if not title_ja.strip() or not title_zh_hans.strip():
+            raise PackageError(f"{metadata_path}: original and confirmed Chinese titles are required")
+        return subject_id, title_ja, title_zh_hans, subject_url
     if provider != "bangumi":
-        raise PackageError(f"{metadata_path}: identity.provider must be bangumi")
+        raise PackageError(f"{metadata_path}: identity.provider must be bangumi or imdb")
     if not BANGUMI_ID.fullmatch(subject_id):
         raise PackageError(f"{metadata_path}: invalid Bangumi subject ID {subject_id!r}")
     if subject_url != f"https://bgm.tv/subject/{subject_id}":
@@ -216,12 +236,18 @@ def validate_standard_ass(
             f"{subtitle}: source attribution/provenance must not remain in Events"
         )
 
-    subject_id, _, title_zh_hans, _ = bangumi_identity(project_root)
+    subject_id, _, title_zh_hans, _ = project_identity(project_root)
     primary, secondary = project_languages(project_root)
     if not subtitle.name.endswith(f".{primary}.ass"):
         raise PackageError(f"{subtitle}: filename must end in .{primary}.ass")
     metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
     episode_id = project_episode_for_subtitle(project_root, subtitle, primary)
+    initialization = yaml_block(metadata, "initialization", 0)
+    enforce_pair_timing = (
+        secondary is not None
+        and yaml_scalar(initialization, "skill_version", 2) == "1.4.4"
+        and subtitle.parent != project_root / "subtitles/previous"
+    )
 
     lines = text.splitlines()
     section_headers = [
@@ -269,7 +295,7 @@ def validate_standard_ass(
         except PackageError as error:
             raise PackageError(f"{subtitle}: {error}") from error
         cursor += 1
-    expected_title = f"Title: bgm{subject_id} - {title_zh_hans} - {episode_id}"
+    expected_title = f"Title: {identity_label(subject_id)} - {title_zh_hans} - {episode_id}"
     expected_labels = (
         "ScriptType",
         "WrapStyle",
@@ -306,6 +332,19 @@ def validate_standard_ass(
         style_fonts.add(style_parts[1].strip())
     references: set[str] = set()
     inline_fonts: set[str] = set()
+    ordinary_styles: dict[str, set[str]] = {}
+    ordinary_times: dict[str, Counter] = {}
+    if enforce_pair_timing:
+        ordinary = yaml_block(yaml_block(metadata, "subtitle_design", 0), "ordinary_styles", 2)
+        for role in ("primary", "secondary"):
+            raw = yaml_scalar(ordinary, role, 4) or ""
+            names = raw[1:-1].split(",") if raw.startswith("[") and raw.endswith("]") else re.findall(
+                r"(?m)^      -\s*(.+?)\s*$", yaml_block(ordinary, role, 4)
+            )
+            ordinary_styles[role] = {name.strip().strip("\"'") for name in names if name.strip()}
+            ordinary_times[role] = Counter()
+        if not all(ordinary_styles.values()) or ordinary_styles["primary"] & ordinary_styles["secondary"]:
+            raise PackageError(f"{subtitle}: bilingual release requires distinct declared ordinary styles")
     for line in lines[events_index + 1 :]:
         if line.startswith("[") and line.endswith("]"):
             break
@@ -315,6 +354,10 @@ def validate_standard_ass(
         if len(parts) != 10:
             raise PackageError(f"{subtitle}: malformed event line")
         references.add(parts[3].strip() or "Default")
+        if line.startswith("Dialogue:") and parts[9].strip():
+            for role, names in ordinary_styles.items():
+                if parts[3].strip() in names:
+                    ordinary_times[role][(parts[1], parts[2])] += 1
         for reset in STYLE_RESET.findall(parts[9]):
             if reset.strip():
                 references.add(reset.strip())
@@ -332,10 +375,15 @@ def validate_standard_ass(
         raise PackageError(
             f"{subtitle}: unsupported release fonts: {', '.join(unsupported_fonts)}"
         )
+    if enforce_pair_timing and (
+        not ordinary_times["primary"] or ordinary_times["primary"] != ordinary_times["secondary"]
+        or any(count != 1 for count in ordinary_times["primary"].values())
+    ):
+        raise PackageError(f"{subtitle}: ordinary bilingual cues require unique pairs with identical start/end times")
 
 
 def package_name(project_root: Path, version: str | None = None) -> str:
-    subject_id, _, title_zh_hans, _ = bangumi_identity(project_root)
+    subject_id, _, title_zh_hans, _ = project_identity(project_root)
     safe_title = unicodedata.normalize("NFC", title_zh_hans)
     safe_title = INVALID_FILENAME_CHARS.sub(" - ", safe_title)
     safe_title = " ".join(safe_title.split()).rstrip(" .")
@@ -348,7 +396,7 @@ def package_name(project_root: Path, version: str | None = None) -> str:
         version = version_path.read_text(encoding="utf-8").strip()
     if not SEMVER.fullmatch(version):
         raise PackageError(f"{project_root}: invalid release version {version!r}")
-    name = f"bgm{subject_id} - {safe_title} [v{version}].zip"
+    name = f"{identity_label(subject_id)} - {safe_title} [v{version}].zip"
     if len(name.encode("utf-8")) > MAX_PACKAGE_NAME_BYTES:
         raise PackageError(
             f"{project_root}: package filename exceeds {MAX_PACKAGE_NAME_BYTES} UTF-8 bytes"

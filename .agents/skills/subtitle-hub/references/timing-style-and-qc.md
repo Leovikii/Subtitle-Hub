@@ -39,7 +39,9 @@ Split at semantic pauses, clause boundaries, breath, or speaker changes. Do not 
 
 ## SH-LAYOUT-002 — Bilingual ordinary dialogue
 
-Chinese is above and visually primary; the source language is below at about 70–77% of Chinese size. At 1920×1080 use Chinese `62`, `MarginV=130` (allowed 125–135), and secondary `46`, `MarginV=68` (allowed 65–70), with about 12–20 px visible separation. Prefer matching boundaries. Evidence-backed one-to-many, many-to-one, or cross-event pairing is allowed when meaning/order are complete, timing remains readable, and no duplicate, omission, or collision is introduced.
+Chinese is above and visually primary; the source language is below at about 70–77% of Chinese size. At 1920×1080 use Chinese `62`, `MarginV=130` (allowed 125–135), and secondary `46`, `MarginV=68` (allowed 65–70), with about 12–20 px visible separation. Every ordinary bilingual cue must have exactly one primary and one secondary event with identical start and end times to the ASS centisecond. Independently changing Chinese and secondary cues, approximate overlap, and group-level boundary agreement do not satisfy this rule.
+
+Keep semantic evidence mapping separate from delivery segmentation: a reviewed 1:N, N:1, or N:N source mapping remains valid evidence, but split or join its text at confirmed semantic boundaries into synchronous output pairs. Preserve every source word, meaning, order, reading time and reveal order; never repeat a whole source cue over several Chinese cues or hide a mismatch by declaring ordinary dialogue special. Establish the shared timeline from the confirmed timing authority before projection; projection must not silently retime Chinese. Recheck width, reading speed and neighboring pairs after resegmentation. Signs, annotations, screen translations and other explicitly identified special subtitles keep their own timing and useful layout.
 
 This differs intentionally from mono Chinese. If Chinese needs two lines, prefer meaningful resplitting or accurate condensation; ASS has no portable style-level line-spacing control, and `\fsp` is character spacing, not line spacing.
 

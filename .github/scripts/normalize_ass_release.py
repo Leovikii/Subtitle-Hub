@@ -11,7 +11,8 @@ from pathlib import Path
 
 from build_subtitle_packages import (
     PackageError,
-    bangumi_identity,
+    project_identity,
+    identity_label,
     is_high_confidence_credit_fragment,
     validate_release_dir,
     yaml_block,
@@ -364,7 +365,7 @@ def normalized_header(
         lines.append(f"; Subtitle-Hub-Source-Credit: {'；'.join(source_credits)}")
     lines.extend(
         [
-            f"Title: bgm{subject_id} - {title_zh_hans} - {episode_id}",
+            f"Title: {identity_label(subject_id)} - {title_zh_hans} - {episode_id}",
             f"ScriptType: {fields['ScriptType']}",
             f"WrapStyle: {fields['WrapStyle']}",
             f"ScaledBorderAndShadow: {fields['ScaledBorderAndShadow']}",
@@ -454,16 +455,16 @@ def build_candidate(project_root: Path, version: str) -> None:
     initialization = yaml_block(metadata, "initialization", 0)
     if (
         yaml_scalar(metadata, "schema_version", 0) != "9"
-        or yaml_scalar(initialization, "skill_version", 2) != "1.4.2"
+        or yaml_scalar(initialization, "skill_version", 2) != "1.4.4"
     ):
-        raise NormalizeError("upgrade project to the Skill 1.4.2 contract before building a candidate")
+        raise NormalizeError("upgrade project to the Skill 1.4.4 contract before building a candidate")
     workspace_episodes = project_root / "project/workspace/episodes"
     output_dir = project_root / "project/workspace/build/current-candidate"
     if output_dir.exists():
         raise NormalizeError(f"refusing to overwrite existing candidate: {output_dir}")
     output_dir.mkdir(parents=True)
 
-    subject_id, _, title_zh_hans, _ = bangumi_identity(project_root)
+    subject_id, _, title_zh_hans, _ = project_identity(project_root)
     primary, secondary = project_languages(project_root)
     project_type = yaml_scalar(metadata, "type", 0)
     video_sources = yaml_block(metadata, "video_sources", 0)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.4.2 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.4.4 proofreading project."""
 
 from __future__ import annotations
 
@@ -15,7 +15,9 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
-SKILL_VERSION = "1.4.2"
+import yaml
+
+SKILL_VERSION = "1.4.4"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -61,9 +63,9 @@ def yaml_scalar(text: str, name: str) -> str | None:
     return match.group(1) if match else None
 
 
-def existing_identities(repository: Path | None) -> tuple[dict[str, Path], dict[str, Path]]:
+def existing_identities(repository: Path | None) -> tuple[dict[str, Path], dict[tuple[str, str], Path]]:
     work_ids: dict[str, Path] = {}
-    subject_ids: dict[str, Path] = {}
+    subject_ids: dict[tuple[str, str], Path] = {}
     if not repository:
         return work_ids, subject_ids
     for metadata in repository.glob("works/**/project.yaml"):
@@ -73,7 +75,9 @@ def existing_identities(repository: Path | None) -> tuple[dict[str, Path], dict[
         if work_id:
             work_ids[work_id] = metadata.parent
         if identity:
-            subject_ids[identity.group(1)] = metadata.parent
+            provider = re.search(r"(?m)^  provider:\s*[\"']?([a-z]+)", text)
+            if provider:
+                subject_ids[(provider.group(1), identity.group(1))] = metadata.parent
     return work_ids, subject_ids
 
 
@@ -82,7 +86,7 @@ def allocate_work_id(existing: dict[str, Path]) -> str:
     return f"SH{(max(numbers, default=0) + 1):04d}"
 
 
-def load_snapshot(path: Path, expected_id: str) -> dict[str, object]:
+def load_snapshot(path: Path, expected_id: str, provider: str = "bangumi") -> dict[str, object]:
     data = json.loads(path.read_text(encoding="utf-8"))
     required = ("id", "name", "name_cn", "date", "platform")
     missing = [key for key in required if data.get(key) in (None, "")]
@@ -90,18 +94,39 @@ def load_snapshot(path: Path, expected_id: str) -> dict[str, object]:
     if total in (None, ""):
         missing.append("total_episodes/eps")
     if missing:
-        raise ValueError(f"Bangumi snapshot lacks required identity/scope values: {missing}")
+        raise ValueError(f"{provider} snapshot lacks required identity/scope values: {missing}")
     if str(data["id"]) != expected_id:
-        raise ValueError(f"Bangumi snapshot id {data['id']} does not match --bangumi-id {expected_id}")
+        raise ValueError(f"{provider} snapshot id {data['id']} does not match identity ID {expected_id}")
+    pattern = r"tt\d{7,}" if provider == "imdb" else r"[1-9]\d*"
+    if not re.fullmatch(pattern, expected_id):
+        raise ValueError(f"invalid {provider} identity ID: {expected_id!r}")
+    if provider == "imdb" and any(not str(data.get(key) or "").strip() for key in ("evidence", "fallback_reason")):
+        raise ValueError("IMDb snapshot requires web evidence and a Bangumi fallback_reason")
     try:
         data["_total_episodes"] = int(total)
     except (TypeError, ValueError) as error:
-        raise ValueError(f"Bangumi episode count is not an integer: {total!r}") from error
+        raise ValueError(f"{provider} episode count is not an integer: {total!r}") from error
     if data["_total_episodes"] <= 0:
-        raise ValueError("Bangumi episode count must be positive")
+        raise ValueError(f"{provider} episode count must be positive")
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(data["date"])):
-        raise ValueError(f"Bangumi date is not an ISO date: {data['date']!r}")
+        raise ValueError(f"{provider} date is not an ISO date: {data['date']!r}")
     return data
+
+
+def identity_block(snapshot: dict[str, object], provider: str, approver: str, verified_at: str) -> str:
+    subject_id = str(snapshot["id"])
+    identity = {
+        "provider": provider, "id": subject_id,
+        "url": f"https://www.imdb.com/title/{subject_id}/" if provider == "imdb" else f"https://bgm.tv/subject/{subject_id}",
+        "api_url": None if provider == "imdb" else f"https://api.bgm.tv/v0/subjects/{subject_id}",
+        "titles": {"original" if provider == "imdb" else "ja": str(snapshot["name"]), "zh-Hans": str(snapshot["name_cn"])},
+        "date": str(snapshot["date"]), "platform": str(snapshot["platform"]),
+        "total_episodes": snapshot["_total_episodes"],
+        "verification": "web-verified" if provider == "imdb" else "api-verified", "verified_at": verified_at,
+    }
+    if provider == "imdb":
+        identity.update(verified_by=approver, evidence=str(snapshot["evidence"]), fallback_reason=str(snapshot["fallback_reason"]))
+    return yaml.safe_dump({"identity": identity}, allow_unicode=True, sort_keys=False, width=10000).rstrip()
 
 
 def load_intake(path: Path) -> dict[str, object]:
@@ -282,7 +307,7 @@ def validate_baseline_source(source: Path) -> None:
         raise ValueError(f"candidate baseline contains no parseable dialogue cues: {source}")
 
 
-def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]]) -> None:
+def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]], secondary_language: str | None = None) -> None:
     if not cues:
         raise ValueError("baseline conversion produced zero cues")
     lines = [
@@ -290,9 +315,13 @@ def write_ass_from_cues(destination: Path, cues: list[tuple[str, str, str]]) -> 
         "PlayResX: 1920", "PlayResY: 1080", "YCbCr Matrix: TV.709", "",
         "[V4+ Styles]",
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-        f"Style: CN-Main,{SC_FONT},62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,70,1", "",
+        f"Style: CN-Main,{SC_FONT},62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,{130 if secondary_language else 70},1", "",
         "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
     ]
+    if secondary_language:
+        style = "JP-Main" if secondary_language == "ja" else secondary_language.upper() + "-Main"
+        font = JP_FONT if secondary_language == "ja" else SC_FONT
+        lines.insert(lines.index("[Events]"), f"Style: {style},{font},46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1\n")
     lines.extend(f"Dialogue: 0,{start},{end},CN-Main,,0,0,0,,{text}" for start, end, text in cues)
     destination.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -359,7 +388,7 @@ def normalize_ass_master(text: str) -> str:
     return result if result.endswith("\n") else result + "\n"
 
 
-def prepare_master(source: Path, destination: Path) -> str:
+def prepare_master(source: Path, destination: Path, secondary_language: str | None = None) -> str:
     suffix = source.suffix.lower()
     if suffix in {".ass", ".ssa"}:
         normalized = normalize_ass_master(source.read_text(encoding="utf-8-sig"))
@@ -367,10 +396,10 @@ def prepare_master(source: Path, destination: Path) -> str:
         return "content-preserving ASS working-master normalization"
     text = source.read_text(encoding="utf-8-sig")
     if suffix == ".srt":
-        write_ass_from_cues(destination, parse_srt(text))
+        write_ass_from_cues(destination, parse_srt(text), secondary_language)
         return "deterministic SRT-to-ASS fallback conversion"
     if suffix == ".vtt":
-        write_ass_from_cues(destination, parse_vtt(text))
+        write_ass_from_cues(destination, parse_vtt(text), secondary_language)
         return "deterministic VTT-to-ASS fallback conversion"
     raise ValueError(f"unsupported working-baseline format: {source}")
 
@@ -465,8 +494,9 @@ def main() -> int:
     parser.add_argument("--work-id", help="Optional explicit ID; otherwise allocate the next repository SH number")
     parser.add_argument("--repository-root", type=Path)
     parser.add_argument("--type", required=True, choices=("tv", "movie", "ova", "ona", "special"))
-    parser.add_argument("--bangumi-id", required=True)
-    parser.add_argument("--bangumi-snapshot", required=True, type=Path)
+    parser.add_argument("--identity-provider", choices=("bangumi", "imdb"), default="bangumi")
+    parser.add_argument("--identity-id", "--bangumi-id", dest="identity_id", required=True)
+    parser.add_argument("--identity-snapshot", "--bangumi-snapshot", dest="identity_snapshot", required=True, type=Path)
     parser.add_argument("--intake", required=True, type=Path)
     parser.add_argument("--secondary-language", help="Optional release secondary language")
     parser.add_argument("--dry-run", action="store_true")
@@ -480,12 +510,14 @@ def main() -> int:
     if args.secondary_language and not LANGUAGE_RE.fullmatch(args.secondary_language):
         parser.error("--secondary-language must be a BCP 47 language tag")
     try:
-        snapshot = load_snapshot(args.bangumi_snapshot, args.bangumi_id)
+        snapshot = load_snapshot(args.identity_snapshot, args.identity_id, args.identity_provider)
         intake = load_intake(args.intake)
         if intake.get("project_type") and intake["project_type"] != args.type:
             raise ValueError(f"intake project_type {intake['project_type']!r} conflicts with --type {args.type!r}")
         source_language = str(intake["source_language"])
         rows = load_episode_map(intake, args.type, source_language)
+        if args.identity_provider == "imdb" and (args.type != "movie" or len(rows) != 1 or snapshot["_total_episodes"] != 1):
+            raise ValueError("IMDb fallback is limited to a single movie")
         group_ids: set[str] = set()
         for group in intake["external_source_groups"]:
             group_id = str(group.get("id", ""))
@@ -510,8 +542,10 @@ def main() -> int:
         parser.error("--work-id must match SH followed by at least four digits")
     if work_id in work_ids:
         parser.error(f"work ID already exists at {work_ids[work_id]}")
-    if args.bangumi_id in subject_ids:
-        parser.error(f"Bangumi subject already exists at {subject_ids[args.bangumi_id]}")
+    identity_key = (args.identity_provider, args.identity_id)
+    if identity_key in subject_ids:
+        label = "Bangumi subject" if args.identity_provider == "bangumi" else "IMDb title"
+        parser.error(f"{label} already exists at {subject_ids[identity_key]}")
     if not series_dir.exists():
         if not args.create_series or not args.series_title:
             parser.error("a new series directory requires --create-series and --series-title")
@@ -530,15 +564,12 @@ def main() -> int:
     scope = "MOVIE" if args.type == "movie" else f"{len(rows)} mapped episodes"
     values = {
         "WORK_ID": work_id, "PROJECT_NAME": project_name, "WORK_TYPE": args.type, "EPISODE_COUNT": str(len(rows)),
-        "BANGUMI_ID": args.bangumi_id,
-        "TITLE_JA_YAML": quote(str(snapshot["name"])), "TITLE_ZH_HANS_YAML": quote(str(snapshot["name_cn"])),
-        "BANGUMI_DATE_YAML": quote(str(snapshot["date"])), "BANGUMI_PLATFORM_YAML": quote(str(snapshot["platform"])),
-        "BANGUMI_TOTAL_EPISODES": str(snapshot["_total_episodes"]),
+        "IDENTITY_YAML": identity_block(snapshot, args.identity_provider, args.approved_by, verified_at),
         "APPROVED_BY_YAML": quote(args.approved_by),
         "VERIFIED_AT": verified_at, "SOURCE_LANGUAGE": source_language,
         "SECONDARY_LANGUAGE_YAML": quote(args.secondary_language) if args.secondary_language else "null",
         "SUBTITLE_PROFILE": "zh-bilingual" if args.secondary_language else "zh-mono",
-        "SECONDARY_STYLES_YAML": "\n      - JP-Main" if args.secondary_language else "[]",
+        "SECONDARY_STYLES_YAML": ("\n      - " + ("JP" if args.secondary_language == "ja" else args.secondary_language.upper()) + "-Main") if args.secondary_language else "[]",
         "SCOPE": scope, "UPDATED_AT": verified_at,
         "EPISODES_YAML": "\n".join(f"  {row['episode']}: {{ status: not-started }}" for row in rows),
         "MACHINE_COVERAGE": ("ffprobe media/track inventory; " if any(row["video"] for row in rows) else "text-only inventory; ") + "source hashes; project structure and master parsing",
@@ -556,6 +587,7 @@ def main() -> int:
     planned = {
         "skill_version": SKILL_VERSION, "target": str(target), "work_id": work_id, "project_name": project_name,
         "approved_by": args.approved_by, "episodes": [row["episode"] for row in rows],
+        "identity_provider": args.identity_provider, "identity_id": args.identity_id,
         "release_filenames": [row["output_name"] for row in rows],
         "videos_recorded_by_basename_only": [row["video"]["basename"] for row in rows if row["video"]],
         "evidence_tier": intake.get("evidence_tier"),
@@ -591,7 +623,7 @@ def main() -> int:
         for row in rows:
             source = Path(row["subtitle_path"])
             master = staging / "project" / "workspace" / "episodes" / str(row["episode"]) / "master.ass"
-            methods[str(row["episode"])] = prepare_master(source, master)
+            methods[str(row["episode"])] = prepare_master(source, master, args.secondary_language)
         (staging / "project.yaml").write_text(project_text, encoding="utf-8")
         review_text = render(template_root / "review.md", values)
         fingerprints = "  master_sha256:\n" + "\n".join(

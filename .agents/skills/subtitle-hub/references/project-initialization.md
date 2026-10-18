@@ -2,13 +2,17 @@
 
 ## Identity gate
 
-### SH-ID-002 — Bangumi is the identity source
+### SH-ID-002 — Bangumi identity with a verified movie fallback
 
 Search only to discover candidate IDs. Fetch `https://api.bgm.tv/v0/subjects/<id>` and verify `id`, `name`, `name_cn`, media/platform, date, and episode count against the requested scope. Save API `name` as `identity.titles.ja` and `name_cn` as `identity.titles.zh-Hans` without inferring either from filenames or other-language releases.
 
 Pause before creating a formal project if `name_cn` is empty, the API is inaccessible, or plausible candidates differ by season, movie, OVA, compilation, special, remake, or scope. Present the candidate ID/title/scope evidence and ask the user. A user-confirmed draft does not satisfy the release-time `api-verified` requirement.
 
-The distribution package is `bgm<subject-id> - <name_cn> [v<version>].zip`; release details are in `release-and-workspace.md`.
+For a live-action movie with no plausible Bangumi match after Chinese/original-title and year discovery, verify its exact IMDb `tt` ID, original title, movie type, and release date on IMDb's title/release-info pages. This fallback is not a response to an API outage or a conflicting match. Include the provider, Chinese title, date basis, and single-movie scope in the same initialization confirmation; do not ask for a separate identity approval. Record `provider: imdb`, the canonical `https://www.imdb.com/title/<tt-id>/` URL, `api_url: null`, `titles.original`, the user-confirmed `titles.zh-Hans`, `total_episodes: 1`, `verification: web-verified`, `verified_by`, `verified_at`, `evidence` (official URLs and checked facts), and `fallback_reason`. Never fabricate a Bangumi ID, API verification, or Japanese title. Recheck the same identity evidence before release; the Bangumi sync command validates and skips IMDb projects without a network request or metadata rewrite.
+
+The initializer accepts `--identity-provider bangumi|imdb`, `--identity-id`, and `--identity-snapshot`; the existing `--bangumi-id`/`--bangumi-snapshot` names remain aliases. Both snapshots contain `id`, `name` (the original title), `name_cn` (confirmed Chinese title), `date`, `platform`, and `total_episodes`; IMDb also requires `evidence` and `fallback_reason`. Use `platform: movie` for the IMDb single-movie fallback. The initializer records the approver; a snapshot alone never substitutes for the web check or user confirmation.
+
+The distribution package is `bgm<subject-id> - <name_cn> [v<version>].zip` for Bangumi, or `imdb<tt-id> - <confirmed-Chinese-title> [v<version>].zip` for IMDb; release details are in `release-and-workspace.md`.
 
 ## Minimum required inputs
 
@@ -90,7 +94,7 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.4.2 intake contract
+## Skill 1.4.4 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
@@ -104,11 +108,11 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.2`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.4`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
-When the user declares that a project reads video from a Debian NAS over SSH, collect the host, port, username, exact absolute video paths or one containing directory, Chinese baseline mapping, intended source audio, and timing authority. For a directory, `remote_media.py discover` lists only top-level files with supported video suffixes; never recurse or search outside that approved directory. Never request or accept the password in chat, arguments, files, URLs, or project records.
+When the user declares that a project reads video from a Debian NAS over SSH, collect the host, port, username, exact absolute video paths or one containing directory, Chinese baseline mapping, intended source audio, and timing authority. For a directory, `remote_media.py discover` lists only top-level files with supported video or text-subtitle suffixes, in separate `media` and `subtitles` lists; never recurse or search outside that approved directory. Never request or accept the password in chat, arguments, files, URLs, or project records.
 
 `remote_media.py` has one cross-platform backend: Paramiko 5.0.0 in the shared Skill environment. It does not use or configure system OpenSSH, AskPass, SSH agents, user keys, or general known-hosts files.
 
@@ -127,6 +131,8 @@ python scripts/remote_media.py probe --host <host> --port <port> --user <user> \
 ```
 
 Pass that result to the ordinary intake command with `--ssh-video-probe <system-temp/ssh-video-probe.json>`. Present the proposed episode map, detected tracks/languages, chosen audio, timing authority, and password-free SSH video references in the same initialization confirmation as identity and project name. Initialization writes only those password-free locators to the existing ignored `project/local.paths.yaml`; durable `project.yaml` keeps basenames and media facts. Delete the probe JSON after its conclusions are folded into the project.
+
+For an external ASS/SSA/SRT/VTT baseline in the approved directory, use `remote_media.py subtitle --copy-text --path <exact-path> --output <system-temp/original-basename>` to read one size-bounded file unchanged through the same pinned connection. Embedded subtitle extraction uses `--stream <index>` instead. Neither action writes remote files.
 
 Unapproved or changed host keys, authentication failure, missing remote tools, unreadable or symlink-resolved paths, malformed probe output, or changed scope stop SSH intake. They never trigger credential persistence, remote environment setup, SFTP transfer, whole-file download, WebDAV fallback, or a second protocol implementation. The user may instead proceed text-only with the resulting media limitation.
 
@@ -175,8 +181,9 @@ python scripts/init_project.py \
   --project-name <approved-short-name> \
   --approved-by <approver> \
   --type <tv|movie|ova|ona|special> \
-  --bangumi-id <id> \
-  --bangumi-snapshot <verified-api-json> \
+  --identity-provider <bangumi|imdb> \
+  --identity-id <id> \
+  --identity-snapshot <verified-identity-json> \
   --intake <temporary-intake.json> \
   --dry-run
 ```

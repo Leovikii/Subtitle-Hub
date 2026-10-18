@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.2 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.4 toolchain."""
 
 from __future__ import annotations
 
@@ -34,6 +34,8 @@ sys.path.insert(0, str(PACKAGE_SCRIPT.parent))
 sys.path.insert(0, str(SCRIPT_ROOT))
 from build_subtitle_packages import (  # noqa: E402
     PackageError,
+    package_name,
+    project_identity,
     is_high_confidence_credit_fragment,
     validated_source_credit_parts,
 )
@@ -181,7 +183,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.2\"\n  state: proofreading-ready\n"
+        "initialization:\n  skill_version: \"1.4.4\"\n  state: proofreading-ready\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     return project, master, source
@@ -392,7 +394,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.2"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.4"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -667,16 +669,17 @@ class RemoteMediaTests(unittest.TestCase):
         with self.assertRaises(remote_media.RemoteMediaError):
             remote_media.write_remote_output(outside, object(), "frame", "fixed read-only command", ".jpg")
 
-    def test_discover_lists_only_top_level_video_files(self) -> None:
+    def test_discover_lists_top_level_video_and_subtitle_files(self) -> None:
         directory = "/srv/media/TV Show/Season 1"
         args = self.connection(action="discover", directory=directory)
         output = (
             f"{directory}/Episode 02.mp4\0{directory}/notes.txt\0"
-            f"{directory}/Episode 01.mkv\0"
+            f"{directory}/Episode 01.mkv\0{directory}/Netflix.ZH.srt\0"
         ).encode("utf-8")
         with mock.patch.object(remote_media, "run_remote", return_value=output) as runner:
             result = remote_media.discover(args, object())
         self.assertEqual([item["basename"] for item in result["media"]], ["Episode 01.mkv", "Episode 02.mp4"])
+        self.assertEqual([item["basename"] for item in result["subtitles"]], ["Netflix.ZH.srt"])
         command = runner.call_args.args[1]
         self.assertIn("-maxdepth 1", command)
         self.assertNotIn("-L", command)
@@ -688,6 +691,21 @@ class RemoteMediaTests(unittest.TestCase):
         self.assertIn('PARAMIKO_VERSION = "5.0.0"', source)
         self.assertEqual(source.count("prompt_password(args)"), 1)
         self.assertIn('timeout 110s ffmpeg', source)
+
+    def test_external_subtitle_copy_is_bounded_and_rejects_other_files(self) -> None:
+        argv = ["remote_media.py", "subtitle", "--host", "10.9.6.2", "--user", "media_reader",
+                "--copy-text", "--path", "/srv/media/Netflix.chs.srt", "--output", "baseline.srt"]
+        with mock.patch.object(sys, "argv", argv), mock.patch.object(remote_media, "load_paramiko"), \
+             mock.patch.object(remote_media, "open_client"), \
+             mock.patch.object(remote_media, "write_remote_output", return_value={}) as writer, \
+             mock.patch.object(sys, "stdout"), mock.patch.object(sys, "stderr"):
+            self.assertEqual(remote_media.main(), 0)
+            self.assertEqual(writer.call_args.args[3], 'exec head -c 25165825 -- "$file"')
+            self.assertEqual(writer.call_args.args[4], ".srt")
+            argv[argv.index("/srv/media/Netflix.chs.srt")] = "/srv/media/movie.mkv"
+            writer.reset_mock()
+            self.assertEqual(remote_media.main(), 1)
+            writer.assert_not_called()
 
 
 class RuntimeTests(unittest.TestCase):
@@ -756,7 +774,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.2")
+            self.assertEqual(data["skill_version"], "1.4.4")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -889,6 +907,66 @@ class InventoryTests(unittest.TestCase):
 
 
 class InitializationTests(unittest.TestCase):
+    def test_imdb_movie_initialization_candidate_and_identity_guards(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repository, series = make_repository(root)
+            baseline, source = root / "movie.chs.srt", root / "movie.en.srt"
+            write_srt(baseline)
+            write_srt(source, "Test dialogue")
+            intake = root / "intake.json"
+            run("inventory_sources.py", "--candidate-baseline", str(baseline),
+                "--optional-source", f"{source}|en|source-text-reference,timing-reference,secondary-language-release-source",
+                "--source-language", "en", "--project-type", "movie", "--output", str(intake))
+            approve_intake(intake, "MOVIE", baseline, target_basename="movie.mkv", timing_authority="English source")
+            snapshot = root / "imdb.json"
+            identity = {"id": "tt0088847", "name": "The Breakfast Club", "name_cn": "早餐俱乐部",
+                        "date": "1985-02-15", "platform": "movie", "total_episodes": 1,
+                        "evidence": "https://www.imdb.com/title/tt0088847/ and releaseinfo: title, movie, US date",
+                        "fallback_reason": "No plausible Bangumi title/year match; owner approved IMDb"}
+            snapshot.write_text(json.dumps(identity, ensure_ascii=False), encoding="utf-8")
+            args = ["--series-dir", str(series), "--repository-root", str(repository),
+                    "--project-name", "test-movie", "--approved-by", "test-owner", "--type", "movie",
+                    "--identity-provider", "imdb", "--identity-id", "tt0088847",
+                    "--identity-snapshot", str(snapshot), "--intake", str(intake), "--secondary-language", "en"]
+            for field, invalid in (("evidence", ""), ("fallback_reason", ""), ("id", "100"), ("total_episodes", 2)):
+                snapshot.write_text(json.dumps({**identity, field: invalid}), encoding="utf-8")
+                run("init_project.py", *args, "--dry-run", expect=2)
+            snapshot.write_text(json.dumps(identity, ensure_ascii=False), encoding="utf-8")
+            run("init_project.py", *args, "--dry-run")
+            project = series / "SH0001--test-movie"
+            self.assertFalse(project.exists())
+            run("init_project.py", *args)
+            run("validate_project.py", str(project), "--ready-for-proofreading")
+            metadata_path = project / "project.yaml"
+            metadata = metadata_path.read_text(encoding="utf-8")
+            self.assertIn("EN-Main", metadata)
+            self.assertIn("original: The Breakfast Club", metadata)
+            self.assertNotIn("    ja:", metadata)
+            self.assertEqual(project_identity(project)[:3], ("tt0088847", "The Breakfast Club", "早餐俱乐部"))
+            self.assertEqual(package_name(project, "1.0.0"), "imdbtt0088847 - 早餐俱乐部 [v1.0.0].zip")
+            with mock.patch.object(sync_bangumi_metadata, "fetch_json") as fetcher, mock.patch.object(sys, "stdout"):
+                self.assertFalse(sync_bangumi_metadata.process(metadata_path, write=True))
+                fetcher.assert_not_called()
+            self.assertEqual(metadata_path.read_text(encoding="utf-8"), metadata)
+            session = root / "movie-alignment"
+            run("align_bilingual.py", "plan", str(project), "--output-dir", str(session),
+                "--source-id", "optional-source-001")
+            review_alignment_session(session)
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            run("align_bilingual.py", "verify", str(project), "--session", str(session))
+            run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
+            candidate = project / "project/workspace/build/current-candidate/movie.zh-Hans.ass"
+            self.assertIn("Title: imdbtt0088847 - 早餐俱乐部 - MOVIE", candidate.read_text(encoding="utf-8"))
+            for before, after in (("web-verified", "api-verified"), ("verified_by: test-owner", "verified_by: null"),
+                                  ("type: \"movie\"", "type: \"tv\""),
+                                  ("https://www.imdb.com/title/tt0088847/", "https://www.imdb.com/title/tt0088848/")):
+                metadata_path.write_text(metadata.replace(before, after), encoding="utf-8")
+                run("validate_project.py", str(project), "--json", expect=1)
+                with self.assertRaises(PackageError):
+                    project_identity(project)
+            metadata_path.write_text(metadata, encoding="utf-8")
+
     def test_bangumi_sync_compares_remote_total_to_identity_not_project_scope(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -1114,7 +1192,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.2"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.4"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -1291,6 +1369,44 @@ class CatalogAndPackagingTests(unittest.TestCase):
 
 
 class CandidateContractTests(unittest.TestCase):
+    def test_bilingual_candidate_and_package_enforce_exact_pairs(self) -> None:
+        from build_subtitle_packages import validate_release_dir
+
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _, series, _, _, args = initialize_project(root, video_name="paired.S01E01.mkv", secondary="ja")
+            run("init_project.py", *args)
+            project = series / "SH0001--test-tv"
+            master = project / "project/workspace/episodes/S01E01/master.ass"
+            paired = alignment_ass([
+                (100, 200, "CN-Main", "", "对白"),
+                (100, 200, "JP-Main", "", "台詞"),
+                (110, 260, "Source", "", "画面注記です"),
+            ])
+            candidate = project / "project/workspace/build/current-candidate"
+            for before, after in (("0:00:01.00,0:00:02.00,JP-Main", "0:00:01.01,0:00:02.00,JP-Main"),
+                                  ("0:00:01.00,0:00:02.00,JP-Main", "0:00:01.00,0:00:02.01,JP-Main")):
+                master.write_text(paired.replace(before, after), encoding="utf-8")
+                failed = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
+                self.assertIn("identical start/end times", failed.stderr)
+                self.assertFalse(candidate.exists())
+            master.write_text(paired, encoding="utf-8")
+            run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
+            subtitle = candidate / "paired.S01E01.zh-Hans.ass"
+            built = subtitle.read_text(encoding="utf-8")
+            validate_release_dir(candidate, project)
+            subtitle.write_text(built.replace("0:00:01.00,0:00:02.00,JP-Main", "0:00:01.00,0:00:02.01,JP-Main"), encoding="utf-8", newline="\n")
+            with self.assertRaisesRegex(PackageError, "identical start/end times"):
+                validate_release_dir(candidate, project)
+            previous = project / "subtitles/previous"
+            previous.mkdir(parents=True)
+            for file in candidate.iterdir():
+                (previous / file.name).write_bytes(file.read_bytes())
+            validate_release_dir(previous, project)
+            metadata = project / "project.yaml"
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.4"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            validate_release_dir(candidate, project)
+
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
         styles = (
             "[V4+ Styles]\n"
@@ -1358,7 +1474,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("  source_aligned: 0", "  source_aligned: 1")
             review.write_text(text, encoding="utf-8")
             result = run("validate_project.py", str(project), "--release", "--json", expect=1)
-            self.assertIn("source_aligned=1 but final masters contain 0", result.stdout)
+            self.assertIn("ordinary bilingual cues require unique pairs with identical start/end times", result.stdout)
 
     def test_noto_master_builds_candidate_without_font_transition(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1394,7 +1510,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.2 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.4 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1585,12 +1701,44 @@ class BilingualAlignmentTests(unittest.TestCase):
             session = root / "session"
             plan_alignment(project, session)
             review_alignment_session(session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            packet["groups"][0]["secondary_texts"] = ["二つの文を", "一つにまとめた原文"]
+            packet_path.write_text(json.dumps(packet, ensure_ascii=False), encoding="utf-8")
             run("align_bilingual.py", "apply", str(project), "--session", str(session))
             verified = json.loads(run(
                 "align_bilingual.py", "verify", str(project), "--session", str(session)
             ).stdout)
             self.assertEqual(verified["summary"]["chinese_units"], 2)
             self.assertEqual(verified["summary"]["source_aligned"], 1)
+
+    def test_synchronous_projection_rejects_unreviewed_split_and_text_loss(self) -> None:
+        import align_bilingual as alignment
+
+        group = {
+            "group_id": "reviewed-split",
+            "chinese_units": [{"start_cs": 100, "end_cs": 200}, {"start_cs": 200, "end_cs": 300}],
+            "source_units": [{"text": "first clause second clause"}],
+        }
+        with self.assertRaisesRegex(alignment.AlignmentError, "secondary_texts"):
+            alignment.secondary_projection(group)
+        group["secondary_texts"] = ["first clause", "clause"]
+        with self.assertRaisesRegex(alignment.AlignmentError, "changed source text"):
+            alignment.secondary_projection(group)
+        group["secondary_texts"] = ["first clause", "second clause"]
+        projected = alignment.secondary_projection(group)
+        self.assertEqual([(row["start_cs"], row["end_cs"]) for row in projected], [(100, 200), (200, 300)])
+
+    def test_one_centisecond_bilingual_mismatch_fails_but_special_timing_is_exempt(self) -> None:
+        import align_bilingual as alignment
+
+        def event(start: int, end: int, style: str) -> alignment.Event:
+            return alignment.Event(1, 0, start, end, style, "", "text", "")
+
+        ordinary = [event(100, 200, "CN"), event(100, 200, "EN")]
+        alignment.assert_synchronous_pairs(ordinary + [event(99, 250, "Sign")], {"CN"}, {"EN"})
+        with self.assertRaisesRegex(alignment.AlignmentError, "identical start/end"):
+            alignment.assert_synchronous_pairs([event(100, 200, "CN"), event(101, 200, "EN")], {"CN"}, {"EN"})
 
     def test_cross_group_unit_reuse_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1772,6 +1920,17 @@ class BilingualAlignmentTests(unittest.TestCase):
 
 
 class StaticAuditTests(unittest.TestCase):
+    def test_soft_break_geometry_follows_ass_wrap_mode(self) -> None:
+        import audit_subtitle
+
+        style = audit_subtitle.Style("EN", 46, 100, 100, 2, 96, 96, 68)
+        soft = audit_subtitle.Event(1, 100, 300, "EN", 0, r"first\nsecond")
+        hard = audit_subtitle.Event(2, 100, 300, "EN", 0, r"first\Nsecond")
+        soft_box = audit_subtitle.box(soft, style, 1920, 1080, 0)
+        hard_box = audit_subtitle.box(hard, style, 1920, 1080, 0)
+        self.assertLess(soft_box[3] - soft_box[1], hard_box[3] - hard_box[1])
+        self.assertEqual(audit_subtitle.box(soft, style, 1920, 1080, 2), hard_box)
+
     def test_audit_reports_full_counts_and_code_proven_layout_candidates(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             path = Path(raw) / "audit.ass"

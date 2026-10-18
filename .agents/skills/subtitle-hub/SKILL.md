@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.4.2"
+  version: "1.4.4"
 ---
 
 # Subtitle Hub
@@ -22,7 +22,7 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, request installation approval and run `scripts/setup_runtime.py`; continue only with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
 
-0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.2"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.4"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
 1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Resolve identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one confirmation.
 2. Dry-run internally, initialize transactionally, and pass `--ready-for-proofreading`. Ask again only if the result materially differs from the approval.
 3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`; time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, list every semantic edit separately, and pause once for approval.
@@ -48,3 +48,5 @@ Priority: current user instruction; confirmed `project.yaml` overrides; confirme
 ## Chinese-primary invariant
 
 Every master and release uses `Noto Sans CJK SC/JP` globally across retained styles and nonempty inline fonts. Normalize other properties only for declared ordinary dialogue. Preserve the position, size, color, motion, karaoke, and effects of notes, signs, songs, titles, credits, broadcasts, and other special subtitles unless a concrete defect is confirmed.
+
+Ordinary bilingual output uses one primary and one secondary event per cue with identical start/end times. Review semantic split/merge mappings separately from output pairs; special subtitles keep their independent timing. See `SH-LAYOUT-002` for the full contract.

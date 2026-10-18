@@ -120,12 +120,13 @@ def parse_events(text: str) -> list[Event]:
     return events
 
 
-def visible(text: str) -> str:
-    return TAG_BLOCK.sub("", text).replace(r"\N", "\n").replace(r"\n", "\n").replace(r"\h", " ")
+def visible(text: str, wrap_style: int = 0) -> str:
+    soft_break = "\n" if wrap_style == 2 else " "
+    return TAG_BLOCK.sub("", text).replace(r"\N", "\n").replace(r"\n", soft_break).replace(r"\h", " ")
 
 
-def box(event: Event, style: Style, width: int, height: int) -> tuple[float, float, float, float]:
-    clean = visible(event.text)
+def box(event: Event, style: Style, width: int, height: int, wrap_style: int = 0) -> tuple[float, float, float, float]:
+    clean = visible(event.text, wrap_style)
     lines = clean.splitlines() or [""]
     override_size = [float(value) for value in SIZE.findall(event.text) if float(value) > 0]
     fs = override_size[-1] if override_size else style.fontsize
@@ -167,12 +168,14 @@ def audit(path: Path) -> dict[str, object]:
     findings: list[dict[str, object]] = []
     boxes = {}
     for event in events:
-        clean = visible(event.text)
+        event_wrap = re.findall(r"\\q([0-3])", event.text)
+        effective_wrap = int(event_wrap[-1]) if event_wrap else wrap_style
+        clean = visible(event.text, effective_wrap)
         if event.style not in styles:
             findings.append(finding("undefined-style", "confirmed", event, "event references an undefined style"))
             continue
         style = styles[event.style]
-        boxes[event.index] = box(event, style, width, height)
+        boxes[event.index] = box(event, style, width, height, effective_wrap)
         duration = event.end - event.start
         if duration <= 0:
             findings.append(finding("invalid-duration", "confirmed", event, "end time is not after start time"))

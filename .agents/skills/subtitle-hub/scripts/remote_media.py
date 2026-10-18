@@ -33,6 +33,7 @@ USER_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_.-]{0,63}")
 MARKER = "__SUBTITLE_HUB_MEDIA_{}__"
 MAX_OUTPUT = {"frame": 12 * 1024 * 1024, "audio": 16 * 1024 * 1024, "subtitle": 24 * 1024 * 1024}
 VIDEO_SUFFIXES = {".mkv", ".mp4", ".m2ts", ".ts", ".webm", ".mov"}
+SUBTITLE_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
 
 
 class RemoteMediaError(RuntimeError):
@@ -407,7 +408,7 @@ def probe(args: argparse.Namespace, client: object) -> dict[str, object]:
         body = (f"printf '{MARKER.format(index)}\\n'; stat -c '%s' -- \"$file\"; "
                 "head -c 1048576 -- \"$file\" | sha256sum | cut -d ' ' -f 1; "
                 "timeout 45s ffprobe -v error -show_entries "
-                "'format=duration,format_name:stream=index,codec_type,codec_name,width,height:stream_tags=language,title:stream_disposition=default,forced' "
+                "'format=duration,format_name:stream=index,codec_type,codec_name,width,height,r_frame_rate,avg_frame_rate,time_base:stream_tags=language,title:stream_disposition=default,forced' "
                 "-of json=compact=1 \"$file\"")
         blocks.append(guarded(path, body))
     checks = ("test -r /etc/debian_version || { printf 'remote host is not Debian\\n' >&2; exit 69; }; "
@@ -438,9 +439,12 @@ def discover(args: argparse.Namespace, client: object) -> dict[str, object]:
                f"dir=$(realpath -- {quoted}); test \"$dir\" = {quoted} || {{ printf 'remote directory resolves outside the approved path\\n' >&2; exit 64; }}; "
                "test -d \"$dir\" -a -r \"$dir\" -a -x \"$dir\" || { printf 'remote directory is not readable\\n' >&2; exit 66; }; find \"$dir\" -maxdepth 1 -type f -print0")
     raw = run_remote(client, command, limit=4 * 1024 * 1024, timeout=args.client_timeout)
-    paths = sorted(path for item in raw.split(b"\0") if item for path in [remote_path(item.decode("utf-8", errors="strict"))] if PurePosixPath(path).suffix.lower() in VIDEO_SUFFIXES)
+    paths = sorted(remote_path(item.decode("utf-8", errors="strict")) for item in raw.split(b"\0") if item)
+    files = [{"path": ssh_uri(args.host, args.port, args.user, path), "remote_path": path, "basename": PurePosixPath(path).name} for path in paths]
     return {"schema_version": 1, "action": "discover", "connection": {"host": args.host, "port": args.port, "user": args.user},
-            "directory": directory, "media": [{"path": ssh_uri(args.host, args.port, args.user, path), "remote_path": path, "basename": PurePosixPath(path).name} for path in paths]}
+            "directory": directory,
+            "media": [item for item in files if PurePosixPath(item["basename"]).suffix.lower() in VIDEO_SUFFIXES],
+            "subtitles": [item for item in files if PurePosixPath(item["basename"]).suffix.lower() in SUBTITLE_SUFFIXES]}
 
 
 def local_output(raw: str, suffix: str) -> Path:
@@ -500,7 +504,10 @@ def main() -> int:
     probe_parser = subparsers.add_parser("probe"); add_connection(probe_parser); probe_parser.add_argument("--path", action="append", required=True); probe_parser.add_argument("--output")
     frame_parser = subparsers.add_parser("frame"); add_connection(frame_parser); frame_parser.add_argument("--path", required=True); frame_parser.add_argument("--time", required=True, type=float); frame_parser.add_argument("--output", required=True)
     audio_parser = subparsers.add_parser("audio"); add_connection(audio_parser); audio_parser.add_argument("--path", required=True); audio_parser.add_argument("--start", required=True, type=float); audio_parser.add_argument("--duration", required=True, type=float); audio_parser.add_argument("--output", required=True)
-    subtitle_parser = subparsers.add_parser("subtitle"); add_connection(subtitle_parser); subtitle_parser.add_argument("--path", required=True); subtitle_parser.add_argument("--stream", required=True, type=int); subtitle_parser.add_argument("--output", required=True)
+    subtitle_parser = subparsers.add_parser("subtitle"); add_connection(subtitle_parser); subtitle_parser.add_argument("--path", required=True); subtitle_parser.add_argument("--output", required=True)
+    subtitle_selection = subtitle_parser.add_mutually_exclusive_group(required=True)
+    subtitle_selection.add_argument("--stream", type=int)
+    subtitle_selection.add_argument("--copy-text", action="store_true", help="Copy one external text subtitle unchanged")
     args = parser.parse_args()
     try:
         validate_connection(args)
@@ -525,9 +532,15 @@ def main() -> int:
                         raise RemoteMediaError("audio start must be nonnegative and duration must be within 0-30 seconds")
                     result = write_remote_output(args, client, "audio", f"exec timeout 45s ffmpeg -nostdin -v error -ss {args.start:.3f} -t {args.duration:.3f} -i \"$file\" -threads 1 -vn -ac 1 -ar 16000 -f wav pipe:1", ".wav")
                 else:
-                    if args.stream < 0:
+                    if args.copy_text:
+                        suffix = PurePosixPath(args.path).suffix.lower()
+                        if suffix not in SUBTITLE_SUFFIXES:
+                            raise RemoteMediaError("external subtitle must be ASS, SSA, SRT, or VTT")
+                        result = write_remote_output(args, client, "subtitle", f"exec head -c {MAX_OUTPUT['subtitle'] + 1} -- \"$file\"", suffix)
+                    elif args.stream < 0:
                         raise RemoteMediaError("subtitle stream index must be nonnegative")
-                    result = write_remote_output(args, client, "subtitle", f"exec timeout 110s ffmpeg -nostdin -v error -i \"$file\" -threads 1 -map 0:{args.stream} -f ass pipe:1", ".ass")
+                    else:
+                        result = write_remote_output(args, client, "subtitle", f"exec timeout 110s ffmpeg -nostdin -v error -i \"$file\" -threads 1 -map 0:{args.stream} -f ass pipe:1", ".ass")
             finally:
                 client.close()
         rendered = json.dumps(result, ensure_ascii=False, indent=2) + "\n"

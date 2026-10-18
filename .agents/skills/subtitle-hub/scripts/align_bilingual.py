@@ -12,13 +12,14 @@ import os
 import re
 import sys
 import tempfile
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
 import yaml
 
-SKILL_VERSION = "1.4.2"
+SKILL_VERSION = "1.4.4"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -814,12 +815,39 @@ def master_secondary_units(path: Path, episode: str, styles: set[str]) -> list[U
 
 
 def source_event_line(unit: dict[str, object], style: str) -> str:
-    text = str(unit["text"]).replace("\n", r"\N")
+    text = str(unit["text"]).replace("\n", r"\n")
     name = str(unit.get("name") or "").replace(",", " ")
     return (
         f"Dialogue: 0,{format_ass_time(int(unit['start_cs']))},{format_ass_time(int(unit['end_cs']))},"
         f"{style},{name},0,0,0,,{text}"
     )
+
+
+def secondary_projection(group: dict[str, object]) -> list[dict[str, object]]:
+    """Project reviewed text segmentation onto the already confirmed primary timeline."""
+    chinese, source = group["chinese_units"], group["source_units"]
+    texts = group.get("secondary_texts")
+    if texts is None and len(chinese) == 1:
+        texts = [" ".join(str(unit["text"]) for unit in source)]
+    if not isinstance(texts, list) or len(texts) != len(chinese) or not all(
+        isinstance(text, str) and visible(text) and "{" not in text and "}" not in text for text in texts
+    ):
+        raise AlignmentError(f"{group.get('group_id')}: reviewed secondary_texts must match Chinese cue count")
+    original = "".join(re.sub(r"\s+", "", str(unit["text"])) for unit in source)
+    projected = "".join(re.sub(r"\s+", "", visible(text)) for text in texts)
+    if projected != original:
+        raise AlignmentError(f"{group.get('group_id')}: secondary_texts changed source text or order")
+    return [
+        {"start_cs": unit["start_cs"], "end_cs": unit["end_cs"], "text": visible(text), "name": ""}
+        for unit, text in zip(chinese, texts)
+    ]
+
+
+def assert_synchronous_pairs(events: list[Event], primary: set[str], secondary: set[str]) -> None:
+    first = Counter((event.start, event.end) for event in events if event.style in primary and visible(event.text))
+    second = Counter((event.start, event.end) for event in events if event.style in secondary and visible(event.text))
+    if first != second or any(count != 1 for count in first.values()):
+        raise AlignmentError("ordinary bilingual cues require unique pairs with identical start/end times")
 
 
 def replace_secondary_events(master: Path, secondary_styles: set[str], new_lines: list[tuple[int, str]]) -> None:
@@ -900,13 +928,12 @@ def apply_session(project_root: Path, session: Path, secondary_style: str | None
         units = group["source_units"]
         if units:
             groups_by_episode[str(units[0]["episode"])].append(group)
+    projections = {
+        episode: [unit for group in values if group["status"] == "confirmed" for unit in secondary_projection(group)]
+        for episode, values in groups_by_episode.items()
+    }
     for episode, item in manifest["episodes"].items():
-        new_lines = []
-        for group in groups_by_episode[episode]:
-            if group["status"] != "confirmed":
-                continue
-            for unit in group["source_units"]:
-                new_lines.append((int(unit["start_cs"]), source_event_line(unit, chosen)))
+        new_lines = [(int(unit["start_cs"]), source_event_line(unit, chosen)) for unit in projections[episode]]
         master = Path(item["master"])
         if chosen not in ass_style_names(master):
             raise AlignmentError(f"{episode}: declared secondary style {chosen!r} is absent from the master")
@@ -936,10 +963,15 @@ def verify_session(project_root: Path, session: Path) -> dict[str, object]:
         ]
         if release_secondary is not None:
             final_source = master_secondary_units(Path(item["master"]), episode, secondary_styles)
-            expected = [(int(unit["start_cs"]), int(unit["end_cs"]), str(unit["text"])) for unit in mapped_source]
+            projected = [
+                unit for group in groups if group["status"] == "confirmed" and group_episode(group) == episode
+                for unit in secondary_projection(group)
+            ]
+            expected = [(int(unit["start_cs"]), int(unit["end_cs"]), str(unit["text"])) for unit in projected]
             actual = [(unit.start, unit.end, unit.text) for unit in final_source]
             if actual != expected:
                 raise AlignmentError(f"{episode}: final master secondary dialogue differs from the reviewed mapping")
+            assert_synchronous_pairs(parse_ass(Path(item["master"])), set(manifest["ordinary_styles"]["primary"]), secondary_styles)
         episode_results[episode] = {
             "master_sha256": file_sha256(Path(item["master"])),
             "source_sha256": file_sha256(Path(item["source"])),
@@ -971,6 +1003,8 @@ def ordinary_master_counts(project_root: Path) -> dict[str, dict[str, int]]:
     result = {}
     for episode, path in master_paths(project_root, None).items():
         events = parse_ass(path)
+        if secondary:
+            assert_synchronous_pairs(events, set(primary), set(secondary))
         result[episode] = {
             "primary": sum(event.style in set(primary) and bool(visible(event.text)) for event in events),
             "secondary": sum(event.style in set(secondary) and bool(visible(event.text)) for event in events),

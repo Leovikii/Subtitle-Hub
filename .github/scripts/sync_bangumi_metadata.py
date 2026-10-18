@@ -16,7 +16,8 @@ from build_subtitle_packages import (
     PackageError,
     REPOSITORY_ROOT,
     WORKS_ROOT,
-    bangumi_identity,
+    project_identity,
+    yaml_block,
     yaml_scalar,
 )
 
@@ -45,7 +46,10 @@ def fetch_json(url: str) -> dict[str, object]:
 
 
 def remote_identity(project_root: Path) -> tuple[str, str]:
-    subject_id, _, _, api_url = bangumi_identity(project_root)
+    metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
+    if yaml_scalar(yaml_block(metadata, "identity", 0), "provider", 2) != "bangumi":
+        raise MetadataError("Bangumi synchronization requires a Bangumi project")
+    subject_id, _, _, api_url = project_identity(project_root)
     payload = fetch_json(api_url)
     if payload.get("id") != int(subject_id):
         raise MetadataError(f"{api_url}: returned a different subject ID")
@@ -88,7 +92,12 @@ def replace_scalar(text: str, field: str, indent: int, value: str) -> str:
 
 def process(project_file: Path, write: bool) -> bool:
     project_root = project_file.parent
-    subject_id, current_ja, current_zh_hans, _ = bangumi_identity(project_root)
+    metadata = project_file.read_text(encoding="utf-8")
+    provider = yaml_scalar(yaml_block(metadata, "identity", 0), "provider", 2)
+    subject_id, current_ja, current_zh_hans, _ = project_identity(project_root)
+    if provider == "imdb":
+        print(f"skipped IMDb {subject_id}: web evidence is reviewed manually")
+        return False
     remote_ja, remote_zh_hans = remote_identity(project_root)
     changed = (current_ja, current_zh_hans) != (remote_ja, remote_zh_hans)
     if write:

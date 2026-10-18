@@ -5,19 +5,7 @@ project_name: "{{PROJECT_NAME}}"
 type: "{{WORK_TYPE}}"
 episode_count: {{EPISODE_COUNT}}
 
-identity:
-  provider: bangumi
-  id: "{{BANGUMI_ID}}"
-  url: "https://bgm.tv/subject/{{BANGUMI_ID}}"
-  api_url: "https://api.bgm.tv/v0/subjects/{{BANGUMI_ID}}"
-  titles:
-    ja: {{TITLE_JA_YAML}}
-    zh-Hans: {{TITLE_ZH_HANS_YAML}}
-  date: {{BANGUMI_DATE_YAML}}
-  platform: {{BANGUMI_PLATFORM_YAML}}
-  total_episodes: {{BANGUMI_TOTAL_EPISODES}}
-  verification: api-verified
-  verified_at: "{{VERIFIED_AT}}"
+{{IDENTITY_YAML}}
 task:
   mode: proofreading
   source_language: "{{SOURCE_LANGUAGE}}"
@@ -41,7 +29,7 @@ project_overrides: []
 limitations: []
 
 initialization:
-  skill_version: "1.4.2"
+  skill_version: "1.4.4"
   state: proofreading-ready
   approved_by: {{APPROVED_BY_YAML}}
   approved_at: "{{VERIFIED_AT}}"

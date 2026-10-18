@@ -308,10 +308,10 @@ def validate_review_coverage(project_root: Path, review_path: Path, review: str,
     if values.get("static_layout_checked", -1) < rendered_count:
         errors.append(f"{review_path}: static layout coverage is below the final rendered Dialogue denominator")
     _, secondary_language = project_languages(metadata)
-    if secondary_language is not None and secondary_count != values.get("source_aligned"):
+    if secondary_language is not None and secondary_count != primary_count:
         errors.append(
-            f"{review_path}: source_aligned={values.get('source_aligned')} but final masters contain "
-            f"{secondary_count} declared ordinary secondary events"
+            f"{review_path}: ordinary bilingual output counts differ: "
+            f"{primary_count} Chinese and {secondary_count} secondary events"
         )
     if secondary_language is None and secondary_count:
         errors.append(f"{project_root}: monolingual masters contain declared ordinary secondary events")
@@ -361,16 +361,31 @@ def main() -> int:
     elif root.name != f"{work_id}--{project_name}":
         errors.append(f"{root}: directory must be {work_id}--{project_name}")
     identity = section(metadata, "identity")
-    if scalar(identity, "provider", 2) != "bangumi":
-        errors.append(f"{metadata_path}: identity.provider must be bangumi")
-    bangumi_id = scalar(identity, "id", 2)
-    if not bangumi_id or not re.fullmatch(r"[1-9]\d*", bangumi_id):
-        errors.append(f"{metadata_path}: identity.id must be a Bangumi numeric ID")
-    if scalar(identity, "verification", 2) != "api-verified":
-        errors.append(f"{metadata_path}: identity.verification must be api-verified")
+    provider = scalar(identity, "provider", 2)
+    subject_id = scalar(identity, "id", 2) or ""
+    imdb = provider == "imdb"
+    if provider not in {"bangumi", "imdb"}:
+        errors.append(f"{metadata_path}: identity.provider must be bangumi or imdb")
+    if not re.fullmatch(r"tt\d{7,}" if imdb else r"[1-9]\d*", subject_id):
+        errors.append(f"{metadata_path}: invalid {provider} identity.id")
+    verification = "web-verified" if imdb else "api-verified"
+    if scalar(identity, "verification", 2) != verification:
+        errors.append(f"{metadata_path}: identity.verification must be {verification}")
+    url = f"https://www.imdb.com/title/{subject_id}/" if imdb else f"https://bgm.tv/subject/{subject_id}"
+    if scalar(identity, "url", 2) != url:
+        errors.append(f"{metadata_path}: identity.url does not match its provider and ID")
+    api_url = scalar(identity, "api_url", 2)
+    if api_url != ("null" if imdb else f"https://api.bgm.tv/v0/subjects/{subject_id}"):
+        errors.append(f"{metadata_path}: identity.api_url does not match its provider")
+    if imdb:
+        if scalar(metadata, "type") != "movie" or scalar(identity, "total_episodes", 2) != "1":
+            errors.append(f"{metadata_path}: IMDb fallback is limited to a single movie")
+        for field in ("verified_by", "evidence", "fallback_reason"):
+            if scalar(identity, field, 2) in {None, "", "null"}:
+                errors.append(f"{metadata_path}: IMDb identity requires {field}")
     titles = section(identity, "titles", 2)
-    if not scalar(titles, "ja", 4) or not scalar(titles, "zh-Hans", 4):
-        errors.append(f"{metadata_path}: Bangumi ja/name_cn identity titles are required")
+    if not scalar(titles, "original" if imdb else "ja", 4) or not scalar(titles, "zh-Hans", 4):
+        errors.append(f"{metadata_path}: source and Chinese identity titles are required")
     initialization = section(metadata, "initialization")
     initialization_state = scalar(initialization, "state", 2)
     for name in ("date", "platform", "total_episodes"):
@@ -492,9 +507,9 @@ def main() -> int:
     if profile == "zh-mono" and secondary_styles:
         errors.append(f"{metadata_path}: monolingual profile must not declare ordinary secondary styles")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.4.2":
+    if initialization_version != "1.4.4":
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.4.2; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be 1.4.4; upgrade before processing"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
