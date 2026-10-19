@@ -93,3 +93,16 @@ works:
     package_path: "packages/bgm534091 - 百年孤独 第二季 [v1.0.2].zip"
     package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/bgm534091%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%E7%AC%AC%E4%BA%8C%E5%AD%A3%20%5Bv1.0.2%5D.zip"
     package_cdn_url: "https://cdn.jsdelivr.net/gh/Leovikii/Subtitle-Hub@main/packages/bgm534091%20-%20%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%20%E7%AC%AC%E4%BA%8C%E5%AD%A3%20%5Bv1.0.2%5D.zip"
+  - id: SH0008
+    title: "早餐俱乐部"
+    type: movie
+    episode_count: 1
+    languages: ["zh-Hans", "en"]
+    status: released
+    version: "1.0.0"
+    project_path: works/breakfast-club/SH0008--breakfast-club
+    review_path: works/breakfast-club/SH0008--breakfast-club/review.md
+    release_path: works/breakfast-club/SH0008--breakfast-club/subtitles/current
+    package_path: "packages/imdbtt0088847 - 早餐俱乐部 [v1.0.0].zip"
+    package_download_url: "https://raw.githubusercontent.com/Leovikii/Subtitle-Hub/main/packages/imdbtt0088847%20-%20%E6%97%A9%E9%A4%90%E4%BF%B1%E4%B9%90%E9%83%A8%20%5Bv1.0.0%5D.zip"
+    package_cdn_url: "https://cdn.jsdelivr.net/gh/Leovikii/Subtitle-Hub@main/packages/imdbtt0088847%20-%20%E6%97%A9%E9%A4%90%E4%BF%B1%E4%B9%90%E9%83%A8%20%5Bv1.0.0%5D.zip"
