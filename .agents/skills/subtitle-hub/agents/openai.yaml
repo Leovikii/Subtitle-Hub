@@ -1,7 +1,7 @@
 interface:
   display_name: "Subtitle Hub"
   short_description: "以精简审批流初始化、全文校对并发布中文字幕"
-  default_prompt: "Use $subtitle-hub 1.4.5 to prepare my subtitle project, review its full scope in bounded pages, save decisions by ID and source offsets, then implement the approved proposal and prepare the release candidate."
+  default_prompt: "Use $subtitle-hub 1.4.6 to prepare my subtitle project, review its full scope in bounded pages, save decisions by ID and source offsets, then implement the approved proposal and prepare the release candidate."
 
 policy:
   allow_implicit_invocation: true

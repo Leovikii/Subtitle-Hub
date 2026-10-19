@@ -47,6 +47,8 @@ class Event:
     style: str
     layer: int
     text: str
+    margins: tuple[int, int, int] = (0, 0, 0)
+    effect: str = ""
 
 
 def ass_time(value: str) -> int:
@@ -114,7 +116,12 @@ def parse_events(text: str) -> list[Event]:
         fields = [value.strip() for value in line.split(":", 1)[1].split(",", len(names) - 1)]
         row = dict(zip(names, fields))
         try:
-            events.append(Event(index, ass_time(row["Start"]), ass_time(row["End"]), row["Style"] or "Default", int(row.get("Layer", "0")), row["Text"]))
+            events.append(Event(
+                index, ass_time(row["Start"]), ass_time(row["End"]), row["Style"] or "Default",
+                int(row.get("Layer", "0")), row["Text"],
+                tuple(int(row.get(name, "0")) for name in ("MarginL", "MarginR", "MarginV")),
+                row.get("Effect", ""),
+            ))
         except (KeyError, ValueError) as error:
             raise AuditError(f"malformed Dialogue at Events line {index}") from error
     return events
@@ -223,7 +230,18 @@ def audit(path: Path) -> dict[str, object]:
             if right.start >= left.end or left.start >= right.end or right.index not in boxes:
                 continue
             if overlap(boxes[left.index], boxes[right.index]) and left.layer == right.layer:
-                findings.append(finding("spatial-collision", "risk", left, "simultaneous same-layer event boxes intersect", right.index))
+                same_anchor = (
+                    left.style == right.style and left.margins == right.margins
+                    and not left.effect and not right.effect
+                    and not TAG_BLOCK.search(left.text) and not TAG_BLOCK.search(right.text)
+                    and visible(left.text).strip() and visible(right.text).strip()
+                )
+                findings.append(finding(
+                    "spatial-collision", "confirmed" if same_anchor else "risk", left,
+                    "same-style unpositioned cues overlap at the same anchor; even 0.01 seconds can cause persistent ASS displacement"
+                    if same_anchor else "simultaneous same-layer event boxes intersect",
+                    right.index,
+                ))
 
     counts = {name: sum(item["classification"] == name for item in findings) for name in ("confirmed", "risk", "media-required")}
     return {

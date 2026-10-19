@@ -19,7 +19,7 @@ from typing import Iterable
 
 import yaml
 
-SKILL_VERSION = "1.4.5"
+SKILL_VERSION = "1.4.6"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -877,11 +877,22 @@ def secondary_projection(group: dict[str, object]) -> list[dict[str, object]]:
     ]
 
 
+def assert_nonoverlapping_cues(times: Iterable[tuple[int, int]]) -> None:
+    ordered = sorted(times)
+    for previous, current in zip(ordered, ordered[1:]):
+        if current[0] < previous[1]:
+            raise AlignmentError(
+                "ordinary same-language cues overlap; even 0.01 seconds can cause persistent ASS displacement; "
+                "review the shared timeline before projection"
+            )
+
+
 def assert_synchronous_pairs(events: list[Event], primary: set[str], secondary: set[str]) -> None:
     first = Counter((event.start, event.end) for event in events if event.style in primary and visible(event.text))
     second = Counter((event.start, event.end) for event in events if event.style in secondary and visible(event.text))
     if first != second or any(count != 1 for count in first.values()):
         raise AlignmentError("ordinary bilingual cues require unique pairs with identical start/end times")
+    assert_nonoverlapping_cues(first)
 
 
 def replace_secondary_events(master: Path, secondary_styles: set[str], new_lines: list[tuple[int, str]]) -> None:
@@ -966,6 +977,9 @@ def apply_session(project_root: Path, session: Path, secondary_style: str | None
         episode: [unit for group in values if group["status"] == "confirmed" for unit in secondary_projection(group)]
         for episode, values in groups_by_episode.items()
     }
+    # Preflight every episode before writing any master; never silently trim Chinese.
+    for units in chinese.values():
+        assert_nonoverlapping_cues((unit.start, unit.end) for unit in units)
     for episode, item in manifest["episodes"].items():
         new_lines = [(int(unit["start_cs"]), source_event_line(unit, chosen)) for unit in projections[episode]]
         master = Path(item["master"])

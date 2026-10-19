@@ -245,7 +245,7 @@ def validate_standard_ass(
     initialization = yaml_block(metadata, "initialization", 0)
     enforce_pair_timing = (
         secondary is not None
-        and yaml_scalar(initialization, "skill_version", 2) in {"1.4.4", "1.4.5"}
+        and yaml_scalar(initialization, "skill_version", 2) in {"1.4.4", "1.4.5", "1.4.6"}
         and subtitle.parent != project_root / "subtitles/previous"
     )
 
@@ -380,6 +380,17 @@ def validate_standard_ass(
         or any(count != 1 for count in ordinary_times["primary"].values())
     ):
         raise PackageError(f"{subtitle}: ordinary bilingual cues require unique pairs with identical start/end times")
+
+    if enforce_pair_timing and yaml_scalar(initialization, "skill_version", 2) == "1.4.6":
+        # ASS hours need not be zero-padded to the same length.
+        def centiseconds(value: str) -> int:
+            hours, minutes, seconds = value.split(":")
+            whole, fraction = seconds.split(".")
+            return ((int(hours) * 60 + int(minutes)) * 60 + int(whole)) * 100 + int(fraction)
+
+        ordered = sorted((centiseconds(start), centiseconds(end)) for start, end in ordinary_times["primary"])
+        if any(current[0] < previous[1] for previous, current in zip(ordered, ordered[1:])):
+            raise PackageError(f"{subtitle}: ordinary same-language cues overlap; even 0.01 seconds can cause persistent ASS displacement")
 
 
 def package_name(project_root: Path, version: str | None = None) -> str:

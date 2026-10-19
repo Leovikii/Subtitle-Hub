@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.4.5 proofreading project."""
+"""Create a transactionally initialized Subtitle Hub 1.4.6 proofreading project."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-SKILL_VERSION = "1.4.5"
+SKILL_VERSION = "1.4.6"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")

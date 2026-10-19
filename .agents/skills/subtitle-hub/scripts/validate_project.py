@@ -507,9 +507,9 @@ def main() -> int:
     if profile == "zh-mono" and secondary_styles:
         errors.append(f"{metadata_path}: monolingual profile must not declare ordinary secondary styles")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.4.5":
+    if initialization_version != "1.4.6":
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.4.5; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be 1.4.6; upgrade before processing"
         )
     if initialization_state not in {"proofreading-ready", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")

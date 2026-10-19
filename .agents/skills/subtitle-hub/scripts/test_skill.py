@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.5 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.6 toolchain."""
 
 from __future__ import annotations
 
@@ -183,7 +183,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.5\"\n  state: proofreading-ready\n"
+        "initialization:\n  skill_version: \"1.4.6\"\n  state: proofreading-ready\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     return project, master, source
@@ -394,7 +394,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.5"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.6"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -774,7 +774,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.5")
+            self.assertEqual(data["skill_version"], "1.4.6")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -1192,7 +1192,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.5"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.6"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -1369,6 +1369,48 @@ class CatalogAndPackagingTests(unittest.TestCase):
 
 
 class CandidateContractTests(unittest.TestCase):
+    def test_synchronous_overlap_blocks_candidate_and_package_without_retiming(self) -> None:
+        from build_subtitle_packages import validate_release_dir
+
+        with tempfile.TemporaryDirectory() as raw:
+            _, series, _, _, args = initialize_project(Path(raw), video_name="overlap.S01E01.mkv", secondary="ja")
+            run("init_project.py", *args)
+            project = series / "SH0001--test-tv"
+            master = project / "project/workspace/episodes/S01E01/master.ass"
+            clean = alignment_ass([
+                (100, 200, "CN-Main", "", "第一句"), (100, 200, "JP-Main", "", "first"),
+                (200, 300, "CN-Main", "", "第二句"), (200, 300, "JP-Main", "", "second"),
+                (50, 350, "Source", "", "画面注記です"),
+            ])
+            def overlap(text: str) -> str:
+                return text.replace("0:00:01.00,0:00:02.00", "0:00:01.00,0:00:02.01")
+
+            master.write_text(overlap(clean), encoding="utf-8")
+            original = master.read_bytes()
+            result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
+            self.assertIn("ordinary same-language cues overlap", result.stderr)
+            self.assertEqual(master.read_bytes(), original)
+            candidate = project / "project/workspace/build/current-candidate"
+            self.assertFalse(candidate.exists())
+            master.write_text(clean, encoding="utf-8")
+            run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
+            subtitle = candidate / "overlap.S01E01.zh-Hans.ass"
+            validate_release_dir(candidate, project)
+            subtitle.write_text(overlap(subtitle.read_text(encoding="utf-8")), encoding="utf-8", newline="\n")
+            with self.assertRaisesRegex(PackageError, "ordinary same-language cues overlap"):
+                validate_release_dir(candidate, project)
+            metadata = project / "project.yaml"
+            current = metadata.read_text(encoding="utf-8")
+            for version in ("1.4.4", "1.4.5"):
+                metadata.write_text(current.replace('skill_version: "1.4.6"', f'skill_version: "{version}"'), encoding="utf-8")
+                validate_release_dir(candidate, project)
+            metadata.write_text(current, encoding="utf-8")
+            previous = project / "subtitles/previous"
+            previous.mkdir(parents=True)
+            for file in candidate.iterdir():
+                (previous / file.name).write_bytes(file.read_bytes())
+            validate_release_dir(previous, project)
+
     def test_bilingual_candidate_and_package_enforce_exact_pairs(self) -> None:
         from build_subtitle_packages import validate_release_dir
 
@@ -1400,7 +1442,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.4.5"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.4.6"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1410,7 +1452,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.5"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.6"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1516,7 +1558,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.5 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.6 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1910,6 +1952,28 @@ class BilingualAlignmentTests(unittest.TestCase):
         projected = alignment.secondary_projection(group)
         self.assertEqual([(row["start_cs"], row["end_cs"]) for row in projected], [(100, 200), (200, 300)])
 
+    def test_apply_rejects_one_centisecond_overlap_before_writing(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, master, source = make_alignment_project(
+                root, [(100, 201, "第一句"), (200, 300, "第二句")],
+                [(100, 201, "first"), (200, 300, "second")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            review_alignment_session(session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            group = packet["groups"][0]
+            self.assertEqual(len(group["chinese_units"]), 2)
+            group["secondary_cuts"] = [len(group["source_units"][0]["text"])]
+            packet_path.write_text(json.dumps(packet), encoding="utf-8")
+            before_master, before_source = master.read_bytes(), source.read_bytes()
+            result = run("align_bilingual.py", "apply", str(project), "--session", str(session), expect=1)
+            self.assertIn("ordinary same-language cues overlap", result.stderr)
+            self.assertEqual(master.read_bytes(), before_master)
+            self.assertEqual(source.read_bytes(), before_source)
+
     def test_one_centisecond_bilingual_mismatch_fails_but_special_timing_is_exempt(self) -> None:
         import align_bilingual as alignment
 
@@ -1917,6 +1981,11 @@ class BilingualAlignmentTests(unittest.TestCase):
             return alignment.Event(1, 0, start, end, style, "", "text", "")
 
         ordinary = [event(100, 200, "CN"), event(100, 200, "EN")]
+        overlap = ordinary + [event(199, 300, "CN"), event(199, 300, "EN")]
+        with self.assertRaisesRegex(alignment.AlignmentError, "ordinary same-language cues overlap"):
+            alignment.assert_synchronous_pairs(overlap, {"CN"}, {"EN"})
+        touching = ordinary + [event(200, 300, "CN"), event(200, 300, "EN")]
+        alignment.assert_synchronous_pairs(list(reversed(touching)), {"CN"}, {"EN"})
         alignment.assert_synchronous_pairs(ordinary + [event(99, 250, "Sign")], {"CN"}, {"EN"})
         with self.assertRaisesRegex(alignment.AlignmentError, "identical start/end"):
             alignment.assert_synchronous_pairs([event(100, 200, "CN"), event(101, 200, "EN")], {"CN"}, {"EN"})
@@ -2101,6 +2170,25 @@ class BilingualAlignmentTests(unittest.TestCase):
 
 
 class StaticAuditTests(unittest.TestCase):
+    def test_one_centisecond_song_collision_is_confirmed_but_overrides_remain_risks(self) -> None:
+        import audit_subtitle
+
+        with tempfile.TemporaryDirectory() as raw:
+            path = Path(raw) / "song.ass"
+            text = alignment_ass([
+                (100, 201, "Source", "", "first song"),
+                (200, 300, "Source", "", "second song"),
+            ])
+            path.write_text(text, encoding="utf-8")
+            collision = [f for f in audit_subtitle.audit(path)["findings"] if f["category"] == "spatial-collision"]
+            self.assertEqual([f["classification"] for f in collision], ["confirmed"])
+            self.assertIn("0.01 seconds", collision[0]["message"])
+            path.write_text(text.replace("second song", r"{\pos(960,980)}second song"), encoding="utf-8")
+            collision = [f for f in audit_subtitle.audit(path)["findings"] if f["category"] == "spatial-collision"]
+            self.assertEqual([f["classification"] for f in collision], ["risk"])
+            path.write_text(text.replace("0:00:01.00,0:00:02.01", "0:00:01.00,0:00:02.00"), encoding="utf-8")
+            self.assertFalse([f for f in audit_subtitle.audit(path)["findings"] if f["category"] == "spatial-collision"])
+
     def test_soft_break_geometry_follows_ass_wrap_mode(self) -> None:
         import audit_subtitle
 
