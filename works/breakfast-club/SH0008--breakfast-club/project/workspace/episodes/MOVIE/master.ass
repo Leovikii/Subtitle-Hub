@@ -1,0 +1,2542 @@
+[Script Info]
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: CN-Main,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,130,1
+Style: EN-Main,Noto Sans CJK SC,46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1
+Style: CN-Sign,Noto Sans CJK SC,46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,8,96,96,50,1
+Style: CN-Quote,Noto Sans CJK SC,52,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,60,1
+Style: CN-Song,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,130,1
+Style: EN-Song,Noto Sans CJK SC,46,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,68,1
+Style: CN-Reaction,Noto Sans CJK SC,62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,96,96,130,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:01:49.00,0:01:51.43,CN-Quote,,0,0,0,,“在你唾弃这些孩子
+Dialogue: 0,0:01:51.60,0:01:56.00,CN-Quote,,0,0,0,,想要改变世界的努力时\N他们早已对你的意见免疫了
+Dialogue: 0,0:01:56.17,0:02:00.24,CN-Quote,,0,0,0,,他们很清楚自己正在经历什么\N——大卫·鲍伊
+Dialogue: 0,0:02:06.18,0:02:09.18,CN-Sign,,0,0,0,,（谢曼高中）
+Dialogue: 0,0:02:09.67,0:02:14.30,CN-Main,,0,0,0,,1984 年 3 月 24 日 周六
+Dialogue: 0,0:02:09.67,0:02:14.30,EN-Main,,0,0,0,,Brian: Saturday,\nMarch 24th, 1984.
+Dialogue: 0,0:02:14.30,0:02:18.72,CN-Main,,0,0,0,,谢曼高中 伊利诺伊州谢曼市 邮编 60062
+Dialogue: 0,0:02:14.30,0:02:18.72,EN-Main,,0,0,0,,Shermer High School,\nShermer, Illinois 60062.
+Dialogue: 0,0:02:24.73,0:02:26.81,CN-Main,,0,0,0,,亲爱的弗农先生
+Dialogue: 0,0:02:24.73,0:02:26.81,EN-Main,,0,0,0,,Dear Mr. Vernon,
+Dialogue: 0,0:02:26.30,0:02:27.00,CN-Sign,,0,0,0,,（学生商店）
+Dialogue: 0,0:02:26.81,0:02:29.31,CN-Main,,0,0,0,,我们接受牺牲一整个周六
+Dialogue: 0,0:02:26.81,0:02:29.31,EN-Main,,0,0,0,,We accept the fact that we had\nto sacrifice a whole Saturday
+Dialogue: 0,0:02:28.20,0:02:29.57,CN-Sign,,0,0,0,,（我在吃我的头）
+Dialogue: 0,0:02:29.32,0:02:33.24,CN-Main,,0,0,0,,为自己犯的错在学校留堂
+Dialogue: 0,0:02:29.32,0:02:33.24,EN-Main,,0,0,0,,in detention for whatever\nit was we did wrong.
+Dialogue: 0,0:02:33.24,0:02:36.32,CN-Main,,0,0,0,,我们确实做错了
+Dialogue: 0,0:02:33.24,0:02:36.32,EN-Main,,0,0,0,,What we did was wrong,
+Dialogue: 0,0:02:34.48,0:02:35.41,CN-Sign,,0,0,0,,（《谢曼高中斗牛犬报》）
+Dialogue: 0,0:02:36.32,0:02:36.96,CN-Main,,0,0,0,,我们觉得荒唐
+Dialogue: 0,0:02:36.32,0:02:36.96,EN-Main,,0,0,0,,but we think you're crazy
+Dialogue: 0,0:02:36.48,0:02:37.14,CN-Sign,,0,0,0,,（我不喜欢周一）
+Dialogue: 0,0:02:36.96,0:02:40.66,CN-Main,,0,0,0,,你让我们写篇文章 说自己是谁
+Dialogue: 0,0:02:36.96,0:02:40.66,EN-Main,,0,0,0,,to make us write an essay telling you\nwho we think we are.
+Dialogue: 0,0:02:40.66,0:02:44.29,CN-Main,,0,0,0,,你又不是真在乎
+Dialogue: 0,0:02:40.66,0:02:44.29,EN-Main,,0,0,0,,What do you care?
+Dialogue: 0,0:02:44.29,0:02:46.33,CN-Main,,0,0,0,,我们在你心中早有既定形象
+Dialogue: 0,0:02:44.29,0:02:46.33,EN-Main,,0,0,0,,You see us\nas you want to see us
+Dialogue: 0,0:02:45.29,0:02:46.42,CN-Sign,,0,0,0,,（毕业生展翅高飞）
+Dialogue: 0,0:02:46.33,0:02:47.94,CN-Main,,0,0,0,,简单说来
+Dialogue: 0,0:02:46.33,0:02:47.94,EN-Main,,0,0,0,,in the simplest terms,
+Dialogue: 0,0:02:46.49,0:02:47.19,CN-Sign,,0,0,0,,（救命 救命）
+Dialogue: 0,0:02:47.94,0:02:50.84,CN-Main,,0,0,0,,也就是那些顺手拈来的定义
+Dialogue: 0,0:02:47.94,0:02:50.84,EN-Main,,0,0,0,,in the most convenient definitions.
+Dialogue: 0,0:02:48.26,0:02:49.12,CN-Sign,,0,0,0,,（年度优等生）
+Dialogue: 0,0:02:50.84,0:02:54.88,CN-Main,,0,0,0,,你把我们分类为优等生 体育特长生
+Dialogue: 0,0:02:50.84,0:02:54.88,EN-Main,,0,0,0,,You see us as a brain, an athlete,
+Dialogue: 0,0:02:54.88,0:02:58.47,CN-Main,,0,0,0,,无可救药的怪胎
+Dialogue: 0,0:02:54.88,0:02:58.47,EN-Main,,0,0,0,,a basket case,
+Dialogue: 0,0:02:55.26,0:02:55.76,CN-Sign,,0,0,0,,（学生顾问 桥本博士）
+Dialogue: 0,0:02:57.56,0:02:58.20,CN-Sign,,0,0,0,,（选举你的舞会皇后）
+Dialogue: 0,0:02:58.47,0:03:00.60,CN-Main,,0,0,0,,公主
+Dialogue: 0,0:02:58.47,0:03:00.60,EN-Main,,0,0,0,,princess,
+Dialogue: 0,0:03:00.07,0:03:00.67,CN-Sign,,0,0,0,,（打开这个储物柜）
+Dialogue: 0,0:03:00.60,0:03:02.52,CN-Main,,0,0,0,,或者罪犯
+Dialogue: 0,0:03:00.60,0:03:02.52,EN-Main,,0,0,0,,and a criminal.
+Dialogue: 0,0:03:03.85,0:03:05.52,CN-Main,,0,0,0,,对吧？
+Dialogue: 0,0:03:03.85,0:03:05.52,EN-Main,,0,0,0,,Correct?
+Dialogue: 0,0:03:08.06,0:03:11.94,CN-Main,,0,0,0,,我们今天早上 7 点 也是这么看待彼此的
+Dialogue: 0,0:03:08.06,0:03:11.94,EN-Main,,0,0,0,,That's the way\nwe saw each other at 7:00 this morning.
+Dialogue: 0,0:03:11.04,0:03:11.81,CN-Sign,,0,0,0,,（你就死定了基佬）
+Dialogue: 0,0:03:11.94,0:03:13.44,CN-Main,,0,0,0,,我们被洗脑了
+Dialogue: 0,0:03:11.94,0:03:13.44,EN-Main,,0,0,0,,We were brainwashed.
+Dialogue: 0,0:03:23.12,0:03:27.62,CN-Main,,0,0,0,,我简直不敢相信你不能让我免于留堂
+Dialogue: 0,0:03:23.12,0:03:27.62,EN-Main,,0,0,0,,- I can't believe\nyou can't get me out of this.
+Dialogue: 0,0:03:27.63,0:03:32.59,CN-Main,,0,0,0,,我周六还要来这真是太荒谬了
+Dialogue: 0,0:03:27.63,0:03:32.59,EN-Main,,0,0,0,,It's so absurd I have\nto be here on a Saturday.
+Dialogue: 0,0:03:32.59,0:03:35.76,CN-Main,,0,0,0,,我又不是智障
+Dialogue: 0,0:03:32.59,0:03:35.76,EN-Main,,0,0,0,,It's not like\nI'm a defective or anything.
+Dialogue: 0,0:03:35.76,0:03:37.05,CN-Main,,0,0,0,,我会补偿你的
+Dialogue: 0,0:03:35.76,0:03:37.05,EN-Main,,0,0,0,,- I'll make it up to you.
+Dialogue: 0,0:03:37.05,0:03:40.93,CN-Main,,0,0,0,,宝贝 翘课去逛街不代表你智障
+Dialogue: 0,0:03:37.05,0:03:40.93,EN-Main,,0,0,0,,Honey, ditching class\nto go shopping doesn't make you a defective.
+Dialogue: 0,0:03:40.93,0:03:42.68,CN-Main,,0,0,0,,祝你一天愉快
+Dialogue: 0,0:03:40.93,0:03:42.68,EN-Main,,0,0,0,,Have a good day.
+Dialogue: 0,0:03:47.48,0:03:50.61,CN-Main,,0,0,0,,这是我们第一次留堂 还是最后一次？
+Dialogue: 0,0:03:47.48,0:03:50.61,EN-Main,,0,0,0,,- Is this the first time\nor the last time we do this?
+Dialogue: 0,0:03:50.61,0:03:52.11,CN-Main,,0,0,0,,最后一次
+Dialogue: 0,0:03:50.61,0:03:52.11,EN-Main,,0,0,0,,- Last.
+Dialogue: 0,0:03:52.11,0:03:54.65,CN-Main,,0,0,0,,进去好好利用这段时间
+Dialogue: 0,0:03:52.11,0:03:54.65,EN-Main,,0,0,0,,- Well, get in there and use\nthe time to your advantage.
+Dialogue: 0,0:03:54.65,0:03:56.11,CN-Main,,0,0,0,,妈 你知道我们留堂 不是用来学习的对吧
+Dialogue: 0,0:03:54.65,0:03:56.11,EN-Main,,0,0,0,,- Mom, we're not supposed\nto study.
+Dialogue: 0,0:03:56.11,0:03:57.61,CN-Main,,0,0,0,,我们只能坐着 什么也不干
+Dialogue: 0,0:03:56.11,0:03:57.61,EN-Main,,0,0,0,,We just have to sit there\nand do nothing.
+Dialogue: 0,0:03:57.61,0:04:00.45,CN-Main,,0,0,0,,反正你得找个方式学习 先生
+Dialogue: 0,0:03:57.61,0:04:00.45,EN-Main,,0,0,0,,- Well, mister, you figure out\na way to study.
+Dialogue: 0,0:04:00.45,0:04:01.74,CN-Main,,0,0,0,,对
+Dialogue: 0,0:04:00.45,0:04:01.74,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,0:04:03.70,0:04:04.78,CN-Main,,0,0,0,,快走！
+Dialogue: 0,0:04:03.70,0:04:04.78,EN-Main,,0,0,0,,- Well, go.
+Dialogue: 0,0:04:10.84,0:04:12.96,CN-Main,,0,0,0,,我以前也瞎搞
+Dialogue: 0,0:04:10.84,0:04:12.96,EN-Main,,0,0,0,,- Hey, I screwed around.
+Dialogue: 0,0:04:12.96,0:04:16.38,CN-Main,,0,0,0,,男孩子都爱瞎闹 这没什么大不了
+Dialogue: 0,0:04:12.96,0:04:16.38,EN-Main,,0,0,0,,Guys screw around. There's nothing wrong with that
+Dialogue: 0,0:04:16.38,0:04:18.47,CN-Main,,0,0,0,,只不过你被抓到了 伙计
+Dialogue: 0,0:04:16.38,0:04:18.47,EN-Main,,0,0,0,,except you got caught, sport.
+Dialogue: 0,0:04:18.47,0:04:20.76,CN-Main,,0,0,0,,我妈已经骂过我了 好吗？
+Dialogue: 0,0:04:18.47,0:04:20.76,EN-Main,,0,0,0,,- Yeah, mom already reamed me,\nall right?
+Dialogue: 0,0:04:20.76,0:04:25.14,CN-Main,,0,0,0,,你想错过比赛吗？ 你想丢掉奖学金吗？
+Dialogue: 0,0:04:20.76,0:04:25.14,EN-Main,,0,0,0,,- You want to miss a match? You want to blow your ride?
+Dialogue: 0,0:04:25.14,0:04:28.60,CN-Main,,0,0,0,,没有学校会愿意给一个 目无纪律的人奖学金的
+Dialogue: 0,0:04:25.14,0:04:28.60,EN-Main,,0,0,0,,Now, no school is going\nto give a scholarship to a discipline case.
+Dialogue: 0,0:05:57.11,0:06:01.61,CN-Main,,0,0,0,,很好很好 都来了
+Dialogue: 0,0:05:57.11,0:06:01.61,EN-Main,,0,0,0,,- Well, well, here we are.
+Dialogue: 0,0:06:01.61,0:06:04.74,CN-Main,,0,0,0,,恭喜你们 都准时到了
+Dialogue: 0,0:06:01.61,0:06:04.74,EN-Main,,0,0,0,,I want to congratulate you\nfor being on time.
+Dialogue: 0,0:06:04.74,0:06:06.20,CN-Main,,0,0,0,,抱歉 老师
+Dialogue: 0,0:06:04.74,0:06:06.20,EN-Main,,0,0,0,,- Excuse me, sir.
+Dialogue: 0,0:06:06.20,0:06:07.53,CN-Main,,0,0,0,,我觉得你肯定是搞错了
+Dialogue: 0,0:06:06.20,0:06:07.53,EN-Main,,0,0,0,,I think there's been a mistake.
+Dialogue: 0,0:06:07.54,0:06:10.58,CN-Main,,0,0,0,,我知道这是留堂的地方
+Dialogue: 0,0:06:07.54,0:06:10.58,EN-Main,,0,0,0,,I know it's detention, but...
+Dialogue: 0,0:06:10.58,0:06:14.54,CN-Main,,0,0,0,,但是我不觉得我应该来这里
+Dialogue: 0,0:06:10.58,0:06:14.54,EN-Main,,0,0,0,,I don't think I belong in here.
+Dialogue: 0,0:06:14.54,0:06:18.54,CN-Main,,0,0,0,,现在是 7 点过 6 分
+Dialogue: 0,0:06:14.54,0:06:18.54,EN-Main,,0,0,0,,- It is now 7:06.
+Dialogue: 0,0:06:18.55,0:06:21.22,CN-Main,,0,0,0,,你有 8 小时 54 分时间
+Dialogue: 0,0:06:18.55,0:06:21.22,EN-Main,,0,0,0,,You have exactly\n8 hours and 54 minutes
+Dialogue: 0,0:06:21.22,0:06:23.72,CN-Main,,0,0,0,,可以用来考虑你为什么在这里
+Dialogue: 0,0:06:21.22,0:06:23.72,EN-Main,,0,0,0,,to think about\nwhy you're here.
+Dialogue: 0,0:06:23.72,0:06:26.10,CN-Main,,0,0,0,,思索一下你自己的错误
+Dialogue: 0,0:06:23.72,0:06:26.10,EN-Main,,0,0,0,,Ponder the error of your ways.
+Dialogue: 0,0:06:28.26,0:06:30.85,CN-Main,,0,0,0,,你们不能说话
+Dialogue: 0,0:06:28.26,0:06:30.85,EN-Main,,0,0,0,,And you may not talk.
+Dialogue: 0,0:06:32.60,0:06:35.06,CN-Main,,0,0,0,,也不能从座位上离开
+Dialogue: 0,0:06:32.60,0:06:35.06,EN-Main,,0,0,0,,You will not move\nfrom these seats.
+Dialogue: 0,0:06:38.15,0:06:40.23,CN-Main,,0,0,0,,还有你
+Dialogue: 0,0:06:38.15,0:06:40.23,EN-Main,,0,0,0,,And you...
+Dialogue: 0,0:06:40.23,0:06:41.86,CN-Main,,0,0,0,,不能睡觉
+Dialogue: 0,0:06:40.23,0:06:41.86,EN-Main,,0,0,0,,will not sleep.
+Dialogue: 0,0:06:46.78,0:06:50.29,CN-Main,,0,0,0,,好了 同学们 我们今天要来点不一样的
+Dialogue: 0,0:06:46.78,0:06:50.29,EN-Main,,0,0,0,,All right, people,\nwe're going to try something a little different today.
+Dialogue: 0,0:06:50.29,0:06:53.96,CN-Main,,0,0,0,,我们要写一篇论文
+Dialogue: 0,0:06:50.29,0:06:53.96,EN-Main,,0,0,0,,We are going to write an essay
+Dialogue: 0,0:06:53.96,0:06:57.59,CN-Main,,0,0,0,,不少于一千字
+Dialogue: 0,0:06:53.96,0:06:57.59,EN-Main,,0,0,0,,of no less than 1,000 words
+Dialogue: 0,0:06:57.59,0:07:01.17,CN-Main,,0,0,0,,-向我描述 你认为你到底是谁 -这是考试吗？
+Dialogue: 0,0:06:57.59,0:07:01.17,EN-Main,,0,0,0,,describing to me\nwho you think you are. - Is this a test?
+Dialogue: 0,0:07:01.17,0:07:03.89,CN-Main,,0,0,0,,我说了是论文
+Dialogue: 0,0:07:01.17,0:07:03.89,EN-Main,,0,0,0,,- And when I say essay,
+Dialogue: 0,0:07:03.89,0:07:05.55,CN-Main,,0,0,0,,那就是论文
+Dialogue: 0,0:07:03.89,0:07:05.55,EN-Main,,0,0,0,,I mean essay.
+Dialogue: 0,0:07:05.55,0:07:12.14,CN-Main,,0,0,0,,我可没说把一个单词写一千遍
+Dialogue: 0,0:07:05.55,0:07:12.14,EN-Main,,0,0,0,,I do not mean a single word\nrepeated 1,000 times.
+Dialogue: 0,0:07:12.14,0:07:14.23,CN-Main,,0,0,0,,听清了吗 本德先生？
+Dialogue: 0,0:07:12.14,0:07:14.23,EN-Main,,0,0,0,,Is that clear, Mr. Bender?
+Dialogue: 0,0:07:14.23,0:07:15.73,CN-Main,,0,0,0,,非常清楚
+Dialogue: 0,0:07:14.23,0:07:15.73,EN-Main,,0,0,0,,- Crystal.
+Dialogue: 0,0:07:15.73,0:07:18.73,CN-Main,,0,0,0,,很好 也许你会更了解自己一点
+Dialogue: 0,0:07:15.73,0:07:18.73,EN-Main,,0,0,0,,- Good, maybe you'll learn\na little something about yourself.
+Dialogue: 0,0:07:18.73,0:07:24.82,CN-Main,,0,0,0,,也许你甚至会决定是否还会回来
+Dialogue: 0,0:07:18.73,0:07:24.82,EN-Main,,0,0,0,,Maybe you'll even decide whether\nor not you care to return.
+Dialogue: 0,0:07:24.82,0:07:26.61,CN-Main,,0,0,0,,我现在就能回答这个问题 老师
+Dialogue: 0,0:07:24.82,0:07:26.61,EN-Main,,0,0,0,,- Yeah, you know, I can answer\nthat right now, sir, you know,
+Dialogue: 0,0:07:26.61,0:07:28.28,CN-Main,,0,0,0,,对我来说肯定是“不” 因为……
+Dialogue: 0,0:07:26.61,0:07:28.28,EN-Main,,0,0,0,,that'd be no.\nNo for me because--
+Dialogue: 0,0:07:28.28,0:07:30.16,CN-Main,,0,0,0,,坐下 强生
+Dialogue: 0,0:07:28.28,0:07:30.16,EN-Main,,0,0,0,,- Sit down, Johnson.
+Dialogue: 0,0:07:30.16,0:07:31.87,CN-Main,,0,0,0,,谢谢 先生
+Dialogue: 0,0:07:30.16,0:07:31.87,EN-Main,,0,0,0,,- Thank you, sir.
+Dialogue: 0,0:07:33.29,0:07:35.62,CN-Main,,0,0,0,,我的办公室就在走廊对面
+Dialogue: 0,0:07:33.29,0:07:35.62,EN-Main,,0,0,0,,- My office\nis right across that hall.
+Dialogue: 0,0:07:35.62,0:07:38.16,CN-Main,,0,0,0,,任何偷鸡摸狗的行为 都是被严令禁止的
+Dialogue: 0,0:07:35.62,0:07:38.16,EN-Main,,0,0,0,,Any monkey business\nis ill advised.
+Dialogue: 0,0:07:38.17,0:07:40.13,CN-Main,,0,0,0,,还有问题吗？
+Dialogue: 0,0:07:38.17,0:07:40.13,EN-Main,,0,0,0,,Any questions?
+Dialogue: 0,0:07:42.05,0:07:44.59,CN-Main,,0,0,0,,有 我有一个问题
+Dialogue: 0,0:07:42.05,0:07:44.59,EN-Main,,0,0,0,,- Yeah, I got a question.
+Dialogue: 0,0:07:44.59,0:07:47.68,CN-Main,,0,0,0,,巴里·马尼洛知道你翻了他的衣柜吗？
+Dialogue: 0,0:07:44.59,0:07:47.68,EN-Main,,0,0,0,,Does Barry Manilow know\nthat you raid his wardrobe?
+Dialogue: 0,0:07:47.68,0:07:52.18,CN-Main,,0,0,0,,我可以回答你这个问题 下个周六回答 本德先生
+Dialogue: 0,0:07:47.68,0:07:52.18,EN-Main,,0,0,0,,- Give you the answer\nto that question, Mr. Bender, next Saturday.
+Dialogue: 0,0:07:52.18,0:07:54.60,CN-Main,,0,0,0,,别去招惹公牛 年轻人
+Dialogue: 0,0:07:52.18,0:07:54.60,EN-Main,,0,0,0,,Don't mess with the bull,\nyoung man,
+Dialogue: 0,0:07:54.60,0:07:56.06,CN-Main,,0,0,0,,小心被牛角顶
+Dialogue: 0,0:07:54.60,0:07:56.06,EN-Main,,0,0,0,,you'll get the horns.
+Dialogue: 0,0:07:59.11,0:08:01.61,CN-Main,,0,0,0,,那家伙就是个爱舔屁股的
+Dialogue: 0,0:07:59.11,0:08:01.61,EN-Main,,0,0,0,,- That man is a brownie hound.
+Dialogue: 0,0:08:33.77,0:08:37.85,CN-Main,,0,0,0,,继续吃手吧 午饭就不饿了
+Dialogue: 0,0:08:33.77,0:08:37.85,EN-Main,,0,0,0,,You keep eating your hand,\nyou're not going to be hungry for lunch.
+Dialogue: 0,0:08:39.23,0:08:42.19,CN-Main,,0,0,0,,我以前见过你
+Dialogue: 0,0:08:39.23,0:08:42.19,EN-Main,,0,0,0,,I've seen you before, you know.
+Dialogue: 0,0:08:52.12,0:08:54.37,CN-Main,,0,0,0,,我觉得自己是谁
+Dialogue: 0,0:08:52.12,0:08:54.37,EN-Main,,0,0,0,,- Who do I think I am?
+Dialogue: 0,0:08:54.37,0:08:57.96,CN-Main,,0,0,0,,你是谁？ 你是谁？
+Dialogue: 0,0:08:54.37,0:08:57.96,EN-Main,,0,0,0,,Who are you?
+Dialogue: 0,0:09:00.96,0:09:02.88,CN-Main,,0,0,0,,我是海象
+Dialogue: 0,0:09:00.96,0:09:02.88,EN-Main,,0,0,0,,I'm a walrus.
+Dialogue: 0,0:09:34.33,0:09:36.87,CN-Main,,0,0,0,,都是狗屁 对吧？
+Dialogue: 0,0:09:34.33,0:09:36.87,EN-Main,,0,0,0,,It's the shits, huh?
+Dialogue: 0,0:10:07.48,0:10:10.19,CN-Main,,0,0,0,,真不敢相信我真的在经历这些
+Dialogue: 0,0:10:07.48,0:10:10.19,EN-Main,,0,0,0,,- I can't believe this is\nreally happening to me.
+Dialogue: 0,0:10:10.19,0:10:15.45,CN-Main,,0,0,0,,糟糕！我们要是想嘘嘘 怎么办？
+Dialogue: 0,0:10:10.19,0:10:15.45,EN-Main,,0,0,0,,- Oh, shit! What are we supposed to do\nif we have to take a piss?
+Dialogue: 0,0:10:15.45,0:10:20.03,CN-Main,,0,0,0,,-拜托 -人有三急
+Dialogue: 0,0:10:15.45,0:10:20.03,EN-Main,,0,0,0,,- Please.\n- If you got to go, you got to go.\n(unzips pants)
+Dialogue: 0,0:10:20.04,0:10:21.46,CN-Main,,0,0,0,,天啊
+Dialogue: 0,0:10:20.04,0:10:21.46,EN-Main,,0,0,0,,- Oh, my God.
+Dialogue: 0,0:10:21.46,0:10:23.04,CN-Main,,0,0,0,,你不是打算在这尿吧 兄弟
+Dialogue: 0,0:10:21.46,0:10:23.04,EN-Main,,0,0,0,,- Hey, you're not urinating\nin here, man.
+Dialogue: 0,0:10:23.04,0:10:24.75,CN-Main,,0,0,0,,别说话 别说话 你一说话就回去了
+Dialogue: 0,0:10:23.04,0:10:24.75,EN-Main,,0,0,0,,- Don't talk, don't talk.\nIt makes it crawl back up.
+Dialogue: 0,0:10:24.75,0:10:28.17,CN-Main,,0,0,0,,你要是掏出来 在第一滴尿落地前你就死定了
+Dialogue: 0,0:10:24.75,0:10:28.17,EN-Main,,0,0,0,,- You whip it out\nand you're dead before the first drop\nhits the floor.
+Dialogue: 0,0:10:28.17,0:10:31.34,CN-Main,,0,0,0,,天啊 你生气的时候真性感
+Dialogue: 0,0:10:28.17,0:10:31.34,EN-Main,,0,0,0,,- God. You're pretty sexy\nwhen you get angry.
+Dialogue: 0,0:10:35.51,0:10:36.38,CN-Main,,0,0,0,,喂 小朋友
+Dialogue: 0,0:10:35.51,0:10:36.38,EN-Main,,0,0,0,,Hey, homeboy,
+Dialogue: 0,0:10:36.38,0:10:38.35,CN-Main,,0,0,0,,要不你去把门关上
+Dialogue: 0,0:10:36.38,0:10:38.35,EN-Main,,0,0,0,,why don't you\ngo close that door,
+Dialogue: 0,0:10:38.35,0:10:42.19,CN-Main,,0,0,0,,我们来搞大这个舞会皇后的肚子吧
+Dialogue: 0,0:10:38.35,0:10:42.19,EN-Main,,0,0,0,,we'll get\nthe prom queen impregnated.
+Dialogue: 0,0:10:42.19,0:10:45.19,CN-Main,,0,0,0,,-喂 喂 -怎么了？
+Dialogue: 0,0:10:42.19,0:10:45.19,EN-Main,,0,0,0,,Andy: Hey. Hey.\n- What?
+Dialogue: 0,0:10:45.19,0:10:48.48,CN-Main,,0,0,0,,如果我真发火 你就完了
+Dialogue: 0,0:10:45.19,0:10:48.48,EN-Main,,0,0,0,,- If I lose my temper\nyou're totaled, man.
+Dialogue: 0,0:10:48.48,0:10:50.48,CN-Main,,0,0,0,,彻底完了？
+Dialogue: 0,0:10:48.48,0:10:50.48,EN-Main,,0,0,0,,- Totally?
+Dialogue: 0,0:10:50.49,0:10:54.35,CN-Main,,0,0,0,,-完全完了 -你闭嘴就行了
+Dialogue: 0,0:10:50.49,0:10:54.35,EN-Main,,0,0,0,,- Totally. - Why don't you just shut up?
+Dialogue: 0,0:10:54.35,0:10:56.49,CN-Main,,0,0,0,,这里没人想听你说话
+Dialogue: 0,0:10:54.35,0:10:56.49,EN-Main,,0,0,0,,Nobody here is interested.
+Dialogue: 0,0:10:56.49,0:10:58.28,CN-Main,,0,0,0,,真的吗
+Dialogue: 0,0:10:56.49,0:10:58.28,EN-Main,,0,0,0,,- Really.
+Dialogue: 0,0:10:58.28,0:10:59.91,CN-Main,,0,0,0,,混球
+Dialogue: 0,0:10:58.28,0:10:59.91,EN-Main,,0,0,0,,Butt face.
+Dialogue: 0,0:10:59.91,0:11:02.33,CN-Main,,0,0,0,,喂 体招生 你是做了什么被留堂了？
+Dialogue: 0,0:10:59.91,0:11:02.33,EN-Main,,0,0,0,,- Well, hey, sport-o,\nwhat'd you do to get in here?
+Dialogue: 0,0:11:02.33,0:11:04.00,CN-Main,,0,0,0,,忘洗护裆了吗？
+Dialogue: 0,0:11:02.33,0:11:04.00,EN-Main,,0,0,0,,Forget to wash your jock?
+Dialogue: 0,0:11:04.00,0:11:04.74,CN-Main,,0,0,0,,抱歉 伙计们
+Dialogue: 0,0:11:04.00,0:11:04.74,EN-Main,,0,0,0,,- Excuse me, fellas,
+Dialogue: 0,0:11:04.74,0:11:06.17,CN-Main,,0,0,0,,我觉得我们应该好好写文章
+Dialogue: 0,0:11:04.74,0:11:06.17,EN-Main,,0,0,0,,I think\nwe should just write our papers.
+Dialogue: 0,0:11:06.17,0:11:07.36,CN-Main,,0,0,0,,听着 你是住在留堂室没错
+Dialogue: 0,0:11:06.17,0:11:07.36,EN-Main,,0,0,0,,- Look, just because you live\nin here
+Dialogue: 0,0:11:07.36,0:11:10.98,CN-Main,,0,0,0,,但是这不代表你有做混蛋的特权
+Dialogue: 0,0:11:07.36,0:11:10.98,EN-Main,,0,0,0,,doesn't give you the right to be a pain\nin the ass,
+Dialogue: 0,0:11:10.98,0:11:12.51,CN-Main,,0,0,0,,所以 收起你的那一套！
+Dialogue: 0,0:11:10.98,0:11:12.51,EN-Main,,0,0,0,,so knock it off.
+Dialogue: 0,0:11:12.51,0:11:14.05,CN-Main,,0,0,0,,这可是个自由的国度
+Dialogue: 0,0:11:12.51,0:11:14.05,EN-Main,,0,0,0,,- It's a free country.
+Dialogue: 0,0:11:14.05,0:11:18.97,CN-Main,,0,0,0,,他就是故意惹你生气 别理他就好
+Dialogue: 0,0:11:14.05,0:11:18.97,EN-Main,,0,0,0,,- He's just doing it\nto get a rise out of you. Just ignore him.
+Dialogue: 0,0:11:18.97,0:11:21.01,CN-Main,,0,0,0,,甜心
+Dialogue: 0,0:11:18.97,0:11:21.01,EN-Main,,0,0,0,,- Sweets?
+Dialogue: 0,0:11:21.02,0:11:23.82,CN-Main,,0,0,0,,你想不理我都做不到
+Dialogue: 0,0:11:21.02,0:11:23.82,EN-Main,,0,0,0,,You couldn't ignore me\nif you tried.
+Dialogue: 0,0:11:27.11,0:11:28.11,CN-Main,,0,0,0,,所以……
+Dialogue: 0,0:11:27.11,0:11:28.11,EN-Main,,0,0,0,,So...
+Dialogue: 0,0:11:30.11,0:11:34.36,CN-Main,,0,0,0,,所以说…… 你们俩是男女朋友吗？
+Dialogue: 0,0:11:30.11,0:11:34.36,EN-Main,,0,0,0,,So, are you guys, like,\nboyfriend, girlfriend?
+Dialogue: 0,0:11:37.16,0:11:38.87,CN-Main,,0,0,0,,热恋当中？
+Dialogue: 0,0:11:37.16,0:11:38.87,EN-Main,,0,0,0,,Steady dates?
+Dialogue: 0,0:11:40.45,0:11:42.28,CN-Main,,0,0,0,,一对小爱侣？
+Dialogue: 0,0:11:40.45,0:11:42.28,EN-Main,,0,0,0,,Lovers?
+Dialogue: 0,0:11:42.29,0:11:46.00,CN-Main,,0,0,0,,得了体招生 和我说说
+Dialogue: 0,0:11:42.29,0:11:46.00,EN-Main,,0,0,0,,Come on, sport-o,\nlevel with me.
+Dialogue: 0,0:11:46.00,0:11:48.38,CN-Main,,0,0,0,,你和她分享了热情的体液了吗？
+Dialogue: 0,0:11:46.00,0:11:48.38,EN-Main,,0,0,0,,Do you slip her\nthe hot beef injection?
+Dialogue: 0,0:11:48.38,0:11:50.25,CN-Main,,0,0,0,,-去死吧！ -够了！
+Dialogue: 0,0:11:48.38,0:11:50.25,EN-Main,,0,0,0,,- Go to hell!\n- Enough!
+Dialogue: 0,0:11:50.25,0:11:52.79,CN-Main,,0,0,0,,喂！你们在里面干什么？
+Dialogue: 0,0:11:50.25,0:11:52.79,EN-Main,,0,0,0,,- Hey, what's going on in there?
+Dialogue: 0,0:11:55.17,0:11:56.92,CN-Main,,0,0,0,,混球们
+Dialogue: 0,0:11:55.17,0:11:56.92,EN-Main,,0,0,0,,Spoiled little pricks.
+Dialogue: 0,0:12:03.64,0:12:05.93,CN-Main,,0,0,0,,混账
+Dialogue: 0,0:12:03.64,0:12:05.93,EN-Main,,0,0,0,,- Scumbag.
+Dialogue: 0,0:12:07.19,0:12:09.06,CN-Main,,0,0,0,,我们关上门好不好？
+Dialogue: 0,0:12:07.19,0:12:09.06,EN-Main,,0,0,0,,- What do you say\nwe close that door?
+Dialogue: 0,0:12:09.06,0:12:11.94,CN-Main,,0,0,0,,如果弗农过几秒就看看我们的话 我们就没办法度过欢乐时光了
+Dialogue: 0,0:12:09.06,0:12:11.94,EN-Main,,0,0,0,,We can't have any kind of party\nwith Vernon checking us out every few seconds.
+Dialogue: 0,0:12:11.94,0:12:14.02,CN-Main,,0,0,0,,你知道门是应该开着的
+Dialogue: 0,0:12:11.94,0:12:14.02,EN-Main,,0,0,0,,- You know, the door's\nsupposed to stay open.
+Dialogue: 0,0:12:14.03,0:12:15.95,CN-Main,,0,0,0,,-所以呢？ -所以你干嘛不闭嘴呢？
+Dialogue: 0,0:12:14.03,0:12:15.95,EN-Main,,0,0,0,,- So what?\n- So why don't you just shut up?
+Dialogue: 0,0:12:15.95,0:12:17.57,CN-Main,,0,0,0,,这里还有其他四个人呢
+Dialogue: 0,0:12:15.95,0:12:17.57,EN-Main,,0,0,0,,There's four other people\nin here, you know.
+Dialogue: 0,0:12:17.57,0:12:20.99,CN-Main,,0,0,0,,天啊 你居然可以数数 我就知道当一名摔跤手必须得聪明
+Dialogue: 0,0:12:17.57,0:12:20.99,EN-Main,,0,0,0,,- God, you can count.\nSee, I knew you had to be smart to be a wrestler.
+Dialogue: 0,0:12:20.99,0:12:23.16,CN-Main,,0,0,0,,你又是什么角色？ 在这里对每个人品头论足
+Dialogue: 0,0:12:20.99,0:12:23.16,EN-Main,,0,0,0,,- Who the hell are you\nto judge anybody anyway?
+Dialogue: 0,0:12:23.16,0:12:24.91,CN-Main,,0,0,0,,就是
+Dialogue: 0,0:12:23.16,0:12:24.91,EN-Main,,0,0,0,,- Really.
+Dialogue: 0,0:12:24.91,0:12:26.41,CN-Main,,0,0,0,,本德 你根本就不算个人物
+Dialogue: 0,0:12:24.91,0:12:26.41,EN-Main,,0,0,0,,Andy: You know, Bender,\nyou don't even count.
+Dialogue: 0,0:12:26.41,0:12:29.62,CN-Main,,0,0,0,,就算你永远消失了 那也不会有任何区别
+Dialogue: 0,0:12:26.41,0:12:29.62,EN-Main,,0,0,0,,You know,\nif you disappear forever it wouldn't make any difference.
+Dialogue: 0,0:12:29.63,0:12:32.43,CN-Main,,0,0,0,,你在这个学校里和不存在没区别
+Dialogue: 0,0:12:29.63,0:12:32.43,EN-Main,,0,0,0,,You may as well not even\nexist at this school.
+Dialogue: 0,0:12:35.09,0:12:39.64,CN-Main,,0,0,0,,那我可以直接跑出去加入摔跤队
+Dialogue: 0,0:12:35.09,0:12:39.64,EN-Main,,0,0,0,,- Well, I'll just run right out\nand join the wrestling team.
+Dialogue: 0,0:12:39.64,0:12:43.06,CN-Main,,0,0,0,,或者还可以加入预科俱乐部 还有学生会
+Dialogue: 0,0:12:39.64,0:12:43.06,EN-Main,,0,0,0,,Maybe the prep club, too,\nstudent council.
+Dialogue: 0,0:12:43.06,0:12:44.27,CN-Main,,0,0,0,,不 他们才不收你
+Dialogue: 0,0:12:43.06,0:12:44.27,EN-Main,,0,0,0,,- No, they wouldn't take you.
+Dialogue: 0,0:12:44.27,0:12:45.60,CN-Main,,0,0,0,,真伤心啊
+Dialogue: 0,0:12:44.27,0:12:45.60,EN-Main,,0,0,0,,- I'm hurt.
+Dialogue: 0,0:12:45.60,0:12:47.98,CN-Main,,0,0,0,,你知道为什么像你 这样的人总是攻击一切吗？
+Dialogue: 0,0:12:45.60,0:12:47.98,EN-Main,,0,0,0,,- You know why guys like you\nknock everything?
+Dialogue: 0,0:12:47.98,0:12:50.15,CN-Main,,0,0,0,,-这个言论肯定艳惊四座 -因为你害怕
+Dialogue: 0,0:12:47.98,0:12:50.15,EN-Main,,0,0,0,,- Oh, this should be stunning.\n- It's because you're afraid.
+Dialogue: 0,0:12:50.15,0:12:52.23,CN-Main,,0,0,0,,天啊 你们这些富人还真聪明呢
+Dialogue: 0,0:12:50.15,0:12:52.23,EN-Main,,0,0,0,,- Oh, God, you richies\nare so smart.
+Dialogue: 0,0:12:52.23,0:12:54.98,CN-Main,,0,0,0,,所以我才不喜欢参加这些活动
+Dialogue: 0,0:12:52.23,0:12:54.98,EN-Main,,0,0,0,,That's exactly why\nI'm not heavy in activities.
+Dialogue: 0,0:12:54.98,0:12:56.15,CN-Main,,0,0,0,,你是个大懦夫
+Dialogue: 0,0:12:54.98,0:12:56.15,EN-Main,,0,0,0,,- You're a big coward.
+Dialogue: 0,0:12:56.15,0:12:57.32,CN-Main,,0,0,0,,我参加了数学俱乐部
+Dialogue: 0,0:12:56.15,0:12:57.32,EN-Main,,0,0,0,,- I'm in the math club.
+Dialogue: 0,0:12:57.32,0:13:00.35,CN-Main,,0,0,0,,所以你害怕他们不接受你 你找不到归属感
+Dialogue: 0,0:12:57.32,0:13:00.35,EN-Main,,0,0,0,,- See, you're afraid\nthat they won't take you. You don't belong
+Dialogue: 0,0:13:00.35,0:13:02.91,CN-Main,,0,0,0,,所以你就蔑视他们所有人
+Dialogue: 0,0:13:00.35,0:13:02.91,EN-Main,,0,0,0,,so you\njust have to dump all over it.
+Dialogue: 0,0:13:02.91,0:13:04.49,CN-Main,,0,0,0,,反正和你们这些喜欢参加活动的人
+Dialogue: 0,0:13:02.91,0:13:04.49,EN-Main,,0,0,0,,- Well, it wouldn't have\nanything to do
+Dialogue: 0,0:13:04.49,0:13:07.33,CN-Main,,0,0,0,,都是混球没有什么关系 对吧？
+Dialogue: 0,0:13:04.49,0:13:07.33,EN-Main,,0,0,0,,with you activities people\nbeing assholes, now, would it?
+Dialogue: 0,0:13:07.33,0:13:08.69,CN-Main,,0,0,0,,反正你也没办法知道
+Dialogue: 0,0:13:07.33,0:13:08.69,EN-Main,,0,0,0,,- Well, you wouldn't know.
+Dialogue: 0,0:13:08.69,0:13:10.17,CN-Main,,0,0,0,,你都不认识我们中的任何一个
+Dialogue: 0,0:13:08.69,0:13:10.17,EN-Main,,0,0,0,,You don't even know any of us.
+Dialogue: 0,0:13:10.17,0:13:12.25,CN-Main,,0,0,0,,我也不认识麻风病人
+Dialogue: 0,0:13:10.17,0:13:12.25,EN-Main,,0,0,0,,- Well, I don't know any lepers,\neither,
+Dialogue: 0,0:13:12.25,0:13:14.96,CN-Main,,0,0,0,,但是我才不会跑出去 参加他们的俱乐部
+Dialogue: 0,0:13:12.25,0:13:14.96,EN-Main,,0,0,0,,but I'm not going to run out and join\none of their fucking clubs.
+Dialogue: 0,0:13:14.96,0:13:16.50,CN-Main,,0,0,0,,说话干净点 好吗？
+Dialogue: 0,0:13:14.96,0:13:16.50,EN-Main,,0,0,0,,- Let's watch the mouth, huh?
+Dialogue: 0,0:13:16.51,0:13:18.13,CN-Main,,0,0,0,,我还参加了物理俱乐部
+Dialogue: 0,0:13:16.51,0:13:18.13,EN-Main,,0,0,0,,- I'm in the physics club, too.
+Dialogue: 0,0:13:18.13,0:13:19.37,CN-Main,,0,0,0,,打断你一秒钟
+Dialogue: 0,0:13:18.13,0:13:19.37,EN-Main,,0,0,0,,- Excuse me a second.
+Dialogue: 0,0:13:19.37,0:13:21.13,CN-Main,,0,0,0,,你都在说些什么？
+Dialogue: 0,0:13:19.37,0:13:21.13,EN-Main,,0,0,0,,What are you babbling about?
+Dialogue: 0,0:13:21.14,0:13:25.01,CN-Main,,0,0,0,,我刚说我参加了数学俱乐部
+Dialogue: 0,0:13:21.14,0:13:25.01,EN-Main,,0,0,0,,- Well, what I'd said was\nthat I'm in the math club,
+Dialogue: 0,0:13:25.01,0:13:27.18,CN-Main,,0,0,0,,拉丁俱乐部和物理俱乐部
+Dialogue: 0,0:13:25.01,0:13:27.18,EN-Main,,0,0,0,,the Latin club,\nand the physics club.
+Dialogue: 0,0:13:27.18,0:13:28.89,CN-Main,,0,0,0,,物理俱乐部
+Dialogue: 0,0:13:27.18,0:13:28.89,EN-Main,,0,0,0,,Physics club.
+Dialogue: 0,0:13:30.31,0:13:33.00,CN-Main,,0,0,0,,嘿 处女
+Dialogue: 0,0:13:30.31,0:13:33.00,EN-Main,,0,0,0,,- Hey. Cherry,
+Dialogue: 0,0:13:33.00,0:13:36.57,CN-Main,,0,0,0,,你参加物理俱乐部了吗？
+Dialogue: 0,0:13:33.00,0:13:36.57,EN-Main,,0,0,0,,do you belong\nto the physics club?
+Dialogue: 0,0:13:36.57,0:13:39.40,CN-Main,,0,0,0,,那是个学术俱乐部
+Dialogue: 0,0:13:36.57,0:13:39.40,EN-Main,,0,0,0,,- That's an academic club.
+Dialogue: 0,0:13:39.40,0:13:42.15,CN-Main,,0,0,0,,所以呢？
+Dialogue: 0,0:13:39.40,0:13:42.15,EN-Main,,0,0,0,,- So?
+Dialogue: 0,0:13:42.16,0:13:45.20,CN-Main,,0,0,0,,学术俱乐部和其他俱乐部不一样
+Dialogue: 0,0:13:42.16,0:13:45.20,EN-Main,,0,0,0,,- So academic clubs\naren't the same as other kinds of clubs.
+Dialogue: 0,0:13:45.20,0:13:48.76,CN-Main,,0,0,0,,可对他那样的书呆子来说
+Dialogue: 0,0:13:45.20,0:13:48.76,EN-Main,,0,0,0,,- Oh, but to dorks like him
+Dialogue: 0,0:13:48.76,0:13:50.12,CN-Main,,0,0,0,,这两种俱乐部没区别
+Dialogue: 0,0:13:48.76,0:13:50.12,EN-Main,,0,0,0,,they are.
+Dialogue: 0,0:13:50.12,0:13:52.37,CN-Main,,0,0,0,,你们在俱乐部里做什么呢？
+Dialogue: 0,0:13:50.12,0:13:52.37,EN-Main,,0,0,0,,What do you guys do\nin your club?
+Dialogue: 0,0:13:52.38,0:13:56.00,CN-Main,,0,0,0,,我们在物理俱乐部里谈论物理
+Dialogue: 0,0:13:52.38,0:13:56.00,EN-Main,,0,0,0,,- In physics, well,\nwe talk about physics,
+Dialogue: 0,0:13:56.00,0:13:57.33,CN-Main,,0,0,0,,物理的不同属性
+Dialogue: 0,0:13:56.00,0:13:57.33,EN-Main,,0,0,0,,properties of physics.
+Dialogue: 0,0:13:57.34,0:13:59.25,CN-Main,,0,0,0,,所以也算是社交
+Dialogue: 0,0:13:57.34,0:13:59.25,EN-Main,,0,0,0,,- So it's sort of social,
+Dialogue: 0,0:13:59.25,0:14:02.30,CN-Main,,0,0,0,,有点疯也有点可悲 但是也是社交
+Dialogue: 0,0:13:59.25,0:14:02.30,EN-Main,,0,0,0,,demented and sad, but social,
+Dialogue: 0,0:14:02.30,0:14:03.26,CN-Main,,0,0,0,,对吧？
+Dialogue: 0,0:14:02.30,0:14:03.26,EN-Main,,0,0,0,,right?
+Dialogue: 0,0:14:03.26,0:14:06.01,CN-Main,,0,0,0,,对 我想你是可以 把它算作社交场合的
+Dialogue: 0,0:14:03.26,0:14:06.01,EN-Main,,0,0,0,,- Yeah, well, I guess you could\nconsider it a social situation.
+Dialogue: 0,0:14:06.01,0:14:08.93,CN-Main,,0,0,0,,俱乐部里确实有其他同学
+Dialogue: 0,0:14:06.01,0:14:08.93,EN-Main,,0,0,0,,I mean, there are other children\nin my club
+Dialogue: 0,0:14:08.93,0:14:12.73,CN-Main,,0,0,0,,而且年末的时候
+Dialogue: 0,0:14:08.93,0:14:12.73,EN-Main,,0,0,0,,and at the end of the year\nwe have, we have, you know,
+Dialogue: 0,0:14:12.73,0:14:15.31,CN-Main,,0,0,0,,我们会在希尔顿办大型宴会
+Dialogue: 0,0:14:12.73,0:14:15.31,EN-Main,,0,0,0,,a big a banquet at the Hilton.
+Dialogue: 0,0:14:15.31,0:14:18.10,CN-Main,,0,0,0,,你们嗑药喝酒 疯狂狂欢吗？
+Dialogue: 0,0:14:15.31,0:14:18.10,EN-Main,,0,0,0,,- You load up, you party.
+Dialogue: 0,0:14:18.11,0:14:20.27,CN-Main,,0,0,0,,不 我们盛装出席 我是说
+Dialogue: 0,0:14:18.11,0:14:20.27,EN-Main,,0,0,0,,- No, well, we get dressed up.\nI mean,
+Dialogue: 0,0:14:20.27,0:14:21.57,CN-Main,,0,0,0,,但是 我们不会嗑药
+Dialogue: 0,0:14:20.27,0:14:21.57,EN-Main,,0,0,0,,but we don't get high.
+Dialogue: 0,0:14:21.57,0:14:23.28,CN-Main,,0,0,0,,也就你这种瘾君子才嗑药
+Dialogue: 0,0:14:21.57,0:14:23.28,EN-Main,,0,0,0,,- Only burners like you\nget high.
+Dialogue: 0,0:14:23.28,0:14:24.71,CN-Main,,0,0,0,,我没有像样的鞋子
+Dialogue: 0,0:14:23.28,0:14:24.71,EN-Main,,0,0,0,,- And I didn't have any shoes,
+Dialogue: 0,0:14:24.71,0:14:26.63,CN-Main,,0,0,0,,所以我得借我爸爸的 这有点奇怪
+Dialogue: 0,0:14:24.71,0:14:26.63,EN-Main,,0,0,0,,so I had to borrow my dad's. It was kind of weird
+Dialogue: 0,0:14:26.63,0:14:28.58,CN-Main,,0,0,0,,因为我妈妈不喜欢我穿别人的鞋
+Dialogue: 0,0:14:26.63,0:14:28.58,EN-Main,,0,0,0,,because my mom doesn't like me to wear other people's shoes.
+Dialogue: 0,0:14:28.58,0:14:32.21,CN-Main,,0,0,0,,我表哥肯 肯德尔 他从印第安纳州来 他有嗑嗨过一次
+Dialogue: 0,0:14:28.58,0:14:32.21,EN-Main,,0,0,0,,And my cousin Ken-- My cousin Kendall from Indiana,\nhe got high once.
+Dialogue: 0,0:14:32.21,0:14:34.79,CN-Main,,0,0,0,,他开始时吃些很奇怪的食物
+Dialogue: 0,0:14:32.21,0:14:34.79,EN-Main,,0,0,0,,And, you know,\nhe started eating, like, really weird foods
+Dialogue: 0,0:14:34.79,0:14:37.39,CN-Main,,0,0,0,,之后 他觉得自己很不合群
+Dialogue: 0,0:14:34.79,0:14:37.39,EN-Main,,0,0,0,,and then he just felt like he didn't belong anywhere,
+Dialogue: 0,0:14:37.39,0:14:39.55,CN-Main,,0,0,0,,就好像是《阴阳魔界》的感觉
+Dialogue: 0,0:14:37.39,0:14:39.55,EN-Main,,0,0,0,,you know, kind of, like, you know, Twilight Zone,\nkind of.
+Dialogue: 0,0:14:39.55,0:14:41.09,CN-Main,,0,0,0,,听起来像是你的经历
+Dialogue: 0,0:14:39.55,0:14:41.09,EN-Main,,0,0,0,,- Sounds like you.
+Dialogue: 0,0:14:41.09,0:14:42.19,CN-Main,,0,0,0,,你们继续说吧
+Dialogue: 0,0:14:41.09,0:14:42.19,EN-Main,,0,0,0,,- Look, you guys keep up\nyour talking
+Dialogue: 0,0:14:42.19,0:14:43.93,CN-Main,,0,0,0,,弗农马上就来
+Dialogue: 0,0:14:42.19,0:14:43.93,EN-Main,,0,0,0,,and Vernon's going to come right in here.
+Dialogue: 0,0:14:43.93,0:14:45.22,CN-Main,,0,0,0,,我周六有个大会
+Dialogue: 0,0:14:43.93,0:14:45.22,EN-Main,,0,0,0,,I got a meet this Saturday.
+Dialogue: 0,0:14:45.22,0:14:47.18,CN-Main,,0,0,0,,我可不想因为你们这些混账错过
+Dialogue: 0,0:14:45.22,0:14:47.18,EN-Main,,0,0,0,,I'm not going to miss it\non account of you boneheads.
+Dialogue: 0,0:14:47.18,0:14:49.18,CN-Main,,0,0,0,,那可是太痛苦了不是吗？
+Dialogue: 0,0:14:47.18,0:14:49.18,EN-Main,,0,0,0,,- Oh, and wouldn't that\nbe a bite, huh?
+Dialogue: 0,0:14:49.18,0:14:51.31,CN-Main,,0,0,0,,你居然要错过一次摔跤大会
+Dialogue: 0,0:14:49.18,0:14:51.31,EN-Main,,0,0,0,,Whoa, missing\na whole wrestling meet.
+Dialogue: 0,0:14:51.31,0:14:53.60,CN-Main,,0,0,0,,反正你也不会知道 基佬
+Dialogue: 0,0:14:51.31,0:14:53.60,EN-Main,,0,0,0,,- Well, you wouldn't know\nanything about it, faggot.
+Dialogue: 0,0:14:53.60,0:14:55.43,CN-Main,,0,0,0,,你一辈子也不会竞争
+Dialogue: 0,0:14:53.60,0:14:55.43,EN-Main,,0,0,0,,You never competed\nin your whole life.
+Dialogue: 0,0:14:55.44,0:14:58.44,CN-Main,,0,0,0,,对啊 而且我为此 感到内心极度空虚
+Dialogue: 0,0:14:55.44,0:14:58.44,EN-Main,,0,0,0,,- Oh, I know. And I feel all empty inside\nbecause of it.
+Dialogue: 0,0:14:58.44,0:15:01.08,CN-Main,,0,0,0,,我很崇拜那些人
+Dialogue: 0,0:14:58.44,0:15:01.08,EN-Main,,0,0,0,,I have such a deep admiration\nfor guys
+Dialogue: 0,0:15:01.08,0:15:03.40,CN-Main,,0,0,0,,在地板上 和其他人滚来滚去的
+Dialogue: 0,0:15:01.08,0:15:03.40,EN-Main,,0,0,0,,who roll around on the floor with other guys.
+Dialogue: 0,0:15:03.40,0:15:05.03,CN-Main,,0,0,0,,你根本就做不到
+Dialogue: 0,0:15:03.40,0:15:05.03,EN-Main,,0,0,0,,- Oh, you'd never miss it.
+Dialogue: 0,0:15:05.03,0:15:06.36,CN-Main,,0,0,0,,你根本就没有目标
+Dialogue: 0,0:15:05.03,0:15:06.36,EN-Main,,0,0,0,,You don't have any goals.
+Dialogue: 0,0:15:06.37,0:15:07.53,CN-Main,,0,0,0,,-我有 -是吗？
+Dialogue: 0,0:15:06.37,0:15:07.53,EN-Main,,0,0,0,,- Oh, but I do.\n- Yeah?
+Dialogue: 0,0:15:07.53,0:15:10.24,CN-Main,,0,0,0,,我想和你一样
+Dialogue: 0,0:15:07.53,0:15:10.24,EN-Main,,0,0,0,,- I want to be just like you.
+Dialogue: 0,0:15:10.24,0:15:14.16,CN-Main,,0,0,0,,我大概只是需要做个额叶切除术 和几条紧身裤就行了
+Dialogue: 0,0:15:10.24,0:15:14.16,EN-Main,,0,0,0,,I figure all I need\nis a lobotomy and some tights.
+Dialogue: 0,0:15:16.54,0:15:19.08,CN-Main,,0,0,0,,你穿紧身裤？
+Dialogue: 0,0:15:16.54,0:15:19.08,EN-Main,,0,0,0,,- You wear tights?
+Dialogue: 0,0:15:19.09,0:15:21.13,CN-Main,,0,0,0,,我不穿紧身裤
+Dialogue: 0,0:15:19.09,0:15:21.13,EN-Main,,0,0,0,,- No, I don't wear tights.
+Dialogue: 0,0:15:21.13,0:15:23.30,CN-Main,,0,0,0,,我穿指定服装
+Dialogue: 0,0:15:21.13,0:15:23.30,EN-Main,,0,0,0,,I wear the required uniform.
+Dialogue: 0,0:15:23.30,0:15:24.76,CN-Main,,0,0,0,,-紧身裤 -闭嘴
+Dialogue: 0,0:15:23.30,0:15:24.76,EN-Main,,0,0,0,,- Tights.\n- Shut up.
+Dialogue: 0,0:15:44.70,0:15:47.78,CN-Main,,0,0,0,,你知道 不应该做偷鸡摸狗的事情的
+Dialogue: 0,0:15:44.70,0:15:47.78,EN-Main,,0,0,0,,Brian: You know,\nthere's not supposed to be any monkey business.
+Dialogue: 0,0:15:47.78,0:15:50.20,CN-Main,,0,0,0,,年轻人 你写完论文了吗？
+Dialogue: 0,0:15:47.78,0:15:50.20,EN-Main,,0,0,0,,- Young man,\nhave you finished your paper?
+Dialogue: 0,0:15:55.12,0:15:56.79,CN-Main,,0,0,0,,本德 得了 别瞎搞
+Dialogue: 0,0:15:55.12,0:15:56.79,EN-Main,,0,0,0,,Andy: Come on, Bender,\ndon't screw around.
+Dialogue: 0,0:15:56.79,0:15:59.21,CN-Main,,0,0,0,,-你要做什么？ -自寻死路 我希望
+Dialogue: 0,0:15:56.79,0:15:59.21,EN-Main,,0,0,0,,- What are you going to do? - Drop dead, I hope.
+Dialogue: 0,0:16:10.81,0:16:13.10,CN-Main,,0,0,0,,好了 本德 那可是学校财产
+Dialogue: 0,0:16:10.81,0:16:13.10,EN-Main,,0,0,0,,- Bender, that's\nschool property there.
+Dialogue: 0,0:16:13.10,0:16:14.52,CN-Main,,0,0,0,,那不是我们的
+Dialogue: 0,0:16:13.10,0:16:14.52,EN-Main,,0,0,0,,I mean, that's, you know,\nit doesn't belong to us
+Dialogue: 0,0:16:14.52,0:16:16.69,CN-Main,,0,0,0,,你不应该瞎搞的
+Dialogue: 0,0:16:14.52,0:16:16.69,EN-Main,,0,0,0,,and it's something\nthat's not to be toyed with.
+Dialogue: 0,0:16:16.69,0:16:18.60,CN-Main,,0,0,0,,太有趣了 得了 快弄好
+Dialogue: 0,0:16:16.69,0:16:18.60,EN-Main,,0,0,0,,- That's very funny.\nCome on, fix it.
+Dialogue: 0,0:16:18.60,0:16:20.38,CN-Main,,0,0,0,,-你快把它修好 -我是不是天才？
+Dialogue: 0,0:16:18.60,0:16:20.38,EN-Main,,0,0,0,,Brian:\nYou should really fix that. - Am I a genius?
+Dialogue: 0,0:16:20.38,0:16:22.17,CN-Main,,0,0,0,,-不 你是个混球 -多有趣的人啊
+Dialogue: 0,0:16:20.38,0:16:22.17,EN-Main,,0,0,0,,- No, you're an asshole. - What a funny guy.
+Dialogue: 0,0:16:22.17,0:16:24.57,CN-Main,,0,0,0,,-把门修好 本德！ -嘘 你们能不能……
+Dialogue: 0,0:16:22.17,0:16:24.57,EN-Main,,0,0,0,,- Fix the door, Bender. - Everyone just shh!
+Dialogue: 0,0:16:24.57,0:16:25.53,CN-Main,,0,0,0,,听着 我以前来过
+Dialogue: 0,0:16:24.57,0:16:25.53,EN-Main,,0,0,0,,Listen, I've been here before,
+Dialogue: 0,0:16:25.53,0:16:27.04,CN-Main,,0,0,0,,-我知道我在做什么 -不 修好门！
+Dialogue: 0,0:16:25.53,0:16:27.04,EN-Main,,0,0,0,,I know what I'm doing. Andy: No, fix the door.
+Dialogue: 0,0:16:27.04,0:16:29.01,CN-Main,,0,0,0,,-快 去把它修好！ -闭嘴！
+Dialogue: 0,0:16:27.04,0:16:29.01,EN-Main,,0,0,0,,Get up there and fix it. Bender: Shut up!
+Dialogue: 0,0:16:29.01,0:16:30.40,CN-Main,,0,0,0,,天杀的！
+Dialogue: 0,0:16:29.01,0:16:30.40,EN-Main,,0,0,0,,Vernon: Goddamn it!
+Dialogue: 0,0:16:34.62,0:16:37.12,CN-Main,,0,0,0,,那扇门为什么关上了？
+Dialogue: 0,0:16:34.62,0:16:37.12,EN-Main,,0,0,0,,Why is that door closed?
+Dialogue: 0,0:16:40.50,0:16:42.17,CN-Main,,0,0,0,,那扇门为什么关上了？
+Dialogue: 0,0:16:40.50,0:16:42.17,EN-Main,,0,0,0,,Why is that door closed?
+Dialogue: 0,0:16:42.17,0:16:46.55,CN-Main,,0,0,0,,我们怎么知道？ 我们不能动的 不是吗？
+Dialogue: 0,0:16:42.17,0:16:46.55,EN-Main,,0,0,0,,- How are we supposed to know?\nWe're not supposed to move, right?
+Dialogue: 0,0:16:46.55,0:16:48.55,CN-Main,,0,0,0,,为什么？
+Dialogue: 0,0:16:46.55,0:16:48.55,EN-Main,,0,0,0,,- Why?
+Dialogue: 0,0:16:48.55,0:16:51.68,CN-Main,,0,0,0,,我们坐在这里没动过 就像你告诉我们的那样
+Dialogue: 0,0:16:48.55,0:16:51.68,EN-Main,,0,0,0,,- We're just sitting here\nlike we're supposed to.
+Dialogue: 0,0:16:56.60,0:16:58.27,CN-Main,,0,0,0,,谁把门关上了？
+Dialogue: 0,0:16:56.60,0:16:58.27,EN-Main,,0,0,0,,- Who closed that door?
+Dialogue: 0,0:16:59.40,0:17:01.19,CN-Main,,0,0,0,,我觉得是螺丝掉了
+Dialogue: 0,0:16:59.40,0:17:01.19,EN-Main,,0,0,0,,- I think a screw\nfell out of it.
+Dialogue: 0,0:17:01.19,0:17:03.73,CN-Main,,0,0,0,,自己关的 老师
+Dialogue: 0,0:17:01.19,0:17:03.73,EN-Main,,0,0,0,,- It just closed, sir.
+Dialogue: 0,0:17:03.73,0:17:04.73,CN-Main,,0,0,0,,谁？
+Dialogue: 0,0:17:03.73,0:17:04.73,EN-Main,,0,0,0,,Vernon: Who?
+Dialogue: 0,0:17:06.61,0:17:08.45,CN-Main,,0,0,0,,她不说话 老师
+Dialogue: 0,0:17:06.61,0:17:08.45,EN-Main,,0,0,0,,- She doesn't talk, sir.
+Dialogue: 0,0:17:11.24,0:17:12.87,CN-Main,,0,0,0,,-把螺丝给我 -不在我这
+Dialogue: 0,0:17:11.24,0:17:12.87,EN-Main,,0,0,0,,- Give me that screw.\n- I don't have it.
+Dialogue: 0,0:17:12.87,0:17:15.75,CN-Main,,0,0,0,,你想我把你从座位拽出来 然后从你身上把螺丝晃出来吗？
+Dialogue: 0,0:17:12.87,0:17:15.75,EN-Main,,0,0,0,,- You want me\nto yank you out of that seat and shake it out of you?
+Dialogue: 0,0:17:15.75,0:17:16.49,CN-Main,,0,0,0,,不在我这
+Dialogue: 0,0:17:15.75,0:17:16.49,EN-Main,,0,0,0,,- I don't have it.
+Dialogue: 0,0:17:16.50,0:17:17.93,CN-Main,,0,0,0,,螺丝时常会掉
+Dialogue: 0,0:17:16.50,0:17:17.93,EN-Main,,0,0,0,,Screws fall out all the time.
+Dialogue: 0,0:17:17.93,0:17:19.54,CN-Main,,0,0,0,,这是个不完美的世界
+Dialogue: 0,0:17:17.93,0:17:19.54,EN-Main,,0,0,0,,The world's an imperfect place.
+Dialogue: 0,0:17:19.54,0:17:21.37,CN-Main,,0,0,0,,给我 本德
+Dialogue: 0,0:17:19.54,0:17:21.37,EN-Main,,0,0,0,,- Give it to me, Bender.
+Dialogue: 0,0:17:21.38,0:17:24.59,CN-Main,,0,0,0,,抱歉 老师 为什么会有人想要偷螺丝呢？
+Dialogue: 0,0:17:21.38,0:17:24.59,EN-Main,,0,0,0,,- Excuse me, sir, why would\nanybody want to steal a screw?
+Dialogue: 0,0:17:24.59,0:17:26.26,CN-Main,,0,0,0,,你小心了 小姐
+Dialogue: 0,0:17:24.59,0:17:26.26,EN-Main,,0,0,0,,- Watch it, young lady.
+Dialogue: 0,0:17:36.22,0:17:38.31,CN-Main,,0,0,0,,那门太重了 老师
+Dialogue: 0,0:17:36.22,0:17:38.31,EN-Main,,0,0,0,,- The door's way too heavy, sir.
+Dialogue: 0,0:17:45.61,0:17:46.69,CN-Main,,0,0,0,,怎么……真是 该死
+Dialogue: 0,0:17:45.61,0:17:46.69,EN-Main,,0,0,0,,- Hey, what--
+Dialogue: 0,0:17:53.32,0:17:56.04,CN-Main,,0,0,0,,安德鲁·克拉克 过来
+Dialogue: 0,0:17:53.32,0:17:56.04,EN-Main,,0,0,0,,- Andrew Clark.\n(snaps fingers) Get up here.
+Dialogue: 0,0:17:56.04,0:17:59.83,CN-Main,,0,0,0,,快点 到前面中间来 快点
+Dialogue: 0,0:17:56.04,0:17:59.83,EN-Main,,0,0,0,,Come on, front and center. Let's go.\n(snapping fingers)
+Dialogue: 0,0:17:59.83,0:18:02.72,CN-Main,,0,0,0,,-为什么安德鲁能站起来？ -这就对了
+Dialogue: 0,0:17:59.83,0:18:02.72,EN-Main,,0,0,0,,- Hey, how come Andrew\ngets to get up? Vernon: That's right.
+Dialogue: 0,0:18:02.72,0:18:03.84,CN-Main,,0,0,0,,如果他能站起来
+Dialogue: 0,0:18:02.72,0:18:03.84,EN-Main,,0,0,0,,Bender: If he gets up
+Dialogue: 0,0:18:03.84,0:18:07.42,CN-Main,,0,0,0,,我们都能站起来 那就是一片混乱了！
+Dialogue: 0,0:18:03.84,0:18:07.42,EN-Main,,0,0,0,,we'll all get up. It'll be anarchy.
+Dialogue: 0,0:18:07.42,0:18:09.63,CN-Main,,0,0,0,,小心 小心杂志
+Dialogue: 0,0:18:07.42,0:18:09.63,EN-Main,,0,0,0,,Vernon: Okay. Watch it.\nWatch the magazines.
+Dialogue: 0,0:18:09.63,0:18:11.22,CN-Main,,0,0,0,,我可管不了了
+Dialogue: 0,0:18:09.63,0:18:11.22,EN-Main,,0,0,0,,Bender: It's out of my hands.
+Dialogue: 0,0:18:15.22,0:18:17.93,CN-Main,,0,0,0,,你可真是太聪明了 老师
+Dialogue: 0,0:18:15.22,0:18:17.93,EN-Main,,0,0,0,,That's very clever, sir.
+Dialogue: 0,0:18:17.93,0:18:20.35,CN-Main,,0,0,0,,但是如果着火怎么办？
+Dialogue: 0,0:18:17.93,0:18:20.35,EN-Main,,0,0,0,,But what if there's a fire?
+Dialogue: 0,0:18:20.35,0:18:21.89,CN-Main,,0,0,0,,我认为违反火警准则
+Dialogue: 0,0:18:20.35,0:18:21.89,EN-Main,,0,0,0,,I think violating fire codes
+Dialogue: 0,0:18:21.89,0:18:23.88,CN-Main,,0,0,0,,并危害孩童生命健康
+Dialogue: 0,0:18:21.89,0:18:23.88,EN-Main,,0,0,0,,and endangering the lives of children
+Dialogue: 0,0:18:23.88,0:18:26.98,CN-Main,,0,0,0,,对你的职业生涯而言 并非明智的选择 先生
+Dialogue: 0,0:18:23.88,0:18:26.98,EN-Main,,0,0,0,,would be unwise\nat that this juncture in your career, sir.
+Dialogue: 0,0:18:26.98,0:18:29.49,CN-Main,,0,0,0,,你在拿这个做什么？
+Dialogue: 0,0:18:26.98,0:18:29.49,EN-Main,,0,0,0,,- All right,\nwhat are you doing with this? What are you doing with this?
+Dialogue: 0,0:18:29.49,0:18:30.99,CN-Main,,0,0,0,,把这个拿出来 天啊
+Dialogue: 0,0:18:29.49,0:18:30.99,EN-Main,,0,0,0,,Get this out of here,\nfor God's sake.
+Dialogue: 0,0:18:30.99,0:18:32.66,CN-Main,,0,0,0,,你有毛病吗？快点
+Dialogue: 0,0:18:30.99,0:18:32.66,EN-Main,,0,0,0,,What's the matter with you?\nCome on.
+Dialogue: 0,0:18:32.66,0:18:34.32,CN-Main,,0,0,0,,学校都设有防火安全出口
+Dialogue: 0,0:18:32.66,0:18:34.32,EN-Main,,0,0,0,,- Well, you know the school\ncomes equipped with fire exists
+Dialogue: 0,0:18:34.32,0:18:36.28,CN-Main,,0,0,0,,在图书馆两端
+Dialogue: 0,0:18:34.32,0:18:36.28,EN-Main,,0,0,0,,at either end of the library.
+Dialogue: 0,0:18:36.28,0:18:37.86,CN-Main,,0,0,0,,尊重一下迪克
+Dialogue: 0,0:18:36.28,0:18:37.86,EN-Main,,0,0,0,,- Show Dick some respect.
+Dialogue: 0,0:18:37.86,0:18:38.53,CN-Main,,0,0,0,,走
+Dialogue: 0,0:18:37.86,0:18:38.53,EN-Main,,0,0,0,,- Let's go.
+Dialogue: 0,0:18:39.79,0:18:41.38,CN-Main,,0,0,0,,去 回到座位上
+Dialogue: 0,0:18:39.79,0:18:41.38,EN-Main,,0,0,0,,Go. Get back in your seat.
+Dialogue: 0,0:18:44.67,0:18:47.63,CN-Main,,0,0,0,,你是校队优秀运动员 我以为你会更懂事些
+Dialogue: 0,0:18:44.67,0:18:47.63,EN-Main,,0,0,0,,I expected a little more\nfrom a varsity letterman.
+Dialogue: 0,0:18:50.47,0:18:53.30,CN-Main,,0,0,0,,你骗不过任何人 本德
+Dialogue: 0,0:18:50.47,0:18:53.30,EN-Main,,0,0,0,,You're not fooling anybody,\nBender.
+Dialogue: 0,0:18:53.30,0:18:56.97,CN-Main,,0,0,0,,下一个掉下来的螺丝就算你的
+Dialogue: 0,0:18:53.30,0:18:56.97,EN-Main,,0,0,0,,The next screw that falls out\nis going to be you.
+Dialogue: 0,0:18:56.97,0:18:58.68,CN-Main,,0,0,0,,吃屎去吧
+Dialogue: 0,0:18:56.97,0:18:58.68,EN-Main,,0,0,0,,- (mutters) Eat my shorts.
+Dialogue: 0,0:18:58.68,0:18:59.72,CN-Main,,0,0,0,,你说什么？
+Dialogue: 0,0:18:58.68,0:18:59.72,EN-Main,,0,0,0,,- What was that?
+Dialogue: 0,0:19:02.02,0:19:05.81,CN-Main,,0,0,0,,吃屎去吧
+Dialogue: 0,0:19:02.02,0:19:05.81,EN-Main,,0,0,0,,- Eat my shorts.
+Dialogue: 0,0:19:05.81,0:19:07.85,CN-Main,,0,0,0,,你刚刚为自己 又赢得了一次周六留堂的机会 先生
+Dialogue: 0,0:19:05.81,0:19:07.85,EN-Main,,0,0,0,,- You just bought yourself\nanother Saturday, mister.
+Dialogue: 0,0:19:07.86,0:19:09.28,CN-Main,,0,0,0,,天哪 我太伤心了
+Dialogue: 0,0:19:07.86,0:19:09.28,EN-Main,,0,0,0,,- Oh, I'm crushed.
+Dialogue: 0,0:19:09.28,0:19:12.40,CN-Main,,0,0,0,,-再多一次 -之后的周六我也有空
+Dialogue: 0,0:19:09.28,0:19:12.40,EN-Main,,0,0,0,,- You just bought one more\nright there. - Well, I'm free\nthe Saturday after that.
+Dialogue: 0,0:19:12.40,0:19:14.36,CN-Main,,0,0,0,,再之后我就得查查行程表了
+Dialogue: 0,0:19:12.40,0:19:14.36,EN-Main,,0,0,0,,Beyond that, I'm going\nto have to check my calendar.
+Dialogue: 0,0:19:14.36,0:19:16.53,CN-Main,,0,0,0,,很好！因为之后的也会被填满
+Dialogue: 0,0:19:14.36,0:19:16.53,EN-Main,,0,0,0,,- Good!\nBecause it's going to be filled.
+Dialogue: 0,0:19:16.53,0:19:18.36,CN-Main,,0,0,0,,我们可以继续
+Dialogue: 0,0:19:16.53,0:19:18.36,EN-Main,,0,0,0,,We'll keep going.
+Dialogue: 0,0:19:18.37,0:19:19.99,CN-Main,,0,0,0,,你还想要再来一次吗？
+Dialogue: 0,0:19:18.37,0:19:19.99,EN-Main,,0,0,0,,You want another one?
+Dialogue: 0,0:19:19.99,0:19:21.49,CN-Main,,0,0,0,,说 你说就行
+Dialogue: 0,0:19:19.99,0:19:21.49,EN-Main,,0,0,0,,Say the word.\nJust say the word.
+Dialogue: 0,0:19:21.50,0:19:23.84,CN-Main,,0,0,0,,你不用去监狱 你来这里
+Dialogue: 0,0:19:21.50,0:19:23.84,EN-Main,,0,0,0,,Instead of going to prison\nyou'll come here.
+Dialogue: 0,0:19:25.63,0:19:27.54,CN-Main,,0,0,0,,-说完了吗？ -没有
+Dialogue: 0,0:19:25.63,0:19:27.54,EN-Main,,0,0,0,,Are you through?\n- No.
+Dialogue: 0,0:19:27.54,0:19:29.06,CN-Main,,0,0,0,,我在为社会做好事
+Dialogue: 0,0:19:27.54,0:19:29.06,EN-Main,,0,0,0,,- I'm doing society a favor.
+Dialogue: 0,0:19:29.06,0:19:30.76,CN-Main,,0,0,0,,-所以呢？ -再留一次
+Dialogue: 0,0:19:29.06,0:19:30.76,EN-Main,,0,0,0,,- So? - That's another one right now.
+Dialogue: 0,0:19:30.76,0:19:34.53,CN-Main,,0,0,0,,如果你再不小心点 你有生之年都要来这里！
+Dialogue: 0,0:19:30.76,0:19:34.53,EN-Main,,0,0,0,,I've got you for the rest\nof your natural born life if you don't watch your step.
+Dialogue: 0,0:19:34.53,0:19:36.30,CN-Main,,0,0,0,,-还想再来吗？ -好啊
+Dialogue: 0,0:19:34.53,0:19:36.30,EN-Main,,0,0,0,,You want another one? - Yes.
+Dialogue: 0,0:19:36.30,0:19:38.55,CN-Main,,0,0,0,,没问题！再来一次！
+Dialogue: 0,0:19:36.30,0:19:38.55,EN-Main,,0,0,0,,- You got it. You got another one right there.
+Dialogue: 0,0:19:38.55,0:19:40.72,CN-Main,,0,0,0,,再一次 朋友！
+Dialogue: 0,0:19:38.55,0:19:40.72,EN-Main,,0,0,0,,That's another one, pal.
+Dialogue: 0,0:19:40.72,0:19:41.76,CN-Main,,0,0,0,,别说了！
+Dialogue: 0,0:19:40.72,0:19:41.76,EN-Main,,0,0,0,,- Cut it out!
+Dialogue: 0,0:19:43.06,0:19:46.85,CN-Main,,0,0,0,,-你够了吧？ -差得远呢 伙计
+Dialogue: 0,0:19:43.06,0:19:46.85,EN-Main,,0,0,0,,Vernon: You through? - Not even close, bud.
+Dialogue: 0,0:19:46.85,0:19:48.81,CN-Main,,0,0,0,,很好 那就再一次
+Dialogue: 0,0:19:46.85,0:19:48.81,EN-Main,,0,0,0,,- Good, you got one more\nright there.
+Dialogue: 0,0:19:48.82,0:19:51.82,CN-Main,,0,0,0,,-你以为我在乎吗？ -再一次
+Dialogue: 0,0:19:48.82,0:19:51.82,EN-Main,,0,0,0,,- You really think\nI give a shit? - Another.
+Dialogue: 0,0:19:53.65,0:19:54.86,CN-Main,,0,0,0,,你够了吗？
+Dialogue: 0,0:19:53.65,0:19:54.86,EN-Main,,0,0,0,,You through?
+Dialogue: 0,0:19:54.86,0:19:56.36,CN-Main,,0,0,0,,几次了？
+Dialogue: 0,0:19:54.86,0:19:56.36,EN-Main,,0,0,0,,- How many is that?
+Dialogue: 0,0:19:56.36,0:19:57.78,CN-Main,,0,0,0,,一共七次 包括刚进来时
+Dialogue: 0,0:19:56.36,0:19:57.78,EN-Main,,0,0,0,,- That's seven including\nwhen we first came in
+Dialogue: 0,0:19:57.78,0:19:59.18,CN-Main,,0,0,0,,你问弗农老师
+Dialogue: 0,0:19:57.78,0:19:59.18,EN-Main,,0,0,0,,and you asked Mr. Vernon here
+Dialogue: 0,0:19:59.18,0:20:01.53,CN-Main,,0,0,0,,巴里·马尼洛知不知道他翻了衣柜那次
+Dialogue: 0,0:19:59.18,0:20:01.53,EN-Main,,0,0,0,,whether Barry Manilow knew that he raided his closet.
+Dialogue: 0,0:20:01.54,0:20:03.41,CN-Main,,0,0,0,,现在是八次了 你不要搀和
+Dialogue: 0,0:20:01.54,0:20:03.41,EN-Main,,0,0,0,,- Now it's eight.\nYou stay out of it.
+Dialogue: 0,0:20:03.41,0:20:04.70,CN-Main,,0,0,0,,抱歉老师 是七次
+Dialogue: 0,0:20:03.41,0:20:04.70,EN-Main,,0,0,0,,- Excuse me, sir, it's seven.
+Dialogue: 0,0:20:04.71,0:20:06.80,CN-Main,,0,0,0,,你闭嘴 侏儒
+Dialogue: 0,0:20:04.71,0:20:06.80,EN-Main,,0,0,0,,- Shut up, Pee Wee.
+Dialogue: 0,0:20:10.46,0:20:12.59,CN-Main,,0,0,0,,你归我了 本德
+Dialogue: 0,0:20:10.46,0:20:12.59,EN-Main,,0,0,0,,You're mine, Bender.
+Dialogue: 0,0:20:12.59,0:20:14.96,CN-Main,,0,0,0,,两个月 你都归我管
+Dialogue: 0,0:20:12.59,0:20:14.96,EN-Main,,0,0,0,,For two months I got you.
+Dialogue: 0,0:20:14.97,0:20:17.39,CN-Main,,0,0,0,,归我管
+Dialogue: 0,0:20:14.97,0:20:17.39,EN-Main,,0,0,0,,I got you.
+Dialogue: 0,0:20:17.39,0:20:18.58,CN-Main,,0,0,0,,我能说什么？
+Dialogue: 0,0:20:17.39,0:20:18.58,EN-Main,,0,0,0,,- What can I say?
+Dialogue: 0,0:20:18.58,0:20:19.68,CN-Main,,0,0,0,,我太兴奋了
+Dialogue: 0,0:20:18.58,0:20:19.68,EN-Main,,0,0,0,,I'm thrilled.
+Dialogue: 0,0:20:19.68,0:20:22.43,CN-Main,,0,0,0,,我就知道你想让大家相信这套
+Dialogue: 0,0:20:19.68,0:20:22.43,EN-Main,,0,0,0,,- Oh, I'm sure that's exactly\nwhat you want these people to believe.
+Dialogue: 0,0:20:22.43,0:20:24.05,CN-Main,,0,0,0,,你知道吗 本德？
+Dialogue: 0,0:20:22.43,0:20:24.05,EN-Main,,0,0,0,,You know something, Bender?
+Dialogue: 0,0:20:24.06,0:20:27.10,CN-Main,,0,0,0,,你应该多花点时间做实事
+Dialogue: 0,0:20:24.06,0:20:27.10,EN-Main,,0,0,0,,You ought to spend\na little more time trying to do something with yourself
+Dialogue: 0,0:20:27.10,0:20:29.98,CN-Main,,0,0,0,,少花点时间试图打动别人
+Dialogue: 0,0:20:27.10,0:20:29.98,EN-Main,,0,0,0,,and a little less time trying to impress people.
+Dialogue: 0,0:20:29.98,0:20:31.86,CN-Main,,0,0,0,,你会好很多
+Dialogue: 0,0:20:29.98,0:20:31.86,EN-Main,,0,0,0,,You might be better off.
+Dialogue: 0,0:20:31.86,0:20:34.36,CN-Main,,0,0,0,,好了 就这样
+Dialogue: 0,0:20:31.86,0:20:34.36,EN-Main,,0,0,0,,All right, that's it.
+Dialogue: 0,0:20:34.36,0:20:36.95,CN-Main,,0,0,0,,我就在这几扇门之外
+Dialogue: 0,0:20:34.36,0:20:36.95,EN-Main,,0,0,0,,I'm going to be\nright outside those doors.
+Dialogue: 0,0:20:36.95,0:20:38.25,CN-Main,,0,0,0,,下次再要我进来
+Dialogue: 0,0:20:36.95,0:20:38.25,EN-Main,,0,0,0,,The next time I have to come\nin here
+Dialogue: 0,0:20:38.25,0:20:39.08,CN-Main,,0,0,0,,我就要开始扁人了
+Dialogue: 0,0:20:38.25,0:20:39.08,EN-Main,,0,0,0,,I'm cracking skulls.
+Dialogue: 0,0:20:53.00,0:20:55.46,CN-Main,,0,0,0,,去你妈的！
+Dialogue: 0,0:20:53.00,0:20:55.46,EN-Main,,0,0,0,,- Fuck you!
+Dialogue: 0,0:21:04.89,0:21:06.48,CN-Main,,0,0,0,,操
+Dialogue: 0,0:21:04.89,0:21:06.48,EN-Main,,0,0,0,,Fuck.
+Dialogue: 0,0:22:48.87,0:22:50.50,CN-Main,,0,0,0,,醒醒！
+Dialogue: 0,0:22:48.87,0:22:50.50,EN-Main,,0,0,0,,- Wake up!
+Dialogue: 0,0:22:53.67,0:22:55.63,CN-Main,,0,0,0,,谁要去厕所？
+Dialogue: 0,0:22:53.67,0:22:55.63,EN-Main,,0,0,0,,Who has to go to the lavatory?
+Dialogue: 0,0:23:13.98,0:23:15.81,CN-Main,,0,0,0,,太聪明了
+Dialogue: 0,0:23:13.98,0:23:15.81,EN-Main,,0,0,0,,- That's real intelligent.
+Dialogue: 0,0:23:15.81,0:23:21.11,CN-Main,,0,0,0,,对 破坏书籍是不对的
+Dialogue: 0,0:23:15.81,0:23:21.11,EN-Main,,0,0,0,,- You're right. It's wrong\nto destroy literature.
+Dialogue: 0,0:23:21.11,0:23:24.61,CN-Main,,0,0,0,,读书很有趣
+Dialogue: 0,0:23:21.11,0:23:24.61,EN-Main,,0,0,0,,It's such fun to read.
+Dialogue: 0,0:23:24.61,0:23:31.66,CN-Main,,0,0,0,,-还有 莫莱真让我欲火焚身 -是莫里哀
+Dialogue: 0,0:23:24.61,0:23:31.66,EN-Main,,0,0,0,,And... Mollay really pumps my nads. - Moliére.
+Dialogue: 0,0:23:34.83,0:23:36.79,CN-Main,,0,0,0,,我很喜欢他的作品
+Dialogue: 0,0:23:34.83,0:23:36.79,EN-Main,,0,0,0,,- I love his work.
+Dialogue: 0,0:23:46.18,0:23:47.85,CN-Main,,0,0,0,,有什么了不起
+Dialogue: 0,0:23:46.18,0:23:47.85,EN-Main,,0,0,0,,- Big deal.
+Dialogue: 0,0:23:47.85,0:23:50.60,CN-Main,,0,0,0,,反正被关在空屋子里的时候 也是无所事事
+Dialogue: 0,0:23:47.85,0:23:50.60,EN-Main,,0,0,0,,Nothing to do\nwhen you're locked in a vacancy.
+Dialogue: 0,0:23:50.60,0:23:52.18,CN-Main,,0,0,0,,那只是你自己吧
+Dialogue: 0,0:23:50.60,0:23:52.18,EN-Main,,0,0,0,,- Ah, speak for yourself.
+Dialogue: 0,0:23:52.18,0:23:54.26,CN-Main,,0,0,0,,你以为我会替你发声吗？
+Dialogue: 0,0:23:52.18,0:23:54.26,EN-Main,,0,0,0,,- Do you think\nI'd speak for you?
+Dialogue: 0,0:23:54.27,0:23:56.02,CN-Main,,0,0,0,,我都不知道你说哪国语言
+Dialogue: 0,0:23:54.27,0:23:56.02,EN-Main,,0,0,0,,I don't even know your language.
+Dialogue: 0,0:23:59.02,0:24:02.52,CN-Main,,0,0,0,,你今天晚上要被禁足吗？
+Dialogue: 0,0:23:59.02,0:24:02.52,EN-Main,,0,0,0,,- Hey, you grounded tonight?
+Dialogue: 0,0:24:02.53,0:24:04.48,CN-Main,,0,0,0,,我不知道 我妈是这么说
+Dialogue: 0,0:24:02.53,0:24:04.48,EN-Main,,0,0,0,,- I don't know. My mom said I was,
+Dialogue: 0,0:24:04.48,0:24:06.90,CN-Main,,0,0,0,,但我爸让我不用管她
+Dialogue: 0,0:24:04.48,0:24:06.90,EN-Main,,0,0,0,,but my dad told me just to blow her off.
+Dialogue: 0,0:24:11.16,0:24:13.12,CN-Main,,0,0,0,,史塔比家那边有个大派对
+Dialogue: 0,0:24:11.16,0:24:13.12,EN-Main,,0,0,0,,- There's a big party\nat Stubby's.
+Dialogue: 0,0:24:13.12,0:24:15.81,CN-Main,,0,0,0,,他父母去欧洲了 估计会玩很疯
+Dialogue: 0,0:24:13.12,0:24:15.81,EN-Main,,0,0,0,,Parents are in Europe. Should be pretty wild.
+Dialogue: 0,0:24:15.81,0:24:19.29,CN-Main,,0,0,0,,-是吗？ -对 你去吗？
+Dialogue: 0,0:24:15.81,0:24:19.29,EN-Main,,0,0,0,,- Yeah? - Yeah, you going to go?
+Dialogue: 0,0:24:19.29,0:24:22.00,CN-Main,,0,0,0,,-我觉得不行 -为什么？
+Dialogue: 0,0:24:19.29,0:24:22.00,EN-Main,,0,0,0,,- I doubt it. - How come?
+Dialogue: 0,0:24:22.00,0:24:23.84,CN-Main,,0,0,0,,因为要是我不听我妈的话
+Dialogue: 0,0:24:22.00,0:24:23.84,EN-Main,,0,0,0,,- Well, because if I do what\nmy mother tells me not to do,
+Dialogue: 0,0:24:23.84,0:24:25.72,CN-Main,,0,0,0,,就会变成是我爸纵容的
+Dialogue: 0,0:24:23.84,0:24:25.72,EN-Main,,0,0,0,,it's because\nmy father says it's okay.
+Dialogue: 0,0:24:25.72,0:24:29.30,CN-Main,,0,0,0,,这就是个恶性循环 简直让人心烦
+Dialogue: 0,0:24:25.72,0:24:29.30,EN-Main,,0,0,0,,It's like\nthis whole big monster deal. It's endless.\nIt's a total drag.
+Dialogue: 0,0:24:29.30,0:24:31.68,CN-Main,,0,0,0,,就好像他们随时会离婚一样
+Dialogue: 0,0:24:29.30,0:24:31.68,EN-Main,,0,0,0,,It's like any minute, divorce.
+Dialogue: 0,0:24:31.68,0:24:35.02,CN-Main,,0,0,0,,-你喜欢谁多些？ -什么？
+Dialogue: 0,0:24:31.68,0:24:35.02,EN-Main,,0,0,0,,- Who do you like better? - What?
+Dialogue: 0,0:24:35.02,0:24:38.19,CN-Main,,0,0,0,,-你喜欢你爸多过你妈吗？ -他们俩都挺糟糕的
+Dialogue: 0,0:24:35.02,0:24:38.19,EN-Main,,0,0,0,,- You like your old man\nbetter than your mom? - They're both screwed.
+Dialogue: 0,0:24:38.19,0:24:42.90,CN-Main,,0,0,0,,不 我是说如果你得从他们中选一个
+Dialogue: 0,0:24:38.19,0:24:42.90,EN-Main,,0,0,0,,- No, I mean, if you had\nto choose between them.
+Dialogue: 0,0:24:42.90,0:24:44.78,CN-Main,,0,0,0,,我不知道
+Dialogue: 0,0:24:42.90,0:24:44.78,EN-Main,,0,0,0,,- I don't know.
+Dialogue: 0,0:24:44.78,0:24:47.07,CN-Main,,0,0,0,,也许我就和我哥哥去住了
+Dialogue: 0,0:24:44.78,0:24:47.07,EN-Main,,0,0,0,,Probably go live\nwith my brother.
+Dialogue: 0,0:24:48.95,0:24:51.66,CN-Main,,0,0,0,,他们没人关心我
+Dialogue: 0,0:24:48.95,0:24:51.66,EN-Main,,0,0,0,,I mean, I don't think\neither one of them gives a shit about me.
+Dialogue: 0,0:24:51.66,0:24:53.91,CN-Main,,0,0,0,,他们就是利用我攻击彼此而已
+Dialogue: 0,0:24:51.66,0:24:53.91,EN-Main,,0,0,0,,It's like they use me\njust to get back at each other.
+Dialogue: 0,0:25:04.17,0:25:05.75,CN-Main,,0,0,0,,闭嘴
+Dialogue: 0,0:25:04.17,0:25:05.75,EN-Main,,0,0,0,,- Shut up.
+Dialogue: 0,0:25:05.76,0:25:07.09,CN-Main,,0,0,0,,你为自己感到遗憾了
+Dialogue: 0,0:25:05.76,0:25:07.09,EN-Main,,0,0,0,,- You're just\nfeeling sorry for yourself.
+Dialogue: 0,0:25:07.09,0:25:09.72,CN-Main,,0,0,0,,对 要是我不这样 就没人关心我了
+Dialogue: 0,0:25:07.09,0:25:09.72,EN-Main,,0,0,0,,- Yeah, well,\nif I didn't, nobody else would.
+Dialogue: 0,0:25:09.72,0:25:11.22,CN-Main,,0,0,0,,你伤了我的心
+Dialogue: 0,0:25:09.72,0:25:11.22,EN-Main,,0,0,0,,- Aw, you're breaking my heart.
+Dialogue: 0,0:25:11.22,0:25:13.93,CN-Main,,0,0,0,,-体招生？ -怎么了？
+Dialogue: 0,0:25:11.22,0:25:13.93,EN-Main,,0,0,0,,- Sport-o?\n- What?
+Dialogue: 0,0:25:15.89,0:25:18.39,CN-Main,,0,0,0,,你和你父母相处得好吗？
+Dialogue: 0,0:25:15.89,0:25:18.39,EN-Main,,0,0,0,,- You get along\nwith your parents?
+Dialogue: 0,0:25:18.39,0:25:21.14,CN-Main,,0,0,0,,如果我说好 那我成了白痴 对吧？
+Dialogue: 0,0:25:18.39,0:25:21.14,EN-Main,,0,0,0,,- Well, if I say yes\nI'm an idiot, right?
+Dialogue: 0,0:25:22.73,0:25:24.65,CN-Main,,0,0,0,,反正不管怎样你都是白痴
+Dialogue: 0,0:25:22.73,0:25:24.65,EN-Main,,0,0,0,,- You're an idiot anyway.
+Dialogue: 0,0:25:24.65,0:25:28.74,CN-Main,,0,0,0,,但是如果你说你和父母相处得好 那你还是个骗子
+Dialogue: 0,0:25:24.65,0:25:28.74,EN-Main,,0,0,0,,But if you say you get along\nwith your parents, well, you're a liar, too.
+Dialogue: 0,0:25:36.79,0:25:38.37,CN-Main,,0,0,0,,你知道吗
+Dialogue: 0,0:25:36.79,0:25:38.37,EN-Main,,0,0,0,,- You know something, man?
+Dialogue: 0,0:25:38.37,0:25:41.21,CN-Main,,0,0,0,,如果我们现在不是在学校 我就会废了你
+Dialogue: 0,0:25:38.37,0:25:41.21,EN-Main,,0,0,0,,If we weren't in school\nright now I'd waste you.
+Dialogue: 0,0:25:41.21,0:25:43.84,CN-Main,,0,0,0,,你能听见吗？
+Dialogue: 0,0:25:41.21,0:25:43.84,EN-Main,,0,0,0,,- Can you hear this?
+Dialogue: 0,0:25:43.84,0:25:45.93,CN-Main,,0,0,0,,你想我把音量调高点吗？
+Dialogue: 0,0:25:43.84,0:25:45.93,EN-Main,,0,0,0,,You want me to turn it up?
+Dialogue: 0,0:25:47.42,0:25:50.26,CN-Main,,0,0,0,,嘿 伙计们 我想说
+Dialogue: 0,0:25:47.42,0:25:50.26,EN-Main,,0,0,0,,- Hey, fellas, I mean...
+Dialogue: 0,0:25:50.26,0:25:54.39,CN-Main,,0,0,0,,我 我也不喜欢我父母……我和……
+Dialogue: 0,0:25:50.26,0:25:54.39,EN-Main,,0,0,0,,I don't like my parents either. I mean, I don't, you know,\nI don't, I don't...
+Dialogue: 0,0:25:54.39,0:25:58.33,CN-Main,,0,0,0,,我跟他们也处不好 他们所谓的父母关爱
+Dialogue: 0,0:25:54.39,0:25:58.33,EN-Main,,0,0,0,,I don't get along with them. Their idea of, you know,\nparental compassion
+Dialogue: 0,0:25:58.33,0:26:00.22,CN-Main,,0,0,0,,简直就是 你知道……
+Dialogue: 0,0:25:58.33,0:26:00.22,EN-Main,,0,0,0,,is just, you know,
+Dialogue: 0,0:26:00.22,0:26:02.94,CN-Main,,0,0,0,,疯了
+Dialogue: 0,0:26:00.22,0:26:02.94,EN-Main,,0,0,0,,whacko, you know?
+Dialogue: 0,0:26:02.94,0:26:04.90,CN-Main,,0,0,0,,-书呆子？ -怎么了？
+Dialogue: 0,0:26:02.94,0:26:04.90,EN-Main,,0,0,0,,- Dork?\n- Yeah.
+Dialogue: 0,0:26:04.90,0:26:08.20,CN-Main,,0,0,0,,你就是父母的春梦 好吗？
+Dialogue: 0,0:26:04.90,0:26:08.20,EN-Main,,0,0,0,,- You are a parent's\nwet dream, okay?
+Dialogue: 0,0:26:10.49,0:26:12.12,CN-Main,,0,0,0,,这就是问题所在
+Dialogue: 0,0:26:10.49,0:26:12.12,EN-Main,,0,0,0,,- Well, that's the problem.
+Dialogue: 0,0:26:12.12,0:26:14.02,CN-Main,,0,0,0,,我看得出你很憋屈
+Dialogue: 0,0:26:12.12,0:26:14.02,EN-Main,,0,0,0,,- Look, I can see you getting\nall bunged up
+Dialogue: 0,0:26:14.02,0:26:16.66,CN-Main,,0,0,0,,因为他们逼你穿这种衣服
+Dialogue: 0,0:26:14.02,0:26:16.66,EN-Main,,0,0,0,,for them making you wear\nthese kind of clothes,
+Dialogue: 0,0:26:16.66,0:26:20.37,CN-Main,,0,0,0,,但面对现实吧 你就是个超级无敌大书呆子
+Dialogue: 0,0:26:16.66,0:26:20.37,EN-Main,,0,0,0,,but face it,\nyou're a neo-maxi-zoon-dweebie.
+Dialogue: 0,0:26:20.37,0:26:23.04,CN-Main,,0,0,0,,你除了努力成为更好的公民 还能做什么？
+Dialogue: 0,0:26:20.37,0:26:23.04,EN-Main,,0,0,0,,What would you be doing\nif you weren't out making yourself\na better citizen?
+Dialogue: 0,0:26:23.04,0:26:26.67,CN-Main,,0,0,0,,你为什么要攻击每个人呢？
+Dialogue: 0,0:26:23.04,0:26:26.67,EN-Main,,0,0,0,,- Why do you have\nto insult everybody?
+Dialogue: 0,0:26:26.67,0:26:29.30,CN-Main,,0,0,0,,我只是说实话 混球
+Dialogue: 0,0:26:26.67,0:26:29.30,EN-Main,,0,0,0,,- I'm being honest, asshole.
+Dialogue: 0,0:26:29.30,0:26:32.30,CN-Main,,0,0,0,,我还希望你能知道两者区别呢
+Dialogue: 0,0:26:29.30,0:26:32.30,EN-Main,,0,0,0,,I would expect you\nto know the difference.
+Dialogue: 0,0:26:32.30,0:26:34.30,CN-Main,,0,0,0,,-他可是有名字的 -是吗？
+Dialogue: 0,0:26:32.30,0:26:34.30,EN-Main,,0,0,0,,- Yeah, well, he's got a name.\n- Yeah?
+Dialogue: 0,0:26:34.30,0:26:37.11,CN-Main,,0,0,0,,当然 你叫什么？
+Dialogue: 0,0:26:34.30,0:26:37.11,EN-Main,,0,0,0,,- Yeah. What's your name?
+Dialogue: 0,0:26:37.11,0:26:38.73,CN-Main,,0,0,0,,-布莱恩 -听到了吗？
+Dialogue: 0,0:26:37.11,0:26:38.73,EN-Main,,0,0,0,,- Brian. - See?
+Dialogue: 0,0:26:38.73,0:26:40.73,CN-Main,,0,0,0,,致哀
+Dialogue: 0,0:26:38.73,0:26:40.73,EN-Main,,0,0,0,,- My condolences.
+Dialogue: 0,0:26:44.02,0:26:45.06,CN-Main,,0,0,0,,你叫什么名字？
+Dialogue: 0,0:26:44.02,0:26:45.06,EN-Main,,0,0,0,,- What's your name?
+Dialogue: 0,0:26:48.78,0:26:51.32,CN-Main,,0,0,0,,你呢？
+Dialogue: 0,0:26:48.78,0:26:51.32,EN-Main,,0,0,0,,- What's yours?
+Dialogue: 0,0:26:51.32,0:26:52.32,CN-Main,,0,0,0,,克莱尔
+Dialogue: 0,0:26:51.32,0:26:52.32,EN-Main,,0,0,0,,- Claire.
+Dialogue: 0,0:26:52.32,0:26:56.16,CN-Main,,0,0,0,,-克莱尔？ -克莱尔 家族里的名字
+Dialogue: 0,0:26:52.32,0:26:56.16,EN-Main,,0,0,0,,- Claire? - Claire.\nIt's a family name.
+Dialogue: 0,0:26:56.16,0:26:57.37,CN-Main,,0,0,0,,不 那是个胖姑娘的名字
+Dialogue: 0,0:26:56.16,0:26:57.37,EN-Main,,0,0,0,,- Oh, it's a fat girl's name.
+Dialogue: 0,0:26:57.37,0:26:58.45,CN-Main,,0,0,0,,-谢谢你 -不用
+Dialogue: 0,0:26:57.37,0:26:58.45,EN-Main,,0,0,0,,- Oh, thank you.\n- You're welcome.
+Dialogue: 0,0:26:58.45,0:26:59.91,CN-Main,,0,0,0,,-我不胖 -现在不胖
+Dialogue: 0,0:26:58.45,0:26:59.91,EN-Main,,0,0,0,,- I'm not fat.
+Dialogue: 0,0:26:59.91,0:27:03.50,CN-Main,,0,0,0,,但是 我可以预见你以后胖的样子
+Dialogue: 0,0:26:59.91,0:27:03.50,EN-Main,,0,0,0,,- Well, not at present,\nbut I could see you really pushing maximum density.
+Dialogue: 0,0:27:03.50,0:27:08.00,CN-Main,,0,0,0,,我不确定你是否注意到 世上有两种胖人
+Dialogue: 0,0:27:03.50,0:27:08.00,EN-Main,,0,0,0,,You see, I'm not sure\nif you know this, but there are two kinds\nof fat people.
+Dialogue: 0,0:27:08.00,0:27:10.88,CN-Main,,0,0,0,,有生下来就是胖子的人
+Dialogue: 0,0:27:08.00,0:27:10.88,EN-Main,,0,0,0,,There's fat people\nthat were born to be fat
+Dialogue: 0,0:27:10.88,0:27:14.42,CN-Main,,0,0,0,,还有曾经瘦过的胖子
+Dialogue: 0,0:27:10.88,0:27:14.42,EN-Main,,0,0,0,,and there's fat people that were\nonce thin, but they became fat,
+Dialogue: 0,0:27:14.43,0:27:18.81,CN-Main,,0,0,0,,所以当你看着他们的时候 你还能依稀看见那个瘦子
+Dialogue: 0,0:27:14.43,0:27:18.81,EN-Main,,0,0,0,,so when you look at them\nyou can sort of see that thin person inside.
+Dialogue: 0,0:27:18.81,0:27:23.18,CN-Main,,0,0,0,,你看 你以后会结婚 然后生几个小崽子
+Dialogue: 0,0:27:18.81,0:27:23.18,EN-Main,,0,0,0,,You see, you're going\nto get married, you're going to squeeze out\na few puppies
+Dialogue: 0,0:27:23.18,0:27:23.89,CN-Main,,0,0,0,,之后……
+Dialogue: 0,0:27:23.18,0:27:23.89,EN-Main,,0,0,0,,and then,
+Dialogue: 0,0:27:27.32,0:27:32.36,CN-Main,,0,0,0,,这么纯洁的姑娘 竟然也会比下流手势
+Dialogue: 0,0:27:27.32,0:27:32.36,EN-Main,,0,0,0,,Oh, obscene finger gestures\nfrom such a pristine girl.
+Dialogue: 0,0:27:32.36,0:27:36.20,CN-Main,,0,0,0,,我可没那么纯洁
+Dialogue: 0,0:27:32.36,0:27:36.20,EN-Main,,0,0,0,,- I'm not that pristine.
+Dialogue: 0,0:27:38.87,0:27:41.91,CN-Main,,0,0,0,,你是处女吗？
+Dialogue: 0,0:27:38.87,0:27:41.91,EN-Main,,0,0,0,,- Are you a virgin?
+Dialogue: 0,0:27:41.91,0:27:47.75,CN-Main,,0,0,0,,我赌一百万 你是
+Dialogue: 0,0:27:41.91,0:27:47.75,EN-Main,,0,0,0,,I'll bet you a million dollars\nthat you are.
+Dialogue: 0,0:27:48.92,0:27:50.34,CN-Main,,0,0,0,,我们来最终解密吧
+Dialogue: 0,0:27:48.92,0:27:50.34,EN-Main,,0,0,0,,Let's end the suspense.
+Dialogue: 0,0:27:51.96,0:27:55.30,CN-Main,,0,0,0,,是要白色婚礼的吧？
+Dialogue: 0,0:27:51.96,0:27:55.30,EN-Main,,0,0,0,,Is it going to be\na white wedding?
+Dialogue: 0,0:27:55.30,0:27:56.55,CN-Main,,0,0,0,,你为什么不闭嘴呢？
+Dialogue: 0,0:27:55.30,0:27:56.55,EN-Main,,0,0,0,,- Why don't you just shut up?
+Dialogue: 0,0:27:56.55,0:27:58.84,CN-Main,,0,0,0,,你嘴对嘴吻过男生吗？
+Dialogue: 0,0:27:56.55,0:27:58.84,EN-Main,,0,0,0,,- Have you ever\nkissed a boy on the mouth?
+Dialogue: 0,0:28:01.89,0:28:04.56,CN-Main,,0,0,0,,你被人摸过胸吗？
+Dialogue: 0,0:28:01.89,0:28:04.56,EN-Main,,0,0,0,,Have you ever been felt up,
+Dialogue: 0,0:28:04.56,0:28:09.11,CN-Main,,0,0,0,,隔着胸罩 伸进上衣
+Dialogue: 0,0:28:04.56,0:28:09.11,EN-Main,,0,0,0,,over the bra, under the blouse,
+Dialogue: 0,0:28:09.11,0:28:13.24,CN-Main,,0,0,0,,脱掉鞋 向上天祈求你父母不要进来？
+Dialogue: 0,0:28:09.11,0:28:13.24,EN-Main,,0,0,0,,shoes off, hoping to God\nyour parents don't walk in?
+Dialogue: 0,0:28:15.82,0:28:17.03,CN-Main,,0,0,0,,你想让我吐吗？
+Dialogue: 0,0:28:15.82,0:28:17.03,EN-Main,,0,0,0,,- Do you want me to puke?
+Dialogue: 0,0:28:19.83,0:28:22.12,CN-Main,,0,0,0,,隔着内裤……
+Dialogue: 0,0:28:19.83,0:28:22.12,EN-Main,,0,0,0,,- Over the panties...
+Dialogue: 0,0:28:23.58,0:28:26.83,CN-Main,,0,0,0,,不穿内衣
+Dialogue: 0,0:28:23.58,0:28:26.83,EN-Main,,0,0,0,,no bra...
+Dialogue: 0,0:28:26.83,0:28:29.42,CN-Main,,0,0,0,,解开衣服
+Dialogue: 0,0:28:26.83,0:28:29.42,EN-Main,,0,0,0,,blouse unbuttoned...
+Dialogue: 0,0:28:29.42,0:28:34.14,CN-Main,,0,0,0,,卡尔文·克莱恩内裤团在前座 上学日都过晚上 11 点了
+Dialogue: 0,0:28:29.42,0:28:34.14,EN-Main,,0,0,0,,Calvin's in a ball\non the front seat past 11:00 on a school night.
+Dialogue: 0,0:28:35.55,0:28:37.97,CN-Main,,0,0,0,,别烦她
+Dialogue: 0,0:28:35.55,0:28:37.97,EN-Main,,0,0,0,,Andy: Leave her alone.
+Dialogue: 0,0:28:47.31,0:28:49.06,CN-Main,,0,0,0,,我说了 别烦她
+Dialogue: 0,0:28:47.31,0:28:49.06,EN-Main,,0,0,0,,I said leave her alone.
+Dialogue: 0,0:28:52.36,0:28:55.03,CN-Main,,0,0,0,,你要强迫我吗？
+Dialogue: 0,0:28:52.36,0:28:55.03,EN-Main,,0,0,0,,- You going to make me?
+Dialogue: 0,0:28:55.03,0:28:56.32,CN-Main,,0,0,0,,是
+Dialogue: 0,0:28:55.03,0:28:56.32,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,0:29:03.49,0:29:06.49,CN-Main,,0,0,0,,你还要带几个朋友吗？
+Dialogue: 0,0:29:03.49,0:29:06.49,EN-Main,,0,0,0,,- You and how many\nof your friends?
+Dialogue: 0,0:29:06.50,0:29:08.58,CN-Main,,0,0,0,,就我一个
+Dialogue: 0,0:29:06.50,0:29:08.58,EN-Main,,0,0,0,,- Just me.
+Dialogue: 0,0:29:08.58,0:29:11.08,CN-Main,,0,0,0,,就你和我
+Dialogue: 0,0:29:08.58,0:29:11.08,EN-Main,,0,0,0,,Just you and me.
+Dialogue: 0,0:29:11.09,0:29:13.88,CN-Main,,0,0,0,,就两下 我打你一下 然后你倒在地板上一下
+Dialogue: 0,0:29:11.09,0:29:13.88,EN-Main,,0,0,0,,Two hits, me hitting you,\nyou hitting the floor.
+Dialogue: 0,0:29:13.88,0:29:15.88,CN-Main,,0,0,0,,你准备好就开始 朋友
+Dialogue: 0,0:29:13.88,0:29:15.88,EN-Main,,0,0,0,,Any time you're ready, pal.
+Dialogue: 0,0:29:23.89,0:29:28.19,CN-Main,,0,0,0,,我不想和你纠缠 兄弟
+Dialogue: 0,0:29:23.89,0:29:28.19,EN-Main,,0,0,0,,Bender: I don't want to get\ninto this with you, man.
+Dialogue: 0,0:29:28.19,0:29:30.48,CN-Main,,0,0,0,,为什么不呢？
+Dialogue: 0,0:29:28.19,0:29:30.48,EN-Main,,0,0,0,,- Why not?
+Dialogue: 0,0:29:30.48,0:29:32.19,CN-Main,,0,0,0,,因为我会杀了你
+Dialogue: 0,0:29:30.48,0:29:32.19,EN-Main,,0,0,0,,- Because I'd kill you.
+Dialogue: 0,0:29:35.65,0:29:38.11,CN-Main,,0,0,0,,这很简单
+Dialogue: 0,0:29:35.65,0:29:38.11,EN-Main,,0,0,0,,It's real simple.
+Dialogue: 0,0:29:38.11,0:29:42.03,CN-Main,,0,0,0,,我杀了你 你该死的父母 会把我告上法庭 那就不好看了
+Dialogue: 0,0:29:38.11,0:29:42.03,EN-Main,,0,0,0,,I'd kill you\nand your fucking parents would sue me\nand it'd be a big mess
+Dialogue: 0,0:29:42.03,0:29:45.12,CN-Main,,0,0,0,,我没有那么在乎你 不想蹚浑水
+Dialogue: 0,0:29:42.03,0:29:45.12,EN-Main,,0,0,0,,and I don't care enough\nabout you to bother.
+Dialogue: 0,0:29:46.70,0:29:48.33,CN-Main,,0,0,0,,胆小鬼
+Dialogue: 0,0:29:46.70,0:29:48.33,EN-Main,,0,0,0,,- Chicken shit.
+Dialogue: 0,0:29:59.47,0:30:02.35,CN-Main,,0,0,0,,我们现在就解决这事
+Dialogue: 0,0:29:59.47,0:30:02.35,EN-Main,,0,0,0,,Let's end this right now.
+Dialogue: 0,0:30:02.35,0:30:06.43,CN-Main,,0,0,0,,你不能和她说话 你不能看她
+Dialogue: 0,0:30:02.35,0:30:06.43,EN-Main,,0,0,0,,You don't talk to her,\nyou don't look at her,
+Dialogue: 0,0:30:06.43,0:30:10.65,CN-Main,,0,0,0,,你也不能想她 听明白了吗？
+Dialogue: 0,0:30:06.43,0:30:10.65,EN-Main,,0,0,0,,and you don't even\nthink about her, do you understand me?
+Dialogue: 0,0:30:10.65,0:30:13.95,CN-Main,,0,0,0,,我是在帮她忙
+Dialogue: 0,0:30:10.65,0:30:13.95,EN-Main,,0,0,0,,- I'm trying to help her.
+Dialogue: 0,0:30:35.59,0:30:37.22,CN-Main,,0,0,0,,布莱恩 你好吗？
+Dialogue: 0,0:30:35.59,0:30:37.22,EN-Main,,0,0,0,,- Hey, Brian, how you doing?
+Dialogue: 0,0:30:38.42,0:30:40.17,CN-Main,,0,0,0,,你父亲在这工作吗？
+Dialogue: 0,0:30:38.42,0:30:40.17,EN-Main,,0,0,0,,- Your dad work here?
+Dialogue: 0,0:30:46.47,0:30:47.32,CN-Main,,0,0,0,,卡尔？
+Dialogue: 0,0:30:46.47,0:30:47.32,EN-Main,,0,0,0,,- Carl?
+Dialogue: 0,0:30:47.32,0:30:50.51,CN-Main,,0,0,0,,-怎么了？ -我能问你个问题吗？
+Dialogue: 0,0:30:47.32,0:30:50.51,EN-Main,,0,0,0,,- What? - Can I ask you a question?
+Dialogue: 0,0:30:50.51,0:30:51.18,CN-Main,,0,0,0,,当然
+Dialogue: 0,0:30:50.51,0:30:51.18,EN-Main,,0,0,0,,- Sure.
+Dialogue: 0,0:30:51.19,0:30:53.15,CN-Main,,0,0,0,,怎么才能当上清洁工？
+Dialogue: 0,0:30:51.19,0:30:53.15,EN-Main,,0,0,0,,- How does one become a janitor?
+Dialogue: 0,0:30:53.15,0:30:54.73,CN-Main,,0,0,0,,你想当清洁工？
+Dialogue: 0,0:30:53.15,0:30:54.73,EN-Main,,0,0,0,,- You want to be a janitor?
+Dialogue: 0,0:30:54.73,0:30:57.15,CN-Main,,0,0,0,,不 我只是好奇怎么才能当清洁工
+Dialogue: 0,0:30:54.73,0:30:57.15,EN-Main,,0,0,0,,- No, I just want to know\nhow one becomes a janitor
+Dialogue: 0,0:30:57.15,0:30:59.74,CN-Main,,0,0,0,,因为安德鲁非常想要
+Dialogue: 0,0:30:57.15,0:30:59.74,EN-Main,,0,0,0,,because Andrew here\nis very interested
+Dialogue: 0,0:30:59.74,0:31:03.61,CN-Main,,0,0,0,,在——在清洁这门艺术上发展 -是吗？
+Dialogue: 0,0:30:59.74,0:31:03.61,EN-Main,,0,0,0,,in pursuing a career in the custodial arts. - Oh, really?
+Dialogue: 0,0:31:06.45,0:31:11.25,CN-Main,,0,0,0,,你们都觉得我就是个贱民 农奴 下等仆役 是吧？
+Dialogue: 0,0:31:06.45,0:31:11.25,EN-Main,,0,0,0,,You guys think I'm just\nsome untouchable peasant, serf, peon, huh?
+Dialogue: 0,0:31:11.25,0:31:15.04,CN-Main,,0,0,0,,也许是这样 但是在你们这群混球后面
+Dialogue: 0,0:31:11.25,0:31:15.04,EN-Main,,0,0,0,,Maybe so. But following a broom around\nafter shitheads like you
+Dialogue: 0,0:31:15.04,0:31:17.21,CN-Main,,0,0,0,,挥舞了 8 年扫把之后 我还是学到了点东西
+Dialogue: 0,0:31:15.04,0:31:17.21,EN-Main,,0,0,0,,for the last eight years,\nI've learned a couple of things.
+Dialogue: 0,0:31:17.21,0:31:22.26,CN-Main,,0,0,0,,我看了你们的信件 看遍了你们的储物柜
+Dialogue: 0,0:31:17.21,0:31:22.26,EN-Main,,0,0,0,,I look through your letters,\nlook through your lockers,
+Dialogue: 0,0:31:22.26,0:31:26.10,CN-Main,,0,0,0,,我偷听你们谈话 你们不知道 但我知道
+Dialogue: 0,0:31:22.26,0:31:26.10,EN-Main,,0,0,0,,I listen to your conversations.\nYou don't know that, but I do.
+Dialogue: 0,0:31:26.10,0:31:30.48,CN-Main,,0,0,0,,我就是这所学校的眼睛和耳朵 我的朋友
+Dialogue: 0,0:31:26.10,0:31:30.48,EN-Main,,0,0,0,,I am the eyes and ears\nof this institution, my friends.
+Dialogue: 0,0:31:33.64,0:31:36.73,CN-Main,,0,0,0,,顺便说一下 那表快了 20 分钟
+Dialogue: 0,0:31:33.64,0:31:36.73,EN-Main,,0,0,0,,By the way,\nthat clock's 20 minutes fast.
+Dialogue: 0,0:31:38.61,0:31:40.15,CN-Main,,0,0,0,,该死
+Dialogue: 0,0:31:38.61,0:31:40.15,EN-Main,,0,0,0,,- Shit.
+Dialogue: 0,0:32:25.53,0:32:28.07,CN-Main,,0,0,0,,姑娘们 午餐时间 30 分钟
+Dialogue: 0,0:32:25.53,0:32:28.07,EN-Main,,0,0,0,,- All right, girls,\nthat's 30 minutes for lunch.
+Dialogue: 0,0:32:28.07,0:32:30.36,CN-Main,,0,0,0,,-就在这？ -就在这
+Dialogue: 0,0:32:28.07,0:32:30.36,EN-Main,,0,0,0,,- Here?\n- Here.
+Dialogue: 0,0:32:30.37,0:32:30.90,CN-Main,,0,0,0,,我觉得
+Dialogue: 0,0:32:30.37,0:32:30.90,EN-Main,,0,0,0,,- Well, I think
+Dialogue: 0,0:32:30.90,0:32:34.12,CN-Main,,0,0,0,,在食堂吃饭更合适 老师
+Dialogue: 0,0:32:30.90,0:32:34.12,EN-Main,,0,0,0,,the cafeteria\nwould be a more suitable place for us to eat lunch in, sir.
+Dialogue: 0,0:32:34.12,0:32:37.33,CN-Main,,0,0,0,,我不在乎你的想法 安德鲁
+Dialogue: 0,0:32:34.12,0:32:37.33,EN-Main,,0,0,0,,- Well, I don't care\nwhat you think, Andrew.
+Dialogue: 0,0:32:37.33,0:32:37.95,CN-Main,,0,0,0,,混球？
+Dialogue: 0,0:32:37.33,0:32:37.95,EN-Main,,0,0,0,,- Dick,
+Dialogue: 0,0:32:37.95,0:32:39.40,CN-Main,,0,0,0,,不好意思 理查？
+Dialogue: 0,0:32:37.95,0:32:39.40,EN-Main,,0,0,0,,excuse me, Rich,
+Dialogue: 0,0:32:39.40,0:32:42.84,CN-Main,,0,0,0,,有牛奶喝吗？
+Dialogue: 0,0:32:39.40,0:32:42.84,EN-Main,,0,0,0,,will milk be made available to us?
+Dialogue: 0,0:32:42.84,0:32:44.55,CN-Main,,0,0,0,,我们非常渴 老师
+Dialogue: 0,0:32:42.84,0:32:44.55,EN-Main,,0,0,0,,- We're extremely thirsty, sir.
+Dialogue: 0,0:32:44.55,0:32:47.34,CN-Main,,0,0,0,,我对脱水的忍耐程度很低
+Dialogue: 0,0:32:44.55,0:32:47.34,EN-Main,,0,0,0,,- I have a really\nlow tolerance for dehydration.
+Dialogue: 0,0:32:47.34,0:32:50.51,CN-Main,,0,0,0,,我见过她脱水 老师 很恶心
+Dialogue: 0,0:32:47.34,0:32:50.51,EN-Main,,0,0,0,,- I've seen her dehydrate,\nsir, it's pretty gross.
+Dialogue: 0,0:32:50.51,0:32:54.52,CN-Main,,0,0,0,,放松 我去取
+Dialogue: 0,0:32:50.51,0:32:54.52,EN-Main,,0,0,0,,- Relax, I'll get it. Vernon: Uh, uh, uh.
+Dialogue: 0,0:32:54.52,0:32:57.15,CN-Main,,0,0,0,,坐下吧 老兄
+Dialogue: 0,0:32:54.52,0:32:57.15,EN-Main,,0,0,0,,Grab some wood there, bub.
+Dialogue: 0,0:32:57.15,0:33:00.27,CN-Main,,0,0,0,,你以为我昨天才出生吗？
+Dialogue: 0,0:32:57.15,0:33:00.27,EN-Main,,0,0,0,,What, do you think\nI was born yesterday?
+Dialogue: 0,0:33:00.27,0:33:02.31,CN-Main,,0,0,0,,你以为我会让你去楼道里乱走吗？
+Dialogue: 0,0:33:00.27,0:33:02.31,EN-Main,,0,0,0,,You think I'm going to have you\nroaming these halls?
+Dialogue: 0,0:33:05.32,0:33:06.32,CN-Main,,0,0,0,,你
+Dialogue: 0,0:33:05.32,0:33:06.32,EN-Main,,0,0,0,,You.
+Dialogue: 0,0:33:11.58,0:33:13.21,CN-Main,,0,0,0,,还有你
+Dialogue: 0,0:33:11.58,0:33:13.21,EN-Main,,0,0,0,,And you.
+Dialogue: 0,0:33:14.25,0:33:16.29,CN-Main,,0,0,0,,喂
+Dialogue: 0,0:33:14.25,0:33:16.29,EN-Main,,0,0,0,,Hey!\n(snaps fingers)
+Dialogue: 0,0:33:16.29,0:33:18.17,CN-Main,,0,0,0,,她叫什么名字？ 叫醒她 叫醒她
+Dialogue: 0,0:33:16.29,0:33:18.17,EN-Main,,0,0,0,,What's her name?\nWake her, wake her up.
+Dialogue: 0,0:33:18.17,0:33:20.25,CN-Main,,0,0,0,,喂 站起来 小姐
+Dialogue: 0,0:33:18.17,0:33:20.25,EN-Main,,0,0,0,,Hey, come on,\non your feet, missy.
+Dialogue: 0,0:33:20.25,0:33:23.55,CN-Main,,0,0,0,,走吧 这可不是你睡觉的地方
+Dialogue: 0,0:33:20.25,0:33:23.55,EN-Main,,0,0,0,,Let's go. This is no rest home.
+Dialogue: 0,0:33:23.55,0:33:26.72,CN-Main,,0,0,0,,教师休息室里有个软饮售卖机
+Dialogue: 0,0:33:23.55,0:33:26.72,EN-Main,,0,0,0,,There's a soft drink machine\nin the teacher's lounge.
+Dialogue: 0,0:33:26.72,0:33:28.26,CN-Main,,0,0,0,,走吧
+Dialogue: 0,0:33:26.72,0:33:28.26,EN-Main,,0,0,0,,Let's go.
+Dialogue: 0,0:33:28.26,0:33:30.26,CN-Sign,,0,0,0,,（自由至上）
+Dialogue: 0,0:33:33.43,0:33:36.44,CN-Main,,0,0,0,,你喝什么？
+Dialogue: 0,0:33:33.43,0:33:36.44,EN-Main,,0,0,0,,- So... what's your poison?
+Dialogue: 0,0:33:39.15,0:33:40.36,CN-Main,,0,0,0,,你喝什么？
+Dialogue: 0,0:33:39.15,0:33:40.36,EN-Main,,0,0,0,,What do you drink?
+Dialogue: 0,0:33:43.15,0:33:44.53,CN-Main,,0,0,0,,好吧 当我没问
+Dialogue: 0,0:33:43.15,0:33:44.53,EN-Main,,0,0,0,,Okay, forget I asked.
+Dialogue: 0,0:33:47.61,0:33:49.15,CN-Main,,0,0,0,,伏特加
+Dialogue: 0,0:33:47.61,0:33:49.15,EN-Main,,0,0,0,,- Vodka.
+Dialogue: 0,0:33:50.78,0:33:52.57,CN-Main,,0,0,0,,伏特加？
+Dialogue: 0,0:33:50.78,0:33:52.57,EN-Main,,0,0,0,,- Vodka.
+Dialogue: 0,0:33:52.58,0:33:54.62,CN-Main,,0,0,0,,你什么时候喝伏特加？
+Dialogue: 0,0:33:52.58,0:33:54.62,EN-Main,,0,0,0,,When do you drink vodka?
+Dialogue: 0,0:33:54.62,0:33:55.62,CN-Main,,0,0,0,,随时随地
+Dialogue: 0,0:33:54.62,0:33:55.62,EN-Main,,0,0,0,,- Whenever.
+Dialogue: 0,0:33:57.62,0:33:58.75,CN-Main,,0,0,0,,喝很多吗？
+Dialogue: 0,0:33:57.62,0:33:58.75,EN-Main,,0,0,0,,- A lot?
+Dialogue: 0,0:33:58.75,0:34:00.79,CN-Main,,0,0,0,,很多
+Dialogue: 0,0:33:58.75,0:34:00.79,EN-Main,,0,0,0,,- Tons.
+Dialogue: 0,0:34:00.79,0:34:03.83,CN-Main,,0,0,0,,所以你今天才被留堂吗？
+Dialogue: 0,0:34:00.79,0:34:03.83,EN-Main,,0,0,0,,- Is that why you're here today?
+Dialogue: 0,0:34:03.84,0:34:07.14,CN-Main,,0,0,0,,-你为什么在这？ -你为什么在这？
+Dialogue: 0,0:34:03.84,0:34:07.14,EN-Main,,0,0,0,,Why are you here?\n- Why are you here?
+Dialogue: 0,0:34:13.93,0:34:17.47,CN-Main,,0,0,0,,我被留堂是因为……
+Dialogue: 0,0:34:13.93,0:34:17.47,EN-Main,,0,0,0,,- I'm here today because...
+Dialogue: 0,0:34:17.48,0:34:21.56,CN-Main,,0,0,0,,我的教练和我爸 不想让我丢掉奖学金
+Dialogue: 0,0:34:17.48,0:34:21.56,EN-Main,,0,0,0,,because my coach and my father\ndon't want me to blow my ride.
+Dialogue: 0,0:34:21.56,0:34:26.61,CN-Main,,0,0,0,,我被区别对待 是因为我教练认为我是赢家
+Dialogue: 0,0:34:21.56,0:34:26.61,EN-Main,,0,0,0,,See, I get treated differently\nbecause... coach thinks I'm a winner.
+Dialogue: 0,0:34:26.61,0:34:28.61,CN-Main,,0,0,0,,我父亲也这么认为
+Dialogue: 0,0:34:26.61,0:34:28.61,EN-Main,,0,0,0,,So does my old man.
+Dialogue: 0,0:34:28.61,0:34:31.28,CN-Main,,0,0,0,,我不是因为想赢而成为赢家的
+Dialogue: 0,0:34:28.61,0:34:31.28,EN-Main,,0,0,0,,I'm not a winner\nbecause I want to be one.
+Dialogue: 0,0:34:31.28,0:34:33.74,CN-Main,,0,0,0,,我时常赢是因为我力量和速度很好
+Dialogue: 0,0:34:31.28,0:34:33.74,EN-Main,,0,0,0,,I'm a winner because\nI got strength and speed,
+Dialogue: 0,0:34:33.74,0:34:36.24,CN-Main,,0,0,0,,像是赛马一般
+Dialogue: 0,0:34:33.74,0:34:36.24,EN-Main,,0,0,0,,kind of like a racehorse.
+Dialogue: 0,0:34:36.24,0:34:39.62,CN-Main,,0,0,0,,我对自己的人生 也就只有这么点掌控权
+Dialogue: 0,0:34:36.24,0:34:39.62,EN-Main,,0,0,0,,That's about how involved I am\nin what's happening to me.
+Dialogue: 0,0:34:39.62,0:34:41.96,CN-Main,,0,0,0,,是啊
+Dialogue: 0,0:34:39.62,0:34:41.96,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,0:34:41.96,0:34:44.50,CN-Main,,0,0,0,,很有趣
+Dialogue: 0,0:34:41.96,0:34:44.50,EN-Main,,0,0,0,,That's very interesting.
+Dialogue: 0,0:34:47.55,0:34:51.80,CN-Main,,0,0,0,,你为什么不告诉我 你被留堂的真实原因呢
+Dialogue: 0,0:34:47.55,0:34:51.80,EN-Main,,0,0,0,,Now, why don't you tell me\nwhy you're really in here.
+Dialogue: 0,0:34:51.80,0:34:53.22,CN-Main,,0,0,0,,算了
+Dialogue: 0,0:34:51.80,0:34:53.22,EN-Main,,0,0,0,,- Forget it.
+Dialogue: 0,0:34:59.68,0:35:02.85,CN-Main,,0,0,0,,克莱尔 想看看男人的蛋蛋 得了象皮病是什么样吗？
+Dialogue: 0,0:34:59.68,0:35:02.85,EN-Main,,0,0,0,,- Claire? You want to see a picture\nof a guy with elephantitis
+Dialogue: 0,0:35:02.85,0:35:06.23,CN-Main,,0,0,0,,-特别美味 -不了 谢谢
+Dialogue: 0,0:35:02.85,0:35:06.23,EN-Main,,0,0,0,,of the nuts?\nIt's pretty tasty. - No, thank you.
+Dialogue: 0,0:35:06.23,0:35:09.23,CN-Main,,0,0,0,,你觉得他要怎么骑自行车？
+Dialogue: 0,0:35:06.23,0:35:09.23,EN-Main,,0,0,0,,- How do you think\nhe rides a bike?
+Dialogue: 0,0:35:11.65,0:35:15.74,CN-Main,,0,0,0,,哦克莱尔 你会考虑和这样一个男人约会吗？
+Dialogue: 0,0:35:11.65,0:35:15.74,EN-Main,,0,0,0,,Oh, Claire, would you ever\nconsider dating a guy like this?
+Dialogue: 0,0:35:15.74,0:35:18.62,CN-Main,,0,0,0,,-你能不能别烦我？ -如果他性格很好
+Dialogue: 0,0:35:15.74,0:35:18.62,EN-Main,,0,0,0,,- Can't you just leave me alone? - I mean, if he had\na great personality
+Dialogue: 0,0:35:18.62,0:35:21.25,CN-Main,,0,0,0,,跳舞很棒还有辆香车呢？
+Dialogue: 0,0:35:18.62,0:35:21.25,EN-Main,,0,0,0,,and was a good dancer\nand had a cool car.
+Dialogue: 0,0:35:21.25,0:35:23.37,CN-Main,,0,0,0,,不过你恐怕得坐后座
+Dialogue: 0,0:35:21.25,0:35:23.37,EN-Main,,0,0,0,,Although you'd probably have\nto ride in the backseat
+Dialogue: 0,0:35:23.37,0:35:26.29,CN-Main,,0,0,0,,因为他的蛋蛋得占副驾驶
+Dialogue: 0,0:35:23.37,0:35:26.29,EN-Main,,0,0,0,,because his nuts\nwould ride shotgun.
+Dialogue: 0,0:35:27.96,0:35:29.42,CN-Main,,0,0,0,,你知道我希望我现在在做什么吗？
+Dialogue: 0,0:35:27.96,0:35:29.42,EN-Main,,0,0,0,,- You know what\nI wish I was doing?
+Dialogue: 0,0:35:29.42,0:35:32.46,CN-Main,,0,0,0,,小心说话 布莱恩可是个处男
+Dialogue: 0,0:35:29.42,0:35:32.46,EN-Main,,0,0,0,,- Watch what you say.\nBrian here is a cherry.
+Dialogue: 0,0:35:32.47,0:35:36.05,CN-Main,,0,0,0,,-处男？ -我希望我在飞机上
+Dialogue: 0,0:35:32.47,0:35:36.05,EN-Main,,0,0,0,,- A cherry? - I wish I was in a plane
+Dialogue: 0,0:35:36.05,0:35:38.47,CN-Main,,0,0,0,,-飞往法国 -我不是处男
+Dialogue: 0,0:35:36.05,0:35:38.47,EN-Main,,0,0,0,,to France. - I'm not a cherry.
+Dialogue: 0,0:35:38.47,0:35:42.44,CN-Main,,0,0,0,,-你什么时候和人上过床？ -我经常和人上床
+Dialogue: 0,0:35:38.47,0:35:42.44,EN-Main,,0,0,0,,- When have you ever\ngotten laid? - I've laid lots of times.
+Dialogue: 0,0:35:42.44,0:35:44.85,CN-Main,,0,0,0,,说一个人
+Dialogue: 0,0:35:42.44,0:35:44.85,EN-Main,,0,0,0,,- Name one.
+Dialogue: 0,0:35:44.85,0:35:46.31,CN-Main,,0,0,0,,她住在加拿大
+Dialogue: 0,0:35:44.85,0:35:46.31,EN-Main,,0,0,0,,- She lives in Canada.
+Dialogue: 0,0:35:46.31,0:35:49.78,CN-Main,,0,0,0,,我和她在尼亚加拉大瀑布遇见 你不认识
+Dialogue: 0,0:35:46.31,0:35:49.78,EN-Main,,0,0,0,,Met her at Niagara Falls. You wouldn't know her.
+Dialogue: 0,0:35:49.78,0:35:51.78,CN-Main,,0,0,0,,有在这的吗？
+Dialogue: 0,0:35:49.78,0:35:51.78,EN-Main,,0,0,0,,- Ever laid anyone around here?
+Dialogue: 0,0:35:53.49,0:35:57.37,CN-Main,,0,0,0,,你和克莱尔做了？
+Dialogue: 0,0:35:53.49,0:35:57.37,EN-Main,,0,0,0,,Oh, you and Claire did it.
+Dialogue: 0,0:35:57.37,0:35:59.56,CN-Main,,0,0,0,,-你们说什么呢？ -没事 没事
+Dialogue: 0,0:35:57.37,0:35:59.56,EN-Main,,0,0,0,,- What are you talking about? - Nothing. Nothing.
+Dialogue: 0,0:35:59.56,0:36:01.87,CN-Main,,0,0,0,,-先别提了 我们之后再说
+Dialogue: 0,0:35:59.56,0:36:01.87,EN-Main,,0,0,0,,Let's just drop it, okay? We'll talk about it later.
+Dialogue: 0,0:36:01.87,0:36:03.50,CN-Main,,0,0,0,,-别提什么？你们在说什么？
+Dialogue: 0,0:36:01.87,0:36:03.50,EN-Main,,0,0,0,,- No, drop what?\nWhat are you talking about?
+Dialogue: 0,0:36:03.50,0:36:04.85,CN-Main,,0,0,0,,布莱恩想告诉我
+Dialogue: 0,0:36:03.50,0:36:04.85,EN-Main,,0,0,0,,- Well, Brian's trying\nto tell me that
+Dialogue: 0,0:36:04.85,0:36:07.83,CN-Main,,0,0,0,,除了尼亚加拉大瀑布地区的姑娘们
+Dialogue: 0,0:36:04.85,0:36:07.83,EN-Main,,0,0,0,,in addition to the number of girls\nin the Niagara Falls area
+Dialogue: 0,0:36:07.84,0:36:11.92,CN-Main,,0,0,0,,他最近还跟你共赴巫山云雨了
+Dialogue: 0,0:36:07.84,0:36:11.92,EN-Main,,0,0,0,,that presently you and he\nare riding the hobby horse.
+Dialogue: 0,0:36:11.92,0:36:14.59,CN-Main,,0,0,0,,-猪 -我没有 我没有
+Dialogue: 0,0:36:11.92,0:36:14.59,EN-Main,,0,0,0,,- You little pig.\n- No, I'm not. I'm n--
+Dialogue: 0,0:36:14.59,0:36:18.34,CN-Main,,0,0,0,,约翰说我是处男 我说我不是 就这样 就这样而已
+Dialogue: 0,0:36:14.59,0:36:18.34,EN-Main,,0,0,0,,John said I was a cherry\nand I said I wasn't. That's it.\nThat's all that was said.
+Dialogue: 0,0:36:18.35,0:36:20.43,CN-Main,,0,0,0,,那你为什么指克莱尔？
+Dialogue: 0,0:36:18.35,0:36:20.43,EN-Main,,0,0,0,,- Well, then what were you\nmotioning to Claire for?
+Dialogue: 0,0:36:20.43,0:36:22.93,CN-Main,,0,0,0,,我并不喜欢你这种行为 布莱恩
+Dialogue: 0,0:36:20.43,0:36:22.93,EN-Main,,0,0,0,,- You know,\nI don't appreciate this very much, Brian.
+Dialogue: 0,0:36:22.93,0:36:27.73,CN-Main,,0,0,0,,-他在说谎 -哦 那你并没有指克莱尔？
+Dialogue: 0,0:36:22.93,0:36:27.73,EN-Main,,0,0,0,,- He is lying. - Oh, you weren't\nmotioning to Claire?
+Dialogue: 0,0:36:27.73,0:36:29.06,CN-Main,,0,0,0,,你知道 他在说谎 对吧？
+Dialogue: 0,0:36:27.73,0:36:29.06,EN-Main,,0,0,0,,- You know he's lying, right?
+Dialogue: 0,0:36:29.07,0:36:32.40,CN-Main,,0,0,0,,你指没指克莱尔？
+Dialogue: 0,0:36:29.07,0:36:32.40,EN-Main,,0,0,0,,- Were you or were you not\nmotioning to Claire?
+Dialogue: 0,0:36:32.40,0:36:34.96,CN-Main,,0,0,0,,对 但是那只是因为……
+Dialogue: 0,0:36:32.40,0:36:34.96,EN-Main,,0,0,0,,- Yeah, but it was only\nbecause
+Dialogue: 0,0:36:34.96,0:36:38.41,CN-Main,,0,0,0,,我不希望她知道 我还是个处男 行吗？
+Dialogue: 0,0:36:34.96,0:36:38.41,EN-Main,,0,0,0,,I didn't want her to know I was a virgin, okay?
+Dialogue: 0,0:36:39.95,0:36:42.74,CN-Main,,0,0,0,,抱歉我还是处男 抱歉
+Dialogue: 0,0:36:39.95,0:36:42.74,EN-Main,,0,0,0,,Excuse me for being a virgin.\nI'm sorry.
+Dialogue: 0,0:36:42.75,0:36:44.96,CN-Main,,0,0,0,,为什么你不希望我知道你是处男？
+Dialogue: 0,0:36:42.75,0:36:44.96,EN-Main,,0,0,0,,- Why didn't you want me\nto know you were a virgin?
+Dialogue: 0,0:36:44.96,0:36:47.92,CN-Main,,0,0,0,,因为这是我的私事 是我的私人事情
+Dialogue: 0,0:36:44.96,0:36:47.92,EN-Main,,0,0,0,,- Because\nit's personal business. It's my personal\nprivate business.
+Dialogue: 0,0:36:47.92,0:36:51.55,CN-Main,,0,0,0,,布莱恩 听起来你根本没做过那种事
+Dialogue: 0,0:36:47.92,0:36:51.55,EN-Main,,0,0,0,,- Well, Brian,\nit doesn't sound like you're doing any business.
+Dialogue: 0,0:36:51.55,0:36:54.59,CN-Main,,0,0,0,,我觉得男人可以是处男
+Dialogue: 0,0:36:51.55,0:36:54.59,EN-Main,,0,0,0,,- I think it's okay\nfor a guy to be a virgin.
+Dialogue: 0,0:36:54.59,0:36:56.55,CN-Main,,0,0,0,,真的吗？
+Dialogue: 0,0:36:54.59,0:36:56.55,EN-Main,,0,0,0,,- You do?
+Dialogue: 0,0:37:07.85,0:37:09.43,CN-Main,,0,0,0,,袋子里有什么？
+Dialogue: 0,0:37:07.85,0:37:09.43,EN-Main,,0,0,0,,- What's in there?
+Dialogue: 0,0:37:09.44,0:37:10.77,CN-Main,,0,0,0,,你猜
+Dialogue: 0,0:37:09.44,0:37:10.77,EN-Main,,0,0,0,,- Guess.
+Dialogue: 0,0:37:10.77,0:37:12.98,CN-Main,,0,0,0,,你的午餐呢？
+Dialogue: 0,0:37:10.77,0:37:12.98,EN-Main,,0,0,0,,Where's your lunch?
+Dialogue: 0,0:37:12.98,0:37:15.11,CN-Main,,0,0,0,,你穿着呢
+Dialogue: 0,0:37:12.98,0:37:15.11,EN-Main,,0,0,0,,- You're wearing it.
+Dialogue: 0,0:37:15.11,0:37:16.61,CN-Main,,0,0,0,,你太恶心了
+Dialogue: 0,0:37:15.11,0:37:16.61,EN-Main,,0,0,0,,- You're nauseating.
+Dialogue: 0,0:37:30.63,0:37:36.01,CN-Main,,0,0,0,,-那是什么？ -寿司
+Dialogue: 0,0:37:30.63,0:37:36.01,EN-Main,,0,0,0,,- What's that? - Sushi.
+Dialogue: 0,0:37:36.01,0:37:38.80,CN-Main,,0,0,0,,寿司？
+Dialogue: 0,0:37:36.01,0:37:38.80,EN-Main,,0,0,0,,- Sushi?
+Dialogue: 0,0:37:38.80,0:37:41.76,CN-Main,,0,0,0,,米饭 生鱼 还有海苔
+Dialogue: 0,0:37:38.80,0:37:41.76,EN-Main,,0,0,0,,- Rice, raw fish, and seaweed.
+Dialogue: 0,0:37:44.68,0:37:47.98,CN-Main,,0,0,0,,你不能接受舌吻 但你要吃那些吗？
+Dialogue: 0,0:37:44.68,0:37:47.98,EN-Main,,0,0,0,,- You won't accept\na guy's tongue in your mouth and you're going to eat that?
+Dialogue: 0,0:37:47.98,0:37:50.35,CN-Main,,0,0,0,,我能吃了吗？
+Dialogue: 0,0:37:47.98,0:37:50.35,EN-Main,,0,0,0,,- Can I eat?
+Dialogue: 0,0:37:50.35,0:37:53.86,CN-Main,,0,0,0,,我不知道 试试吧
+Dialogue: 0,0:37:50.35,0:37:53.86,EN-Main,,0,0,0,,- I don't know. Give it a try.
+Dialogue: 0,0:38:29.10,0:38:30.89,CN-Main,,0,0,0,,你有意见吗？
+Dialogue: 0,0:38:29.10,0:38:30.89,EN-Main,,0,0,0,,- What's your problem?
+Dialogue: 0,0:39:30.83,0:39:32.75,CN-Main,,0,0,0,,我们要吃什么？
+Dialogue: 0,0:39:30.83,0:39:32.75,EN-Main,,0,0,0,,- What are we having?
+Dialogue: 0,0:39:32.75,0:39:34.84,CN-Main,,0,0,0,,就只是普通规格午餐
+Dialogue: 0,0:39:32.75,0:39:34.84,EN-Main,,0,0,0,,- Just your standard\nregular lunch, I guess.
+Dialogue: 0,0:39:38.71,0:39:41.47,CN-Main,,0,0,0,,-牛奶？ -汤
+Dialogue: 0,0:39:38.71,0:39:41.47,EN-Main,,0,0,0,,- Milk? - Soup.
+Dialogue: 0,0:39:45.64,0:39:48.72,CN-Main,,0,0,0,,-是苹果汁 -我识字
+Dialogue: 0,0:39:45.64,0:39:48.72,EN-Main,,0,0,0,,That's apple juice. - I can read.
+Dialogue: 0,0:39:48.72,0:39:52.60,CN-Main,,0,0,0,,花生酱果酱三明治 切边
+Dialogue: 0,0:39:48.72,0:39:52.60,EN-Main,,0,0,0,,PB and J\nwith the crusts cut off.
+Dialogue: 0,0:39:52.60,0:39:55.64,CN-Main,,0,0,0,,布莱恩 午餐很有营养嘛
+Dialogue: 0,0:39:52.60,0:39:55.64,EN-Main,,0,0,0,,Well, Brian, this is\na very nutritious lunch.
+Dialogue: 0,0:39:55.65,0:39:58.98,CN-Main,,0,0,0,,所有的食物类型都有
+Dialogue: 0,0:39:55.65,0:39:58.98,EN-Main,,0,0,0,,All the food groups\nare represented.
+Dialogue: 0,0:39:58.98,0:40:02.11,CN-Main,,0,0,0,,你妈嫁给罗杰斯先生了吗？
+Dialogue: 0,0:39:58.98,0:40:02.11,EN-Main,,0,0,0,,Did your mom\nmarry Mister Rogers?
+Dialogue: 0,0:40:02.11,0:40:04.49,CN-Main,,0,0,0,,不 强生先生
+Dialogue: 0,0:40:02.11,0:40:04.49,EN-Main,,0,0,0,,- No, Mr. Johnson.\n- Ah.
+Dialogue: 0,0:40:06.03,0:40:10.99,CN-Main,,0,0,0,,我来模仿一下 大布莱家的日常
+Dialogue: 0,0:40:06.03,0:40:10.99,EN-Main,,0,0,0,,Here's my impression\nof life at Big Bri's house.
+Dialogue: 0,0:40:16.25,0:40:18.00,CN-Main,,0,0,0,,“儿子？”
+Dialogue: 0,0:40:16.25,0:40:18.00,EN-Main,,0,0,0,,Son?
+Dialogue: 0,0:40:18.00,0:40:19.54,CN-Main,,0,0,0,,“怎么了爸爸？”
+Dialogue: 0,0:40:18.00,0:40:19.54,EN-Main,,0,0,0,,Yeah, Dad?
+Dialogue: 0,0:40:19.55,0:40:22.09,CN-Main,,0,0,0,,“今天过得怎么样？”
+Dialogue: 0,0:40:19.55,0:40:22.09,EN-Main,,0,0,0,,How was your day, pal?
+Dialogue: 0,0:40:22.09,0:40:23.54,CN-Main,,0,0,0,,“不错啊 爸爸”
+Dialogue: 0,0:40:22.09,0:40:23.54,EN-Main,,0,0,0,,Great, Dad.
+Dialogue: 0,0:40:23.54,0:40:25.13,CN-Main,,0,0,0,,“你过得怎么样？”
+Dialogue: 0,0:40:23.54,0:40:25.13,EN-Main,,0,0,0,,How's yours?
+Dialogue: 0,0:40:25.13,0:40:26.76,CN-Main,,0,0,0,,“再好不过了
+Dialogue: 0,0:40:25.13,0:40:26.76,EN-Main,,0,0,0,,Super.
+Dialogue: 0,0:40:26.76,0:40:32.26,CN-Main,,0,0,0,,儿子 你觉得这周末去钓鱼怎么样？”
+Dialogue: 0,0:40:26.76,0:40:32.26,EN-Main,,0,0,0,,Say, son, how'd you like\nto go fishing this weekend?
+Dialogue: 0,0:40:32.27,0:40:37.52,CN-Main,,0,0,0,,“很好 爸爸 但是我还要做作业”
+Dialogue: 0,0:40:32.27,0:40:37.52,EN-Main,,0,0,0,,Great, Dad. But I've got homework to do.
+Dialogue: 0,0:40:37.52,0:40:42.19,CN-Main,,0,0,0,,“没事 你可以在船上做”
+Dialogue: 0,0:40:37.52,0:40:42.19,EN-Main,,0,0,0,,That's all right, son,\nyou can do it on the boat.
+Dialogue: 0,0:40:42.19,0:40:44.53,CN-Main,,0,0,0,,“天啊
+Dialogue: 0,0:40:42.19,0:40:44.53,EN-Main,,0,0,0,,Gee.
+Dialogue: 0,0:40:45.32,0:40:49.62,CN-Main,,0,0,0,,亲爱的 我们的儿子太棒了”
+Dialogue: 0,0:40:45.32,0:40:49.62,EN-Main,,0,0,0,,Dear, isn't our son swell?
+Dialogue: 0,0:40:49.62,0:40:54.87,CN-Main,,0,0,0,,“是的 亲爱的 人生太棒了”
+Dialogue: 0,0:40:49.62,0:40:54.87,EN-Main,,0,0,0,,Yes, dear, isn't life swell?
+Dialogue: 0,0:41:07.89,0:41:10.30,CN-Main,,0,0,0,,好 那你家呢？
+Dialogue: 0,0:41:07.89,0:41:10.30,EN-Main,,0,0,0,,- All right,\nwhat about your family?
+Dialogue: 0,0:41:10.30,0:41:12.01,CN-Main,,0,0,0,,-我家？ -对
+Dialogue: 0,0:41:10.30,0:41:12.01,EN-Main,,0,0,0,,- What, mine?\n- Yeah.
+Dialogue: 0,0:41:12.01,0:41:13.68,CN-Main,,0,0,0,,很简单
+Dialogue: 0,0:41:12.01,0:41:13.68,EN-Main,,0,0,0,,- It's real easy.
+Dialogue: 0,0:41:22.19,0:41:25.69,CN-Main,,0,0,0,,“愚蠢 废物
+Dialogue: 0,0:41:22.19,0:41:25.69,EN-Main,,0,0,0,,Stupid, worthless,
+Dialogue: 0,0:41:25.70,0:41:29.82,CN-Main,,0,0,0,,没用的杀千刀的 只会吃白食的狗娘养的
+Dialogue: 0,0:41:25.70,0:41:29.82,EN-Main,,0,0,0,,no good, goddamn,\nfreeloading son of a bitch,
+Dialogue: 0,0:41:29.82,0:41:33.99,CN-Main,,0,0,0,,智障 大嘴巴 自以为懂很多的混账”
+Dialogue: 0,0:41:29.82,0:41:33.99,EN-Main,,0,0,0,,retarded, big mouth,\nknow-it-all asshole, jerk.
+Dialogue: 0,0:41:36.25,0:41:40.38,CN-Main,,0,0,0,,“你还忘了丑陋 懒惰和不尊重人……”
+Dialogue: 0,0:41:36.25,0:41:40.38,EN-Main,,0,0,0,,You forgot ugly, lazy,\nand disrespectful.
+Dialogue: 0,0:41:40.38,0:41:45.13,CN-Main,,0,0,0,,“闭嘴婊子！ 快去给我弄个火鸡派”
+Dialogue: 0,0:41:40.38,0:41:45.13,EN-Main,,0,0,0,,Shut up, bitch! Go fix me a turkey pot pie.
+Dialogue: 0,0:41:45.13,0:41:47.01,CN-Main,,0,0,0,,“你呢 爸？”
+Dialogue: 0,0:41:45.13,0:41:47.01,EN-Main,,0,0,0,,What about you, Dad?
+Dialogue: 0,0:41:47.01,0:41:49.01,CN-Main,,0,0,0,,“去你的”
+Dialogue: 0,0:41:47.01,0:41:49.01,EN-Main,,0,0,0,,Fuck you.
+Dialogue: 0,0:41:49.01,0:41:51.97,CN-Main,,0,0,0,,“不是 爸 那你自己呢？” “去你的！”
+Dialogue: 0,0:41:49.01,0:41:51.97,EN-Main,,0,0,0,,No, Dad, what about you? Fuck you!
+Dialogue: 0,0:41:51.97,0:41:54.18,CN-Main,,0,0,0,,“不是 爸 那你自己呢？”
+Dialogue: 0,0:41:51.97,0:41:54.18,EN-Main,,0,0,0,,No, Dad, what about you?
+Dialogue: 0,0:41:54.18,0:41:56.68,CN-Main,,0,0,0,,“去你的！”
+Dialogue: 0,0:41:54.18,0:41:56.68,EN-Main,,0,0,0,,Fuck you!
+Dialogue: 0,0:42:01.11,0:42:03.73,CN-Main,,0,0,0,,-是真的吗？ -有机会过来看看吗？
+Dialogue: 0,0:42:01.11,0:42:03.73,EN-Main,,0,0,0,,- Is that for real? - You want to come over\nsome time?
+Dialogue: 0,0:42:03.73,0:42:07.07,CN-Main,,0,0,0,,一派胡言 你就是装这副样子 我一个字都不信
+Dialogue: 0,0:42:03.73,0:42:07.07,EN-Main,,0,0,0,,- That's bullshit.\nIt's all part of your image. I don't believe a word of it.
+Dialogue: 0,0:42:07.07,0:42:09.56,CN-Main,,0,0,0,,-你不相信我？ -不
+Dialogue: 0,0:42:07.07,0:42:09.56,EN-Main,,0,0,0,,- You don't believe me? - No.
+Dialogue: 0,0:42:09.56,0:42:11.11,CN-Main,,0,0,0,,-不相信？ -我口吃了吗？
+Dialogue: 0,0:42:09.56,0:42:11.11,EN-Main,,0,0,0,,- No? - Did I stutter?
+Dialogue: 0,0:42:20.29,0:42:23.08,CN-Main,,0,0,0,,你相信这个吗？
+Dialogue: 0,0:42:20.29,0:42:23.08,EN-Main,,0,0,0,,- Believe this?
+Dialogue: 0,0:42:24.71,0:42:28.88,CN-Main,,0,0,0,,这是雪茄那么大 我口吃了吗？
+Dialogue: 0,0:42:24.71,0:42:28.88,EN-Main,,0,0,0,,It's about the size of a cigar.\nDo I stutter?
+Dialogue: 0,0:42:28.88,0:42:33.18,CN-Main,,0,0,0,,这就是在我家能得到的待遇 如果你在车库弄洒了油漆的话
+Dialogue: 0,0:42:28.88,0:42:33.18,EN-Main,,0,0,0,,See, this is what you get\nin my house when you spill paint\nin the garage.
+Dialogue: 0,0:42:35.89,0:42:41.06,CN-Main,,0,0,0,,我觉得我不用再和你们 这些混球坐在一起了
+Dialogue: 0,0:42:35.89,0:42:41.06,EN-Main,,0,0,0,,See, I don't think that I need\nto sit with you fucking dildos any more.
+Dialogue: 0,0:42:50.09,0:42:51.52,CN-Reaction,,0,0,0,,操！
+Dialogue: 0,0:43:12.22,0:43:16.30,CN-Main,,0,0,0,,-你不该那么说 -我怎么知道？
+Dialogue: 0,0:43:12.22,0:43:16.30,EN-Main,,0,0,0,,- You shouldn't have said that. - How did I know?
+Dialogue: 0,0:43:16.31,0:43:18.94,CN-Main,,0,0,0,,他总是满嘴胡话
+Dialogue: 0,0:43:16.31,0:43:18.94,EN-Main,,0,0,0,,I mean, he lies\nabout everything anyway.
+Dialogue: 0,0:43:38.08,0:43:39.37,CN-Main,,0,0,0,,见鬼
+Dialogue: 0,0:43:38.08,0:43:39.37,EN-Main,,0,0,0,,- Oh, shit.
+Dialogue: 0,0:43:39.37,0:43:41.08,CN-Main,,0,0,0,,这咖啡
+Dialogue: 0,0:43:39.37,0:43:41.08,EN-Main,,0,0,0,,Coffee.
+Dialogue: 0,0:43:41.08,0:43:44.71,CN-Main,,0,0,0,,像是从密西西比河底 刮上来的东西
+Dialogue: 0,0:43:41.08,0:43:44.71,EN-Main,,0,0,0,,Looks like they scraped it\noff the bottom of the Mississippi River.
+Dialogue: 0,0:43:44.58,0:43:46.14,CN-Sign,,0,0,0,,（教师休息室）
+Dialogue: 0,0:43:46.38,0:43:48.11,CN-Main,,0,0,0,,一切都被污染了
+Dialogue: 0,0:43:46.38,0:43:48.11,EN-Main,,0,0,0,,Everything's polluted.
+Dialogue: 0,0:43:48.11,0:43:50.97,CN-Main,,0,0,0,,咖啡被污染了 孩子们也被污染了
+Dialogue: 0,0:43:48.11,0:43:50.97,EN-Main,,0,0,0,,The coffee's polluted. The kids are polluted.
+Dialogue: 0,0:44:04.06,0:44:07.06,CN-Main,,0,0,0,,-你怎么知道弗农去了哪里？ -我不知道
+Dialogue: 0,0:44:04.06,0:44:07.06,EN-Main,,0,0,0,,- How do you know\nwhere Vernon went? - I don't.
+Dialogue: 0,0:44:07.07,0:44:10.11,CN-Main,,0,0,0,,那你怎么知道他什么时候回来？
+Dialogue: 0,0:44:07.07,0:44:10.11,EN-Main,,0,0,0,,- Well, then how do you know\nwhen he'll be back?
+Dialogue: 0,0:44:10.11,0:44:12.36,CN-Main,,0,0,0,,我不知道
+Dialogue: 0,0:44:10.11,0:44:12.36,EN-Main,,0,0,0,,- I don't.
+Dialogue: 0,0:44:12.36,0:44:15.91,CN-Main,,0,0,0,,当坏人感觉不错 是吧？
+Dialogue: 0,0:44:12.36,0:44:15.91,EN-Main,,0,0,0,,Being bad feels pretty good, huh?
+Dialogue: 0,0:44:18.24,0:44:20.03,CN-Main,,0,0,0,,去本德的储物柜有什么意义？
+Dialogue: 0,0:44:18.24,0:44:20.03,EN-Main,,0,0,0,,- What's the point\nof going to Bender's locker?
+Dialogue: 0,0:44:20.04,0:44:22.25,CN-Main,,0,0,0,,问倒我了
+Dialogue: 0,0:44:20.04,0:44:22.25,EN-Main,,0,0,0,,- Beats me.
+Dialogue: 0,0:44:22.25,0:44:23.87,CN-Main,,0,0,0,,这太愚蠢了
+Dialogue: 0,0:44:22.25,0:44:23.87,EN-Main,,0,0,0,,- This is so stupid.
+Dialogue: 0,0:44:23.87,0:44:26.50,CN-Main,,0,0,0,,你觉得为什么？ 我们为什么要冒着被抓的风险？
+Dialogue: 0,0:44:23.87,0:44:26.50,EN-Main,,0,0,0,,Why do they think, why are\nwe risking getting caught?
+Dialogue: 0,0:44:26.50,0:44:28.79,CN-Main,,0,0,0,,我不知道
+Dialogue: 0,0:44:26.50,0:44:28.79,EN-Main,,0,0,0,,- I don't know.
+Dialogue: 0,0:44:28.80,0:44:30.21,CN-Main,,0,0,0,,那我们又在做什么？
+Dialogue: 0,0:44:28.80,0:44:30.21,EN-Main,,0,0,0,,- So, then, what are we doing?
+Dialogue: 0,0:44:30.21,0:44:34.51,CN-Main,,0,0,0,,你再问我一个问题 我就要把你扁一顿了
+Dialogue: 0,0:44:30.21,0:44:34.51,EN-Main,,0,0,0,,- You ask me one more question\nand I'm beating the shit out of you.
+Dialogue: 0,0:44:34.51,0:44:35.97,CN-Main,,0,0,0,,抱歉
+Dialogue: 0,0:44:34.51,0:44:35.97,EN-Main,,0,0,0,,- Sorry.
+Dialogue: 0,0:44:41.43,0:44:42.81,CN-Main,,0,0,0,,你也太邋遢了
+Dialogue: 0,0:44:41.43,0:44:42.81,EN-Main,,0,0,0,,- You're such a slob.
+Dialogue: 0,0:44:42.81,0:44:44.94,CN-Main,,0,0,0,,我的女仆度假去了
+Dialogue: 0,0:44:42.81,0:44:44.94,EN-Main,,0,0,0,,- My maid's on vacation.
+Dialogue: 0,0:45:00.99,0:45:02.78,CN-Main,,0,0,0,,大麻
+Dialogue: 0,0:45:00.99,0:45:02.78,EN-Main,,0,0,0,,It's drugs.
+Dialogue: 0,0:45:02.79,0:45:04.41,CN-Main,,0,0,0,,见鬼本德 放回去
+Dialogue: 0,0:45:02.79,0:45:04.41,EN-Main,,0,0,0,,- Screw that, Bender,\nput it back.
+Dialogue: 0,0:45:04.41,0:45:06.95,CN-Main,,0,0,0,,大麻 那孩子有大麻
+Dialogue: 0,0:45:04.41,0:45:06.95,EN-Main,,0,0,0,,- Drugs.\nThe boy has marijuana.
+Dialogue: 0,0:45:09.46,0:45:11.88,CN-Main,,0,0,0,,-那就是大麻 -闭嘴 混球
+Dialogue: 0,0:45:09.46,0:45:11.88,EN-Main,,0,0,0,,That was marijuana.\n- Shut up, dick.
+Dialogue: 0,0:45:14.34,0:45:16.01,CN-Main,,0,0,0,,你赞同他吗？
+Dialogue: 0,0:45:14.34,0:45:16.01,EN-Main,,0,0,0,,- Do you approve of this?
+Dialogue: 0,0:45:27.60,0:45:29.60,CN-Main,,0,0,0,,我们从实验室穿过 然后我们会再返回
+Dialogue: 0,0:45:27.60,0:45:29.60,EN-Main,,0,0,0,,Bender: We'll cross\nthrough the lab and then we'll double back.
+Dialogue: 0,0:45:29.61,0:45:34.15,CN-Main,,0,0,0,,你最好是对的 如果弗农截住我们 那就是你的错 混球
+Dialogue: 0,0:45:29.61,0:45:34.15,EN-Main,,0,0,0,,Andy: You better be right. If Vernon cuts us off\nit's your fault, asshole.
+Dialogue: 0,0:45:34.15,0:45:35.32,CN-Main,,0,0,0,,他说什么？
+Dialogue: 0,0:45:34.15,0:45:35.32,EN-Main,,0,0,0,,Brian: What'd he say?
+Dialogue: 0,0:45:35.32,0:45:36.82,CN-Main,,0,0,0,,我们去哪里？
+Dialogue: 0,0:45:35.32,0:45:36.82,EN-Main,,0,0,0,,Where are we going?
+Dialogue: 0,0:46:19.49,0:46:21.49,CN-Main,,0,0,0,,慢着慢着 等一下 等一下
+Dialogue: 0,0:46:19.49,0:46:21.49,EN-Main,,0,0,0,,- Wait. Wait. Hold it. Hold it.
+Dialogue: 0,0:46:21.49,0:46:24.08,CN-Main,,0,0,0,,-我们得穿过食堂 -不 是活动室
+Dialogue: 0,0:46:21.49,0:46:24.08,EN-Main,,0,0,0,,We have to go through\nthe cafeteria. - No, the activities hall.
+Dialogue: 0,0:46:24.08,0:46:25.62,CN-Main,,0,0,0,,-伙计 你不知道你在说什么
+Dialogue: 0,0:46:24.08,0:46:25.62,EN-Main,,0,0,0,,- You don't know\nwhat you're talking about.
+Dialogue: 0,0:46:25.62,0:46:27.00,CN-Main,,0,0,0,,-不 是你不知道你在说什么
+Dialogue: 0,0:46:25.62,0:46:27.00,EN-Main,,0,0,0,,- No, you don't know\nwhat you're talking about.
+Dialogue: 0,0:46:27.00,0:46:28.62,CN-Main,,0,0,0,,我们受够了听命于你
+Dialogue: 0,0:46:27.00,0:46:28.62,EN-Main,,0,0,0,,Now, we're through\nlistening to you.
+Dialogue: 0,0:46:28.62,0:46:30.12,CN-Main,,0,0,0,,我们走这一边
+Dialogue: 0,0:46:28.62,0:46:30.12,EN-Main,,0,0,0,,We're going this way.
+Dialogue: 0,0:46:30.12,0:46:33.29,CN-Main,,0,0,0,,你随便去哪里 老母鸡
+Dialogue: 0,0:46:30.12,0:46:33.29,EN-Main,,0,0,0,,You go where you want,\nmother hen.
+Dialogue: 0,0:46:33.29,0:46:34.88,CN-Main,,0,0,0,,快点！
+Dialogue: 0,0:46:33.29,0:46:34.88,EN-Main,,0,0,0,,Come on!
+Dialogue: 0,0:46:56.36,0:46:58.66,CN-Main,,0,0,0,,-见鬼 -真是个好主意啊 混球
+Dialogue: 0,0:46:56.36,0:46:58.66,EN-Main,,0,0,0,,- Shit! - Great idea, jack off.
+Dialogue: 0,0:46:58.66,0:47:01.28,CN-Main,,0,0,0,,-去你的 -去你的 你为什么不听约翰的？
+Dialogue: 0,0:46:58.66,0:47:01.28,EN-Main,,0,0,0,,- Fuck you! - Fuck you!\nWhy didn't you listen to John?
+Dialogue: 0,0:47:01.28,0:47:03.66,CN-Main,,0,0,0,,我们死定了
+Dialogue: 0,0:47:01.28,0:47:03.66,EN-Main,,0,0,0,,- We're dead.
+Dialogue: 0,0:47:03.66,0:47:05.10,CN-Main,,0,0,0,,不
+Dialogue: 0,0:47:03.66,0:47:05.10,EN-Main,,0,0,0,,- No,
+Dialogue: 0,0:47:05.10,0:47:07.62,CN-Main,,0,0,0,,只有我死
+Dialogue: 0,0:47:05.10,0:47:07.62,EN-Main,,0,0,0,,just me.
+Dialogue: 0,0:47:07.62,0:47:12.25,CN-Main,,0,0,0,,-你什么意思？ -回图书馆 你们别搀和
+Dialogue: 0,0:47:07.62,0:47:12.25,EN-Main,,0,0,0,,- What do you mean?\n- Get back to the library. Keep your unit out of it.
+Dialogue: 0,0:47:12.25,0:47:16.00,CN-Song,,0,0,0,,我想当空军游骑兵
+Dialogue: 0,0:47:12.25,0:47:16.00,EN-Song,,0,0,0,,♪ I want to be\nan Air Force ranger ♪
+Dialogue: 0,0:47:16.00,0:47:19.38,CN-Song,,0,0,0,,我想过危机四伏的生活
+Dialogue: 0,0:47:16.00,0:47:19.38,EN-Song,,0,0,0,,♪ I want to lead\na life of danger ♪
+Dialogue: 0,0:47:19.38,0:47:20.67,CN-Main,,0,0,0,,那个混球
+Dialogue: 0,0:47:19.38,0:47:20.67,EN-Main,,0,0,0,,- That son of a bitch.
+Dialogue: 0,0:47:20.68,0:47:23.55,CN-Song,,0,0,0,,在我死之前
+Dialogue: 0,0:47:20.68,0:47:23.55,EN-Song,,0,0,0,,♪ Before the day I die ♪
+Dialogue: 0,0:47:23.55,0:47:26.26,CN-Song,,0,0,0,,有五样东西我想骑
+Dialogue: 0,0:47:23.55,0:47:26.26,EN-Song,,0,0,0,,♪ There's some things\nI want to buy ♪
+Dialogue: 0,0:47:26.26,0:47:28.68,CN-Song,,0,0,0,,自行车 三轮车 汽车
+Dialogue: 0,0:47:26.26,0:47:28.68,EN-Song,,0,0,0,,♪ Light bulbs,\nlight bulbs, automobile ♪
+Dialogue: 0,0:47:28.68,0:47:32.27,CN-Song,,0,0,0,,处女的妈妈 还有摩天轮
+Dialogue: 0,0:47:28.68,0:47:32.27,EN-Song,,0,0,0,,♪--and a Ferris wheel ♪
+Dialogue: 0,0:47:36.19,0:47:38.69,CN-Song,,0,0,0,,我想当空军游骑兵
+Dialogue: 0,0:47:36.19,0:47:38.69,EN-Song,,0,0,0,,♪ I want to be\nan Air Force ranger ♪
+Dialogue: 0,0:47:38.69,0:47:43.19,CN-Song,,0,0,0,,我想过危机四伏的生活
+Dialogue: 0,0:47:38.69,0:47:43.19,EN-Song,,0,0,0,,♪ I want to lead\na life of danger ♪
+Dialogue: 0,0:47:50.41,0:47:54.50,CN-Main,,0,0,0,,三 二 一！
+Dialogue: 0,0:47:50.41,0:47:54.50,EN-Main,,0,0,0,,- Three, two, one!
+Dialogue: 0,0:47:56.04,0:47:58.29,CN-Main,,0,0,0,,掌声热烈点！ 本德 本德！
+Dialogue: 0,0:47:56.04,0:47:58.29,EN-Main,,0,0,0,,Big applause!\n- Bender!
+Dialogue: 0,0:47:58.30,0:48:02.28,CN-Main,,0,0,0,,本德 这是什么？你在这里做什么？ 这是什么？
+Dialogue: 0,0:47:58.30,0:48:02.28,EN-Main,,0,0,0,,Bender! What is this?\nWhat are you doing here? What is this?
+Dialogue: 0,0:48:02.28,0:48:02.97,CN-Main,,0,0,0,,嗨
+Dialogue: 0,0:48:02.28,0:48:02.97,EN-Main,,0,0,0,,- Hi.
+Dialogue: 0,0:48:05.01,0:48:07.72,CN-Main,,0,0,0,,出去 到此为止 本德 出去 结束了
+Dialogue: 0,0:48:05.01,0:48:07.72,EN-Main,,0,0,0,,- Out. That's it, Bender. Out. It's over.
+Dialogue: 0,0:48:07.72,0:48:09.43,CN-Main,,0,0,0,,不想听听我的理由吗？
+Dialogue: 0,0:48:07.72,0:48:09.43,EN-Main,,0,0,0,,- Don't you want\nto hear my excuse?
+Dialogue: 0,0:48:09.43,0:48:10.76,CN-Main,,0,0,0,,出去
+Dialogue: 0,0:48:09.43,0:48:10.76,EN-Main,,0,0,0,,- Out!
+Dialogue: 0,0:48:10.77,0:48:13.48,CN-Main,,0,0,0,,我想尝试申请奖学金
+Dialogue: 0,0:48:10.77,0:48:13.48,EN-Main,,0,0,0,,- I'm thinking of trying out\nfor a scholarship.
+Dialogue: 0,0:48:13.48,0:48:15.44,CN-Main,,0,0,0,,球给我 本德
+Dialogue: 0,0:48:13.48,0:48:15.44,EN-Main,,0,0,0,,- Give me the ball, Bender.
+Dialogue: 0,0:48:15.44,0:48:17.23,CN-Main,,0,0,0,,球给我
+Dialogue: 0,0:48:15.44,0:48:17.23,EN-Main,,0,0,0,,Give me that ball.
+Dialogue: 0,0:48:34.54,0:48:37.00,CN-Main,,0,0,0,,拿上你的东西 我们走
+Dialogue: 0,0:48:34.54,0:48:37.00,EN-Main,,0,0,0,,Get your stuff, let's go.
+Dialogue: 0,0:48:39.09,0:48:42.34,CN-Main,,0,0,0,,这位聪明蛋先生自己跑去了体育馆
+Dialogue: 0,0:48:39.09,0:48:42.34,EN-Main,,0,0,0,,Mr. Wiseguy here\nhas taken it upon himself to go to the gymnasium.
+Dialogue: 0,0:48:42.34,0:48:43.48,CN-Main,,0,0,0,,抱歉地通知你们
+Dialogue: 0,0:48:42.34,0:48:43.48,EN-Main,,0,0,0,,I'm sorry to inform you
+Dialogue: 0,0:48:43.48,0:48:46.76,CN-Main,,0,0,0,,你们今天剩下的时间是见不到他了
+Dialogue: 0,0:48:43.48,0:48:46.76,EN-Main,,0,0,0,,you're going to be without his services\nfor the rest of the day.
+Dialogue: 0,0:48:46.76,0:48:49.76,CN-Main,,0,0,0,,呜——呜——呜
+Dialogue: 0,0:48:46.76,0:48:49.76,EN-Main,,0,0,0,,- B-O-O-H-O-O.
+Dialogue: 0,0:48:49.76,0:48:51.55,CN-Main,,0,0,0,,所有事对你来说 都是笑话是吧 本德？
+Dialogue: 0,0:48:49.76,0:48:51.55,EN-Main,,0,0,0,,- Everything's a big joke,\nhuh, Bender?
+Dialogue: 0,0:48:51.56,0:48:56.40,CN-Main,,0,0,0,,你周五拉响了假警报 假警报最有趣了 对吧？
+Dialogue: 0,0:48:51.56,0:48:56.40,EN-Main,,0,0,0,,The false alarm\nyou pulled Friday, false alarms are really funny,\naren't they?
+Dialogue: 0,0:48:56.40,0:49:00.53,CN-Main,,0,0,0,,如果你家 如果你的家人……
+Dialogue: 0,0:48:56.40,0:49:00.53,EN-Main,,0,0,0,,What if your home,\nwhat if your family,
+Dialogue: 0,0:49:00.53,0:49:02.49,CN-Main,,0,0,0,,要是你的大麻着火了呢？
+Dialogue: 0,0:49:00.53,0:49:02.49,EN-Main,,0,0,0,,what if your dope was on fire?
+Dialogue: 0,0:49:02.49,0:49:06.16,CN-Main,,0,0,0,,不可能 老师 我的大麻在强生内裤里
+Dialogue: 0,0:49:02.49,0:49:06.16,EN-Main,,0,0,0,,- Impossible, sir.\nIt's in Johnson's underwear.
+Dialogue: 0,0:49:07.41,0:49:08.86,CN-Main,,0,0,0,,你觉得他好笑吗？
+Dialogue: 0,0:49:07.41,0:49:08.86,EN-Main,,0,0,0,,- Oh, you think he's funny?
+Dialogue: 0,0:49:08.86,0:49:13.04,CN-Main,,0,0,0,,你觉得这很有趣吗？ 你觉得他也就是骂骂咧咧 是吗？
+Dialogue: 0,0:49:08.86,0:49:13.04,EN-Main,,0,0,0,,You think this is cute? You think he's bitching?\nIs that it?
+Dialogue: 0,0:49:13.04,0:49:17.37,CN-Main,,0,0,0,,我告诉你 你看着他
+Dialogue: 0,0:49:13.04,0:49:17.37,EN-Main,,0,0,0,,Let me tell you something. Look at him.
+Dialogue: 0,0:49:17.38,0:49:19.50,CN-Main,,0,0,0,,他就是个流民
+Dialogue: 0,0:49:17.38,0:49:19.50,EN-Main,,0,0,0,,He's a bum.
+Dialogue: 0,0:49:19.50,0:49:23.67,CN-Main,,0,0,0,,想看笑话吗？ 过五年再去看看约翰·本德
+Dialogue: 0,0:49:19.50,0:49:23.67,EN-Main,,0,0,0,,You want to see something funny? You go visit John Bender\nin five years,
+Dialogue: 0,0:49:23.67,0:49:26.38,CN-Main,,0,0,0,,你就知道他有多见鬼的有趣了
+Dialogue: 0,0:49:23.67,0:49:26.38,EN-Main,,0,0,0,,you'll see\nhow goddamn funny he is.
+Dialogue: 0,0:49:33.52,0:49:36.19,CN-Main,,0,0,0,,怎么了 约翰？你要哭了吗？
+Dialogue: 0,0:49:33.52,0:49:36.19,EN-Main,,0,0,0,,What's the matter, John,\nyou going to cry?
+Dialogue: 0,0:49:38.77,0:49:42.57,CN-Main,,0,0,0,,-走吧 -你的脏手离我远点！
+Dialogue: 0,0:49:38.77,0:49:42.57,EN-Main,,0,0,0,,Let's go. - Hey, keep your\nfucking hands off me!
+Dialogue: 0,0:49:43.82,0:49:46.32,CN-Main,,0,0,0,,我还期待你更有礼貌一点呢 迪克
+Dialogue: 0,0:49:43.82,0:49:46.32,EN-Main,,0,0,0,,I expect better manners\nfrom you, Dick.
+Dialogue: 0,0:49:49.20,0:49:50.58,CN-Main,,0,0,0,,这样在走廊看得更清楚
+Dialogue: 0,0:49:49.20,0:49:50.58,EN-Main,,0,0,0,,For better hallway vision.
+Dialogue: 0,0:50:02.75,0:50:04.21,CN-Main,,0,0,0,,这是最后一次了 本德
+Dialogue: 0,0:50:02.75,0:50:04.21,EN-Main,,0,0,0,,- That's the last time, Bender.
+Dialogue: 0,0:50:04.21,0:50:06.77,CN-Main,,0,0,0,,这是最后一次你让我 在这些孩子面前出丑
+Dialogue: 0,0:50:04.21,0:50:06.77,EN-Main,,0,0,0,,That's the last time\nyou ever make me look bad in front of those kids,
+Dialogue: 0,0:50:06.77,0:50:07.46,CN-Main,,0,0,0,,你听清了吗？
+Dialogue: 0,0:50:06.77,0:50:07.46,EN-Main,,0,0,0,,do you hear me?
+Dialogue: 0,0:50:07.47,0:50:09.72,CN-Main,,0,0,0,,我一年赚 31000 美元 还有自己的房子
+Dialogue: 0,0:50:07.47,0:50:09.72,EN-Main,,0,0,0,,I make $31,000 a year\nand I've got a home
+Dialogue: 0,0:50:09.72,0:50:13.22,CN-Main,,0,0,0,,我不打算为了你这样的 小混混丢掉这一切
+Dialogue: 0,0:50:09.72,0:50:13.22,EN-Main,,0,0,0,,and I'm not about to throw it\naway on some punk like you.
+Dialogue: 0,0:50:13.22,0:50:15.85,CN-Main,,0,0,0,,但是总有一天 天啊 总有一天 当你离开了这里
+Dialogue: 0,0:50:13.22,0:50:15.85,EN-Main,,0,0,0,,But someday, man, someday\nwhen you're out of here
+Dialogue: 0,0:50:15.85,0:50:18.85,CN-Main,,0,0,0,,忘记了这里 而他们也忘了你
+Dialogue: 0,0:50:15.85,0:50:18.85,EN-Main,,0,0,0,,and you've forgotten\nall about this place and they've forgotten\nall about you
+Dialogue: 0,0:50:18.85,0:50:21.73,CN-Main,,0,0,0,,你过着自己悲惨的生活
+Dialogue: 0,0:50:18.85,0:50:21.73,EN-Main,,0,0,0,,and you're wrapped up\nin your own pathetic life,
+Dialogue: 0,0:50:21.73,0:50:23.52,CN-Main,,0,0,0,,我就会去看你的
+Dialogue: 0,0:50:21.73,0:50:23.52,EN-Main,,0,0,0,,I'm going to be there.
+Dialogue: 0,0:50:25.36,0:50:26.74,CN-Main,,0,0,0,,没错
+Dialogue: 0,0:50:25.36,0:50:26.74,EN-Main,,0,0,0,,That's right.
+Dialogue: 0,0:50:26.74,0:50:28.40,CN-Main,,0,0,0,,我会把你打得生活不能自理
+Dialogue: 0,0:50:26.74,0:50:28.40,EN-Main,,0,0,0,,And I'm going to kick\nthe living shit out of you, man.
+Dialogue: 0,0:50:28.40,0:50:31.49,CN-Main,,0,0,0,,扁得你人事不省
+Dialogue: 0,0:50:28.40,0:50:31.49,EN-Main,,0,0,0,,I'm going to knock\nyour dick in the dirt.
+Dialogue: 0,0:50:33.95,0:50:36.20,CN-Main,,0,0,0,,你在威胁我吗？
+Dialogue: 0,0:50:33.95,0:50:36.20,EN-Main,,0,0,0,,- You threatening me?
+Dialogue: 0,0:50:36.20,0:50:37.49,CN-Main,,0,0,0,,你又能怎么样？
+Dialogue: 0,0:50:36.20,0:50:37.49,EN-Main,,0,0,0,,- What are you going\nto do about it?
+Dialogue: 0,0:50:39.92,0:50:41.63,CN-Main,,0,0,0,,你觉得会有人相信你吗？
+Dialogue: 0,0:50:39.92,0:50:41.63,EN-Main,,0,0,0,,You think anybody's\ngoing to believe you?
+Dialogue: 0,0:50:44.21,0:50:48.25,CN-Main,,0,0,0,,你觉得会有人相信你而不是我吗？
+Dialogue: 0,0:50:44.21,0:50:48.25,EN-Main,,0,0,0,,You think anybody is going\nto take your word over mine?
+Dialogue: 0,0:50:48.26,0:50:51.93,CN-Main,,0,0,0,,我在这儿受人尊重 大家都喜欢我 我人缘好着呢
+Dialogue: 0,0:50:48.26,0:50:51.93,EN-Main,,0,0,0,,I'm a man of respect\naround here. They love me around here.\nI'm a swell guy.
+Dialogue: 0,0:50:51.93,0:50:56.31,CN-Main,,0,0,0,,而你就是个大话精 一文不值 所有人都知道
+Dialogue: 0,0:50:51.93,0:50:56.31,EN-Main,,0,0,0,,You're a lying sack of shit\nand everybody knows it.
+Dialogue: 0,0:50:58.27,0:51:01.77,CN-Main,,0,0,0,,你不是很能打吗？ 来啊 来啊
+Dialogue: 0,0:50:58.27,0:51:01.77,EN-Main,,0,0,0,,Oh, you're a tough guy.\nHey, hey, come on, come on.
+Dialogue: 0,0:51:01.77,0:51:05.15,CN-Main,,0,0,0,,站起来 伙计！ 让我看看你到底有多能打
+Dialogue: 0,0:51:01.77,0:51:05.15,EN-Main,,0,0,0,,Get on your feet, pal. Let's find out\nhow tough you are.
+Dialogue: 0,0:51:05.15,0:51:07.32,CN-Main,,0,0,0,,我现在就想知道你有多强
+Dialogue: 0,0:51:05.15,0:51:07.32,EN-Main,,0,0,0,,I want to know right now\nhow tough you are.
+Dialogue: 0,0:51:07.32,0:51:08.82,CN-Main,,0,0,0,,来啊 我让你先出第一拳 来
+Dialogue: 0,0:51:07.32,0:51:08.82,EN-Main,,0,0,0,,Come on, I'll give you\nthe first punch.
+Dialogue: 0,0:51:08.82,0:51:12.09,CN-Main,,0,0,0,,来 冲这打 先出第一拳
+Dialogue: 0,0:51:08.82,0:51:12.09,EN-Main,,0,0,0,,Let's go. Come on. Right here. Just take the first shot,
+Dialogue: 0,0:51:12.09,0:51:15.78,CN-Main,,0,0,0,,拜托 我求你 冲这打 快
+Dialogue: 0,0:51:12.09,0:51:15.78,EN-Main,,0,0,0,,please, I'm begging you. Take a shot right here.\nCome on!
+Dialogue: 0,0:51:15.79,0:51:19.17,CN-Main,,0,0,0,,就一拳 我就要你挥一拳
+Dialogue: 0,0:51:15.79,0:51:19.17,EN-Main,,0,0,0,,Just take one shot.\nThat's all I need. Just one swing.
+Dialogue: 0,0:51:28.84,0:51:30.55,CN-Main,,0,0,0,,我想也是这样
+Dialogue: 0,0:51:28.84,0:51:30.55,EN-Main,,0,0,0,,That's what I thought.
+Dialogue: 0,0:51:32.64,0:51:34.73,CN-Main,,0,0,0,,你是个没胆的懦夫
+Dialogue: 0,0:51:32.64,0:51:34.73,EN-Main,,0,0,0,,You're a gutless turd.
+Dialogue: 0,0:51:45.99,0:51:47.99,CN-Sign,,0,0,0,,（教师洗手间）
+Dialogue: 0,0:52:14.84,0:52:19.51,CN-Main,,0,0,0,,一名金发裸女走进酒吧 一只手臂下夹着一条贵宾犬
+Dialogue: 0,0:52:14.84,0:52:19.51,EN-Main,,0,0,0,,- Naked blonde walks into a bar\nwith a poodle under one arm
+Dialogue: 0,0:52:19.52,0:52:23.44,CN-Main,,0,0,0,,另一只胳膊下夹着一大根萨拉米香肠
+Dialogue: 0,0:52:19.52,0:52:23.44,EN-Main,,0,0,0,,and a tube of salami\nunder the other.
+Dialogue: 0,0:52:23.44,0:52:26.63,CN-Main,,0,0,0,,她把狗放在桌子上
+Dialogue: 0,0:52:23.44,0:52:26.63,EN-Main,,0,0,0,,She lays the poodle\non the table,
+Dialogue: 0,0:52:26.63,0:52:31.56,CN-Main,,0,0,0,,酒保说“我猜你今晚就不要酒了”
+Dialogue: 0,0:52:26.63,0:52:31.56,EN-Main,,0,0,0,,bartender says, "I suppose you won't be\nneeding a drink."
+Dialogue: 0,0:52:31.57,0:52:33.03,CN-Main,,0,0,0,,裸女说
+Dialogue: 0,0:52:31.57,0:52:33.03,EN-Main,,0,0,0,,The naked lady says--
+Dialogue: 0,0:52:33.03,0:52:35.62,CN-Main,,0,0,0,,哦 该死！
+Dialogue: 0,0:52:33.03,0:52:35.62,EN-Main,,0,0,0,,Oh, shit!
+Dialogue: 0,0:52:36.82,0:52:38.82,CN-Main,,0,0,0,,我的上帝啊！
+Dialogue: 0,0:52:36.82,0:52:38.82,EN-Main,,0,0,0,,Vernon: Jesus Christ almighty!
+Dialogue: 0,0:52:44.75,0:52:46.63,CN-Main,,0,0,0,,我忘了铅笔
+Dialogue: 0,0:52:44.75,0:52:46.63,EN-Main,,0,0,0,,- Forgot my pencil.
+Dialogue: 0,0:52:52.09,0:52:54.38,CN-Main,,0,0,0,,见鬼的！
+Dialogue: 0,0:52:52.09,0:52:54.38,EN-Main,,0,0,0,,Vernon: Goddamn it!
+Dialogue: 0,0:52:56.47,0:53:00.39,CN-Main,,0,0,0,,到底发生了什么？
+Dialogue: 0,0:52:56.47,0:53:00.39,EN-Main,,0,0,0,,What in God's name\nis going on in here?
+Dialogue: 0,0:53:00.39,0:53:01.89,CN-Main,,0,0,0,,在吵闹什么？
+Dialogue: 0,0:53:00.39,0:53:01.89,EN-Main,,0,0,0,,What was that ruckus?
+Dialogue: 0,0:53:01.89,0:53:06.27,CN-Main,,0,0,0,,-什么吵闹？ -我刚刚在办公室听到了喧闹声
+Dialogue: 0,0:53:01.89,0:53:06.27,EN-Main,,0,0,0,,- What ruckus? - I was just in my office\nand I heard a ruckus.
+Dialogue: 0,0:53:06.27,0:53:07.94,CN-Main,,0,0,0,,-你能描述一下喧闹声吗 老师？
+Dialogue: 0,0:53:06.27,0:53:07.94,EN-Main,,0,0,0,,- Could you describe\nthe ruckus, sir?
+Dialogue: 0,0:53:07.94,0:53:10.82,CN-Main,,0,0,0,,-小心说话 年轻人 小心
+Dialogue: 0,0:53:07.94,0:53:10.82,EN-Main,,0,0,0,,- Watch your tongue,\nyoung man, watch it.
+Dialogue: 0,0:53:14.11,0:53:15.65,CN-Main,,0,0,0,,这是什么？
+Dialogue: 0,0:53:14.11,0:53:15.65,EN-Main,,0,0,0,,Vernon: What is this?\n- Whoop.
+Dialogue: 0,0:53:15.66,0:53:18.37,CN-Main,,0,0,0,,那是什么？那是什么……
+Dialogue: 0,0:53:15.66,0:53:18.37,EN-Main,,0,0,0,,- What is that?\nWhat, what is that...
+Dialogue: 0,0:53:18.37,0:53:20.70,CN-Main,,0,0,0,,-那是什么声音？ -什么声音？
+Dialogue: 0,0:53:18.37,0:53:20.70,EN-Main,,0,0,0,,What is that noise?\nAndy: What noise?
+Dialogue: 0,0:53:20.70,0:53:22.74,CN-Main,,0,0,0,,真的 老师 根本就没什么声音
+Dialogue: 0,0:53:20.70,0:53:22.74,EN-Main,,0,0,0,,Claire: Really, sir,\nthere wasn't any noise.
+Dialogue: 0,0:53:33.01,0:53:35.67,CN-Main,,0,0,0,,这个声音吗？ 你在说这个声音吗？
+Dialogue: 0,0:53:33.01,0:53:35.67,EN-Main,,0,0,0,,- That noise? Was that the noise\nyou were talking about?
+Dialogue: 0,0:53:35.68,0:53:39.51,CN-Main,,0,0,0,,不 并不是 我说的不是这个声音
+Dialogue: 0,0:53:35.68,0:53:39.51,EN-Main,,0,0,0,,- No, it wasn't. That was not the noise\nI was talking about.
+Dialogue: 0,0:53:39.51,0:53:44.64,CN-Main,,0,0,0,,我这次也许没有抓到现行 但是我下一次一定会
+Dialogue: 0,0:53:39.51,0:53:44.64,EN-Main,,0,0,0,,- Now, I may not have\ncaught you in the act this time, but you can bet I will.
+Dialogue: 0,0:53:46.77,0:53:48.94,CN-Main,,0,0,0,,你尽管等着瞧吧 小姐
+Dialogue: 0,0:53:46.77,0:53:48.94,EN-Main,,0,0,0,,- You make book on that, missy.
+Dialogue: 0,0:53:48.94,0:53:52.82,CN-Main,,0,0,0,,还有你 我是不会被耍着玩的
+Dialogue: 0,0:53:48.94,0:53:52.82,EN-Main,,0,0,0,,And you, I will not be\nmade a fool of.
+Dialogue: 0,0:54:10.13,0:54:11.46,CN-Main,,0,0,0,,真的是意外
+Dialogue: 0,0:54:10.13,0:54:11.46,EN-Main,,0,0,0,,- It was an accident.
+Dialogue: 0,0:54:11.46,0:54:13.50,CN-Main,,0,0,0,,你个混球
+Dialogue: 0,0:54:11.46,0:54:13.50,EN-Main,,0,0,0,,- You're an asshole.
+Dialogue: 0,0:54:14.71,0:54:16.46,CN-Main,,0,0,0,,告我啊
+Dialogue: 0,0:54:14.71,0:54:16.46,EN-Main,,0,0,0,,- Sue me.
+Dialogue: 0,0:54:21.97,0:54:25.35,CN-Main,,0,0,0,,亚哈船长 能把我的大麻都还来吗？
+Dialogue: 0,0:54:21.97,0:54:25.35,EN-Main,,0,0,0,,- So Ahab, can I have\nall my doobage?
+Dialogue: 0,0:54:34.03,0:54:37.66,CN-Main,,0,0,0,,喂 窝囊废 你不要在这抽
+Dialogue: 0,0:54:34.03,0:54:37.66,EN-Main,,0,0,0,,- Yo, wasteoid. You're not going to blaze up\nin here.
+Dialogue: 0,0:55:06.19,0:55:07.26,CN-Reaction,,0,0,0,,我不去
+Dialogue: 0,0:55:07.32,0:55:08.49,CN-Reaction,,0,0,0,,我也不去
+Dialogue: 0,0:55:24.12,0:55:27.42,CN-Main,,0,0,0,,见鬼
+Dialogue: 0,0:55:24.12,0:55:27.42,EN-Main,,0,0,0,,- (sighs) Shit.
+Dialogue: 0,0:55:42.46,0:55:44.40,CN-Sign,,0,0,0,,（地下室）
+Dialogue: 0,0:56:23.30,0:56:27.60,CN-Main,,0,0,0,,妞儿们是受不了烟的 这是事实
+Dialogue: 0,0:56:23.30,0:56:27.60,EN-Main,,0,0,0,,Chicks cannot hold their smoke. That's what it is.
+Dialogue: 0,0:56:32.14,0:56:34.73,CN-Main,,0,0,0,,你知道我有多受欢迎吗？
+Dialogue: 0,0:56:32.14,0:56:34.73,EN-Main,,0,0,0,,- Do you know how popular I am?
+Dialogue: 0,0:56:34.73,0:56:36.07,CN-Main,,0,0,0,,我太受欢迎了
+Dialogue: 0,0:56:34.73,0:56:36.07,EN-Main,,0,0,0,,I'm so popular,
+Dialogue: 0,0:56:36.07,0:56:39.69,CN-Main,,0,0,0,,这学校里的每个人都非常爱我
+Dialogue: 0,0:56:36.07,0:56:39.69,EN-Main,,0,0,0,,everybody\nloves me so much at this school.
+Dialogue: 0,0:56:39.69,0:56:42.49,CN-Main,,0,0,0,,可怜的宝宝
+Dialogue: 0,0:56:39.69,0:56:42.49,EN-Main,,0,0,0,,Brian: Poor baby. (laughing)
+Dialogue: 0,0:56:49.91,0:56:52.50,CN-Main,,0,0,0,,五
+Dialogue: 0,0:56:49.91,0:56:52.50,EN-Main,,0,0,0,,Five.
+Dialogue: 0,0:57:54.33,0:57:56.36,CN-Sign,,0,0,0,,（外语）
+Dialogue: 0,0:58:03.28,0:58:05.61,CN-Main,,0,0,0,,先生……
+Dialogue: 0,0:58:03.28,0:58:05.61,EN-Main,,0,0,0,,- Mister...
+Dialogue: 0,0:58:05.61,0:58:07.65,CN-Main,,0,0,0,,迪尔尼先生
+Dialogue: 0,0:58:05.61,0:58:07.65,EN-Main,,0,0,0,,Oh, Mr. Tierney.
+Dialogue: 0,0:58:07.66,0:58:11.91,CN-Main,,0,0,0,,轻微精神异常史
+Dialogue: 0,0:58:07.66,0:58:11.91,EN-Main,,0,0,0,,A history\nof slight mental illness.
+Dialogue: 0,0:58:13.33,0:58:15.04,CN-Main,,0,0,0,,怪不得他一团糟
+Dialogue: 0,0:58:13.33,0:58:15.04,EN-Main,,0,0,0,,No wonder he's so fucked up.
+Dialogue: 0,0:58:15.04,0:58:16.04,CN-Main,,0,0,0,,下午好 迪克
+Dialogue: 0,0:58:15.04,0:58:16.04,EN-Main,,0,0,0,,- Afternoon, Dick.
+Dialogue: 0,0:58:16.04,0:58:18.71,CN-Main,,0,0,0,,你好啊 卡尔 还好吗？
+Dialogue: 0,0:58:16.04,0:58:18.71,EN-Main,,0,0,0,,- Hey, Carl, how you doing?
+Dialogue: 0,0:58:18.71,0:58:20.21,CN-Main,,0,0,0,,-不错 -很好 在忙什么？
+Dialogue: 0,0:58:18.71,0:58:20.21,EN-Main,,0,0,0,,- Good.\n- Good. What's up?
+Dialogue: 0,0:58:20.21,0:58:23.67,CN-Main,,0,0,0,,没忙什么 发生了什么？ 你为什么在地下室翻档案？
+Dialogue: 0,0:58:20.21,0:58:23.67,EN-Main,,0,0,0,,- Not much.\nWhat's happening? What are you doing\nin the basement files?
+Dialogue: 0,0:58:23.67,0:58:26.59,CN-Main,,0,0,0,,没事 什么都没有 我就是做些家庭作业
+Dialogue: 0,0:58:23.67,0:58:26.59,EN-Main,,0,0,0,,- Oh, nothing. Nothing here. I'm just doing\na little homework here.
+Dialogue: 0,0:58:26.59,0:58:27.97,CN-Main,,0,0,0,,-作业吗？ -对
+Dialogue: 0,0:58:26.59,0:58:27.97,EN-Main,,0,0,0,,- Homework, huh?\n- Yeah.
+Dialogue: 0,0:58:31.10,0:58:34.06,CN-Main,,0,0,0,,机密文件 是吧？
+Dialogue: 0,0:58:31.10,0:58:34.06,EN-Main,,0,0,0,,- Confidential files, huh?
+Dialogue: 0,0:58:34.06,0:58:37.37,CN-Main,,0,0,0,,听着 卡尔 这里是非常敏感的区域 我可以告诉你
+Dialogue: 0,0:58:34.06,0:58:37.37,EN-Main,,0,0,0,,- Well, look, Carl,\nthis is a highly sensitive area and I tell you something,
+Dialogue: 0,0:58:37.37,0:58:40.73,CN-Main,,0,0,0,,有人会受到很大很大的羞辱
+Dialogue: 0,0:58:37.37,0:58:40.73,EN-Main,,0,0,0,,certain people would be very, very embarrassed.
+Dialogue: 0,0:58:40.73,0:58:42.03,CN-Main,,0,0,0,,那就再好不过了
+Dialogue: 0,0:58:40.73,0:58:42.03,EN-Main,,0,0,0,,I would really appreciate it
+Dialogue: 0,0:58:42.03,0:58:47.73,CN-Main,,0,0,0,,如果 如果你能保密的话
+Dialogue: 0,0:58:42.03,0:58:47.73,EN-Main,,0,0,0,,if this would be something that you and I\ncould keep between us.
+Dialogue: 0,0:58:47.74,0:58:50.73,CN-Main,,0,0,0,,-那你要为我做什么呢？ -你想要什么呢？
+Dialogue: 0,0:58:47.74,0:58:50.73,EN-Main,,0,0,0,,- What are you going\nto do for me, man? - What would you like?
+Dialogue: 0,0:58:50.73,0:58:52.24,CN-Main,,0,0,0,,你有 50 块吗？
+Dialogue: 0,0:58:50.73,0:58:52.24,EN-Main,,0,0,0,,- You got 50 bucks?
+Dialogue: 0,0:58:52.24,0:58:54.95,CN-Main,,0,0,0,,-什么？ -50 块
+Dialogue: 0,0:58:52.24,0:58:54.95,EN-Main,,0,0,0,,- What?\n- 50 bucks.
+Dialogue: 0,0:58:57.25,0:58:58.75,CN-Main,,0,0,0,,不不不 伙计
+Dialogue: 0,0:58:57.25,0:58:58.75,EN-Main,,0,0,0,,- No, no, no, man.
+Dialogue: 0,0:58:58.75,0:59:02.38,CN-Main,,0,0,0,,你有中间名吗？
+Dialogue: 0,0:58:58.75,0:59:02.38,EN-Main,,0,0,0,,No, you got a middle name?
+Dialogue: 0,0:59:02.38,0:59:04.05,CN-Main,,0,0,0,,对 猜猜看
+Dialogue: 0,0:59:02.38,0:59:04.05,EN-Main,,0,0,0,,- Yeah, guess.
+Dialogue: 0,0:59:04.05,0:59:09.30,CN-Main,,0,0,0,,你的中间名是拉尔夫 听起来像吐
+Dialogue: 0,0:59:04.05,0:59:09.30,EN-Main,,0,0,0,,- Your middle name is Ralph,\nas in puke.
+Dialogue: 0,0:59:09.30,0:59:13.39,CN-Main,,0,0,0,,你的生日是 3 月 12 日 你身高 176 厘米
+Dialogue: 0,0:59:09.30,0:59:13.39,EN-Main,,0,0,0,,Your birth date's March 12th,\nyou're 5'9 1/2",
+Dialogue: 0,0:59:13.39,0:59:14.84,CN-Main,,0,0,0,,你体重 59 公斤
+Dialogue: 0,0:59:13.39,0:59:14.84,EN-Main,,0,0,0,,you weigh 130 pounds
+Dialogue: 0,0:59:14.84,0:59:18.09,CN-Main,,0,0,0,,你的社保号是
+Dialogue: 0,0:59:14.84,0:59:18.09,EN-Main,,0,0,0,,and your social security number is
+Dialogue: 0,0:59:18.09,0:59:23.81,CN-Main,,0,0,0,,049-38-0913
+Dialogue: 0,0:59:18.09,0:59:23.81,EN-Main,,0,0,0,,049-38-0913.
+Dialogue: 0,0:59:25.32,0:59:28.95,CN-Main,,0,0,0,,-你是灵媒吗？ -不
+Dialogue: 0,0:59:25.32,0:59:28.95,EN-Main,,0,0,0,,- Wow, are you psychic? - No.
+Dialogue: 0,0:59:30.99,0:59:33.79,CN-Main,,0,0,0,,你介意告诉我 你是怎么知道这些的吗？
+Dialogue: 0,0:59:30.99,0:59:33.79,EN-Main,,0,0,0,,- Would you mind telling me\nhow you know all this about me?
+Dialogue: 0,0:59:38.16,0:59:39.74,CN-Main,,0,0,0,,我偷了你的钱包
+Dialogue: 0,0:59:38.16,0:59:39.74,EN-Main,,0,0,0,,- I stole your wallet.
+Dialogue: 0,0:59:39.75,0:59:40.96,CN-Main,,0,0,0,,-还给我 -不
+Dialogue: 0,0:59:39.75,0:59:40.96,EN-Main,,0,0,0,,- Give it to me.\n- No.
+Dialogue: 0,0:59:40.96,0:59:42.67,CN-Main,,0,0,0,,给我
+Dialogue: 0,0:59:40.96,0:59:42.67,EN-Main,,0,0,0,,- Give it.
+Dialogue: 0,0:59:44.00,0:59:46.37,CN-Main,,0,0,0,,-太好了 你也是个贼是吧？ -我不是贼
+Dialogue: 0,0:59:44.00,0:59:46.37,EN-Main,,0,0,0,,This is great.\nYou're a thief, too, huh? - I'm not a thief.
+Dialogue: 0,0:59:46.38,0:59:49.30,CN-Main,,0,0,0,,-多重天分 -你的钱包有什么好偷？
+Dialogue: 0,0:59:46.38,0:59:49.30,EN-Main,,0,0,0,,- Multi-talented. - What's there to steal?
+Dialogue: 0,0:59:49.30,0:59:51.92,CN-Main,,0,0,0,,-只有两块钱和一张走光照 -什么？
+Dialogue: 0,0:59:49.30,0:59:51.92,EN-Main,,0,0,0,,Two bucks and a beaver shot. - A what?
+Dialogue: 0,0:59:51.93,0:59:54.51,CN-Main,,0,0,0,,他藏了张裸照在钱包里 我看见了 真够变态的
+Dialogue: 0,0:59:51.93,0:59:54.51,EN-Main,,0,0,0,,- He's got a nudie picture\nin there. I saw it. It's perverted.
+Dialogue: 0,0:59:54.51,0:59:55.76,CN-Main,,0,0,0,,好 我们来看看
+Dialogue: 0,0:59:54.51,0:59:55.76,EN-Main,,0,0,0,,- All right, let's see it.
+Dialogue: 0,1:00:04.36,1:00:08.28,CN-Main,,0,0,0,,-这些都是你的女朋友吗？ -其中一些是
+Dialogue: 0,1:00:04.36,1:00:08.28,EN-Main,,0,0,0,,- Are all these\nyour girlfriends? - Some of them.
+Dialogue: 0,1:00:08.28,1:00:09.78,CN-Main,,0,0,0,,那剩下的呢？
+Dialogue: 0,1:00:08.28,1:00:09.78,EN-Main,,0,0,0,,- What about the others?
+Dialogue: 0,1:00:09.78,1:00:11.86,CN-Main,,0,0,0,,有一些我把她们当女朋友
+Dialogue: 0,1:00:09.78,1:00:11.86,EN-Main,,0,0,0,,- Well, some I consider\nmy girlfriends
+Dialogue: 0,1:00:11.86,1:00:16.08,CN-Main,,0,0,0,,-另一些我还在考虑 -考虑什么？
+Dialogue: 0,1:00:11.86,1:00:16.08,EN-Main,,0,0,0,,and some I just consider. - Consider what?
+Dialogue: 0,1:00:16.08,1:00:19.00,CN-Main,,0,0,0,,考虑要不要和她们玩玩
+Dialogue: 0,1:00:16.08,1:00:19.00,EN-Main,,0,0,0,,- Whether or not I want\nto hang out with them.
+Dialogue: 0,1:00:19.00,1:00:22.46,CN-Main,,0,0,0,,你不相信一夫一妻制？
+Dialogue: 0,1:00:19.00,1:00:22.46,EN-Main,,0,0,0,,- You don't believe\nin just one guy, one girl?
+Dialogue: 0,1:00:22.46,1:00:27.25,CN-Main,,0,0,0,,-你信吗？ -当然 本该如此
+Dialogue: 0,1:00:22.46,1:00:27.25,EN-Main,,0,0,0,,- Do you?\n- Yeah. That's the way it should be.
+Dialogue: 0,1:00:27.25,1:00:30.88,CN-Main,,0,0,0,,-我不信 -为什么？
+Dialogue: 0,1:00:27.25,1:00:30.88,EN-Main,,0,0,0,,- Not for me. - Why not?
+Dialogue: 0,1:00:30.88,1:00:33.01,CN-Main,,0,0,0,,你钱包里怎么这么多破烂？
+Dialogue: 0,1:00:30.88,1:00:33.01,EN-Main,,0,0,0,,- How come you got\nso much shit in your purse?
+Dialogue: 0,1:00:33.01,1:00:36.93,CN-Main,,0,0,0,,-你为什么有这么多女朋友？ -我先问你的
+Dialogue: 0,1:00:33.01,1:00:36.93,EN-Main,,0,0,0,,- How come you have\nso many girlfriends? - I asked you first.
+Dialogue: 0,1:00:36.93,1:00:41.01,CN-Main,,0,0,0,,我不知道 可能是因为我什么都不扔吧
+Dialogue: 0,1:00:36.93,1:00:41.01,EN-Main,,0,0,0,,- I don't know. I guess I never\nthrow anything away.
+Dialogue: 0,1:00:41.02,1:00:43.15,CN-Main,,0,0,0,,我也是
+Dialogue: 0,1:00:41.02,1:00:43.15,EN-Main,,0,0,0,,- Neither do I.
+Dialogue: 0,1:00:44.48,1:00:47.90,CN-Main,,0,0,0,,这是我见过最糟糕的假身份证
+Dialogue: 0,1:00:44.48,1:00:47.90,EN-Main,,0,0,0,,- This is the worst\nfake I.D. I've ever seen.
+Dialogue: 0,1:00:48.50,1:00:49.07,CN-Reaction,,0,0,0,,什么？
+Dialogue: 0,1:00:49.44,1:00:51.82,CN-Main,,0,0,0,,你发现你给自己 编了个 68 岁的年龄吗？
+Dialogue: 0,1:00:49.44,1:00:51.82,EN-Main,,0,0,0,,You realize\nyou made yourself 68?
+Dialogue: 0,1:00:51.82,1:00:55.78,CN-Main,,0,0,0,,-我知道 我知道 我搞错了 -你要假身份证干什么？
+Dialogue: 0,1:00:51.82,1:00:55.78,EN-Main,,0,0,0,,- Oh, I know, I know.\nI goofed it. - What do you need\na fake I.D. for?
+Dialogue: 0,1:00:55.78,1:00:56.99,CN-Main,,0,0,0,,我就可以投票了
+Dialogue: 0,1:00:55.78,1:00:56.99,EN-Main,,0,0,0,,- So I can vote.
+Dialogue: 0,1:00:59.08,1:01:01.33,CN-Main,,0,0,0,,你想看看我包里有什么吗？
+Dialogue: 0,1:00:59.08,1:01:01.33,EN-Main,,0,0,0,,- You want to see\nwhat's in my bag?
+Dialogue: 0,1:01:01.33,1:01:02.75,CN-Main,,0,0,0,,-不想 -不想
+Dialogue: 0,1:01:01.33,1:01:02.75,EN-Main,,0,0,0,,- No.\n- No.
+Dialogue: 0,1:01:18.43,1:01:20.89,CN-Main,,0,0,0,,见鬼
+Dialogue: 0,1:01:18.43,1:01:20.89,EN-Main,,0,0,0,,- Holy shit.
+Dialogue: 0,1:01:20.89,1:01:22.27,CN-Main,,0,0,0,,这都是什么？
+Dialogue: 0,1:01:20.89,1:01:22.27,EN-Main,,0,0,0,,What is all that stuff?
+Dialogue: 0,1:01:22.27,1:01:25.98,CN-Main,,0,0,0,,你总是在包里装这么多东西吗？
+Dialogue: 0,1:01:22.27,1:01:25.98,EN-Main,,0,0,0,,- Do you always carry\nthis much shit in your bag?
+Dialogue: 0,1:01:25.98,1:01:27.81,CN-Main,,0,0,0,,对
+Dialogue: 0,1:01:25.98,1:01:27.81,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,1:01:27.81,1:01:31.15,CN-Main,,0,0,0,,我总是装这么多东西
+Dialogue: 0,1:01:27.81,1:01:31.15,EN-Main,,0,0,0,,I always carry this much shit\nin my bag.
+Dialogue: 0,1:01:32.57,1:01:36.07,CN-Main,,0,0,0,,谁知道什么时候就得跑路
+Dialogue: 0,1:01:32.57,1:01:36.07,EN-Main,,0,0,0,,You never know\nwhen you may have to jam.
+Dialogue: 0,1:01:36.07,1:01:39.53,CN-Main,,0,0,0,,你要当拎着购物袋的流浪婆吗？
+Dialogue: 0,1:01:36.07,1:01:39.53,EN-Main,,0,0,0,,- Are you going to be like\na shopping bag lady?
+Dialogue: 0,1:01:39.53,1:01:42.12,CN-Main,,0,0,0,,就是坐在小巷中
+Dialogue: 0,1:01:39.53,1:01:42.12,EN-Main,,0,0,0,,You know, like,\nsit in alleyways and, like,
+Dialogue: 0,1:01:42.12,1:01:45.54,CN-Main,,0,0,0,,和建筑物对话 穿着男式鞋的那种？
+Dialogue: 0,1:01:42.12,1:01:45.54,EN-Main,,0,0,0,,talk to buildings\nand wear men's shoes and that kind of thing?
+Dialogue: 0,1:01:45.54,1:01:48.29,CN-Main,,0,0,0,,我该做什么就做什么
+Dialogue: 0,1:01:45.54,1:01:48.29,EN-Main,,0,0,0,,- I'll do what I have to do.
+Dialogue: 0,1:01:48.29,1:01:51.46,CN-Main,,0,0,0,,你为什么该做这些事情呢？
+Dialogue: 0,1:01:48.29,1:01:51.46,EN-Main,,0,0,0,,- Why do you have\nto do anything?
+Dialogue: 0,1:01:51.46,1:01:54.09,CN-Main,,0,0,0,,我的家庭生活
+Dialogue: 0,1:01:51.46,1:01:54.09,EN-Main,,0,0,0,,- My home life...
+Dialogue: 0,1:01:54.09,1:01:57.43,CN-Main,,0,0,0,,不尽如人意
+Dialogue: 0,1:01:54.09,1:01:57.43,EN-Main,,0,0,0,,is unsatisfying.
+Dialogue: 0,1:01:57.43,1:01:58.07,CN-Main,,0,0,0,,所以你是说
+Dialogue: 0,1:01:57.43,1:01:58.07,EN-Main,,0,0,0,,- So you're saying
+Dialogue: 0,1:01:58.07,1:02:01.43,CN-Main,,0,0,0,,你将自己 暴露在充满暴力危险的芝加哥街头
+Dialogue: 0,1:01:58.07,1:02:01.43,EN-Main,,0,0,0,,you'd subject yourself to the violent dangers\nof these Chicago streets
+Dialogue: 0,1:02:01.43,1:02:03.56,CN-Main,,0,0,0,,就因为你的家庭生活不尽如人意？
+Dialogue: 0,1:02:01.43,1:02:03.56,EN-Main,,0,0,0,,because your home life\nis unsatisfying?
+Dialogue: 0,1:02:03.56,1:02:05.98,CN-Main,,0,0,0,,我不用离家出走流落街头
+Dialogue: 0,1:02:03.56,1:02:05.98,EN-Main,,0,0,0,,- I don't have to run away\nand live in the street.
+Dialogue: 0,1:02:05.98,1:02:08.15,CN-Main,,0,0,0,,我可以离家出走 去看大海
+Dialogue: 0,1:02:05.98,1:02:08.15,EN-Main,,0,0,0,,I can run away\nand I can go to the ocean.
+Dialogue: 0,1:02:08.15,1:02:09.86,CN-Main,,0,0,0,,我可以去乡村 我可以去山里
+Dialogue: 0,1:02:08.15,1:02:09.86,EN-Main,,0,0,0,,I can go to the country.\nI can go to the mountains.
+Dialogue: 0,1:02:09.86,1:02:13.20,CN-Main,,0,0,0,,我可以去以色列 非洲 阿富汗
+Dialogue: 0,1:02:09.86,1:02:13.20,EN-Main,,0,0,0,,I can go to Israel,\nAfrica, Afghanistan.
+Dialogue: 0,1:02:22.62,1:02:24.83,CN-Main,,0,0,0,,安迪 你也来聊聊？
+Dialogue: 0,1:02:22.62,1:02:24.83,EN-Main,,0,0,0,,- Andy, you want\nto get in on this?
+Dialogue: 0,1:02:24.83,1:02:27.92,CN-Main,,0,0,0,,艾莉森说她想离家出走
+Dialogue: 0,1:02:24.83,1:02:27.92,EN-Main,,0,0,0,,Allison here says\nshe wants to run away
+Dialogue: 0,1:02:27.92,1:02:31.84,CN-Main,,0,0,0,,因为她的家庭生活不尽如人意
+Dialogue: 0,1:02:27.92,1:02:31.84,EN-Main,,0,0,0,,because her home life\nis unsatisfying.
+Dialogue: 0,1:02:33.55,1:02:37.30,CN-Main,,0,0,0,,家家有本难念的经
+Dialogue: 0,1:02:33.55,1:02:37.30,EN-Main,,0,0,0,,- Well, everyone's home life\nis unsatisfying.
+Dialogue: 0,1:02:37.30,1:02:40.18,CN-Main,,0,0,0,,如果都很完美的话 人们会和父母住一辈子的
+Dialogue: 0,1:02:37.30,1:02:40.18,EN-Main,,0,0,0,,And if it wasn't, people would\nlive with their parents forever.
+Dialogue: 0,1:02:40.18,1:02:44.64,CN-Main,,0,0,0,,对 我理解 但她的情况不止如此
+Dialogue: 0,1:02:40.18,1:02:44.64,EN-Main,,0,0,0,,- Yeah, yeah. I understand,\nbut I think hers goes beyond what, you know,
+Dialogue: 0,1:02:44.64,1:02:49.02,CN-Main,,0,0,0,,比你我所说的普通不如意更糟
+Dialogue: 0,1:02:44.64,1:02:49.02,EN-Main,,0,0,0,,guys like you and me consider normal unsatisfying.
+Dialogue: 0,1:02:49.02,1:02:52.94,CN-Main,,0,0,0,,算了 别提了 一切都很好
+Dialogue: 0,1:02:49.02,1:02:52.94,EN-Main,,0,0,0,,- Never mind, forget it,\neverything's cool.
+Dialogue: 0,1:02:52.94,1:02:55.32,CN-Main,,0,0,0,,-到底怎么了？ -不
+Dialogue: 0,1:02:52.94,1:02:55.32,EN-Main,,0,0,0,,- What's the deal?\n- No.
+Dialogue: 0,1:02:55.32,1:02:57.49,CN-Main,,0,0,0,,没怎么 体招生
+Dialogue: 0,1:02:55.32,1:02:57.49,EN-Main,,0,0,0,,There's no deal, sport-o.
+Dialogue: 0,1:02:57.49,1:03:00.07,CN-Main,,0,0,0,,-别提了 让我一个人静静 -慢着
+Dialogue: 0,1:02:57.49,1:03:00.07,EN-Main,,0,0,0,,Forget it. Leave me alone.\n- Wait a minute.
+Dialogue: 0,1:03:00.07,1:03:03.32,CN-Main,,0,0,0,,你在包里放着那么多破烂
+Dialogue: 0,1:03:00.07,1:03:03.32,EN-Main,,0,0,0,,Now, you're carrying all that\ncrap around in your purse.
+Dialogue: 0,1:03:03.33,1:03:04.98,CN-Main,,0,0,0,,你不是真的想离家出走
+Dialogue: 0,1:03:03.33,1:03:04.98,EN-Main,,0,0,0,,Either you really want\nto run away
+Dialogue: 0,1:03:04.98,1:03:07.62,CN-Main,,0,0,0,,就是希望人们认为你想离家出走
+Dialogue: 0,1:03:04.98,1:03:07.62,EN-Main,,0,0,0,,or you want people to think you want to run away.
+Dialogue: 0,1:03:07.62,1:03:09.96,CN-Main,,0,0,0,,去吃屎吧你
+Dialogue: 0,1:03:07.62,1:03:09.96,EN-Main,,0,0,0,,- Eat shit.
+Dialogue: 0,1:03:11.25,1:03:15.05,CN-Main,,0,0,0,,这姑娘是离群索居的 好吗？
+Dialogue: 0,1:03:11.25,1:03:15.05,EN-Main,,0,0,0,,- The girl is an island\nwith herself.
+Dialogue: 0,1:03:25.39,1:03:28.27,CN-Main,,0,0,0,,你好
+Dialogue: 0,1:03:25.39,1:03:28.27,EN-Main,,0,0,0,,- Hi.
+Dialogue: 0,1:03:28.27,1:03:30.52,CN-Main,,0,0,0,,-想聊聊吗？ -不想
+Dialogue: 0,1:03:28.27,1:03:30.52,EN-Main,,0,0,0,,You want to talk? - No.
+Dialogue: 0,1:03:30.52,1:03:35.48,CN-Main,,0,0,0,,-为什么不？ -滚开
+Dialogue: 0,1:03:30.52,1:03:35.48,EN-Main,,0,0,0,,- Why not? - Go away.
+Dialogue: 0,1:03:35.48,1:03:38.24,CN-Main,,0,0,0,,-你想让我去哪？ -就 滚开
+Dialogue: 0,1:03:35.48,1:03:38.24,EN-Main,,0,0,0,,- Where do you want me to go? - Go away!
+Dialogue: 0,1:03:48.58,1:03:52.00,CN-Main,,0,0,0,,-你有问题 -我是有问题的人？
+Dialogue: 0,1:03:48.58,1:03:52.00,EN-Main,,0,0,0,,You have problems. - Oh, I have problems?
+Dialogue: 0,1:03:52.00,1:03:55.04,CN-Main,,0,0,0,,别人告诉你做什么 你就做什么 这是个问题
+Dialogue: 0,1:03:52.00,1:03:55.04,EN-Main,,0,0,0,,- You do everything\neverybody ever tells you to do. That is a problem.
+Dialogue: 0,1:03:55.04,1:03:55.73,CN-Main,,0,0,0,,好吧 算你对
+Dialogue: 0,1:03:55.04,1:03:55.73,EN-Main,,0,0,0,,- Okay, fine.
+Dialogue: 0,1:03:55.73,1:03:58.33,CN-Main,,0,0,0,,但我可没把包倒在沙发上
+Dialogue: 0,1:03:55.73,1:03:58.33,EN-Main,,0,0,0,,But I didn't dump my purse out on the couch
+Dialogue: 0,1:03:58.33,1:04:01.30,CN-Main,,0,0,0,,拉着大家听我的烦恼
+Dialogue: 0,1:03:58.33,1:04:01.30,EN-Main,,0,0,0,,and invite\npeople into my problems,
+Dialogue: 0,1:04:01.30,1:04:03.01,CN-Main,,0,0,0,,我有吗？
+Dialogue: 0,1:04:01.30,1:04:03.01,EN-Main,,0,0,0,,did I?
+Dialogue: 0,1:04:08.18,1:04:11.31,CN-Main,,0,0,0,,所以到底怎么了？
+Dialogue: 0,1:04:08.18,1:04:11.31,EN-Main,,0,0,0,,So what's wrong?
+Dialogue: 0,1:04:11.31,1:04:12.94,CN-Main,,0,0,0,,是怎么回事？
+Dialogue: 0,1:04:11.31,1:04:12.94,EN-Main,,0,0,0,,What is it?
+Dialogue: 0,1:04:17.78,1:04:19.57,CN-Main,,0,0,0,,很糟糕吗？
+Dialogue: 0,1:04:17.78,1:04:19.57,EN-Main,,0,0,0,,Is it bad?
+Dialogue: 0,1:04:19.57,1:04:22.20,CN-Main,,0,0,0,,非常糟糕？
+Dialogue: 0,1:04:19.57,1:04:22.20,EN-Main,,0,0,0,,Real bad?
+Dialogue: 0,1:04:22.20,1:04:23.29,CN-Main,,0,0,0,,父母吗？
+Dialogue: 0,1:04:22.20,1:04:23.29,EN-Main,,0,0,0,,Parents?
+Dialogue: 0,1:04:39.34,1:04:41.13,CN-Main,,0,0,0,,对
+Dialogue: 0,1:04:39.34,1:04:41.13,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,1:04:50.77,1:04:52.48,CN-Main,,0,0,0,,他们对你做了什么？
+Dialogue: 0,1:04:50.77,1:04:52.48,EN-Main,,0,0,0,,- What did they do to you?
+Dialogue: 0,1:04:55.31,1:04:57.52,CN-Main,,0,0,0,,他们无视我
+Dialogue: 0,1:04:55.31,1:04:57.52,EN-Main,,0,0,0,,- They ignore me.
+Dialogue: 0,1:04:59.36,1:05:00.49,CN-Main,,0,0,0,,是啊
+Dialogue: 0,1:04:59.36,1:05:00.49,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,1:05:03.70,1:05:05.37,CN-Main,,0,0,0,,对
+Dialogue: 0,1:05:03.70,1:05:05.37,EN-Main,,0,0,0,,Yeah.
+Dialogue: 0,1:05:09.04,1:05:13.00,CN-Main,,0,0,0,,你小时候想成为什么人？
+Dialogue: 0,1:05:09.04,1:05:13.00,EN-Main,,0,0,0,,- What did you want to be\nwhen you were young?
+Dialogue: 0,1:05:13.00,1:05:15.42,CN-Main,,0,0,0,,我小时候想成为约翰·列侬
+Dialogue: 0,1:05:13.00,1:05:15.42,EN-Main,,0,0,0,,- When I was a kid I wanted\nto be John Lennon.
+Dialogue: 0,1:05:17.42,1:05:22.22,CN-Main,,0,0,0,,卡尔 别胡闹 我要阐述一个严肃的观点
+Dialogue: 0,1:05:17.42,1:05:22.22,EN-Main,,0,0,0,,- Carl, don't be a goof. I'm trying to make\na serious point here.
+Dialogue: 0,1:05:22.22,1:05:27.01,CN-Main,,0,0,0,,卡尔 我已经教了 22 年书了
+Dialogue: 0,1:05:22.22,1:05:27.01,EN-Main,,0,0,0,,Carl, I've been teaching\nfor 22 years
+Dialogue: 0,1:05:27.01,1:05:31.10,CN-Main,,0,0,0,,一年年过去 这些孩子变得越来越傲慢无礼
+Dialogue: 0,1:05:27.01,1:05:31.10,EN-Main,,0,0,0,,and each year these kids\nget more and more arrogant.
+Dialogue: 0,1:05:31.10,1:05:32.81,CN-Main,,0,0,0,,胡说伙计
+Dialogue: 0,1:05:31.10,1:05:32.81,EN-Main,,0,0,0,,- Oh, bullshit, man.
+Dialogue: 0,1:05:32.81,1:05:37.11,CN-Main,,0,0,0,,得了老弗 这些孩子从不改变 变的是你
+Dialogue: 0,1:05:32.81,1:05:37.11,EN-Main,,0,0,0,,Come on, Vern, the kids\nhaven't changed, you have.
+Dialogue: 0,1:05:38.40,1:05:42.15,CN-Main,,0,0,0,,你接受教职是因为 你觉得会很有趣 对吧？
+Dialogue: 0,1:05:38.40,1:05:42.15,EN-Main,,0,0,0,,You took a teaching position\nbecause you thought it'd be fun, right?
+Dialogue: 0,1:05:42.15,1:05:44.32,CN-Main,,0,0,0,,以为你可以放暑假？
+Dialogue: 0,1:05:42.15,1:05:44.32,EN-Main,,0,0,0,,Thought you could have\nsummer vacations off
+Dialogue: 0,1:05:44.32,1:05:48.32,CN-Main,,0,0,0,,之后你发现 这其实是工作 而这一事实让你很失落
+Dialogue: 0,1:05:44.32,1:05:48.32,EN-Main,,0,0,0,,and then you found out\nit was actually work. That really bummed you out.
+Dialogue: 0,1:05:51.16,1:05:53.08,CN-Main,,0,0,0,,这些孩子都跟我作对
+Dialogue: 0,1:05:51.16,1:05:53.08,EN-Main,,0,0,0,,- These kids turned on me.
+Dialogue: 0,1:05:56.21,1:06:00.62,CN-Main,,0,0,0,,-他们认为我就是个大笑话 -得了
+Dialogue: 0,1:05:56.21,1:06:00.62,EN-Main,,0,0,0,,They think\nI'm a big fucking joke. - Come on.
+Dialogue: 0,1:06:00.63,1:06:03.75,CN-Main,,0,0,0,,听着 老弗 如果你 16 岁 你怎么看现在的你？
+Dialogue: 0,1:06:00.63,1:06:03.75,EN-Main,,0,0,0,,Listen, Vern, if you were 16, what would you think of you, huh?
+Dialogue: 0,1:06:03.76,1:06:07.17,CN-Main,,0,0,0,,卡尔 你觉得我在乎
+Dialogue: 0,1:06:03.76,1:06:07.17,EN-Main,,0,0,0,,- Hey, Carl, you think I give\none rat's ass
+Dialogue: 0,1:06:07.17,1:06:11.06,CN-Main,,0,0,0,,-这些熊孩子怎么看我吗？ -对 我觉得你在乎
+Dialogue: 0,1:06:07.17,1:06:11.06,EN-Main,,0,0,0,,what these kids think of me?\n- Yes, I do.
+Dialogue: 0,1:06:12.72,1:06:14.35,CN-Main,,0,0,0,,想想看
+Dialogue: 0,1:06:12.72,1:06:14.35,EN-Main,,0,0,0,,- You think about this.
+Dialogue: 0,1:06:14.35,1:06:16.79,CN-Main,,0,0,0,,当你变老了之后 这些孩子
+Dialogue: 0,1:06:14.35,1:06:16.79,EN-Main,,0,0,0,,When you get old these kids,
+Dialogue: 0,1:06:16.79,1:06:20.48,CN-Main,,0,0,0,,我老的时候 他们会是统治这个国家的人
+Dialogue: 0,1:06:16.79,1:06:20.48,EN-Main,,0,0,0,,when I get old, they're going to be\nrunning the country.
+Dialogue: 0,1:06:20.48,1:06:22.15,CN-Main,,0,0,0,,对
+Dialogue: 0,1:06:20.48,1:06:22.15,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,1:06:22.15,1:06:25.76,CN-Main,,0,0,0,,而这个想法每每让我在半夜惊醒
+Dialogue: 0,1:06:22.15,1:06:25.76,EN-Main,,0,0,0,,- Now, this is the thought\nthat wakes me up in the middle of the night,
+Dialogue: 0,1:06:25.76,1:06:30.74,CN-Main,,0,0,0,,当我变老时 这些孩子将是照顾我的人
+Dialogue: 0,1:06:25.76,1:06:30.74,EN-Main,,0,0,0,,that when I get older these kids are going\nto take care of me.
+Dialogue: 0,1:06:30.74,1:06:32.32,CN-Main,,0,0,0,,我不会指望他们
+Dialogue: 0,1:06:30.74,1:06:32.32,EN-Main,,0,0,0,,- I wouldn't count on it.
+Dialogue: 0,1:06:36.79,1:06:40.38,CN-Main,,0,0,0,,如果给我一百万 我会做什么？
+Dialogue: 0,1:06:36.79,1:06:40.38,EN-Main,,0,0,0,,- What would I do\nfor a million bucks?
+Dialogue: 0,1:06:40.38,1:06:42.88,CN-Main,,0,0,0,,我猜 能不做事就不做事吧
+Dialogue: 0,1:06:40.38,1:06:42.88,EN-Main,,0,0,0,,I guess I'd do\nas little as I had to.
+Dialogue: 0,1:06:42.88,1:06:46.42,CN-Main,,0,0,0,,-无聊 -那我应该怎么回答？
+Dialogue: 0,1:06:42.88,1:06:46.42,EN-Main,,0,0,0,,- That's boring. - Well, how am I supposed\nto answer?
+Dialogue: 0,1:06:46.42,1:06:50.26,CN-Main,,0,0,0,,目标是搜寻你的思维寻找极限
+Dialogue: 0,1:06:46.42,1:06:50.26,EN-Main,,0,0,0,,- The idea is to, like,\nsearch your mind for the absolute limit.
+Dialogue: 0,1:06:50.26,1:06:53.18,CN-Main,,0,0,0,,比如
+Dialogue: 0,1:06:50.26,1:06:53.18,EN-Main,,0,0,0,,Like...
+Dialogue: 0,1:06:53.18,1:06:54.35,CN-Main,,0,0,0,,你会裸体开车来学校吗？
+Dialogue: 0,1:06:53.18,1:06:54.35,EN-Main,,0,0,0,,would you drive to school naked?
+Dialogue: 0,1:06:59.40,1:07:02.70,CN-Main,,0,0,0,,-我需要下车吗？ -当然
+Dialogue: 0,1:06:59.40,1:07:02.70,EN-Main,,0,0,0,,- Would I have to get\nout of the car? - Of course.
+Dialogue: 0,1:07:02.70,1:07:04.73,CN-Main,,0,0,0,,春天还是冬天？
+Dialogue: 0,1:07:02.70,1:07:04.73,EN-Main,,0,0,0,,- In the spring or winter?
+Dialogue: 0,1:07:04.73,1:07:06.69,CN-Main,,0,0,0,,无所谓 春天
+Dialogue: 0,1:07:04.73,1:07:06.69,EN-Main,,0,0,0,,- Doesn't matter.\nSpring.
+Dialogue: 0,1:07:06.69,1:07:09.44,CN-Main,,0,0,0,,在学校前面还是学校后面？
+Dialogue: 0,1:07:06.69,1:07:09.44,EN-Main,,0,0,0,,- In front of the school\nor in back of the school?
+Dialogue: 0,1:07:09.45,1:07:11.48,CN-Main,,0,0,0,,随便
+Dialogue: 0,1:07:09.45,1:07:11.48,EN-Main,,0,0,0,,- Either one.
+Dialogue: 0,1:07:11.48,1:07:12.41,CN-Main,,0,0,0,,会
+Dialogue: 0,1:07:11.48,1:07:12.41,EN-Main,,0,0,0,,- Yes.
+Dialogue: 0,1:07:12.41,1:07:14.79,CN-Main,,0,0,0,,我会
+Dialogue: 0,1:07:12.41,1:07:14.79,EN-Main,,0,0,0,,- I'd do that.
+Dialogue: 0,1:07:14.79,1:07:19.66,CN-Main,,0,0,0,,所有与性有关的我都会做 我不用一百万也会做
+Dialogue: 0,1:07:14.79,1:07:19.66,EN-Main,,0,0,0,,I'll do anything sexual. I don't need a million dollars\nto do it, either.
+Dialogue: 0,1:07:19.67,1:07:22.58,CN-Main,,0,0,0,,-你说谎 -我已经做了
+Dialogue: 0,1:07:19.67,1:07:22.58,EN-Main,,0,0,0,,- You're lying. - I already have.
+Dialogue: 0,1:07:22.59,1:07:27.47,CN-Main,,0,0,0,,我所有事都做过了 除了一些违法的事情
+Dialogue: 0,1:07:22.59,1:07:27.47,EN-Main,,0,0,0,,I've done just about everything\nthere is except a few things that are illegal.
+Dialogue: 0,1:07:27.47,1:07:30.34,CN-Main,,0,0,0,,我有性瘾
+Dialogue: 0,1:07:27.47,1:07:30.34,EN-Main,,0,0,0,,I'm a nymphomaniac.
+Dialogue: 0,1:07:30.34,1:07:34.93,CN-Main,,0,0,0,,-骗人 -你父母知道吗？
+Dialogue: 0,1:07:30.34,1:07:34.93,EN-Main,,0,0,0,,- Lie. - Are your parents\naware of this?
+Dialogue: 0,1:07:34.93,1:07:37.47,CN-Main,,0,0,0,,唯一知情的人 是我的心理医生
+Dialogue: 0,1:07:34.93,1:07:37.47,EN-Main,,0,0,0,,- The only person\nI told was my shrink.
+Dialogue: 0,1:07:37.48,1:07:39.77,CN-Main,,0,0,0,,你告知他时 他做了什么？
+Dialogue: 0,1:07:37.48,1:07:39.77,EN-Main,,0,0,0,,- What did he do\nwhen you told him?
+Dialogue: 0,1:07:39.77,1:07:41.23,CN-Main,,0,0,0,,他上了我
+Dialogue: 0,1:07:39.77,1:07:41.23,EN-Main,,0,0,0,,- He nailed me.
+Dialogue: 0,1:07:45.40,1:07:46.90,CN-Main,,0,0,0,,很好
+Dialogue: 0,1:07:45.40,1:07:46.90,EN-Main,,0,0,0,,- Very nice.
+Dialogue: 0,1:07:46.90,1:07:49.44,CN-Main,,0,0,0,,我觉得从法律上讲
+Dialogue: 0,1:07:46.90,1:07:49.44,EN-Main,,0,0,0,,- I don't think that\nfrom a legal standpoint
+Dialogue: 0,1:07:49.45,1:07:52.78,CN-Main,,0,0,0,,因为我付了他钱 他的行为就不能算是强奸了
+Dialogue: 0,1:07:49.45,1:07:52.78,EN-Main,,0,0,0,,what he did can be construed\nas rape since I paid him.
+Dialogue: 0,1:07:52.78,1:07:54.52,CN-Main,,0,0,0,,他是个成年人
+Dialogue: 0,1:07:52.78,1:07:54.52,EN-Main,,0,0,0,,- He's an adult.
+Dialogue: 0,1:07:54.52,1:07:58.29,CN-Main,,0,0,0,,对 他还结婚了
+Dialogue: 0,1:07:54.52,1:07:58.29,EN-Main,,0,0,0,,- Yeah. He's married, too.\n- Ugh.
+Dialogue: 0,1:07:58.29,1:08:00.92,CN-Main,,0,0,0,,你知道那有多恶心吗？
+Dialogue: 0,1:07:58.29,1:08:00.92,EN-Main,,0,0,0,,Do you have any idea\nhow completely gross that is?
+Dialogue: 0,1:08:00.92,1:08:04.29,CN-Main,,0,0,0,,-开始的几次…… -开始的几次？
+Dialogue: 0,1:08:00.92,1:08:04.29,EN-Main,,0,0,0,,- Well, the first few times.\n- The first few times?
+Dialogue: 0,1:08:04.29,1:08:06.63,CN-Main,,0,0,0,,-你说他不止一次这么干？ -当然
+Dialogue: 0,1:08:04.29,1:08:06.63,EN-Main,,0,0,0,,You mean he did it\nmore than once? - Sure.
+Dialogue: 0,1:08:06.63,1:08:08.26,CN-Main,,0,0,0,,你疯了吗？
+Dialogue: 0,1:08:06.63,1:08:08.26,EN-Main,,0,0,0,,- Are you crazy?
+Dialogue: 0,1:08:08.26,1:08:11.18,CN-Main,,0,0,0,,如果她上了她的心理医生 那她真是疯了
+Dialogue: 0,1:08:08.26,1:08:11.18,EN-Main,,0,0,0,,- Obviously she's crazy\nif she's screwing a shrink.
+Dialogue: 0,1:08:12.72,1:08:14.35,CN-Main,,0,0,0,,你做过吗？
+Dialogue: 0,1:08:12.72,1:08:14.35,EN-Main,,0,0,0,,- Have you ever done it?
+Dialogue: 0,1:08:17.31,1:08:19.23,CN-Main,,0,0,0,,我连心理医生都没有
+Dialogue: 0,1:08:17.31,1:08:19.23,EN-Main,,0,0,0,,- I don't even have\na psychiatrist.
+Dialogue: 0,1:08:19.23,1:08:21.64,CN-Main,,0,0,0,,你和普通人做过吗？
+Dialogue: 0,1:08:19.23,1:08:21.64,EN-Main,,0,0,0,,- Have you ever done it\nwith a normal person?
+Dialogue: 0,1:08:21.64,1:08:25.31,CN-Main,,0,0,0,,-慢着 我们不是谈过了吗？ -你从未回答过这个问题
+Dialogue: 0,1:08:21.64,1:08:25.31,EN-Main,,0,0,0,,- Didn't we already cover this? - You never answered\nthe question.
+Dialogue: 0,1:08:26.61,1:08:29.52,CN-Main,,0,0,0,,我才不要和陌生人谈论我的私生活
+Dialogue: 0,1:08:26.61,1:08:29.52,EN-Main,,0,0,0,,- Look, I'm not going\nto discuss my private life with total strangers.
+Dialogue: 0,1:08:29.53,1:08:31.95,CN-Main,,0,0,0,,其实这个问题是双刃剑 不是吗？
+Dialogue: 0,1:08:29.53,1:08:31.95,EN-Main,,0,0,0,,- It's kind of\na double-edged sword, isn't it?
+Dialogue: 0,1:08:31.95,1:08:33.41,CN-Main,,0,0,0,,是什么？
+Dialogue: 0,1:08:31.95,1:08:33.41,EN-Main,,0,0,0,,- A what?
+Dialogue: 0,1:08:33.41,1:08:36.83,CN-Main,,0,0,0,,说没做过吧 就是个老古板
+Dialogue: 0,1:08:33.41,1:08:36.83,EN-Main,,0,0,0,,- Well, if you say you haven't,\nyou're a prude.
+Dialogue: 0,1:08:36.83,1:08:41.37,CN-Main,,0,0,0,,如果你说你做过 那你是荡妇 这是个陷阱
+Dialogue: 0,1:08:36.83,1:08:41.37,EN-Main,,0,0,0,,If you say you have,\nyou're a slut. It's a trap.
+Dialogue: 0,1:08:41.37,1:08:42.84,CN-Main,,0,0,0,,你想 但是你不能
+Dialogue: 0,1:08:41.37,1:08:42.84,EN-Main,,0,0,0,,You want to, but you can't
+Dialogue: 0,1:08:42.84,1:08:45.79,CN-Main,,0,0,0,,当你做了 你希望你没做 对吧？
+Dialogue: 0,1:08:42.84,1:08:45.79,EN-Main,,0,0,0,,and when you do, you wish you didn't, right?
+Dialogue: 0,1:08:45.79,1:08:49.96,CN-Main,,0,0,0,,-错 -或者 你是个爱撩拨别人的人吗？
+Dialogue: 0,1:08:45.79,1:08:49.96,EN-Main,,0,0,0,,- Wrong.\n- Or are you a tease?
+Dialogue: 0,1:08:49.96,1:08:53.51,CN-Main,,0,0,0,,-她是的 -我确定 你为什么不能忘记这个？
+Dialogue: 0,1:08:49.96,1:08:53.51,EN-Main,,0,0,0,,- She's a tease. - I'm sure.\nWhy don't you just forget it?
+Dialogue: 0,1:08:53.51,1:08:54.76,CN-Main,,0,0,0,,你就爱撩拨人 自己也清楚
+Dialogue: 0,1:08:53.51,1:08:54.76,EN-Main,,0,0,0,,- Oh, you're a tease\nand you know it.
+Dialogue: 0,1:08:54.76,1:08:56.39,CN-Main,,0,0,0,,所有姑娘都喜欢撩拨别人
+Dialogue: 0,1:08:54.76,1:08:56.39,EN-Main,,0,0,0,,All girls are teases.
+Dialogue: 0,1:08:56.39,1:08:58.56,CN-Main,,0,0,0,,她只有在自己行为 能让别人欲火焚身时才算撩拨人
+Dialogue: 0,1:08:56.39,1:08:58.56,EN-Main,,0,0,0,,- She's only a tease\nif what she does gets you hot.
+Dialogue: 0,1:08:58.56,1:08:59.39,CN-Main,,0,0,0,,我什么都没做！
+Dialogue: 0,1:08:58.56,1:08:59.39,EN-Main,,0,0,0,,- I don't do anything.
+Dialogue: 0,1:08:59.39,1:09:04.94,CN-Main,,0,0,0,,-所以说你爱撩拨人 -那让我问你几个问题吧
+Dialogue: 0,1:08:59.39,1:09:04.94,EN-Main,,0,0,0,,- That's why you're a tease. - Okay, let me ask you\na few questions.
+Dialogue: 0,1:09:04.94,1:09:06.44,CN-Main,,0,0,0,,我把一切都告诉你们了
+Dialogue: 0,1:09:04.94,1:09:06.44,EN-Main,,0,0,0,,- I already told you everything.
+Dialogue: 0,1:09:06.44,1:09:09.36,CN-Main,,0,0,0,,不 没有爱 和不同人上床难道不让你难过吗？
+Dialogue: 0,1:09:06.44,1:09:09.36,EN-Main,,0,0,0,,- No. Doesn't it bother you\nto sleep around without being in love?
+Dialogue: 0,1:09:09.36,1:09:10.40,CN-Main,,0,0,0,,我是说 你不需要尊重吗？
+Dialogue: 0,1:09:09.36,1:09:10.40,EN-Main,,0,0,0,,I mean, don't you want\nany respect?
+Dialogue: 0,1:09:10.40,1:09:12.99,CN-Main,,0,0,0,,我不通过上床取得尊重
+Dialogue: 0,1:09:10.40,1:09:12.99,EN-Main,,0,0,0,,- I don't screw to get respect.
+Dialogue: 0,1:09:12.99,1:09:15.45,CN-Main,,0,0,0,,这是我们俩的不同
+Dialogue: 0,1:09:12.99,1:09:15.45,EN-Main,,0,0,0,,That's the difference\nbetween you and me.
+Dialogue: 0,1:09:15.45,1:09:18.82,CN-Main,,0,0,0,,-希望不是唯一的不同 -面对现实吧 你就是爱撩拨人
+Dialogue: 0,1:09:15.45,1:09:18.82,EN-Main,,0,0,0,,- It's not the only difference,\nI hope. - Face it, you're a tease.
+Dialogue: 0,1:09:18.82,1:09:20.65,CN-Main,,0,0,0,,-我才不爱撩拨人 -你当然爱撩拨人
+Dialogue: 0,1:09:18.82,1:09:20.65,EN-Main,,0,0,0,,- I'm not a tease. - Sure you are.
+Dialogue: 0,1:09:20.65,1:09:25.95,CN-Main,,0,0,0,,性是你的武器 你自己说的 你利用它获取尊重
+Dialogue: 0,1:09:20.65,1:09:25.95,EN-Main,,0,0,0,,Sex is your weapon. You said it yourself.\nYou use it to get respect.
+Dialogue: 0,1:09:25.96,1:09:28.46,CN-Main,,0,0,0,,不 我从没这么说过 她歪曲了我的话
+Dialogue: 0,1:09:25.96,1:09:28.46,EN-Main,,0,0,0,,- No, I never said that. She twisted my words around.
+Dialogue: 0,1:09:28.46,1:09:30.59,CN-Main,,0,0,0,,那你利用性做什么？
+Dialogue: 0,1:09:28.46,1:09:30.59,EN-Main,,0,0,0,,- What do you\nuse it for then?
+Dialogue: 0,1:09:30.59,1:09:32.47,CN-Main,,0,0,0,,我不利用性 完毕
+Dialogue: 0,1:09:30.59,1:09:32.47,EN-Main,,0,0,0,,- I don't use it, period.
+Dialogue: 0,1:09:32.47,1:09:35.47,CN-Main,,0,0,0,,你是生理性冷淡 还是心理有问题？
+Dialogue: 0,1:09:32.47,1:09:35.47,EN-Main,,0,0,0,,- Oh, are you medically frigid\nor is it psychological?
+Dialogue: 0,1:09:35.47,1:09:36.89,CN-Main,,0,0,0,,我不是这个意思
+Dialogue: 0,1:09:35.47,1:09:36.89,EN-Main,,0,0,0,,- I didn't mean it that way.
+Dialogue: 0,1:09:36.89,1:09:38.64,CN-Main,,0,0,0,,你们不要歪曲我的话
+Dialogue: 0,1:09:36.89,1:09:38.64,EN-Main,,0,0,0,,You guys are putting words\ninto my mouth.
+Dialogue: 0,1:09:38.64,1:09:40.39,CN-Main,,0,0,0,,那就回答问题
+Dialogue: 0,1:09:38.64,1:09:40.39,EN-Main,,0,0,0,,- Well, if you just\nanswer the question.
+Dialogue: 0,1:09:40.39,1:09:42.11,CN-Main,,0,0,0,,-那你为什么不回答问题？ -诚实点
+Dialogue: 0,1:09:40.39,1:09:42.11,EN-Main,,0,0,0,,Brian: Why don't you just\nanswer the question? Andy: Be honest.
+Dialogue: 0,1:09:42.11,1:09:43.67,CN-Main,,0,0,0,,-又不是什么大事 -对啊 回答啊
+Dialogue: 0,1:09:42.11,1:09:43.67,EN-Main,,0,0,0,,Bender: No big deal. Brian: Yeah, answer it.
+Dialogue: 0,1:09:43.67,1:09:45.98,CN-Main,,0,0,0,,-回答问题 克莱尔 -和我们说说
+Dialogue: 0,1:09:43.67,1:09:45.98,EN-Main,,0,0,0,,Andy: Just answer the question, Claire.\nBender: Talk to us.
+Dialogue: 0,1:09:45.98,1:09:50.73,CN-Main,,0,0,0,,-快回答 很简单 -快回答 很简单 就是一个问题
+Dialogue: 0,1:09:45.98,1:09:50.73,EN-Main,,0,0,0,,(all talking at once) Bender: Come on, it's easy.\nIt's only one question.
+Dialogue: 0,1:09:50.73,1:09:52.65,CN-Main,,0,0,0,,没！我从没做过！
+Dialogue: 0,1:09:50.73,1:09:52.65,EN-Main,,0,0,0,,- No, I never did it!
+Dialogue: 0,1:09:57.95,1:09:59.70,CN-Main,,0,0,0,,我也从没做过
+Dialogue: 0,1:09:57.95,1:09:59.70,EN-Main,,0,0,0,,- I never did it, either.
+Dialogue: 0,1:10:02.45,1:10:04.37,CN-Main,,0,0,0,,我没有性瘾
+Dialogue: 0,1:10:02.45,1:10:04.37,EN-Main,,0,0,0,,I'm not a nymphomaniac.
+Dialogue: 0,1:10:04.37,1:10:07.75,CN-Main,,0,0,0,,我只是说谎成性
+Dialogue: 0,1:10:04.37,1:10:07.75,EN-Main,,0,0,0,,I'm a compulsive liar.
+Dialogue: 0,1:10:07.75,1:10:10.54,CN-Main,,0,0,0,,你真是个贱人
+Dialogue: 0,1:10:07.75,1:10:10.54,EN-Main,,0,0,0,,- You are such a bitch.
+Dialogue: 0,1:10:10.55,1:10:12.76,CN-Main,,0,0,0,,你故意这么说 就是为了要整我
+Dialogue: 0,1:10:10.55,1:10:12.76,EN-Main,,0,0,0,,You did that on purpose\njust to fuck me over.
+Dialogue: 0,1:10:12.76,1:10:18.01,CN-Main,,0,0,0,,但我会做的 如果你真爱一个人 那就可以
+Dialogue: 0,1:10:12.76,1:10:18.01,EN-Main,,0,0,0,,- I would do it, though. If you love someone, it's okay.
+Dialogue: 0,1:10:18.01,1:10:20.30,CN-Main,,0,0,0,,我简直不敢相信 你太奇怪了
+Dialogue: 0,1:10:18.01,1:10:20.30,EN-Main,,0,0,0,,- I can't believe you.\nYou're so weird.
+Dialogue: 0,1:10:20.30,1:10:22.96,CN-Main,,0,0,0,,你一天不说一句话 当你张口
+Dialogue: 0,1:10:20.30,1:10:22.96,EN-Main,,0,0,0,,You don't say anything all day\nand then when you open your mouth
+Dialogue: 0,1:10:22.96,1:10:25.64,CN-Main,,0,0,0,,你就对我说无数的谎言
+Dialogue: 0,1:10:22.96,1:10:25.64,EN-Main,,0,0,0,,you unload all these tremendous lies all over me.
+Dialogue: 0,1:10:25.64,1:10:27.77,CN-Main,,0,0,0,,你现在只是因为她让你承认了
+Dialogue: 0,1:10:25.64,1:10:27.77,EN-Main,,0,0,0,,- You're just pissed off\nbecause she got you to admit
+Dialogue: 0,1:10:27.77,1:10:29.69,CN-Main,,0,0,0,,你不愿意承认的事实而恼羞成怒
+Dialogue: 0,1:10:27.77,1:10:29.69,EN-Main,,0,0,0,,something\nyou didn't want to admit to.
+Dialogue: 0,1:10:29.69,1:10:32.32,CN-Main,,0,0,0,,对 好吧 但这并不意味着她不奇怪
+Dialogue: 0,1:10:29.69,1:10:32.32,EN-Main,,0,0,0,,- Okay, fine. But that doesn't\nmake it any less bizarre.
+Dialogue: 0,1:10:32.32,1:10:34.40,CN-Main,,0,0,0,,什么奇怪？
+Dialogue: 0,1:10:32.32,1:10:34.40,EN-Main,,0,0,0,,- What's bizarre?
+Dialogue: 0,1:10:34.40,1:10:36.69,CN-Main,,0,0,0,,我们都很奇怪
+Dialogue: 0,1:10:34.40,1:10:36.69,EN-Main,,0,0,0,,We're all pretty bizarre.
+Dialogue: 0,1:10:36.70,1:10:40.03,CN-Main,,0,0,0,,只不过我们中的一些人 很擅长伪装就是了
+Dialogue: 0,1:10:36.70,1:10:40.03,EN-Main,,0,0,0,,Some of us are just better\nat hiding it, that's all.
+Dialogue: 0,1:10:40.03,1:10:41.57,CN-Main,,0,0,0,,你怎么奇怪了？
+Dialogue: 0,1:10:40.03,1:10:41.57,EN-Main,,0,0,0,,- How are you bizarre?
+Dialogue: 0,1:10:43.83,1:10:47.37,CN-Main,,0,0,0,,他不能自己思考
+Dialogue: 0,1:10:43.83,1:10:47.37,EN-Main,,0,0,0,,- He can't think for himself.
+Dialogue: 0,1:10:47.37,1:10:50.00,CN-Main,,0,0,0,,她说得对
+Dialogue: 0,1:10:47.37,1:10:50.00,EN-Main,,0,0,0,,- She's right.
+Dialogue: 0,1:10:50.00,1:10:53.67,CN-Main,,0,0,0,,你们知道 我是怎么被留堂的吗？
+Dialogue: 0,1:10:50.00,1:10:53.67,EN-Main,,0,0,0,,Do you guys know what I did\nto get in here?
+Dialogue: 0,1:10:55.01,1:10:58.13,CN-Main,,0,0,0,,我把拉瑞·莱斯特的屁股 用胶带粘在了一起
+Dialogue: 0,1:10:55.01,1:10:58.13,EN-Main,,0,0,0,,I taped\nLarry Lester's buns together.
+Dialogue: 0,1:10:58.13,1:11:00.97,CN-Main,,0,0,0,,那是你？
+Dialogue: 0,1:10:58.13,1:11:00.97,EN-Main,,0,0,0,,- That was you?
+Dialogue: 0,1:11:00.97,1:11:05.10,CN-Main,,0,0,0,,-对 你认识他吗？ -对 我认识他
+Dialogue: 0,1:11:00.97,1:11:05.10,EN-Main,,0,0,0,,- Yeah, you know him? - Yeah, I know him.
+Dialogue: 0,1:11:05.10,1:11:07.98,CN-Main,,0,0,0,,那你知道他的毛发多浓密了 对吧？
+Dialogue: 0,1:11:05.10,1:11:07.98,EN-Main,,0,0,0,,- Well, then you know\nhow hairy he is, right?
+Dialogue: 0,1:11:07.98,1:11:10.86,CN-Main,,0,0,0,,所以当他们把胶布取下的时候
+Dialogue: 0,1:11:07.98,1:11:10.86,EN-Main,,0,0,0,,Well, when they pulled\nthe tape off,
+Dialogue: 0,1:11:10.86,1:11:14.57,CN-Main,,0,0,0,,他的毛发掉了大半 而一些皮肤也被粘掉了
+Dialogue: 0,1:11:10.86,1:11:14.57,EN-Main,,0,0,0,,most of his hair came off\nand some skin, too.
+Dialogue: 0,1:11:14.57,1:11:16.57,CN-Main,,0,0,0,,天啊
+Dialogue: 0,1:11:14.57,1:11:16.57,EN-Main,,0,0,0,,- Oh, my God.
+Dialogue: 0,1:11:16.57,1:11:19.82,CN-Main,,0,0,0,,怪异的事情是……
+Dialogue: 0,1:11:16.57,1:11:19.82,EN-Main,,0,0,0,,- And the bizarre thing is...
+Dialogue: 0,1:11:19.82,1:11:21.74,CN-Main,,0,0,0,,我是为了我爸才这么做的
+Dialogue: 0,1:11:19.82,1:11:21.74,EN-Main,,0,0,0,,that I did it for my old man.
+Dialogue: 0,1:11:23.62,1:11:25.51,CN-Main,,0,0,0,,我折磨了这个可怜的孩子
+Dialogue: 0,1:11:23.62,1:11:25.51,EN-Main,,0,0,0,,I tortured this poor kid
+Dialogue: 0,1:11:25.51,1:11:31.12,CN-Main,,0,0,0,,因为我希望我爸觉得我很酷
+Dialogue: 0,1:11:25.51,1:11:31.12,EN-Main,,0,0,0,,because I wanted him to think that I was cool.
+Dialogue: 0,1:11:31.13,1:11:36.46,CN-Main,,0,0,0,,他总是在我面前忆当年
+Dialogue: 0,1:11:31.13,1:11:36.46,EN-Main,,0,0,0,,He's always going off about,\nyou know, when he was in school,
+Dialogue: 0,1:11:36.46,1:11:39.13,CN-Main,,0,0,0,,回忆那些他曾做过的疯狂的事情
+Dialogue: 0,1:11:36.46,1:11:39.13,EN-Main,,0,0,0,,all the wild things\nhe used to do.
+Dialogue: 0,1:11:39.13,1:11:42.76,CN-Main,,0,0,0,,我感觉他对我很失望
+Dialogue: 0,1:11:39.13,1:11:42.76,EN-Main,,0,0,0,,And I got the feeling that\nhe was disappointed
+Dialogue: 0,1:11:42.76,1:11:48.14,CN-Main,,0,0,0,,因为我从没狠狠收拾过谁
+Dialogue: 0,1:11:42.76,1:11:48.14,EN-Main,,0,0,0,,that I never cut loose\non anyone, right?
+Dialogue: 0,1:11:48.14,1:11:52.02,CN-Main,,0,0,0,,所以我坐在更衣室
+Dialogue: 0,1:11:48.14,1:11:52.02,EN-Main,,0,0,0,,So I'm sitting\nin the locker room
+Dialogue: 0,1:11:52.02,1:11:56.02,CN-Main,,0,0,0,,而我当时在缠我的膝盖
+Dialogue: 0,1:11:52.02,1:11:56.02,EN-Main,,0,0,0,,and I'm taping up my knee
+Dialogue: 0,1:11:56.03,1:12:02.95,CN-Main,,0,0,0,,而拉瑞正在几个衣柜 以外的地方脱衣服
+Dialogue: 0,1:11:56.03,1:12:02.95,EN-Main,,0,0,0,,and Larry's undressing a couple\nof lockers down from me.
+Dialogue: 0,1:12:02.95,1:12:03.71,CN-Main,,0,0,0,,对
+Dialogue: 0,1:12:02.95,1:12:03.71,EN-Main,,0,0,0,,And
+Dialogue: 0,1:12:03.71,1:12:10.75,CN-Main,,0,0,0,,他有点瘦弱
+Dialogue: 0,1:12:03.71,1:12:10.75,EN-Main,,0,0,0,,he's kind of skinny, weak,
+Dialogue: 0,1:12:10.75,1:12:14.17,CN-Main,,0,0,0,,而我想起了我父亲
+Dialogue: 0,1:12:10.75,1:12:14.17,EN-Main,,0,0,0,,and I started thinking\nabout my father
+Dialogue: 0,1:12:14.17,1:12:19.17,CN-Main,,0,0,0,,和他对弱小的态度
+Dialogue: 0,1:12:14.17,1:12:19.17,EN-Main,,0,0,0,,and his attitude about weakness
+Dialogue: 0,1:12:19.17,1:12:22.72,CN-Main,,0,0,0,,之后我只记得
+Dialogue: 0,1:12:19.17,1:12:22.72,EN-Main,,0,0,0,,and the next thing I knew...
+Dialogue: 0,1:12:22.72,1:12:26.93,CN-Main,,0,0,0,,我扑到他身上 开始狠揍他
+Dialogue: 0,1:12:22.72,1:12:26.93,EN-Main,,0,0,0,,I jumped on top of him\nand started wailing on him.
+Dialogue: 0,1:12:29.06,1:12:32.56,CN-Main,,0,0,0,,而我的朋友们只是 站在一边大笑为我加油
+Dialogue: 0,1:12:29.06,1:12:32.56,EN-Main,,0,0,0,,Then my friends, they just\nlaughed and cheered me on.
+Dialogue: 0,1:12:35.90,1:12:39.53,CN-Main,,0,0,0,,之后
+Dialogue: 0,1:12:35.90,1:12:39.53,EN-Main,,0,0,0,,And afterwards...
+Dialogue: 0,1:12:39.53,1:12:42.62,CN-Main,,0,0,0,,当我坐在弗农的办公室里
+Dialogue: 0,1:12:39.53,1:12:42.62,EN-Main,,0,0,0,,when I was sitting\nin Vernon's office...
+Dialogue: 0,1:12:44.99,1:12:47.03,CN-Main,,0,0,0,,我只能想到
+Dialogue: 0,1:12:44.99,1:12:47.03,EN-Main,,0,0,0,,all I could think about...
+Dialogue: 0,1:12:48.20,1:12:51.91,CN-Main,,0,0,0,,拉瑞的父亲
+Dialogue: 0,1:12:48.20,1:12:51.91,EN-Main,,0,0,0,,was Larry's father...
+Dialogue: 0,1:12:51.91,1:12:55.79,CN-Main,,0,0,0,,以及拉瑞回家
+Dialogue: 0,1:12:51.91,1:12:55.79,EN-Main,,0,0,0,,and Larry having to go home...
+Dialogue: 0,1:12:55.79,1:13:00.46,CN-Main,,0,0,0,,向他解释今天发生的一切
+Dialogue: 0,1:12:55.79,1:13:00.46,EN-Main,,0,0,0,,and explain\nwhat happened to him.
+Dialogue: 0,1:13:03.13,1:13:08.22,CN-Main,,0,0,0,,那种羞辱……
+Dialogue: 0,1:13:03.13,1:13:08.22,EN-Main,,0,0,0,,And the humiliation...
+Dialogue: 0,1:13:08.22,1:13:11.52,CN-Main,,0,0,0,,他肯定会觉得备受羞辱
+Dialogue: 0,1:13:08.22,1:13:11.52,EN-Main,,0,0,0,,the fucking humiliation\nhe must have felt.
+Dialogue: 0,1:13:14.65,1:13:16.57,CN-Main,,0,0,0,,那种滋味肯定难以想象
+Dialogue: 0,1:13:14.65,1:13:16.57,EN-Main,,0,0,0,,It must have been unreal.
+Dialogue: 0,1:13:19.32,1:13:23.07,CN-Main,,0,0,0,,我是说 你怎么为了 这样的事情向人道歉？
+Dialogue: 0,1:13:19.32,1:13:23.07,EN-Main,,0,0,0,,I mean, how do you apologize\nfor something like that?
+Dialogue: 0,1:13:27.16,1:13:28.58,CN-Main,,0,0,0,,没办法啊
+Dialogue: 0,1:13:27.16,1:13:28.58,EN-Main,,0,0,0,,There's no way.
+Dialogue: 0,1:13:33.29,1:13:35.88,CN-Main,,0,0,0,,这都是因为我和我爸
+Dialogue: 0,1:13:33.29,1:13:35.88,EN-Main,,0,0,0,,It's all because\nof me and my old man.
+Dialogue: 0,1:13:40.17,1:13:42.55,CN-Main,,0,0,0,,天啊 我太他妈恨他了
+Dialogue: 0,1:13:40.17,1:13:42.55,EN-Main,,0,0,0,,God, I fucking hate him.
+Dialogue: 0,1:13:44.72,1:13:45.85,CN-Main,,0,0,0,,他好像是……
+Dialogue: 0,1:13:44.72,1:13:45.85,EN-Main,,0,0,0,,He's like this
+Dialogue: 0,1:13:45.85,1:13:51.01,CN-Main,,0,0,0,,我无法交流的无思维的机器
+Dialogue: 0,1:13:45.85,1:13:51.01,EN-Main,,0,0,0,,mindless machine that I can't even\nrelate to anymore.
+Dialogue: 0,1:13:51.02,1:13:53.23,CN-Main,,0,0,0,,“安德鲁
+Dialogue: 0,1:13:51.02,1:13:53.23,EN-Main,,0,0,0,,"Andrew.
+Dialogue: 0,1:13:53.23,1:13:56.19,CN-Main,,0,0,0,,你必须当第一！
+Dialogue: 0,1:13:53.23,1:13:56.19,EN-Main,,0,0,0,,You've got to be number one.
+Dialogue: 0,1:13:56.19,1:13:59.23,CN-Main,,0,0,0,,我的家里不能容忍任何输家
+Dialogue: 0,1:13:56.19,1:13:59.23,EN-Main,,0,0,0,,I won't tolerate\nany losers in this family.
+Dialogue: 0,1:13:59.23,1:14:01.27,CN-Main,,0,0,0,,你的狠劲简直差劲透了！
+Dialogue: 0,1:13:59.23,1:14:01.27,EN-Main,,0,0,0,,Your intensity is for shit.
+Dialogue: 0,1:14:01.28,1:14:05.53,CN-Main,,0,0,0,,赢！赢！赢！”
+Dialogue: 0,1:14:01.28,1:14:05.53,EN-Main,,0,0,0,,Win, win, win!
+Dialogue: 0,1:14:05.53,1:14:07.82,CN-Main,,0,0,0,,你个混蛋
+Dialogue: 0,1:14:05.53,1:14:07.82,EN-Main,,0,0,0,,You son of a bitch."
+Dialogue: 0,1:14:10.87,1:14:15.58,CN-Main,,0,0,0,,有的时候我希望我的膝盖坏掉
+Dialogue: 0,1:14:10.87,1:14:15.58,EN-Main,,0,0,0,,You know sometimes\nI wish my knee would give
+Dialogue: 0,1:14:15.58,1:14:19.17,CN-Main,,0,0,0,,这样我就不用再摔跤了
+Dialogue: 0,1:14:15.58,1:14:19.17,EN-Main,,0,0,0,,and then I wouldn't be able\nto wrestle anymore
+Dialogue: 0,1:14:19.17,1:14:22.30,CN-Main,,0,0,0,,这样他就可以忘掉我
+Dialogue: 0,1:14:19.17,1:14:22.30,EN-Main,,0,0,0,,and he could\nforget all about me.
+Dialogue: 0,1:14:22.30,1:14:26.84,CN-Main,,0,0,0,,我觉得你爸和我爸 可以聚在一起打保龄球
+Dialogue: 0,1:14:22.30,1:14:26.84,EN-Main,,0,0,0,,- I think your old man\nand my old man should get together\nand go bowling.
+Dialogue: 0,1:14:32.22,1:14:35.31,CN-Main,,0,0,0,,就像我一样 只不过是要求成绩
+Dialogue: 0,1:14:32.22,1:14:35.31,EN-Main,,0,0,0,,- It's like me\nand, like, with my grades.
+Dialogue: 0,1:14:35.31,1:14:38.31,CN-Main,,0,0,0,,当我…… 当我像旁观者一样
+Dialogue: 0,1:14:35.31,1:14:38.31,EN-Main,,0,0,0,,Like, when I step\noutside myself, kind of,
+Dialogue: 0,1:14:38.31,1:14:41.77,CN-Main,,0,0,0,,回头看看自己
+Dialogue: 0,1:14:38.31,1:14:41.77,EN-Main,,0,0,0,,and, like, when I look in\nat myself, you know.
+Dialogue: 0,1:14:44.90,1:14:46.74,CN-Main,,0,0,0,,我看到我自己
+Dialogue: 0,1:14:44.90,1:14:46.74,EN-Main,,0,0,0,,And I see me.
+Dialogue: 0,1:14:50.24,1:14:55.99,CN-Main,,0,0,0,,我一点不喜欢我看到的自己 我真的不喜欢
+Dialogue: 0,1:14:50.24,1:14:55.99,EN-Main,,0,0,0,,I don't like what I see. I really don't.
+Dialogue: 0,1:14:56.00,1:14:58.12,CN-Main,,0,0,0,,你怎么了？
+Dialogue: 0,1:14:56.00,1:14:58.12,EN-Main,,0,0,0,,- What's wrong with you?
+Dialogue: 0,1:14:58.12,1:15:01.04,CN-Main,,0,0,0,,你为什么不喜欢你自己？
+Dialogue: 0,1:14:58.12,1:15:01.04,EN-Main,,0,0,0,,Why don't you like yourself?
+Dialogue: 0,1:15:01.04,1:15:03.00,CN-Main,,0,0,0,,说出来有点傻 但是……
+Dialogue: 0,1:15:01.04,1:15:03.00,EN-Main,,0,0,0,,- Sounds stupid, but...
+Dialogue: 0,1:15:07.26,1:15:09.93,CN-Main,,0,0,0,,因为我的手工课不及格
+Dialogue: 0,1:15:07.26,1:15:09.93,EN-Main,,0,0,0,,because I'm failing shop.
+Dialogue: 0,1:15:09.93,1:15:10.93,CN-Main,,0,0,0,,我们有这个作业
+Dialogue: 0,1:15:09.93,1:15:10.93,EN-Main,,0,0,0,,You know, we had\nthis assignment,
+Dialogue: 0,1:15:10.93,1:15:14.81,CN-Main,,0,0,0,,你知道 做个瓷的大象
+Dialogue: 0,1:15:10.93,1:15:14.81,EN-Main,,0,0,0,,you know, to make this, like,\nceramic elephant
+Dialogue: 0,1:15:14.81,1:15:18.69,CN-Main,,0,0,0,,我们有八周的时间去做 你知道……
+Dialogue: 0,1:15:14.81,1:15:18.69,EN-Main,,0,0,0,,and we had eight weeks to do it\nand then, you know,
+Dialogue: 0,1:15:18.69,1:15:21.36,CN-Main,,0,0,0,,应该把它做成个灯
+Dialogue: 0,1:15:18.69,1:15:21.36,EN-Main,,0,0,0,,we're supposed to,\nit's like a lamp,
+Dialogue: 0,1:15:21.36,1:15:27.23,CN-Main,,0,0,0,,当你拉一下鼻子 灯应该就亮了
+Dialogue: 0,1:15:21.36,1:15:27.23,EN-Main,,0,0,0,,when, you know,\nwhen you pull the trunk, the light was supposed to go on
+Dialogue: 0,1:15:27.24,1:15:30.70,CN-Main,,0,0,0,,但我的灯并没有亮
+Dialogue: 0,1:15:27.24,1:15:30.70,EN-Main,,0,0,0,,and, you know,\nmy light didn't go on.
+Dialogue: 0,1:15:30.70,1:15:34.08,CN-Main,,0,0,0,,这份作业我得了个 F
+Dialogue: 0,1:15:30.70,1:15:34.08,EN-Main,,0,0,0,,I got an F on it.
+Dialogue: 0,1:15:34.08,1:15:37.00,CN-Main,,0,0,0,,我这辈子从没得过 F
+Dialogue: 0,1:15:34.08,1:15:37.00,EN-Main,,0,0,0,,I've never got an F in my life.
+Dialogue: 0,1:15:37.00,1:15:40.08,CN-Main,,0,0,0,,当我选这门课时 你知道……
+Dialogue: 0,1:15:37.00,1:15:40.08,EN-Main,,0,0,0,,When I signed up, you know,\nfor the course, I mean,
+Dialogue: 0,1:15:40.08,1:15:41.79,CN-Main,,0,0,0,,我想我这么做真是太聪明了 你知道
+Dialogue: 0,1:15:40.08,1:15:41.79,EN-Main,,0,0,0,,I thought I was playing it\nreal smart, you know,
+Dialogue: 0,1:15:41.79,1:15:43.87,CN-Main,,0,0,0,,因为我想我会选手工课
+Dialogue: 0,1:15:41.79,1:15:43.87,EN-Main,,0,0,0,,because I thought, you know,\nI'll take shop
+Dialogue: 0,1:15:43.88,1:15:46.88,CN-Main,,0,0,0,,这是一个保持我成绩的简单方法
+Dialogue: 0,1:15:43.88,1:15:46.88,EN-Main,,0,0,0,,and it'd be such an easy way to\nmaintain my grade point average.
+Dialogue: 0,1:15:46.88,1:15:51.01,CN-Main,,0,0,0,,为什么你会觉得那很简单？
+Dialogue: 0,1:15:46.88,1:15:51.01,EN-Main,,0,0,0,,- Why'd you think it'd be easy?
+Dialogue: 0,1:15:51.01,1:15:53.10,CN-Main,,0,0,0,,你应该看看那些选手工课的傻子们
+Dialogue: 0,1:15:51.01,1:15:53.10,EN-Main,,0,0,0,,- Have you seen some\nof the dopes that take shop?
+Dialogue: 0,1:15:53.10,1:15:54.39,CN-Main,,0,0,0,,我就选了手工课
+Dialogue: 0,1:15:53.10,1:15:54.39,EN-Main,,0,0,0,,- I take shop.
+Dialogue: 0,1:15:54.39,1:15:56.77,CN-Main,,0,0,0,,你他妈的一定是个白痴
+Dialogue: 0,1:15:54.39,1:15:56.77,EN-Main,,0,0,0,,You must be a fucking idiot.
+Dialogue: 0,1:15:56.77,1:15:58.98,CN-Main,,0,0,0,,就因为我做不出一个台灯 我就是个白痴吗？
+Dialogue: 0,1:15:56.77,1:15:58.98,EN-Main,,0,0,0,,- I'm a fucking idiot\nbecause I can't make a lamp?
+Dialogue: 0,1:15:58.98,1:16:02.77,CN-Main,,0,0,0,,不 你是个天才所以你才做不出来
+Dialogue: 0,1:15:58.98,1:16:02.77,EN-Main,,0,0,0,,- No, you're a genius\nbecause you can't make a lamp.
+Dialogue: 0,1:16:02.77,1:16:06.86,CN-Main,,0,0,0,,-关于三角学你都知道什么？ -我一点也不在乎三角学
+Dialogue: 0,1:16:02.77,1:16:06.86,EN-Main,,0,0,0,,- What do you know\nabout trigonometry? - I could care less\nabout trigonometry.
+Dialogue: 0,1:16:06.86,1:16:09.28,CN-Main,,0,0,0,,本德 你难道不知道 没有三角学就没有工程学吗？
+Dialogue: 0,1:16:06.86,1:16:09.28,EN-Main,,0,0,0,,- Bender, did you know\nwithout trigonometry there'd be no engineering?
+Dialogue: 0,1:16:09.28,1:16:10.95,CN-Main,,0,0,0,,我只知道没有台灯就没有光
+Dialogue: 0,1:16:09.28,1:16:10.95,EN-Main,,0,0,0,,- Without lamps\nthere'd be no light.
+Dialogue: 0,1:16:10.95,1:16:15.12,CN-Main,,0,0,0,,好了 你俩中的任何一个 也不比对方好多少
+Dialogue: 0,1:16:10.95,1:16:15.12,EN-Main,,0,0,0,,- Okay, so neither one of you\nis any better than the other one.
+Dialogue: 0,1:16:15.12,1:16:17.75,CN-Main,,0,0,0,,我能用脚写字
+Dialogue: 0,1:16:15.12,1:16:17.75,EN-Main,,0,0,0,,- I can write with my toes.
+Dialogue: 0,1:16:17.75,1:16:23.67,CN-Main,,0,0,0,,-也能吃饭 刷牙…… -用脚？
+Dialogue: 0,1:16:17.75,1:16:23.67,EN-Main,,0,0,0,,I can also eat, brush my teeth. - With your feet?
+Dialogue: 0,1:16:23.67,1:16:28.13,CN-Main,,0,0,0,,-还能用脚弹《心与灵》 -我能做意大利面
+Dialogue: 0,1:16:23.67,1:16:28.13,EN-Main,,0,0,0,,- Play Heart and Soul\non the piano. - I can make spaghetti.
+Dialogue: 0,1:16:28.13,1:16:30.01,CN-Main,,0,0,0,,你能做什么？
+Dialogue: 0,1:16:28.13,1:16:30.01,EN-Main,,0,0,0,,- What can you do?
+Dialogue: 0,1:16:30.01,1:16:33.80,CN-Main,,0,0,0,,我能把你们所有人的 屁股都拿胶带粘在一起
+Dialogue: 0,1:16:30.01,1:16:33.80,EN-Main,,0,0,0,,- I can tape all\nof your buns together.
+Dialogue: 0,1:16:33.80,1:16:36.30,CN-Main,,0,0,0,,我想看看克莱尔能做什么
+Dialogue: 0,1:16:33.80,1:16:36.30,EN-Main,,0,0,0,,- I want to see\nwhat Claire can do.
+Dialogue: 0,1:16:36.31,1:16:41.22,CN-Main,,0,0,0,,-我什么都不会 -所有人都有点特长
+Dialogue: 0,1:16:36.31,1:16:41.22,EN-Main,,0,0,0,,- I can't do anything. - No, everybody\ncan do something.
+Dialogue: 0,1:16:41.23,1:16:43.44,CN-Main,,0,0,0,,有一件事我会做
+Dialogue: 0,1:16:41.23,1:16:43.44,EN-Main,,0,0,0,,- There's one thing I can do.
+Dialogue: 0,1:16:43.44,1:16:47.19,CN-Main,,0,0,0,,-算了 别提了 太尴尬了 -你们看过《野生王国》吗？
+Dialogue: 0,1:16:43.44,1:16:47.19,EN-Main,,0,0,0,,No, forget it.\nIt's way too embarrassing. - You ever seen Wild Kingdom?
+Dialogue: 0,1:16:47.19,1:16:50.82,CN-Main,,0,0,0,,那个家伙出演那个节目已经 30 年了
+Dialogue: 0,1:16:47.19,1:16:50.82,EN-Main,,0,0,0,,I mean, that guy's been\ndoing that show for 30 years.
+Dialogue: 0,1:16:50.82,1:16:51.99,CN-Main,,0,0,0,,好吧
+Dialogue: 0,1:16:50.82,1:16:51.99,EN-Main,,0,0,0,,- Okay.
+Dialogue: 0,1:16:51.99,1:16:55.03,CN-Main,,0,0,0,,但是你们保证不许笑话我
+Dialogue: 0,1:16:51.99,1:16:55.03,EN-Main,,0,0,0,,You have to swear to God\nyou won't laugh.
+Dialogue: 0,1:16:58.45,1:16:59.78,CN-Main,,0,0,0,,好的
+Dialogue: 0,1:16:58.45,1:16:59.78,EN-Main,,0,0,0,,Okay.
+Dialogue: 0,1:17:02.37,1:17:05.21,CN-Main,,0,0,0,,我不敢相信自己会这么做
+Dialogue: 0,1:17:02.37,1:17:05.21,EN-Main,,0,0,0,,I can't believe\nI'm actually doing this.
+Dialogue: 0,1:17:20.06,1:17:23.73,CN-Main,,0,0,0,,不错 很棒
+Dialogue: 0,1:17:20.06,1:17:23.73,EN-Main,,0,0,0,,- All right. That's great.
+Dialogue: 0,1:17:23.73,1:17:26.36,CN-Main,,0,0,0,,-你从哪学会的这个？ -露营 初一的时候
+Dialogue: 0,1:17:23.73,1:17:26.36,EN-Main,,0,0,0,,Where'd you learn to do that?\n- Camp, seventh grade.
+Dialogue: 0,1:17:32.45,1:17:35.53,CN-Main,,0,0,0,,太棒了 克莱尔
+Dialogue: 0,1:17:32.45,1:17:35.53,EN-Main,,0,0,0,,That was great, Claire.
+Dialogue: 0,1:17:35.53,1:17:38.12,CN-Main,,0,0,0,,我对你的印象全毁了
+Dialogue: 0,1:17:35.53,1:17:38.12,EN-Main,,0,0,0,,My image of you\nis totally blown.
+Dialogue: 0,1:17:38.12,1:17:40.50,CN-Main,,0,0,0,,你个混蛋 别那么对她
+Dialogue: 0,1:17:38.12,1:17:40.50,EN-Main,,0,0,0,,- You're a shit.\nDon't do that to her.
+Dialogue: 0,1:17:40.50,1:17:43.83,CN-Main,,0,0,0,,-你发过誓不会取笑她的 -我有在笑吗？
+Dialogue: 0,1:17:40.50,1:17:43.83,EN-Main,,0,0,0,,You swore to God\nyou wouldn't laugh. - Am I laughing?
+Dialogue: 0,1:17:43.83,1:17:45.87,CN-Main,,0,0,0,,你真是个混蛋！
+Dialogue: 0,1:17:43.83,1:17:45.87,EN-Main,,0,0,0,,- You fucking prick!
+Dialogue: 0,1:17:48.09,1:17:50.30,CN-Main,,0,0,0,,你们为什么介意我怎么想？
+Dialogue: 0,1:17:48.09,1:17:50.30,EN-Main,,0,0,0,,- What do you care\nwhat I think anyway?
+Dialogue: 0,1:17:52.26,1:17:54.88,CN-Main,,0,0,0,,我根本不算个人物 对吧？
+Dialogue: 0,1:17:52.26,1:17:54.88,EN-Main,,0,0,0,,I don't even count, right?
+Dialogue: 0,1:17:54.88,1:18:00.09,CN-Main,,0,0,0,,就算我永远消失了 那也不会有任何区别
+Dialogue: 0,1:17:54.88,1:18:00.09,EN-Main,,0,0,0,,I could disappear forever\nand it wouldn't make any difference.
+Dialogue: 0,1:18:00.10,1:18:05.02,CN-Main,,0,0,0,,我在这个学校里和不存在没有区别 记得吗？
+Dialogue: 0,1:18:00.10,1:18:05.02,EN-Main,,0,0,0,,I may as well not even exist\nat this school, remember?
+Dialogue: 0,1:18:08.06,1:18:11.52,CN-Main,,0,0,0,,而你 反正也并不喜欢我
+Dialogue: 0,1:18:08.06,1:18:11.52,EN-Main,,0,0,0,,And you don't like me anyway.
+Dialogue: 0,1:18:11.53,1:18:13.95,CN-Main,,0,0,0,,你知道 我和你一样都有感情
+Dialogue: 0,1:18:11.53,1:18:13.95,EN-Main,,0,0,0,,- You know, I have just\nas many feelings as you do
+Dialogue: 0,1:18:13.95,1:18:16.53,CN-Main,,0,0,0,,被人鄙视的痛苦也都一样
+Dialogue: 0,1:18:13.95,1:18:16.53,EN-Main,,0,0,0,,and it hurts just as much when\nsomebody steps all over them.
+Dialogue: 0,1:18:16.53,1:18:18.20,CN-Main,,0,0,0,,天啊 你真可悲
+Dialogue: 0,1:18:16.53,1:18:18.20,EN-Main,,0,0,0,,- God, you're so pathetic.
+Dialogue: 0,1:18:18.20,1:18:23.91,CN-Main,,0,0,0,,永远 永远 不要再把我跟你比 好吗？
+Dialogue: 0,1:18:18.20,1:18:23.91,EN-Main,,0,0,0,,Don't you ever, ever\ncompare yourself to me, okay?
+Dialogue: 0,1:18:23.91,1:18:26.91,CN-Main,,0,0,0,,你什么都有而我一无所有
+Dialogue: 0,1:18:23.91,1:18:26.91,EN-Main,,0,0,0,,You got everything\nand I got shit.
+Dialogue: 0,1:18:26.92,1:18:29.00,CN-Main,,0,0,0,,他妈的长发公主 对吗？
+Dialogue: 0,1:18:26.92,1:18:29.00,EN-Main,,0,0,0,,Fucking Rapunzel, right?
+Dialogue: 0,1:18:29.00,1:18:32.13,CN-Main,,0,0,0,,要是你不出现学校恐怕要他妈关门
+Dialogue: 0,1:18:29.00,1:18:32.13,EN-Main,,0,0,0,,School would probably fucking\nshut down if you didn't show up.
+Dialogue: 0,1:18:32.13,1:18:35.01,CN-Main,,0,0,0,,“小公主不在这里”
+Dialogue: 0,1:18:32.13,1:18:35.01,EN-Main,,0,0,0,,Queenie isn't here.
+Dialogue: 0,1:18:35.01,1:18:38.59,CN-Main,,0,0,0,,-我喜欢那些耳环 克莱尔 -闭嘴
+Dialogue: 0,1:18:35.01,1:18:38.59,EN-Main,,0,0,0,,I like those earrings, Claire. - Shut up.
+Dialogue: 0,1:18:38.59,1:18:41.22,CN-Main,,0,0,0,,-那些是真的钻石吗 克莱尔？ -闭嘴
+Dialogue: 0,1:18:38.59,1:18:41.22,EN-Main,,0,0,0,,- Are those\nreal diamonds, Claire? - Shut up.
+Dialogue: 0,1:18:41.22,1:18:43.26,CN-Main,,0,0,0,,我觉得它们是真的
+Dialogue: 0,1:18:41.22,1:18:43.26,EN-Main,,0,0,0,,- I bet they are.
+Dialogue: 0,1:18:43.27,1:18:44.98,CN-Main,,0,0,0,,你是自己挣的钱
+Dialogue: 0,1:18:43.27,1:18:44.98,EN-Main,,0,0,0,,Did you work for the money
+Dialogue: 0,1:18:44.98,1:18:47.98,CN-Main,,0,0,0,,-买的耳环吗？ -把你的嘴闭上
+Dialogue: 0,1:18:44.98,1:18:47.98,EN-Main,,0,0,0,,for those earrings? - Shut your mouth.
+Dialogue: 0,1:18:47.98,1:18:50.90,CN-Main,,0,0,0,,-还是你爸送你的？ -闭嘴！
+Dialogue: 0,1:18:47.98,1:18:50.90,EN-Main,,0,0,0,,- Or did your daddy buy those?\n- Shut up!
+Dialogue: 0,1:18:50.90,1:18:53.03,CN-Main,,0,0,0,,我觉得是他买来送你的
+Dialogue: 0,1:18:50.90,1:18:53.03,EN-Main,,0,0,0,,- I bet he bought those for you.
+Dialogue: 0,1:18:53.03,1:18:56.40,CN-Main,,0,0,0,,应该是你的圣诞礼物吧
+Dialogue: 0,1:18:53.03,1:18:56.40,EN-Main,,0,0,0,,I bet those were\na Christmas gift,
+Dialogue: 0,1:18:56.40,1:18:58.99,CN-Main,,0,0,0,,对吗？ 你知道我今年圣诞礼物是什么？
+Dialogue: 0,1:18:56.40,1:18:58.99,EN-Main,,0,0,0,,right? You know what I got\nfor Christmas this year?
+Dialogue: 0,1:18:58.99,1:19:01.91,CN-Main,,0,0,0,,老本德家今年 他妈的可真风光啊
+Dialogue: 0,1:18:58.99,1:19:01.91,EN-Main,,0,0,0,,It was a better fucking year\nat the old Bender family.
+Dialogue: 0,1:19:01.91,1:19:03.45,CN-Main,,0,0,0,,我收到了一条烟
+Dialogue: 0,1:19:01.91,1:19:03.45,EN-Main,,0,0,0,,I got a carton of cigarettes.
+Dialogue: 0,1:19:03.45,1:19:07.45,CN-Main,,0,0,0,,我爸抓住我说 “喂 抽个够啊 约翰尼”
+Dialogue: 0,1:19:03.45,1:19:07.45,EN-Main,,0,0,0,,The old man grabbed me and said,\n"Hey, smoke up, Johnny."
+Dialogue: 0,1:19:07.46,1:19:10.96,CN-Main,,0,0,0,,好了 回家跟你爸爸哭去吧 别在这哭了 可以吗？
+Dialogue: 0,1:19:07.46,1:19:10.96,EN-Main,,0,0,0,,Okay, so go home\nand cry to your daddy. Don't cry here, okay?
+Dialogue: 0,1:19:23.14,1:19:27.19,CN-Main,,0,0,0,,天啊 我们会变成我们父母那样吗？
+Dialogue: 0,1:19:23.14,1:19:27.19,EN-Main,,0,0,0,,- My God, are we going\nto be like our parents?
+Dialogue: 0,1:19:27.19,1:19:28.94,CN-Main,,0,0,0,,我不会
+Dialogue: 0,1:19:27.19,1:19:28.94,EN-Main,,0,0,0,,- Not me.
+Dialogue: 0,1:19:31.52,1:19:32.86,CN-Main,,0,0,0,,永远不会
+Dialogue: 0,1:19:31.52,1:19:32.86,EN-Main,,0,0,0,,Ever.
+Dialogue: 0,1:19:34.65,1:19:37.57,CN-Main,,0,0,0,,这是不可避免的
+Dialogue: 0,1:19:34.65,1:19:37.57,EN-Main,,0,0,0,,- It's unavoidable.
+Dialogue: 0,1:19:37.57,1:19:41.28,CN-Main,,0,0,0,,自然而然就会变成那样
+Dialogue: 0,1:19:37.57,1:19:41.28,EN-Main,,0,0,0,,Just happens.
+Dialogue: 0,1:19:41.28,1:19:44.62,CN-Main,,0,0,0,,什么会变成那样？
+Dialogue: 0,1:19:41.28,1:19:44.62,EN-Main,,0,0,0,,Claire: What happens?
+Dialogue: 0,1:19:44.62,1:19:47.21,CN-Main,,0,0,0,,当你长大了
+Dialogue: 0,1:19:44.62,1:19:47.21,EN-Main,,0,0,0,,- When you grow up...
+Dialogue: 0,1:19:47.21,1:19:51.38,CN-Main,,0,0,0,,-你的心也就死了 -谁在乎？
+Dialogue: 0,1:19:47.21,1:19:51.38,EN-Main,,0,0,0,,your heart dies. - Who cares?
+Dialogue: 0,1:19:51.38,1:19:52.97,CN-Main,,0,0,0,,我在乎
+Dialogue: 0,1:19:51.38,1:19:52.97,EN-Main,,0,0,0,,- I care.
+Dialogue: 0,1:19:55.59,1:19:58.97,CN-Main,,0,0,0,,我就在想 我是指……
+Dialogue: 0,1:19:55.59,1:19:58.97,EN-Main,,0,0,0,,- I was just thinking, I mean...
+Dialogue: 0,1:19:58.97,1:20:05.22,CN-Main,,0,0,0,,我知道现在是个奇怪的时刻 但是我就是在想
+Dialogue: 0,1:19:58.97,1:20:05.22,EN-Main,,0,0,0,,I know it's kind of a weird time\nbut I was just wondering...
+Dialogue: 0,1:20:05.22,1:20:08.39,CN-Main,,0,0,0,,周一的时候会发生什么？
+Dialogue: 0,1:20:05.22,1:20:08.39,EN-Main,,0,0,0,,what is going to happen to us\non Monday
+Dialogue: 0,1:20:08.39,1:20:14.64,CN-Main,,0,0,0,,当我们再都在一起的时候？ 我是说 我把你们当朋友
+Dialogue: 0,1:20:08.39,1:20:14.64,EN-Main,,0,0,0,,when we're all together again? I consider you guys my friends.
+Dialogue: 0,1:20:14.65,1:20:18.24,CN-Main,,0,0,0,,我没想错 对吧？
+Dialogue: 0,1:20:14.65,1:20:18.24,EN-Main,,0,0,0,,I'm not wrong, am I?
+Dialogue: 0,1:20:18.24,1:20:20.15,CN-Main,,0,0,0,,没错
+Dialogue: 0,1:20:18.24,1:20:20.15,EN-Main,,0,0,0,,- No.
+Dialogue: 0,1:20:20.15,1:20:22.53,CN-Main,,0,0,0,,那么 周一会发生什么呢？
+Dialogue: 0,1:20:20.15,1:20:22.53,EN-Main,,0,0,0,,- So, on Monday, what happens?
+Dialogue: 0,1:20:22.53,1:20:26.07,CN-Main,,0,0,0,,你是说我们仍然会是朋友吗？
+Dialogue: 0,1:20:22.53,1:20:26.07,EN-Main,,0,0,0,,- Are we still friends,\nyou mean?
+Dialogue: 0,1:20:26.08,1:20:30.04,CN-Main,,0,0,0,,-如果我们现在是朋友的话 -对
+Dialogue: 0,1:20:26.08,1:20:30.04,EN-Main,,0,0,0,,If we're friends now, that is?\n- Yeah.
+Dialogue: 0,1:20:30.04,1:20:32.08,CN-Main,,0,0,0,,你想听真话吗？
+Dialogue: 0,1:20:30.04,1:20:32.08,EN-Main,,0,0,0,,- Do you want the truth?
+Dialogue: 0,1:20:32.08,1:20:35.21,CN-Main,,0,0,0,,当然 我想听真话
+Dialogue: 0,1:20:32.08,1:20:35.21,EN-Main,,0,0,0,,- Yeah, I want the truth.
+Dialogue: 0,1:20:35.21,1:20:38.09,CN-Main,,0,0,0,,我不这么认为
+Dialogue: 0,1:20:35.21,1:20:38.09,EN-Main,,0,0,0,,- I don't think so.
+Dialogue: 0,1:20:38.09,1:20:41.47,CN-Main,,0,0,0,,是我们所有人 还是只有约翰？
+Dialogue: 0,1:20:38.09,1:20:41.47,EN-Main,,0,0,0,,- With all of us or just John?
+Dialogue: 0,1:20:41.47,1:20:43.09,CN-Main,,0,0,0,,你们所有人
+Dialogue: 0,1:20:41.47,1:20:43.09,EN-Main,,0,0,0,,- With all of you.
+Dialogue: 0,1:20:43.09,1:20:47.01,CN-Main,,0,0,0,,-这是个很好的态度 克莱尔 -噢 说实话 安迪
+Dialogue: 0,1:20:43.09,1:20:47.01,EN-Main,,0,0,0,,- That's a real nice\nattitude, Claire. - Oh, be honest, Andy.
+Dialogue: 0,1:20:47.01,1:20:51.23,CN-Main,,0,0,0,,如果周一布莱恩在走廊里向你走来 你会怎么做？
+Dialogue: 0,1:20:47.01,1:20:51.23,EN-Main,,0,0,0,,If Brian came walking up to you\nin the hall on Monday, what would you do?
+Dialogue: 0,1:20:51.23,1:20:54.61,CN-Main,,0,0,0,,我的意思是想象一下那个场景 你和所有的体招生在一起
+Dialogue: 0,1:20:51.23,1:20:54.61,EN-Main,,0,0,0,,I mean, picture this, you're\nthere with all the sports.
+Dialogue: 0,1:20:54.61,1:20:56.15,CN-Main,,0,0,0,,我清楚你会怎么做
+Dialogue: 0,1:20:54.61,1:20:56.15,EN-Main,,0,0,0,,I know exactly what you'd do.
+Dialogue: 0,1:20:56.15,1:20:58.67,CN-Main,,0,0,0,,你会跟他打招呼 等他走了就把他贬得一无是处
+Dialogue: 0,1:20:56.15,1:20:58.67,EN-Main,,0,0,0,,You'd say hi to him\nand when he left, you'd cut him all up
+Dialogue: 0,1:20:58.67,1:21:02.11,CN-Main,,0,0,0,,你的朋友就不会觉得你是真的喜欢他
+Dialogue: 0,1:20:58.67,1:21:02.11,EN-Main,,0,0,0,,so your friends wouldn't think that you really liked him.
+Dialogue: 0,1:21:02.11,1:21:04.24,CN-Main,,0,0,0,,没门
+Dialogue: 0,1:21:02.11,1:21:04.24,EN-Main,,0,0,0,,- No way.
+Dialogue: 0,1:21:04.24,1:21:06.58,CN-Main,,0,0,0,,好吧 如果我走向你呢？
+Dialogue: 0,1:21:04.24,1:21:06.58,EN-Main,,0,0,0,,- Yeah,\nwhat if I came up to you?
+Dialogue: 0,1:21:06.58,1:21:08.37,CN-Main,,0,0,0,,一样的结果
+Dialogue: 0,1:21:06.58,1:21:08.37,EN-Main,,0,0,0,,- Same exact thing.
+Dialogue: 0,1:21:08.37,1:21:11.29,CN-Main,,0,0,0,,你个贱人！
+Dialogue: 0,1:21:08.37,1:21:11.29,EN-Main,,0,0,0,,- You are a bitch!
+Dialogue: 0,1:21:11.29,1:21:14.25,CN-Main,,0,0,0,,为什么？就因为我说出了真相 我就是贱人了？
+Dialogue: 0,1:21:11.29,1:21:14.25,EN-Main,,0,0,0,,- Why?\nBecause I'm telling the truth? That makes me a bitch?
+Dialogue: 0,1:21:14.25,1:21:16.94,CN-Main,,0,0,0,,不 因为你知道对别人 做出这样的事是多么低劣
+Dialogue: 0,1:21:14.25,1:21:16.94,EN-Main,,0,0,0,,- No, because you know\nhow shitty that is to do to someone
+Dialogue: 0,1:21:16.94,1:21:18.93,CN-Main,,0,0,0,,而你仍然没有胆量 面对自己的朋友
+Dialogue: 0,1:21:16.94,1:21:18.93,EN-Main,,0,0,0,,and you don't got\nthe balls to stand up to your friends
+Dialogue: 0,1:21:18.93,1:21:21.30,CN-Main,,0,0,0,,-告诉他们你想喜欢谁就喜欢谁
+Dialogue: 0,1:21:18.93,1:21:21.30,EN-Main,,0,0,0,,and tell them\nthat you're going to like who you want to like.
+Dialogue: 0,1:21:21.30,1:21:23.30,CN-Main,,0,0,0,,-好吧 那你呢 你这个伪君子？
+Dialogue: 0,1:21:21.30,1:21:23.30,EN-Main,,0,0,0,,- Okay, what about you,\nyou hypocrite?
+Dialogue: 0,1:21:23.30,1:21:27.30,CN-Main,,0,0,0,,你怎么不带艾莉森 去你那吐得满地的重金属派对？
+Dialogue: 0,1:21:23.30,1:21:27.30,EN-Main,,0,0,0,,Why don't you take Allison\nto one of your heavy metal vomit parties?
+Dialogue: 0,1:21:27.31,1:21:29.41,CN-Main,,0,0,0,,或者带着布莱恩出去到 停车场吃午饭然后嗑药？
+Dialogue: 0,1:21:27.31,1:21:29.41,EN-Main,,0,0,0,,Or take Brian\nout to the parking lot at lunch to get high
+Dialogue: 0,1:21:29.41,1:21:32.06,CN-Main,,0,0,0,,那安迪呢？我呢？
+Dialogue: 0,1:21:29.41,1:21:32.06,EN-Main,,0,0,0,,or what about Andy\nfor that matter? What about me?
+Dialogue: 0,1:21:32.06,1:21:35.31,CN-Main,,0,0,0,,如果我们一起走进走廊 你的朋友们会怎么说？
+Dialogue: 0,1:21:32.06,1:21:35.31,EN-Main,,0,0,0,,What would your friends say\nif we were walking down the hall together?
+Dialogue: 0,1:21:35.31,1:21:36.61,CN-Main,,0,0,0,,他们会笑掉大牙
+Dialogue: 0,1:21:35.31,1:21:36.61,EN-Main,,0,0,0,,They'd laugh their asses off.
+Dialogue: 0,1:21:36.61,1:21:38.44,CN-Main,,0,0,0,,而你或许会告诉他们你和我有一腿
+Dialogue: 0,1:21:36.61,1:21:38.44,EN-Main,,0,0,0,,And you'd probably tell them\nthat you were doing it with me
+Dialogue: 0,1:21:38.44,1:21:40.27,CN-Main,,0,0,0,,他们就会原谅看见你和我在一起
+Dialogue: 0,1:21:38.44,1:21:40.27,EN-Main,,0,0,0,,so they'd forgive you\nfor being seen with me.
+Dialogue: 0,1:21:40.28,1:21:42.28,CN-Main,,0,0,0,,永远不要提起我的朋友
+Dialogue: 0,1:21:40.28,1:21:42.28,EN-Main,,0,0,0,,- Don't you ever talk\nabout my friends.
+Dialogue: 0,1:21:42.28,1:21:45.20,CN-Main,,0,0,0,,你不了解他们任何一个 你甚至正眼都不会瞧一眼他们
+Dialogue: 0,1:21:42.28,1:21:45.20,EN-Main,,0,0,0,,You don't know\nany of my friends, you don't look\nat any of my friends,
+Dialogue: 0,1:21:45.20,1:21:48.32,CN-Main,,0,0,0,,你肯定也不会屈尊去和他们讲话
+Dialogue: 0,1:21:45.20,1:21:48.32,EN-Main,,0,0,0,,and you certainly\nwouldn't condescend to speak to any of my friends.
+Dialogue: 0,1:21:48.33,1:21:49.74,CN-Main,,0,0,0,,你就和你了解的人事物呆在一起吧
+Dialogue: 0,1:21:48.33,1:21:49.74,EN-Main,,0,0,0,,So you just stick\nto the things that you know,
+Dialogue: 0,1:21:49.74,1:21:52.99,CN-Main,,0,0,0,,购物 做指甲 你老爸的宝马
+Dialogue: 0,1:21:49.74,1:21:52.99,EN-Main,,0,0,0,,shopping, nail polish,\nyour father's BMW,
+Dialogue: 0,1:21:53.00,1:21:54.62,CN-Main,,0,0,0,,还有你那身在加勒比的 可怜有钱酗酒的老妈
+Dialogue: 0,1:21:53.00,1:21:54.62,EN-Main,,0,0,0,,and your poor, rich drunk mother\nin the Caribbean.
+Dialogue: 0,1:21:54.62,1:21:58.04,CN-Main,,0,0,0,,-闭嘴！ -至于考虑会怎么样
+Dialogue: 0,1:21:54.62,1:21:58.04,EN-Main,,0,0,0,,- Shut up! - And as far as being concerned\nabout what's going to happen
+Dialogue: 0,1:21:58.04,1:21:59.50,CN-Main,,0,0,0,,当我和你一起在走廊里走的时候
+Dialogue: 0,1:21:58.04,1:21:59.50,EN-Main,,0,0,0,,when you and I walk down\nthe hallways at school,
+Dialogue: 0,1:21:59.50,1:22:02.13,CN-Main,,0,0,0,,别想了 因为那根本不可能
+Dialogue: 0,1:21:59.50,1:22:02.13,EN-Main,,0,0,0,,you can forget it because\nit's never going to happen.
+Dialogue: 0,1:22:02.13,1:22:06.13,CN-Main,,0,0,0,,就这么当鸵鸟 等着你该死的毕业舞会吧
+Dialogue: 0,1:22:02.13,1:22:06.13,EN-Main,,0,0,0,,Just bury your head in the sand\nand wait for your fucking prom.
+Dialogue: 0,1:22:06.14,1:22:09.19,CN-Main,,0,0,0,,-我恨你 -是吗？太好了！
+Dialogue: 0,1:22:06.14,1:22:09.19,EN-Main,,0,0,0,,- I hate you.\n- Yeah? Good.
+Dialogue: 0,1:22:15.14,1:22:19.31,CN-Main,,0,0,0,,好吧 那我觉得艾莉森 和我比你们好多了对吧？
+Dialogue: 0,1:22:15.14,1:22:19.31,EN-Main,,0,0,0,,- Okay, then I assume Allison\nand I are better people than you guys, huh?
+Dialogue: 0,1:22:19.32,1:22:21.41,CN-Main,,0,0,0,,我们这群奇葩
+Dialogue: 0,1:22:19.32,1:22:21.41,EN-Main,,0,0,0,,Us weirdoes.
+Dialogue: 0,1:22:23.36,1:22:26.49,CN-Main,,0,0,0,,你会……你会那么对我吗？
+Dialogue: 0,1:22:23.36,1:22:26.49,EN-Main,,0,0,0,,Would you... Would you do that to me?
+Dialogue: 0,1:22:26.49,1:22:28.20,CN-Main,,0,0,0,,我没有朋友
+Dialogue: 0,1:22:26.49,1:22:28.20,EN-Main,,0,0,0,,- I don't have any friends.
+Dialogue: 0,1:22:30.70,1:22:32.37,CN-Main,,0,0,0,,好吧 如果你有呢？
+Dialogue: 0,1:22:30.70,1:22:32.37,EN-Main,,0,0,0,,- Well, if you did.
+Dialogue: 0,1:22:32.37,1:22:33.54,CN-Main,,0,0,0,,不会
+Dialogue: 0,1:22:32.37,1:22:33.54,EN-Main,,0,0,0,,- No.
+Dialogue: 0,1:22:36.29,1:22:40.09,CN-Main,,0,0,0,,我觉得要是我的朋友的话 是不会介意的
+Dialogue: 0,1:22:36.29,1:22:40.09,EN-Main,,0,0,0,,I don't think the kind of\nfriends I'd have would mind.
+Dialogue: 0,1:22:40.09,1:22:45.43,CN-Main,,0,0,0,,我只是想告诉你们 我不会那样做的
+Dialogue: 0,1:22:40.09,1:22:45.43,EN-Main,,0,0,0,,- I just want to tell each\nof you that I wouldn't do that.
+Dialogue: 0,1:22:45.43,1:22:49.80,CN-Main,,0,0,0,,我不想也不会
+Dialogue: 0,1:22:45.43,1:22:49.80,EN-Main,,0,0,0,,I wouldn't and I will not.
+Dialogue: 0,1:22:49.80,1:22:51.43,CN-Main,,0,0,0,,因为那太卑鄙了
+Dialogue: 0,1:22:49.80,1:22:51.43,EN-Main,,0,0,0,,Because I think\nthat's real shitty.
+Dialogue: 0,1:22:54.39,1:22:58.44,CN-Main,,0,0,0,,你朋友不会介意的 因为他们崇拜我们
+Dialogue: 0,1:22:54.39,1:22:58.44,EN-Main,,0,0,0,,- Your friends wouldn't mind\nbecause they look up to us.
+Dialogue: 0,1:23:01.23,1:23:04.44,CN-Main,,0,0,0,,你真是太自大了 克莱尔
+Dialogue: 0,1:23:01.23,1:23:04.44,EN-Main,,0,0,0,,- You're so conceited, Claire.
+Dialogue: 0,1:23:04.44,1:23:07.86,CN-Main,,0,0,0,,真是太自大了 你真的完全是目中无人
+Dialogue: 0,1:23:04.44,1:23:07.86,EN-Main,,0,0,0,,You're so conceited. You're so, like,\nfull of yourself.
+Dialogue: 0,1:23:07.86,1:23:11.78,CN-Main,,0,0,0,,-为什么你会是这个样子？ -我并不是因为自大才那么说的
+Dialogue: 0,1:23:07.86,1:23:11.78,EN-Main,,0,0,0,,Why are you like that? - I'm not saying that\nto be conceited.
+Dialogue: 0,1:23:11.78,1:23:16.70,CN-Main,,0,0,0,,我讨厌这样 我讨厌对我的朋友言听计从
+Dialogue: 0,1:23:11.78,1:23:16.70,EN-Main,,0,0,0,,I hate it. I hate having to go along\nwith everything my friends say.
+Dialogue: 0,1:23:16.71,1:23:19.54,CN-Main,,0,0,0,,那你为什么要那么做？
+Dialogue: 0,1:23:16.71,1:23:19.54,EN-Main,,0,0,0,,Brian: Then why do you do it?
+Dialogue: 0,1:23:19.54,1:23:22.75,CN-Main,,0,0,0,,我不知道 不知道
+Dialogue: 0,1:23:19.54,1:23:22.75,EN-Main,,0,0,0,,- I don't know.\nI don't...
+Dialogue: 0,1:23:22.75,1:23:25.71,CN-Main,,0,0,0,,你不会理解的 你不会的
+Dialogue: 0,1:23:22.75,1:23:25.71,EN-Main,,0,0,0,,You don't understand.\nYou don't...
+Dialogue: 0,1:23:25.72,1:23:29.84,CN-Main,,0,0,0,,你没有和我和安迪的 朋友这种人交朋友
+Dialogue: 0,1:23:25.72,1:23:29.84,EN-Main,,0,0,0,,You're not friends with the same\nkind of people that Andy and I are friends with.
+Dialogue: 0,1:23:29.84,1:23:34.72,CN-Main,,0,0,0,,你无法理解 他们施加给你的压力
+Dialogue: 0,1:23:29.84,1:23:34.72,EN-Main,,0,0,0,,You know, you just\ndon't understand the pressure that they can put on you.
+Dialogue: 0,1:23:34.72,1:23:36.55,CN-Main,,0,0,0,,我不理解什么？
+Dialogue: 0,1:23:34.72,1:23:36.55,EN-Main,,0,0,0,,- I don't understand what?
+Dialogue: 0,1:23:36.56,1:23:40.44,CN-Main,,0,0,0,,你认为我不懂什么是压力 克莱尔？
+Dialogue: 0,1:23:36.56,1:23:40.44,EN-Main,,0,0,0,,You think I don't understand\npressure, Claire?
+Dialogue: 0,1:23:40.44,1:23:44.40,CN-Main,,0,0,0,,去你的！去你的！
+Dialogue: 0,1:23:40.44,1:23:44.40,EN-Main,,0,0,0,,Well, fuck you! Fuck you!
+Dialogue: 0,1:23:51.28,1:23:53.12,CN-Main,,0,0,0,,你知道我今天为什么在这吗？
+Dialogue: 0,1:23:51.28,1:23:53.12,EN-Main,,0,0,0,,You know why I'm here today?
+Dialogue: 0,1:23:55.70,1:23:57.12,CN-Main,,0,0,0,,你知道吗？
+Dialogue: 0,1:23:55.70,1:23:57.12,EN-Main,,0,0,0,,Do you?
+Dialogue: 0,1:24:00.67,1:24:02.54,CN-Main,,0,0,0,,我在这
+Dialogue: 0,1:24:00.67,1:24:02.54,EN-Main,,0,0,0,,I'm here...
+Dialogue: 0,1:24:02.54,1:24:08.63,CN-Main,,0,0,0,,是因为莱恩老师在我的储物柜里 发现了一把枪
+Dialogue: 0,1:24:02.54,1:24:08.63,EN-Main,,0,0,0,,because Mr. Ryan\nfound a gun in the locker.
+Dialogue: 0,1:24:10.39,1:24:14.35,CN-Main,,0,0,0,,你怎么会有一把枪在你的柜子里？
+Dialogue: 0,1:24:10.39,1:24:14.35,EN-Main,,0,0,0,,- Why'd you have a gun\nin your locker?
+Dialogue: 0,1:24:14.35,1:24:16.14,CN-Main,,0,0,0,,我努力了
+Dialogue: 0,1:24:14.35,1:24:16.14,EN-Main,,0,0,0,,- I tried.
+Dialogue: 0,1:24:17.52,1:24:24.27,CN-Main,,0,0,0,,拉它那该死的鼻子 灯应该亮的
+Dialogue: 0,1:24:17.52,1:24:24.27,EN-Main,,0,0,0,,I mean,\npull the fucking trunk on it and the light's\nsupposed to go on.
+Dialogue: 0,1:24:24.27,1:24:27.94,CN-Main,,0,0,0,,它并没有亮……
+Dialogue: 0,1:24:24.27,1:24:27.94,EN-Main,,0,0,0,,It didn't go on.\nI mean...
+Dialogue: 0,1:24:27.94,1:24:31.48,CN-Main,,0,0,0,,-枪是干什么的 布莱恩？ -不要再提了
+Dialogue: 0,1:24:27.94,1:24:31.48,EN-Main,,0,0,0,,Andy: What's the gun for,\nBrian? - Just forget it.
+Dialogue: 0,1:24:31.48,1:24:33.24,CN-Main,,0,0,0,,是你提起来的
+Dialogue: 0,1:24:31.48,1:24:33.24,EN-Main,,0,0,0,,- You brought it up, man.
+Dialogue: 0,1:24:35.66,1:24:37.29,CN-Main,,0,0,0,,我不能得 F 的
+Dialogue: 0,1:24:35.66,1:24:37.29,EN-Main,,0,0,0,,- I can't have an F.
+Dialogue: 0,1:24:40.87,1:24:43.91,CN-Main,,0,0,0,,我不能得 F 的
+Dialogue: 0,1:24:40.87,1:24:43.91,EN-Main,,0,0,0,,I can't have it...
+Dialogue: 0,1:24:43.92,1:24:46.42,CN-Main,,0,0,0,,我的父母是没法接受的
+Dialogue: 0,1:24:43.92,1:24:46.42,EN-Main,,0,0,0,,and I know my parents\ncan't have it.
+Dialogue: 0,1:24:48.97,1:24:53.43,CN-Main,,0,0,0,,这样即使学期接下来拿到全 A 也没用 我还是只能得 B
+Dialogue: 0,1:24:48.97,1:24:53.43,EN-Main,,0,0,0,,Even if I ace\nthe rest of the semester, I'm still only a B.
+Dialogue: 0,1:24:53.43,1:24:56.30,CN-Main,,0,0,0,,所有的一切都毁了
+Dialogue: 0,1:24:53.43,1:24:56.30,EN-Main,,0,0,0,,Everything's ruined for me.
+Dialogue: 0,1:24:56.31,1:24:57.69,CN-Main,,0,0,0,,布莱恩
+Dialogue: 0,1:24:56.31,1:24:57.69,EN-Main,,0,0,0,,- Brian.
+Dialogue: 0,1:25:04.36,1:25:06.98,CN-Main,,0,0,0,,我曾考虑过其他选择 你知道吗？
+Dialogue: 0,1:25:04.36,1:25:06.98,EN-Main,,0,0,0,,- Considering my options,\nyou know?
+Dialogue: 0,1:25:06.98,1:25:08.94,CN-Main,,0,0,0,,不 自杀不是个办法
+Dialogue: 0,1:25:06.98,1:25:08.94,EN-Main,,0,0,0,,- No, killing yourself\nis not an option.
+Dialogue: 0,1:25:08.94,1:25:10.65,CN-Main,,0,0,0,,我知道 我并没有那么做 不是吗？
+Dialogue: 0,1:25:08.94,1:25:10.65,EN-Main,,0,0,0,,- Well, I didn't do it, did I?
+Dialogue: 0,1:25:10.65,1:25:13.24,CN-Main,,0,0,0,,没有吧 我想是没有
+Dialogue: 0,1:25:10.65,1:25:13.24,EN-Main,,0,0,0,,No, I don't think so.
+Dialogue: 0,1:25:13.24,1:25:15.37,CN-Main,,0,0,0,,是一把手枪？
+Dialogue: 0,1:25:13.24,1:25:15.37,EN-Main,,0,0,0,,- It was a handgun?
+Dialogue: 0,1:25:16.83,1:25:19.91,CN-Main,,0,0,0,,是信号枪 它在我储物柜里走火了
+Dialogue: 0,1:25:16.83,1:25:19.91,EN-Main,,0,0,0,,- It was a flare gun. Went off in my locker.
+Dialogue: 0,1:25:19.91,1:25:21.70,CN-Main,,0,0,0,,真假的？
+Dialogue: 0,1:25:19.91,1:25:21.70,EN-Main,,0,0,0,,- Really?
+Dialogue: 0,1:25:23.58,1:25:26.21,CN-Main,,0,0,0,,这并不好笑
+Dialogue: 0,1:25:23.58,1:25:26.21,EN-Main,,0,0,0,,- It's not funny.
+Dialogue: 0,1:25:40.06,1:25:42.31,CN-Main,,0,0,0,,好吧 是挺好笑的
+Dialogue: 0,1:25:40.06,1:25:42.31,EN-Main,,0,0,0,,Yes, it is.
+Dialogue: 0,1:25:43.98,1:25:48.27,CN-Main,,0,0,0,,什么狗屁大象也被毁了
+Dialogue: 0,1:25:43.98,1:25:48.27,EN-Main,,0,0,0,,Fucking elephant\nwas destroyed.
+Dialogue: 0,1:25:48.27,1:25:50.61,CN-Main,,0,0,0,,你们想知道 我做了什么才被留堂的吗？
+Dialogue: 0,1:25:48.27,1:25:50.61,EN-Main,,0,0,0,,- You want to know\nwhat I did to get in here?
+Dialogue: 0,1:25:53.95,1:25:55.41,CN-Main,,0,0,0,,什么都没做
+Dialogue: 0,1:25:53.95,1:25:55.41,EN-Main,,0,0,0,,Nothing.
+Dialogue: 0,1:25:56.62,1:25:59.33,CN-Main,,0,0,0,,我没其他什么事情好做的了
+Dialogue: 0,1:25:56.62,1:25:59.33,EN-Main,,0,0,0,,I didn't have\nanything better to do.
+Dialogue: 0,1:26:04.96,1:26:07.46,CN-Main,,0,0,0,,你在取笑我
+Dialogue: 0,1:26:04.96,1:26:07.46,EN-Main,,0,0,0,,You're laughing at me.
+Dialogue: 0,1:26:07.46,1:26:10.63,CN-Main,,0,0,0,,-并没有 -你就是
+Dialogue: 0,1:26:07.46,1:26:10.63,EN-Main,,0,0,0,,- No. - You are.
+Dialogue: 0,1:27:55.74,1:27:57.07,CN-Main,,0,0,0,,布莱恩
+Dialogue: 0,1:27:55.74,1:27:57.07,EN-Main,,0,0,0,,- Brian?
+Dialogue: 0,1:27:57.07,1:27:58.65,CN-Main,,0,0,0,,怎么了？
+Dialogue: 0,1:27:57.07,1:27:58.65,EN-Main,,0,0,0,,- Hmm?
+Dialogue: 0,1:27:58.65,1:28:01.11,CN-Main,,0,0,0,,你要写论文吗？
+Dialogue: 0,1:27:58.65,1:28:01.11,EN-Main,,0,0,0,,- Are you going\nto write your paper?
+Dialogue: 0,1:28:01.12,1:28:03.74,CN-Main,,0,0,0,,对啊 怎么了？
+Dialogue: 0,1:28:01.12,1:28:03.74,EN-Main,,0,0,0,,- Yeah, why?
+Dialogue: 0,1:28:03.74,1:28:08.45,CN-Main,,0,0,0,,我们所有人都写论文就有点浪费了 你不觉得吗？
+Dialogue: 0,1:28:03.74,1:28:08.45,EN-Main,,0,0,0,,- Well, it's kind of a waste\nfor all of us to write our paper,\ndon't you think?
+Dialogue: 0,1:28:08.46,1:28:10.67,CN-Main,,0,0,0,,这是弗农让我们做的
+Dialogue: 0,1:28:08.46,1:28:10.67,EN-Main,,0,0,0,,- Well, that's Vernon\nwants us to do.
+Dialogue: 0,1:28:10.67,1:28:15.80,CN-Main,,0,0,0,,倒也是 但是 我觉得我们要讲的都差不多
+Dialogue: 0,1:28:10.67,1:28:15.80,EN-Main,,0,0,0,,- True, but I think we'd all\nkind of say the same thing.
+Dialogue: 0,1:28:15.80,1:28:19.01,CN-Main,,0,0,0,,你只是不想写论文吧？
+Dialogue: 0,1:28:15.80,1:28:19.01,EN-Main,,0,0,0,,- You just don't want to\nwrite your paper, right?
+Dialogue: 0,1:28:19.01,1:28:20.29,CN-Main,,0,0,0,,也可以这么说 但是……
+Dialogue: 0,1:28:19.01,1:28:20.29,EN-Main,,0,0,0,,- True,\nbut
+Dialogue: 0,1:28:20.29,1:28:23.72,CN-Main,,0,0,0,,你是最聪明的 对吧？
+Dialogue: 0,1:28:20.29,1:28:23.72,EN-Main,,0,0,0,,you're the smartest, right?
+Dialogue: 0,1:28:23.72,1:28:25.85,CN-Main,,0,0,0,,这个嘛……
+Dialogue: 0,1:28:23.72,1:28:25.85,EN-Main,,0,0,0,,- Well...
+Dialogue: 0,1:28:25.85,1:28:27.39,CN-Main,,0,0,0,,我们信任你
+Dialogue: 0,1:28:25.85,1:28:27.39,EN-Main,,0,0,0,,- We trust you.
+Dialogue: 0,1:28:30.77,1:28:31.85,CN-Main,,0,0,0,,是的
+Dialogue: 0,1:28:30.77,1:28:31.85,EN-Main,,0,0,0,,- Yeah.
+Dialogue: 0,1:28:34.44,1:28:37.07,CN-Main,,0,0,0,,好吧
+Dialogue: 0,1:28:34.44,1:28:37.07,EN-Main,,0,0,0,,- All right.
+Dialogue: 0,1:28:37.07,1:28:39.61,CN-Main,,0,0,0,,我会写的
+Dialogue: 0,1:28:37.07,1:28:39.61,EN-Main,,0,0,0,,I'll do it.
+Dialogue: 0,1:28:39.61,1:28:40.90,CN-Main,,0,0,0,,太棒了
+Dialogue: 0,1:28:39.61,1:28:40.90,EN-Main,,0,0,0,,- Great.
+Dialogue: 0,1:28:53.96,1:28:55.92,CN-Main,,0,0,0,,来吧
+Dialogue: 0,1:28:53.96,1:28:55.92,EN-Main,,0,0,0,,Come on.
+Dialogue: 0,1:28:55.92,1:28:57.63,CN-Main,,0,0,0,,我们要去哪？
+Dialogue: 0,1:28:55.92,1:28:57.63,EN-Main,,0,0,0,,- Where are we going?
+Dialogue: 0,1:28:57.63,1:28:58.80,CN-Main,,0,0,0,,来嘛
+Dialogue: 0,1:28:57.63,1:28:58.80,EN-Main,,0,0,0,,- Come on.
+Dialogue: 0,1:29:00.84,1:29:02.84,CN-Main,,0,0,0,,别害怕
+Dialogue: 0,1:29:00.84,1:29:02.84,EN-Main,,0,0,0,,Don't be afraid.
+Dialogue: 0,1:29:04.22,1:29:07.22,CN-Main,,0,0,0,,-别把那个戳进我眼睛里了 -我不是在戳 闭上眼睛就行了
+Dialogue: 0,1:29:04.22,1:29:07.22,EN-Main,,0,0,0,,- Don't stick that in my eye. - I'm not sticking it.\nJust close--
+Dialogue: 0,1:29:07.22,1:29:09.72,CN-Main,,0,0,0,,不 等等 像这样
+Dialogue: 0,1:29:07.22,1:29:09.72,EN-Main,,0,0,0,,No, wait a minute.\nJust go like that.
+Dialogue: 0,1:29:11.81,1:29:13.77,CN-Main,,0,0,0,,很好
+Dialogue: 0,1:29:11.81,1:29:13.77,EN-Main,,0,0,0,,Good.
+Dialogue: 0,1:29:16.07,1:29:19.44,CN-Main,,0,0,0,,没有你眼睛上那些黑不拉几的东西 你真是美太多了
+Dialogue: 0,1:29:16.07,1:29:19.44,EN-Main,,0,0,0,,- You know, you really do look\na lot better without all that black shit on your eyes.
+Dialogue: 0,1:29:19.44,1:29:21.78,CN-Main,,0,0,0,,喂 我喜欢那些黑不拉几的东西
+Dialogue: 0,1:29:19.44,1:29:21.78,EN-Main,,0,0,0,,- Hey, I like that black shit.
+Dialogue: 0,1:29:23.16,1:29:25.99,CN-Main,,0,0,0,,现在好多了
+Dialogue: 0,1:29:23.16,1:29:25.99,EN-Main,,0,0,0,,- This looks a lot better.
+Dialogue: 0,1:29:25.99,1:29:27.45,CN-Main,,0,0,0,,向上看
+Dialogue: 0,1:29:25.99,1:29:27.45,EN-Main,,0,0,0,,Look up.
+Dialogue: 0,1:29:36.00,1:29:40.92,CN-Main,,0,0,0,,拜托 你为什么对我这么好？
+Dialogue: 0,1:29:36.00,1:29:40.92,EN-Main,,0,0,0,,- Please. Why are you being so nice to me?
+Dialogue: 0,1:29:40.92,1:29:42.84,CN-Main,,0,0,0,,因为你愿意让我对你好
+Dialogue: 0,1:29:40.92,1:29:42.84,EN-Main,,0,0,0,,- Because you're letting me.
+Dialogue: 0,1:29:59.28,1:30:00.66,CN-Main,,0,0,0,,你迷路了？
+Dialogue: 0,1:29:59.28,1:30:00.66,EN-Main,,0,0,0,,- You lost?
+Dialogue: 0,1:30:53.58,1:30:55.04,CN-Main,,0,0,0,,谢谢你
+Dialogue: 0,1:30:53.58,1:30:55.04,EN-Main,,0,0,0,,- Thank you.
+Dialogue: 0,1:31:02.92,1:31:05.21,CN-Main,,0,0,0,,你为什么要这么做？
+Dialogue: 0,1:31:02.92,1:31:05.21,EN-Main,,0,0,0,,- Why'd you do that?
+Dialogue: 0,1:31:05.22,1:31:08.80,CN-Main,,0,0,0,,因为我知道你不会
+Dialogue: 0,1:31:05.22,1:31:08.80,EN-Main,,0,0,0,,- Because I knew you wouldn't.
+Dialogue: 0,1:31:08.80,1:31:09.98,CN-Main,,0,0,0,,你知道你之前说过
+Dialogue: 0,1:31:08.80,1:31:09.98,EN-Main,,0,0,0,,- You know how you said before
+Dialogue: 0,1:31:09.98,1:31:12.80,CN-Main,,0,0,0,,你的父母利用你来攻击彼此？
+Dialogue: 0,1:31:09.98,1:31:12.80,EN-Main,,0,0,0,,how your parents use you to get back at each other?
+Dialogue: 0,1:31:12.81,1:31:15.06,CN-Main,,0,0,0,,我是不是应该很善于此道？
+Dialogue: 0,1:31:12.81,1:31:15.06,EN-Main,,0,0,0,,Wouldn't I be outstanding\nin that capacity?
+Dialogue: 0,1:31:18.60,1:31:22.02,CN-Main,,0,0,0,,我刚才用口红那一招 真让你觉得恶心吗？
+Dialogue: 0,1:31:18.60,1:31:22.02,EN-Main,,0,0,0,,- Were you really disgusted\nabout what I did with my lipstick?
+Dialogue: 0,1:31:22.02,1:31:23.90,CN-Main,,0,0,0,,想听实话？
+Dialogue: 0,1:31:22.02,1:31:23.90,EN-Main,,0,0,0,,- Truth?
+Dialogue: 0,1:31:23.90,1:31:26.28,CN-Main,,0,0,0,,实话
+Dialogue: 0,1:31:23.90,1:31:26.28,EN-Main,,0,0,0,,- Truth.
+Dialogue: 0,1:31:26.28,1:31:27.70,CN-Main,,0,0,0,,不
+Dialogue: 0,1:31:26.28,1:31:27.70,EN-Main,,0,0,0,,- No.
+Dialogue: 0,1:31:37.96,1:31:40.92,CN-Main,,0,0,0,,发生了什么？
+Dialogue: 0,1:31:37.96,1:31:40.92,EN-Main,,0,0,0,,- What happened to you?
+Dialogue: 0,1:31:40.92,1:31:43.72,CN-Main,,0,0,0,,怎么了？克莱尔弄的
+Dialogue: 0,1:31:40.92,1:31:43.72,EN-Main,,0,0,0,,- Why? Claire did it.
+Dialogue: 0,1:31:48.34,1:31:50.68,CN-Main,,0,0,0,,怎么了？
+Dialogue: 0,1:31:48.34,1:31:50.68,EN-Main,,0,0,0,,What's wrong?
+Dialogue: 0,1:31:50.68,1:31:52.63,CN-Main,,0,0,0,,没怎么 只是……
+Dialogue: 0,1:31:50.68,1:31:52.63,EN-Main,,0,0,0,,- Nothing's wrong.\nIt's just
+Dialogue: 0,1:31:52.63,1:31:54.10,CN-Main,,0,0,0,,只是很不一样
+Dialogue: 0,1:31:52.63,1:31:54.10,EN-Main,,0,0,0,,you're so different.
+Dialogue: 0,1:31:57.27,1:31:59.94,CN-Main,,0,0,0,,我能看见你的脸
+Dialogue: 0,1:31:57.27,1:31:59.94,EN-Main,,0,0,0,,I can see your face.
+Dialogue: 0,1:31:59.94,1:32:01.11,CN-Main,,0,0,0,,好还是不好？
+Dialogue: 0,1:31:59.94,1:32:01.11,EN-Main,,0,0,0,,- Is that good or bad?
+Dialogue: 0,1:32:03.15,1:32:04.86,CN-Main,,0,0,0,,很好
+Dialogue: 0,1:32:03.15,1:32:04.86,EN-Main,,0,0,0,,- It's good.
+Dialogue: 0,1:32:20.12,1:32:23.29,CN-Main,,0,0,0,,-再见 布莱恩 -再见 卡尔
+Dialogue: 0,1:32:20.12,1:32:23.29,EN-Main,,0,0,0,,- See you, Brian.\n- Hey, Carl.
+Dialogue: 0,1:32:23.29,1:32:25.84,CN-Main,,0,0,0,,-下周六见 -好的
+Dialogue: 0,1:32:23.29,1:32:25.84,EN-Main,,0,0,0,,- See you next Saturday. - You bet.
+Dialogue: 0,1:34:11.49,1:34:14.32,CN-Main,,0,0,0,,亲爱的弗农先生
+Dialogue: 0,1:34:11.49,1:34:14.32,EN-Main,,0,0,0,,Brian: "Dear Mr. Vernon,
+Dialogue: 0,1:34:14.32,1:34:16.78,CN-Main,,0,0,0,,我们接受牺牲一整个周六
+Dialogue: 0,1:34:14.32,1:34:16.78,EN-Main,,0,0,0,,we accept the fact that we had\nto sacrifice a whole Saturday
+Dialogue: 0,1:34:16.78,1:34:19.95,CN-Main,,0,0,0,,为自己犯的错在学校留堂
+Dialogue: 0,1:34:16.78,1:34:19.95,EN-Main,,0,0,0,,in detention for whatever\nit was we did wrong.
+Dialogue: 0,1:34:19.95,1:34:20.74,CN-Main,,0,0,0,,我们觉得荒唐
+Dialogue: 0,1:34:19.95,1:34:20.74,EN-Main,,0,0,0,,But we think you're crazy
+Dialogue: 0,1:34:20.74,1:34:24.08,CN-Main,,0,0,0,,你让我们写篇文章 说自己是谁
+Dialogue: 0,1:34:20.74,1:34:24.08,EN-Main,,0,0,0,,to make us write an essay telling you\nwho we think we are.
+Dialogue: 0,1:34:24.08,1:34:26.08,CN-Main,,0,0,0,,我们在你心中早有既定形象
+Dialogue: 0,1:34:24.08,1:34:26.08,EN-Main,,0,0,0,,You see us\nas you want to see us
+Dialogue: 0,1:34:26.08,1:34:30.30,CN-Main,,0,0,0,,简单说来 也就是那些顺手拈来的定义
+Dialogue: 0,1:34:26.08,1:34:30.30,EN-Main,,0,0,0,,in the simplest terms\nwith the most convenient definitions,
+Dialogue: 0,1:34:30.30,1:34:34.80,CN-Main,,0,0,0,,但我们发现 我们每个人都是优等生
+Dialogue: 0,1:34:30.30,1:34:34.80,EN-Main,,0,0,0,,but what we found out is that\neach one of us is a brain...
+Dialogue: 0,1:34:34.80,1:34:36.51,CN-Main,,0,0,0,,体育特长生
+Dialogue: 0,1:34:34.80,1:34:36.51,EN-Main,,0,0,0,,Andy: And an athlete.
+Dialogue: 0,1:34:36.51,1:34:38.51,CN-Main,,0,0,0,,无可救药的怪胎
+Dialogue: 0,1:34:36.51,1:34:38.51,EN-Main,,0,0,0,,Allison: And a basket case.
+Dialogue: 0,1:34:38.51,1:34:39.89,CN-Main,,0,0,0,,公主
+Dialogue: 0,1:34:38.51,1:34:39.89,EN-Main,,0,0,0,,Claire: A princess.
+Dialogue: 0,1:34:39.89,1:34:41.85,CN-Main,,0,0,0,,以及罪犯
+Dialogue: 0,1:34:39.89,1:34:41.85,EN-Main,,0,0,0,,Bender: And a criminal.
+Dialogue: 0,1:34:41.85,1:34:44.85,CN-Main,,0,0,0,,这回答了你的问题吗？
+Dialogue: 0,1:34:41.85,1:34:44.85,EN-Main,,0,0,0,,Brian: Does that\nanswer your question?
+Dialogue: 0,1:34:44.85,1:34:49.40,CN-Main,,0,0,0,,诚挚的 早餐俱乐部敬上
+Dialogue: 0,1:34:44.85,1:34:49.40,EN-Main,,0,0,0,,Sincerely yours, The Breakfast Club.

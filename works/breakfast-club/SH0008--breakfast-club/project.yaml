@@ -1,0 +1,104 @@
+schema_version: 9
+id: SH0008
+project_name: breakfast-club
+type: movie
+episode_count: 1
+identity:
+  provider: imdb
+  id: tt0088847
+  url: https://www.imdb.com/title/tt0088847/
+  api_url: null
+  titles:
+    original: The Breakfast Club
+    zh-Hans: 早餐俱乐部
+  date: '1985-02-15'
+  platform: movie
+  total_episodes: 1
+  verification: web-verified
+  verified_at: '2026-10-18'
+  verified_by: user
+  evidence: IMDb title https://www.imdb.com/title/tt0088847/ verifies The Breakfast Club (1985), movie by John Hughes; https://www.imdb.com/title/tt0088847/releaseinfo/ verifies US theatrical release 1985-02-15 (date basis, not earliest premiere). Chinese title and single-film scope confirmed by user on 2026-10-18.
+  fallback_reason: Bangumi Chinese/original-title searches returned no plausible 1985 film match; API was reachable. User explicitly approved IMDb tt0088847 for this project on 2026-10-18.
+task:
+  mode: proofreading
+  source_language: en
+  target_language: zh-Hans
+  scope: MOVIE
+release_languages:
+  primary: zh-Hans
+  secondary: en
+subtitle_design:
+  profile: zh-bilingual
+  ordinary_styles:
+    primary:
+      - CN-Main
+    secondary:
+      - EN-Main
+subtitle_sources:
+  - id: zh-Hans-candidate-baseline
+    language: zh-Hans
+    kind: candidate-baseline
+    path: project/sources/subtitles/zh-Hans/zh-Hans-candidate-baseline
+    file_count: 1
+    scope: MOVIE
+    roles:
+      - candidate-baseline
+    evidence: Simplified Chinese verified from parsed text; Netflix official translation provenance declared by user; original NAS SRT copied unchanged
+  - id: optional-source-001
+    language: en
+    kind: external-evidence
+    path: project/sources/subtitles/en/optional-source-001
+    file_count: 1
+    scope: MOVIE
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: Extracted through remote_media.py from selected target-video stream 2 (eng/subrip); same witness as embedded-video-001-s2, not independent evidence
+  - id: embedded-video-001-s2
+    language: en
+    kind: embedded-subtitle-track
+    container: The.Breakfast.Club.1985.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.GG - YTS.BZ].mkv
+    stream_index: 2
+    codec: subrip
+    scope: MOVIE
+    roles:
+      - source-text-reference
+      - timing-reference
+      - secondary-language-release-source
+    evidence: container language tag
+video_sources:
+  target-video:
+    medium: user-provided-ssh-video
+    files:
+      MOVIE: The.Breakfast.Club.1985.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.GG - YTS.BZ].mkv
+    timing_authority:
+      MOVIE: 'embedded-video-001-s2: selected same-video English subtitle stream 2; actual audio fallback only for confirmed defects'
+    fingerprints:
+      MOVIE:
+        size: 4646484731
+        sha256_first_mib: c2794a2978723055c63aea874b9fcd7dd7586916ee77648da810b66a9a614a57
+        duration_seconds: 5818.955
+        frame_rate: 24000/1001
+        time_base: 1/1000
+    selected_audio:
+      MOVIE:
+        stream_index: 1
+        language: en
+        codec: aac
+project_overrides:
+  - rule_id: SH-CTRL-007
+    scope: MOVIE current proofreading proposal and implementation
+    rationale: User explicitly delegated detailed plan creation and automatic implementation through completion on 2026-10-18; release-candidate human final review approved by user on 2026-10-19.
+    confirmed_by: user
+    confirmed_at: '2026-10-18'
+limitations:
+  - Netflix official translation provenance is user-declared, not independently platform-verified. Embedded English is the selected text witness, not a full listening-confirmed transcript.
+  - Full text reviewed against embedded English; current round rechecks delivery segmentation under Skill 1.4.5 with resumable ID/character-cut decisions. Ordinary bilingual output must have identical start/end per pair using embedded timing and reviewed semantic splits. No full-film listening or playback is claimed.
+  - On-screen text absent from embedded English retains baseline evidence, except the opening quote checked at 113 seconds. Spatial checks are text/static geometry, not all-shot obstruction review.
+  - Actor-sung enumeration at 2843.55–2852.27 seconds has conflicting English transcription (buy/light bulbs vs Chinese ride/bicycle/tricycle). User explicitly chose to include embedded English alongside unchanged Chinese in this round; this is an accepted source-choice limitation, not a listening-confirmed correction.
+initialization:
+  skill_version: 1.4.5
+  state: proofreading-ready
+  approved_by: user
+  approved_at: '2026-10-18'
