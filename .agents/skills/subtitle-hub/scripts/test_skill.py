@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.4 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.5 toolchain."""
 
 from __future__ import annotations
 
@@ -183,7 +183,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.4\"\n  state: proofreading-ready\n"
+        "initialization:\n  skill_version: \"1.4.5\"\n  state: proofreading-ready\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     return project, master, source
@@ -394,7 +394,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.4"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.5"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -774,7 +774,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.4")
+            self.assertEqual(data["skill_version"], "1.4.5")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -1192,7 +1192,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.4"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.5"', 'skill_version: "1.3.0"'
                 ),
                 encoding="utf-8",
             )
@@ -1398,13 +1398,19 @@ class CandidateContractTests(unittest.TestCase):
             subtitle.write_text(built.replace("0:00:01.00,0:00:02.00,JP-Main", "0:00:01.00,0:00:02.01,JP-Main"), encoding="utf-8", newline="\n")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
+            metadata = project / "project.yaml"
+            current_metadata = metadata.read_text(encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.4.5"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            with self.assertRaisesRegex(PackageError, "identical start/end times"):
+                validate_release_dir(candidate, project)
+            metadata.write_text(current_metadata, encoding="utf-8")
             previous = project / "subtitles/previous"
             previous.mkdir(parents=True)
             for file in candidate.iterdir():
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.4"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.5"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1510,7 +1516,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.4 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.5 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1574,6 +1580,181 @@ class TermAuditTests(unittest.TestCase):
 
 
 class BilingualAlignmentTests(unittest.TestCase):
+    def test_metadata_page_limit_does_not_skip_source_units(self) -> None:
+        import align_bilingual as alignment
+
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root, [(100, 200, "完整一句")], [(100, 200, f"u{i}") for i in range(32)],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            group = packet["groups"][0]
+            first = alignment.read_group(project, session, group["group_id"], "source", 0, 4000)
+            self.assertEqual(len(first["units"]), 20)
+            self.assertIsNotNone(first["next_offset"])
+            second = alignment.read_group(project, session, group["group_id"], "source", first["next_offset"], 4000)
+            self.assertIsNone(second["next_offset"])
+            self.assertEqual(len(second["units"]), 12)
+            self.assertEqual(first["text"] + second["text"], " ".join(unit["text"] for unit in group["source_units"]))
+            for offset, limit in ((-1, 10), (0, 0), (0, 4001), (10000, 20)):
+                with self.assertRaises(alignment.AlignmentError):
+                    alignment.read_group(project, session, group["group_id"], "source", offset, limit)
+
+    def test_id_decisions_require_risk_disposition_and_support_special_exclusion(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root, [(100, 200, "重复句"), (300, 400, "重复句")],
+                [(100, 200, "first"), (300, 400, "different"), (500, 600, "special")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet = json.loads((session / "batch-0001.json").read_text(encoding="utf-8"))
+            self.assertTrue(packet["risks"])
+            decisions = root / "decisions.json"
+            changes = [{"group_id": group["group_id"],
+                        "status": "confirmed" if group["chinese_units"] else "excluded-special",
+                        "rationale": "reviewed ordinary dialogue or source-only special"} for group in packet["groups"]]
+            decisions.write_text(json.dumps({"groups": changes}), encoding="utf-8")
+            result = run("align_bilingual.py", "decide", str(project), "--session", str(session), "--batch-id", "B0001", "--decisions", str(decisions))
+            self.assertEqual(json.loads(result.stdout)["status"], "pending")
+            status = json.loads(run("align_bilingual.py", "status", str(project), "--session", str(session)).stdout)
+            self.assertEqual(status["unfinished_group_ids"], [])
+            self.assertEqual(status["pending_risk_ids"], [risk["risk_id"] for risk in packet["risks"]])
+            decisions.write_text(json.dumps({"risks": [{"risk_id": risk["risk_id"], "status": "cleared", "rationale": "checked intentional repetition"} for risk in packet["risks"]]}), encoding="utf-8")
+            result = run("align_bilingual.py", "decide", str(project), "--session", str(session), "--batch-id", "B0001", "--decisions", str(decisions))
+            self.assertEqual(json.loads(result.stdout)["status"], "complete")
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            verified = json.loads(run("align_bilingual.py", "verify", str(project), "--session", str(session)).stdout)
+            self.assertEqual(verified["summary"]["source_excluded_special"], 1)
+
+    def test_reference_cuts_preserve_unicode_source_and_pair_timing(self) -> None:
+        import align_bilingual as alignment
+
+        text = "Café 🙂 first clause 第二句"
+        cut = text.index("第二")
+        group = {
+            "group_id": "unicode-cuts",
+            "chinese_units": [{"start_cs": 100, "end_cs": 200}, {"start_cs": 200, "end_cs": 300}],
+            "source_units": [{"text": text}], "secondary_cuts": [cut],
+        }
+        projected = alignment.secondary_projection(group)
+        self.assertEqual([row["text"] for row in projected], ["Café 🙂 first clause", "第二句"])
+        self.assertEqual([(row["start_cs"], row["end_cs"]) for row in projected], [(100, 200), (200, 300)])
+        for cuts in ([0], [len(text)], [True], [-1], [cut, cut], ["12"], None):
+            with self.subTest(cuts=cuts), self.assertRaises(alignment.AlignmentError):
+                alignment.secondary_projection({**group, "secondary_cuts": cuts})
+        with self.assertRaisesRegex(alignment.AlignmentError, "not both"):
+            alignment.secondary_projection({**group, "secondary_texts": ["unused", "unused"]})
+        empty = {**group, "source_units": [{"text": "  first"}], "secondary_cuts": [1]}
+        with self.assertRaises(alignment.AlignmentError):
+            alignment.secondary_projection(empty)
+
+    def test_char_budget_and_paged_reads_cover_oversized_groups_without_loss(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            source_text = "Café 🙂 " * 24
+            project, _, _ = make_alignment_project(
+                root, [(100, 200, "第一句"), (300, 400, "第二句"), (500, 600, "第三句")],
+                [(100, 200, source_text), (300, 400, "source two"), (500, 600, "source three")],
+            )
+            session = root / "session"
+            result = run("align_bilingual.py", "plan", str(project), "--source-id", "ja-source",
+                         "--output-dir", str(session), "--batch-chars", "25")
+            self.assertEqual(json.loads(result.stdout)["batches"], 3)
+            manifest = json.loads((session / "manifest.json").read_text(encoding="utf-8"))
+            packets = [json.loads((session / item["file"]).read_text(encoding="utf-8")) for item in manifest["batches"]]
+            self.assertTrue(packets[0]["requires_paging"])
+            self.assertTrue(all(packet["text_chars"] <= 25 or len(packet["groups"]) == 1 for packet in packets))
+            group = packets[0]["groups"][0]
+            pieces, offset = [], 0
+            while True:
+                page = json.loads(run("align_bilingual.py", "read", str(project), "--session", str(session),
+                                      "--group-id", group["group_id"], "--max-chars", "19", "--offset", str(offset)).stdout)
+                self.assertLessEqual(len(page["text"]), 19)
+                self.assertLessEqual(len(page["units"]), 20)
+                pieces.append(page["text"])
+                if page["next_offset"] is None:
+                    break
+                self.assertGreater(page["next_offset"], offset)
+                offset = page["next_offset"]
+            self.assertEqual("".join(pieces), " ".join(unit["text"] for unit in group["source_units"]))
+            status = json.loads(run("align_bilingual.py", "status", str(project), "--session", str(session)).stdout)
+            self.assertEqual(status["complete"], 0)
+            self.assertEqual(status["next_batch"], "B0001")
+            self.assertEqual(status["unfinished_group_ids"], [group["group_id"]])
+            self.assertNotIn("Café", json.dumps(status))
+
+    def test_id_decisions_resume_and_apply_without_retyping_source(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, master, _ = make_alignment_project(
+                root, [(100, 200, "第一句"), (200, 300, "第二句")],
+                [(100, 300, "first clause second clause")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            group = packet["groups"][0]
+            group["status"] = "confirmed"
+            group["rationale"] = "reviewed semantic split"
+            packet_path.write_text(json.dumps(packet, ensure_ascii=False), encoding="utf-8")
+            status = json.loads(run("align_bilingual.py", "status", str(project), "--session", str(session)).stdout)
+            self.assertEqual(status["complete"], 0)  # Mapping confirmation alone is not a completed split.
+            decisions = root / "decisions.json"
+            decisions.write_text(json.dumps({"groups": [{"group_id": group["group_id"], "secondary_cuts": [13]}]}), encoding="utf-8")
+            result = run("align_bilingual.py", "decide", str(project), "--session", str(session), "--batch-id", "B0001", "--decisions", str(decisions))
+            self.assertEqual(json.loads(result.stdout)["status"], "complete")
+            self.assertNotIn("first clause", result.stdout)
+            saved = json.loads(packet_path.read_text(encoding="utf-8"))["groups"][0]
+            self.assertEqual(saved["source_units"], group["source_units"])
+            self.assertEqual(saved["chinese_units"], group["chinese_units"])
+            before = [line for line in master.read_text(encoding="utf-8").splitlines() if ",CN-Main," in line]
+            run("align_bilingual.py", "apply", str(project), "--session", str(session))
+            run("align_bilingual.py", "verify", str(project), "--session", str(session))
+            self.assertEqual(before, [line for line in master.read_text(encoding="utf-8").splitlines() if ",CN-Main," in line])
+            status = json.loads(run("align_bilingual.py", "status", str(project), "--session", str(session)).stdout)
+            self.assertEqual(status["complete"], 1)
+            self.assertIsNone(status["next_batch"])
+
+    def test_invalid_decision_file_leaves_saved_packet_unchanged(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(
+                root, [(100, 200, "第一句"), (300, 400, "第二句")],
+                [(100, 200, "first"), (300, 400, "second")],
+            )
+            session = root / "session"
+            plan_alignment(project, session)
+            packet_path = session / "batch-0001.json"
+            original = packet_path.read_bytes()
+            groups = json.loads(original)["groups"]
+            first = {"group_id": groups[0]["group_id"], "status": "confirmed"}
+            for changes in ([first, {"group_id": "unknown", "status": "confirmed"}],
+                            [first, first], [{**first, "source_units": []}], [{**first, "secondary_cuts": [True]}]):
+                with self.subTest(changes=changes):
+                    decisions = root / "decisions.json"
+                    decisions.write_text(json.dumps({"groups": changes}), encoding="utf-8")
+                    run("align_bilingual.py", "decide", str(project), "--session", str(session), "--batch-id", "B0001", "--decisions", str(decisions), expect=1)
+                    self.assertEqual(packet_path.read_bytes(), original)
+
+    def test_packet_text_tampering_cannot_keep_a_valid_unit_id(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(root, [(100, 200, "一句")], [(100, 200, "source")])
+            session = root / "session"
+            plan_alignment(project, session)
+            packet_path = session / "batch-0001.json"
+            packet = json.loads(packet_path.read_text(encoding="utf-8"))
+            packet["groups"][0]["source_units"][0]["text"] = "tampered"
+            packet_path.write_text(json.dumps(packet), encoding="utf-8")
+            failed = run("align_bilingual.py", "status", str(project), "--session", str(session), expect=1)
+            self.assertIn("packet unit content differs", failed.stderr)
+
     def test_time_overlap_creates_pending_candidate_not_semantic_completion(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)

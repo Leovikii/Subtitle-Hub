@@ -245,7 +245,7 @@ def validate_standard_ass(
     initialization = yaml_block(metadata, "initialization", 0)
     enforce_pair_timing = (
         secondary is not None
-        and yaml_scalar(initialization, "skill_version", 2) == "1.4.4"
+        and yaml_scalar(initialization, "skill_version", 2) in {"1.4.4", "1.4.5"}
         and subtitle.parent != project_root / "subtitles/previous"
     )
 

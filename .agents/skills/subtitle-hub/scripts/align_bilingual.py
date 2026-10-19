@@ -19,7 +19,7 @@ from typing import Iterable
 
 import yaml
 
-SKILL_VERSION = "1.4.4"
+SKILL_VERSION = "1.4.5"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -516,8 +516,8 @@ def risk_candidates(groups: list[dict[str, object]]) -> list[dict[str, object]]:
 def context_summary(group: dict[str, object]) -> dict[str, object]:
     return {
         "group_id": group["group_id"],
-        "chinese": [unit["text"] for unit in group["chinese_units"]],
-        "source": [unit["text"] for unit in group["source_units"]],
+        "chinese_unit_ids": [unit["unit_id"] for unit in group["chinese_units"]],
+        "source_unit_ids": [unit["unit_id"] for unit in group["source_units"]],
     }
 
 
@@ -536,6 +536,7 @@ def write_plan(
     episode_filter: list[str] | None,
     source_values: list[str],
     batch_size: int,
+    batch_chars: int = 6000,
 ) -> dict[str, object]:
     if output_dir.exists() and any(output_dir.iterdir()):
         raise AlignmentError(f"output directory must be empty: {output_dir}")
@@ -556,6 +557,7 @@ def write_plan(
         "release_secondary": release_secondary,
         "ordinary_styles": {"primary": primary_styles, "secondary": secondary_styles},
         "batch_size": batch_size,
+        "batch_chars": batch_chars,
         "episodes": {},
         "batches": [],
     }
@@ -586,12 +588,20 @@ def write_plan(
         risk_by_group.setdefault(risk["group_ids"][-1], []).append(risk)
     for episode in masters:
         episode_groups = [group for group in all_groups if group_episode(group) == episode]
-        for offset in range(0, len(episode_groups), batch_size):
-            groups = episode_groups[offset:offset + batch_size]
+        offset = 0
+        while offset < len(episode_groups):
+            groups = []
+            text_chars = 0
+            for group in episode_groups[offset:offset + batch_size]:
+                size = sum(len(str(unit["text"])) for key in ("chinese_units", "source_units") for unit in group[key])
+                if groups and text_chars + size > batch_chars:
+                    break
+                groups.append(group)
+                text_chars += size
             batch_number = len(manifest["batches"]) + 1
             filename = f"batch-{batch_number:04d}.json"
-            before = episode_groups[max(0, offset - 2):offset]
-            after = episode_groups[offset + batch_size:offset + batch_size + 2]
+            before = episode_groups[max(0, offset - 1):offset]
+            after = episode_groups[offset + len(groups):offset + len(groups) + 1]
             packet_risks = [risk for group in groups for risk in risk_by_group.get(str(group["group_id"]), [])]
             packet = {
                 "schema_version": PACKET_SCHEMA,
@@ -601,6 +611,8 @@ def write_plan(
                 "group_range": [groups[0]["group_id"], groups[-1]["group_id"]],
                 "context_before": [context_summary(group) for group in before],
                 "groups": groups,
+                "text_chars": text_chars,
+                "requires_paging": text_chars > batch_chars,
                 "context_after": [context_summary(group) for group in after],
                 "risks": packet_risks,
                 "auxiliary_translation": "load only for a concrete unresolved point; no auxiliary text is expanded by default",
@@ -614,6 +626,7 @@ def write_plan(
                 "groups": len(groups),
                 "status": "pending",
             })
+            offset += len(groups)
     manifest["summary"] = {
         "episodes": len(masters),
         "chinese_units": sum(int(item["chinese_units"]) for item in manifest["episodes"].values()),
@@ -697,6 +710,8 @@ def validate_decisions(
                 raise AlignmentError(f"{group.get('group_id')}: missing ordinary dialogue cannot be confirmed")
             if (len(zh), len(source)) != (1, 1) and not rationale:
                 raise AlignmentError(f"{group.get('group_id')}: non-1:1 confirmation requires a rationale")
+            if manifest.get("release_secondary") is not None:
+                secondary_projection(group)
         elif status == "excluded-special":
             if zh or not source or not rationale:
                 raise AlignmentError(f"{group.get('group_id')}: only source-only special text may be excluded with a rationale")
@@ -760,6 +775,12 @@ def validate_unit_identity(
         raise AlignmentError("Chinese ordinary-dialogue units changed or were reordered")
     if packet_unit_ids(groups, "source_units") != actual_source:
         raise AlignmentError("source ordinary-dialogue units changed or were reordered")
+    actual = {unit.unit_id: unit.as_dict() for values in (chinese, source) for units in values.values() for unit in units}
+    for group in groups:
+        for key in ("chinese_units", "source_units"):
+            for unit in group[key]:
+                if unit != actual.get(str(unit.get("unit_id"))):
+                    raise AlignmentError(f"{group.get('group_id')}: packet unit content differs from the current input")
 
 
 def unit_key(unit: dict[str, object] | Unit) -> tuple[str, str, int]:
@@ -827,12 +848,25 @@ def secondary_projection(group: dict[str, object]) -> list[dict[str, object]]:
     """Project reviewed text segmentation onto the already confirmed primary timeline."""
     chinese, source = group["chinese_units"], group["source_units"]
     texts = group.get("secondary_texts")
+    cuts = group.get("secondary_cuts")
+    if cuts is not None:
+        if texts is not None:
+            raise AlignmentError(f"{group.get('group_id')}: use secondary_cuts or secondary_texts, not both")
+        original_text = " ".join(str(unit["text"]) for unit in source)
+        if (
+            not isinstance(cuts, list) or len(cuts) != len(chinese) - 1
+            or any(type(cut) is not int or not 0 < cut < len(original_text) for cut in cuts)
+            or cuts != sorted(set(cuts))
+        ):
+            raise AlignmentError(f"{group.get('group_id')}: secondary_cuts require ordered interior character offsets, one per Chinese boundary")
+        boundaries = [0, *cuts, len(original_text)]
+        texts = [original_text[start:end].strip() for start, end in zip(boundaries, boundaries[1:])]
     if texts is None and len(chinese) == 1:
         texts = [" ".join(str(unit["text"]) for unit in source)]
     if not isinstance(texts, list) or len(texts) != len(chinese) or not all(
         isinstance(text, str) and visible(text) and "{" not in text and "}" not in text for text in texts
     ):
-        raise AlignmentError(f"{group.get('group_id')}: reviewed secondary_texts must match Chinese cue count")
+        raise AlignmentError(f"{group.get('group_id')}: reviewed secondary_cuts or secondary_texts must match Chinese cue count")
     original = "".join(re.sub(r"\s+", "", str(unit["text"])) for unit in source)
     projected = "".join(re.sub(r"\s+", "", visible(text)) for text in texts)
     if projected != original:
@@ -1013,6 +1047,109 @@ def ordinary_master_counts(project_root: Path) -> dict[str, dict[str, int]]:
     return result
 
 
+def checked_session(project_root: Path, session: Path) -> tuple[dict, list]:
+    manifest, packets = load_session(project_root, session)
+    chinese, source = current_units(manifest)
+    changed = invalidate_changed_batches(session, manifest, packets, chinese, source)
+    if changed:
+        raise AlignmentError(f"alignment input changed after planning; re-plan affected batches: {changed}")
+    validate_unit_identity(manifest, list(iter_packet_groups(packets)), chinese, source)
+    return manifest, packets
+
+
+def session_status(project_root: Path, session: Path) -> dict[str, object]:
+    manifest, packets = checked_session(project_root, session)
+    update_batch_statuses(session, manifest, packets)
+    next_entry = next((entry for entry in manifest["batches"] if entry["status"] != "complete"), None)
+    packet = next((packet for _, packet in packets if next_entry and packet["batch_id"] == next_entry["batch_id"]), None)
+    unfinished = []
+    for group in packet["groups"] if packet else []:
+        try:
+            validate_decisions(
+                {**manifest, "summary": {"chinese_units": len(group["chinese_units"]), "source_units": len(group["source_units"])}},
+                [(Path(), {"groups": [group], "risks": []})],
+            )
+        except AlignmentError:
+            unfinished.append(group["group_id"])
+    return {
+        "batches": len(packets),
+        "complete": sum(entry["status"] == "complete" for entry in manifest["batches"]),
+        "next_batch": next_entry["batch_id"] if next_entry else None,
+        "group_ids": [group["group_id"] for group in packet["groups"]] if packet else [],
+        "unfinished_group_ids": unfinished,
+        "pending_risk_ids": [risk["risk_id"] for risk in packet.get("risks", []) if risk.get("status") != "cleared"] if packet else [],
+    }
+
+
+def read_group(project_root: Path, session: Path, group_id: str, side: str, offset: int, max_chars: int) -> dict[str, object]:
+    _, packets = checked_session(project_root, session)
+    group = next((group for group in iter_packet_groups(packets) if group["group_id"] == group_id), None)
+    if group is None:
+        raise AlignmentError(f"unknown group {group_id}")
+    units = group["source_units" if side == "source" else "chinese_units"]
+    text = " ".join(str(unit["text"]) for unit in units)
+    if not 1 <= max_chars <= 4000 or not 0 <= offset <= len(text):
+        raise AlignmentError("read requires 1..4000 max-chars and an offset within the selected text")
+    end = min(len(text), offset + max_chars)
+    spans = []
+    start = 0
+    for unit in units:
+        stop = start + len(str(unit["text"]))
+        if stop > offset and start < end:
+            if len(spans) == 20:
+                end = start
+                break
+            spans.append({key: unit[key] for key in ("unit_id", "start_cs", "end_cs", "style", "name")})
+            spans[-1].update({"start": start, "end": stop})
+        start = stop + 1
+    return {
+        "group_id": group_id, "side": side, "offset": offset, "end": end,
+        "total_chars": len(text), "next_offset": end if end < len(text) else None,
+        "text": text[offset:end], "units": spans,
+    }
+
+
+def decide_batch(project_root: Path, session: Path, batch_id: str, decisions: Path) -> dict[str, object]:
+    manifest, packets = checked_session(project_root, session)
+    selected = next(((path, packet) for path, packet in packets if packet["batch_id"] == batch_id), None)
+    if selected is None:
+        raise AlignmentError(f"unknown batch {batch_id}")
+    path, packet = selected
+    updates = json.loads(decisions.read_text(encoding="utf-8-sig"))
+    if not isinstance(updates, dict) or not updates or set(updates) - {"groups", "risks"}:
+        raise AlignmentError("decisions must contain groups and/or risks")
+    for key, identity, allowed in (
+        ("groups", "group_id", {"group_id", "status", "rationale", "secondary_cuts"}),
+        ("risks", "risk_id", {"risk_id", "status", "rationale"}),
+    ):
+        changes = updates.get(key, [])
+        if not isinstance(changes, list):
+            raise AlignmentError(f"{key} decisions must be a list")
+        targets = {item[identity]: item for item in packet.get(key, [])}
+        seen = set()
+        for change in changes:
+            if not isinstance(change, dict) or set(change) - allowed or change.get(identity) not in targets:
+                raise AlignmentError(f"invalid {key} decision; supply IDs and decision fields only")
+            item_id = change[identity]
+            if item_id in seen:
+                raise AlignmentError(f"duplicate decision {item_id}")
+            seen.add(item_id)
+            target = targets[item_id]
+            target.update(change)
+            if key == "groups":
+                if "secondary_cuts" in change:
+                    target.pop("secondary_texts", None)
+                validate_decisions(
+                    {**manifest, "summary": {"chinese_units": len(target["chinese_units"]), "source_units": len(target["source_units"])}},
+                    [(path, {"groups": [target], "risks": []})],
+                )
+            elif target.get("status") != "cleared" or not str(target.get("rationale") or "").strip():
+                raise AlignmentError(f"{item_id}: risk needs an explicit cleared disposition")
+    atomic_text(path, json.dumps(packet, ensure_ascii=False, indent=2) + "\n")
+    update_batch_statuses(session, manifest, packets)
+    return {"batch_id": batch_id, "saved": True, "status": next(entry["status"] for entry in manifest["batches"] if entry["batch_id"] == batch_id)}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -1023,6 +1160,7 @@ def main() -> int:
     plan.add_argument("--episode", action="append", default=[])
     plan.add_argument("--source", action="append", default=[], help="Explicit EPISODE=PATH source mapping")
     plan.add_argument("--batch-size", type=int, default=16)
+    plan.add_argument("--batch-chars", type=int, default=6000, help="Visible Chinese + source characters per packet; oversized groups require paged reads")
     apply_parser = subparsers.add_parser("apply", help="Project confirmed source units without changing Chinese")
     apply_parser.add_argument("project", type=Path)
     apply_parser.add_argument("--session", type=Path, required=True)
@@ -1030,12 +1168,26 @@ def main() -> int:
     verify = subparsers.add_parser("verify", help="Verify the complete reviewed mapping and final master")
     verify.add_argument("project", type=Path)
     verify.add_argument("--session", type=Path, required=True)
+    for command in ("status", "read", "decide"):
+        child = subparsers.add_parser(command)
+        child.add_argument("project", type=Path)
+        child.add_argument("--session", type=Path, required=True)
+        if command == "read":
+            child.add_argument("--group-id", required=True)
+            child.add_argument("--side", choices=("chinese", "source"), default="source")
+            child.add_argument("--offset", type=int, default=0)
+            child.add_argument("--max-chars", type=int, default=2400)
+        elif command == "decide":
+            child.add_argument("--batch-id", required=True)
+            child.add_argument("--decisions", type=Path, required=True)
     try:
         args = parser.parse_args()
         project_root = args.project.expanduser().resolve()
         if args.command == "plan":
             if not 1 <= args.batch_size <= 50:
                 raise AlignmentError("--batch-size must be between 1 and 50")
+            if not 1 <= args.batch_chars <= 12000:
+                raise AlignmentError("--batch-chars must be between 1 and 12000")
             result = write_plan(
                 project_root,
                 args.output_dir.expanduser().resolve(),
@@ -1043,7 +1195,14 @@ def main() -> int:
                 args.episode or None,
                 args.source,
                 args.batch_size,
+                args.batch_chars,
             )
+        elif args.command == "status":
+            result = session_status(project_root, args.session.expanduser().resolve())
+        elif args.command == "read":
+            result = read_group(project_root, args.session.expanduser().resolve(), args.group_id, args.side, args.offset, args.max_chars)
+        elif args.command == "decide":
+            result = decide_batch(project_root, args.session.expanduser().resolve(), args.batch_id, args.decisions.expanduser().resolve())
         elif args.command == "apply":
             result = apply_session(project_root, args.session.expanduser().resolve(), args.secondary_style)
         else:

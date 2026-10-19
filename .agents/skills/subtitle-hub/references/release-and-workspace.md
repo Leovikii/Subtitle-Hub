@@ -23,7 +23,7 @@ The builder asserts the master–candidate invariant immediately after construct
 
 For bilingual candidates, the alignment verifier, final project-coverage validator, and candidate/package validator enforce `SH-LAYOUT-002`: one ordinary event in each language with exactly the same start/end, including centiseconds. Special subtitles are outside that pairing check. `source_aligned` counts reviewed original source units even when their delivery text is split or joined, so it need not equal the secondary output-event count. An initialized bilingual master may still await secondary projection; `--ready-for-proofreading` checks preparation, not final bilingual completion.
 
-The package sweep applies the new timing gate to candidates and current releases of projects initialized/upgraded to Skill 1.4.4. Dormant projects on an earlier contract and the actual `subtitles/previous/` rollback snapshot retain existing format validation; never retrofit them just to pass the sweep. Candidate construction still requires the current Skill contract, and reopening a project still requires its upgrade before content work.
+The package sweep retains the strict timing gate for candidates and current releases of projects initialized/upgraded to Skill 1.4.4 or 1.4.5. Dormant projects on an earlier contract and the actual `subtitles/previous/` rollback snapshot retain existing format validation; never retrofit them just to pass the sweep. Candidate construction still requires the current Skill contract, and reopening a project still requires its upgrade before content work.
 
 ## SH-REL-002 — Release layout and versioning
 

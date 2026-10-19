@@ -29,7 +29,7 @@ project_overrides: []
 limitations: []
 
 initialization:
-  skill_version: "1.4.4"
+  skill_version: "1.4.5"
   state: proofreading-ready
   approved_by: {{APPROVED_BY_YAML}}
   approved_at: "{{VERIFIED_AT}}"
