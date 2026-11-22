@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-SKILL_VERSION = "1.4.7"
+SKILL_VERSION = "1.4.9"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")

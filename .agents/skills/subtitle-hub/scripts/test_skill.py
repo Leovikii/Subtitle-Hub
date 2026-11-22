@@ -183,7 +183,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.7\"\n  state: materials-prepared\n"
+        "initialization:\n  skill_version: \"1.4.9\"\n  state: materials-prepared\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     (project / "review.md").write_text("---\nschema_version: 3\nwork_id: SH9000\n---\n", encoding="utf-8")
@@ -408,7 +408,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.7"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.9"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -788,7 +788,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.7")
+            self.assertEqual(data["skill_version"], "1.4.9")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -1211,7 +1211,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.7"', 'skill_version: "1.4.6"'
+                    'skill_version: "1.4.9"', 'skill_version: "1.4.8"'
                 ),
                 encoding="utf-8",
             )
@@ -1422,7 +1422,7 @@ class CandidateContractTests(unittest.TestCase):
             metadata = project / "project.yaml"
             current = metadata.read_text(encoding="utf-8")
             for version in ("1.4.4", "1.4.5"):
-                metadata.write_text(current.replace('skill_version: "1.4.7"', f'skill_version: "{version}"'), encoding="utf-8")
+                metadata.write_text(current.replace('skill_version: "1.4.9"', f'skill_version: "{version}"'), encoding="utf-8")
                 validate_release_dir(candidate, project)
             metadata.write_text(current, encoding="utf-8")
             previous = project / "subtitles/previous"
@@ -1463,7 +1463,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.4.7"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.4.9"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1473,7 +1473,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.7"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.9"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1584,7 +1584,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.7 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.9 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1648,7 +1648,7 @@ class TermAuditTests(unittest.TestCase):
 
 
 class BilingualAlignmentTests(unittest.TestCase):
-    def test_glossary_with_simplified_web_evidence_blocks_plan_and_resume_until_complete(self) -> None:
+    def test_glossary_requires_simplified_chinese_wikipedia_for_plan_and_resume(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             project, _, _ = make_alignment_project(root, [(100, 200, "测试城")], [(100, 200, "Test City")])
@@ -1666,17 +1666,28 @@ class BilingualAlignmentTests(unittest.TestCase):
                 ("本地字幕", "confirmed"),
                 ("zh-Hant https://example.test/work", "confirmed"),
                 ("zh-Hans", "confirmed"),
-                ("zh-Hans https://example.test/work", "pending"),
+                ("zh-Hans https://www.ithome.com/1/004/460.htm", "confirmed"),
+                ("zh-Hans official https://www.disneyplus.com/zh-sg/work", "confirmed"),
+                ("zh-Hans wikipedia https://www.disneyplus.com/zh-sg/work", "confirmed"),
+                ("zh-Hans wikipedia https://www.ithome.com/zh-hans/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-tw/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org.example.test/zh-hans/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work "
+                 "and https://www.disneyplus.com/zh-sg/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work", "pending"),
             ):
                 guide.write_text(
                     header + f"| city | Test City | 测试城 | 无 | S01E01 | {evidence} | {status} |\n",
                     encoding="utf-8",
                 )
                 blocked = run("align_bilingual.py", *plan_args, expect=1)
-                self.assertIn("need a confirmed form and a zh-Hans HTTPS source: city", blocked.stderr)
+                self.assertIn("sourced only to Simplified Chinese Wikipedia: city", blocked.stderr)
                 self.assertFalse(session.exists())
             guide.write_text(
-                header + "| city | Test City | 测试城 | 无 | S01E01 | zh-Hans https://example.test/work | confirmed |\n",
+                header + "| city | Test City | 测试城 | 无 | S01E01 | "
+                "zh-Hans wikipedia [作品](https://zh.wikipedia.org/zh-hans/work#places) uses 测试城; "
+                "[系列](https://zh.wikipedia.org/zh-cn/franchise) uses 测试城 | confirmed |\n",
                 encoding="utf-8",
             )
             saved_guide = guide.read_bytes()
@@ -1691,7 +1702,7 @@ class BilingualAlignmentTests(unittest.TestCase):
             blocked = run("align_bilingual.py", *decide_args, expect=1)
             self.assertIn("cannot read", blocked.stderr)
             self.assertEqual(packet.read_bytes(), before)
-            guide.write_bytes(saved_guide)
+            guide.write_bytes(saved_guide.replace(b"/zh-hans/work#places", b"/zh-cn/work#places"))
             saved = run("align_bilingual.py", *decide_args)
             self.assertTrue(json.loads(saved.stdout)["saved"])
 

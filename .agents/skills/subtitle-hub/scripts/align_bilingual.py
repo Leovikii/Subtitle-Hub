@@ -16,19 +16,36 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
+from urllib.parse import urlsplit
 
 import yaml
 
-SKILL_VERSION = "1.4.7"
+SKILL_VERSION = "1.4.9"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
 TAG_BLOCK = re.compile(r"\{[^}]*\}")
 NONWORD = re.compile(r"[\W_]+", re.UNICODE)
+TERM_SOURCE = re.compile(r"\bzh-Hans wikipedia\s+(?:\[[^\]]+\]\()?<?https://[^\s<>()|]+")
+TERM_LINK = re.compile(r"https?://[^\s<>()|]+", re.IGNORECASE)
 
 
 class AlignmentError(RuntimeError):
     pass
+
+
+def has_qualified_term_source(evidence: str) -> bool:
+    if not TERM_SOURCE.search(evidence):
+        return False
+    for url in TERM_LINK.findall(evidence):
+        try:
+            parsed = urlsplit(url)
+        except ValueError:
+            return False
+        if (parsed.scheme != "https" or parsed.netloc.lower() != "zh.wikipedia.org"
+                or not re.fullmatch(r"/(?:zh-hans|zh-cn)/.+", parsed.path)):
+            return False
+    return True
 
 
 def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
@@ -88,12 +105,13 @@ def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
         if columns and all(i is not None and i < len(cells) for i in columns):
             source, canonical, basis, status = (cells[i] for i in columns)
             if (source and canonical and status in {"confirmed", "confirmed-consistent"}
-                    and re.search(r"\bzh-Hans\b", basis) and re.search(r"https://[^\s<>()|]+", basis)):
+                    and has_qualified_term_source(basis)):
                 confirmed.add(cells[0])
     missing = sorted(set(term_ids) - confirmed)
     if missing:
         raise AlignmentError(
-            f"{error}: entries in {guide} need a confirmed form and a zh-Hans HTTPS source: {', '.join(missing)}"
+            f"{error}: entries in {guide} need a confirmed form sourced only to Simplified Chinese Wikipedia: "
+            f"{', '.join(missing)}"
         )
 
 
