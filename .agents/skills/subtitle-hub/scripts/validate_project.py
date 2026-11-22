@@ -7,8 +7,11 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+
+sys.dont_write_bytecode = True
 
 import yaml
 

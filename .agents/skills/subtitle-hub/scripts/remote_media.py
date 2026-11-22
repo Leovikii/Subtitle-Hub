@@ -24,6 +24,10 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path, PurePosixPath
 from urllib.parse import quote
 
+sys.dont_write_bytecode = True
+
+from skill_io import disposable_path, writable_path, write_disposable_text
+
 PARAMIKO_VERSION = "5.0.0"
 RUNTIME_ROOT = Path.home() / ".codex" / "subtitle-hub"
 VENV_ROOT = RUNTIME_ROOT / "venv"
@@ -448,12 +452,10 @@ def discover(args: argparse.Namespace, client: object) -> dict[str, object]:
 
 
 def local_output(raw: str, suffix: str) -> Path:
-    output = Path(raw).expanduser().resolve()
-    temp_root = Path(tempfile.gettempdir()).resolve()
     try:
-        output.relative_to(temp_root)
+        output = disposable_path(Path(raw))
     except ValueError as error:
-        raise RemoteMediaError(f"output must stay under the system temporary directory {temp_root}") from error
+        raise RemoteMediaError(str(error)) from error
     if output.suffix.lower() != suffix:
         raise RemoteMediaError(f"output must use {suffix}")
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -466,13 +468,14 @@ def write_remote_output(args: argparse.Namespace, client: object, action: str, b
     data = run_remote(client, guarded(path, body), limit=MAX_OUTPUT[action], timeout=args.client_timeout)
     if not data:
         raise RemoteMediaError(f"remote {action} returned no data")
-    part = output.with_name(output.name + ".part")
+    stream = tempfile.NamedTemporaryFile("wb", dir=output.parent, delete=False)
+    part = Path(stream.name)
     try:
-        part.write_bytes(data)
+        with stream:
+            stream.write(data)
         part.replace(output)
     finally:
-        if part.exists():
-            part.unlink()
+        part.unlink(missing_ok=True)
     return {"schema_version": 1, "action": action, "source": ssh_uri(args.host, args.port, args.user, path), "output": str(output), "bytes": len(data)}
 
 
@@ -511,6 +514,9 @@ def main() -> int:
     args = parser.parse_args()
     try:
         validate_connection(args)
+        if args.action in {"bootstrap", "revoke"}:
+            writable_path(host_key_file(args))
+            writable_path(identity_file(args))
         paramiko = load_paramiko()
         if args.action == "bootstrap":
             result = bootstrap(args, paramiko)
@@ -545,7 +551,7 @@ def main() -> int:
                 client.close()
         rendered = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
         if args.action == "probe" and args.output:
-            local_output(args.output, ".json").write_text(rendered, encoding="utf-8")
+            write_disposable_text(local_output(args.output, ".json"), rendered)
     except (OSError, UnicodeError, ValueError, json.JSONDecodeError, RemoteMediaError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1

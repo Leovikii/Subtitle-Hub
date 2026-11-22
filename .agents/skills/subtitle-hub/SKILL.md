@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.5.0-beta.2"
+  version: "1.5.0-beta.3"
 ---
 
 # Subtitle Hub
@@ -22,9 +22,9 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, run `scripts/setup_runtime.py` with existing authorization or obtain only the permission required for the download and installation. Continue with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
 
-0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.5.0-beta.2"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.5.0-beta.3"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
 1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Run the initializer's read-only dry run before proposing any developer-facing names. Present its checked series directory, project name, verified identity, scope, materials, episode map, timing authority, and release languages in one initialization confirmation.
-2. Recheck the approved dry-run digest and run the transactional initializer with that digest. Scan the full subtitle scope for term candidates, admit only forms that need a consistent rendering, and index their canonical names in `series-guide.md` using only Wikipedia's Mainland Simplified Chinese view (`/zh-cn/`). Pass `--ready-for-proofreading` before line-by-line proofreading. Follow [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading) for admission rules, search limits, and late discoveries.
+2. Recheck the approved dry-run digest and run the transactional initializer with that digest. Scan the full subtitle scope and index core terms. Use Wikipedia's Mainland Simplified Chinese view (`/zh-cn/`) by default, with the scoped user override under [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading). Pass `--ready-for-proofreading` before line-by-line proofreading.
 3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`. Time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, and list every semantic edit separately. Obtain approval for proposed edits before implementation.
    Use the alignment tool's `status`, paged `read`, and ID/character-cut `decide` commands; extract unchanged original text locally instead of regenerating it in tool arguments. After interruption inspect saved progress before retrying. See `SH-TRANS-011` for limits and recovery.
 4. Record the user's proposal decisions and set `review.md` to `implementing` before writing approved master edits, applying bilingual projection, or building the release candidate. Update the same rows, verify the complete Noto master (including non-overlapping ordinary cues within each language), and proceed without routine interruptions. Follow SH-CTRL-007 for a completed review with zero proposed edits.
@@ -38,9 +38,15 @@ The routine user decisions are initialization (SH-INIT-005), the complete edit p
 
 On failure, inspect saved state and the exact error, recover with authorized inputs, and continue from the first unfinished step. Apply an in-scope fallback when it preserves the approved scope and evidence claims. If a current prerequisite genuinely prevents further progress, report what finished, the exact blocker, and the single next action that would unblock it. Record this in `review.md` when the project exists. Keep unverified coverage pending.
 
+## SH-OPS-001 — Skill files are read-only during project execution
+
+Treat the repository Skill, the global installed Skill, other copies, and the checked repository-level support tools as read-only during any subtitle project task. Never attempt to edit, replace, delete, reinstall, change permissions, create generated files in these directories, or execute a modified copy to get past a gate. Project authorization and project overrides provide no permission to maintain the Skill. A separately requested Skill maintenance or installation task may update the Skill.
+
+Use the Skill's existing commands and run Python with `-B`. Keep disposable outputs in system temporary storage. The shared runtime and SSH state use their existing dedicated location and approved setup commands. If a tool or contract defect prevents work, continue unaffected steps, record the exact blocker in `review.md` when available, and report the need for separate maintenance. Resolve stale project metadata by upgrading the selected project to the current contract.
+
 ## Authority and boundaries
 
-Priority: current user instruction; confirmed `project.yaml` overrides; confirmed series terminology; this Skill; the single style basis in `timing-style-and-qc.md`.
+Priority: current user instruction, confirmed `project.yaml` overrides, confirmed series terminology, this Skill, then the single style basis in `timing-style-and-qc.md`.
 
 - The initializer, readiness check, proposal decision, and final review are required at their respective stages. Use the Skill's checked entry points for initialization, alignment, and candidate builds. An informal hand-built project, a passed structural check, or an agent-written status cannot substitute for the required checks or user decisions.
 - `project.yaml` is durable project truth. `review.md` is the sole current state, proposal, decision, result, and verification surface; Git preserves closed history.

@@ -14,6 +14,10 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+sys.dont_write_bytecode = True
+
+from skill_io import disposable_path, write_disposable_text
+
 VIDEO_EXTENSIONS = {".mkv", ".mp4", ".m2ts", ".ts", ".webm", ".mov"}
 TEXT_EVIDENCE_EXTENSIONS = {".ass", ".ssa", ".srt", ".vtt", ".txt", ".md"}
 SUBTITLE_EXTENSIONS = TEXT_EVIDENCE_EXTENSIONS | {".sup", ".mks"}
@@ -474,6 +478,10 @@ def main() -> int:
     parser.add_argument("--output", type=Path, help="Write intake JSON; stdout is used otherwise")
     args = parser.parse_args()
 
+    try:
+        output = disposable_path(args.output) if args.output else None
+    except ValueError as error:
+        parser.error(str(error))
     source_language = normalize_language(args.source_language)
     if not source_language:
         parser.error("--source-language must be a resolvable BCP 47 language tag")
@@ -559,7 +567,7 @@ def main() -> int:
     evidence_tier = "A" if source_text_ready and auxiliary_ready else "B" if source_text_ready else "C" if auxiliary_ready else "D"
     report = {
         "schema_version": 4,
-        "skill_version": "1.5.0-beta.2",
+        "skill_version": "1.5.0-beta.3",
         "created_at": date.today().isoformat(),
         "source_language": source_language,
         "project_type": args.project_type,
@@ -577,9 +585,11 @@ def main() -> int:
         ],
     }
     rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(rendered, encoding="utf-8")
+    if output:
+        try:
+            write_disposable_text(output, rendered)
+        except (OSError, ValueError) as error:
+            parser.error(str(error))
     else:
         sys.stdout.write(rendered)
     return 0

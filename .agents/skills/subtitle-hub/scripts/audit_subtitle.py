@@ -11,6 +11,10 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
+from skill_io import disposable_path, write_disposable_text
+
 TAG_BLOCK = re.compile(r"\{[^}]*\}")
 POS = re.compile(r"\\pos\(([-\d.]+),([-\d.]+)\)")
 MOVE = re.compile(r"\\move\(([^)]*)\)")
@@ -264,15 +268,16 @@ def main() -> int:
     parser.add_argument("--output", type=Path, help="Optional disposable JSON output path; stdout is the default")
     args = parser.parse_args()
     try:
+        output = disposable_path(args.output) if args.output else None
         report = {"schema_version": 2, "files": [audit(path.resolve()) for path in args.files]}
+        rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+        if output:
+            write_disposable_text(output, rendered)
+        else:
+            sys.stdout.write(rendered)
     except (AuditError, OSError, UnicodeError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
-    rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    if args.output:
-        args.output.write_text(rendered, encoding="utf-8")
-    else:
-        sys.stdout.write(rendered)
     return 0
 
 

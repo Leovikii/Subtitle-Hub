@@ -9,7 +9,10 @@ import re
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
 from audit_subtitle import AuditError, parse_events, visible
+from skill_io import disposable_path, write_disposable_text
 
 HAN = re.compile(r"[\u3400-\u9fff]")
 
@@ -101,6 +104,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, help="Optional disposable JSON output; stdout is the default")
     args = parser.parse_args()
     try:
+        output = disposable_path(args.output) if args.output else None
         terms = load_terms(args.terms.resolve())
         files = [audit_file(path.resolve(), terms) for path in args.files]
     except (AuditError, TermAuditError, OSError, UnicodeError, ValueError) as error:
@@ -119,8 +123,12 @@ def main() -> int:
         "summary": {"forbidden_hits": forbidden_hits, "passed": forbidden_hits == 0},
     }
     rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    if args.output:
-        args.output.write_text(rendered, encoding="utf-8")
+    if output:
+        try:
+            write_disposable_text(output, rendered)
+        except (OSError, ValueError) as error:
+            print(f"error: {error}", file=sys.stderr)
+            return 1
     else:
         sys.stdout.write(rendered)
     if forbidden_hits:

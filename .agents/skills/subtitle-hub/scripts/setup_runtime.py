@@ -13,6 +13,10 @@ import sys
 import venv
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
+from skill_io import writable_path
+
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 REQUIREMENTS = SKILL_ROOT / "requirements.txt"
 RUNTIME_ROOT = Path.home() / ".codex" / "subtitle-hub"
@@ -75,6 +79,9 @@ def main() -> int:
             raise RuntimeError("Subtitle Hub requires a base Python 3.11 or newer")
         if args.check and args.remove:
             raise RuntimeError("--check and --remove cannot be combined")
+        if not args.check:
+            for path in (RUNTIME_ROOT, VENV_ROOT, STATE_ROOT, MARKER, RUNTIME_ROOT / "venv-next"):
+                writable_path(path)
         if args.remove:
             identities = STATE_ROOT / "ssh"
             if identities.exists() and any(identities.iterdir()):
@@ -88,7 +95,7 @@ def main() -> int:
                 raise RuntimeError("Subtitle Hub runtime is missing or outdated; run setup_runtime.py")
         else:
             create_runtime()
-    except (OSError, subprocess.CalledProcessError, RuntimeError) as error:
+    except (OSError, subprocess.CalledProcessError, RuntimeError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
     print(json.dumps({

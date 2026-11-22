@@ -50,7 +50,7 @@ Video availability does not raise this text tier. Every visible Chinese event re
 | Embedded non-source-language subtitle | Timing plus translation/disambiguation evidence | Never promote it to source-text authority; if Chinese, it remains auxiliary unless the user declares it the baseline |
 | SUP/PGS and OCR | Original graphic text, signs, forced subtitles, and cross-checking | OCR is candidate text until checked against the image/audio |
 | Another translation or Chinese version | Ambiguity, omissions, relationship, and terminology comparison | Never use majority vote or treat it as source-language evidence |
-| Applicable series terms / user-confirmed names | Candidate terminology and existing decisions | Verify adopted forms in Wikipedia's Mainland Simplified Chinese view (`/zh-cn/`) under SH-TRANS-007 |
+| Applicable series terms / user-confirmed names | Candidate terminology and existing decisions | Use mainland Wikipedia evidence or record an explicit scoped user override under SH-TRANS-007 |
 | Alternate release video/subtitle | Cut-difference and compatibility investigation | Similar names or durations do not prove compatibility |
 | Fonts, renderer, media probe | Visual geometry, track inventory, and local rendering | Environment capability, not source material; rendering success is not human visual approval |
 
@@ -94,7 +94,7 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.5.0-beta.2 intake contract
+## Skill 1.5.0-beta.3 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
@@ -108,7 +108,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.5.0-beta.2`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.5.0-beta.3`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
@@ -143,7 +143,7 @@ Do not maintain old-schema execution branches and do not bulk-upgrade dormant pr
 Example:
 
 ```text
-python scripts/inventory_sources.py \
+python -B scripts/inventory_sources.py \
   --candidate-baseline <zh-subtitle-or-directory> \
   --optional-source <path>|<language>|<comma-separated-roles> \
   --source-language ja \
@@ -175,7 +175,7 @@ The series directory must be an immediate child of the repository's `works/`, wi
 Run a read-only dry run before presenting the plan:
 
 ```text
-python scripts/init_project.py \
+python -B scripts/init_project.py \
   --repository-root <repository> \
   --series-dir <works/series-name> \
   --project-name <proposed-short-name> \

@@ -14,15 +14,19 @@ import sys
 import tempfile
 from collections import Counter
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import parse_qs, urlsplit
 
+sys.dont_write_bytecode = True
+
 import yaml
 
 from project_naming import validate_work_directory
+from skill_io import disposable_path, writable_path, write_disposable_text as atomic_text
 
-SKILL_VERSION = "1.5.0-beta.2"
+SKILL_VERSION = "1.5.0-beta.3"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -49,6 +53,36 @@ def has_qualified_term_source(evidence: str) -> bool:
                 or parse_qs(parsed.query, keep_blank_values=True).get("variant", ["zh-cn"]) != ["zh-cn"]):
             return False
     return True
+
+
+def user_term_overrides(metadata: dict, target_episodes: set[str]) -> dict[str, tuple[str, set[str]]]:
+    overrides = metadata.get("project_overrides", [])
+    if not isinstance(overrides, list):
+        raise AlignmentError("project.yaml: project_overrides must be a list")
+    confirmed = {}
+    for entry in overrides:
+        if not isinstance(entry, dict) or entry.get("rule_id") != "SH-TRANS-007":
+            continue
+        term_id = entry.get("term_id")
+        error = f"project.yaml: invalid user terminology override for {term_id!r}"
+        fields = ("term_id", "canonical", "confirmed_by", "rationale")
+        if entry.get("authority") != "user-confirmed" or not all(
+            isinstance(entry.get(field), str) and entry[field].strip() for field in fields
+        ):
+            raise AlignmentError(f"{error}: record explicit user approval and the exact form")
+        try:
+            date.fromisoformat(str(entry.get("confirmed_at")))
+        except ValueError as cause:
+            raise AlignmentError(f"{error}: confirmed_at must be an ISO date") from cause
+        scope = entry.get("scope")
+        if (not isinstance(scope, list) or not scope or any(
+            not isinstance(episode, str) or episode not in target_episodes for episode in scope
+        )):
+            raise AlignmentError(f"{error}: scope must list mapped episode IDs")
+        if term_id in confirmed:
+            raise AlignmentError(f"{error}: duplicate override")
+        confirmed[term_id] = (entry["canonical"].strip(), set(scope))
+    return confirmed
 
 
 def require_proofreading_gate(project_root: Path, metadata: dict, *, implementing: bool = False) -> None:
@@ -86,6 +120,15 @@ def require_proofreading_gate(project_root: Path, metadata: dict, *, implementin
     term_ids = preflight.get("term_ids")
     if not isinstance(term_ids, list) or not all(isinstance(value, str) and value.strip() for value in term_ids):
         raise AlignmentError(f"{error}: term_ids must list the admitted core terms")
+    scope = set(episodes)
+    term_episodes = preflight.get("term_episodes", {})
+    if not isinstance(term_episodes, dict) or any(
+        term_id not in term_ids or not isinstance(term_scope, list) or not term_scope
+        or any(not isinstance(ep, str) or ep not in scope for ep in term_scope)
+        for term_id, term_scope in term_episodes.items()
+    ):
+        raise AlignmentError(f"{error}: term_episodes must map admitted terms to mapped episode IDs")
+    overrides = user_term_overrides(metadata, scope)
     if implementing and record.get("status") != "implementing":
         raise AlignmentError(f"{review_path}: approved implementation requires status implementing")
     if not term_ids:
@@ -114,14 +157,20 @@ def require_proofreading_gate(project_root: Path, metadata: dict, *, implementin
             continue
         if columns and all(i is not None and i < len(cells) for i in columns):
             source, canonical, reason, basis, status = (cells[i] for i in columns)
-            if (source and canonical and reason and status in {"confirmed", "confirmed-consistent"}
-                    and has_qualified_term_source(basis)):
-                confirmed.add(cells[0])
+            term_id = cells[0]
+            if not (source and canonical and reason) or term_id not in term_ids:
+                continue
+            if status in {"confirmed", "confirmed-consistent"} and has_qualified_term_source(basis):
+                confirmed.add(term_id)
+            if status == "user-confirmed" and term_id in overrides:
+                form, approved_scope = overrides[term_id]
+                if form == canonical and set(term_episodes.get(term_id, episodes)) <= approved_scope:
+                    confirmed.add(term_id)
     missing = sorted(set(term_ids) - confirmed)
     if missing:
         raise AlignmentError(
             f"{error}: entries in {guide} need an admission reason and a confirmed form "
-            "sourced only to Mainland Simplified Chinese Wikipedia (/zh-cn/): "
+            "sourced to Mainland Simplified Chinese Wikipedia (/zh-cn/) or covered by exact user approval: "
             f"{', '.join(missing)}"
         )
 
@@ -173,14 +222,6 @@ def file_sha256(path: Path) -> str:
 def json_sha256(value: object) -> str:
     body = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(body.encode("utf-8")).hexdigest()
-
-
-def atomic_text(path: Path, text: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile("w", encoding="utf-8", newline="\n", dir=path.parent, delete=False) as stream:
-        stream.write(text)
-        temporary = Path(stream.name)
-    os.replace(temporary, path)
 
 
 def load_yaml(path: Path) -> dict[str, object]:
@@ -410,6 +451,9 @@ def master_paths(project_root: Path, episodes: list[str] | None) -> dict[str, Pa
         found = {episode: found[episode] for episode in episodes}
     if not found:
         raise AlignmentError("no workspace masters found")
+    for master in found.values():
+        if writable_path(master) != master:
+            raise AlignmentError(f"{master}: workspace masters must use their actual project paths")
     return found
 
 
@@ -617,11 +661,8 @@ def context_summary(group: dict[str, object]) -> dict[str, object]:
 
 
 def ensure_session_outside_project(output_dir: Path, project_root: Path) -> None:
-    try:
-        output_dir.resolve().relative_to(project_root.resolve())
-    except ValueError:
-        return
-    raise AlignmentError("alignment sessions are disposable and must be outside the project directory")
+    if disposable_path(output_dir).is_relative_to(project_root):
+        raise AlignmentError("alignment sessions are disposable and must be outside the project directory")
 
 
 def write_plan(
@@ -738,7 +779,10 @@ def write_plan(
 def load_session(
     project_root: Path, session: Path, *, implementing: bool = False,
 ) -> tuple[dict[str, object], list[tuple[Path, dict[str, object]]]]:
-    manifest_path = session / "manifest.json"
+    ensure_session_outside_project(session, project_root)
+    manifest_path = disposable_path(session / "manifest.json")
+    if manifest_path.parent != session:
+        raise AlignmentError("session manifest must be a file in the session directory")
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as error:
@@ -750,11 +794,19 @@ def load_session(
     if file_sha256(project_root / "project.yaml") != manifest.get("project_yaml_sha256"):
         raise AlignmentError("project.yaml changed after alignment planning")
     require_proofreading_gate(project_root, load_yaml(project_root / "project.yaml"), implementing=implementing)
+    episodes = manifest.get("episodes")
+    if not isinstance(episodes, dict) or not episodes:
+        raise AlignmentError("session does not identify any workspace masters")
+    for episode, path in master_paths(project_root, list(episodes)).items():
+        if Path(episodes[episode]["master"]) != path:
+            raise AlignmentError(f"{episode}: session master does not match the project workspace")
     packets = []
     for entry in manifest.get("batches", []):
         if not isinstance(entry, dict) or not isinstance(entry.get("file"), str):
             raise AlignmentError("manifest contains a malformed batch entry")
-        path = session / entry["file"]
+        path = disposable_path(session / entry["file"])
+        if path.parent != session or not re.fullmatch(r"batch-[0-9]+\.json", path.name):
+            raise AlignmentError("batch packet must be a batch JSON file in the session directory")
         try:
             packet = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, UnicodeError, json.JSONDecodeError) as error:
@@ -1022,9 +1074,11 @@ def replace_secondary_events(master: Path, secondary_styles: set[str], new_lines
         kept.append(line)
     kept.extend(line for _, line in insertion_starts[inserted:])
     rendered = "\n".join(kept) + "\n"
-    temporary = master.with_name(master.name + ".align-tmp")
-    temporary.write_text(rendered, encoding="utf-8", newline="\n")
+    stream = tempfile.NamedTemporaryFile("w", encoding="utf-8", newline="\n", dir=master.parent, delete=False)
+    temporary = Path(stream.name)
     try:
+        with stream:
+            stream.write(rendered)
         after = parse_ass(temporary)
         primary_after = [event.raw for event in after if event.style not in secondary_styles]
         if primary_after != primary_before:

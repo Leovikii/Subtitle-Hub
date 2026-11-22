@@ -10,9 +10,9 @@ Subtitle Hub 是一个面向中文字幕校对、维护与发布的开放仓库�
 
 ## Subtitle Hub Skill
 
-[`subtitle-hub` Skill 1.5.0-beta.2](.agents/skills/subtitle-hub/SKILL.md) 集中了项目初始化、素材盘点、全文字幕校对、时间轴与排版检查、构建验证和发布流程。
+[`subtitle-hub` Skill 1.5.0-beta.3](.agents/skills/subtitle-hub/SKILL.md) 集中了项目初始化、素材盘点、全文字幕校对、时间轴与排版检查、构建验证和发布流程。
 
-1.5.0-beta.2 的核心术语统一采用维基百科大陆简体（`/zh-cn/`）正文。先扫描字幕并筛选核心术语，通过标准译名索引门禁后开始正式校对。已批准的工作持续推进至下一个必须确认的节点。详见 [Skill 流程](.agents/skills/subtitle-hub/SKILL.md#user-decisions-and-continuation) 和 [术语门禁](.agents/skills/subtitle-hub/references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading)。
+1.5.0-beta.3 将仓库级和全局 Skill 文件设为项目执行期间的只读边界。核心术语默认使用维基百科大陆简体（`/zh-cn/`），用户明确批准的译法可按项目和集数覆盖。详见 [只读规则](.agents/skills/subtitle-hub/SKILL.md#sh-ops-001--skill-files-are-read-only-during-project-execution) 和 [术语门禁](.agents/skills/subtitle-hub/references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading)。
 
 重新校对旧项目时，先升级到当前项目契约。双语成品的逐对同轨与相邻重叠检查见 [双语正文规则](.agents/skills/subtitle-hub/references/timing-style-and-qc.md#sh-layout-002--bilingual-ordinary-dialogue)。
 

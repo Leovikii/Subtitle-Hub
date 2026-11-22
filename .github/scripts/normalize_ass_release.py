@@ -9,6 +9,8 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
 from build_subtitle_packages import (
     PackageError,
     project_identity,
@@ -21,6 +23,7 @@ from build_subtitle_packages import (
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / ".agents/skills/subtitle-hub/scripts"))
 from align_bilingual import SKILL_VERSION, AlignmentError, load_yaml, require_proofreading_gate
+from skill_io import writable_path
 
 
 STYLE_SECTION = "[V4+ Styles]"
@@ -468,6 +471,8 @@ def build_candidate(project_root: Path, version: str) -> None:
         raise NormalizeError(str(error)) from error
     workspace_episodes = project_root / "project/workspace/episodes"
     output_dir = project_root / "project/workspace/build/current-candidate"
+    if writable_path(output_dir) != output_dir:
+        raise NormalizeError(f"candidate must use its actual project path: {output_dir}")
     if output_dir.exists():
         raise NormalizeError(f"refusing to overwrite existing candidate: {output_dir}")
     output_dir.mkdir(parents=True)

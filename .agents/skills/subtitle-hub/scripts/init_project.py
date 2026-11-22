@@ -15,11 +15,13 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
+sys.dont_write_bytecode = True
+
 import yaml
 
 from project_naming import EPISODE_PATTERNS, WORK_ID_RE, validate_project_name, validate_series_directory
 
-SKILL_VERSION = "1.5.0-beta.2"
+SKILL_VERSION = "1.5.0-beta.3"
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
 TEXT_BASELINES = {".ass", ".ssa", ".srt", ".vtt"}
 SAFE_COMPONENT_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
@@ -665,7 +667,7 @@ def main() -> int:
         promoted_target = True
         validator = Path(__file__).resolve().with_name("validate_project.py")
         validation = subprocess.run(
-            [sys.executable, str(validator), str(target), "--prepared-masters", "--json"],
+            [sys.executable, "-B", str(validator), str(target), "--prepared-masters", "--json"],
             capture_output=True, text=True, encoding="utf-8",
         )
         if validation.returncode != 0:

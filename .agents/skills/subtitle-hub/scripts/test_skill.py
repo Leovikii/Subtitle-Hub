@@ -190,7 +190,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.5.0-beta.2\"\n  state: materials-prepared\n"
+        "initialization:\n  skill_version: \"1.5.0-beta.3\"\n  state: materials-prepared\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     (project / "review.md").write_text(
@@ -425,7 +425,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.5\.0-beta\.2"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.5\.0-beta\.3"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -805,7 +805,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.5.0-beta.2")
+            self.assertEqual(data["skill_version"], "1.5.0-beta.3")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -1284,7 +1284,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.5.0-beta.2"', 'skill_version: "1.5.0-beta.1"'
+                    'skill_version: "1.5.0-beta.3"', 'skill_version: "1.5.0-beta.2"'
                 ),
                 encoding="utf-8",
             )
@@ -1496,7 +1496,7 @@ class CandidateContractTests(unittest.TestCase):
             metadata = project / "project.yaml"
             current = metadata.read_text(encoding="utf-8")
             for version in ("1.4.4", "1.4.5"):
-                metadata.write_text(current.replace('skill_version: "1.5.0-beta.2"', f'skill_version: "{version}"'), encoding="utf-8")
+                metadata.write_text(current.replace('skill_version: "1.5.0-beta.3"', f'skill_version: "{version}"'), encoding="utf-8")
                 validate_release_dir(candidate, project)
             metadata.write_text(current, encoding="utf-8")
             previous = project / "subtitles/previous"
@@ -1538,7 +1538,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.5.0-beta.2"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.5.0-beta.3"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1548,7 +1548,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.5.0-beta.2"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.5.0-beta.3"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1664,7 +1664,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.5.0-beta.2 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.5.0-beta.3 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1777,7 +1777,7 @@ class BilingualAlignmentTests(unittest.TestCase):
                     encoding="utf-8",
                 )
                 blocked = run("align_bilingual.py", *plan_args, expect=1)
-                self.assertIn("sourced only to Mainland Simplified Chinese Wikipedia (/zh-cn/): city", blocked.stderr)
+                self.assertIn("or covered by exact user approval: city", blocked.stderr)
                 self.assertFalse(session.exists())
             guide.write_text(
                 header + "| city | Test City | 测试城 | 无 | S01E01 | 角色返程的目的地 | "
@@ -1808,6 +1808,97 @@ class BilingualAlignmentTests(unittest.TestCase):
             decisions.write_text('{"groups": [{"group_id": "G000002", "status": "confirmed"}]}', encoding="utf-8")
             saved = run("align_bilingual.py", *decide_args)
             self.assertEqual(json.loads(saved.stdout)["status"], "complete")
+
+    def test_explicit_user_term_override_resolves_only_its_form_and_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(root, [(100, 200, "测试城")], [(100, 200, "Test City")])
+            record_test_terminology(project, term_ids=("city",))
+            review = project / "review.md"
+            review_text = review.read_text(encoding="utf-8").replace(
+                "  episodes: [S01E01]", "  episodes: [S01E01, S01E02]",
+            )
+            review.write_text(review_text, encoding="utf-8")
+            guide = project.parent / "series-guide.md"
+            guide.write_text(
+                "| term_id | 原文 | 规范简体中文 | 范围 | 入表理由 | 证据 | 状态 |\n"
+                "| city | Test City | 测试城 | alignment-test | 主角的目的地 | 项目覆盖 | user-confirmed |\n",
+                encoding="utf-8",
+            )
+            metadata = project / "project.yaml"
+            original = metadata.read_text(encoding="utf-8").replace(
+                "      S01E01: test.mkv\n", "      S01E01: test.mkv\n      S01E02: second.mkv\n",
+            )
+            metadata.write_text(original, encoding="utf-8")
+            session = root / "session"
+            plan = ("plan", str(project), "--output-dir", str(session), "--source-id", "ja-source",
+                    "--episode", "S01E01")
+            result = run("align_bilingual.py", *plan, expect=1)
+            self.assertIn("or covered by exact user approval", result.stderr)
+            override = {
+                "rule_id": "SH-TRANS-007", "authority": "user-confirmed", "term_id": "city",
+                "canonical": "测试城", "scope": ["S01E01"], "confirmed_by": "user",
+                "confirmed_at": "2026-11-22", "rationale": "User approved the exact form for S01E01.",
+            }
+            for changes, expected in (
+                ({"authority": "agent"}, "record explicit user approval"),
+                ({"scope": ["S01E03"]}, "scope must list mapped episode IDs"),
+                ({}, "or covered by exact user approval"),
+            ):
+                metadata.write_text(original.replace(
+                    "project_overrides: []", f"project_overrides: {json.dumps([{**override, **changes}], ensure_ascii=False)}",
+                ), encoding="utf-8")
+                result = run("align_bilingual.py", *plan, expect=1)
+                self.assertIn(expected, result.stderr)
+            review.write_text(review_text.replace(
+                '  term_ids: ["city"]', '  term_ids: ["city"]\n  term_episodes: {city: [S01E01]}',
+            ), encoding="utf-8")
+            guide_text = guide.read_text(encoding="utf-8")
+            guide.write_text(guide_text.replace("测试城", "其他译法"), encoding="utf-8")
+            result = run("align_bilingual.py", *plan, expect=1)
+            self.assertIn("or covered by exact user approval", result.stderr)
+            self.assertFalse(session.exists())
+            guide.write_text(guide_text, encoding="utf-8")
+            run("align_bilingual.py", *plan)
+            self.assertTrue((session / "manifest.json").is_file())
+
+    def test_project_tools_reject_outputs_to_skill_copies(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repo = root / "repository"
+            installed = root / ".codex/skills/subtitle-hub/SKILL.md"
+            bundled = repo / ".agents/skills/subtitle-hub/SKILL.md"
+            portable = root / "portable-store/skills/subtitle-hub/SKILL.md"
+            for path in (installed, bundled, portable):
+                path.parent.mkdir(parents=True)
+                path.write_bytes(b"skill source")
+            project, master, _ = make_alignment_project(root, [(100, 200, "译文")], [(100, 200, "source")])
+            term_manifest = root / "terms.json"
+            term_manifest.write_text("{}", encoding="utf-8")
+            for script, args, status in (
+                ("inventory_sources.py", ("--candidate-baseline", str(master), "--source-language", "ja",
+                                          "--output", str(installed)), 2),
+                ("audit_subtitle.py", (str(master), "--output", str(bundled)), 1),
+                ("audit_subtitle.py", (str(master), "--output", str(portable.parent / "audit.json")), 1),
+                ("audit_terms.py", ("--terms", str(term_manifest), str(master), "--output", str(installed)), 1),
+                ("align_bilingual.py", ("plan", str(project), "--source-id", "ja-source",
+                                       "--output-dir", str(bundled.parent / "session")), 1),
+            ):
+                result = run(script, *args, expect=status)
+                self.assertIn("Skill files are read-only during project execution", result.stderr)
+            session = root / "session"
+            plan_alignment(project, session)
+            manifest = session / "manifest.json"
+            saved = json.loads(manifest.read_text(encoding="utf-8"))
+            saved["batches"][0]["file"] = str(bundled)
+            manifest.write_text(json.dumps(saved), encoding="utf-8")
+            result = run("align_bilingual.py", "status", str(project), "--session", str(session), expect=1)
+            self.assertIn("Skill files are read-only during project execution", result.stderr)
+            self.assertEqual(installed.read_bytes(), b"skill source")
+            self.assertEqual(bundled.read_bytes(), b"skill source")
+            self.assertEqual(portable.read_bytes(), b"skill source")
+            self.assertFalse((bundled.parent / "session").exists())
+            self.assertFalse((portable.parent / "audit.json").exists())
 
     def test_metadata_page_limit_does_not_skip_source_units(self) -> None:
         import align_bilingual as alignment

@@ -3,6 +3,8 @@
 import re
 from pathlib import Path
 
+from skill_io import writable_path
+
 WORK_ID_RE = re.compile(r"SH[0-9]{4,}")
 SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 EPISODE_PATTERNS = {
@@ -20,6 +22,7 @@ def validate_project_name(name: object) -> None:
 
 
 def validate_series_directory(repository: Path, series: Path) -> None:
+    writable_path(series)
     works = repository / "works"
     if (not (repository / "catalog.yaml").is_file() or not works.is_dir()
             or series.parent.name != "works" or series.parent != works):

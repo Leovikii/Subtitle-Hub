@@ -245,7 +245,7 @@ def validate_standard_ass(
     initialization = yaml_block(metadata, "initialization", 0)
     enforce_pair_timing = (
         secondary is not None
-        and yaml_scalar(initialization, "skill_version", 2) in {"1.4.4", "1.4.5", "1.4.6", "1.4.7", "1.4.8", "1.4.9", "1.4.10", "1.5.0-beta.1", "1.5.0-beta.2"}
+        and yaml_scalar(initialization, "skill_version", 2) in {"1.4.4", "1.4.5", "1.4.6", "1.4.7", "1.4.8", "1.4.9", "1.4.10", "1.5.0-beta.1", "1.5.0-beta.2", "1.5.0-beta.3"}
         and subtitle.parent != project_root / "subtitles/previous"
     )
 
@@ -381,7 +381,7 @@ def validate_standard_ass(
     ):
         raise PackageError(f"{subtitle}: ordinary bilingual cues require unique pairs with identical start/end times")
 
-    if enforce_pair_timing and yaml_scalar(initialization, "skill_version", 2) in {"1.4.6", "1.4.7", "1.4.8", "1.4.9", "1.4.10", "1.5.0-beta.1", "1.5.0-beta.2"}:
+    if enforce_pair_timing and yaml_scalar(initialization, "skill_version", 2) in {"1.4.6", "1.4.7", "1.4.8", "1.4.9", "1.4.10", "1.5.0-beta.1", "1.5.0-beta.2", "1.5.0-beta.3"}:
         # ASS hours need not be zero-padded to the same length.
         def centiseconds(value: str) -> int:
             hours, minutes, seconds = value.split(":")
