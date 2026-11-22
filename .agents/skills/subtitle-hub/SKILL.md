@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.5.0-beta.1"
+  version: "1.5.0-beta.2"
 ---
 
 # Subtitle Hub
@@ -22,12 +22,12 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, run `scripts/setup_runtime.py` with existing authorization or obtain only the permission required for the download and installation. Continue with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
 
-0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.5.0-beta.1"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
-1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Present the verified identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one initialization confirmation.
-2. Dry-run internally and prepare the materials transactionally. Scan the full subtitle scope for term candidates, admit only forms that need a consistent rendering, and index their canonical names in `series-guide.md` using only Simplified Chinese Wikipedia. Pass `--ready-for-proofreading` before line-by-line proofreading. Follow [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading) for admission rules, search limits, and late discoveries.
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.5.0-beta.2"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
+1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Run the initializer's read-only dry run before proposing any developer-facing names. Present its checked series directory, project name, verified identity, scope, materials, episode map, timing authority, and release languages in one initialization confirmation.
+2. Recheck the approved dry-run digest and run the transactional initializer with that digest. Scan the full subtitle scope for term candidates, admit only forms that need a consistent rendering, and index their canonical names in `series-guide.md` using only Wikipedia's Mainland Simplified Chinese view (`/zh-cn/`). Pass `--ready-for-proofreading` before line-by-line proofreading. Follow [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading) for admission rules, search limits, and late discoveries.
 3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`. Time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, and list every semantic edit separately. Obtain approval for proposed edits before implementation.
    Use the alignment tool's `status`, paged `read`, and ID/character-cut `decide` commands; extract unchanged original text locally instead of regenerating it in tool arguments. After interruption inspect saved progress before retrying. See `SH-TRANS-011` for limits and recovery.
-4. Implement the approved scope continuously, update the same rows, verify the complete Noto master (including non-overlapping ordinary cues within each language), and build the candidate without routine interruptions.
+4. Record the user's proposal decisions and set `review.md` to `implementing` before writing approved master edits, applying bilingual projection, or building the release candidate. Update the same rows, verify the complete Noto master (including non-overlapping ordinary cues within each language), and proceed without routine interruptions. Follow SH-CTRL-007 for a completed review with zero proposed edits.
 5. Present one complete, verified release candidate for final review when release is in scope. Promote only after the user approves that candidate.
 
 ## User decisions and continuation
@@ -42,6 +42,7 @@ On failure, inspect saved state and the exact error, recover with authorized inp
 
 Priority: current user instruction; confirmed `project.yaml` overrides; confirmed series terminology; this Skill; the single style basis in `timing-style-and-qc.md`.
 
+- The initializer, readiness check, proposal decision, and final review are required at their respective stages. Use the Skill's checked entry points for initialization, alignment, and candidate builds. An informal hand-built project, a passed structural check, or an agent-written status cannot substitute for the required checks or user decisions.
 - `project.yaml` is durable project truth. `review.md` is the sole current state, proposal, decision, result, and verification surface; Git preserves closed history.
 - Keep `project/sources/` immutable. Edit only workspace masters, never `subtitles/current/`.
 - Review every visible Chinese event. Evidence shortage lowers the tier; sampling never proves completion. Automated findings remain candidates unless structure proves the defect.

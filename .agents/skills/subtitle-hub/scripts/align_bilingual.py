@@ -16,11 +16,13 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 import yaml
 
-SKILL_VERSION = "1.5.0-beta.1"
+from project_naming import validate_work_directory
+
+SKILL_VERSION = "1.5.0-beta.2"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -43,12 +45,17 @@ def has_qualified_term_source(evidence: str) -> bool:
         except ValueError:
             return False
         if (parsed.scheme != "https" or parsed.netloc.lower() != "zh.wikipedia.org"
-                or not re.fullmatch(r"/(?:zh-hans|zh-cn)/.+", parsed.path)):
+                or not re.fullmatch(r"/zh-cn/.+", parsed.path)
+                or parse_qs(parsed.query, keep_blank_values=True).get("variant", ["zh-cn"]) != ["zh-cn"]):
             return False
     return True
 
 
-def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
+def require_proofreading_gate(project_root: Path, metadata: dict, *, implementing: bool = False) -> None:
+    try:
+        validate_work_directory(project_root, metadata.get("id"), metadata.get("project_name"))
+    except ValueError as cause:
+        raise AlignmentError(str(cause)) from cause
     review_path = project_root / "review.md"
     error = f"{review_path}: complete terminology_preflight before proofreading"
     try:
@@ -79,6 +86,8 @@ def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
     term_ids = preflight.get("term_ids")
     if not isinstance(term_ids, list) or not all(isinstance(value, str) and value.strip() for value in term_ids):
         raise AlignmentError(f"{error}: term_ids must list the admitted core terms")
+    if implementing and record.get("status") != "implementing":
+        raise AlignmentError(f"{review_path}: approved implementation requires status implementing")
     if not term_ids:
         return
     guide = project_root.parent / "series-guide.md"
@@ -112,7 +121,7 @@ def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
     if missing:
         raise AlignmentError(
             f"{error}: entries in {guide} need an admission reason and a confirmed form "
-            "sourced only to Simplified Chinese Wikipedia: "
+            "sourced only to Mainland Simplified Chinese Wikipedia (/zh-cn/): "
             f"{', '.join(missing)}"
         )
 
@@ -628,7 +637,7 @@ def write_plan(
         raise AlignmentError(f"output directory must be empty: {output_dir}")
     ensure_session_outside_project(output_dir, project_root)
     metadata, primary_styles, secondary_styles, source_language, release_secondary = project_contract(project_root)
-    require_terminology_preflight(project_root, metadata)
+    require_proofreading_gate(project_root, metadata)
     entry = source_entry(metadata, source_language, source_id)
     masters = master_paths(project_root, episode_filter)
     overrides = parse_source_overrides(source_values)
@@ -726,7 +735,9 @@ def write_plan(
     return manifest["summary"]
 
 
-def load_session(project_root: Path, session: Path) -> tuple[dict[str, object], list[tuple[Path, dict[str, object]]]]:
+def load_session(
+    project_root: Path, session: Path, *, implementing: bool = False,
+) -> tuple[dict[str, object], list[tuple[Path, dict[str, object]]]]:
     manifest_path = session / "manifest.json"
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -738,7 +749,7 @@ def load_session(project_root: Path, session: Path) -> tuple[dict[str, object], 
         raise AlignmentError("session belongs to a different project")
     if file_sha256(project_root / "project.yaml") != manifest.get("project_yaml_sha256"):
         raise AlignmentError("project.yaml changed after alignment planning")
-    require_terminology_preflight(project_root, load_yaml(project_root / "project.yaml"))
+    require_proofreading_gate(project_root, load_yaml(project_root / "project.yaml"), implementing=implementing)
     packets = []
     for entry in manifest.get("batches", []):
         if not isinstance(entry, dict) or not isinstance(entry.get("file"), str):
@@ -1042,7 +1053,7 @@ def update_batch_statuses(session: Path, manifest: dict[str, object], packets: l
 
 
 def apply_session(project_root: Path, session: Path, secondary_style: str | None) -> dict[str, object]:
-    manifest, packets = load_session(project_root, session)
+    manifest, packets = load_session(project_root, session, implementing=True)
     update_batch_statuses(session, manifest, packets)
     groups, risks = validate_decisions(manifest, packets)
     chinese, source = current_units(manifest)

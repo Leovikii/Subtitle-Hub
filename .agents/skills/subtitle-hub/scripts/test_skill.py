@@ -74,6 +74,11 @@ def run(script: str, *args: str, expect: int = 0) -> subprocess.CompletedProcess
     return run_path(SCRIPT_ROOT / script, *args, expect=expect)
 
 
+def create_project(*args: str, expect: int = 0) -> subprocess.CompletedProcess[str]:
+    plan = json.loads(run("init_project.py", *args, "--dry-run").stdout)
+    return run("init_project.py", *args, "--approved-plan-sha256", plan["plan_sha256"], expect=expect)
+
+
 def write_srt(path: Path, text: str = "测试") -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(f"1\n00:00:01,000 --> 00:00:02,000\n{text}\n", encoding="utf-8")
@@ -126,11 +131,13 @@ def make_alignment_project(
     bilingual: bool = True,
     auxiliary_rows: list[tuple[int, int, str]] | None = None,
 ) -> tuple[Path, Path, Path]:
-    project = root / "SH9000--alignment-test"
+    repository = root / "repository"
+    project = repository / "works/alignment/SH9000--alignment-test"
     master = project / "project/workspace/episodes/S01E01/master.ass"
     source_dir = project / "project/sources/subtitles/ja/source"
     source = source_dir / "S01E01.ja.ass"
     master.parent.mkdir(parents=True)
+    (repository / "catalog.yaml").write_text("schema_version: 6\nworks:\n", encoding="utf-8")
     source_dir.mkdir(parents=True)
     master.write_text(
         alignment_ass([(start, end, "CN-Main", "", text) for start, end, text in chinese_rows]),
@@ -183,10 +190,12 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.5.0-beta.1\"\n  state: materials-prepared\n"
+        "initialization:\n  skill_version: \"1.5.0-beta.2\"\n  state: materials-prepared\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
-    (project / "review.md").write_text("---\nschema_version: 3\nwork_id: SH9000\n---\n", encoding="utf-8")
+    (project / "review.md").write_text(
+        "---\nschema_version: 3\nwork_id: SH9000\nstatus: implementing\n---\n", encoding="utf-8",
+    )
     record_test_terminology(project)
     return project, master, source
 
@@ -198,6 +207,14 @@ def record_test_terminology(project: Path, episode: str = "S01E01", term_ids: tu
     review.write_text(
         f"---\n{front}\nterminology_preflight:\n  episodes: [{episode}]\n"
         f"  term_ids: {json.dumps(term_ids)}\n  evidence: Reviewed the complete test fixture text.\n---\n{body}",
+        encoding="utf-8",
+    )
+
+
+def mark_test_implementation(project: Path) -> None:
+    review = project / "review.md"
+    review.write_text(
+        review.read_text(encoding="utf-8").replace("status: planning\n", "status: implementing\n", 1),
         encoding="utf-8",
     )
 
@@ -408,7 +425,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.5\.0-beta\.1"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.5\.0-beta\.2"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -788,7 +805,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.5.0-beta.1")
+            self.assertEqual(data["skill_version"], "1.5.0-beta.2")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -827,7 +844,7 @@ class InventoryTests(unittest.TestCase):
             self.assertEqual(data["target_videos"][0]["path"], locator)
             self.assertEqual(data["blocking_questions"], [])
             approve_intake(intake, "S01E01", baseline, video=locator, audio=1, language="ja")
-            run("init_project.py", *init_arguments(repository, series, write_snapshot(root), intake))
+            create_project(*init_arguments(repository, series, write_snapshot(root), intake))
             project = series / "SH0001--test-tv"
             local_paths = (project / "project/local.paths.yaml").read_text(encoding="utf-8")
             self.assertIn(locator, local_paths)
@@ -950,7 +967,7 @@ class InitializationTests(unittest.TestCase):
             run("init_project.py", *args, "--dry-run")
             project = series / "SH0001--test-movie"
             self.assertFalse(project.exists())
-            run("init_project.py", *args)
+            create_project(*args)
             record_test_terminology(project, "MOVIE")
             run("validate_project.py", str(project), "--ready-for-proofreading")
             metadata_path = project / "project.yaml"
@@ -968,6 +985,12 @@ class InitializationTests(unittest.TestCase):
             run("align_bilingual.py", "plan", str(project), "--output-dir", str(session),
                 "--source-id", "optional-source-001")
             review_alignment_session(session)
+            master = project / "project/workspace/episodes/MOVIE/master.ass"
+            before_apply = master.read_bytes()
+            blocked = run("align_bilingual.py", "apply", str(project), "--session", str(session), expect=1)
+            self.assertIn("approved implementation requires status implementing", blocked.stderr)
+            self.assertEqual(master.read_bytes(), before_apply)
+            mark_test_implementation(project)
             run("align_bilingual.py", "apply", str(project), "--session", str(session))
             run("align_bilingual.py", "verify", str(project), "--session", str(session))
             run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
@@ -989,7 +1012,7 @@ class InitializationTests(unittest.TestCase):
             snapshot = write_snapshot(root, total=16)
             position = args.index("--bangumi-snapshot")
             args[position + 1] = str(snapshot)
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             payload = {
                 "id": 100, "type": 2, "platform": "TV", "total_episodes": 16,
@@ -1014,7 +1037,7 @@ class InitializationTests(unittest.TestCase):
             )
             approve_intake(intake, "S01E01", baseline, target_basename="Target.S01E01.mkv")
             args = init_arguments(repository, series, write_snapshot(root), intake)
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             self.assertFalse((project / "project/local.paths.yaml").exists())
             self.assertIn('S01E01: "Target.S01E01.mkv"', (project / "project.yaml").read_text(encoding="utf-8"))
@@ -1042,10 +1065,30 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root)
-            dry = run("init_project.py", *args, "--dry-run")
+            approver_arg = args.index("--approved-by")
+            proposal_args = args[:approver_arg] + args[approver_arg + 2:]
+            dry = run("init_project.py", *proposal_args, "--dry-run")
             self.assertIn('"project_name": "test-tv"', dry.stdout)
             self.assertFalse((series / "SH0001--test-tv").exists())
-            run("init_project.py", *args)
+            digest = json.loads(dry.stdout)["plan_sha256"]
+            missing = run("init_project.py", *args, expect=2)
+            self.assertIn("requires --approved-plan-sha256", missing.stderr)
+            other_name = args.copy()
+            other_name[other_name.index("--project-name") + 1] = "other-tv"
+            for changed_args in (other_name, args + ["--secondary-language", "ja"]):
+                changed = run("init_project.py", *changed_args, "--approved-plan-sha256", digest, expect=2)
+                self.assertIn("differs from the approved plan digest", changed.stderr)
+            intake_path = Path(args[args.index("--intake") + 1])
+            approved_intake = intake_path.read_bytes()
+            changed_intake = json.loads(approved_intake)
+            changed_intake["episode_map"][0]["timing_authority"] = "different timing authority"
+            intake_path.write_text(json.dumps(changed_intake, ensure_ascii=False), encoding="utf-8")
+            changed = run("init_project.py", *args, "--approved-plan-sha256", digest, expect=2)
+            self.assertIn("differs from the approved plan digest", changed.stderr)
+            intake_path.write_bytes(approved_intake)
+            self.assertEqual(list(series.glob("SH*")), [])
+            run("init_project.py", *args, "--dry-run", "--approved-plan-sha256", digest)
+            run("init_project.py", *args, "--approved-plan-sha256", digest)
             project = series / "SH0001--test-tv"
             result = run("validate_project.py", str(project), "--ready-for-proofreading", "--json", expect=1)
             self.assertIn("terminology_preflight", result.stdout)
@@ -1070,7 +1113,7 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, movie=True)
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-movie"
             self.assertIn('MOVIE: "movie-source.mkv"', (project / "project.yaml").read_text(encoding="utf-8"))
             run("validate_project.py", str(project), "--prepared-masters")
@@ -1079,7 +1122,7 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root)
-            run("init_project.py", *args)
+            create_project(*args)
             master = (series / "SH0001--test-tv" / "project/workspace/episodes/S01E01/master.ass").read_text(encoding="utf-8")
             self.assertIn("Noto Sans CJK SC", master)
             self.assertIn(",62,&H00FFFFFF,&H000000FF,&H00101010,&H00000000", master)
@@ -1091,7 +1134,7 @@ class InitializationTests(unittest.TestCase):
             root = Path(raw)
             _, series, _, subtitle, args = initialize_project(root, ass=True)
             original = subtitle.read_bytes()
-            run("init_project.py", *args)
+            create_project(*args)
             master = series / "SH0001--test-tv/project/workspace/episodes/S01E01/master.ass"
             self.assertEqual(subtitle.read_bytes(), original)
             prepared = master.read_text(encoding="utf-8")
@@ -1105,6 +1148,36 @@ class InitializationTests(unittest.TestCase):
             position = args.index("--approved-by")
             del args[position:position + 2]
             self.assertIn("--approved-by", run("init_project.py", *args, expect=2).stderr)
+
+    def test_project_layout_rules_apply_before_proposal_and_after_creation(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repository, series, _, _, args = initialize_project(root)
+            for slug in ("VisionQuest", "ab"):
+                invalid = args.copy()
+                invalid[invalid.index("--project-name") + 1] = slug
+                self.assertIn("--project-name", run("init_project.py", *invalid, "--dry-run", expect=2).stderr)
+            invalid_id = run("init_project.py", *args, "--work-id", "SH１２３４", "--dry-run", expect=2)
+            self.assertIn("ASCII digits", invalid_id.stderr)
+            for directory, reason in (
+                (repository / "works" / "VisionQuest", "series name must use lowercase ASCII"),
+                (root / "other-series", "immediate child"),
+            ):
+                directory.mkdir()
+                invalid = args.copy()
+                invalid[invalid.index("--series-dir") + 1] = str(directory)
+                self.assertIn(reason, run("init_project.py", *invalid, "--dry-run", expect=2).stderr)
+            create_project(*args)
+            project = series / "SH0001--test-tv"
+            short_project = series / "SH0001--ab"
+            self.assertTrue(project.resolve().is_relative_to(root.resolve()))
+            self.assertTrue(short_project.resolve().is_relative_to(root.resolve()))
+            project.rename(short_project)
+            metadata = short_project / "project.yaml"
+            original = metadata.read_text(encoding="utf-8")
+            metadata.write_text(original.replace('project_name: "test-tv"', 'project_name: "ab"'), encoding="utf-8")
+            result = run("validate_project.py", str(short_project), "--prepared-masters", "--json", expect=1)
+            self.assertIn("3-48 lowercase ASCII", result.stdout)
 
     def test_unresolved_intake_cannot_initialize(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1161,7 +1234,7 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root)
-            run("init_project.py", *args)
+            create_project(*args)
             duplicate_work = [*args, "--work-id", "SH0001"]
             duplicate_work[duplicate_work.index("--project-name") + 1] = "another-project"
             self.assertIn("work ID already exists", run("init_project.py", *duplicate_work, expect=2).stderr)
@@ -1188,7 +1261,7 @@ class InitializationTests(unittest.TestCase):
             new_series = repository / "works/new-series"
             args = init_arguments(repository, new_series, write_snapshot(root), intake_path)
             args.extend(["--create-series", "--series-title", "新系列"])
-            result = run("init_project.py", *args, expect=1)
+            result = create_project(*args, expect=1)
             self.assertIn("duplicate source basename", result.stderr)
             self.assertFalse(new_series.exists())
 
@@ -1196,7 +1269,7 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, video, _, args = initialize_project(root)
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             video.unlink()
             result = run("validate_project.py", str(project), "--prepared-masters", "--json", expect=1)
@@ -1206,12 +1279,12 @@ class InitializationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root)
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.10"'
+                    'skill_version: "1.5.0-beta.2"', 'skill_version: "1.5.0-beta.1"'
                 ),
                 encoding="utf-8",
             )
@@ -1224,7 +1297,7 @@ class CatalogAndPackagingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, _, _, args = initialize_project(root)
-            run("init_project.py", *args)
+            create_project(*args)
             current = series / "SH0001--test-tv/subtitles/current"
             current.mkdir(parents=True)
             (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")
@@ -1283,7 +1356,7 @@ class CatalogAndPackagingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             repository, series, _, _, args = initialize_project(root, video_name="custom-cut-name.mkv")
-            run("init_project.py", *args)
+            create_project(*args)
             current = series / "SH0001--test-tv/subtitles/current"
             current.mkdir(parents=True)
             (current / "VERSION").write_text("1.0.0\n", encoding="utf-8")
@@ -1393,10 +1466,11 @@ class CandidateContractTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as raw:
             _, series, _, _, args = initialize_project(Path(raw), video_name="overlap.S01E01.mkv", secondary="ja")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
             record_test_terminology(project)
+            mark_test_implementation(project)
             clean = alignment_ass([
                 (100, 200, "CN-Main", "", "第一句"), (100, 200, "JP-Main", "", "first"),
                 (200, 300, "CN-Main", "", "第二句"), (200, 300, "JP-Main", "", "second"),
@@ -1422,7 +1496,7 @@ class CandidateContractTests(unittest.TestCase):
             metadata = project / "project.yaml"
             current = metadata.read_text(encoding="utf-8")
             for version in ("1.4.4", "1.4.5"):
-                metadata.write_text(current.replace('skill_version: "1.5.0-beta.1"', f'skill_version: "{version}"'), encoding="utf-8")
+                metadata.write_text(current.replace('skill_version: "1.5.0-beta.2"', f'skill_version: "{version}"'), encoding="utf-8")
                 validate_release_dir(candidate, project)
             metadata.write_text(current, encoding="utf-8")
             previous = project / "subtitles/previous"
@@ -1437,10 +1511,11 @@ class CandidateContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="paired.S01E01.mkv", secondary="ja")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
             record_test_terminology(project)
+            mark_test_implementation(project)
             paired = alignment_ass([
                 (100, 200, "CN-Main", "", "对白"),
                 (100, 200, "JP-Main", "", "台詞"),
@@ -1463,7 +1538,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.5.0-beta.2"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1473,7 +1548,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.5.0-beta.2"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1506,7 +1581,7 @@ class CandidateContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="coverage.S01E01.mkv")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             current = project / "subtitles/current"
             current.mkdir(parents=True)
@@ -1524,7 +1599,7 @@ class CandidateContractTests(unittest.TestCase):
             _, series, _, _, args = initialize_project(
                 root, video_name="coverage.S01E01.mkv", secondary="ja"
             )
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             current = project / "subtitles/current"
             current.mkdir(parents=True)
@@ -1549,12 +1624,16 @@ class CandidateContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="candidate-cut.S01E01.mkv")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             blocked = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
             self.assertIn("terminology_preflight", blocked.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
             record_test_terminology(project)
+            blocked = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
+            self.assertIn("approved implementation requires status implementing", blocked.stderr)
+            self.assertFalse((project / "project/workspace/build/current-candidate").exists())
+            mark_test_implementation(project)
             run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
             candidate = project / "project/workspace/build/current-candidate/candidate-cut.S01E01.zh-Hans.ass"
             text = candidate.read_text(encoding="utf-8")
@@ -1565,10 +1644,11 @@ class CandidateContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="candidate-cut.S01E01.mkv")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
             record_test_terminology(project)
+            mark_test_implementation(project)
             master.write_text(master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Arial"), encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
             self.assertIn("master has non-Noto fonts", result.stderr)
@@ -1577,14 +1657,14 @@ class CandidateContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, _, _, args = initialize_project(root, video_name="old-contract-cut.S01E01.mkv")
-            run("init_project.py", *args)
+            create_project(*args)
             project = series / "SH0001--test-tv"
             metadata = project / "project.yaml"
             text = metadata.read_text(encoding="utf-8")
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.5.0-beta.1 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.5.0-beta.2 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1648,7 +1728,7 @@ class TermAuditTests(unittest.TestCase):
 
 
 class BilingualAlignmentTests(unittest.TestCase):
-    def test_glossary_requires_simplified_chinese_wikipedia_for_plan_and_resume(self) -> None:
+    def test_glossary_requires_mainland_simplified_wikipedia_for_plan_and_resume(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             project, _, _ = make_alignment_project(
@@ -1666,7 +1746,7 @@ class BilingualAlignmentTests(unittest.TestCase):
             self.assertIn("cannot read", blocked.stderr)
             guide = project.parent / "series-guide.md"
             header = "| term_id | 原文 | 规范简体中文 | 变体 | 范围 | 入表理由 | 证据 | 状态 |\n"
-            wiki = "zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work"
+            wiki = "zh-Hans wikipedia https://zh.wikipedia.org/zh-cn/work"
             guide.write_text(
                 header + f"| city | Test City | 测试城 | 无 | S01E01 | | {wiki} | confirmed |\n",
                 encoding="utf-8",
@@ -1680,24 +1760,28 @@ class BilingualAlignmentTests(unittest.TestCase):
                 ("zh-Hans https://www.ithome.com/1/004/460.htm", "confirmed"),
                 ("zh-Hans official https://www.disneyplus.com/zh-sg/work", "confirmed"),
                 ("zh-Hans wikipedia https://www.disneyplus.com/zh-sg/work", "confirmed"),
-                ("zh-Hans wikipedia https://www.ithome.com/zh-hans/work", "confirmed"),
+                ("zh-Hans wikipedia https://www.ithome.com/zh-cn/work", "confirmed"),
                 ("zh-Hans wikipedia https://zh.wikipedia.org/zh-tw/work", "confirmed"),
-                ("zh-Hans wikipedia https://zh.wikipedia.org.example.test/zh-hans/work", "confirmed"),
-                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/", "confirmed"),
-                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work "
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org.example.test/zh-cn/work", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-cn/", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-cn/work?variant=zh-hans", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-cn/work "
+                 "and https://zh.wikipedia.org/zh-hans/franchise", "confirmed"),
+                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-cn/work "
                  "and https://www.disneyplus.com/zh-sg/work", "confirmed"),
-                ("zh-Hans wikipedia https://zh.wikipedia.org/zh-hans/work", "pending"),
+                (wiki, "pending"),
             ):
                 guide.write_text(
                     header + f"| city | Test City | 测试城 | 无 | S01E01 | 角色返程的目的地 | {evidence} | {status} |\n",
                     encoding="utf-8",
                 )
                 blocked = run("align_bilingual.py", *plan_args, expect=1)
-                self.assertIn("sourced only to Simplified Chinese Wikipedia: city", blocked.stderr)
+                self.assertIn("sourced only to Mainland Simplified Chinese Wikipedia (/zh-cn/): city", blocked.stderr)
                 self.assertFalse(session.exists())
             guide.write_text(
                 header + "| city | Test City | 测试城 | 无 | S01E01 | 角色返程的目的地 | "
-                "zh-Hans wikipedia [作品](https://zh.wikipedia.org/zh-hans/work#places) 使用测试城。"
+                "zh-Hans wikipedia [作品](https://zh.wikipedia.org/zh-cn/work#places) 使用测试城。"
                 "[系列](https://zh.wikipedia.org/zh-cn/franchise) 也使用测试城 | confirmed |\n"
                 "| old-candidate | IKEA | 宜家 | 无 | S01E01 | | | pending |\n",
                 encoding="utf-8",
@@ -1714,7 +1798,11 @@ class BilingualAlignmentTests(unittest.TestCase):
             blocked = run("align_bilingual.py", *decide_args, expect=1)
             self.assertIn("cannot read", blocked.stderr)
             self.assertEqual(packet.read_bytes(), before)
-            guide.write_bytes(saved_guide.replace(b"/zh-hans/work#places", b"/zh-cn/work#places"))
+            guide.write_bytes(saved_guide.replace(b"/zh-cn/work#places", b"/zh-hans/work#places"))
+            blocked = run("align_bilingual.py", *decide_args, expect=1)
+            self.assertIn("Mainland Simplified Chinese Wikipedia", blocked.stderr)
+            self.assertEqual(packet.read_bytes(), before)
+            guide.write_bytes(saved_guide)
             saved = run("align_bilingual.py", *decide_args)
             self.assertTrue(json.loads(saved.stdout)["saved"])
             decisions.write_text('{"groups": [{"group_id": "G000002", "status": "confirmed"}]}', encoding="utf-8")

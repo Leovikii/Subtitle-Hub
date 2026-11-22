@@ -50,7 +50,7 @@ Video availability does not raise this text tier. Every visible Chinese event re
 | Embedded non-source-language subtitle | Timing plus translation/disambiguation evidence | Never promote it to source-text authority; if Chinese, it remains auxiliary unless the user declares it the baseline |
 | SUP/PGS and OCR | Original graphic text, signs, forced subtitles, and cross-checking | OCR is candidate text until checked against the image/audio |
 | Another translation or Chinese version | Ambiguity, omissions, relationship, and terminology comparison | Never use majority vote or treat it as source-language evidence |
-| Applicable series terms / user-confirmed names | Candidate terminology and existing decisions | Verify adopted forms against Simplified Chinese Wikipedia under SH-TRANS-007 |
+| Applicable series terms / user-confirmed names | Candidate terminology and existing decisions | Verify adopted forms in Wikipedia's Mainland Simplified Chinese view (`/zh-cn/`) under SH-TRANS-007 |
 | Alternate release video/subtitle | Cut-difference and compatibility investigation | Similar names or durations do not prove compatibility |
 | Fonts, renderer, media probe | Visual geometry, track inventory, and local rendering | Environment capability, not source material; rendering success is not human visual approval |
 
@@ -86,15 +86,15 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 1. Run identity discovery/check without creating the work directory.
 2. Inventory the Chinese baseline and optional text/media in one system-temp JSON. Probe tracks only when video is supplied; classify only materials intended for use.
-3. Present verified identity and scope, the episode map, material roles, timing authority, release languages, and the proposed series/project names as one decision. Include unresolved choices only if they affect this plan. Use clear defaults supported by the evidence. Reuse explicit approval that already covers the same concrete plan and ask only about remaining material choices.
-4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check and, when it passes, run the same command with `--dry-run` removed. Correct recoverable tool or intake issues within scope. Ask again only if identity, scope, mapping, authorities, release languages, or approved names materially change. Derived paths, assigned work IDs, and routine validation results need no confirmation.
+3. Run `scripts/init_project.py --dry-run` before presenting any recommended series or project name. Use the checked names from its output. Present verified identity and scope, the episode map, material roles, timing authority, release languages, and those names in one decision. Retain the returned `plan_sha256` together with the disposable intake. Reuse explicit approval that covers the same concrete plan.
+4. After approval, rerun the dry run with `--approved-by` and `--approved-plan-sha256` from the approved plan. Once it passes, run the same command with `--dry-run` removed. The initializer compares the digest before writing files. Ask again only for a material change to the approved plan. An automatically assigned work ID is derived and does not affect the plan digest.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
 6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters. Create ignored `project/local.paths.yaml` only when local or password-free SSH media references must survive the run. Create other paths with their first file.
 7. The initializer checks `--prepared-masters`. Once that passes, scan the subtitles, select core terms, and build their canonical index under SH-TRANS-007. Pass `scripts/validate_project.py PROJECT --ready-for-proofreading` before formal proofreading.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.5.0-beta.1 intake contract
+## Skill 1.5.0-beta.2 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
@@ -108,7 +108,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.5.0-beta.1`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.5.0-beta.2`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
@@ -166,20 +166,19 @@ Every entry refers to an inventoried Chinese baseline. Video/audio may be null; 
 
 ### SH-INIT-008 — Approve the developer-facing name before creation
 
-The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`. Propose the name from the verified identity and type in the combined initialization decision. Record its approver and date in `project.yaml`. Reuse an explicitly approved name for the same plan.
+The formal work directory is `works/<series>/<SHxxxx>--<project-name>`. Work IDs use `SH` followed by at least four ASCII digits. A project name is 3–48 characters of lowercase ASCII letters/digits with single hyphens between groups, for example `yamato-2199-tv`. Validate the exact proposed name with the initializer's dry run before showing it to the user. Record the named approver and date in `project.yaml`.
 
-The series directory is also a short developer-facing name. Reuse an established series directory when appropriate. Include any new series title and directory name in the same initialization decision. Initialization rolls back a new series if the project transaction fails.
+The series directory must be an immediate child of the repository's `works/`, with a lowercase ASCII name using single hyphens between letter/digit groups. The same check applies when reusing an existing series. Include any new series title and directory name in the same initialization decision. Initialization rolls back a new series if the project transaction fails.
 
 ### SH-INIT-009 — Transactional initializer and master preparation
 
-Run a dry run as the internal transaction check, then the identical command without `--dry-run`:
+Run a read-only dry run before presenting the plan:
 
 ```text
 python scripts/init_project.py \
   --repository-root <repository> \
   --series-dir <works/series-name> \
-  --project-name <approved-short-name> \
-  --approved-by <approver> \
+  --project-name <proposed-short-name> \
   --type <tv|movie|ova|ona|special> \
   --identity-provider <bangumi|imdb> \
   --identity-id <id> \
@@ -188,6 +187,8 @@ python scripts/init_project.py \
   --dry-run
 ```
 
-Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ...` only for an approved new series directory. The initializer copies subtitle evidence into immutable `project/sources/`, never copies video, conditionally writes an ignored local or password-free SSH video map, and prepares one `master.ass` per episode. It fills required ASS fields and maps every retained style and nonempty inline font directly to Noto SC/JP while preserving all other rendered properties. SRT/VTT baselines produce the same Noto contract. Initialization registers source-text roles but never merges source events, copies a prior Chinese line, or claims semantic alignment; A/B pairing begins with the reviewed mapping contract after initialization.
+After the user's decision, add `--approved-by <approver> --approved-plan-sha256 <plan_sha256>`, rerun the dry run, then remove `--dry-run` to create the project. The digest binds the names, identity, episode map, materials, and release settings. It checks consistency of the inputs and does not establish that the user actually gave approval. Use the digest of the plan the user approved.
+
+Omit `--work-id` to allocate the next repository ID. For a new series, include `--create-series --series-title ...` in the read-only proposal dry run. The write step requires approval of the proposed series title and directory. The initializer copies subtitle evidence into immutable `project/sources/`, never copies video, conditionally writes an ignored local or password-free SSH video map, and prepares one `master.ass` per episode. It fills required ASS fields and maps every retained style and nonempty inline font directly to Noto SC/JP while preserving all other rendered properties. SRT/VTT baselines produce the same Noto contract. Initialization registers source-text roles but never merges source events, copies a prior Chinese line, or claims semantic alignment; A/B pairing begins with the reviewed mapping contract after initialization.
 
 Initialization does not create a project README, `docs/`, or `subtitles/current/`. It checks `scripts/validate_project.py --prepared-masters` and rolls back a failed new-project/new-series transaction.

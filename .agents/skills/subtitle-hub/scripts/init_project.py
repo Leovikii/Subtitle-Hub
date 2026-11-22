@@ -17,17 +17,10 @@ from urllib.parse import urlparse
 
 import yaml
 
-SKILL_VERSION = "1.5.0-beta.1"
-WORK_ID_RE = re.compile(r"SH\d{4,}")
-PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+from project_naming import EPISODE_PATTERNS, WORK_ID_RE, validate_project_name, validate_series_directory
+
+SKILL_VERSION = "1.5.0-beta.2"
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
-EPISODE_PATTERNS = {
-    "tv": re.compile(r"S\d{2}E\d{2,3}"),
-    "ona": re.compile(r"S\d{2}E\d{2,3}"),
-    "ova": re.compile(r"OVA\d{2,3}"),
-    "special": re.compile(r"SP\d{2,3}"),
-    "movie": re.compile(r"MOVIE"),
-}
 TEXT_BASELINES = {".ass", ".ssa", ".srt", ".vtt"}
 SAFE_COMPONENT_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
 SC_FONT = "Noto Sans CJK SC"
@@ -489,8 +482,9 @@ def main() -> int:
     parser.add_argument("--series-dir", required=True, type=Path)
     parser.add_argument("--create-series", action="store_true")
     parser.add_argument("--series-title")
-    parser.add_argument("--project-name", required=True, help="User-approved short lowercase developer-facing name")
-    parser.add_argument("--approved-by", required=True, help="Approver for identity, scope, mappings, roles, languages, and names")
+    parser.add_argument("--project-name", required=True, help="Short lowercase developer-facing name to validate or create")
+    parser.add_argument("--approved-by", help="User who approved the concrete plan; required for creation")
+    parser.add_argument("--approved-plan-sha256", help="plan_sha256 from the dry run of the plan approved by the user")
     parser.add_argument("--work-id", help="Optional explicit ID; otherwise allocate the next repository SH number")
     parser.add_argument("--repository-root", type=Path)
     parser.add_argument("--type", required=True, choices=("tv", "movie", "ova", "ona", "special"))
@@ -502,10 +496,12 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    project_name = args.project_name.strip()
-    if not PROJECT_NAME_RE.fullmatch(project_name) or not 3 <= len(project_name) <= 48:
-        parser.error("--project-name must be 3-48 lowercase ASCII letters/digits/hyphens")
-    if not args.approved_by.strip():
+    project_name = args.project_name
+    try:
+        validate_project_name(project_name)
+    except ValueError as error:
+        parser.error(f"--project-name: {error}")
+    if not args.dry_run and not (args.approved_by or "").strip():
         parser.error("--approved-by requires an identified approver")
     if args.secondary_language and not LANGUAGE_RE.fullmatch(args.secondary_language):
         parser.error("--secondary-language must be a BCP 47 language tag")
@@ -536,10 +532,16 @@ def main() -> int:
 
     series_dir = args.series_dir.expanduser().resolve()
     repository = args.repository_root.resolve() if args.repository_root else find_repository_root(series_dir)
+    if repository is None:
+        parser.error("cannot locate the Subtitle Hub repository for --series-dir")
+    try:
+        validate_series_directory(repository, series_dir)
+    except ValueError as error:
+        parser.error(str(error))
     work_ids, subject_ids = existing_identities(repository)
     work_id = args.work_id or allocate_work_id(work_ids)
     if not WORK_ID_RE.fullmatch(work_id):
-        parser.error("--work-id must match SH followed by at least four digits")
+        parser.error("--work-id must match SH followed by at least four ASCII digits")
     if work_id in work_ids:
         parser.error(f"work ID already exists at {work_ids[work_id]}")
     identity_key = (args.identity_provider, args.identity_id)
@@ -547,10 +549,8 @@ def main() -> int:
         label = "Bangumi subject" if args.identity_provider == "bangumi" else "IMDb title"
         parser.error(f"{label} already exists at {subject_ids[identity_key]}")
     if not series_dir.exists():
-        if not args.create_series or not args.series_title:
+        if not args.create_series or not (args.series_title or "").strip():
             parser.error("a new series directory requires --create-series and --series-title")
-        if not PROJECT_NAME_RE.fullmatch(series_dir.name):
-            parser.error("new series directory name must be lowercase ASCII letters/digits/hyphens")
     elif not series_dir.is_dir():
         parser.error(f"series path is not a directory: {series_dir}")
 
@@ -584,10 +584,32 @@ def main() -> int:
     limitations = list(dict.fromkeys(str(value) for value in intake.get("limitations", []) if str(value).strip()))
     if limitations:
         project_text = project_text.replace("limitations: []", "limitations:\n" + "\n".join(f"  - {quote(value)}" for value in limitations))
+    approval_plan = {
+        "skill_version": SKILL_VERSION,
+        "series_directory": str(series_dir),
+        "series_title": args.series_title,
+        "create_series": args.create_series,
+        "project_name": project_name,
+        "requested_work_id": args.work_id,
+        "project_type": args.type,
+        "identity_provider": args.identity_provider,
+        "identity": snapshot,
+        "source_language": source_language,
+        "release_languages": {"primary": "zh-Hans", "secondary": args.secondary_language},
+        "episode_map": rows,
+        "external_source_groups": intake["external_source_groups"],
+        "embedded_subtitle_tracks": intake.get("embedded_subtitle_tracks", []),
+        "evidence_tier": intake.get("evidence_tier"),
+        "limitations": limitations,
+    }
+    plan_sha256 = hashlib.sha256(json.dumps(approval_plan, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
     planned = {
-        "skill_version": SKILL_VERSION, "target": str(target), "work_id": work_id, "project_name": project_name,
+        "skill_version": SKILL_VERSION, "project_name": project_name, "series_directory": str(series_dir),
+        "series_title": args.series_title, "project_type": args.type,
+        "target": str(target), "work_id": work_id, "plan_sha256": plan_sha256,
         "approved_by": args.approved_by, "episodes": [row["episode"] for row in rows],
         "identity_provider": args.identity_provider, "identity_id": args.identity_id,
+        "source_language": source_language, "release_languages": approval_plan["release_languages"],
         "release_filenames": [row["output_name"] for row in rows],
         "videos_recorded_by_basename_only": [row["video"]["basename"] for row in rows if row["video"]],
         "evidence_tier": intake.get("evidence_tier"),
@@ -595,9 +617,13 @@ def main() -> int:
         "masters_to_prepare": [{"episode": row["episode"], "source": row["subtitle_path"]} for row in rows],
         "limitations": limitations,
     }
+    if args.approved_plan_sha256 and args.approved_plan_sha256 != plan_sha256:
+        parser.error("current intake or naming differs from the approved plan digest")
     if args.dry_run:
         print(json.dumps(planned, ensure_ascii=False, indent=2))
         return 0
+    if not args.approved_plan_sha256:
+        parser.error("creation requires --approved-plan-sha256 from the user-approved dry-run plan")
 
     created_series = False
     promoted_target = False

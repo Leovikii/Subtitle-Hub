@@ -13,8 +13,9 @@ from urllib.parse import unquote, urlparse
 import yaml
 
 from align_bilingual import (
-    SKILL_VERSION, AlignmentError, ordinary_master_counts, require_terminology_preflight, source_file_fingerprints,
+    SKILL_VERSION, AlignmentError, ordinary_master_counts, require_proofreading_gate, source_file_fingerprints,
 )
+from project_naming import EPISODE_PATTERNS, validate_work_directory
 
 ALLOWED_ROLES = {
     "candidate-baseline",
@@ -25,14 +26,8 @@ ALLOWED_ROLES = {
     "style-layout-reference",
     "secondary-language-release-source",
 }
-PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
-EPISODE_PATTERNS = {
-    "tv": re.compile(r"S\d{2}E\d{2,3}"),
-    "ona": re.compile(r"S\d{2}E\d{2,3}"),
-    "ova": re.compile(r"OVA\d{2,3}"),
-    "special": re.compile(r"SP\d{2,3}"),
-    "movie": re.compile(r"MOVIE"),
-}
+
+
 def scalar(text: str, name: str, indent: int = 0) -> str | None:
     pattern = rf"(?m)^{' ' * indent}{re.escape(name)}:\s*(.*?)\s*$"
     match = re.search(pattern, text)
@@ -356,13 +351,11 @@ def main() -> int:
         if section(metadata, obsolete):
             errors.append(f"{metadata_path}: schema 9 must not repeat fixed {obsolete} configuration")
     work_id = scalar(metadata, "id")
-    if not work_id or not re.fullmatch(r"SH\d{4,}", work_id):
-        errors.append(f"{metadata_path}: invalid work id")
     project_name = scalar(metadata, "project_name")
-    if not project_name or not PROJECT_NAME_RE.fullmatch(project_name):
-        errors.append(f"{metadata_path}: invalid project_name")
-    elif root.name != f"{work_id}--{project_name}":
-        errors.append(f"{root}: directory must be {work_id}--{project_name}")
+    try:
+        validate_work_directory(root, work_id, project_name)
+    except ValueError as error:
+        errors.append(f"{metadata_path}: {error}")
     identity = section(metadata, "identity")
     provider = scalar(identity, "provider", 2)
     subject_id = scalar(identity, "id", 2) or ""
@@ -524,7 +517,7 @@ def main() -> int:
         validate_working_masters(root, videos, errors, warnings)
     if args.ready_for_proofreading or args.release:
         try:
-            require_terminology_preflight(root, metadata_data)
+            require_proofreading_gate(root, metadata_data)
         except AlignmentError as error:
             errors.append(str(error))
 

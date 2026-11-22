@@ -20,7 +20,7 @@ from build_subtitle_packages import (
 )
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / ".agents/skills/subtitle-hub/scripts"))
-from align_bilingual import SKILL_VERSION, AlignmentError, load_yaml, require_terminology_preflight
+from align_bilingual import SKILL_VERSION, AlignmentError, load_yaml, require_proofreading_gate
 
 
 STYLE_SECTION = "[V4+ Styles]"
@@ -463,7 +463,7 @@ def build_candidate(project_root: Path, version: str) -> None:
     ):
         raise NormalizeError(f"upgrade project to the Skill {SKILL_VERSION} contract before building a candidate")
     try:
-        require_terminology_preflight(project_root, load_yaml(metadata_path))
+        require_proofreading_gate(project_root, load_yaml(metadata_path), implementing=True)
     except AlignmentError as error:
         raise NormalizeError(str(error)) from error
     workspace_episodes = project_root / "project/workspace/episodes"
