@@ -19,7 +19,7 @@ from typing import Iterable
 
 import yaml
 
-SKILL_VERSION = "1.4.6"
+SKILL_VERSION = "1.4.7"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -29,6 +29,72 @@ NONWORD = re.compile(r"[\W_]+", re.UNICODE)
 
 class AlignmentError(RuntimeError):
     pass
+
+
+def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
+    review_path = project_root / "review.md"
+    error = f"{review_path}: complete terminology_preflight before proofreading"
+    try:
+        review = review_path.read_text(encoding="utf-8-sig")
+        front_matter, delimiter, _ = review.removeprefix("---\n").partition("\n---\n")
+        if not review.startswith("---\n") or not delimiter:
+            raise AlignmentError(error)
+        record = yaml.safe_load(front_matter)
+    except (OSError, UnicodeError, yaml.YAMLError) as cause:
+        raise AlignmentError(f"{error}: {cause}") from cause
+    if not isinstance(record, dict) or record.get("schema_version") != 3 or record.get("work_id") != metadata.get("id"):
+        raise AlignmentError(f"{error}: current review schema and matching work_id are required")
+    preflight = record.get("terminology_preflight")
+    if not isinstance(preflight, dict):
+        raise AlignmentError(error)
+    episodes = preflight.get("episodes")
+    match metadata:
+        case {"video_sources": {"target-video": {"files": dict(target_episodes)}}}:
+            pass
+        case _:
+            raise AlignmentError(f"{error}: project episode map is required")
+    if (not isinstance(episodes, list) or not all(isinstance(value, str) for value in episodes)
+            or not episodes or sorted(episodes) != sorted(target_episodes)):
+        raise AlignmentError(f"{error}: episodes must match the full project scope")
+    evidence = preflight.get("evidence")
+    if not isinstance(evidence, str) or not evidence.strip():
+        raise AlignmentError(f"{error}: record the source/Chinese inventory and its basis")
+    term_ids = preflight.get("term_ids")
+    if not isinstance(term_ids, list) or not all(isinstance(value, str) and value.strip() for value in term_ids):
+        raise AlignmentError(f"{error}: term_ids must list the applicable confirmed entries")
+    if not term_ids:
+        return
+    guide = project_root.parent / "series-guide.md"
+    try:
+        lines = guide.read_text(encoding="utf-8-sig").splitlines()
+    except (OSError, UnicodeError) as cause:
+        raise AlignmentError(f"{error}: cannot read {guide}: {cause}") from cause
+    confirmed = set()
+    columns = None
+    for line in lines:
+        line = line.strip()
+        if not line.startswith("|") or not line.endswith("|"):
+            columns = None
+            continue
+        cells = [cell.strip().strip("`") for cell in re.split(r"(?<!\\)\|", line[1:-1])]
+        if cells[0] == "term_id":
+            columns = (
+                next((i for i, cell in enumerate(cells) if cell in {"原文", "实体／原文", "日文原词"}), None),
+                next((i for i, cell in enumerate(cells) if "规范简体中文" in cell), None),
+                next((i for i, cell in enumerate(cells) if cell in {"依据", "证据", "source_id"}), None),
+                next((i for i, cell in enumerate(cells) if cell == "状态"), None),
+            )
+            continue
+        if columns and all(i is not None and i < len(cells) for i in columns):
+            source, canonical, basis, status = (cells[i] for i in columns)
+            if (source and canonical and status in {"confirmed", "confirmed-consistent"}
+                    and re.search(r"\bzh-Hans\b", basis) and re.search(r"https://[^\s<>()|]+", basis)):
+                confirmed.add(cells[0])
+    missing = sorted(set(term_ids) - confirmed)
+    if missing:
+        raise AlignmentError(
+            f"{error}: entries in {guide} need a confirmed form and a zh-Hans HTTPS source: {', '.join(missing)}"
+        )
 
 
 @dataclass(frozen=True)
@@ -542,6 +608,7 @@ def write_plan(
         raise AlignmentError(f"output directory must be empty: {output_dir}")
     ensure_session_outside_project(output_dir, project_root)
     metadata, primary_styles, secondary_styles, source_language, release_secondary = project_contract(project_root)
+    require_terminology_preflight(project_root, metadata)
     entry = source_entry(metadata, source_language, source_id)
     masters = master_paths(project_root, episode_filter)
     overrides = parse_source_overrides(source_values)
@@ -651,6 +718,7 @@ def load_session(project_root: Path, session: Path) -> tuple[dict[str, object], 
         raise AlignmentError("session belongs to a different project")
     if file_sha256(project_root / "project.yaml") != manifest.get("project_yaml_sha256"):
         raise AlignmentError("project.yaml changed after alignment planning")
+    require_terminology_preflight(project_root, load_yaml(project_root / "project.yaml"))
     packets = []
     for entry in manifest.get("batches", []):
         if not isinstance(entry, dict) or not isinstance(entry.get("file"), str):

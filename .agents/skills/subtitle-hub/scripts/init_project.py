@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a transactionally initialized Subtitle Hub 1.4.6 proofreading project."""
+"""Prepare a Subtitle Hub proofreading project's materials transactionally."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-SKILL_VERSION = "1.4.6"
+SKILL_VERSION = "1.4.7"
 WORK_ID_RE = re.compile(r"SH\d{4,}")
 PROJECT_NAME_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 LANGUAGE_RE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
@@ -639,12 +639,12 @@ def main() -> int:
         promoted_target = True
         validator = Path(__file__).resolve().with_name("validate_project.py")
         validation = subprocess.run(
-            [sys.executable, str(validator), str(target), "--ready-for-proofreading", "--json"],
+            [sys.executable, str(validator), str(target), "--prepared-masters", "--json"],
             capture_output=True, text=True, encoding="utf-8",
         )
         if validation.returncode != 0:
-            raise ValueError(f"initialized project failed proofreading gate: {validation.stdout or validation.stderr}")
-        planned["validation"] = "ready-for-proofreading"
+            raise ValueError(f"initialized project failed material validation: {validation.stdout or validation.stderr}")
+        planned["validation"] = "materials-prepared"
     except Exception:
         if staging.exists():
             shutil.rmtree(staging)

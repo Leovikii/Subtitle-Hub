@@ -19,6 +19,9 @@ from build_subtitle_packages import (
     yaml_scalar,
 )
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / ".agents/skills/subtitle-hub/scripts"))
+from align_bilingual import SKILL_VERSION, AlignmentError, load_yaml, require_terminology_preflight
+
 
 STYLE_SECTION = "[V4+ Styles]"
 EVENTS_SECTION = "[Events]"
@@ -451,13 +454,18 @@ def normalize_file(
 
 def build_candidate(project_root: Path, version: str) -> None:
     project_root = project_root.resolve()
-    metadata = (project_root / "project.yaml").read_text(encoding="utf-8")
+    metadata_path = project_root / "project.yaml"
+    metadata = metadata_path.read_text(encoding="utf-8")
     initialization = yaml_block(metadata, "initialization", 0)
     if (
         yaml_scalar(metadata, "schema_version", 0) != "9"
-        or yaml_scalar(initialization, "skill_version", 2) != "1.4.6"
+        or yaml_scalar(initialization, "skill_version", 2) != SKILL_VERSION
     ):
-        raise NormalizeError("upgrade project to the Skill 1.4.6 contract before building a candidate")
+        raise NormalizeError(f"upgrade project to the Skill {SKILL_VERSION} contract before building a candidate")
+    try:
+        require_terminology_preflight(project_root, load_yaml(metadata_path))
+    except AlignmentError as error:
+        raise NormalizeError(str(error)) from error
     workspace_episodes = project_root / "project/workspace/episodes"
     output_dir = project_root / "project/workspace/build/current-candidate"
     if output_dir.exists():

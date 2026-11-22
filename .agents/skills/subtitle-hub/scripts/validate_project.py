@@ -12,7 +12,9 @@ from urllib.parse import unquote, urlparse
 
 import yaml
 
-from align_bilingual import AlignmentError, ordinary_master_counts, source_file_fingerprints
+from align_bilingual import (
+    SKILL_VERSION, AlignmentError, ordinary_master_counts, require_terminology_preflight, source_file_fingerprints,
+)
 
 ALLOWED_ROLES = {
     "candidate-baseline",
@@ -109,7 +111,7 @@ def validate_working_masters(project_root: Path, videos: dict[str, str], errors:
     for episode in sorted(videos):
         master = project_root / "project" / "workspace" / "episodes" / episode / "master.ass"
         if not master.is_file():
-            errors.append(f"{master}: proofreading-ready project requires a working master")
+            errors.append(f"{master}: prepared project requires a working master")
             continue
         try:
             text = master.read_text(encoding="utf-8-sig")
@@ -321,7 +323,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("project", type=Path, help="Work root containing project.yaml")
     parser.add_argument("--release", action="store_true", help="Also require and inspect release artifacts")
-    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and validate optional local target-video mappings")
+    parser.add_argument("--prepared-masters", action="store_true", help="Check Noto masters and optional local video mappings after initialization")
+    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and a completed terminology inventory")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable output")
     args = parser.parse_args()
     root = args.project.resolve()
@@ -507,20 +510,23 @@ def main() -> int:
     if profile == "zh-mono" and secondary_styles:
         errors.append(f"{metadata_path}: monolingual profile must not declare ordinary secondary styles")
     initialization_version = scalar(initialization, "skill_version", 2)
-    if initialization_version != "1.4.6":
+    if initialization_version != SKILL_VERSION:
         errors.append(
-            f"{metadata_path}: initialization.skill_version must be 1.4.6; upgrade before processing"
+            f"{metadata_path}: initialization.skill_version must be {SKILL_VERSION}; upgrade before processing"
         )
-    if initialization_state not in {"proofreading-ready", "released-existing"}:
+    if initialization_state not in {"materials-prepared", "released-existing"}:
         errors.append(f"{metadata_path}: initialization.state is invalid")
-    if initialization_state == "proofreading-ready":
+    if initialization_state == "materials-prepared":
         for field in ("approved_by", "approved_at"):
             if not scalar(initialization, field, 2):
                 errors.append(f"{metadata_path}: initialization.{field} is required")
-    if args.ready_for_proofreading:
-        if initialization_state not in {"proofreading-ready", "released-existing"}:
-            errors.append(f"{metadata_path}: initialization state is not proofreading-ready")
+    if args.prepared_masters or args.ready_for_proofreading:
         validate_working_masters(root, videos, errors, warnings)
+    if args.ready_for_proofreading or args.release:
+        try:
+            require_terminology_preflight(root, metadata_data)
+        except AlignmentError as error:
+            errors.append(str(error))
 
     if args.release:
         validate_release(root, metadata, errors, warnings)

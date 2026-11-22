@@ -7,6 +7,11 @@ target_release: null
 status: planning
 scope: "{{SCOPE}}"
 
+terminology_preflight:
+  episodes: []
+  term_ids: []
+  evidence: null
+
 coverage:
   evidence_tier: {{EVIDENCE_TIER}}
   timing_authority: {{TIMING_AUTHORITY_YAML}}
@@ -35,7 +40,7 @@ episodes:
 
 ## 目标与范围
 
-完成 Skill 1.4.6 素材盘点、身份/命名确认、素材导入和 Noto 母本准备。
+已完成素材盘点、身份与命名确认、素材导入和 Noto 母本准备。按 SH-TRANS-007 完成术语表并通过内容门禁后开始逐句校对。
 
 ## 检查覆盖
 
@@ -49,7 +54,7 @@ episodes:
 
 ## 决策与实施
 
-已实施用户批准的建项与母本准备，没有修改用户原始素材。下一次人工停顿只在完整校对方案提交审批时发生。
+已实施用户批准的建项与母本准备。按证据直接完成术语表，遇到需要用户裁决的实质冲突时集中确认。
 
 ## 验证与剩余风险
 

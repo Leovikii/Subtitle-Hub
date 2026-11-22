@@ -76,7 +76,7 @@ Record actual language separately from roles. The Chinese baseline starts only a
 
 ### SH-INIT-004 — Persist facts, not parallel status models
 
-Initialization is ready when the baseline parses, the episode map and selected source roles are confirmed, `blocking_questions` is empty, and `--ready-for-proofreading` passes. Persist only the A–D evidence tier, timing authority, material limitations, and one project/review status; do not maintain separate structure/language/timing/visual/release readiness states.
+Materials are prepared when the baseline parses, the episode map and selected source roles are confirmed, `blocking_questions` is empty, and `--prepared-masters` passes. Proceed directly to SH-TRANS-007 without another routine confirmation. Formal proofreading requires both prepared materials and a completed terminology inventory verified by `--ready-for-proofreading`.
 
 Video plus a Chinese baseline permits Chinese, structure, timing, and local visual work when tools permit; it does not prove source-text fidelity or full listening/viewing. Missing capabilities are limitations, not invented completion states.
 
@@ -89,16 +89,16 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 3. Present identity/scope, episode map, material roles, release languages, and proposed short name as one user decision.
 4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
-6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters only. Create ignored `project/local.paths.yaml` only when local or password-free SSH media references must survive the run. Create other paths with their first file and a series guide only with its first real term.
-7. Run `scripts/validate_project.py`; do not begin content work until structural errors are resolved.
+6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters. Create ignored `project/local.paths.yaml` only when local or password-free SSH media references must survive the run. Create other paths with their first file.
+7. The initializer checks `--prepared-masters`. Once that passes, complete the glossary and its full-scope intake record under SH-TRANS-007, then run `scripts/validate_project.py PROJECT --ready-for-proofreading` before starting or resuming formal proofreading.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.4.6 intake contract
+## Skill 1.4.7 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
-Before any repository script or project initialization, locate a usable Python 3 from the Codex workspace dependencies first, then ordinary `python`, `python3`, or the Windows `py` launcher. Run `scripts/setup_runtime.py --check`. If it reports a missing or outdated environment, request approval for the dependency download and run the same script without `--check`. It creates or atomically replaces one environment at `~/.codex/subtitle-hub/venv`, keeps non-package state under the sibling `state/`, and returns the interpreter path. Run all subsequent Skill scripts with that interpreter.
+Before any repository script or project initialization, locate a usable Python 3 from the Codex workspace dependencies first, then ordinary `python`, `python3`, or the Windows `py` launcher. Run `scripts/setup_runtime.py --check`. If it reports a missing or outdated environment, run the same script without `--check` under existing authorization and obtain any missing permission through the platform. It creates or atomically replaces one environment at `~/.codex/subtitle-hub/venv`, keeps non-package state under the sibling `state/`, and returns the interpreter path. Run all subsequent Skill scripts with that interpreter.
 
 The exact packages are locked in `requirements.txt`, including Paramiko and PyYAML. Never install them globally, create a project-local virtual environment, copy dependencies into a project, or maintain an alternate package path. A requirements change invalidates and rebuilds only the shared `venv`; it preserves `state`. For complete cleanup, run `remote_media.py revoke` for every registered host before base Python runs `setup_runtime.py --remove`; the remover refuses to orphan registered keys. If no compatible base Python can execute `setup_runtime.py`, stop and report the missing prerequisite rather than partially initializing a project or attempting an operating-system Python installation.
 
@@ -108,7 +108,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.6`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.7`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
@@ -138,7 +138,7 @@ Unapproved or changed host keys, authentication failure, missing remote tools, u
 
 ### SH-INIT-010 — Upgrade before reopening an older project
 
-Do not maintain old-schema execution branches and do not bulk-upgrade dormant projects. When an existing project is selected for new proofreading or release work, first compare it with the current `project.yaml` and `review.md` templates. Re-express confirmed durable facts in project schema 9 and current Skill version, fold current state and still-open decisions into review schema 3, and prepare complete Noto masters from the immutable sources or current release. Preserve source files and released subtitles unchanged; invalidate coverage fingerprints whenever a master changes. Resolve only genuinely missing or conflicting identity, scope, mapping, language, timing-authority, or naming facts with the user, then pass `validate_project.py --ready-for-proofreading` before content work. Git retains the old control history; do not create migration reports, compatibility sidecars, or per-version converters.
+Do not maintain old-schema execution branches and do not bulk-upgrade dormant projects. When an existing project is selected for new proofreading or release work, first compare it with the current `project.yaml` and `review.md` templates. Re-express confirmed durable facts in project schema 9 and current Skill version, fold current state and still-open decisions into review schema 3, and prepare complete Noto masters from the immutable sources or current release. Preserve source files and released subtitles unchanged; invalidate coverage fingerprints whenever a master changes. Resolve only genuinely missing or conflicting intake facts with the user. Complete SH-TRANS-007 and pass `validate_project.py --ready-for-proofreading` before content work. Before reusing earlier line-by-line decisions, recheck their terminology against the completed glossary. Git retains the old control history.
 
 Example:
 
@@ -190,4 +190,4 @@ python scripts/init_project.py \
 
 Omit `--work-id` to allocate the next repository ID. Use `--create-series --series-title ...` only for an approved new series directory. The initializer copies subtitle evidence into immutable `project/sources/`, never copies video, conditionally writes an ignored local or password-free SSH video map, and prepares one `master.ass` per episode. It fills required ASS fields and maps every retained style and nonempty inline font directly to Noto SC/JP while preserving all other rendered properties. SRT/VTT baselines produce the same Noto contract. Initialization registers source-text roles but never merges source events, copies a prior Chinese line, or claims semantic alignment; A/B pairing begins with the reviewed mapping contract after initialization.
 
-Initialization does not create a project README, `docs/`, or `subtitles/current/`. It promotes the staged work only if `scripts/validate_project.py --ready-for-proofreading` passes and rolls back a failed new-project/new-series transaction.
+Initialization does not create a project README, `docs/`, or `subtitles/current/`. It checks `scripts/validate_project.py --prepared-masters` and rolls back a failed new-project/new-series transaction.

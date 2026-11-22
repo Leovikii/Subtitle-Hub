@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated behavioral tests for the Subtitle Hub Skill 1.4.6 toolchain."""
+"""Isolated behavioral tests for the Subtitle Hub Skill toolchain."""
 
 from __future__ import annotations
 
@@ -183,10 +183,23 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.6\"\n  state: proofreading-ready\n"
+        "initialization:\n  skill_version: \"1.4.7\"\n  state: materials-prepared\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
+    (project / "review.md").write_text("---\nschema_version: 3\nwork_id: SH9000\n---\n", encoding="utf-8")
+    record_test_terminology(project)
     return project, master, source
+
+
+def record_test_terminology(project: Path, episode: str = "S01E01", term_ids: tuple[str, ...] = ()) -> None:
+    review = project / "review.md"
+    front, _, body = review.read_text(encoding="utf-8").removeprefix("---\n").partition("\n---\n")
+    front = re.sub(r"(?m)^terminology_preflight:\n(?:^  .*\n)*", "", front + "\n").rstrip()
+    review.write_text(
+        f"---\n{front}\nterminology_preflight:\n  episodes: [{episode}]\n"
+        f"  term_ids: {json.dumps(term_ids)}\n  evidence: Reviewed the complete test fixture text.\n---\n{body}",
+        encoding="utf-8",
+    )
 
 
 def plan_alignment(project: Path, session: Path, *, batch_size: int = 16) -> dict[str, object]:
@@ -366,6 +379,7 @@ def release_ass(subject_id: int, title: str, episode: str, version: str = "1.0.0
 
 
 def mark_review_release_ready(project: Path) -> None:
+    record_test_terminology(project)
     path = project / "review.md"
     text = path.read_text(encoding="utf-8")
     replacements = {
@@ -394,7 +408,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.6"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.7"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -774,7 +788,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.6")
+            self.assertEqual(data["skill_version"], "1.4.7")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -820,7 +834,7 @@ class InventoryTests(unittest.TestCase):
             metadata = (project / "project.yaml").read_text(encoding="utf-8")
             self.assertIn("medium: user-provided-ssh-video", metadata)
             self.assertNotIn("/srv/media", metadata)
-            run("validate_project.py", str(project), "--ready-for-proofreading")
+            run("validate_project.py", str(project), "--prepared-masters")
             unsafe = json.loads(remote_probe.read_text(encoding="utf-8"))
             unsafe["media"][0]["path"] = "ssh://media_reader:secret@10.9.6.2:22/srv/media/Target.S01E01.mkv"
             remote_probe.write_text(json.dumps(unsafe), encoding="utf-8")
@@ -937,6 +951,7 @@ class InitializationTests(unittest.TestCase):
             project = series / "SH0001--test-movie"
             self.assertFalse(project.exists())
             run("init_project.py", *args)
+            record_test_terminology(project, "MOVIE")
             run("validate_project.py", str(project), "--ready-for-proofreading")
             metadata_path = project / "project.yaml"
             metadata = metadata_path.read_text(encoding="utf-8")
@@ -1003,7 +1018,7 @@ class InitializationTests(unittest.TestCase):
             project = series / "SH0001--test-tv"
             self.assertFalse((project / "project/local.paths.yaml").exists())
             self.assertIn('S01E01: "Target.S01E01.mkv"', (project / "project.yaml").read_text(encoding="utf-8"))
-            run("validate_project.py", str(project), "--ready-for-proofreading")
+            run("validate_project.py", str(project), "--prepared-masters")
 
     def test_dry_run_rejects_unparseable_chinese_baseline(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1032,6 +1047,10 @@ class InitializationTests(unittest.TestCase):
             self.assertFalse((series / "SH0001--test-tv").exists())
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
+            result = run("validate_project.py", str(project), "--ready-for-proofreading", "--json", expect=1)
+            self.assertIn("terminology_preflight", result.stdout)
+            run("validate_project.py", str(project), "--prepared-masters")
+            record_test_terminology(project)
             result = run("validate_project.py", str(project), "--ready-for-proofreading", "--json")
             self.assertTrue(json.loads(result.stdout)["valid"])
             metadata = (project / "project.yaml").read_text(encoding="utf-8")
@@ -1054,7 +1073,7 @@ class InitializationTests(unittest.TestCase):
             run("init_project.py", *args)
             project = series / "SH0001--test-movie"
             self.assertIn('MOVIE: "movie-source.mkv"', (project / "project.yaml").read_text(encoding="utf-8"))
-            run("validate_project.py", str(project), "--ready-for-proofreading")
+            run("validate_project.py", str(project), "--prepared-masters")
 
     def test_srt_conversion_uses_noto_and_preserves_markup(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -1173,14 +1192,14 @@ class InitializationTests(unittest.TestCase):
             self.assertIn("duplicate source basename", result.stderr)
             self.assertFalse(new_series.exists())
 
-    def test_ready_gate_detects_missing_local_video(self) -> None:
+    def test_material_gate_detects_missing_local_video(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             _, series, video, _, args = initialize_project(root)
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             video.unlink()
-            result = run("validate_project.py", str(project), "--ready-for-proofreading", "--json", expect=1)
+            result = run("validate_project.py", str(project), "--prepared-masters", "--json", expect=1)
             self.assertIn("not readable", "\n".join(json.loads(result.stdout)["errors"]))
 
     def test_existing_project_must_upgrade_skill_contract_before_processing(self) -> None:
@@ -1192,7 +1211,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.6"', 'skill_version: "1.3.0"'
+                    'skill_version: "1.4.7"', 'skill_version: "1.4.6"'
                 ),
                 encoding="utf-8",
             )
@@ -1377,6 +1396,7 @@ class CandidateContractTests(unittest.TestCase):
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
+            record_test_terminology(project)
             clean = alignment_ass([
                 (100, 200, "CN-Main", "", "第一句"), (100, 200, "JP-Main", "", "first"),
                 (200, 300, "CN-Main", "", "第二句"), (200, 300, "JP-Main", "", "second"),
@@ -1402,7 +1422,7 @@ class CandidateContractTests(unittest.TestCase):
             metadata = project / "project.yaml"
             current = metadata.read_text(encoding="utf-8")
             for version in ("1.4.4", "1.4.5"):
-                metadata.write_text(current.replace('skill_version: "1.4.6"', f'skill_version: "{version}"'), encoding="utf-8")
+                metadata.write_text(current.replace('skill_version: "1.4.7"', f'skill_version: "{version}"'), encoding="utf-8")
                 validate_release_dir(candidate, project)
             metadata.write_text(current, encoding="utf-8")
             previous = project / "subtitles/previous"
@@ -1420,6 +1440,7 @@ class CandidateContractTests(unittest.TestCase):
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
+            record_test_terminology(project)
             paired = alignment_ass([
                 (100, 200, "CN-Main", "", "对白"),
                 (100, 200, "JP-Main", "", "台詞"),
@@ -1442,7 +1463,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.4.6"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.4.7"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1452,7 +1473,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.6"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.7"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1530,6 +1551,10 @@ class CandidateContractTests(unittest.TestCase):
             _, series, _, _, args = initialize_project(root, video_name="candidate-cut.S01E01.mkv")
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
+            blocked = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
+            self.assertIn("terminology_preflight", blocked.stderr)
+            self.assertFalse((project / "project/workspace/build/current-candidate").exists())
+            record_test_terminology(project)
             run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0")
             candidate = project / "project/workspace/build/current-candidate/candidate-cut.S01E01.zh-Hans.ass"
             text = candidate.read_text(encoding="utf-8")
@@ -1543,6 +1568,7 @@ class CandidateContractTests(unittest.TestCase):
             run("init_project.py", *args)
             project = series / "SH0001--test-tv"
             master = project / "project/workspace/episodes/S01E01/master.ass"
+            record_test_terminology(project)
             master.write_text(master.read_text(encoding="utf-8").replace("Noto Sans CJK SC", "Arial"), encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
             self.assertIn("master has non-Noto fonts", result.stderr)
@@ -1558,7 +1584,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.6 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.4.7 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 
@@ -1622,6 +1648,53 @@ class TermAuditTests(unittest.TestCase):
 
 
 class BilingualAlignmentTests(unittest.TestCase):
+    def test_glossary_with_simplified_web_evidence_blocks_plan_and_resume_until_complete(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            project, _, _ = make_alignment_project(root, [(100, 200, "测试城")], [(100, 200, "Test City")])
+            session = root / "session"
+            plan_args = ("plan", str(project), "--output-dir", str(session), "--source-id", "ja-source")
+            record_test_terminology(project, "S01E02", term_ids=("city",))
+            blocked = run("align_bilingual.py", *plan_args, expect=1)
+            self.assertIn("full project scope", blocked.stderr)
+            record_test_terminology(project, term_ids=("city",))
+            blocked = run("align_bilingual.py", *plan_args, expect=1)
+            self.assertIn("cannot read", blocked.stderr)
+            guide = project.parent / "series-guide.md"
+            header = "| term_id | 原文 | 规范简体中文 | 变体 | 范围 | 证据 | 状态 |\n"
+            for evidence, status in (
+                ("本地字幕", "confirmed"),
+                ("zh-Hant https://example.test/work", "confirmed"),
+                ("zh-Hans", "confirmed"),
+                ("zh-Hans https://example.test/work", "pending"),
+            ):
+                guide.write_text(
+                    header + f"| city | Test City | 测试城 | 无 | S01E01 | {evidence} | {status} |\n",
+                    encoding="utf-8",
+                )
+                blocked = run("align_bilingual.py", *plan_args, expect=1)
+                self.assertIn("need a confirmed form and a zh-Hans HTTPS source: city", blocked.stderr)
+                self.assertFalse(session.exists())
+            guide.write_text(
+                header + "| city | Test City | 测试城 | 无 | S01E01 | zh-Hans https://example.test/work | confirmed |\n",
+                encoding="utf-8",
+            )
+            saved_guide = guide.read_bytes()
+            run("align_bilingual.py", *plan_args)
+            decisions = root / "decisions.json"
+            decisions.write_text('{"groups": [{"group_id": "G000001", "status": "confirmed"}]}', encoding="utf-8")
+            decide_args = ("decide", str(project), "--session", str(session), "--batch-id", "B0001",
+                           "--decisions", str(decisions))
+            packet = session / "batch-0001.json"
+            before = packet.read_bytes()
+            guide.unlink()
+            blocked = run("align_bilingual.py", *decide_args, expect=1)
+            self.assertIn("cannot read", blocked.stderr)
+            self.assertEqual(packet.read_bytes(), before)
+            guide.write_bytes(saved_guide)
+            saved = run("align_bilingual.py", *decide_args)
+            self.assertTrue(json.loads(saved.stdout)["saved"])
+
     def test_metadata_page_limit_does_not_skip_source_units(self) -> None:
         import align_bilingual as alignment
 

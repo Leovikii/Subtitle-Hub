@@ -98,11 +98,21 @@ Use one ASCII space at a semantic boundary between Chinese and Latin/Greek lette
 
 Notes are exceptional: only for plot-relevant comprehension loss that natural translation cannot solve, and they must be brief, non-editorial, non-obstructive, and project-defined.
 
-## SH-TRANS-007 — Series terminology
+## SH-TRANS-007 — Glossary before proofreading
 
-When a series has cross-project terms, keep one `series-guide.md` with stable `term_id`, source form, canonical Simplified Chinese, variants, scope, evidence, and status. Do not create an empty guide. Research only unresolved additions/conflicts. A project deviation is a confirmed `project.yaml` override citing the term, exact scope, evidence, confirmer, and date.
+Complete a terminology-only pass over every mapped episode's available source text and visible Chinese before any line-by-line review, proposal analysis, or alignment session. Include names, titles, places, organizations, setting terms, signs, and observed variants. Use local candidate searches and literal counts to accelerate the inventory, then check identity and context. This pass records terminology and its evidence without editing subtitles or counting as line-by-line coverage.
+
+Reuse or create the single `series-guide.md` in the series directory. Keep stable `term_id`, source form, canonical Simplified Chinese, variants, scope, evidence, and status. Scope work-only terms to that work. Use columns `term_id`, `原文`, `规范简体中文`, `变体`, `范围`, `证据`, and `状态` for new tables.
+
+Every applicable canonical form, including an inherited form, must cite a Simplified Chinese web page. Prefer the applicable official Simplified Chinese introduction or localization, then a checked Simplified Chinese Wikipedia article or another reliable Simplified Chinese page. Open the exact page and verify that its rendered text is Simplified Chinese and uses the form for the same entity and work. Use the explicit Simplified page variant when available (for example Wikipedia's `/zh-hans/`). In the entry's evidence cell record `zh-Hans`, the direct HTTPS URL, and the observed form/context. Search snippets, converted Traditional Chinese, pages in other languages, and subtitle variants alone do not establish the canonical form. Use such evidence only for discovery or identity/context. An existing source ID can supplement the direct link.
+
+Research gaps and settle evidence-backed decisions automatically. Ask once for any missing qualified sources or material conflicts that need the user's input. A deviation from confirmed series usage requires user confirmation, a scoped `project.yaml` override, and a Simplified Chinese web source for its adopted form. Proceed directly after saving the completed, sourced table.
+
+In the existing `review.md` front matter, fill `terminology_preflight.episodes` with every mapped episode, `term_ids` with its applicable confirmed glossary entries, and `evidence` with the texts scanned, basis of the decisions, and any exclusions or evidence limitations. An empty `term_ids` list is valid only after a full-scope inventory establishes that no terms apply; record the supporting evidence and omit an empty guide. Incomplete inventories, placeholder tables, and unresolved applicable terms block the gate. Run `validate_project.py PROJECT --ready-for-proofreading`. The tool checks the record, confirmed rows, and presence of the Simplified Chinese language marker and direct link. The reviewer verifies the rendered source and actual coverage.
 
 For a person or other entity, `variants` is a form-to-entity inventory rather than a loose synonym list. Scan the complete available source and Chinese scope and record each form that actually occurs: full name, given name, family name, nickname, and title/honorific combination when applicable. Distinguish approved Chinese forms from forbidden or unresolved forms. Do not invent unused variants or derive a short form by blindly truncating a full name; use aligned source text, dialogue context, or other confirmed identity evidence where a form could name more than one entity. Keep temporary occurrence lists outside the project and write only the durable mappings to `series-guide.md` and the current decision/counts to `review.md`.
+
+If line-by-line review reveals an omitted term or a new sense, resolve it and update the glossary and the intake record before confirming the affected group. Recheck earlier occurrences of that term within scope. Clear the preflight evidence while any newly found, applicable term remains unresolved so that an interrupted run cannot resume against an incomplete glossary.
 
 ## SH-TRANS-010 — Entity surface-form closure
 

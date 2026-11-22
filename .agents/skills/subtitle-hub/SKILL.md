@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.4.6"
+  version: "1.4.7"
 ---
 
 # Subtitle Hub
@@ -20,17 +20,17 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 ## Lifecycle
 
-Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, request installation approval and run `scripts/setup_runtime.py`; continue only with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
+Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, run `scripts/setup_runtime.py` with existing authorization or obtain only the permission required for the download and installation. Continue with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
 
-0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.6"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.7"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
 1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Resolve identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one confirmation.
-2. Dry-run internally, initialize transactionally, and pass `--ready-for-proofreading`. Ask again only if the result materially differs from the approval.
+2. Dry-run internally and prepare the materials transactionally. Complete the full-scope glossary with verified Simplified Chinese web sources under [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading) and pass `--ready-for-proofreading` before planning, starting, or resuming line-by-line proofreading. Apply evidence-backed decisions directly. Bundle any missing qualified sources and material conflicts that need the user's input.
 3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`; time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, list every semantic edit separately, and pause once for approval.
    Use the alignment tool's `status`, paged `read`, and ID/character-cut `decide` commands; extract unchanged original text locally instead of regenerating it in tool arguments. After interruption inspect saved progress before retrying. See `SH-TRANS-011` for limits and recovery.
 4. Implement the approved scope continuously, update the same rows, verify the complete Noto master (including non-overlapping ordinary cues within each language), and build the candidate without routine interruptions.
 5. Request one release-candidate final review. Promote only after approval.
 
-Stop elsewhere only for a blocking identity/source-language ambiguity, material scope expansion, unresolved series term, or P1 waiver.
+Stop elsewhere only for a blocking identity/source-language ambiguity, material scope expansion, terminology evidence or decisions that require user input, or a P1 waiver.
 
 ## Authority and boundaries
 
