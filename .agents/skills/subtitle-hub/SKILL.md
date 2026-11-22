@@ -2,7 +2,7 @@
 name: subtitle-hub
 description: Initialize, audit, proofread, build, validate, or release Subtitle Hub projects and Chinese-primary ASS subtitles. Use for repository work involving identity, sources, translation, timing, layout, control files, or releases.
 metadata:
-  version: "1.4.10"
+  version: "1.5.0-beta.1"
 ---
 
 # Subtitle Hub
@@ -22,15 +22,21 @@ For an existing work read the nearest `series-guide.md` if present, then `projec
 
 Before step 0, locate a compatible base Python from the Codex workspace runtime or the host, then run `scripts/setup_runtime.py --check`. If the shared runtime is absent or outdated, run `scripts/setup_runtime.py` with existing authorization or obtain only the permission required for the download and installation. Continue with the returned environment Python. Do not install into or modify system Python. If no base Python can run the initializer, report that single prerequisite and stop.
 
-0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.4.10"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
-1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Resolve identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one confirmation.
+0. For an existing project, require project schema 9, review schema 3, and `initialization.skill_version: "1.5.0-beta.1"`. If any differ, upgrade that project to the current templates before audit, editing, build, validation, or release; never execute an older contract in place. Do not upgrade dormant projects proactively.
+1. Inventory the Chinese baseline and available text. Probe tracks only for supplied video. Present the verified identity, scope, source roles, episode mapping, timing authority, release languages, and short name in one initialization confirmation.
 2. Dry-run internally and prepare the materials transactionally. Scan the full subtitle scope for term candidates, admit only forms that need a consistent rendering, and index their canonical names in `series-guide.md` using only Simplified Chinese Wikipedia. Pass `--ready-for-proofreading` before line-by-line proofreading. Follow [SH-TRANS-007](references/proofreading-and-approval.md#sh-trans-007--glossary-before-proofreading) for admission rules, search limits, and late discoveries.
-3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`; time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, list every semantic edit separately, and pause once for approval.
+3. Audit the complete scope without editing masters. For A/B evidence use the reviewed mapping contract in `proofreading-and-approval.md`. Time overlap never closes meaning. Process large scopes in bounded internal batches, put the complete categorized proposal in `review.md`, and list every semantic edit separately. Obtain approval for proposed edits before implementation.
    Use the alignment tool's `status`, paged `read`, and ID/character-cut `decide` commands; extract unchanged original text locally instead of regenerating it in tool arguments. After interruption inspect saved progress before retrying. See `SH-TRANS-011` for limits and recovery.
 4. Implement the approved scope continuously, update the same rows, verify the complete Noto master (including non-overlapping ordinary cues within each language), and build the candidate without routine interruptions.
-5. Request one release-candidate final review. Promote only after approval.
+5. Present one complete, verified release candidate for final review when release is in scope. Promote only after the user approves that candidate.
 
-Stop elsewhere only for a blocking identity/source-language ambiguity, material scope expansion, terminology evidence or decisions that require user input, or a P1 waiver.
+## User decisions and continuation
+
+Within the requested scope, keep working through discovery, tool calls, recoverable failures, and internal batches until the next required user decision or the requested deliverable is complete. Use progress updates while continuing. Dry-run, material and glossary readiness, successful batches, routine validation, and candidate preparation are internal checks. Reuse approval already given for the same concrete decision.
+
+The routine user decisions are initialization (SH-INIT-005), the complete edit proposal (SH-CTRL-007), and release-candidate final review (SH-REL-006). Wait only for one of these decisions or when an essential fact, authorization, first-use SSH trust or credential interaction, material scope change, unresolved core terminology choice, or required P1 waiver cannot be resolved with the available evidence and permissions. Keep each wait to the dependent work. Complete other authorized work first and collect related decisions in one request. General authorization to work autonomously permits routine work within scope. Approval of specific edits and the release candidate requires review of their concrete details.
+
+On failure, inspect saved state and the exact error, recover with authorized inputs, and continue from the first unfinished step. Apply an in-scope fallback when it preserves the approved scope and evidence claims. If a current prerequisite genuinely prevents further progress, report what finished, the exact blocker, and the single next action that would unblock it. Record this in `review.md` when the project exists. Keep unverified coverage pending.
 
 ## Authority and boundaries
 

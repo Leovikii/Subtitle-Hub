@@ -14,7 +14,7 @@ Analyze without modifying masters. In `review.md`, use categorized tables with `
 
 List every retranslation, dialogue deletion/addition, meaning correction, and context-sensitive terminology change separately. Batch only deterministic same-category work such as confirmed surface forms of one entity, punctuation rule, or ordinary-dialogue style mapping; state every matched form, its count, episodes, exclusions, and examples. A full name does not authorize substring replacement: a short name, surname, nickname, or name-plus-title joins the batch only after its entity and canonical form are confirmed. Never hide semantic edits in a batch.
 
-After approval, implement and verify the approved scope continuously through a complete release candidate. New semantic work outside scope is added as pending and deferred unless release-blocking. Documentation/tooling changes explicitly requested by the user need no second approval round. Never create a separate feedback or completion report.
+Ask once for the complete, categorized proposal. If the full review produces no proposed edits, record that result and continue to the next requested validation step. Apply explicit decisions to the corresponding rows and continue implementing and verifying the authorized work through the requested deliverable. Defer unapproved work. If new work is essential for release, finish unaffected work and request a decision for the changed items only. Documentation or tooling edits explicitly requested by the user can proceed under that authorization.
 
 ## SH-TRANS-008 — Full-text coverage contract
 
@@ -60,7 +60,7 @@ Finish a batch by writing its material proposal rows to `review.md` and marking 
 
 After an interrupted or blocked stream, inspect saved files and run `status` before retrying; a disconnect does not roll back successful commands. Do not replay the same long output or assume reconnection will fix a content block. Resume at the first unconfirmed group/risk in the reported batch, retaining valid decisions; if a platform block persists on the necessary bounded work, record the limitation and stop that operation rather than repeatedly resubmitting or claiming completion. During a Skill upgrade preserve old disposable records until compatible decisions have been checked against the current inputs; do not relabel an old manifest as the new Skill version or discard prior reviewed work blindly.
 
-After all batches, run one global denominator, ordering, duplicate-risk, and terminology-continuity check before setting `awaiting-approval`. Give the user a categorized summary and the `review.md` path instead of pasting hundreds of evidence windows into chat. Approval remains one complete proposal decision. Implement approved rows in the same bounded batches without additional routine pauses, then run global validation and request the single release-candidate final review.
+After all batches, run one global denominator, ordering, duplicate-risk, and terminology-continuity check. For proposed edits, set `awaiting-approval` and give the user a categorized summary and the `review.md` path. Follow SH-CTRL-007 for implementation and SH-REL-006 for release-candidate approval.
 
 ## SH-TRANS-001 — Review meaning before polish
 
@@ -112,7 +112,7 @@ Exclude these classes by default: ordinary personal names and passing celebrity 
 2. Across the initial project preflight, open at most five distinct related articles beyond the work's article. Reuse those pages across terms. For each term, examine at most three of the additional articles and make at most one targeted search restricted to `zh.wikipedia.org`. Search with the observed original name and the work or franchise name. Directly related works, the shared setting, and the entity's own article are eligible.
 3. Stop when the correct entity and form are supported and any material conflict is resolved, or when the limit is reached. Skip recursive link-following, category browsing, and harvesting franchise-wide entity lists. Cross-check only the candidate and omit names absent from the approved subtitle scope.
 
-Record unresolved core terms and checked articles in `review.md`. On resume, count prior checks toward the same limits. When the budget is exhausted, request a specific Simplified Chinese Wikipedia article or a decision between attested forms only for remaining core conflicts.
+Record unresolved core terms and checked articles in `review.md`. On resume, count prior checks toward the same limits. Finish the other terms before asking once for a specific Simplified Chinese Wikipedia article or a decision between attested forms for any remaining core conflicts that block the requested step.
 
 Settle evidence-backed decisions automatically. A deviation from confirmed series usage requires user confirmation, a scoped `project.yaml` override, and a Simplified Chinese Wikipedia article for its adopted form. Proceed directly after saving the completed, sourced table.
 

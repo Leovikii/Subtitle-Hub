@@ -183,7 +183,7 @@ def make_alignment_project(
         f"subtitle_sources:\n{sources}"
         "video_sources:\n  target-video:\n    files:\n      S01E01: test.mkv\n"
         "project_overrides: []\nlimitations: []\n"
-        "initialization:\n  skill_version: \"1.4.10\"\n  state: materials-prepared\n"
+        "initialization:\n  skill_version: \"1.5.0-beta.1\"\n  state: materials-prepared\n"
     )
     (project / "project.yaml").write_text(project_yaml, encoding="utf-8")
     (project / "review.md").write_text("---\nschema_version: 3\nwork_id: SH9000\n---\n", encoding="utf-8")
@@ -408,7 +408,7 @@ class SkillStructureTests(unittest.TestCase):
         }
         self.assertEqual(top_level, {"name", "description", "metadata"})
         self.assertRegex(frontmatter, r"(?m)^name: subtitle-hub$")
-        self.assertRegex(frontmatter, r'(?m)^  version: "1\.4\.10"$')
+        self.assertRegex(frontmatter, r'(?m)^  version: "1\.5\.0-beta\.1"$')
         self.assertNotIn("[TODO:", text)
 
     def test_skill_local_markdown_links_resolve(self) -> None:
@@ -788,7 +788,7 @@ class InventoryTests(unittest.TestCase):
             video, subtitle, cache = make_materials(root, embedded="en")
             _, data = inventory(root, video, subtitle, cache)
             self.assertEqual(data["schema_version"], 4)
-            self.assertEqual(data["skill_version"], "1.4.10")
+            self.assertEqual(data["skill_version"], "1.5.0-beta.1")
             self.assertNotIn("readiness", data)
             self.assertEqual(data["blocking_questions"], [])
             self.assertEqual(data["external_source_groups"][0]["roles"], ["candidate-baseline"])
@@ -1211,7 +1211,7 @@ class InitializationTests(unittest.TestCase):
             metadata = project / "project.yaml"
             metadata.write_text(
                 metadata.read_text(encoding="utf-8").replace(
-                    'skill_version: "1.4.10"', 'skill_version: "1.4.9"'
+                    'skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.10"'
                 ),
                 encoding="utf-8",
             )
@@ -1422,7 +1422,7 @@ class CandidateContractTests(unittest.TestCase):
             metadata = project / "project.yaml"
             current = metadata.read_text(encoding="utf-8")
             for version in ("1.4.4", "1.4.5"):
-                metadata.write_text(current.replace('skill_version: "1.4.10"', f'skill_version: "{version}"'), encoding="utf-8")
+                metadata.write_text(current.replace('skill_version: "1.5.0-beta.1"', f'skill_version: "{version}"'), encoding="utf-8")
                 validate_release_dir(candidate, project)
             metadata.write_text(current, encoding="utf-8")
             previous = project / "subtitles/previous"
@@ -1463,7 +1463,7 @@ class CandidateContractTests(unittest.TestCase):
                 validate_release_dir(candidate, project)
             metadata = project / "project.yaml"
             current_metadata = metadata.read_text(encoding="utf-8")
-            metadata.write_text(current_metadata.replace('skill_version: "1.4.10"', 'skill_version: "1.4.4"'), encoding="utf-8")
+            metadata.write_text(current_metadata.replace('skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.4"'), encoding="utf-8")
             with self.assertRaisesRegex(PackageError, "identical start/end times"):
                 validate_release_dir(candidate, project)
             metadata.write_text(current_metadata, encoding="utf-8")
@@ -1473,7 +1473,7 @@ class CandidateContractTests(unittest.TestCase):
                 (previous / file.name).write_bytes(file.read_bytes())
             validate_release_dir(previous, project)
             metadata = project / "project.yaml"
-            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.4.10"', 'skill_version: "1.4.2"'), encoding="utf-8")
+            metadata.write_text(metadata.read_text(encoding="utf-8").replace('skill_version: "1.5.0-beta.1"', 'skill_version: "1.4.2"'), encoding="utf-8")
             validate_release_dir(candidate, project)
 
     def test_rendered_regression_rejects_non_font_style_or_event_changes(self) -> None:
@@ -1584,7 +1584,7 @@ class CandidateContractTests(unittest.TestCase):
             text = text.replace("schema_version: 9", "schema_version: 7", 1)
             metadata.write_text(text, encoding="utf-8")
             result = run_path(NORMALIZE_SCRIPT, str(project), "--version", "1.0.0", expect=1)
-            self.assertIn("upgrade project to the Skill 1.4.10 contract", result.stderr)
+            self.assertIn("upgrade project to the Skill 1.5.0-beta.1 contract", result.stderr)
             self.assertFalse((project / "project/workspace/build/current-candidate").exists())
 
 

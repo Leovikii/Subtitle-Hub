@@ -20,7 +20,7 @@ from urllib.parse import urlsplit
 
 import yaml
 
-SKILL_VERSION = "1.4.10"
+SKILL_VERSION = "1.5.0-beta.1"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}

@@ -6,7 +6,7 @@
 
 Search only to discover candidate IDs. Fetch `https://api.bgm.tv/v0/subjects/<id>` and verify `id`, `name`, `name_cn`, media/platform, date, and episode count against the requested scope. Save API `name` as `identity.titles.ja` and `name_cn` as `identity.titles.zh-Hans` without inferring either from filenames or other-language releases.
 
-Pause before creating a formal project if `name_cn` is empty, the API is inaccessible, or plausible candidates differ by season, movie, OVA, compilation, special, remake, or scope. Present the candidate ID/title/scope evidence and ask the user. A user-confirmed draft does not satisfy the release-time `api-verified` requirement.
+Resolve identity from available evidence while continuing read-only material inventory. If plausible matches still differ by season, format, or scope, present the verified candidates in the initialization decision and ask only for the choice the evidence cannot settle. An empty `name_cn` or inaccessible API blocks formal Bangumi initialization. Recover a transient lookup failure when possible and report a persistent verification gap if no allowed identity path remains. A user-confirmed draft does not satisfy the release-time `api-verified` requirement.
 
 For a live-action movie with no plausible Bangumi match after Chinese/original-title and year discovery, verify its exact IMDb `tt` ID, original title, movie type, and release date on IMDb's title/release-info pages. This fallback is not a response to an API outage or a conflicting match. Include the provider, Chinese title, date basis, and single-movie scope in the same initialization confirmation; do not ask for a separate identity approval. Record `provider: imdb`, the canonical `https://www.imdb.com/title/<tt-id>/` URL, `api_url: null`, `titles.original`, the user-confirmed `titles.zh-Hans`, `total_episodes: 1`, `verification: web-verified`, `verified_by`, `verified_at`, `evidence` (official URLs and checked facts), and `fallback_reason`. Never fabricate a Bangumi ID, API verification, or Japanese title. Recheck the same identity evidence before release; the Bangumi sync command validates and skips IMDb projects without a network request or metadata rewrite.
 
@@ -70,7 +70,7 @@ Each `subtitle_sources` entry uses a `roles` list drawn from:
 - `style-layout-reference`
 - `secondary-language-release-source`
 
-Record actual language separately from roles. The Chinese baseline starts only as `candidate-baseline`; assign timing or style authority only when the user confirms it. Track language classification uses standard tags/titles, the known source language, then sampled text if needed. If a selected track remains ambiguous, pause and ask. An explicitly ignored optional track is nonblocking. Write confirmed language, roles, scope, and evidence into `project.yaml`.
+Record actual language separately from roles. The Chinese baseline starts as `candidate-baseline`. Record any proposed timing or style authority in the combined initialization decision. Classify tracks from standard tags and titles, the known source language, and sampled text as needed. If a selected track is still materially ambiguous, include its alternatives in that decision. Leave unused optional tracks unselected and record any resulting evidence limitation. Write confirmed language, roles, scope, and evidence into `project.yaml`.
 
 ## Initialization gate
 
@@ -86,19 +86,19 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 
 1. Run identity discovery/check without creating the work directory.
 2. Inventory the Chinese baseline and optional text/media in one system-temp JSON. Probe tracks only when video is supplied; classify only materials intended for use.
-3. Present identity/scope, episode map, material roles, release languages, and proposed short name as one user decision.
-4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
+3. Present verified identity and scope, the episode map, material roles, timing authority, release languages, and the proposed series/project names as one decision. Include unresolved choices only if they affect this plan. Use clear defaults supported by the evidence. Reuse explicit approval that already covers the same concrete plan and ask only about remaining material choices.
+4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check and, when it passes, run the same command with `--dry-run` removed. Correct recoverable tool or intake issues within scope. Ask again only if identity, scope, mapping, authorities, release languages, or approved names materially change. Derived paths, assigned work IDs, and routine validation results need no confirmation.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
 6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters. Create ignored `project/local.paths.yaml` only when local or password-free SSH media references must survive the run. Create other paths with their first file.
 7. The initializer checks `--prepared-masters`. Once that passes, scan the subtitles, select core terms, and build their canonical index under SH-TRANS-007. Pass `scripts/validate_project.py PROJECT --ready-for-proofreading` before formal proofreading.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.4.10 intake contract
+## Skill 1.5.0-beta.1 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
-Before any repository script or project initialization, locate a usable Python 3 from the Codex workspace dependencies first, then ordinary `python`, `python3`, or the Windows `py` launcher. Run `scripts/setup_runtime.py --check`. If it reports a missing or outdated environment, run the same script without `--check` under existing authorization and obtain any missing permission through the platform. It creates or atomically replaces one environment at `~/.codex/subtitle-hub/venv`, keeps non-package state under the sibling `state/`, and returns the interpreter path. Run all subsequent Skill scripts with that interpreter.
+Before any repository script or project initialization, locate a usable Python 3 from the Codex workspace dependencies first, then ordinary `python`, `python3`, or the Windows `py` launcher. Run `scripts/setup_runtime.py --check`. If the environment is missing or outdated, run the same script with `--check` removed under existing authorization and request permissions through the platform only if required. The script creates or atomically replaces one environment at `~/.codex/subtitle-hub/venv`, keeps non-package state under the sibling `state/`, and returns the interpreter path. Continue immediately with that interpreter.
 
 The exact packages are locked in `requirements.txt`, including Paramiko and PyYAML. Never install them globally, create a project-local virtual environment, copy dependencies into a project, or maintain an alternate package path. A requirements change invalidates and rebuilds only the shared `venv`; it preserves `state`. For complete cleanup, run `remote_media.py revoke` for every registered host before base Python runs `setup_runtime.py --remove`; the remover refuses to orphan registered keys. If no compatible base Python can execute `setup_runtime.py`, stop and report the missing prerequisite rather than partially initializing a project or attempting an operating-system Python installation.
 
@@ -108,7 +108,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.10`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.5.0-beta.1`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 
@@ -116,7 +116,7 @@ When the user declares that a project reads video from a Debian NAS over SSH, co
 
 `remote_media.py` has one cross-platform backend: Paramiko 5.0.0 in the shared Skill environment. It does not use or configure system OpenSSH, AskPass, SSH agents, user keys, or general known-hosts files.
 
-Run `remote_media.py bootstrap` first. Its unauthenticated Python handshake retrieves the ED25519 host key and computes the SHA-256 fingerprint. Ask the user once to verify that fingerprint against a trusted NAS surface, then rerun with `--accept-fingerprint <SHA256:...>` to pin it under the shared `state/` root. A changed or non-ED25519 key stops the connection.
+For an already enrolled connection, proceed directly to `discover` or `probe` with the existing pinned key and identity. For a first connection, `remote_media.py bootstrap` retrieves the ED25519 host key and computes the SHA-256 fingerprint. Ask the user to verify that exact fingerprint against a trusted NAS surface once, then rerun with `--accept-fingerprint <SHA256:...>` to pin it under the shared `state/` root. A changed or non-ED25519 key stops the connection.
 
 After pinning, SSH initialization opens one local Tk password dialog; when Tk is unavailable, it opens a one-use tokenized form bound only to `127.0.0.1`. The same connection generates a dedicated local ED25519 identity under `state/`, uses `sudo` to create the account home/`.ssh` when absent, and appends exactly one tagged public-key line to `authorized_keys`. It then proves a fresh key-authenticated connection before succeeding. The password exists only in the initialization process and never enters chat, arguments, environment variables, files, project records, SSH agents, or key stores. Later `discover`, `probe`, `frame`, `audio`, and `subtitle` actions use only that identity and never prompt for a password.
 
@@ -134,7 +134,7 @@ Pass that result to the ordinary intake command with `--ssh-video-probe <system-
 
 For an external ASS/SSA/SRT/VTT baseline in the approved directory, use `remote_media.py subtitle --copy-text --path <exact-path> --output <system-temp/original-basename>` to read one size-bounded file unchanged through the same pinned connection. Embedded subtitle extraction uses `--stream <index>` instead. Neither action writes remote files.
 
-Unapproved or changed host keys, authentication failure, missing remote tools, unreadable or symlink-resolved paths, malformed probe output, or changed scope stop SSH intake. They never trigger credential persistence, remote environment setup, SFTP transfer, whole-file download, WebDAV fallback, or a second protocol implementation. The user may instead proceed text-only with the resulting media limitation.
+Unapproved or changed host keys, authentication failure, missing remote tools, unreadable or symlink-resolved paths, malformed probe output, or changed scope stop the affected SSH operation. Continue independent text and identity work. If proceeding text-only changes the user's approved media or timing scope, put that tradeoff in the combined initialization decision or request approval for the changed scope. SSH failures never trigger credential persistence, remote environment setup, SFTP transfer, whole-file download, WebDAV fallback, or a second protocol implementation.
 
 ### SH-INIT-010 — Upgrade before reopening an older project
 
@@ -166,9 +166,9 @@ Every entry refers to an inventoried Chinese baseline. Video/audio may be null; 
 
 ### SH-INIT-008 — Approve the developer-facing name before creation
 
-The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`; it need not repeat the complete official title. Suggest one or more names from the verified identity/type, but ask the user to choose or approve one before running the initializer. Record the one initialization approver and date in `project.yaml`; never silently rename a work from a title guess.
+The formal work directory is `<SHxxxx>--<project-name>`. Keep `project-name` short, lowercase, ASCII, and obvious to developers, for example `yamato-2199-tv`. Propose the name from the verified identity and type in the combined initialization decision. Record its approver and date in `project.yaml`. Reuse an explicitly approved name for the same plan.
 
-The series directory is also a short developer-facing name. Reuse an established series directory when appropriate. Creating a new one requires an explicit series title and name approval; initialization rolls it back if the project transaction fails.
+The series directory is also a short developer-facing name. Reuse an established series directory when appropriate. Include any new series title and directory name in the same initialization decision. Initialization rolls back a new series if the project transaction fails.
 
 ### SH-INIT-009 — Transactional initializer and master preparation
 
