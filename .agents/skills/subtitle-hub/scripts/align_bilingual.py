@@ -20,7 +20,7 @@ from urllib.parse import urlsplit
 
 import yaml
 
-SKILL_VERSION = "1.4.9"
+SKILL_VERSION = "1.4.10"
 SESSION_SCHEMA = 1
 PACKET_SCHEMA = 1
 TEXT_SUFFIXES = {".ass", ".ssa", ".srt", ".vtt"}
@@ -75,10 +75,10 @@ def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
         raise AlignmentError(f"{error}: episodes must match the full project scope")
     evidence = preflight.get("evidence")
     if not isinstance(evidence, str) or not evidence.strip():
-        raise AlignmentError(f"{error}: record the source/Chinese inventory and its basis")
+        raise AlignmentError(f"{error}: record the subtitle scan and core-term selection basis")
     term_ids = preflight.get("term_ids")
     if not isinstance(term_ids, list) or not all(isinstance(value, str) and value.strip() for value in term_ids):
-        raise AlignmentError(f"{error}: term_ids must list the applicable confirmed entries")
+        raise AlignmentError(f"{error}: term_ids must list the admitted core terms")
     if not term_ids:
         return
     guide = project_root.parent / "series-guide.md"
@@ -98,19 +98,21 @@ def require_terminology_preflight(project_root: Path, metadata: dict) -> None:
             columns = (
                 next((i for i, cell in enumerate(cells) if cell in {"原文", "实体／原文", "日文原词"}), None),
                 next((i for i, cell in enumerate(cells) if "规范简体中文" in cell), None),
+                next((i for i, cell in enumerate(cells) if cell == "入表理由"), None),
                 next((i for i, cell in enumerate(cells) if cell in {"依据", "证据", "source_id"}), None),
                 next((i for i, cell in enumerate(cells) if cell == "状态"), None),
             )
             continue
         if columns and all(i is not None and i < len(cells) for i in columns):
-            source, canonical, basis, status = (cells[i] for i in columns)
-            if (source and canonical and status in {"confirmed", "confirmed-consistent"}
+            source, canonical, reason, basis, status = (cells[i] for i in columns)
+            if (source and canonical and reason and status in {"confirmed", "confirmed-consistent"}
                     and has_qualified_term_source(basis)):
                 confirmed.add(cells[0])
     missing = sorted(set(term_ids) - confirmed)
     if missing:
         raise AlignmentError(
-            f"{error}: entries in {guide} need a confirmed form sourced only to Simplified Chinese Wikipedia: "
+            f"{error}: entries in {guide} need an admission reason and a confirmed form "
+            "sourced only to Simplified Chinese Wikipedia: "
             f"{', '.join(missing)}"
         )
 

@@ -324,7 +324,7 @@ def main() -> int:
     parser.add_argument("project", type=Path, help="Work root containing project.yaml")
     parser.add_argument("--release", action="store_true", help="Also require and inspect release artifacts")
     parser.add_argument("--prepared-masters", action="store_true", help="Check Noto masters and optional local video mappings after initialization")
-    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and a completed terminology inventory")
+    parser.add_argument("--ready-for-proofreading", action="store_true", help="Require prepared masters and a verified core glossary index")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable output")
     args = parser.parse_args()
     root = args.project.resolve()

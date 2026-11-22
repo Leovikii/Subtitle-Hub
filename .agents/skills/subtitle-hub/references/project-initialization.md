@@ -76,7 +76,7 @@ Record actual language separately from roles. The Chinese baseline starts only a
 
 ### SH-INIT-004 — Persist facts, not parallel status models
 
-Materials are prepared when the baseline parses, the episode map and selected source roles are confirmed, `blocking_questions` is empty, and `--prepared-masters` passes. Proceed directly to SH-TRANS-007 without another routine confirmation. Formal proofreading requires both prepared materials and a completed terminology inventory verified by `--ready-for-proofreading`.
+Materials are prepared when the baseline parses, the episode map and selected source roles are confirmed, `blocking_questions` is empty, and `--prepared-masters` passes. Proceed directly to SH-TRANS-007 without another routine confirmation. Formal proofreading requires prepared materials, a full-scope candidate scan, and a sourced core glossary index verified by `--ready-for-proofreading`.
 
 Video plus a Chinese baseline permits Chinese, structure, timing, and local visual work when tools permit; it does not prove source-text fidelity or full listening/viewing. Missing capabilities are limitations, not invented completion states.
 
@@ -90,11 +90,11 @@ Video plus a Chinese baseline permits Chinese, structure, timing, and local visu
 4. After approval, run `scripts/init_project.py --dry-run` as an internal safety check, then run the identical command without `--dry-run`. Ask again only if the manifest materially differs from the approved plan.
 5. Copy subtitle inputs into immutable `project/sources/`; record videos by basename and media facts, not by copying them.
 6. Create `project.yaml`, root `review.md`, copied sources, and Noto episode masters. Create ignored `project/local.paths.yaml` only when local or password-free SSH media references must survive the run. Create other paths with their first file.
-7. The initializer checks `--prepared-masters`. Once that passes, complete the glossary and its full-scope intake record under SH-TRANS-007, then run `scripts/validate_project.py PROJECT --ready-for-proofreading` before starting or resuming formal proofreading.
+7. The initializer checks `--prepared-masters`. Once that passes, scan the subtitles, select core terms, and build their canonical index under SH-TRANS-007. Pass `scripts/validate_project.py PROJECT --ready-for-proofreading` before formal proofreading.
 
 Initialization never modifies the user's original media or subtitle files.
 
-## Skill 1.4.9 intake contract
+## Skill 1.4.10 intake contract
 
 ### SH-INIT-012 — Shared runtime gate
 
@@ -108,7 +108,7 @@ Start from the user-provided target video path(s) and Chinese baseline rather th
 
 Container language tags may use valid BCP 47 forms. Filenames/titles are weaker signals and may use only known aliases; never interpret an arbitrary short filename token as a language. If multiple source-language audio streams exist, select one with `--audio-stream VIDEO|INDEX`. Resolve a selected track with `--track-language VIDEO|INDEX|LANGUAGE`. Unknown embedded-subtitle language blocks only when that track is selected for source, timing, translation, layout, or release use.
 
-The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.9`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
+The disposable intake JSON uses `schema_version: 4` and `skill_version: 1.4.10`. It may contain local absolute paths or password-free SSH locators. Relevant fields are the evidence tier, videos, external sources, embedded tracks, `episode_map`, limitations, and blocking questions. Resolve the chosen mapping, target basenames, audio, timing authority, source roles, and ignored optional tracks in this same file; do not create a second mapping file. Do not initialize while a selected material question remains blocking.
 
 ### SH-INIT-011 — Guided SSH video intake
 

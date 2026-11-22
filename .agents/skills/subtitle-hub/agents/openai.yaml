@@ -1,7 +1,7 @@
 interface:
   display_name: "Subtitle Hub"
   short_description: "以精简审批流初始化、全文校对并发布中文字幕"
-  default_prompt: "Use $subtitle-hub 1.4.9 to prepare my subtitle project, complete its glossary before proofreading, and then review the full scope and prepare the approved release candidate."
+  default_prompt: "Use $subtitle-hub 1.4.10 to scan my subtitles, build the core glossary from Simplified Chinese Wikipedia, then proofread and prepare the approved release candidate."
 
 policy:
   allow_implicit_invocation: true
